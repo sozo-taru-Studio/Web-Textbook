@@ -1,0 +1,36 @@
+@charset "utf-8";
+/*------------------------------------------------------------
+bootstrapを先に読み込む
+のちに要らないscssを削除する。
+--------------------------------------------------------------*/
+
+//レイアウト
+.w-wrapper{
+position:relative;
+}
+
+
+.w-main,.w-aside{
+padding-top:56px;
+}
+.w-subnav{}
+
+/* 幅 lg 992px 以上 */
+@media (min-width: 992px) {
+.w-aside-inner{
+    position: fixed;
+    left: 0 ;
+    //top: 56px;
+    z-index: 1020;
+    max-width: 16.66667%;
+    height:100vh;
+    overflow-y: auto;
+}
+
+}// 
+
+//header style
+.w-pageHeader{
+	background-image: linear-gradient(120deg, rgba(0,83,69,0.85), #005345);
+	background-size: contain;
+}

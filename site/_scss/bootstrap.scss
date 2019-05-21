@@ -1,0 +1,53 @@
+/*!
+ * Bootstrap v4.2.1 (https://getbootstrap.com/)
+ * Copyright 2011-2018 The Bootstrap Authors
+ * Copyright 2011-2018 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
+
+//custum  color
+$theme-colors :(
+"theme":#005345,
+"act":#D83103
+);
+//-----------------------------------------------------
+@import "../_ASSET/bootstrap-4.2.1/scss/functions";
+@import "../_ASSET/bootstrap-4.2.1/scss/variables";
+@import "../_ASSET/bootstrap-4.2.1/scss/mixins";
+@import "../_ASSET/bootstrap-4.2.1/scss/root";
+@import "../_ASSET/bootstrap-4.2.1/scss/reboot";
+@import "../_ASSET/bootstrap-4.2.1/scss/type";
+@import "../_ASSET/bootstrap-4.2.1/scss/images";
+@import "../_ASSET/bootstrap-4.2.1/scss/code";
+@import "../_ASSET/bootstrap-4.2.1/scss/grid";
+@import "../_ASSET/bootstrap-4.2.1/scss/tables";
+@import "../_ASSET/bootstrap-4.2.1/scss/forms";
+@import "../_ASSET/bootstrap-4.2.1/scss/buttons";
+@import "../_ASSET/bootstrap-4.2.1/scss/transitions";
+@import "../_ASSET/bootstrap-4.2.1/scss/dropdown";
+@import "../_ASSET/bootstrap-4.2.1/scss/button-group";
+@import "../_ASSET/bootstrap-4.2.1/scss/input-group";
+@import "../_ASSET/bootstrap-4.2.1/scss/custom-forms";
+@import "../_ASSET/bootstrap-4.2.1/scss/nav";
+@import "../_ASSET/bootstrap-4.2.1/scss/navbar";
+@import "../_ASSET/bootstrap-4.2.1/scss/card";
+@import "../_ASSET/bootstrap-4.2.1/scss/breadcrumb";
+@import "../_ASSET/bootstrap-4.2.1/scss/pagination";
+@import "../_ASSET/bootstrap-4.2.1/scss/badge";
+@import "../_ASSET/bootstrap-4.2.1/scss/jumbotron";
+@import "../_ASSET/bootstrap-4.2.1/scss/alert";
+@import "../_ASSET/bootstrap-4.2.1/scss/progress";
+@import "../_ASSET/bootstrap-4.2.1/scss/media";
+@import "../_ASSET/bootstrap-4.2.1/scss/list-group";
+@import "../_ASSET/bootstrap-4.2.1/scss/close";
+@import "../_ASSET/bootstrap-4.2.1/scss/toasts";
+@import "../_ASSET/bootstrap-4.2.1/scss/modal";
+@import "../_ASSET/bootstrap-4.2.1/scss/tooltip";
+@import "../_ASSET/bootstrap-4.2.1/scss/popover";
+@import "../_ASSET/bootstrap-4.2.1/scss/carousel";
+@import "../_ASSET/bootstrap-4.2.1/scss/spinners";
+@import "../_ASSET/bootstrap-4.2.1/scss/utilities";
+@import "../_ASSET/bootstrap-4.2.1/scss/print";
+/*
+* Bootstrap v4.2.1  END
+-----------------------------------------------------*/
