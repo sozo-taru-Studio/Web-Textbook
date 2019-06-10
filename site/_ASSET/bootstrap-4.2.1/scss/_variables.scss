@@ -127,6 +127,7 @@ $enable-validation-icons:                     true !default;
 $spacer: 1rem !default;
 $spacers: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
+// 20190608 add    ,6: ($spacer * 3.6)
 $spacers: map-merge(
   (
     0: 0,
@@ -134,7 +135,8 @@ $spacers: map-merge(
     2: ($spacer * .5),
     3: $spacer,
     4: ($spacer * 1.5),
-    5: ($spacer * 3)
+    5: ($spacer * 3),
+    6: ($spacer * 3.6)
   ),
   $spacers
 );

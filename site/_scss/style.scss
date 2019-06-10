@@ -23,6 +23,7 @@ padding-top:56px;
     //top: 56px;
     z-index: 1020;
     max-width: 16.66667%;
+
     height:100vh;
     overflow-y: auto;
 }
@@ -35,3 +36,29 @@ padding-top:56px;
  background-image: linear-gradient(120deg, #012840, #025f98);
 	background-size: contain;
 }
+
+//w-article
+[id="w-article"] h2{
+	color:#012840;
+	border-bottom:3px solid #0383d2;
+}
+
+//ただ単にクリアしたいときの
+.clearBoth{clear:both;}
+
+blockquote{
+	border-left: .3rem solid #e9ebec;
+	padding-left:1.6rem;
+}
+
+
+ @media print {
+		.print-none{
+		display: none;
+		}
+.card {
+      page-break-inside: avoid;
+  }
+}/* end @media print*/
+
+
