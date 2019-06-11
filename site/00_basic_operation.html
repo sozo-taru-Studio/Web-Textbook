@@ -20,7 +20,7 @@
 <link rel="icon" href="/favicon.ico">
 
 <!-- common js  -->
-
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
 <script src="_js/_common/jquery-3.2.1.min.js"></script>
 <script src="_js/_common/bootstrap.min.js"></script>
 <script src="_js/_common/pagescroll.jQuery.js"></script>
@@ -152,7 +152,8 @@
 </div>
 <p>
 ハードウエアであるPCの装置制御や入力出力の基礎制御をするソフトウエア（運用システム）がオペレーションシステムです。
-オペレーションシステムを使ってオペレーションシステムの機能では表現できない多岐多種にわたる役割を提供するのがアプリケーションです。人はPC、OS、APどれがかけてもコンピュータを扱えません。</p>
+オペレーションシステムを使ってオペレーションシステムの機能では表現できない多岐多種にわたる役割を提供するのがアプリケーションです。</p>
+<p>人はPC、OS、アプリケーションどれがかけてもコンピュータを扱えません。</p>
 <p>実際のOSは人が操作できるようにいくつかのアプリケーションプログラムを携えて販売されています。</p>
 </div>
 
@@ -172,6 +173,12 @@
         <li>ファイルをアプリケーションアイコンにドラッグしてアプリケーションを開く</li>
     </ul>
     <p>以上の5つの方法があります。状況に応じてつかいわけてください。</p>
+<h3>任意のアプリケーションを立ち上げてみる</h3>
+<h4>テキストを編集するアプリケーション</h4>
+<p>テキストエディタをアクティブにする。　テキストエディターはプレーンテキストと呼ばれる文字情報だけを記述保存編集するアプリケーションです。</p>
+<h4>。webサイトを見るアプリケーション</h4>
+<p>webブラウザをアクティブにする。webブラウザ（以下ブラウザ）はインターネットを使ってサーバーにあるデータを閲覧するアプリケーションです</p>
+
 </div>
 <div id="s4"  class="mt-n6 pt-6 mb-4 mb-6">
     <h2>アプリケーションの終了</h2>
@@ -238,25 +245,22 @@
 <div class="w-aside-inner container">
 <div class="w-subnav">
 <h3 class="sticky-top">Basic Operation</h3>
-<ul class="list-unstyled">
-<li class=""><a class="" href="00_basic_operation.html" title="power on off"> 電源とアプリケーション</a></li>
-<li class=""><a class="" href="01_basic_operation.html" title="mouse"> マウス操作</a></li>
-<li class=""><a class="" href="02_basic_operation.html" title="keybord"> キーボード操作</a></li>
-<li class=""><a class="" href="03_basic_operation.html" title="mobileDrive"> USBメモリーデバイスの使い方</a></li>
-</ul>
+<!-- BOlist modile -->
+<ul id="w-BOlist" class="list-unstyled">
+        <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+        </ul>
+        <!-- /BOlist modile -->
 </div>
 <div class="w-subnav">
-<h3 class="sticky-top">sections list2</h3>
-<ul class="list-unstyled">
-<li class=""><a class="" href="#"> sub link a long long long long long text</a></li>
-<li class=""><a class="" href="#"> sub link2</a></li>
-<li class=""><a class="" href="#"> sub link2</a></li>
-<li class=""><a class="" href="#"> sub link2</a></li>
-<li class=""><a class="" href="#"> sub link2</a></li>
-<li class=""><a class="" href="#"> sub link2</a></li>
+<h3 class="sticky-top">web Outline</h3>
+<!-- OLlist modile -->
+<ul id="w-OLlist" class="list-unstyled">
+        <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
 </ul>
+<!-- /OLlist modile -->
 </div>
 </div>
+<script src="_js/_common/VueBOnavlist.js"></script>
 </adide>
 
 <!-- /w-aside2-->
@@ -268,9 +272,7 @@
 <!-- /container-->
 </footer>
 <!--w-pageFooter-->
-
 </div>
 <!--w-container-->
-
 </body>
 </html>

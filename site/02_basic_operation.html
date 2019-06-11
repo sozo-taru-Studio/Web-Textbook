@@ -20,7 +20,7 @@
 <link rel="icon" href="/favicon.ico">
 
 <!-- common js  -->
-
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
 <script src="_js/_common/jquery-3.2.1.min.js"></script>
 <script src="_js/_common/bootstrap.min.js"></script>
 <script src="_js/_common/pagescroll.jQuery.js"></script>
@@ -204,6 +204,7 @@
 <!-- /container-->
 
 <adide class="" id="w-aside2">
+<!-- ページナビゲーション -->
 <div class="row text-white no-gutters justify-content-center">
 <nav aria-label="Page navigation ">
 <ul class="pagination justify-content-center">
@@ -216,7 +217,7 @@
 </ul>
 </nav>
 </div>
-                
+<!-- ページナビゲーション -->
 <div class="container bg-dark p-3">
 
 
@@ -229,26 +230,24 @@
 <div class="w-aside-inner container">
 <div class="w-subnav">
 <h3 class="sticky-top">Basic Operation</h3>
-ul class="list-unstyled">
-<li class=""><a class="" href="00_basic_operation.html" title="power on off"> 電源とアプリケーション</a></li>
-<li class=""><a class="" href="01_basic_operation.html" title="mouse"> マウス操作</a></li>
-<li class=""><a class="" href="02_basic_operation.html" title="keybord"> キーボード操作</a></li>
-<li class=""><a class="" href="03_basic_operation.html" title="mobileDrive"> USBメモリーデバイスの使い方</a></li>
-</ul>
+<!-- BOlist modile -->
+<ul id="w-BOlist" class="list-unstyled">
+        <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+        </ul>
+        <!-- /BOlist modile -->
 </div>
+
 <div class="w-subnav">
-<h3 class="sticky-top">sections list2</h3>
-<ul class="list-unstyled">
-<li class=""><a class="" href="#"> sub link a long long long long long text</a></li>
-<li class=""><a class="" href="#"> sub link2</a></li>
-<li class=""><a class="" href="#"> sub link2</a></li>
-<li class=""><a class="" href="#"> sub link2</a></li>
-<li class=""><a class="" href="#"> sub link2</a></li>
-<li class=""><a class="" href="#"> sub link2</a></li>
-</ul>
+        <h3 class="sticky-top">web Outline</h3>
+        <!-- OLlist modile -->
+        <ul id="w-OLlist" class="list-unstyled">
+                <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+        </ul>
+        <!-- /OLlist modile -->
 </div>
 
 </div>
+<script src="_js/_common/VueBOnavlist.js"></script>
 </adide>
 
 <!-- /w-aside2-->
@@ -265,4 +264,5 @@ ul class="list-unstyled">
 <!--w-container-->
 
 </body>
+
 </html>

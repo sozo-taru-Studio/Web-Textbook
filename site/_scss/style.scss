@@ -13,7 +13,18 @@ position:relative;
 .w-main,.w-aside{
 padding-top:56px;
 }
-.w-subnav{}
+.w-subnav{
+	font-size: .8rem;
+	ul li {
+		margin-bottom: .6rem;
+					border-left: 3px solid  #025f98;
+			
+		&>a {
+	 display: block;
+	 padding-left: 1em;
+		}
+	}
+}
 
 /* 幅 lg 992px 以上 */
 @media (min-width: 992px) {
