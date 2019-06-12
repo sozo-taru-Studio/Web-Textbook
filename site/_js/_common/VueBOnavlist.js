@@ -47,7 +47,23 @@ var BOlists = new Vue({
                     titlename:'webの役割',
                     titleen:"web rol",
                     url:"12_outline_media.html"
+                },
+                {
+                    titlename:'見積もりの作成',
+                    titleen:"How much is",
+                    url:"13_outline_media.html"
+                },
+                {
+                    titlename:'著作権',
+                    titleen:"Copyright",
+                    url:"14_outline_media.html"
+                },
+                {
+                    titlename:'商取引',
+                    titleen:"Commerce",
+                    url:"15_outline_media.html"
                 }
+
             ]
    }
   });
