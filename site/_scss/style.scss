@@ -26,6 +26,35 @@ padding-top:56px;
 	}
 }
 
+
+
+//header style
+.w-pageHeader{
+ background-color: #012840;
+ background-image: linear-gradient(120deg, #012840, #025f98);
+	background-size: contain;
+}
+
+//w-article
+[id="w-article"]{
+	h2{
+	color:#012840;
+	border-bottom:3px solid #0383d2;
+}
+	h3{
+	color:#011522;
+		
+}
+}
+
+//ただ単にクリアしたいときの
+.clearBoth{clear:both;}
+
+blockquote{
+	border-left: .3rem solid #e9ebec;
+	padding-left:1.6rem;
+}
+
 /* 幅 lg 992px 以上 */
 @media (min-width: 992px) {
 .w-aside-inner{
@@ -38,31 +67,12 @@ padding-top:56px;
     height:100vh;
     overflow-y: auto;
 }
-
+	[id="w-article"]{
+		h2{
+					font-size: 2.4rem;
+			}
+	}
 }// 
-
-//header style
-.w-pageHeader{
- background-color: #012840;
- background-image: linear-gradient(120deg, #012840, #025f98);
-	background-size: contain;
-}
-
-//w-article
-[id="w-article"] h2{
-	color:#012840;
-	border-bottom:3px solid #0383d2;
-}
-
-//ただ単にクリアしたいときの
-.clearBoth{clear:both;}
-
-blockquote{
-	border-left: .3rem solid #e9ebec;
-	padding-left:1.6rem;
-}
-
-
  @media print {
 		.print-none{
 		display: none;
