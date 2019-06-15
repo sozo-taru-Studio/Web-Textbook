@@ -3,6 +3,17 @@
 bootstrapを先に読み込む
 のちに要らないscssを削除する。
 --------------------------------------------------------------*/
+@import "_prism";
+
+// counter
+.count-reset{
+	counter-reset: cont; 
+}
+.count-reset .conut-item::before {
+  counter-increment: cont;                 /* cont カウンターの値に1を加算 */
+  content: counters(cont,"") ". ";                  /* cont カウンターの値を表示 */
+}
+
 
 //レイアウト
 .w-wrapper{
@@ -74,10 +85,14 @@ blockquote{
 	}
 }// 
  @media print {
+		html{
+			font-size:12pt;
+		}
 		.print-none{
 		display: none;
 		}
-.card {
+.print-no-b,
+		.card {
       page-break-inside: avoid;
   }
 }/* end @media print*/

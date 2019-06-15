@@ -62,6 +62,21 @@ var BOlists = new Vue({
                     titlename:'商取引',
                     titleen:"Commerce",
                     url:"15_outline_media.html"
+                },
+                {
+                    titlename:'webマーケティング',
+                    titleen:"web marketing",
+                    url:"16_outline_media.html"
+                },
+                {
+                    titlename:'webページ制作の工程',
+                    titleen:"Production process",
+                    url:"17_outline_media.html"
+                },
+                {
+                    titlename:'肩書や役職',
+                    titleen:"staff",
+                    url:"18_outline_media.html"
                 }
 
             ]

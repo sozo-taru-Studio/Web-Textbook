@@ -1,8 +1,4 @@
 @charset "UTF-8";
-/*------------------------------------------------------------
-bootstrapを先に読み込む
-のちに要らないscssを削除する。
---------------------------------------------------------------*/
 /* http://prismjs.com/download.html?themes=prism-coy&languages=markup+css+clike+javascript+diff+git+json+less+markdown+perl+php+sass+scss&plugins=line-highlight+line-numbers+toolbar+unescaped-markup+keep-markup+data-uri-highlight */
 /**
  * prism.js Coy theme for JavaScript, CoffeeScript, CSS and HTML
@@ -383,89 +379,4 @@ script[type='text/plain'].language-markup {
   overflow: auto;
 }
 
-.count-reset {
-  counter-reset: cont;
-}
-
-.count-reset .conut-item::before {
-  counter-increment: cont;
-  /* cont カウンターの値に1を加算 */
-  content: counters(cont,"") ". ";
-  /* cont カウンターの値を表示 */
-}
-
-.w-wrapper {
-  position: relative;
-}
-
-.w-main, .w-aside {
-  padding-top: 56px;
-}
-
-.w-subnav {
-  font-size: .8rem;
-}
-.w-subnav ul li {
-  margin-bottom: .6rem;
-  border-left: 3px solid  #025f98;
-}
-.w-subnav ul li > a {
-  display: block;
-  padding-left: 1em;
-}
-
-.w-pageHeader {
-  background-color: #012840;
-  background-image: linear-gradient(120deg, #012840, #025f98);
-  background-size: contain;
-}
-
-[id="w-article"] h2 {
-  color: #012840;
-  border-bottom: 3px solid #0383d2;
-}
-[id="w-article"] h3 {
-  color: #011522;
-}
-
-.clearBoth {
-  clear: both;
-}
-
-blockquote {
-  border-left: .3rem solid #e9ebec;
-  padding-left: 1.6rem;
-}
-
-/* 幅 lg 992px 以上 */
-@media (min-width: 992px) {
-  .w-aside-inner {
-    position: fixed;
-    left: 0;
-    z-index: 1020;
-    max-width: 16.66667%;
-    height: 100vh;
-    overflow-y: auto;
-  }
-
-  [id="w-article"] h2 {
-    font-size: 2.4rem;
-  }
-}
-@media print {
-  html {
-    font-size: 12pt;
-  }
-
-  .print-none {
-    display: none;
-  }
-
-  .print-no-b,
-  .card {
-    page-break-inside: avoid;
-  }
-}
-/* end @media print*/
-
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=prism.css.map */
