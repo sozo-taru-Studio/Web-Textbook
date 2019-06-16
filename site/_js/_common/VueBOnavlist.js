@@ -25,8 +25,16 @@ var BOlists = new Vue({
                 {
                     titlename:"基本的なキーボードショートカット",
                     titleen:"keybord-Shortcut",
-                    url:"04_basic_operation.html" }
+                    url:"04_basic_operation.html" 
+                },
+                {
+                    titlename:"ファイルとフォルダの操作",
+                    titleen:"directory-opelation",
+                    url:"05_basic_operation.html" 
+                }
                 ]
+                
+             
    }
   });
  // web概論
