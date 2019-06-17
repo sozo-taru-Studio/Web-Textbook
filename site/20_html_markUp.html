@@ -73,8 +73,8 @@
     <li><a href="#s1" data-scroll>ブラウザとユーザーエージェント</a></li>
     <li><a href="#s2" data-scroll>ウェブブラウザ</a></li>
     <li><a href="#s3" data-scroll>HTMLのソースコードとその確認のしかた。</a></li>
-    <li><a href="#s4" data-scroll>アプリケーションの終了</a></li>
-    <li><a href="#s5" data-scroll>コンピューターの終了 電源を切る</a></li>
+    <li><a href="#s4" data-scroll>ソースコードと検証の表示が違うことがある。</a></li>
+    <li><a href="#s5" data-scroll>まとめ</a></li>
 </ul>
 </div>
 <!-- / 目次 モジュール -->
@@ -263,8 +263,13 @@
         </div>
         </div>
         </div>
+        <h3>　ブラウザとソースコード</h3>
+        ブラウザはHTMLファイルを取得できないとユーザーに情報を提示できません。
         </div>
-        <h4>ソースコードと検証の表示が違うことがある。</h4>
+</div>
+<div id="s4" class="mt-n6 pt-6 mb-6 clearfix">
+        <h2>ソースコードと検証の表示が違うことがある。</h2>
+        <p class="badge badge-info">ここからのお話しはHTMLやCSSを書くようになってからのお話しです。</p>
         <p>ソースコードと検証で表示される内容は違うのはjavascriptなどプログラムでで表示コードに割り込みが発生しコードとは違う表示になります。<br>
         マークアップエンジニアはローカルに送信するソースコードを作成するが仕事です</p>
         <h5>firefoxでのソースコード検証</h5>
@@ -282,7 +287,8 @@
         <li>firefoxで開いたら。　マウスでブラウザのウィンドウを右クリック ソースコードを見る。</li>
         </ul>
         <h5>間違ったコード例</h5>
-        <pre class="hljs "><code><div>&lt;!DOCTYPE html&gt;
+        <div>
+        <pre class="hljs line-numbers language-xml" data-src="prism.js"><code>&lt;!DOCTYPE html&gt;
         &lt;html&gt;
          &lt;head&gt;
          &lt;meta charset=&quot;UTF-8&quot;&gt;
@@ -297,16 +303,24 @@
         &lt;/html&gt;
         
         
-        </div></code></pre>
-        <h5 id="%E8%A1%A8%E7%A4%BA%E7%B5%90%E6%9E%9C">表示結果</h5>
-        <p><img src="images/Errer_html.PNG" alt="般若心経"></p>
+        </code></pre></div>
+        <h5>表示結果</h5>
+        <p><a href="_res/errer.html"><img src="_images/_html/Errer_html.PNG" alt="般若心経"></a></p>
         <p>div要素の終了タグをわざとかかなかった。fierfoxでのエラーメッセージは「body要素がここでおわってるけど終わってない要素があるよ。」とメッセージしてくれている。</p>
-        <h5 id="%E3%82%A8%E3%83%A9%E3%83%BC%E3%81%AE%E8%A1%A8%E7%A4%BA%E3%81%AB%E3%81%AF%E7%99%96%E3%81%8C%E3%81%82%E3%82%8B%E3%80%82">エラーの表示には癖がある。</h5>
+        <p>ただしこのようなコードのミスはしょっちゅうあるのでブラウザはコードにミスがある場合も代替案を持っておりそのためユーザーが困らないような情報伝達をするようにプログラミングされている。</p>
+        <h5>エラーの表示には癖がある。</h5>
         <p>かならずしも間違った場所ではなくその直後にエラーがでたりする。
         HTMLのルールを理解していくとでエラーの理由なども推測できるようになる。</p>
-        
-
+</div>      
+<div id="s5" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>まとめ</h2>
+<ul>
+<li>ブラウザはユーザーエージェントの一種</li>
+<li>ソースコードがないとブラウザは表示できない。</li>
+<li>ブラウザからソースコードが確認できる。</li>
+</ul>
 </div>
+
 </article>
 
 
@@ -318,10 +332,10 @@
 <nav aria-label="Page navigation ">
 <ul class="pagination justify-content-center">
 <li class="page-item disabled">
-<a class="page-link disabled" href="#" tabindex="-1">Previous</a>
+<a class="page-link disabled" href="#" tabindex="-1" aria-disabled="true">Previous</a>
 </li>
-<li class="page-item">
-<a class="page-link" href="01_basic_operation.html">Next</a>
+<li class="page-item disabled">
+<a class="page-link disabled" aria-disabled="true"  href="01_basic_operation.html">Next</a>
 </li>
 </ul>
 </nav>
@@ -337,31 +351,50 @@
 <!--w-main-->
 <adide class="w-aside col-lg-2 print-none" id="w-aside1">
 <div class="w-aside-inner container">
+<div class="accordion" id="accordionAside">
 <div class="w-subnav">
-<h3 class="sticky-top">Basic Operation</h3>
+<div id="headingOne">
+<h3 class="sticky-top">
+  <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" >basic Operation</button>
+</h3>
+</div>
+<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionAside">
 <!-- BOlist modile -->
 <ul id="w-BOlist" class="list-unstyled">
         <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
         </ul>
         <!-- /BOlist modile -->
 </div>
+</div>
 <div class="w-subnav">
-<h3 class="sticky-top">web Outline</h3>
+<div id="heading2">
+<h3 class="sticky-top">
+  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">web Outline</button>
+</h3>
+</div>
+<div id="collapseTwo" class="collapse" aria-labelledby="heading2" data-parent="#accordionAside">
 <!-- OLlist modile -->
 <ul id="w-OLlist" class="list-unstyled">
         <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
 </ul>
 <!-- /OLlist modile -->
 </div>
+</div>
 <div class="w-subnav">
-    <h3 class="sticky-top">HTML</h3>
+<div id="heading3">
+<h3 class="sticky-top">
+  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">HTML</button>
+      </h3>
+</div>
+<div id="collapseThree" class="collapse" aria-labelledby="heading3" data-parent="#accordionAside">
     <!-- OLlist modile -->
     <ul id="w-MKlist" class="list-unstyled">
             <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
     </ul>
     <!-- /OLlist modile -->
     </div>
-    
+    </div>
+</div>
 </div>
 <script src="_js/_common/VueBOnavlist.js"></script>
 </adide>
@@ -375,6 +408,7 @@
 <!-- /container-->
 </footer>
 <!--w-pageFooter-->
+<script src="_js/_common/prism.js"></script>
 </div>
 <!--w-container-->
 </body>

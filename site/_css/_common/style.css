@@ -414,6 +414,19 @@ script[type='text/plain'].language-markup {
   padding-left: 1em;
 }
 
+.w-aside h3 .btn.btn-link {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #012840;
+  text-align: left;
+  line-height: 1.2;
+  text-decoration: none;
+  transition: color 0.3s ease-in;
+}
+.w-aside h3:hover {
+  color: #025f98;
+}
+
 .w-pageHeader {
   background-color: #012840;
   background-image: linear-gradient(120deg, #012840, #025f98);
