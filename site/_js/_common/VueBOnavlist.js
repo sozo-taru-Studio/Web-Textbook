@@ -90,3 +90,16 @@ var BOlists = new Vue({
             ]
    }
   });
+// web概論
+var mklists = new Vue({
+    el: '#w-MKlist',
+    data: {
+         titles:[
+                { titlename:'ブラウザとHTMLコード',
+                    titleen:"browser",
+                    url:"20_html_markUp.html"
+                } 
+
+            ]
+   }
+  });
