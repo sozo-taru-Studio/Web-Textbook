@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- seo -->
+<!--<meta name="description" content="">-->
+<meta name="robots" content="noindex,nofollow">
+<title>Visual Studio Code - Editer - Web-Textbook</title>
+
+<!-- stylesheet  -->
+<link rel="stylesheet" href="_css/_common/bootstrap.css">
+<link rel="stylesheet" href="_css/_common/font-awesome.min.css">
+<link rel="stylesheet" href="_css/_common/style.css">
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
+<link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="icon" href="/favicon.ico">
+
+<!-- common js  -->
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="_js/_common/jquery-3.2.1.min.js"></script>
+<script src="_js/_common/bootstrap.min.js"></script>
+<script src="_js/_common/pagescroll.jQuery.js"></script>
+</head>
+
+<body style="height: auto;">
+<div id="w-wrapper" class="w-wrapper">
+<header id="w-pageHeader" class="navbar navbar-dark navbar-expand-lg fixed-top w-pageHeader" data-scroll-header="true">
+<div class="container">
+<a class="navbar-brand" href="/">logo</a><span class="navbar-brand">Web Textbook</span>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#w-nav" aria-controls="w-nav" aria-expanded="false" aria-label="ナビゲーション切替">
+<span class="navbar-toggler-icon"></span>
+</button>
+<nav id="w-nav" class="collapse navbar-collapse">
+<ul class="navbar-nav mr-auto pl-3">
+<li class="nav-item"><a href="20_browser_cord.html" class="nav-link disabled">HTML</a></li>
+<li class="nav-item"><a href="#" class="nav-link disabled">CSS</a></li>
+<li class="nav-item"><a href="#" class="nav-link">javasceipt</a></li>
+</ul>
+</nav>
+<!-- /w-nav-->
+</div>
+<!-- /container-->
+</header>
+<!-- /w-pageHeader-->
+<div class="d-lg-flex flex-row-reverse pt-5">
+<main id="w-main" class="w-main col-lg-10">
+<div class="container mb-5">
+<article id="w-article">
+        <h1> Visual Studio Code - HTML</h1>
+        <p><span>category:</span> <span class="badge badge-primary">HTML</span></p>
+        <hr>
+<!-- 序章 モジュール -->
+<div class="card mb-4">
+<div class="card-body">
+<p  class="card-text">Visual Studio Code</p>
+<div class="alert alert-info">
+      <p>マイクロソフトが作ったエンドユーザー向けのソフトウエアで　ほんと久々に使いやすいとおもった。　（個人的感想です。）</p>
+</div>
+</div>
+</div>
+<!-- 目次 モジュール -->
+<div class="bg-light p-3 mb-4">
+</div>
+<!-- / 目次 モジュール -->
+<!-- 本文のセクション モジュール -->
+    <div id="s1" class="mt-n6 pt-6 mb-6 clearfix">
+
+        <h2>Visual Studio Code [vsCode]</h2>
+        <a href="https://azure.microsoft.com/ja-jp/products/visual-studio-code/" target="_blank">配布サイト</a>
+
+<h2>日本語で使いたい場合のプラグイン</h2>
+<ul>
+  <li><a href="https://qiita.com/ntkgcj/items/e77331932c7983dea830" target="_blank">Visual Studio Code [vsCode] 日本語化</a></li>
+  <li><a href="https://qiita.com/satokaz/items/cb45d82f6f8f1e24c0d6" target="_blank">VS Code でドキュメントの空白文字を見やすくしてみる</a></li>
+</ul>
+<p>そのほかいろいろためしたいでしょうけど　HTMLの更新　作成業務では上記のプラグインがあれば十分に使えると感じました。</p>
+
+<p>学習が進んでHTMLやCSSを読み書きできるようになってからさらに便利なプラグインをいれてください。</p>
+<p><small>ソフトウエアのダウンロードやその後にソフトを使っている障害や損害についての責任は負いかねます。
+</small></p>
+</div>
+</article>
+</div>
+<!-- /container-->
+<aside class="print-none" id="w-aside2">
+<div class="row text-white no-gutters justify-content-center">
+<nav aria-label="Page navigation ">
+<ul class="pagination justify-content-center">
+<li class="page-item disabled">
+<a class="page-link disabled" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+</li>
+<li class="page-item disabled">
+<a class="page-link disabled" aria-disabled="true" href="01_basic_operation.html">Next</a>
+</li>
+</ul>
+</nav>
+</div>
+<div class="container bg-dark p-3">
+</div>
+</aside>
+</main>
+<!--w-main-->
+<aside class="w-aside col-lg-2 print-none" id="w-aside1">
+<div class="w-aside-inner container">
+<div class="accordion" id="accordionAside">
+<div class="w-subnav">
+<div id="headingOne">
+<h3 class="sticky-top">
+  <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" >basic Operation</button>
+</h3>
+</div>
+<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionAside">
+<!-- BOlist modile -->
+<ul id="w-BOlist" class="list-unstyled">
+        <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+        </ul>
+        <!-- /BOlist modile -->
+</div>
+</div>
+<div class="w-subnav">
+<div id="heading2">
+<h3 class="sticky-top">
+  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">web Outline</button>
+</h3>
+</div>
+<div id="collapseTwo" class="collapse" aria-labelledby="heading2" data-parent="#accordionAside">
+<!-- OLlist modile -->
+<ul id="w-OLlist" class="list-unstyled">
+        <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+</ul>
+<!-- /OLlist modile -->
+</div>
+</div>
+<div class="w-subnav">
+<div id="heading3">
+<h3 class="sticky-top">
+  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">HTML</button>
+      </h3>
+</div>
+<div id="collapseThree" class="collapse" aria-labelledby="heading3" data-parent="#accordionAside">
+    <!-- MKlist modile -->
+    <ul id="w-MKlist" class="list-unstyled">
+            <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+    </ul>
+    <!-- /MKlist modile -->
+    </div>
+    </div>
+
+
+<div class="w-subnav">
+  <div id="heading4">
+  <h3 class="sticky-top">
+    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse4" aria-expanded="true" aria-controls="collapse4">Text Editor
+    </button>
+  </h3>
+  </div>
+  <div id="collapse4" class="collapse" aria-labelledby="heading4" data-parent="#accordionAside">
+      <!-- EDlist modile -->
+      <ul id="w-EDlist" class="list-unstyled">
+        <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+      </ul>
+      <!-- /EDlist modile -->
+      </div>
+      </div>
+
+    </div><!-- /accordionAside -->
+
+</div>
+<script src="_js/_common/VueBOnavlist.js"></script>
+</aside>
+
+<!-- /w-aside2-->
+</div>
+<footer id="w-pageFooter">
+<div class="container">
+<small>&copy; shounosuke tarutani</small>
+</div>
+<!-- /container-->
+</footer>
+<!--w-pageFooter-->
+<script src="_js/_common/prism.js"></script>
+</div>
+<!--w-container-->
+</body>
+</html>
