@@ -10,7 +10,7 @@ var BOlists = new Vue({
                 {
                     titlename:"マウス操作",
                     titleen:"mouse",
-                    url:"01_basic_operation.html" 
+                    url:"01_basic_operation.html"
                 },
                 {
                     titlename:"キーボード操作",
@@ -20,21 +20,21 @@ var BOlists = new Vue({
                 {
                     titlename:"USBメモリーデバイスの使い方",
                     titleen:"mobileDrive",
-                    url:"03_basic_operation.html" 
+                    url:"03_basic_operation.html"
                 },
                 {
                     titlename:"基本的なキーボードショートカット",
                     titleen:"keybord-Shortcut",
-                    url:"04_basic_operation.html" 
+                    url:"04_basic_operation.html"
                 },
                 {
                     titlename:"ファイルとフォルダの操作",
                     titleen:"directory-opelation",
-                    url:"05_basic_operation.html" 
+                    url:"05_basic_operation.html"
                 }
                 ]
-                
-             
+
+
    }
   });
  // web概論
@@ -90,15 +90,73 @@ var BOlists = new Vue({
             ]
    }
   });
-// web概論
+// markuop
 var mklists = new Vue({
     el: '#w-MKlist',
     data: {
          titles:[
-                { titlename:'ブラウザとHTMLコード',
+                {
+                    titlename:'ブラウザとHTMLコード',
                     titleen:"browser",
                     url:"20_html_markUp.html"
-                } 
+                },
+                {
+                    titlename:'HTMLファイルのファイル名の付け方。',
+                    titleen:"way of naming file",
+                    url:"21_html_markUp.html"
+                },
+                {
+                    titlename:'HTMLファイル形式の構造',
+                    titleen:"HTML file",
+                    url:"22_html_markUp.html"
+                },
+                {
+                    titlename:'HTMLを間違えずに書く書き方',
+                    titleen:"How to HTML tages",
+                    url:"23_html_markUp.html"
+                },
+                {
+                    titlename:'W3C（ダブリュ３シー）について',
+                    titleen:"about World Wide Web Consortium (W3C)",
+                    url:"24_html_markUp.html"
+                },
+                {
+                    titlename:'HTML要素',
+                    titleen:"HTML elements",
+                    url:"25_html_markUp.html"
+                },
+                {
+                    titlename:'要素辞書の見方',
+                    titleen:"How to read Elements dictionary",
+                    url:"26_html_markUp.html"
+                },
+                {
+                    titlename:'「&lt;」「&gt;」の中と外',
+                    titleen:"&lt;&gt; inside and outside",
+                    url:"27_html_markUp.html"
+                },
+                {
+                    titlename:'HTMLのコメントアウト',
+                    titleen:"HTMLs comment out",
+                    url:"28_html_markUp.html"
+                },
+                {
+                    titlename:'文字コード',
+                    titleen:"charset code",
+                    url:"29_html_markUp.html"
+                },
+            ]
+   }
+  });
+  var edlists = new Vue({
+    el: '#w-EDlist',
+    data: {
+         titles:[
+                {
+                    titlename:'Visual Studio Code',
+                    titleen:"Visual Studio Code",
+                    url:"30_editer_vscord.html"
+                }
 
             ]
    }

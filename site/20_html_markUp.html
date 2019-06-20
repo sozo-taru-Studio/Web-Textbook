@@ -112,7 +112,7 @@
         <p>World Wide WebにおけるWebページなどのリソースは、Uniform Resource Identifierによって指定される。HTTP を使用してリソースにアクセスするときは、http: が先頭についた URL を使用する。下にURL の例を挙げる。
         <br>
         <code>http://www.example.co.jp/~test/samples/index.html</code></p>
-        
+
         <p><cite>Hypertext Transfer Protocol - Wikipedia</cite></p>
         </blockquote>
         </dd>
@@ -229,7 +229,7 @@
         <hr>
 </div>
 <div id="s3" class="mt-n6 pt-6 mb-6 clearfix">
-    
+
         <h2>HTMLのソースコードとその確認のしかた。</h2>
         <p>これから学習するのはHTMLソースコードの読み書きです。後ほどDOMなどもでてきて少し混乱しますが・・・あくまでサーバーに上げるHTMLコードを読み書きできるようになるのが大切です。</p>
         <p>HTMLコードをブラウザが読み取ってどのような処理を経てモニターに表示するのかを解説します。</p>
@@ -286,8 +286,8 @@
         <li>アイコンを右クリックして-&gt; アプリケーションで保存-&gt; fireFoxで見る</li>
         <li>firefoxで開いたら。　マウスでブラウザのウィンドウを右クリック ソースコードを見る。</li>
         </ul>
-        <h5>間違ったコード例</h5>
-        <div>
+<h5>間違ったコード例</h5>
+        <div class="mb-3">
         <pre class="hljs line-numbers language-xml" data-src="prism.js"><code>&lt;!DOCTYPE html&gt;
         &lt;html&gt;
          &lt;head&gt;
@@ -297,21 +297,28 @@
          &lt;body&gt;
          &lt;div&gt;
           観自在菩薩　行深般若波羅蜜多時　照見五蘊皆空
-        
+
         度一切苦厄　舎利子　色不異空　空不異色　色即是空　空即是色
          &lt;/body&gt;
         &lt;/html&gt;
-        
-        
+
+
         </code></pre></div>
-        <h5>表示結果</h5>
-        <p><a href="_res/errer.html"><img src="_images/_html/Errer_html.PNG" alt="般若心経"></a></p>
-        <p>div要素の終了タグをわざとかかなかった。fierfoxでのエラーメッセージは「body要素がここでおわってるけど終わってない要素があるよ。」とメッセージしてくれている。</p>
-        <p>ただしこのようなコードのミスはしょっちゅうあるのでブラウザはコードにミスがある場合も代替案を持っておりそのためユーザーが困らないような情報伝達をするようにプログラミングされている。</p>
-        <h5>エラーの表示には癖がある。</h5>
-        <p>かならずしも間違った場所ではなくその直後にエラーがでたりする。
-        HTMLのルールを理解していくとでエラーの理由なども推測できるようになる。</p>
-</div>      
+<div class="card">
+                <h5 class="card-header">表示結果</h5>
+                <div class="card-body">
+                <p><a href="_res/errer.html"><img src="_images/_html/Errer_html.PNG" class="img-fluid shadow-sm" alt="般若心経"></a></p>
+
+
+<p class="card-text">div要素の終了タグをわざとかかなかった。fierfoxでのエラーメッセージは「body要素がここでおわってるけど終わってない要素があるよ。」とメッセージしてくれている。</p>
+<p>ただしこのようなコードのミスはしょっちゅうあるのでブラウザはコードにミスがある場合も代替案を持っておりそのためユーザーが困らないような情報伝達をするようにプログラミングされている。</p>
+<h5>エラーの表示には癖がある。</h5>
+<p>かならずしも間違った場所ではなくその直後にエラーがでたりする。
+HTMLのルールを理解していくとでエラーの理由なども推測できるようになる。</p>
+</div>
+</div>
+
+</div>
 <div id="s5" class="mt-n6 pt-6 mb-6 clearfix">
 <h2>まとめ</h2>
 <ul>
@@ -320,22 +327,19 @@
 <li>ブラウザからソースコードが確認できる。</li>
 </ul>
 </div>
-
 </article>
-
-
 </div>
 <!-- /container-->
 
-<adide class="print-none" id="w-aside2">
+<aside class="print-none" id="w-aside2">
 <div class="row text-white no-gutters justify-content-center">
 <nav aria-label="Page navigation ">
 <ul class="pagination justify-content-center">
 <li class="page-item disabled">
 <a class="page-link disabled" href="#" tabindex="-1" aria-disabled="true">Previous</a>
 </li>
-<li class="page-item disabled">
-<a class="page-link disabled" aria-disabled="true"  href="01_basic_operation.html">Next</a>
+<li class="page-item">
+<a class="page-link" aria-disabled="true" href="21_html_markUp.html">Next</a>
 </li>
 </ul>
 </nav>
@@ -345,11 +349,11 @@
 
 
 </div>
-</adide>
+</aside>
 
 </main>
 <!--w-main-->
-<adide class="w-aside col-lg-2 print-none" id="w-aside1">
+<aside class="w-aside col-lg-2 print-none" id="w-aside1">
 <div class="w-aside-inner container">
 <div class="accordion" id="accordionAside">
 <div class="w-subnav">
@@ -394,10 +398,26 @@
     <!-- /OLlist modile -->
     </div>
     </div>
-</div>
+
+    <div class="w-subnav">
+        <div id="heading4">
+        <h3 class="sticky-top">
+          <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse4" aria-expanded="true" aria-controls="collapse4">Text Editor
+          </button>
+        </h3>
+        </div>
+        <div id="collapse4" class="collapse" aria-labelledby="heading4" data-parent="#accordionAside">
+            <!-- EDlist modile -->
+            <ul id="w-EDlist" class="list-unstyled">
+              <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+            </ul>
+            <!-- /EDlist modile -->
+            </div>
+            </div>
+  </div><!-- /accordionAside -->
 </div>
 <script src="_js/_common/VueBOnavlist.js"></script>
-</adide>
+</aside>
 
 <!-- /w-aside2-->
 </div>

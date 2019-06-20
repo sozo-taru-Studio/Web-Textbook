@@ -450,6 +450,10 @@ blockquote {
   padding-left: 1.6rem;
 }
 
+.font-size-1 {
+  font-size: 1rem;
+}
+
 /* 幅 lg 992px 以上 */
 @media (min-width: 992px) {
   .w-aside-inner {
