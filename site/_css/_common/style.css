@@ -110,7 +110,7 @@ pre[class*="language-"]:after {
 .token.comment,
 .token.block-comment,
 .token.prolog,
-.token.doctype,
+.token.DOCTYPE,
 .token.cdata {
   color: #7D8B99;
 }
