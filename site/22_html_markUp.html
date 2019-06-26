@@ -6,7 +6,7 @@
 <!-- seo -->
 <!--<meta name="description" content="">-->
 <meta name="robots" content="noindex,nofollow">
-<title>HTMLのコメントアウト - Web-Textbook</title>
+<title>HTMLファイル形式の構造 - HTML - Web-Textbook</title>
 
 <!-- stylesheet  -->
 <link rel="stylesheet" href="_css/_common/bootstrap.css">
@@ -50,154 +50,106 @@
 <main id="w-main" class="w-main col-lg-10">
 <div class="container mb-5">
 <article id="w-article">
-        <h1>HTMLのコメントアウト - HTML</h1>
+        <h1> HTMLファイル形式の構造 - HTML</h1>
         <p><span>category:</span> <span class="badge badge-primary">HTML</span></p>
         <hr>
 <!-- 序章 モジュール -->
 <div class="card mb-4">
 <div class="card-body">
-<p  class="card-text">コメントアウトは閲覧者に表示しない部分を囲む記述です。</p>
+<p  class="card-text">HTMLファイル形式の構造は以下の2つの文で構成されています。</p>
+  <ol>
+  <li>文書型宣言文</li>
+  <li>HTML要素 </li>
+</ol>
+  <p>大きく２つの構造になります。</p>
+  <p>たまごで例えるところの黄身と白身みたいな感じです。</p>
+<div class="alert alert-info">
+    <p>思った通りの表示や伝わりかたをさせるために必要なルールです。</p>
 </div>
 </div>
-
+</div>
 <!-- 目次 モジュール -->
 <div class="bg-light p-3 mb-4">
 <h2>目次</h2>
 <ul>
-    <li><a href="#s1" data-scroll>HTMLのコメントアウト</a></li>
-    <li><a href="#s2" data-scroll>実態参照文字</a></li>
-    <!--<li><a href="#s3" data-scroll>ダブルクオートとシングルクオート</a></li>
-    <li><a href="#s4" data-scroll>属性と属性値</a></li>
-    <li><a href="#s5" data-scroll>「index」ってつけるとトップぺージになるの？</a></li> -->
+    <li><a href="#s1" data-scroll>書型宣言文</a></li>
+    <li><a href="#s2" data-scroll>html要素</a></li>
 </ul>
 </div>
 <!-- / 目次 モジュール -->
 <!-- 本文のセクション モジュール -->
 <div id="s1" class="mt-n6 pt-6 mb-6 clearfix">
-
-<h2>HTMLのコメントアウト</h2>
-<p>コメントアウトとはその記号で挟まれた部分はブラウザとして無視して次の処理をしてくれます。
-制作者にとっての目印などにつかわれます。</p>
-<p>HTMLで使われるコメントアウトは１種類です。</p>
-<pre class="line-numbers language-xml" data-src="prism.js"><code>&lt;!-- コメント部分 --&gt;
-</code></pre>
-<div class="card mb-3">
-<div class="card-header">
-<h3>コメントを書くときの注意</h3>
-</div>
-<div class="card-body">
-<h4>ハイフンを連続していれてはいけない</h4>
-<p>マイナスを連続して２つ記述することが<code>--</code>
-コメントの開始と終了を（宣言）意味しています。
-ですので <code>--</code> をコメントの中に連続して書き込むとバリデートエラーになります。
-（すごく困らないけどだめです。）
-</p>
-
-<h5>NG例）</h5>
-<pre class="line-numbers language-xml" data-src="prism.js"><code>&lt;!-- -----コメント部分----- --&gt;</code></pre>
-<h4>ネストできません。</h4>
-
-<h5>NG例）</h5>
-<pre class="line-numbers language-xml" data-src="prism.js"><code>&lt;!--
-
- &lt;!--コメント部分--&gt;
-
- --&gt;
-</code></pre>
-<p>コメント宣言<code>--&gt;</code>がブラウザに表記されるでしょう。</p>
-<p>コメントを書くときはこの２点を注意しましょう。</p>
-</div>
-</div>
-
-<h5>ポイント</h5>
-<p>&quot;&lt;!-- --&gt;&quot; をしらべなくても書けるようになる。</p>
-<hr>
-<h2>実態参照文字</h2>
+<h2>書型宣言文</h2>
+<p>Document Type Definition 文書定義型宣言</p>
+<p><a href="https://developer.mozilla.org/ja/docs/Glossary/DTD">DTD</a></p>
 <blockquote class="blockquote">
-<p><a href="https://developer.mozilla.org/ja/docs/Learn/HTML/Introduction_to_HTML/Getting_started#Entity_references_Including_special_characters_in_HTML">実体参照: HTML に特殊文字を含める</a></p>
-</blockquote>
-<p>半角で&gt;や&lt;をブラウザで表示したい場合は特殊文字をつかいます。</p>
-<p>&amp;アンプで始まり；セミコロンで終わる記号です。
-使用するシステムで同じ文字でも書き方がかわるのですが概ねローカルや普通のレンタルサーバーで公開する場合は下記の実体参照文字を入力することで表示できます。</p>
-<div class="table-responsive">
-<table class="table table-bordered table-striped">
-<thead>
-<tr>
-<th>読み方</th>
-<th style="text-align:left">文字</th>
-<th>実体参照文字</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>小なり /レスザン</td>
-<td style="text-align:left">&lt;</td>
-<td><code>&amp;lt;</code></td>
-</tr>
-<tr>
-<td>大なり/グレーターザン</td>
-<td style="text-align:left">&gt;</td>
-<td><code>&amp;gt;</code></td>
-</tr>
-<tr>
-<td>アンバサ/アンプ</td>
-<td style="text-align:left">&amp;</td>
-<td><code>&amp;amp;</code></td>
-</tr>
-<tr>
-<td>ダブルクオート</td>
-<td style="text-align:left">&quot;</td>
-<td><code>&amp;quot;</code></td>
-</tr>
-<tr>
-<td>シングルクオート</td>
-<td style="text-align:left">'</td>
-<td><code>&amp;apos;</code></td>
-</tr>
-<tr>
-<td>半角スペース/No Brake SPace</td>
-<td style="text-align:left"> </td>
-<td><code>&amp;nbsp;</code></td>
-</tr>
-<tr>
-<td>著作マーク</td>
-<td style="text-align:left">©</td>
-<td><code>&amp;copy;</code></td>
-</tr>
-</tbody>
-</table></div>
-<p>HTMLでは特殊文字として下記の文字を定義しています。</p>
-<ul>
-<li>&lt;</li>
-<li>&gt;</li>
-<li>&amp;</li>
+    <p>HTML において、 DOCTYPE はすべての文書の先頭に見られる &quot;&lt;!DOCTYPE html&gt;&quot; という必須の前置きです。その唯一の目的は、ブラウザーが文書をレンダリングするときにいわゆる「後方互換モード (quirks mode)」に切り替わるのを防ぐことです。つまり、 &quot;&lt;!DOCTYPE html&gt;&quot; という DOCTYPE は、ブラウザーがいくつかの仕様で互換性のない別のレンダリングモードを使用するのではなく、関連する仕様に従って最大限の努力を試みるようにします。</p>
+    </blockquote>
+    <p>レンダリング：とはデバイスがユーザーにむけて表現することです。</p>
+    <p>HTML文章はその発展の過程で様々なルールがありました。<br> HTML4.1,XHTML1.0などいまでもサーバーで配信されている文書はたくさんあります。<br>
+      モダンブラウザはその過去のルールでの表現も実装している場合があります。「後方互換モード」</p><p>DTD宣言はHTML要素がHTML5のルールで文書作成していることをブラウザにあらかじめ知らせます。指示されたブラウザはHTML5のレンダリングモードで文書をウィンドウに表現しようとします。 　（人が書くものだから間違いがあるのでその揺らぎを「表現しようとする。」という書き方になります。）</p>
+      <marquee>廃止された要素（marquee）が書かれていてもブラウザによっては表示されるよ。</marquee>
+    <h3>html5以降の宣言は以下に統一されました。</h3>
+    <div>
+      <pre class="line-numbers language-xml" data-src="prism.js"><code>&lt;!DOCTYPE html&gt;</code></pre>
+      </div>
+<h4>過去の文書型宣言とその仕様に詳しいサイト</h4>
+      <ul>
+  <li>
+  <a href="https://ja.wikipedia.org/wiki/%E6%96%87%E6%9B%B8%E5%9E%8B%E5%AE%A3%E8%A8%80" target="_blank">文書型宣言 | wikipedia</a></li>
 </ul>
-<p>を直接記述して表示することができなくなっています。
-上記も文字は実体参照文字をつかてコード化して入力します。</p>
-<h5>ポイント</h5>
-<p>&lt;,
-&gt;,
-&amp;をブラウザで表示する場合は実態参照文字を使う。</p>
-
-<h6>参考</h6>
-<blockquote class="blockquote"> <a href="https://en.wikipedia.org/wiki/List_of_XML_and_HTML_character_entity_references" target="_blank" rel="noopener noreferrer">
-List of XML and HTML character entity references</a>
-</blockquote>
+<p>html5の記述ルールはXHTML1.0のルールをある程度継承しています。</p>
+<div class="card">
+<h4 class="card-header">HTMLの母体SGML と XML</h4>
+<div class="card-body">
+  <p>SGMLはHTMLを作る前に参考にされた言語でもともとは電子辞書のデータをマークアップするた言語でした。　電子辞書で扱う単語が数千万語を実際にタイピングしてデータ入力していたようで、終了タグの省略など辞書の電子化の工数を減らす目的でSGMLが設計されたようです。　その名残から終了タグの省略の文化がHTMLにも残っています。例えばli要素やp要素は終了タグが省略してもレンダリングに影響しにくい設計になっています。</p>
+  <p>一方XMLは機械のマニュアルを電子化し共有する目的で設計されました。いまでも様々なアプリケーションのデータリソースとして残っており、XML形式の言語は現役です。
+  XMLはプログラムがスムーズな処理ができるように設計されています。　そのため、SGMLのように処理に終了タグを省略できません。（要素の終了がプログラムに理解されない。要素の終了を監視しない）</p>
+  <p>厳密に書式ルールが決まっているため、伝搬や拡張性が高く多くのプログラムが利用しやすい利点があります。</p>
+  <p>反面データを書く人にとっては間違ったマークアップしないように学習と訓練が必要です。</p>
+  <p>HTMLはこの2つの親のマークアップ言語を持って発展してきました。</p>
+</div>
+</div>
 </div>
 
+<div id="s2" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>html要素</h2>
+<blockquote>
+<p><a href="https://developer.mozilla.org/ja/docs/Learn/HTML/Introduction_to_HTML/Getting_started">HTML を始めよう</a>
+</p></blockquote>
+
+<p>HTMLファイルの本文です。</p>
+  <br>編集はすべてこのHTML要素内でおこなわれます。</p>
+  <div>
+<pre class="line-numbers language-xml" data-src="prism.js"><code>&lt;html&gt;[この部分を編集する。(内容が入る)]&lt;/html&gt;</code></pre>
+</div>
+  <p>文章を正しく表記させる記述文書がた宣言と表示内容であるHTML要素、この２つがHTMLファイルの大枠です。</p>
+<div class="card">
+  <div class="card-header">HTMLファイル大構造</div>
+<div class="card-body">
+<figure>
+<figcaption>どんなHTMLファイルもこの大枠の構造を持っている。</figcaption>
+<pre class="line-numbers language-xml" data-src="prism.js"><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;/html&gt;
+</code></pre>
+</figure>
+</div>
+</div>
+</div>
 </article>
 </div>
 <!-- /container-->
 
-<aside class="print-none" id="w-aside2">
+<adide class="print-none" id="w-aside2">
 <div class="row text-white no-gutters justify-content-center">
 <nav aria-label="Page navigation ">
 <ul class="pagination justify-content-center">
 <li class="page-item">
-<a class="page-link" href="27_html_markUp.html" tabindex="-1" aria-disabled="false">Previous</a>
+<a class="page-link" href="21_html_markUp.html" tabindex="-1" aria-disabled="false">Previous</a>
 </li>
 <li class="page-item">
-<a class="page-link" aria-disabled="false"  href="29_html_markUp.html">Next</a>
+<a class="page-link" aria-disabled="false"  href="23_html_markUp.html">Next</a>
 </li>
 </ul>
 </nav>
@@ -207,11 +159,11 @@ List of XML and HTML character entity references</a>
 
 
 </div>
-</aside>
+</adide>
 
 </main>
 <!--w-main-->
-<aside class="w-aside col-lg-2 print-none" id="w-aside1">
+<adide class="w-aside col-lg-2 print-none" id="w-aside1">
 <div class="w-aside-inner container">
 <div class="accordion" id="accordionAside">
 <div class="w-subnav">
@@ -275,7 +227,7 @@ List of XML and HTML character entity references</a>
   </div><!-- /accordionAside -->
 </div>
 <script src="_js/_common/VueBOnavlist.js"></script>
-</aside>
+</adide>
 
 <!-- /w-aside2-->
 </div>

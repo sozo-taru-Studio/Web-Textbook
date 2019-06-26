@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- seo -->
+<!--<meta name="description" content="">-->
+<meta name="robots" content="noindex,nofollow">
+<title>table の属性 - Web-Textbook</title>
+
+<!-- stylesheet  -->
+<link rel="stylesheet" href="_css/_common/bootstrap.css">
+<link rel="stylesheet" href="_css/_common/font-awesome.min.css">
+<link rel="stylesheet" href="_css/_common/style.css">
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
+<link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="icon" href="/favicon.ico">
+
+<!-- common js  -->
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="_js/_common/jquery-3.2.1.min.js"></script>
+<script src="_js/_common/bootstrap.min.js"></script>
+<script src="_js/_common/pagescroll.jQuery.js"></script>
+</head>
+
+<body style="height: auto;">
+<div id="w-wrapper" class="w-wrapper">
+<header id="w-pageHeader" class="navbar navbar-dark navbar-expand-lg fixed-top w-pageHeader" data-scroll-header="true">
+<div class="container">
+<a class="navbar-brand" href="/">logo</a><span class="navbar-brand">Web Textbook</span>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#w-nav" aria-controls="w-nav" aria-expanded="false" aria-label="ナビゲーション切替">
+<span class="navbar-toggler-icon"></span>
+</button>
+<nav id="w-nav" class="collapse navbar-collapse">
+<ul class="navbar-nav mr-auto pl-3">
+<li class="nav-item"><a href="20_browser_cord.html" class="nav-link disabled">HTML</a></li>
+<li class="nav-item"><a href="#" class="nav-link disabled">CSS</a></li>
+<li class="nav-item"><a href="#" class="nav-link">javasceipt</a></li>
+</ul>
+</nav>
+<!-- /w-nav-->
+</div>
+<!-- /container-->
+</header>
+<!-- /w-pageHeader-->
+<div class="d-lg-flex flex-row-reverse pt-5">
+<main id="w-main" class="w-main col-lg-10">
+<div class="container mb-5">
+<article id="w-article">
+        <h1>table の属性- HTML</h1>
+        <p><span>category:</span> <span class="badge badge-primary">HTML</span></p>
+        <hr>
+<!-- 序章 モジュール -->
+<div class="card mb-4">
+<div class="card-body">
+<p  class="card-text">
+表をデザインするにあたって単純な表しかデザインできませんでしたがHTMLの表の限界を知っておきましょう。<small>デザイナーがどんな表をみせてくるかわからないですから</small></p>
+</div>
+</div>
+
+<!-- 目次 モジュール -->
+<div class="bg-light p-3 mb-4">
+<h2>目次</h2>
+<ul>
+    <li><a href="#s1" data-scroll>表タグ</a></li>
+    <li><a href="#s2" data-scroll>thの属性 scope</a></li>
+    <li><a href="#s3" data-scroll>colspan属性とrowspan属性</a></li>
+    <!--<li><a href="#s4" data-scroll>属性と属性値</a></li>
+    <li><a href="#s5" data-scroll>「index」ってつけるとトップぺージになるの？</a></li> -->
+</ul>
+</div>
+<!-- / 目次 モジュール -->
+<!-- 本文のセクション モジュール -->
+<div id="s1" class="mt-n6 pt-6 mb-6 clearfix">
+    <h2>表タグ</h2>
+  <div class="card mb-3">
+  <div class="card-body">
+    <h3>表タグ確認します。</h3>
+<p>おさらい</p>
+<pre class="line-numbers language-xml" data-src="prism.js"><code>&lt;table class=&quot;table&quot;&gt;
+&lt;/table&gt;
+</code></pre>
+<p>表を構成する最低限の表タグ構成</p>
+
+<pre class="line-numbers language-xml" data-src="prism.js"><code>&lt;table class=&quot;table&quot;&gt;
+&lt;caption&gt;表の表題&lt;/caption&gt;
+&lt;tr&gt;
+  &lt;th&gt;表の見出し&lt;/th&gt;
+  &lt;td&gt;表のデータ&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+</code></pre>
+<h5>プレビュー</h5>
+<div>
+    <table class="table table-bordered">
+      <tr>
+        <th>表の見出し</th>
+        <td>表のデータ</td>
+      </tr>
+      </table>
+</div>
+
+  </div></div>
+</div>
+
+<div id="s2" class="mt-n6 pt-6 mb-6 clearfix">
+  <h2>thの属性 scope</h2>
+
+  <pre class="line-numbers language-xml" data-src="prism.js"><code>
+      &lt;table class=&quot;table&quot;&gt;
+      &lt;caption&gt;8月21日 決勝&lt;/caption&gt;
+      &lt;tr&gt;
+        &lt;th scope=&quot;col&quot;&gt;チーム&lt;/th&gt;
+        &lt;th scope=&quot;col&quot;&gt;1&lt;/th&gt;
+        &lt;th scope=&quot;col&quot;&gt;2&lt;/th&gt;
+        &lt;th scope=&quot;col&quot;&gt;3&lt;/th&gt;
+        &lt;th scope=&quot;col&quot;&gt;4&lt;/th&gt;
+        &lt;th scope=&quot;col&quot;&gt;5&lt;/th&gt;
+        &lt;th scope=&quot;col&quot;&gt;6&lt;/th&gt;
+        &lt;th scope=&quot;col&quot;&gt;7&lt;/th&gt;
+        &lt;th scope=&quot;col&quot;&gt;8&lt;/th&gt;
+        &lt;th scope=&quot;col&quot;&gt;9&lt;/th&gt;
+        &lt;th scope=&quot;col&quot;&gt;R&lt;/th&gt;
+        &lt;th scope=&quot;col&quot;&gt;H&lt;/th&gt;
+        &lt;th scope=&quot;col&quot;&gt;E&lt;/th&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;th scope=&quot;row&quot;&gt;金足農業&lt;/th&gt;
+        &lt;td&gt;0&lt;/td&gt;
+        &lt;td&gt;0&lt;/td&gt;
+        &lt;td&gt;1&lt;/td&gt;
+        &lt;td&gt;0&lt;/td&gt;
+        &lt;td&gt;0&lt;/td&gt;
+        &lt;td&gt;0&lt;/td&gt;
+        &lt;td&gt;1&lt;/td&gt;
+        &lt;td&gt;0&lt;/td&gt;
+        &lt;td&gt;0&lt;/td&gt;
+        &lt;td&gt;2&lt;/td&gt;
+        &lt;td&gt;5&lt;/td&gt;
+        &lt;td&gt;1&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;th scope=&quot;row&quot;&gt;大阪桐蔭&lt;/th&gt;
+        &lt;td&gt;3&lt;/td&gt;
+        &lt;td&gt;0&lt;/td&gt;
+        &lt;td&gt;0&lt;/td&gt;
+        &lt;td&gt;3&lt;/td&gt;
+        &lt;td&gt;6&lt;/td&gt;
+        &lt;td&gt;0&lt;/td&gt;
+        &lt;td&gt;1&lt;/td&gt;
+        &lt;td&gt;0&lt;/td&gt;
+        &lt;td&gt;X&lt;/td&gt;
+        &lt;td&gt;13&lt;/td&gt;
+        &lt;td&gt;15&lt;/td&gt;
+        &lt;td&gt;0&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;/table&gt;
+  </code></pre>
+  <div class="card mb-3">
+    <h3 class="body-header h5">プレビュー</h3>
+    <div class="card-body">
+        <div class="table-responsive">
+        <table class="table table-bordered">
+            <caption>8月21日 決勝</caption>
+            <tr>
+              <th scope="col">チーム</th>
+              <th scope="col">1</th>
+              <th scope="col">2</th>
+              <th scope="col">3</th>
+              <th scope="col">4</th>
+              <th scope="col">5</th>
+              <th scope="col">6</th>
+              <th scope="col">7</th>
+              <th scope="col">8</th>
+              <th scope="col">9</th>
+              <th scope="col">R</th>
+              <th scope="col">H</th>
+              <th scope="col">E</th>
+            </tr>
+            <tr>
+              <th scope="row">金足農業</th>
+              <td>0</td>
+              <td>0</td>
+              <td>1</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>1</td>
+              <td>0</td>
+              <td>0</td>
+              <td>2</td>
+              <td>5</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <th scope="row">大阪桐蔭</th>
+              <td>3</td>
+              <td>0</td>
+              <td>0</td>
+              <td>3</td>
+              <td>6</td>
+              <td>0</td>
+              <td>1</td>
+              <td>0</td>
+              <td>X</td>
+              <td>13</td>
+              <td>15</td>
+              <td>0</td>
+            </tr>
+            </table>
+        </div>
+</div></div>
+  <p>thは表のラベルで変化するデータがなんなのかを総称する言葉をいれる。
+      tdはテーブルデータで情報をいれる。</p>
+      <p>scopeはデータの読む方向を指定する属性です。
+      colは列、表の縦方向に関連づけしていきます。
+      rowは行、表の横方向の関連付けをします。</p>
+      <p>人間は表を見るだけで表をどの方向でみるか　なんの表なのか　
+      初めて見た表でもしばらくながめていればわかるとおもいます。</p>
+      <p>しかし　見る情報以外でこの情報を伝達する場合　または音声だけで伝える場合scope属性
+      がないとどちらに読んでいいのか解らないことになります。</p>
+      <p>アクセシビリティの観点では重要な属性です。</p>
+      <p>参考 :</p>
+      <p><a href="https://developer.mozilla.org/ja/docs/Web/HTML/Element/th">th | MDN</a></p>
+</div>
+<div id="s3" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>colspan属性とrowspan属性</h2>
+<div class="mb-4">
+<pre class="line-numbers language-xml" data-src="prism.js"><code>&lt;table class=&quot;table&quot;&gt;
+    &lt;caption&gt;4*4&lt;/caption&gt;
+    &lt;tr&gt;
+      &lt;th scope=&quot;col&quot;&gt;10&lt;/th&gt;
+      &lt;th scope=&quot;col&quot;&gt;11&lt;/th&gt;
+      &lt;th scope=&quot;col&quot;&gt;12&lt;/th&gt;
+      &lt;th scope=&quot;col&quot;&gt;13&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;20&lt;/th&gt;
+      &lt;td&gt;21&lt;/td&gt;
+      &lt;td&gt;23&lt;/td&gt;
+      &lt;td&gt;24&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;30&lt;/th&gt;
+      &lt;td&gt;31&lt;/td&gt;
+      &lt;td&gt;32&lt;/td&gt;
+    &lt;td&gt;33&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;40&lt;/th&gt;
+      &lt;td&gt;41&lt;/td&gt;
+      &lt;td&gt;42&lt;/td&gt;
+      &lt;td&gt;43&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+</code></pre>
+</div>
+
+<div class="card mb-3">
+    <h3 class="body-header h5">プレビュー</h3>
+    <div class="card-body">
+<div class="table-responsive">
+<table class="table table-bordered table-striped">
+    <caption>4*4</caption>
+    <tr>
+      <th scope="col">10</th>
+      <th scope="col">11</th>
+      <th scope="col">12</th>
+      <th scope="col">13</th>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>21</td>
+      <td>23</td>
+      <td>24</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>31</td>
+      <td>32</td>
+    <td>33</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>41</td>
+      <td>42</td>
+      <td>43</td>
+    </tr>
+</table>
+</div>
+</div>
+</div>
+<div>
+<pre class="line-numbers language-xml" data-src="prism.js"><code>
+    &lt;table class=&quot;table&quot;&gt;
+    &lt;caption&gt;4*4&lt;/caption&gt;
+    &lt;tr&gt;
+      &lt;th scope=&quot;col&quot; colspan=&quot;4&quot;&gt;10&lt;/th&gt;
+     /tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;20&lt;/th&gt;
+      &lt;td&gt;21&lt;/td&gt;
+      &lt;td&gt;23&lt;/td&gt;
+      &lt;td&gt;24&lt;/td&gt;
+     /tr&gt;
+    &lt;tr&gt;
+      &lt;th rowspan=&quot;2&quot;&gt;30&lt;/th&gt;
+      &lt;td&gt;31&lt;/td&gt;
+      &lt;td&gt;32&lt;/td&gt;
+      &lt;td&gt;33&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;41&lt;/td&gt;
+      &lt;td&gt;42&lt;/td&gt;
+      &lt;td&gt;43&lt;/td&gt;
+     /tr&gt;
+    &lt;/table&gt;
+</code></pre>
+</div>
+
+<div class="card mb-3">
+  <h3 class="body-header h5">プレビュー</h3>
+<div class="card-body">
+<div class="table-responsive">
+<table class="table table-bordered table-striped">
+    <caption>4*4</caption>
+    <tr>
+      <th scope="col" colspan="4">10</th>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>21</td>
+      <td>23</td>
+      <td>24</td>
+    </tr>
+    <tr>
+      <th rowspan="2">30</th>
+      <td>31</td>
+      <td>32</td>
+      <td>33</td>
+    </tr>
+    <tr>
+      <td>41</td>
+      <td>42</td>
+      <td>43</td>
+    </tr>
+    </table>
+</div>
+</div>
+</div>
+  <h3>colspan属性 左右でドッキング</h3>
+  <p>初期値は1　セル横軸同士でをドッキングさせる　2以上が入るとセル縦軸で2つをドッキングさせる。その分該当する要素を減らさないといけない。
+      左右でドッキング</p>
+<figure><figcaption>処理前</figcaption>
+<pre class="line-numbers language-xml" data-src="prism.js"><code>&lt;tr&gt;
+  &lt;th&quot;&gt;10&lt;/th&gt;
+  &lt;th&quot;&gt;11&lt;/th&gt;
+&lt;/tr&gt;
+</code></pre></figure>
+<p>colspan2の場合　隣のtrをさせる削除しないといけない。</p>
+<figure><figcaption>処理後</figcaption>
+<pre class="line-numbers language-xml" data-src="prism.js"><code>&lt;tr&gt;
+  &lt;th&quot; colspan=&quot;2&quot;&gt;10&lt;/th&gt;
+&lt;/tr&gt;
+</code></pre>
+</figure>
+        <h3>rowspan属性 上下でドッキング</h3>
+        <p>初期値は1　セル縦軸同士でをドッキングさせる　2以上が入るとセル縦軸で2つをドッキングさせる。その分該当する要素を減らさないといけない。</p>
+<figure><figcaption>処理前</figcaption>
+<pre class="line-numbers language-xml" data-src="prism.js"><code>&lt;tr&gt;
+  &lt;th&quot;&gt;10&lt;/th&gt;
+  &lt;th&quot;&gt;11&lt;/th&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td&quot;&gt;20&lt;/td&gt;
+  &lt;td&quot;&gt;21&lt;/td&gt;
+&lt;/tr&gt;
+</code></pre>
+</figure>
+<p>rowspanは2の場合　下のtdを削除しないといけない。</p>
+<figure><figcaption>処理前</figcaption>
+<pre class="line-numbers language-xml" data-src="prism.js"><code>&lt;tr&gt;
+  &lt;th&quot; rowspan=&quot;2&quot;&gt;10&lt;/th&gt;
+  &lt;th&quot;&gt;11&lt;/th&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td&quot;&gt;21&lt;/td&gt;
+&lt;/tr&gt;
+</code></pre>
+</figure>
+<p>セルを消し忘れるとセルがはみ出るよ。</p>
+        <p><a href="https://developer.mozilla.org/ja/docs/Web/HTML/Element/td">表データセル要素 |MDN</a></p>
+</div>
+<div id="s4" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>CSS border-collapseプロパティ</h2>
+  <p>CSS の border-collapse プロパティは、 &lt;table&gt; の中のセルが境界線を共有するか分離するかを設定します。<br>
+  <a href="https://developer.mozilla.org/ja/docs/Web/CSS/border-collapse">border-collapse|MDN </a>このページでは
+  テーブルの特殊なborderプロパティの制御について分かりやすい図で解説しています。表の罫線をセル毎に変化させたい場合は参考にしてください。</p>
+<pre class="line-numbers language-xml" data-src="prism.js"><code>border-collapse:collapse;/* 共有 */
+border-collapse:separate;/* 分かれる */</code></pre>
+
+<div class="card mb-3">
+  <h3 class="body-header h5">プレビュー</h3>
+<div class="card-body bg-secondary">
+  <div class="table-responsive">
+<style>
+.table-mytable tr th,.table-mytable tr td {
+    border-color:#f0f0f0;
+}
+</style>
+    <table class="table table-bordered table-striped table-sm table-dark table-mytable">
+    <caption>ボーダコラプス</caption>
+    <tr>
+      <th scope="col" colspan="4">ボーダコラプス</th>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>21</td>
+      <td>23</td>
+      <td>24</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>31</td>
+      <td>32</td>
+      <td>33</td>
+    </tr>
+    <tr>
+        <td>40</td>
+      <td>41</td>
+      <td>42</td>
+      <td>43</td>
+    </tr>
+    </table>
+</div>
+<div class="table-responsive">
+  <style>
+  .table-mytable tr th,.table-mytable tr td {
+ border-color:#f0f0f0;
+  }
+  </style>
+  <table class="table table-bordered table-striped table-sm table-dark table-mytable" style="border-collapse:separate;">
+        <caption>ボーダセパレート</caption>
+        <tr>
+          <th scope="col" colspan="4">ボーダセパレート（通常表示）</th>
+        </tr>
+        <tr>
+          <th>20</th>
+          <td>21</td>
+          <td>23</td>
+          <td>24</td>
+        </tr>
+        <tr>
+          <th>30</th>
+          <td>31</td>
+          <td>32</td>
+          <td>33</td>
+        </tr>
+        <tr>
+            <td>40</td>
+          <td>41</td>
+          <td>42</td>
+          <td>43</td>
+        </tr>
+        </table>
+    </div>
+
+</div>
+</div>
+
+</div>
+
+
+
+
+
+<div id="s5" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>CSS border-spacingプロパティ</h2>
+  <p>CSS の border-spacing プロパティは、 &lt;table&gt; における隣り合うセルの枠線同士の間隔を定めます。<br>このプロパティは border-collapse が separate のときのみ適用されます。<br>
+  <a href="https://developer.mozilla.org/ja/docs/Web/CSS/border-spacing">border-spacing</a></p>
+<div class="card mb-3">
+  <h3 class="body-header h5">プレビュー</h3>
+<div class="card-body bg-secondary">
+  <div class="table-responsive">
+<style>
+.table-mytable tr th,.table-mytable tr td {
+    border-color:#f0f0f0;
+}
+</style>
+<div class="table-responsive">
+  <style>
+  .table-mytable tr th,.table-mytable tr td {
+ border-color:#f0f0f0;
+  }
+  </style>
+  <table class="table table-bordered table-striped table-sm table-dark table-mytable" style="border-collapse:separate; border-spacing:.5rem;">
+        <caption>ボーダセパレート</caption>
+        <tr>
+          <th scope="col" colspan="4">ボーダセパレート（通常表示）</th>
+        </tr>
+        <tr>
+          <th>20</th>
+          <td>21</td>
+          <td>23</td>
+          <td>24</td>
+        </tr>
+        <tr>
+          <th>30</th>
+          <td>31</td>
+          <td>32</td>
+          <td>33</td>
+        </tr>
+        <tr>
+            <td>40</td>
+          <td>41</td>
+          <td>42</td>
+          <td>43</td>
+        </tr>
+        </table>
+    </div>
+
+</div>
+</div>
+
+
+</div>
+</article>
+</div>
+<!-- /container-->
+
+<aside class="print-none" id="w-aside2">
+<div class="row text-white no-gutters justify-content-center">
+<nav aria-label="Page navigation ">
+<ul class="pagination justify-content-center">
+<li class="page-item">
+<a class="page-link" href="201_html_markUp.html" tabindex="-1" aria-disabled="false">Previous</a>
+</li>
+<li class="page-item">
+<a class="page-link" aria-disabled="false"  href="203_html_markUp.html">Next</a>
+</li>
+</ul>
+</nav>
+</div>
+
+<div class="container bg-dark p-3">
+
+
+</div>
+</aside>
+
+</main>
+<!--w-main-->
+<aside class="w-aside col-lg-2 print-none" id="w-aside1">
+<div class="w-aside-inner container">
+<div class="accordion" id="accordionAside">
+<div class="w-subnav">
+<div id="headingOne">
+<h3 class="sticky-top">
+  <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" >basic Operation</button>
+</h3>
+</div>
+<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionAside">
+<!-- BOlist modile -->
+<ul id="w-BOlist" class="list-unstyled">
+        <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+        </ul>
+        <!-- /BOlist modile -->
+</div>
+</div>
+<div class="w-subnav">
+<div id="heading2">
+<h3 class="sticky-top">
+  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">web Outline</button>
+</h3>
+</div>
+<div id="collapseTwo" class="collapse" aria-labelledby="heading2" data-parent="#accordionAside">
+<!-- OLlist modile -->
+<ul id="w-OLlist" class="list-unstyled">
+        <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+</ul>
+<!-- /OLlist modile -->
+</div>
+</div>
+<div class="w-subnav">
+<div id="heading3">
+<h3 class="sticky-top">
+  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">HTML</button>
+      </h3>
+</div>
+<div id="collapseThree" class="collapse" aria-labelledby="heading3" data-parent="#accordionAside">
+    <!-- OLlist modile -->
+    <ul id="w-MKlist" class="list-unstyled">
+            <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+    </ul>
+    <!-- /OLlist modile -->
+    </div>
+    </div>
+
+    <div class="w-subnav">
+        <div id="heading4">
+        <h3 class="sticky-top">
+          <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse4" aria-expanded="true" aria-controls="collapse4">Text Editor
+          </button>
+        </h3>
+        </div>
+        <div id="collapse4" class="collapse" aria-labelledby="heading4" data-parent="#accordionAside">
+            <!-- EDlist modile -->
+            <ul id="w-EDlist" class="list-unstyled">
+              <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+            </ul>
+            <!-- /EDlist modile -->
+            </div>
+            </div>
+  </div><!-- /accordionAside -->
+</div>
+<script src="_js/_common/VueBOnavlist.js"></script>
+</aside>
+
+<!-- /w-aside2-->
+</div>
+<footer id="w-pageFooter">
+<div class="container">
+<small>&copy; shounosuke tarutani</small>
+</div>
+<!-- /container-->
+</footer>
+<!--w-pageFooter-->
+<script src="_js/_common/prism.js"></script>
+</div>
+<!--w-container-->
+</body>
+</html>

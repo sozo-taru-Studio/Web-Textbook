@@ -6,7 +6,7 @@
 <!-- seo -->
 <!--<meta name="description" content="">-->
 <meta name="robots" content="noindex,nofollow">
-<title>文字コード - Web-Textbook</title>
+<title>HTMLを間違えずに書く書き方 - Web-Textbook</title>
 
 <!-- stylesheet  -->
 <link rel="stylesheet" href="_css/_common/bootstrap.css">
@@ -50,16 +50,14 @@
 <main id="w-main" class="w-main col-lg-10">
 <div class="container mb-5">
 <article id="w-article">
-        <h1>文字コード - HTML</h1>
+        <h1> HTMLを間違えずに書く書き方 - HTML</h1>
         <p><span>category:</span> <span class="badge badge-primary">HTML</span></p>
         <hr>
 <!-- 序章 モジュール -->
 <div class="card mb-4">
 <div class="card-body">
-<p  class="card-text">HTML制作で文字コードとは単にエンコードともいわれています。</p>
-<p>日本語は多くの種類の文字をつかった複雑も言語です。インターネットの通信回線が遅く転送量にも制限がかかっていたころは、日本語専用の文字の記号をつかって文字を表記していました。
-文字コードとは機械が判別できる記号に文字を変換してインターネット上でやりとりするための技術です。
-ブラウザではこの記号も文字をエンコード（翻訳）して日本語を表示します。</p>
+<p  class="card-text">つかうエディターで多少の書き方がかわるという前提ですが</p>
+<p>書かなければならない部分を<strong>忘れず必ず書く</strong><br>を主眼に解説します。</p>
 </div>
 </div>
 
@@ -67,88 +65,89 @@
 <div class="bg-light p-3 mb-4">
 <h2>目次</h2>
 <ul>
-    <li><a href="#s1" data-scroll>実際インターネットで使う文字コード</a></li>
-    <li><a href="#s2" data-scroll>改行コード</a></li>
-    <!--<li><a href="#s3" data-scroll>ダブルクオートとシングルクオート</a></li>
-    <li><a href="#s4" data-scroll>属性と属性値</a></li>
+    <li><a href="#s1" data-scroll>HTMLの書き方</a></li>
+    <!-- <li><a href="#s2" data-scroll>Unix系OSで扱うので半角は必須</a></li>
+    <li><a href="#s3" data-scroll>拡張子をつける。(.html)</a></li>
+    <li><a href="#s4" data-scroll>使える記号は「-」ハイフン「_」アンダーバーのみ。</a></li>
     <li><a href="#s5" data-scroll>「index」ってつけるとトップぺージになるの？</a></li> -->
 </ul>
 </div>
 <!-- / 目次 モジュール -->
 <!-- 本文のセクション モジュール -->
 <div id="s1" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>HTMLの書き方</h2>
+<p>HTMLに限らず、プログラムは２つの記号や言葉がペアになって構文を構成することがおおいです。<br>
+    高機能なテキストエディターを使いだすとあまり気にならないTIPSかもしれませんが、コードの読み書きや間違いが解らない段階ではアシストなしのエディターで記述し間違いを探せるようになった方がおすすめです。<br>
+    従来の記述方法では右から左で記述していきますが、この対になることを意識して記述すると間違いがガクンと減ります。</p>
 
-<h2>実際インターネットで使う文字コード</h2>
-<p>昨今の文字コードはユニコードの「<b class="badge badge-primary font-size-1">UTF-8</b>」です。
-    CSSもHTMLもJavascriptも文字コードは「UTF-8」で書くように指導されています。</p>
-    <h3>文字コードを指定しないとどうなるの？</h3>
-    <p>HTMLコードの文字コード宣言がないと任意のコードでエンコードをUA（ユーザーエージェント）はしはじめます。
-    主要なブラウザは自動判別プログラムがはいっていますが古いブラウザやそのような機能がないインターネットを使ったアプリケーションは多々よのなかには合うれています。</p>
-    <p>エンコードと文字コードがあっていなかった場合、<strong>文字化け</strong>がおきまます。</p>
-    <h4 id="html">HTML</h4>
-    <p>メタタグで指定</p>
-      <pre class="line-numbers language-xml" data-src="prism.js"><code>&lt;meta charset=&quot;utf-8&quot;&gt;</code></pre>
-    <h4 id="css">CSS</h4>
-    <p>スタイルシートの一行目に空白を開けずに宣言</p>
-      <pre class="line-numbers language-xml" data-src="prism.js"><code>@charset &quot;UTF-8&quot;;</code></pre>
-    <h3>昔の文字コード</h3>
-    <p>昔といっても10年もたってないとはおもいますが。
-    スマートフォンが現れるまえは文字コードも軽くデータ量の少ない単バイト文字がつかわれていました。</p>
-    <p>バイト文字</p>
-    <ul>
-    <li>windows10 未だにデフォルトは[shift-jis]</li>
-    <li>Linax Unix [EUC_jp]</li>
-    <li>MAC ??? (i dont know!)</li>
-    </ul>
-    <p>２バイト文字「UTF-8」は多くの世界中の文字を表示で表記できる。</p>
-    <p><a href="https://www.marbacka.net/msearch/tool.php#str2enc">Unicode文字ツール</a></p>
-    <h4>UTF-8 バイトオーダーマークのありなし</h4>
-    <p><a href="https://ja.wikipedia.org/wiki/%E3%83%90%E3%82%A4%E3%83%88%E3%82%AA%E3%83%BC%E3%83%80%E3%83%BC%E3%83%9E%E3%83%BC%E3%82%AF">バイトオーダーマーク</a>
-    基本なし　よってテキストエディタでは「UTF-8N」
-    にセットすることが多いです。
-    （ローカルPCで文字化けとかないのできにならない）
-    <a href="https://uxmilk.jp/48923">UTF-8のBOM付き・BOM無しの違いと確認方法</a></p>
-    <h3>テキストエディタで気をつけること</h3>
-    <ul>
-    <li>
-    <p>「UTF-8」で新規起案する。（BOMなし）</p>
-    </li>
-    <li>
-    <p>既存ファイル読み込みは文字コード「自動判別」にしておく。（オリジナルの文字コードをつぶさないようにする。）</p>
-    </li>
-    <li>
-    <p>文字コードを変換して上書きしてくれるエディタを一つは持っておく。「TeraPad」など。</p>
-    </li>
-    </ul>
-    <h5>ポイント</h5>
-    <ul>
-    <li>文字コードは必ず正しく宣言しておく。</li>
-    <li>宣言文字コードと実際記述する文字コードは同じにする。</li>
-    <li>プロジェクトによって使う文字コードは違うが**「utf-8」**を使うのが主流です。</li>
-    </ul>
-    <hr>
-  </div>
-  <div id="s2" class="mt-n6 pt-6 mb-6 clearfix">
-    <h2>改行コード</h2>
-    <p>改行コードは改行を入れたときに入る制御文字です。
-    <a href="https://ja.wikipedia.org/wiki/%E6%94%B9%E8%A1%8C%E3%82%B3%E3%83%BC%E3%83%89">改行コード</a></p>
-    <ul>
-    <li>LF  UNIXやUnix系のシステム</li>
-    <li>CR/LF windows</li>
-    <li>CR  OS9</li>
-    </ul>
-    <p>CR (キャリッジリターン) ： 改行（日本語訳）
-    LF (ラインフィード) ：改行（日本語訳）</p>
-    <h3>改行コードはどれをえらべばいいの？</h3>
-    <p>「LF」 または  「CR/LF」
-    　
-    の２択になるのですがサーバーに上げるのならサーバーがUnix系のシステムなので<strong>LF</strong>が安全です。<br>
-    間違っても改行が多いコードになるぐらいしか不具合をみたことがありません。<br>
-    windowsを普段お使いのかたもWebアプリケーションを個人的に作る場合はCR/LFは避けてLFで統一して書くようにしましょう。</p>
-    <h6>ポイント</h6>
-    <p class="badge badge-info font-size-1">[LF]ラインフィードでお願いします。</p>
-  </div>
+<div class="card">
+<div class="card-header">
+  <h3>HTMLの場合タグ</h3>
+</div>
+<div class="card-body">
+<p>HTMLソースコードに対応するアシストがない場合書き方です。</p>
+  <h4 class="h6"><code>&lt;p&gt;</code>開始タグの場合キーボードの操作順番</h4>
+<ol>
+<li><kbd>&lt;</kbd></li>
+<li><kbd>&gt;</kbd></li>
+<li><kbd>←</kbd>カッコの中にカーソルを戻す</li>
+<li><kbd>p</kbd></li>
+</ol>
+<p>の順番書く</p>
 
+<h4 class="h6"><code>&lt;/p&gt;</code>終了タグの場合キーボードの操作順番</h4>
+<ol>
+<li><kbd>&lt;</kbd></li>
+<li><kbd>&gt;</kbd></li>
+<li><kbd>←</kbd>カッコの中にカーソルを戻す</li>
+<li><kbd>/</kbd></li>
+<li><kbd>p</kbd></li>
+</ol>
+<p>の順番書く</p>
+<p>アシストがついているエディターは<kbd>&lt;</kbd><kbd>/</kbd>を書いた段階で閉じタグが書かれます。</p>
+<p>
+  ただし　文章の途中で閉じタグを書き忘れいた場合、その忘れたタグがアシストされて書かれます。特によく書くdiv要素などは正しいか正しいアシストがわからないなど慣れが必要です。
+</p>
+</div>
+</div>
+
+<div class="card">
+    <div class="card-header">書き方の動画</div>
+  <div class="card-body">
+  <figure>
+  <figcaption>どんなHTMLファイルもこの大枠の構造を持っている。</figcaption>
+  </figure>
+  <p><img src="_images/_html/taagswork-2019_05_29-15_09_33.gif" alt="動画" class="img-fluid"><br>
+    使用エディタ　：　Visual Studio Code</p>
+</div>
+</div>
+
+<div class="card">
+    <div class="card-header">
+<h3>引用符の場合</h3></div>
+<div class="card-body">
+<h4 class="h5">属性がある開始タグ</h4>
+<p><code>&lt;a href="#"&gt;</code></p>
+<ol>
+  <li><kbd>&lt;</kbd></li>
+  <li><kbd>&gt;</kbd></li>
+  <li><kbd>←</kbd>(矢印キーで左カーソルを戻す)　</li>
+  <li><kbd>a</kbd></li>
+  <li><kbd> href= </kbd></li>
+  <li><kbd> &quot;</kbd></li>
+  <li><kbd> &quot;</kbd></li>
+  <li><kbd>←</kbd>(矢印キーで左カーソルを戻す)</li>
+  <li><kbd>#</kbd> （URLを記述） </li>
+</ol>
+<p>の順番で記述します。</p>
+<p>対になる記号　&lt;&gt; や　引用符　””　のペアをさきに書いて。マウスを使わず。矢印キーでカーソルを移動して入力する場所に移動します。</p>
+<p>この書き方を習慣にすることで<strong class="badge badge-primary" style="font-size: 1rem;">コードエラーを防ぎます。</strong></p>
+</div></div>
+
+
+
+
+</div>
 </article>
 </div>
 <!-- /container-->
@@ -158,10 +157,10 @@
 <nav aria-label="Page navigation ">
 <ul class="pagination justify-content-center">
 <li class="page-item">
-<a class="page-link" href="28_html_markUp.html" tabindex="-1" aria-disabled="false">Previous</a>
+<a class="page-link" href="22_html_markUp.html" tabindex="-1" aria-disabled="false">Previous</a>
 </li>
 <li class="page-item">
-<a class="page-link" aria-disabled="false"  href="201_html_markUp.html">Next</a>
+<a class="page-link" aria-disabled="false"  href="24_html_markUp.html">Next</a>
 </li>
 </ul>
 </nav>

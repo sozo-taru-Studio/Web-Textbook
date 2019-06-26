@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- seo -->
+<!--<meta name="description" content="">-->
+<meta name="robots" content="noindex,nofollow">
+<title>webサイトで使われる画像ファイルの種類 - Web-Textbook</title>
+
+<!-- stylesheet  -->
+<link rel="stylesheet" href="_css/_common/bootstrap.css">
+<link rel="stylesheet" href="_css/_common/font-awesome.min.css">
+<link rel="stylesheet" href="_css/_common/style.css">
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
+<link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="icon" href="/favicon.ico">
+
+<!-- common js  -->
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="_js/_common/jquery-3.2.1.min.js"></script>
+<script src="_js/_common/bootstrap.min.js"></script>
+<script src="_js/_common/pagescroll.jQuery.js"></script>
+</head>
+
+<body style="height: auto;">
+<div id="w-wrapper" class="w-wrapper">
+<header id="w-pageHeader" class="navbar navbar-dark navbar-expand-lg fixed-top w-pageHeader" data-scroll-header="true">
+<div class="container">
+<a class="navbar-brand" href="/">logo</a><span class="navbar-brand">Web Textbook</span>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#w-nav" aria-controls="w-nav" aria-expanded="false" aria-label="ナビゲーション切替">
+<span class="navbar-toggler-icon"></span>
+</button>
+<nav id="w-nav" class="collapse navbar-collapse">
+<ul class="navbar-nav mr-auto pl-3">
+<li class="nav-item"><a href="20_browser_cord.html" class="nav-link disabled">HTML</a></li>
+<li class="nav-item"><a href="#" class="nav-link disabled">CSS</a></li>
+<li class="nav-item"><a href="#" class="nav-link">javasceipt</a></li>
+</ul>
+</nav>
+<!-- /w-nav-->
+</div>
+<!-- /container-->
+</header>
+<!-- /w-pageHeader-->
+<div class="d-lg-flex flex-row-reverse pt-5">
+<main id="w-main" class="w-main col-lg-10">
+<div class="container mb-5">
+<article id="w-article">
+        <h1>webサイトで使われる画像ファイルの種類 - HTML</h1>
+        <p><span>category:</span> <span class="badge badge-primary">HTML</span></p>
+        <hr>
+<!-- 序章 モジュール -->
+<div class="card mb-4">
+<div class="card-body">
+<p  class="card-text">
+webページで使われる画像ファイルや図形ファイルの表現方式、形式の特養をおさえます。</p>
+</div>
+</div>
+
+<!-- 目次 モジュール -->
+<div class="bg-light p-3 mb-4">
+<h2>目次</h2>
+<ul>
+    <li><a href="#s1" data-scroll>画像ファイルの表現方法の種類を知る</a></li>
+    <li><a href="#s2" data-scroll>ベクター方式</a></li>
+    <li><a href="#s3" data-scroll>ラスタ形式</a></li>
+    <!--<li><a href="#s4" data-scroll>属性と属性値</a></li>
+    <li><a href="#s5" data-scroll>「index」ってつけるとトップぺージになるの？</a></li> -->
+</ul>
+</div>
+<!-- / 目次 モジュール -->
+<!-- 本文のセクション モジュール -->
+<div id="s1" class="mt-n6 pt-6 mb-6 clearfix">
+    <h2 class="h5">画像ファイルの表現方法の種類を知る</h2>
+  <div class="card mb-3">
+  <div class="card-body">
+
+    <h5>確認します。</h5>
+    <p>画像は縦と横の概念があり、すべて四角形の範囲内に表現される。<br>三角形も六角形もwebブラウザではその図形を内包する四角形に表現されている。
+  当然、視覚表現ブラウザーの表現方法はデバイスのモニターで表現しようとします。モニターは描画素子があり規格にそった解像度で表現されます。</p>
+  </div></div>
+
+  <p>PCモニタ-で表現されるグラフィック（画像）の表現方式は2種類あります。</p>
+  <ul>
+    <li>ベクター形式</li>
+    <li>ラスタ形式</li>
+  </ul>
+</div>
+<div id="s2" class="mt-n6 pt-6 mb-6 clearfix">
+  <h2>ベクター方式</h2>
+  <p>点（アンカーポイント）と線（セグメント）の距離や座標をデータとして保持して画像を表現している。
+  アンカーポイントとセグメントの量そしてその線や図形を彩る装飾の量によってデータが肥大化する。</p>
+  <h3>メリット</h3>
+  <p>アイコンやコーポレートマークなど幾何学的な図形や図案の保存作成がしやすい。
+  解像度に依存しないため　拡大縮小をしても元の形のデータを保持できる。
+  円は拡大縮小しても円として表現できる。
+  <h3>デメリット</h3>
+  表現方式が違うため写真を直接編集できない。
+  最終的にラスタ画像にかきだされがち。</p>
+  <h3>代表的なソフト</h3>
+  <ul>
+  <li>adobe illastrator
+  他者との共同作業をするなかでこれ一択にならざるを得ない。</li>
+  </ul>
+  <h3>webで扱われる画像ファイルの種類</h3>
+  <h4 id="svg-scalable-vector-graphics">svg (Scalable Vector Graphics)</h4>
+  <p>XML形式のファイルでベクター系のグラフィックソフトで書き出しが可能。
+  専門知識が必要ですが　CSSからの読み込みやHTMLに直接インラインで記述もできる。
+  ブラウザが対応していれば単純なイラストなどはPNGファイルよりきれいでレスポンシブルに表現できる。
+  しかし複雑だったりラスタ画像をうめこんだりするとPNGファイルの方がデータが少なくすむことも。
+  フォントを埋め込むと重くなるなど　知識と経験が必要な画像形式です。
+  サイトロゴなど管理がしやすいリソースに使っていくのが今は妥当ではないでしょうか。</p>
+  <p><a href="https://ferret-plus.com/8445">SVGファイルとは？基礎知識と作成・変換方法を解説</a></p>
+  <p><a href="https://ics.media/entry/15970/">UI改善にキラリと役立つ！
+  SVGアニメーションの作り方まとめ</a></p>
+  <h4>webフォントでアイコンフォントを使う</h4>
+  <p>webフォントのアイコンフォントをつかうことで　決まったマークのデータを文字として出すことができます。　色はフォントのため背景色と文字色しか変化させれませんが。サイトのテーマにあったアイコンのアウトラインならば工数はかなり短縮できるはずです。</p>
+</div>
+<div id="s3" class="mt-n6 pt-6 mb-6 clearfix">
+  <h2>ラスタ形式</h2>
+  <p>ラスタ方式は解像度に依存した画像表現形式です。
+  ピクセルと呼ばれる描画素子の集合体で画像を表現します。
+  ピクセルが多いほどデータが増大化する。つまり高さと幅が大きくなるほどデータ転送が遅くなる。
+  またピクセル一つ一つが持つ色のデータの量でも変わる。</p>
+  <h3 id="%E3%83%A1%E3%83%AA%E3%83%83%E3%83%88">メリット</h3>
+  <p>写真など色の変化が複雑な画像を提供できる。
+  サポートしているソフトが豊富
+  ファイルの圧縮率が高い<br>
+  独自フォントなどアウトラインが変わらないため決められた解像度で使えばフォントの印象（ブランドイメージ）を保持できる、</p>
+  <h3>デメリット</h3>
+  <ul>
+  <li>
+  <p>縮小後の拡大で画像は荒くなりもとの鮮明な画像にはもどらない。（不可逆圧縮）</p>
+  </li>
+  <li>
+  <p>画像を拡大して使用するとジャギー（エッジに現れるギザギザ）が発生し画像の品質が落ちます。</p>
+  </li>
+  <li>
+  <p>多種のデバイスへの対応のため様々な解像度のファイルを用意しないといけない。</p>
+  </li>
+  </ul>
+  <h3>ラスタ系画像に<strong>書き出す</strong>作業が必要</h3>
+  <p>web制作ではSVGを使用しない場合を除き、すべて最終的に使うリソースはなんらかのラスタ形式画像の書き出す作業をして画像を公開する。</p>
+  <p>必要な画像をデザインカンプから範囲指定し、必要な形式の画像に保存する作業です。必要な画像を最適なデータ量と形式で書き出しすることでサイトのパフォーマンスを保つために大切な作業です。</p>
+  <h3>PNG画像</h3>
+  <blockquote>
+  <p>PNG（ピング）はPortable Network Graphicsの略で、拡張子は「.png」です。GIFのLZW圧縮が特許の問題で論争になった際に、GIFに代わる技術として開発されました。</p>
+  </blockquote>
+  <blockquote>
+  <p>JPEG同様、フルカラー1670万色を扱うことができます。そしてGIF同様、透過も可能で、「可逆圧縮」の画像形式なので低画質で保存しても元の画質に戻すことができます。</p>
+  </blockquote>
+  <blockquote>
+  <p>JPEGとGIFの両者のメリットを取り入れた優れものですが、JPEGやGIFに比べて若干データ容量が重くなる傾向があります。そこまで重さに大きな違いはありませんが、画像の見た目がほぼ変わらないのであれば、Webサイトで使用するのであれば、より軽いファイルサイズの拡張子を選ぶべきでしょう。</p>
+  </blockquote>
+  <blockquote>
+  <p>画像のファイルサイズが重いと、転送量が増え、サーバーに負担がかかり、ページの表示速度に影響が出るので、結果ユーザーにとって優しくないWebとなってしまいます。また、古いブラウザ(*1)ではまれにサポートされていない場合もあるので注意しましょう。</p>
+  </blockquote>
+  <p>おおむね引用したサイトの説明でOKです。</p>
+  <ul>
+  <li>PNGファイルの取り巻く環境がかなりよいので写真以外はPNGで書き出し作業しても問題ないとおもいます。　それよりその画像一つ一つのデータ容量だともいます
+  。</li>
+  </ul>
+  <h4>書き出し形式</h4>
+  <ul>
+  <li>png8 256色（ほぼgif）</li>
+  <li>png24 /png32 アルファチャンネル付きの画像不透明表現あり。</li>
+  </ul>
+  <p>*1 古いブラウザはIE6です。　XPを買ってインターネットにつないでなかった場合のこっているでしょう。</p>
+<hr>
+  <h3>jpg画像</h3>
+  <blockquote>
+  <p>JPEG（ジェイペグ）はJoint Photographic Experts Groupの略で、拡張子は「.jpg（.jpeg）」となります。</p>
+  </blockquote>
+  <blockquote>
+  <p>フルカラー1670万色まで扱うことができるので、色数の多い写真や、グラデーションのように色が細かく変化する画像の保存に適しています。ただし、色の透過はできません。</p>
+  </blockquote>
+  <blockquote>
+  <p>そして最も大きな特徴は、大きな画像を小さなファイルサイズにできる点です。写真に映る目に見えない程の色の差異をカットし、情報量を圧縮して軽い容量で保存するためです。</p>
+  </blockquote>
+  <blockquote>
+  <p>ただ「非可逆圧縮」の画像形式となるため、JPEGファイルを低解像度で保存すると元の画質に戻すことができません。また保存するたびに画質が劣化してしまうので、保存のタイミングには注意しましょう。ファイルサイズや画質を変更する場合は、念のため元データを保管した上で行うことをおすすめします。</p>
+  </blockquote>
+  <blockquote>
+  <p>この特徴から、写真などの保存に向いている反面、文字やシャープなラインを含む画像は、ぼやけて粗い仕上がりになりやすく、向いているとは言えません。また色数の少ないロゴなどを保存すると、かえって他のファイル形式よりもファイルサイズが大きくなりがちです。</p>
+  </blockquote>
+  <h3>上記説明の補足</h3>
+  <p>一般的なデジタルカメラの保存形式でもあるjpg形式です。写真配布サイトなども基本的にフォトグラフィーはjpgで提供されます。
+  どの加工作業でも同じですが、「非可逆圧縮」のでものべられていますがこの条件から原稿に使う写真は原本をコピーして加工することになります。</p>
+  <p>書き出しの注意</p>
+  <p>圧縮度　80以上　24bit圧縮で画像が崩れない分圧縮率はひくくなる。
+  圧縮度80以下（標準60）　8bitに圧縮 やや画像があらくなる。</p>
+  <hr>
+  <h3>gif画像</h3>
+  <blockquote>
+  <p>GIF（ジフ）は、Graphics Interchange Formatの略で、拡張子は「.gif」となります。</p>
+  </blockquote>
+  <blockquote>
+  <p>最大256色で表現されるので、ロゴやアイコン、ボタン、簡易なイラストなどの、色数の少ない画像の保存に適した画像形式です。またGIFは色の透過も可能です。</p>
+  </blockquote>
+  <blockquote>
+  <p>JPEGと違い「可逆圧縮」の画像形式なので、一度低画質で保存しても元の画質に戻すことができます。</p>
+  </blockquote>
+  <blockquote>
+  <p>GIFはの最も大きな特徴は、アニメーション画像を作成できる点です。色数の多くないシンプルなアニメーションを作成する際には重宝します。</p>
+  </blockquote>
+  <p>gifはリピートアニメーションなどちょっとしたパラパラ漫画の作成ぐらいしか居場所がなくなりました。
+  つかってもいいんやで。アイコンぐらいなら。・・・・・</p>
+  <p><a href="http://www.htmq.com/gazo/">WEB画像について</a></p>
+  <h3>代表的なソフト</h3>
+  <ul>
+  <li>adobe photoshop</li>
+  </ul>
+  <h2>webで扱われる画像ファイルの種類</h2>
+  <p>phoroshopは写真を編集するためグラフィックソフトとして開発されました。</p>
+<div class="table-responsive">
+  <h3>対応表</h3>
+  <table class="table table-striped table-bordered">
+  <thead>
+  <tr>
+  <th style="text-align:left">項目/形式</th>
+  <th>png</th>
+  <th>jpg</th>
+  <th>gif</th>
+  <th>svg</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+  <td style="text-align:left">得意</td>
+  <td>半透明、マーク、写真</td>
+  <td>写真</td>
+  <td>図、マーク、単純なアニメ</td>
+  <td>図、マーク</td>
+  </tr>
+  <tr>
+  <td style="text-align:left">透過</td>
+  <td>できる</td>
+  <td>できない</td>
+  <td>できる</td>
+  <td>できる</td>
+  </tr>
+  <tr>
+  <td style="text-align:left">半透過</td>
+  <td>できる</td>
+  <td>できない</td>
+  <td>できない</td>
+  <td>できる</td>
+  </tr>
+  <tr>
+  <td style="text-align:left">圧縮</td>
+  <td>可逆圧縮</td>
+  <td>不可逆圧縮</td>
+  <td>可逆圧縮</td>
+  <td>可逆圧縮</td>
+  </tr>
+  <tr>
+  <td style="text-align:left">色数</td>
+  <td>16777216色+アルファチャンネル</td>
+  <td>16777216色</td>
+  <td>256色</td>
+  <td>16777216色+アルファチャンネル(ブラウザ依存)</td>
+  </tr>
+  <tr>
+  <td style="text-align:left">アニメーション</td>
+  <td>ブラウザが未対応の場合がある</td>
+  <td>なし</td>
+  <td>あり</td>
+  <td>あり</td>
+  </tr>
+  </tbody>
+  </table>
+</div>
+  <blockquote>
+  <p><a href="https://www.asobou.co.jp/blog/web/vector-raster">画像オブジェクトの「ラスタ形式」と「ベクタ形式」 違いと使い分けについて</a></p>
+  </blockquote>
+  <blockquote>
+  <p><a href="https://www.innovation.co.jp/urumo/jpg_png/">JPG？PNG？一体何が違う？最適な拡張子選びのコツ | Urumo</a></p>
+  </blockquote>
+  </div>
+
+</article>
+</div>
+<!-- /container-->
+
+<aside class="print-none" id="w-aside2">
+<div class="row text-white no-gutters justify-content-center">
+<nav aria-label="Page navigation ">
+<ul class="pagination justify-content-center">
+<li class="page-item">
+<a class="page-link" href="28_html_markUp.html" tabindex="-1" aria-disabled="false">Previous</a>
+</li>
+<li class="page-item">
+<a class="page-link" aria-disabled="false"  href="202_html_markUp.html">Next</a>
+</li>
+</ul>
+</nav>
+</div>
+
+<div class="container bg-dark p-3">
+
+
+</div>
+</aside>
+
+</main>
+<!--w-main-->
+<aside class="w-aside col-lg-2 print-none" id="w-aside1">
+<div class="w-aside-inner container">
+<div class="accordion" id="accordionAside">
+<div class="w-subnav">
+<div id="headingOne">
+<h3 class="sticky-top">
+  <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" >basic Operation</button>
+</h3>
+</div>
+<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionAside">
+<!-- BOlist modile -->
+<ul id="w-BOlist" class="list-unstyled">
+        <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+        </ul>
+        <!-- /BOlist modile -->
+</div>
+</div>
+<div class="w-subnav">
+<div id="heading2">
+<h3 class="sticky-top">
+  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">web Outline</button>
+</h3>
+</div>
+<div id="collapseTwo" class="collapse" aria-labelledby="heading2" data-parent="#accordionAside">
+<!-- OLlist modile -->
+<ul id="w-OLlist" class="list-unstyled">
+        <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+</ul>
+<!-- /OLlist modile -->
+</div>
+</div>
+<div class="w-subnav">
+<div id="heading3">
+<h3 class="sticky-top">
+  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">HTML</button>
+      </h3>
+</div>
+<div id="collapseThree" class="collapse" aria-labelledby="heading3" data-parent="#accordionAside">
+    <!-- OLlist modile -->
+    <ul id="w-MKlist" class="list-unstyled">
+            <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+    </ul>
+    <!-- /OLlist modile -->
+    </div>
+    </div>
+
+    <div class="w-subnav">
+        <div id="heading4">
+        <h3 class="sticky-top">
+          <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse4" aria-expanded="true" aria-controls="collapse4">Text Editor
+          </button>
+        </h3>
+        </div>
+        <div id="collapse4" class="collapse" aria-labelledby="heading4" data-parent="#accordionAside">
+            <!-- EDlist modile -->
+            <ul id="w-EDlist" class="list-unstyled">
+              <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+            </ul>
+            <!-- /EDlist modile -->
+            </div>
+            </div>
+  </div><!-- /accordionAside -->
+</div>
+<script src="_js/_common/VueBOnavlist.js"></script>
+</aside>
+
+<!-- /w-aside2-->
+</div>
+<footer id="w-pageFooter">
+<div class="container">
+<small>&copy; shounosuke tarutani</small>
+</div>
+<!-- /container-->
+</footer>
+<!--w-pageFooter-->
+<script src="_js/_common/prism.js"></script>
+</div>
+<!--w-container-->
+</body>
+</html>

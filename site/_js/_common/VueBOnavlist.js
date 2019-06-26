@@ -145,6 +145,22 @@ var mklists = new Vue({
                     titleen:"charset code",
                     url:"29_html_markUp.html"
                 },
+                {
+                    titlename:'画像ファイルの種類',
+                    titleen:"images files type",
+                    url:"201_html_markUp.html"
+                },
+                {
+                    titlename:'table の属性',
+                    titleen:"table attribute",
+                    url:"202_html_markUp.html"
+                },
+                {
+                    titlename:'float',
+                    titleen:"table attribute",
+                    url:"202_html_markUp.html"
+
+                }
             ]
    }
   });
