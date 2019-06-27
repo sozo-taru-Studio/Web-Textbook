@@ -156,10 +156,9 @@ var mklists = new Vue({
                     url:"202_html_markUp.html"
                 },
                 {
-                    titlename:'float',
-                    titleen:"table attribute",
-                    url:"202_html_markUp.html"
-
+                    titlename:'ファイルパス',
+                    titleen:"file path",
+                    url:"203_html_markUp.html"
                 }
             ]
    }
