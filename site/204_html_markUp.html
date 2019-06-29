@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- seo -->
+<!--<meta name="description" content="">-->
+<meta name="robots" content="noindex,nofollow">
+<title>float clearとレイアウト  - Web-Textbook</title>
+
+<!-- stylesheet  -->
+<link rel="stylesheet" href="_css/_common/bootstrap.css">
+<link rel="stylesheet" href="_css/_common/font-awesome.min.css">
+<link rel="stylesheet" href="_css/_common/style.css">
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
+<link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="icon" href="/favicon.ico">
+
+<!-- common js  -->
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="_js/_common/jquery-3.2.1.min.js"></script>
+<script src="_js/_common/bootstrap.min.js"></script>
+<script src="_js/_common/pagescroll.jQuery.js"></script>
+</head>
+
+<body style="height: auto;">
+<div id="w-wrapper" class="w-wrapper">
+<header id="w-pageHeader" class="navbar navbar-dark navbar-expand-lg fixed-top w-pageHeader" data-scroll-header="true">
+<div class="container">
+<a class="navbar-brand" href="/">logo</a><span class="navbar-brand">Web Textbook</span>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#w-nav" aria-controls="w-nav" aria-expanded="false" aria-label="ナビゲーション切替">
+<span class="navbar-toggler-icon"></span>
+</button>
+<nav id="w-nav" class="collapse navbar-collapse">
+<ul class="navbar-nav mr-auto pl-3">
+<li class="nav-item"><a href="20_browser_cord.html" class="nav-link disabled">CSS</a></li>
+<li class="nav-item"><a href="#" class="nav-link disabled">CSS</a></li>
+<li class="nav-item"><a href="#" class="nav-link">javasceipt</a></li>
+</ul>
+</nav>
+<!-- /w-nav-->
+</div>
+<!-- /container-->
+</header>
+<!-- /w-pageHeader-->
+<div class="d-lg-flex flex-row-reverse pt-5">
+<main id="w-main" class="w-main col-lg-10">
+<div class="container mb-5">
+<article id="w-article">
+        <h1>float and  clear とレイアウト - CSS</h1>
+        <p><span>category:</span> <span class="badge badge-primary">HTML</span></p>
+        <hr>
+<!-- 序章 モジュール -->
+<div class="card mb-4">
+<div class="card-body">
+<p class="card-text clearfix">
+  <div class="float-left w-25 mr-3"><img src="_images/_html/rocks_640.jpg" alt="River image" class="img-fluid"></div>
+  フロートは浮動配置をするためのプロパティです。floatでのレイアウトは過去に作られたウェブサイトでとてもよくつかわれているレイアウトの方法です。過去のサイトのメンテナンスなどをするときに知識不足で挑むとレイアウトがもどらなかったりしますのでポイントを覚えておきましょう。</p>
+</div>
+</div>
+
+<!-- 目次 モジュール -->
+<div class="bg-light p-3 mb-4">
+<h2>目次</h2>
+<ul>
+    <li><a href="#s1" data-scroll>floatの役割</a></li>
+    <li><a href="#s2" data-scroll>clearの役割</a></li>
+    <li><a href="#s3" data-scroll>フロートの例</a></li>
+    <li><a href="#s4" data-scroll>floarの応用</a></li>
+    <li><a href="#s5" data-scroll>clearの応用</a></li>
+</ul>
+</div>
+<!-- / 目次 モジュール -->
+<!-- 本文のセクション モジュール -->
+<div id="s1" class="mt-n6 pt-6 mb-6 clearfix">
+		<h2>floatの役割</h2>
+    <p>大きな文字や写真がの余白に流れ込む文字組を再現したい。
+      float プロパティを持った要素は値にあわせて（左の場合は左 右の場合は右に）要素が移動して後続でかかれたテキストや要素が隙間にまわりこむ。</p>
+    <p>フロートモードになった要素は内容の幅をとるようになる。レイアウトを変化させたくなければwidthプロパティで幅を入れることを忘れずに。</p>
+<div class="card mb-3">
+<div class="card-body">
+  <dl>
+  <dt><code>float</code>の主な値</dt>
+  <dd>
+    <ul>
+    <li>値：left [左に流れます。]</li>
+    <li>値：right　[右に流れます。]</li>
+    <li>値：none [フロートしません（通常）]
+    </li>
+    </ul>
+  </dd>
+</dl>
+<pre class="line-numbers language-css" data-src="prism.js"><code>
+    /*クラス img要素は左に流れる*/
+  img {
+  float:left;
+}
+/*クラス .floatRight は右に流れる*/
+.floatRight{
+  float:right;
+}
+</code></pre>
+</div>
+</div>
+<blockquote><a href="https://developer.mozilla.org/ja/docs/Web/CSS/float">float
+</a></blockquote>
+
+
+
+</div>
+
+<div id="s2" class="mt-n6 pt-6 mb-6 clearfix">
+    <h2>clearの役割</h2>
+      <p>clearプロパティは上流で設定されたフロートプロパティがあるとき、後続する要素が回り込もうとする動きを通常の表示にもどす。</p>
+
+<div class="card mb-3">
+<div class="card-body">
+  <dl>
+  <dt><code>clear</code>の主な値</dt>
+  <dd>
+    <ul>
+    <li>値：left [左に流れるのをやる。]</li>
+    <li>値：right [右に流れるのをやめる。]</li>
+    <li>値：both [左右に流れるのをやめる。]</li>
+    </ul>
+  </dd>
+</dl>
+<pre class="line-numbers language-css" data-src="prism.js"><code>
+/*クラス h1要素は左に流れるの終わり*/
+  h1 {
+  clear:left;
+}
+/*クラス .clearRight は右に流れるのやめる*/
+.clearRight{
+  clear:right;
+}
+</code></pre>
+</div></div>
+<blockquote><a href="https://developer.mozilla.org/ja/docs/Web/CSS/clear">clear
+</a></blockquote>
+<h3>clearプロパティが有効な要素</h3>
+<p>clearプロパティはブロック要素にしか設定できません。フロートしている文脈が終了し次の文脈は普通の表示にしたいときに設定します。</p>
+<h3>margin-topが出ない。</h3>
+<p>clearプロパティをもった要素はmargin-topプロパティがありますが余白が無効になります。上流の文脈がフロートモードになっているからです。</p>
+
+</div>
+<div id="s3" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>フロートの例</h2>
+<h3>HTML （方丈記）</h3>
+<pre class="line-numbers language-xml" data-src="prism.js"><code>&lt;div&gt;
+    &lt;p&gt;&lt;strong class=&quot;floatLeft&quot; style=&quot;font-size:6rem;&quot;&gt;ゆ&lt;/strong&gt;
+    く河（かわ）の流れ（ながれ）は絶えず（たえず）して、しかも、もとの水（みず）にあらず。よどみに浮かぶ（うかぶ）うたかたは、かつ消えかつ結びて（むすびて）、久しく（ひさしく）とどまりたるためしなし。世の中にある人（ひと）とすみかと、またかくのごとし。&lt;/p&gt;
+    &lt;p&gt;
+    たましきの都のうちに、棟（むね）を並べ（ならべ）、甍（いらか）を争へる（あらそえる）、高き（たかき）、卑しき（いやしき）、人の住まひ（すまい）は、世々（よよ）を経て（へて）尽きせぬ（つきせぬ）ものなれど、これをまことかと尋ぬれば（たずぬれば）、昔ありし家は稀（まれ）なり。あるいは去年（こぞ）焼けて今年（ことし）作れり（つくれり）。あるいは大家（おほいへ）滅びて小家（こいへ）となる。住む人もこれに同じ。所も変はらず、人も多かれど、いにしへ見し人は、二、三十人が中（なか）に、わづかにひとりふたりなり。朝（あした）に死に、夕べに生まるるならひ、ただ水の泡（あわ）にぞ似たりける。&lt;/p&gt;
+    &lt;p&gt;
+    知らず、生まれ死ぬる人、いづ方（かた）より来たりて、いづ方（かた）へか去る。また知らず、仮の宿り、たがためにか心を悩まし、何によりてか目を喜ばしむる。その、あるじとすみかと、無常を争ふさま、いはば朝顔（あさがお）の露に異ならず。あるいは露落ちて花残れり。残るといへども朝日に枯れぬ。あるいは花しぼみて露なほ消えず。消えずといへども夕べを待つことなし。
+    &lt;/p&gt;&lt;p&gt;&lt;cite class=&quot;clear&quot;&gt;方丈記　鴨長明&lt;/cite&gt;&lt;/p&gt;
+    &lt;/div&gt;
+</code></pre>
+<h4>css のクラスの設定</h4>
+<pre class="line-numbers language-css" data-src="prism.js"><code>
+.floatLeft{
+  float:left;
+}
+.clear{
+  clear:left;
+}
+  </code></pre>
+
+<div class="card mb-3">
+<h4 class="card-header">プレビュー</h4>
+<div class="card-body">
+<div>
+<p><strong class="float-left" style="font-size:6rem;">ゆ</strong>
+く河（かわ）の流れ（ながれ）は絶えず（たえず）して、しかも、もとの水（みず）にあらず。よどみに浮かぶ（うかぶ）うたかたは、かつ消えかつ結びて（むすびて）、久しく（ひさしく）とどまりたるためしなし。世の中にある人（ひと）とすみかと、またかくのごとし。</p>
+<p>
+たましきの都のうちに、棟（むね）を並べ（ならべ）、甍（いらか）を争へる（あらそえる）、高き（たかき）、卑しき（いやしき）、人の住まひ（すまい）は、世々（よよ）を経て（へて）尽きせぬ（つきせぬ）ものなれど、これをまことかと尋ぬれば（たずぬれば）、昔ありし家は稀（まれ）なり。あるいは去年（こぞ）焼けて今年（ことし）作れり（つくれり）。あるいは大家（おほいへ）滅びて小家（こいへ）となる。住む人もこれに同じ。所も変はらず、人も多かれど、いにしへ見し人は、二、三十人が中（なか）に、わづかにひとりふたりなり。朝（あした）に死に、夕べに生まるるならひ、ただ水の泡（あわ）にぞ似たりける。</p>
+<p>
+知らず、生まれ死ぬる人、いづ方（かた）より来たりて、いづ方（かた）へか去る。また知らず、仮の宿り、たがためにか心を悩まし、何によりてか目を喜ばしむる。その、あるじとすみかと、無常を争ふさま、いはば朝顔（あさがお）の露に異ならず。あるいは露落ちて花残れり。残るといへども朝日に枯れぬ。あるいは花しぼみて露なほ消えず。消えずといへども夕べを待つことなし。
+</p><p class="clearBoth"><cite>方丈記　鴨長明</cite></p>
+</div>
+</div>
+</div>
+<p>このように　画像や　大きな文字の左右の隙間に文字が流れ込むような文字組をしたい場合floatプロパティをつかいます。</p>
+</div>
+
+<div id="s4" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>floarの応用</h2>
+<p>floatが入った要素は幅がコンテンツの幅を自動でとるようになる。文字が一文字の場合がその文字の部分しかはばがひろがらないし。親要素や祖先要素の幅以上の大きさ場合ははみ出して並んだり　祖先の幅を超えるまでは自動改行して並んだりすることがない。</p>
+<h4>HTML</h4>
+<pre class="line-numbers language-xml" data-src="prism.js"><code>&lt;ul&gt;
+&lt;li class=&quot;floatLeft&quot;&gt;左&lt;/li&gt;
+&lt;li class=&quot;floatRight&quot;&gt;右&lt;/li&gt;
+&lt;li class=&quot;clear&quot;&gt;クリア&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+<h4>CSS</h4>
+<pre class="line-numbers language-css" data-src="prism.js"><code>/*左にフロートだよ*/
+.floatLeft{
+float:left;
+}
+/*右にフロートだよ*/
+.floatRight{
+float:right;
+}
+/*フロートやめんだよ*/
+.clear{
+clear:both;
+}
+</code></pre>
+
+<div class="card mb-3">
+<h4 class="card-header">プレビュー</h4>
+<div class="card-body">
+    <ul>
+        <li class="float-left" style="background-color:#e07070;">左</li>
+        <li class="float-right" style="background-color:#70e070;">右</li>
+        <li class="clearBoth" style="background-color:#7070e0;">クリア</li>
+        </ul>
+</div>
+</div>
+<h3>横並びをさせたいときは幅を設定する。</h3>
+<p>ちょうど半分の幅でカラムを作りたい場合</p>
+<h4>HTML</h4>
+<pre class="line-numbers language-xml" data-src="prism.js"><code>&lt;div&gt;
+&lt;div class=&quot;floatLeft&quot;&gt;左&lt;/div&gt;
+&lt;div class=&quot;floatRight&quot;&gt;右&lt;/div&gt;
+&lt;div class=&quot;clear&quot;&gt;クリア&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h4>CSS</h4>
+<pre class="line-numbers language-css" data-src="prism.js"><code>
+
+/*余白をコンテンツエリアに計上する。*/
+div{
+  boxsizing:border-box;
+}
+/*左にフロートだよ*/
+.floatLeft{
+float:left;
+width:50%;
+}
+/*右にフロートだよ*/
+.floatRight{
+float:right;
+width:50%;
+}
+/*フロートクリアー*/
+.clear{
+clear:both;
+}
+</code></pre>
+
+<div class="card mb-3">
+<h4 class="card-header">プレビュー</h4>
+<div class="card-body">
+    <div>
+        <div class="float-left" style="background-color:#e07070;width:50%;">左</div>
+        <div class="float-right" style="background-color:#7070e0;width:50%">右</div>
+        <div class="clearBoth" style="background-color:#70e070;">クリア</div>
+    </div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+<div id="s5" class="mt-n6 pt-6 mb-6 clearfix">
+
+<h2>clearの応用</h2>
+<h3>clearfix</h3>
+<p>クリアする要素が無いとき
+クリアのする要素を疑似要素で挿入する。</p>
+<pre class="line-numbers language-css" data-src="prism.js"><code>.clearfix:after{
+content:&quot;&quot;;
+display:block;
+clear:both;
+}
+</code></pre>
+
+<h3>疑似要素セレクター  :before:after</h3>
+<p>要素の内容の最初　最後にテキストなどの要素を挿入する。
+HTML要素ではなく見栄えのためだけに挿入するため機械的な意味や翻訳に影響しない。</p>
+
+<pre class="line-numbers language-css" data-src="prism.js"><code>.quote:before{
+content:&quot;「&quot;;
+}
+.quote:after{
+content:&quot;」&quot;;
+}
+</code></pre>
+<div class="card mb-3">
+    <h4 class="card-header">プレビュー</h4>
+    <div class="card-body">
+      <style>
+    .quote:before{
+content:"「";
+}
+.quote:after{
+content:"」";
+}
+      </style>
+        <div>
+            <div class="quote">ことば</div>
+        </div>
+    </div>
+    </div>
+
+
+
+
+<h3>横並びのメニューなどのレイアウト例</h3>
+<p>ちょうど半分の幅でカラムを作りたい場合</p>
+<h4>HTML</h4>
+<pre class="line-numbers language-xml" data-src="prism.js"><code>&lt;div class="clearfix"&gt;
+&lt;div class=&quot;floatLeft&quot;&gt;1&lt;/div&gt;
+&lt;div class=&quot;floatLeft&quot;&gt;2&lt;/div&gt;
+&lt;div class=&quot;floatLeft&quot;&gt;3&lt;/div&gt;
+&lt;div class=&quot;floatLeft&quot;&gt;4&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h4>CSS</h4>
+<pre class="line-numbers language-css" data-src="prism.js"><code>
+
+/*余白をコンテンツエリアに計上する。*/
+div{
+  boxsizing:border-box;
+}
+/*左にフロートだよ*/
+.floatLeft{
+float:left;
+width:25%;
+}
+
+.clearfix:after{
+  content:&quot;&quot;;
+  display:block;
+  clear:both;
+  }
+
+
+</code></pre>
+
+<div class="card mb-3">
+<h4 class="card-header">プレビュー</h4>
+<div class="card-body">
+    <div class="clearfix">
+        <div class="float-left" style="background-color:#e07070;width:25%;">1</div>
+        <div class="float-left" style="background-color:#7070e0;width:25%;">2</div>
+        <div class="float-left" style="background-color:#70e070;width:25%">3</div>
+        <div class="float-left" style="background-color:#e0e070;width:25%">4</div>
+    </div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div id="s6" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>結論</h2>
+<ul>
+  <li>横並びになる要素にfloatプロパティ</li>
+  <li>横並びになる要素に横幅のプロパティwidthを設定</li>
+  <li>横並びになる要素に横幅のプロパティbox-sizing:border-box;を入れておくとと計算が楽</li>
+  <li>フロートを終わらせたい要素にclearプロパティ</li>
+  <li>フロートを終わらせたい要素にがないときclearFixのテクニックをつかいましょう。</li>
+</ul>
+
+<p>SP　PCの幅の制御を書かなくていい Display:flex;の方が工数がすくなくてよいです。</p>
+
+</div>
+</article>
+</div>
+<!-- /container-->
+
+<aside class="print-none" id="w-aside2">
+<div class="row text-white no-gutters justify-content-center">
+<nav aria-label="Page navigation ">
+<ul class="pagination justify-content-center">
+<li class="page-item">
+<a class="page-link" href="202_html_markUp.html" tabindex="-1" aria-disabled="false">Previous</a>
+</li>
+<li class="page-item">
+<a class="page-link" aria-disabled="false"  href="204_html_markUp.html">Next</a>
+</li>
+</ul>
+</nav>
+</div>
+
+<div class="container bg-dark p-3">
+
+
+</div>
+</aside>
+
+</main>
+<!--w-main-->
+<aside class="w-aside col-lg-2 print-none" id="w-aside1">
+<div class="w-aside-inner container">
+<div class="accordion" id="accordionAside">
+<div class="w-subnav">
+<div id="headingOne">
+<h3 class="sticky-top">
+  <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" >basic Operation</button>
+</h3>
+</div>
+<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionAside">
+<!-- BOlist modile -->
+<ul id="w-BOlist" class="list-unstyled">
+        <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+        </ul>
+        <!-- /BOlist modile -->
+</div>
+</div>
+<div class="w-subnav">
+<div id="heading2">
+<h3 class="sticky-top">
+  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">web Outline</button>
+</h3>
+</div>
+<div id="collapseTwo" class="collapse" aria-labelledby="heading2" data-parent="#accordionAside">
+<!-- OLlist modile -->
+<ul id="w-OLlist" class="list-unstyled">
+        <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+</ul>
+<!-- /OLlist modile -->
+</div>
+</div>
+<div class="w-subnav">
+<div id="heading3">
+<h3 class="sticky-top">
+  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">HTML</button>
+      </h3>
+</div>
+<div id="collapseThree" class="collapse" aria-labelledby="heading3" data-parent="#accordionAside">
+    <!-- OLlist modile -->
+    <ul id="w-MKlist" class="list-unstyled">
+            <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+    </ul>
+    <!-- /OLlist modile -->
+    </div>
+    </div>
+
+    <div class="w-subnav">
+        <div id="heading4">
+        <h3 class="sticky-top">
+          <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse4" aria-expanded="true" aria-controls="collapse4">Text Editor
+          </button>
+        </h3>
+        </div>
+        <div id="collapse4" class="collapse" aria-labelledby="heading4" data-parent="#accordionAside">
+            <!-- EDlist modile -->
+            <ul id="w-EDlist" class="list-unstyled">
+              <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+            </ul>
+            <!-- /EDlist modile -->
+            </div>
+            </div>
+  </div><!-- /accordionAside -->
+</div>
+<script src="_js/_common/VueBOnavlist.js"></script>
+</aside>
+
+<!-- /w-aside2-->
+</div>
+<footer id="w-pageFooter">
+<div class="container">
+<small>&copy; shounosuke tarutani</small>
+</div>
+<!-- /container-->
+</footer>
+<!--w-pageFooter-->
+<script src="_js/_common/prism.js"></script>
+</div>
+<!--w-container-->
+</body>
+</html>
