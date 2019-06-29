@@ -159,7 +159,12 @@ var mklists = new Vue({
                     titlename:'ファイルパス',
                     titleen:"file path",
                     url:"203_html_markUp.html"
-                }
+                },
+                {
+                    titlename:'float clearとレイアウト',
+                    titleen:"float clear",
+                    url:"204_html_markUp.html"
+                },
             ]
    }
   });
