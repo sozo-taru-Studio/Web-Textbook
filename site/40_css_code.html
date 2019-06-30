@@ -99,7 +99,7 @@
       この行のしたにスタイルシートを書いていきます。
       このとき@の前になにか半角スペースを含めた文字があった場合うまく機能しない場合があります。</p>
 <div class="card mb-3">
-<h4 class="card-header">プレビュー</h4>
+<h4 class="card-header">コード</h4>
 <div class="card-body">
 <pre class="line-numbers language-css" data-src="prism.js"><code>@charset "UTF-8";</code></pre>
 </div>
@@ -112,18 +112,18 @@
 <h4 class="h5">フォルダ構成例</h4>
 <p><img src="_images/_html/rePath1.PNG" alt="例2相対パス"></p>
 <h5>フォルダ図 A</h5>
-<pre class="hljs"><code><div>
+<pre class="hljs"><code>
   ├ test─site
     │  index.html
     ├  css
        |  style.css
-</div></code></pre>
+</code></pre>
 <h3>htmlファイルへリンク</h3>
 <p>htmlファイルへリンクして関連付けします。
 htmlファイルはリンクされたcssファイルを読み込みbody要素内を装飾します。</p>
 <p>外部ファイルのスタイルシートを読み込むときはhead要素内にlink要素で関連付けします。</p>
 <div class="card mb-3">
-    <h4 class="card-header">プレビュー</h4>
+    <h4 class="card-header">コード</h4>
     <div class="card-body">
 <h5>記入の凡例</h5>
 <pre class="line-numbers language-xml" data-src="prism.js"><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;スタイルシートへのパス(URI)&quot;&gt;</code></pre>
@@ -142,7 +142,7 @@ htmlファイルはリンクされたcssファイルを読み込みbody要素内
 </div></div>
 <p>リンク要素はヘッド要素に書きましょう。
 昨今のブラウザはヘッド要素を読み込んだ段階で同期的にCSSを読み込みにいきます。早くよみこめたほうが表示も早くなります。</p>
-<p>cssファイルになにかスタイルシート宣言ブロックがあれば表示が変わるはずです。</p>
+<p>cssファイルになにかスタイルシート宣言ブロックをコピーしてください。表示が変わればCSSが適応されています。</p>
 <h5>テストコード</h5>
 <pre class="line-numbers language-xml" data-src="prism.js"><code>/*ポジ反転*/
 body{
@@ -184,7 +184,7 @@ CSSファイルの一部を修正すれば修正箇所があるhtmlファイル�
 <p>属性と属性値でスタイルを直接要素に適応します。インライン入力とも呼びます。一番優先されて表示されますので外部ファイルのスタイルを上書きします。</p>
 <pre class="line-numbers language-xml" data-src="prism.js"><code>&lt;p style=&quot;color:red;&quot;&gt;赤文字&lt;/p&gt;</code></pre>
 <h4>デメリット</h4>
-<p>たくさんのスタイルを適応するとコードが読みにくくなる。常用せず基本はCSSファイルからのリンクでのスタイルコードを書き。特別な仕様や今後書き換える予定がない場合のみ使用するようにするのが一般的なインラインスタイリングのつかいかたです。</p>
+<p>たくさんのスタイルを要素に適応するとコードが読みにくくなります。常用せず基本はCSSファイルからのリンクでのスタイルコードを書き。特別な仕様や今後書き換える予定がない場合のみ使用するようにするのが一般的なインラインスタイリングのつかいかたです。</p>
 <div class="card">
 <h5 class="card-header">javascriptでのスタイルの適応</h5>
 <div class="card-body">
