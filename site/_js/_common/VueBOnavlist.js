@@ -181,3 +181,16 @@ var mklists = new Vue({
             ]
    }
   });
+  var csslists = new Vue({
+    el: '#w-CSSlist',
+    data: {
+         titles:[
+                {
+                    titlename:'CSSの基礎知識',
+                    titleen:"base style sheet",
+                    url:"40_css_code.html"
+                }
+
+            ]
+   }
+  });
