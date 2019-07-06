@@ -186,11 +186,20 @@ var mklists = new Vue({
     data: {
          titles:[
                 {
-                    titlename:'CSSの基礎知識',
-                    titleen:"base style sheet",
+                    titlename:'CSSの基礎知識 ファイル定義',
+                    titleen:"base style sheet files",
                     url:"40_css_code.html"
+                },
+                {
+                    titlename:'CSSの基礎知識 ',
+                    titleen:"base style sheet ",
+                    url:"401_css_code.html"
+                },
+                {
+                    titlename:'CSS position プロパティ',
+                    titleen:"position ",
+                    url:"41_css_code.html"
                 }
-
             ]
    }
   });
