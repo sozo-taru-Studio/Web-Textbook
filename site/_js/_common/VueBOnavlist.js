@@ -207,6 +207,10 @@ var mklists = new Vue({
                     titlename:'flex レイアウト 基礎',
                     titleen:"flex ",
                     url:"403_css_code.html"
+                },{
+                    titlename:'flex レイアウト 2',
+                    titleen:"flex 2",
+                    url:"404_css_code.html"
                 }
             ]
    }

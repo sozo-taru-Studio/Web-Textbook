@@ -7,7 +7,7 @@ bootstrapを先に読み込む
 
 // counter
 .count-reset{
-	counter-reset: cont; 
+	counter-reset: cont;
 }
 .count-reset .conut-item::before {
   counter-increment: cont;                 /* cont カウンターの値に1を加算 */
@@ -29,7 +29,7 @@ padding-top:56px;
 	ul li {
 		margin-bottom: .6rem;
 					border-left: 3px solid  #025f98;
-			
+
 		&>a {
 	 display: block;
 	 padding-left: 1em;
@@ -46,7 +46,7 @@ padding-top:56px;
 			text-align:left;
 			line-height: 1.2;
 			text-decoration: none;
-			transition: color .3s ease-in 
+			transition: color .3s ease-in
 		}
 		&:hover{
 			color:#025f98;
@@ -70,7 +70,7 @@ padding-top:56px;
 }
 	h3{
 	color:#011522;
-		
+
 }
 }
 
@@ -103,7 +103,7 @@ blockquote{
 					font-size: 2.4rem;
 			}
 	}
-}// 
+}//
  @media print {
 		html{
 			font-size:12pt;
