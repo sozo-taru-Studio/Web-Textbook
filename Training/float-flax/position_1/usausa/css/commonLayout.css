@@ -1,0 +1,24 @@
+@charset "UTF-8";
+/*----------------------------------------
+"usausa site"  Layout common CSS files
+media:all
+auther:shounosuke tarutani 
+date: 2011 09 20  
+
+last date:
+
+----------------------------------------*/
+/*-------ユニバーサル設定タイプ・セレクタ設定---------------*/
+
+
+* {
+	margin:0;
+	padding:0;
+}
+
+
+
+
+/*------------------
+div#wrapper
+-------------------*/

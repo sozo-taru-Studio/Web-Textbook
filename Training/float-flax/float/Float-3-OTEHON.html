@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>見本 Float3</title>
+    <link rel="stylesheet" href="css/float.css">
+    <style>
+     /* 背景色設定 --------------------------------------------------------*/
+    .floatTest3{
+       background-color: #f8f8f8;
+       color:#333;
+     }
+    .menu__list{
+      background-color: #666;
+    }
+    .menu__item:nth-child(1){
+      background-color: #f99;
+    }
+    .menu__item:nth-child(2){
+      background-color: #ff9;
+    }
+    .menu__item:nth-child(3){
+      background-color: #9ff;
+    }
+
+
+    /* レイアウト設定 ---------------------------------------------------*/
+    .menu__item{
+      width: 33.3333%;/* POINT 1 親要素より子要素を小さくする*/
+      float: left;/*　POINT 2 子要素にフロートプロパティを設定*/
+      box-sizing: border-box;/* widthの計算をpadding borderに含めるモードに変更 */
+    }
+
+    /* POINT3 解除する要素がない場合 クリアフィックスを使うと汎用的*/
+     .clearfix:after{
+       content: "";/* 空の要素を末尾に挿入*/
+       display: block;/*インラインをブロックに変換*/
+       clear: both;/*クリアプロパティ*/
+     }
+
+     /*　コンテントプロパティってなに？*/
+     .headline:before{
+       content:"[";
+     }
+     .headline:after{
+      content:"]";
+  
+}
+
+
+
+/* これは今回つかいません */
+    .clear{ /* floatを解除するブロックボックス */
+    /*  clear:both;  */
+    }
+
+    /* 余白調整 など-----------------------------------------------------*/
+    .menu__item{
+      list-style: none;
+      text-align: center;
+    }
+
+    .menu__list{
+      padding-left: 0;
+    }
+
+    .menu__item a{
+    text-decoration: none;
+    line-height: 1;
+  }
+
+    .menu__item a span{
+}
+
+    </style>
+  </head>
+  <body>
+    <div id="wrapepr">
+    <h1>見本 2</h1>
+<h2>float 多数カラム レイアウト</h2>
+<div class="floatTest3">
+<div class="box clear">
+<h2>とある一家</h2>
+<div class="menu">
+<ul class="menu__list clearfix">
+  <li class="menu__item"><a href="#"><span>さざえ</span></a></li>
+  <li class="menu__item"><a href="#"><span>かつお</span></a></li>
+  <li class="menu__item"><a href="#"><span>わかめ</span></a></li>
+</ul>
+</div><!-- / .box-->
+</div><!-- / floatTest1 -->
+</div><!-- / id="wrapepr"-->
+</body>
+</html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>見本 FLEXBOX1</title>
+    <link rel="stylesheet" href="css/flexbox.css">
+    <style>
+     /* 背景色設定 --------------------------------------------------------*/
+    .floatTest3{
+       background-color: #f8f8f8;
+       color:#333;
+     }
+    .menu__list{
+      background-color: #666;
+    }
+    .menu__item:nth-child(1){
+      background-color: #f99;
+    }
+    .menu__item:nth-child(2){
+      background-color: #ff9;
+    }
+    .menu__item:nth-child(3){
+      background-color: #9ff;
+    }
+    .menu__item:nth-child(4){
+      background-color: #9f9;
+    }
+    .menu__item:nth-child(5){
+      background-color: #99f;
+    }
+    .menu__item:nth-child(6){
+      background-color: #f9f;
+    }
+
+/*flex レイアウト設定 ---------------------------------------------------*/
+/* POINT 並びを変える親要素に設定する。*/
+.menu__list{
+  display:-webkit-flex;/*iosfari */
+  display:flex;
+  flex-wrap:-webkit-wrap;
+  flex-wrap:wrap;/* … 子要素の折り返し nowrap(初期値)*/
+  justify-content:center;/*  水平方向の揃え flex-start（初期値）… 行の開始位置から配置。左揃え。*/
+  align-items:center;/*垂直方向の揃え stretch（初期値）… 親要素の高さ、またはコンテンツの一番多い子要素の高さに合わせて広げて配置 */
+  }
+/* 複数行になるとき */
+  .menu__list{
+  align-content:space-around ; /*… 複数行にした時の揃え stretch（初期値）… 親要素の高さに合わせて広げて配置 */
+  }
+
+/* 子要素のプロパティ。
+子要素の大きさが変わるときなど以外は下記の定番プロパティだけでよい
+*/
+  .menu__item{
+      width: 30%;/* POINT 1 親要素より子要素を小さくする*/
+      box-sizing: border-box;/* widthの計算をpadding borderに含めるモードに変更 */
+    }
+
+/*
+（ここから先は上をマスターした後で学習してください。）
+*/
+
+
+/* 無理やり表示順を固いとき
+--------------------------------------------*/
+.orderBefoer{
+  -webkit-order:-1;
+  order:-1;/* 一番前に出る 順番を入れ替えたいときに使う　初期値0　*/
+}
+
+.orderAfter{
+  -webkit-order:1;
+  order:1;/*最後にでる 初期値0　*/
+}
+
+/*横幅を太らせる 要素の横幅を変更したいとき 初期値0　誰が優先的に太る？
+--------------------------------------------*/
+.flexGrow1{
+  -webkit-flex-grow:0;
+  flex-grow:0;
+}
+.flexGrow2{
+  -webkit-flex-grow:2;
+  flex-grow:2;
+}
+/*横幅を知事ませる　初期値0 だれが優先的に縮小する*/
+.flexShrink1{
+  -webkit-flex-shrink:0;
+  flex-shrink:0;
+}
+.flexShrink12{
+  -webkit-flex-grow:2;
+  flex-grow:2;
+}
+/*flex-basis 子要素のベースとなる幅の指定*/
+.flexBaseisCol3{
+  -webkit-flex-grow:30%;
+  flex-grow:30%;
+}
+.flexBaseisAuto{
+  -webkit-flex-basis:auto;
+  flex-basis:auto;
+}
+
+/*一括設定
+flex … flex-grow、flex-shrink、flex-basisをまとめて指定
+-----------------------------------------------------------*/
+.flex__Item--Wide{
+  -webkit-flex:1 0 60%;
+  flex:1 0 60%;
+}
+
+.flex__Item--narrow{
+  -webkit-flex:0 1 30%;
+  flex:0 1 30%;
+  }
+
+/* 余白調整 など-----------------------------------------------------*/
+
+    .menu__item{
+      list-style: none;
+      text-align: center;
+    }
+
+    .menu__list{
+      padding-left: 0;
+    }
+
+    .menu__item a{
+    text-decoration: none;
+    line-height: 1;
+   }
+
+    .menu__item a h3{
+    }
+
+    </style>
+  </head>
+  <body>
+    <div id="wrapepr">
+    <h1>見本 2</h1>
+<h2>flexbox レイアウト</h2>
+<div class="floatTest3">
+<a href="https://www.webcreatorbox.com/tech/css-flexbox-cheat-sheet" target="_blank">日本語対応！CSS Flexboxのチートシートを作ったので配布します | Webクリエイターボックス</a><br>
+<a href="https://developer.mozilla.org/ja/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxesCSS" target="_blank"> flexible box の利用 | MDN</a>
+
+
+<div class="box clear">
+<h2>dog is free</h2>
+<div class="menu">
+<ul class="menu__list clearfix">
+  <li class="menu__item"><a href="#"><h3>box1</h3></a></li>
+  <li class="menu__item"><a href="#"><h3>box2</h3></a></li>
+  <li class="menu__item"><a href="#"><h3>box3</h3></a></li>
+  <li class="menu__item"><a href="#"><h3>box4</h3></a></li>
+  <li class="menu__item"><a href="#"><h3>box5</h3></a></li>
+  <li class="menu__item"><a href="#"><h3>box6</h3></a></li> -->
+</ul>
+</div><!-- / .menu -->
+</div><!-- / .box -->
+</div><!-- / floatTest1 -->
+<style>
+
+.flex{}
+
+.thumb{ /*
+  height: auto;
+  max-width:100%;
+  */
+}
+.flex-item{
+  box-sizing: border-box;
+  width:33.333%;
+  padding:1rem;
+  border:1px solid #ccc;
+  border-radius: 12px;
+
+}
+</style>
+<div class="flex dogs-list" id="dogs-Wrapper">
+ <div class="flex-item item01">
+   <div class="dog-images">
+   <img alt="フレンチ・ブルドッグ" src="images/bulldog_sp.jpg" class="thumb">
+   </div>
+   <div class="dog-text">
+     <h3>フレンチ・ブルドッグ</h3>
+     <p>8世紀イギリスの織物職人がフランスに渡った時、一緒に連れて行ったブルドッグが元となり、パグやテリアとの交配で誕生した。</p><p>日本には大正時代に紹介され、昭和初期には数多く飼育された。その後日本での人気は衰えたが、2000年代に入ってから人気が復活している。</p>
+   </div><!-- / .dog-text  -->
+ </div><!-- / .flex-item  -->
+
+
+
+ <div class="flex-item item02">
+   <div class="dog-images">
+   <img alt="ラブラドール・レトリーバー" src="images/golden_2.jpeg" class="thumb">
+   </div>
+   <div class="dog-text">
+     <h3>ラブラドール・レトリーバー</h3>
+     <p>ラブラドール・レトリーバー（ラブラドール・レトリバー、あるいはラブラドール・リトリーバーとも。英: Labrador Retriever）は、大型犬に分類される犬種。元来、レトリーバー（獲物を回収 (Retrieve) する犬）と呼ばれる狩猟犬の一種であるが、現在はその多くが家庭犬として、あるいは盲導犬や警察犬などの使役犬として飼育されている。</p>
+<p>
+ラブラドール・レトリーバーの特徴として、本来の使役用途である網にかかった魚の回収に適した、水かきのついた足があげられる。カナダ[4]、イギリス[5]で登録頭数第1位で、アメリカでも1991年以来登録頭数第1位の人気犬種である[6]。また、洞察力、作業力に優れ、オーストラリア、カナダ、イギリス、アメリカなど世界各国で、身体障害者補助犬、警察犬など様々な用途に最適な犬種として使役されている。ラブラドール・レトリーバーは活発で泳ぐことを好み、幼児から高齢者までよき遊び相手であるとともに保護者の役割も果たす犬種である。
+</p>
+   </div><!-- / .dog-text  -->
+ </div><!-- / .flex-item  -->
+
+
+<!--
+ <div class="flex-item item02">
+   <div class="dog-images">
+   <img alt="スピッツ" src="images/sp.jpeg" class="thumb">
+   </div>
+   <div class="dog-text">
+     <h3>スピッツ</h3>
+     <p>スピッツ（独: Spitz）は、口吻がとがり、耳が立ったイヌの系統である[1]。スピッツ（シュピッツ）とはドイツ語で「鋭利な、尖った」という意味である。国際畜犬連盟の犬の分類では、第5グループ「原始的な犬・スピッツ」に含まれる。日本語では特に日本スピッツを単に「スピッツ」と呼ぶことが多い。</p>
+   </div>--><!-- / .dog-text  -->
+ <!-- </div>  / .flex-item  -->
+
+
+
+ <div class="flex-item item02">
+   <div class="dog-images">
+   <img alt="" src="" class="">
+   </div>
+   <div class="dog-text">
+     <h3><!--犬の名前--></h3>
+     <p><!-- テキスト --></p>
+   </div><!-- / .dog-text  -->
+ </div><!-- / .flex-item  -->
+
+
+
+
+
+</div><!-- / id="wrapepr" -->
+</body>
+</html>

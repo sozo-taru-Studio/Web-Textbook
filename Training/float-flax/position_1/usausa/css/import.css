@@ -1,0 +1,17 @@
+@charset "UTF-8";
+/*----------------------------------------
+"usausa site"  import CSS files
+media :all
+
+auther :shounosuke tarutani 
+date: 20110920 ; 
+
+last date:
+
+-----------------------------------------*/
+/*----------------------------------------
+共通レイアウトおよび各部詳細
+-----------------------------------------*/
+
+@import"commonLayout.css";
+@import"header.css";

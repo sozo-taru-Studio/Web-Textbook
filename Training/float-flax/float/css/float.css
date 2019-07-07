@@ -1,0 +1,13 @@
+@charset "utf-8";
+
+.flatLeft{
+  float:left;
+}
+
+.clearB{
+  clear:both;
+}
+
+.clearL{
+  clear:left;
+}
