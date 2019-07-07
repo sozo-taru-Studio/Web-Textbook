@@ -199,6 +199,14 @@ var mklists = new Vue({
                     titlename:'CSS position プロパティ',
                     titleen:"position ",
                     url:"41_css_code.html"
+                },{
+                    titlename:'HTML CSSのデバッグ',
+                    titleen:"debug ",
+                    url:"402_css_code.html"
+                },{
+                    titlename:'flex レイアウト 基礎',
+                    titleen:"flex ",
+                    url:"403_css_code.html"
                 }
             ]
    }
