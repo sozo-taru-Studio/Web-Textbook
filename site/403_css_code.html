@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- seo -->
+<!--<meta name="description" content="">-->
+<meta name="robots" content="noindex,nofollow">
+<title>flex レイアウト 基礎 - Web-Textbook</title>
+
+<!-- stylesheet  -->
+<link rel="stylesheet" href="_css/_common/bootstrap.css">
+<link rel="stylesheet" href="_css/_common/font-awesome.min.css">
+<link rel="stylesheet" href="_css/_common/style.css">
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
+<link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="icon" href="/favicon.ico">
+
+<!-- common js  -->
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="_js/_common/jquery-3.2.1.min.js"></script>
+<script src="_js/_common/bootstrap.min.js"></script>
+<script src="_js/_common/pagescroll.jQuery.js"></script>
+</head>
+
+<body style="height: auto;">
+<div id="w-wrapper" class="w-wrapper">
+<header id="w-pageHeader" class="navbar navbar-dark navbar-expand-lg fixed-top w-pageHeader" data-scroll-header="true">
+<div class="container">
+<a class="navbar-brand" href="/">logo</a><span class="navbar-brand">Web Textbook</span>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#w-nav" aria-controls="w-nav" aria-expanded="false" aria-label="ナビゲーション切替">
+<span class="navbar-toggler-icon"></span>
+</button>
+<nav id="w-nav" class="collapse navbar-collapse">
+<ul class="navbar-nav mr-auto pl-3">
+<li class="nav-item"><a href="20_browser_cord.html" class="nav-link disabled">CSS</a></li>
+<li class="nav-item"><a href="#" class="nav-link disabled">CSS</a></li>
+<li class="nav-item"><a href="#" class="nav-link">javasceipt</a></li>
+</ul>
+</nav>
+<!-- /w-nav-->
+</div>
+<!-- /container-->
+</header>
+<!-- /w-pageHeader-->
+<div class="d-lg-flex flex-row-reverse pt-5">
+<main id="w-main" class="w-main col-lg-10">
+<div class="container mb-5">
+<article id="w-article">
+        <h1>flex レイアウト 基礎 - CSS</h1>
+        <p><span>category:</span> <span class="badge badge-primary">css</span></p>
+        <hr>
+<!-- 序章 モジュール -->
+<div class="card mb-4">
+<div class="card-body clearfix">
+  <p class="card-text">flex boxはFlexible Box Layout Moduleのことで従来のレイアウトより柔軟にレイアウトが組める、displayプロパティのです。</p>
+    <p>新規でサイトを組む場合flex で組んだほうがよういでしょう。floatでレイアウトを組むよりもより簡単です。</p>
+  <p>ただし、floatでレイアウトを組んで苦労をしていた人にとっては簡単というだけで。自由度が高いため使いこなすプロパティやテクニックも多く甘く見ないほうがいいです。</p>
+</div>
+</div>
+
+<!-- 目次 モジュール -->
+<div class="bg-light p-3 mb-4">
+<h2>目次</h2>
+<ul>
+    <li><a href="#s1" data-scroll>display：flex；で始まるflexレイアウト</a></li>
+    <li><a href="#s2" data-scroll>flex-direct</a></li>
+    <li><a href="#s3" data-scroll>flex-wrap 子要素の折り返し</a></li>
+    <li><a href="#s4" data-scroll>justify-content … 水平方向の揃え</a></li>
+    <li><a href="#s5" data-scroll>align-items 垂直方向の揃え</a></li>
+    <li><a href="#s5" data-scroll>align-content … 複数行にした時の揃え</a></li>
+</ul>
+</div>
+<!-- / 目次 モジュール -->
+<!-- 本文のセクション モジュール -->
+<div id="s1" class="mt-n6 pt-6 mb-6 clearfix">
+  <h2>display：flex；で始まるflexレイアウト</h2>
+<p>下記のサイトがわかりやすいかったので紹介します。</p>
+  <p><a href="https://www.webcreatorbox.com/tech/css-flexbox-cheat-sheet" target="_blank">日本語対応！CSS Flexboxのチートシートを作ったので配布します</a></p>
+<div class="card mb-4">
+<h3 class="card-header">起動の仕方</h3>
+<div class="card-body">
+<h4>HTML</h4>
+<p>ウィンドウ上でマウス右クリック＞コンテキストメニュー展開＞検証</p>
+<pre class="line-numbers language-xml" data-src="prism.js"><code>
+  &lt;div class="flexbox"&gt;
+    &lt;div class="item"&gt;Item 1&lt;/div&gt;
+    &lt;div class="item"&gt;Item 2&lt;/div&gt;
+    &lt;div class="item"&gt;Item 3&lt;/div&gt;
+    &lt;div class="item"&gt;Item 4&lt;/div&gt;
+  &lt;/div&gt;
+</code></pre>
+<h4>CSS</h4>
+<pre class="line-numbers language-css" data-src="prism.js"><code>.flexbox{
+display:flex;
+}
+</code></pre>
+<p>親要素クラスflexboxのdisplayプロパティが flexになったとき。内包された子要素はflexレイアウトモードになる。</p>
+<p>クラスitem要素がフレックスレイアウトモードになる。</p>
+<div>
+  <h4>プレビュー</h4>
+<style>
+.flexbox{
+display:flex;
+}
+.item {
+  background-color: aqua;
+  border:1px solid #ccc;
+}
+</style>
+<h5 class="mb-0">flex 適応前</h5>
+<div class="mb-3">
+<div class="item">Item 1</div>
+<div class="item">Item 2</div>
+<div class="item">Item 3</div>
+<div class="item">Item 4</div>
+</div>
+<h5 class="mb-0">flex 適応後</h5>
+<div class="flexbox">
+<div class="item">Item 1</div>
+<div class="item">Item 2</div>
+<div class="item">Item 3</div>
+<div class="item">Item 4</div>
+</div>
+<p>フレックスレイアウトはフロートレイアウトのようにクリアプロパティなどの事後処理が不要です。</p>
+<p>普通の設定では子要素が横並びになり。要素の幅は余白とボーダーのプロパティを含めたコンテンツの幅と同じになる。</p>
+</div>
+</div>
+</div>
+<div id="s2" class="mt-n6 pt-6 mb-6 clearfix">
+<h2> flex-direction 配置方向と順番</h2>
+要素の並び順　水平方向　垂直方向を気前う。
+<ul>
+<li>row初期値） 子要素を左から右に配置</li>
+<li>row-revrse 子要素を右から左に配置</li>
+<li>column 上から下に配置</li>
+<li>column-revrse 子要素を下から上に配置</li>
+</ul>
+</div>
+<div id="s3" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>flex-wrap 子要素の折り返し</h2>
+<p>子要素たちが親要素の幅を超えた場合の処理</p>
+<ul>
+<li>nowrap（初期値）… 子要素を折り返しせず、一行に並べる</li>
+<li>wrap … 子要素を折り返し、複数行に上から下へ並べる</li>
+<li>wrap-reverse … 子要素を折り返し、複数行に下から上へ並べる</li>
+</ul>
+<p>flex-wrap:wrap;の場合flex-content;プロパティの設定が開放される。</p>
+</div>
+<div id="s4" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>justify-content … 水平方向の揃え</h2>
+<p>子要素の並びの隙間を同計算してならべるのか？を指定する。</p>
+<ul>
+<li>flex-start（初期値）… 行の開始位置から配置。左揃え。</li>
+<li>flex-end … 行末から配置。右揃え。</li>
+<li>center … 中央揃え</li>
+<li>space-between … 最初と最後の子要素を両端に配置し、残りの要素は均等に間隔をあけて配置</li>
+<li>space-around … 両端の子要素も含め、均等に間隔をあけて配置</li>
+</ul>
+</div>
+<div id="s5" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>align-items 垂直方向の揃え</h2>
+<p>親要素の空きがあったときの処理</p>
+<p>親要素に高さ（height:auto;以外）が指定されていないとこのプロパティの値を変更する意味がない。</p>
+<ul>
+<li>stretch（初期値）… 親要素の高さ、またはコンテンツの一番多い子要素の高さに合わせて広げて配置</li>
+<li>flex-start … 親要素の開始位置から配置。上揃え。</li>
+<li>flex-end … 親要素の終点から配置。下揃え。</li>
+<li>center … 中央揃え</li>
+<li>baseline … ベースラインで揃える</li>
+</ul>
+
+</div>
+<div id="s6" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>align-content … 複数行にした時の揃え</h2>
+<p>子要素が複数行に渡った場合の垂直方向の揃えを指定します。flex-wrap: nowrap; が適応されていると子要素が一行になるので、align-content は無効になります。</p>
+<ul>
+<li>stretch（初期値）… 親要素の高さに合わせて広げて配置</li>
+<li>flex-start … 親要素の開始位置から配置。上揃え。</li>
+<li>flex-end … 親要素の終点から配置。下揃え。</li>
+<li>center … 中央揃え</li>
+<li>space-between … 最初と最後の子要素を上下の端に配置し、残りの要素は均等に間隔をあけて配置</li>
+<li>space-around … 上下端にある子要素も含め、均等に間隔をあけて配置</li>
+</ul>
+
+</div>
+</article>
+</div>
+<!-- /container-->
+<aside class="print-none" id="w-aside2">
+<div class="row text-white no-gutters justify-content-center">
+<nav aria-label="Page navigation ">
+<ul class="pagination justify-content-center">
+<li class="page-item disabled">
+<a class="page-link disabled" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+</li>
+<li class="page-item disabled">
+<a class="page-link disabled" aria-disabled="true"  href="41_css_code.html">Next</a>
+</li>
+</ul>
+</nav>
+</div>
+<div class="container bg-dark p-3">
+
+</div>
+</aside>
+
+</main>
+<!--w-main-->
+<aside class="w-aside col-lg-2 print-none" id="w-aside1">
+<div class="w-aside-inner container">
+<div class="accordion" id="accordionAside">
+<div class="w-subnav">
+<div id="headingOne">
+<h3 class="sticky-top">
+  <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" >basic Operation</button>
+</h3>
+</div>
+<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionAside">
+<!-- BOlist modile -->
+<ul id="w-BOlist" class="list-unstyled">
+        <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+        </ul>
+        <!-- /BOlist modile -->
+</div>
+</div>
+<div class="w-subnav">
+<div id="heading2">
+<h3 class="sticky-top">
+  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">web Outline</button>
+</h3>
+</div>
+<div id="collapseTwo" class="collapse" aria-labelledby="heading2" data-parent="#accordionAside">
+<!-- OLlist modile -->
+<ul id="w-OLlist" class="list-unstyled">
+  <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+</ul>
+<!-- /OLlist modile -->
+</div>
+</div>
+<div class="w-subnav">
+<div id="heading3">
+<h3 class="sticky-top">
+  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">HTML</button>
+      </h3>
+</div>
+<div id="collapseThree" class="collapse" aria-labelledby="heading3" data-parent="#accordionAside">
+<!-- OLlist modile -->
+<ul id="w-MKlist" class="list-unstyled">
+  <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}}</a></li>
+</ul>
+<!-- /OLlist modile -->
+</div>
+</div>
+
+<div class="w-subnav">
+<div id="heading4">
+<h3 class="sticky-top">
+<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse4" aria-expanded="true" aria-controls="collapse4">Text Editor
+</button>
+</h3>
+</div>
+<div id="collapse4" class="collapse" aria-labelledby="heading4" data-parent="#accordionAside">
+<!-- EDlist modile -->
+<ul id="w-EDlist" class="list-unstyled">
+<li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+</ul>
+<!-- /EDlist modile -->
+</div>
+</div>
+<div class="w-subnav">
+<div id="heading5">
+<h3 class="sticky-top">
+<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse5" aria-expanded="true" aria-controls="collapse4">CSS
+</button>
+</h3>
+</div>
+<div id="collapse5" class="collapse" aria-labelledby="heading4" data-parent="#accordionAside">
+<!-- EDlist modile -->
+<ul id="w-CSSlist" class="list-unstyled">
+  <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+</ul>
+<!-- /csslist modile -->
+</div>
+</div>
+  </div><!-- /accordionAside -->
+</div>
+<script src="_js/_common/VueBOnavlist.js"></script>
+</aside>
+
+<!-- /w-aside2-->
+</div>
+<footer id="w-pageFooter">
+<div class="container">
+<small>&copy; shounosuke tarutani</small>
+</div>
+<!-- /container-->
+</footer>
+<!--w-pageFooter-->
+<script src="_js/_common/prism.js"></script>
+</div>
+<!--w-container-->
+</body>
+</html>
