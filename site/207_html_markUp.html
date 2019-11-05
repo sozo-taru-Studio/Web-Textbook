@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- seo -->
+<!--<meta name="description" content="">-->
+<meta name="robots" content="noindex,nofollow">
+<title>HTML コンテンツモデル  - Web-Textbook</title>
+
+<!-- stylesheet  -->
+<link rel="stylesheet" href="_css/_common/bootstrap.css">
+<link rel="stylesheet" href="_css/_common/font-awesome.min.css">
+<link rel="stylesheet" href="_css/_common/style.css">
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
+<link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="icon" href="/favicon.ico">
+
+<!-- common js  -->
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="_js/_common/jquery-3.2.1.min.js"></script>
+<script src="_js/_common/bootstrap.min.js"></script>
+<script src="_js/_common/pagescroll.jQuery.js"></script>
+</head>
+
+<body style="height: auto;">
+<div id="w-wrapper" class="w-wrapper">
+<header id="w-pageHeader" class="navbar navbar-dark navbar-expand-lg fixed-top w-pageHeader" data-scroll-header="true">
+<div class="container">
+<a class="navbar-brand" href="/">logo</a><span class="navbar-brand">Web Textbook</span>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#w-nav" aria-controls="w-nav" aria-expanded="false" aria-label="ナビゲーション切替">
+<span class="navbar-toggler-icon"></span>
+</button>
+<nav id="w-nav" class="collapse navbar-collapse">
+<ul class="navbar-nav mr-auto pl-3">
+<li class="nav-item"><a href="20_browser_cord.html" class="nav-link disabled">CSS</a></li>
+<li class="nav-item"><a href="#" class="nav-link disabled">CSS</a></li>
+<li class="nav-item"><a href="#" class="nav-link">javasceipt</a></li>
+</ul>
+</nav>
+<!-- /w-nav-->
+</div>
+<!-- /container-->
+</header>
+<!-- /w-pageHeader-->
+<div class="d-lg-flex flex-row-reverse pt-5">
+<main id="w-main" class="w-main col-lg-10">
+<div class="container mb-5">
+<article id="w-article">
+        <h1>メディアクエリ- - HTML</h1>
+        <p><span>category:</span> <span class="badge badge-primary">HTML</span></p>
+        <hr>
+<!-- 序章 モジュール -->
+<div class="card mb-4">
+<div class="card-body clearfix">
+<p class="card-text"></p>
+</div>
+
+</div>
+
+<!-- 目次 モジュール -->
+<div class="bg-light p-3 mb-4">
+<h2>目次</h2>
+<ul>
+    <li><a href="#s4" data-scroll>レスポンシブルサイト</a></li>
+    <li><a href="#s1" data-scroll>メディアクエリ-</a></li>
+    <li><a href="#s2" data-scroll>PCファースト</a></li>
+    <li><a href="#s3" data-scroll>spファースト</a></li>
+
+    <li><a href="#s5" data-scroll>メタタグ viewport</a></li>
+</ul>
+</div>
+<!-- / 目次 モジュール -->
+<!-- 本文のセクション モジュール -->
+<div id="s4" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>レスポンシブルサイト</h2>
+<p>理想としては
+リクエストされるデバイスに問わず、同じ質の情報を提供できるサイト。　デバイスによって変更や修正調整の工数が少なくてすみたい。（無くてすむ。）とくに急に言われても困る。</p>
+<p>おもにメディアクエリー技術をつかったPCとSPの多様な大きさと解像度のスクリーンデバイスに対応したONEソースサイトのこと。</p>
+<p>内容の変更や修正があったとき。該当の場所を修正変更すればいいので工数が少なくてすむ。</p>
+<p>昔は　PC　ガラケー　スマートフォンと3元管理や2元管理で工数が多かった。</p>
+</div>
+<div id="s1" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>メディアクエリ-</h2>
+<div class="p-3 border border-dark">
+<p><a href="https://sole-color-blog.com/blog/71/">レスポンシブの基本、メディアクエリの書き方</a></p>
+<h3>media 属性と値</h3>
+<p>反映するメディアを限定できる。専用にできる。</p>
+<p>デバイスの違いで見た目を変更する。</p>
+<p>印刷とモニターと見た目を変更する。</p>
+<p>例えば 白の文字は印刷されない。背景色を設定しすぎてインクを多量に使う。
+などの理由で印刷はシンプルにしたい。ときにつかわれていました。</p>
+<p>スクリーンにのみ設定さる場合。</p>
+<pre class="line-numbers language-xml" data-src="prism.js"><code>
+&lt;link rel=&quot;stylesheet&quot; href=&quot;css/style.css&quot; media=&quot;screen&quot;&gt;
+</code></pre>
+<h4>用語説明</h4>
+<ul>
+  <li>sp : スマートフォン</li>
+  <li>pc : パーソナルコンピューター</li>
+</ul>
+</div>
+<hr>
+
+
+
+<h3>値</h3>
+<p>本来　媒体への切り替えでつかわれていた値</p>　
+<h4>媒体</h4>
+<ul>
+<li>screen（一般的ディスプレイ）、</li>
+<li>projection(プロジェクター)、</li>
+<li>(プリンタ)、<li>tv(テレビ)、<li>all(すべて)</li>
+</ul>
+<p>など</p>
+<p>CSS3からデバイスの横幅でCSSを切り替れるようになった。<br>
+リンクタグのmedia属性だけでなくCSS内での｛｝の中で分岐できるようになった。</p>
+<h4>デメリット</h4>
+<p>ブラウザはCSSをすべて解析する。なので捨てるCSSが増える。（デバイスによって関係のないCSSがある）</p>
+</div>
+<div id="s2" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>PCファースト</h2>
+<div class="card">
+<h5 class="card-header">例　PCファーストpcの幅を先にCSSで組みspは後で組む</h5>
+<div class="card-body">
+<p>max-width : XXX<br>
+XXX の幅までのスクリーンデバイスこのCSSが適応される。</p>
+<p>学生や練習にはとっつきやすい。</p>
+<pre class="line-numbers language-css" data-src="prism.js"><code>
+@media screen and (max-width: 1024px) {
+/* 1024pxまでの幅の場合に適応される */
+    body {
+        background-color:#2262D1;
+    }
+}
+</code></pre>
+</div>
+</div>
+</div>
+<div id="s3" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>spファースト</h2>
+<p>デバイスの通信環境からこちらが主流
+　spの幅を先にCSSで組み　PCは後で読む</p>
+<p>min-width : XXX
+XXX の幅からのスクリーンデバイスにCSSが適応される。</p>
+<div class="card">
+  <h5 class="card-header">spの幅を先にCSSで組みPCは後で組む</h5>
+<div class="card-body">
+<pre class="line-numbers language-css" data-src="prism.js"><code>
+@media screen and (min-width: 769px) {
+/* 769px (から)以上の幅の場合に適応される */
+    body {
+        background-color:#2262D1;
+    }
+}
+</code></pre>
+<p>アイフォンを中心にしたメディアクエリの分岐例</p>
+<pre class="line-numbers language-css" data-src="prism.js"><code>
+* iPhone 縦 */
+@media screen and (min-width:480px) {
+    /*　for iPhone Landscape　(iPhone 横)　*/
+}
+
+@media screen and (min-width:768px) and ( max-width:1024px) {
+    /*　for iPad 　*/
+}
+
+@media screen and (min-width:1024px) {
+    /*　for PC　*/
+}
+</code></pre>
+</div>
+</div>
+</div>
+
+<div id="s5" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>メタタグ viewport</h2>
+<pre class="line-numbers language-xml" data-src="prism.js"><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+</code></pre>
+<p>スマートフォンには描画モードの縮尺率にviewportとう設定があります。</p>
+<code>name=&quot;viewport&quot;
+</code>
+<p>iphoneのviewportは通常3/1に表示される。
+PCとスマートフォンのコンテンツの幅を変更させる1/1に表示されるようにセットしなおす。</p>
+<p>下記の記述はデバイスの幅と同じにする。</p>
+<code>width=device-width,</code>
+<p>ピッチしてスケールを大きくするあれを1（元の倍率）にする。</p>
+<code>initial-scale=1.0</code>
+<p>ビューポートの設定メタタグとcss メディアクエリ を設定して準備はOKです。</p>
+
+<h4>ここらへんにかいてください。</h4>
+<pre class="line-numbers language-xml" data-src="prism.js"><code>
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;jp&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+  &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+  &lt;title&gt; - &lt;/title&gt;
+&lt;/head&gt;
+</code></pre>
+
+
+</div>
+</article>
+</div>
+<!-- /container-->
+
+<aside class="print-none" id="w-aside2">
+<div class="row text-white no-gutters justify-content-center">
+<nav aria-label="Page navigation ">
+<ul class="pagination justify-content-center">
+<li class="page-item">
+<a class="page-link" href="202_html_markUp.html" tabindex="-1" aria-disabled="false">Previous</a>
+</li>
+<li class="page-item">
+<a class="page-link" aria-disabled="false"  href="204_html_markUp.html">Next</a>
+</li>
+</ul>
+</nav>
+</div>
+
+<div class="container bg-dark p-3">
+
+
+</div>
+</aside>
+
+</main>
+<!--w-main-->
+<aside class="w-aside col-lg-2 print-none" id="w-aside1">
+<div class="w-aside-inner container">
+<div class="accordion" id="accordionAside">
+<div class="w-subnav">
+<div id="headingOne">
+<h3 class="sticky-top">
+  <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" >basic Operation</button>
+</h3>
+</div>
+<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionAside">
+<!-- BOlist modile -->
+<ul id="w-BOlist" class="list-unstyled">
+        <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+        </ul>
+        <!-- /BOlist modile -->
+</div>
+</div>
+<div class="w-subnav">
+<div id="heading2">
+<h3 class="sticky-top">
+  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">web Outline</button>
+</h3>
+</div>
+<div id="collapseTwo" class="collapse" aria-labelledby="heading2" data-parent="#accordionAside">
+<!-- OLlist modile -->
+<ul id="w-OLlist" class="list-unstyled">
+        <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+</ul>
+<!-- /OLlist modile -->
+</div>
+</div>
+<div class="w-subnav">
+<div id="heading3">
+<h3 class="sticky-top">
+  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">HTML</button>
+      </h3>
+</div>
+<div id="collapseThree" class="collapse" aria-labelledby="heading3" data-parent="#accordionAside">
+    <!-- OLlist modile -->
+    <ul id="w-MKlist" class="list-unstyled">
+            <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+    </ul>
+    <!-- /OLlist modile -->
+    </div>
+    </div>
+
+    <div class="w-subnav">
+        <div id="heading4">
+        <h3 class="sticky-top">
+          <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse4" aria-expanded="true" aria-controls="collapse4">Text Editor
+          </button>
+        </h3>
+        </div>
+        <div id="collapse4" class="collapse" aria-labelledby="heading4" data-parent="#accordionAside">
+            <!-- EDlist modile -->
+            <ul id="w-EDlist" class="list-unstyled">
+              <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+            </ul>
+            <!-- /EDlist modile -->
+            </div>
+            </div>
+  </div><!-- /accordionAside -->
+</div>
+<script src="_js/_common/VueBOnavlist.js"></script>
+</aside>
+
+<!-- /w-aside2-->
+</div>
+<footer id="w-pageFooter">
+<div class="container">
+<small>&copy; shounosuke tarutani</small>
+</div>
+<!-- /container-->
+</footer>
+<!--w-pageFooter-->
+<script src="_js/_common/prism.js"></script>
+</div>
+<!--w-container-->
+</body>
+</html>

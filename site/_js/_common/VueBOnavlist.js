@@ -164,7 +164,21 @@ var mklists = new Vue({
                     titlename:'float clearとレイアウト',
                     titleen:"float clear",
                     url:"204_html_markUp.html"
+                },{
+                    titlename:'HTML コンテンツモデル',
+                    titleen:"content model",
+                    url:"205_html_markUp.html"
                 },
+                /*{
+                    titlename:'float clearとレイアウト',
+                    titleen:"float ",
+                    url:"206_html_markUp.html"
+                },*/
+                {
+                    titlename:'メディアクエリ-',
+                    titleen:"media query",
+                    url:"207_html_markUp.html"
+                }
             ]
    }
   });
