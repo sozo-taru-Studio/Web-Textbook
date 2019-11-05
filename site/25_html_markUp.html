@@ -138,10 +138,10 @@
 <h3>要素ごとにいれれる決まった内容がある。</h3>
 <p>UL要素のように　箇条書きを構成するためには箇条書きのアイテムであるli要素が必ず子要素として並列に構成される、　このように決まった内容が合理的にきめられている。　このルールは要素ごとに覚えていかないといけない。</p>
 
-<h3>正しい要素の終了をしめさないといけない。</h3>
-<p><strong class="badge badge-warning font-size-1">親要素の終了の前に子要素の終了がないといけません。</strong></p>
-<p>P要素の中にストロング要素が入っている状態にしないといけません。</p>
-
+<h3>正しい要素の終了を示さないといけない。</h3>
+	<p><strong class="badge badge-warning font-size-1">親要素の<strong>終了</strong>の前に子要素の終了がないといけません。</strong></p>
+<p>例えば P要素の中にストロング要素が入っている状態にしないといけません。</p>
+<pre class="line-numbers language-xml" data-src="prism.js"><code>&lt;p&gt;私たち人間という存在は、<mark class="bg-warning">&lt;strong&gt;</mark>身と心によって成り立っている。<mark class="bg-warning">&lt;/strong&gt;</mark>&lt;/p&gt;</code></pre>
 <div class="card">
 <div class="card-header"><h4>NG例</h4></div>
 <div class="card-body">
