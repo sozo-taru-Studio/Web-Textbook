@@ -131,8 +131,8 @@ var mklists = new Vue({
                     url:"26_html_markUp.html"
                 },
                 {
-                    titlename:'「&lt;」「&gt;」の中と外',
-                    titleen:"&lt;&gt; inside and outside",
+                    titlename:'「<」「>」の中と外',
+                    titleen:"<> inside and outside",
                     url:"27_html_markUp.html"
                 },
                 {
@@ -208,6 +208,21 @@ var mklists = new Vue({
                     titlename:'CSSの基礎知識 ',
                     titleen:"base style sheet ",
                     url:"401_css_code.html"
+                },
+                {
+                    titlename:'フォント ファミリー',
+                    titleen:"font-family",
+                    url:"42_css_code.html"
+                },
+                {
+                    titlename:'フォント サイズ',
+                    titleen:"font-size",
+                    url:"43_css_code.html"
+                },
+                {
+                    titlename:'フォントスタイル ',
+                    titleen:"font-style ",
+                    url:"44_css_code.html"
                 },
                 {
                     titlename:'CSS position プロパティ',
