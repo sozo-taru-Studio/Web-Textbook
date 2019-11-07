@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- seo -->
+<!--<meta name="description" content="">-->
+<meta name="robots" content="noindex,nofollow">
+<title>CSS font-size - Web-Textbook</title>
+
+<!-- stylesheet  -->
+<link rel="stylesheet" href="_css/_common/bootstrap.css">
+<link rel="stylesheet" href="_css/_common/font-awesome.min.css">
+<link rel="stylesheet" href="_css/_common/style.css">
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
+<link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="icon" href="/favicon.ico">
+
+<!-- common js  -->
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="_js/_common/jquery-3.2.1.min.js"></script>
+<script src="_js/_common/bootstrap.min.js"></script>
+<script src="_js/_common/pagescroll.jQuery.js"></script>
+</head>
+
+<body style="height: auto;">
+<div id="w-wrapper" class="w-wrapper">
+<header id="w-pageHeader" class="navbar navbar-dark navbar-expand-lg fixed-top w-pageHeader" data-scroll-header="true">
+<div class="container">
+<a class="navbar-brand" href="/">logo</a><span class="navbar-brand">Web Textbook</span>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#w-nav" aria-controls="w-nav" aria-expanded="false" aria-label="ナビゲーション切替">
+<span class="navbar-toggler-icon"></span>
+</button>
+<nav id="w-nav" class="collapse navbar-collapse">
+<ul class="navbar-nav mr-auto pl-3">
+<li class="nav-item"><a href="20_browser_cord.html" class="nav-link disabled">CSS</a></li>
+<li class="nav-item"><a href="#" class="nav-link disabled">CSS</a></li>
+<li class="nav-item"><a href="#" class="nav-link">javasceipt</a></li>
+</ul>
+</nav>
+<!-- /w-nav-->
+</div>
+<!-- /container-->
+</header>
+<!-- /w-pageHeader-->
+<div class="d-lg-flex flex-row-reverse pt-5">
+<main id="w-main" class="w-main col-lg-10">
+<div class="container mb-5">
+<article id="w-article">
+        <h1>CSS font-style プロパティ - css</h1>
+        <p><span>category:</span><span class="badge badge-primary">css</span></p>
+        <hr>
+<!-- 序章 モジュール -->
+<div class="card mb-4">
+<div class="card-body clearfix">
+<p class="card-text">文字の大きさを設定するプロパティです。</p>
+</div>
+
+</div>
+
+<!-- 目次 モジュール -->
+<div class="bg-light p-3 mb-4">
+<h2>目次</h2>
+<ul>
+    <li><a href="#s1" data-scroll>font-style</a></li>
+    <li><a href="#s2" data-scroll>font-weight</a></li>
+</ul>
+</div>
+<!-- / 目次 モジュール -->
+<!-- 本文のセクション モジュール -->
+<div id="s1" class="mt-n6 pt-6 mb-6 clearfix">
+
+<h2>Font-style</h2>
+<p>フォントが font-family の中で通常体 (normal)、筆記体 (italic)、斜体 (oblique) のどれでスタイル付けするかを設定します。</p>
+<p>italic フォントフェイスは通常、本質的に筆記体であり、スタイル付けされていない書体より水平方向の幅が小さいのが一般的です。一方 oblique フェイスはたいてい、通常のフェイスを傾けただけです。 italic と oblique のいずれも、通常のフェイスのグリフを人工的に傾けることによってシミュレートされます (この制御については font-synthesis をご覧ください)。</p>
+<h3>日本語の斜体文字</h3>
+<p>
+日本語の斜体文字は太字より暗喩的な意味統一や連想するものがなく、webでの表現でも小さすぎて判読しづらいのが現状で、つかわない傾向にあります。</p>
+<p>HTMLタグでデフォルトで斜体で表現されているタグをnormalに戻すことぐらいでしか日本文字では使わない感じです。</p>
+
+
+
+<h3>値</h3>
+<blockquote>
+<ul>
+<li>
+<h4>normal</h4><p>
+font-family の中で normal に分類されているフォントを選択します。</p></li>
+<li>
+<h4>italic</h4><p>
+italic として分類されているフォントを選択します。 italic フェイスが使用できない場合は、代わりに oblique に分類されているフォントを選択します。どちらも利用できない場合は、スタイルは人工的にシミュレートされます。</p></li>
+<li><h4>oblique </h4><p>
+oblique として分類されているフォントを選択します。 oblique フェイスが使用できない場合は、代わりに italic に分類されているフォントを選択します。どちらも利用できない場合は、スタイルは人工的にシミュレートされます。</p>
+</li>
+<li><h4>oblique 「angle」</h4><p>
+oblique として分類されているフォントを選択し、加えてテキストの傾きの角度を指定します。選択されたフォントファミリで１つまたは複数の oblique フェイスが利用できる場合、指定した角度に最も近いものが選択されます。 oblique フェイスが利用できない場合、ブラウザーは通常のフェイスを指定した大きさだけ傾けることで、 oblique バージョンを作成します。有効な値は-90以上90以下の角度の値です。角度が指定されない場合、14度の角度が使用されます。正の数では行末に向けて傾け、負の数では行頭に向けて傾けます。
+
+一般に、要求された角度が14度以上の場合、大きな角度が推奨されます。その他の場合は、より小さい角度が推奨されます (アルゴリズムの詳細は、仕様書の font matching section を参照してください)。
+	</p>
+	</li>
+</ul>
+<footer>
+<p>引用：
+<cite><a href="https://developer.mozilla.org/ja/docs/Web/CSS/font-style" target="_blank" rel="noopener">font-style</a></cite></p>
+</footer>
+</blockquote>
+
+<div class="card">
+<div class="card-header">
+<h3>記述例</h3>
+</div>
+<div class="card-body">
+<pre class="line-numbers language-css" data-src="prism.js"><code>
+/* 斜体の設定*/
+em{
+    font-style: normal;
+}
+</code></pre>
+</div>
+</div><!--/ .card -->
+</div>
+<div id="s2" class="mt-n6 pt-6 mb-6 clearfix">
+
+<h2>Font-weight</h2>
+<p>CSS の font-weight プロパティは、フォントの重み (あるいは太さ) を指定します。実際に表示されるフォントの重みは使用している font-family に依存する場合があります。フォントによっては normal 及び bold のみで利用できます。</p>
+<h3>値</h3>
+<blockquote>
+<ul>
+<li>
+<h4>normal</h4><p>
+通常のフォントの重みです。 400 と同じです。</p></li>
+<li>
+<h4>bold</h4><p>
+太字のフォントの重みです。 700 と同じです。</p></li>
+<li><h4>lighter </h4><p>
+フォントの重みを親要素よりも (フォントで利用可能な重みの中で) 一段階細く設定します。</p>
+</li>
+<li><h4>bolder</h4><p>
+フォントの重みを親要素よりも (フォントで利用可能な重みの中で) 一段階太く設定します。
+	</p>
+	</li>
+</ul>
+<ul>
+<li>100	Thin (Hairline)</li>
+<li>200	Extra Light (Ultra Light)</li>
+<li>300	Light</li>
+<li>400	Normal</li>
+<li>500	Medium</li>
+<li>600	Semi Bold (Demi Bold)</li>
+<li>700	Bold</li>
+<li>800	Extra Bold (Ultra Bold)</li>
+<li>900	Black (Heavy)</li>
+</ul>
+<footer>
+<p>引用：
+<cite><a href="https://developer.mozilla.org/ja/docs/Web/CSS/font-weight" target="_blank" rel="noopener">font-weight</a></cite></p>
+</footer>
+</blockquote>
+<div class="card">
+<div class="card-header">
+<h3>記述例</h3>
+</div>
+<div class="card-body">
+<pre class="line-numbers language-css" data-src="prism.js"><code>
+/* 斜体の設定*/
+em{
+    font-style: normal;
+    font-weight:bold;
+}
+</code></pre>
+</div>
+</div><!--/ .card -->
+
+</div>
+</article>
+</div>
+<!-- /container-->
+
+<aside class="print-none" id="w-aside2">
+<div class="row text-white no-gutters justify-content-center">
+<nav aria-label="Page navigation ">
+<ul class="pagination justify-content-center">
+<li class="page-item">
+<a class="page-link" href="202_html_markUp.html" tabindex="-1" aria-disabled="false">Previous</a>
+</li>
+<li class="page-item">
+<a class="page-link" aria-disabled="false"  href="204_html_markUp.html">Next</a>
+</li>
+</ul>
+</nav>
+</div>
+
+<div class="container bg-dark p-3">
+
+
+</div>
+</aside>
+
+</main>
+<!--w-main-->
+<aside class="w-aside col-lg-2 print-none" id="w-aside1">
+<div class="w-aside-inner container">
+<div class="accordion" id="accordionAside">
+<div class="w-subnav">
+<div id="headingOne">
+<h3 class="sticky-top">
+  <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" >basic Operation</button>
+</h3>
+</div>
+<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionAside">
+<!-- BOlist modile -->
+<ul id="w-BOlist" class="list-unstyled">
+        <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+        </ul>
+        <!-- /BOlist modile -->
+</div>
+</div>
+<div class="w-subnav">
+<div id="heading2">
+<h3 class="sticky-top">
+  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">web Outline</button>
+</h3>
+</div>
+<div id="collapseTwo" class="collapse" aria-labelledby="heading2" data-parent="#accordionAside">
+<!-- OLlist modile -->
+<ul id="w-OLlist" class="list-unstyled">
+        <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+</ul>
+<!-- /OLlist modile -->
+</div>
+</div>
+<div class="w-subnav">
+<div id="heading3">
+<h3 class="sticky-top">
+  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">HTML</button>
+      </h3>
+</div>
+<div id="collapseThree" class="collapse" aria-labelledby="heading3" data-parent="#accordionAside">
+    <!-- OLlist modile -->
+    <ul id="w-MKlist" class="list-unstyled">
+            <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+    </ul>
+    <!-- /OLlist modile -->
+    </div>
+    </div>
+
+<div class="w-subnav">
+<div id="heading4">
+<h3 class="sticky-top">
+<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse4" aria-expanded="true" aria-controls="collapse4">Text Editor
+</button>
+</h3>
+</div>
+<div id="collapse4" class="collapse" aria-labelledby="heading4" data-parent="#accordionAside">
+<!-- EDlist modile -->
+<ul id="w-EDlist" class="list-unstyled">
+  <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+</ul>
+<!-- /EDlist modile -->
+</div>
+</div>
+<div class="w-subnav">
+<div id="heading5">
+<h3 class="sticky-top">
+<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse5" aria-expanded="true" aria-controls="collapse4">CSS
+</button>
+</h3>
+</div>
+<div id="collapse5" class="collapse" aria-labelledby="heading4" data-parent="#accordionAside">
+<!-- EDlist modile -->
+<ul id="w-CSSlist" class="list-unstyled">
+  <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+</ul>
+<!-- /csslist modile -->
+</div>
+</div>
+
+  </div><!-- /accordionAside -->
+</div>
+<script src="_js/_common/VueBOnavlist.js"></script>
+</aside>
+
+<!-- /w-aside2-->
+</div>
+<footer id="w-pageFooter">
+<div class="container">
+<small>&copy; shounosuke tarutani</small>
+</div>
+<!-- /container-->
+</footer>
+<!--w-pageFooter-->
+<script src="_js/_common/prism.js"></script>
+</div>
+<!--w-container-->
+</body>
+</html>
