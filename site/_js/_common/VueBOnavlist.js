@@ -220,9 +220,19 @@ var mklists = new Vue({
                     url:"43_css_code.html"
                 },
                 {
-                    titlename:'フォントスタイル ',
+                    titlename:'フォントスタイル ウエイト ',
                     titleen:"font-style ",
                     url:"44_css_code.html"
+                },
+                {
+                    titlename:'ラインハイト ',
+                    titleen:"line-height ",
+                    url:"45_css_code.html"
+                },
+                {
+                    titlename:'テキストアライン',
+                    titleen:"text-algin ",
+                    url:"46_css_code.html"
                 },
                 {
                     titlename:'CSS position プロパティ',

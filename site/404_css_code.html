@@ -6,7 +6,7 @@
 <!-- seo -->
 <!--<meta name="description" content="">-->
 <meta name="robots" content="noindex,nofollow">
-<title>CSS font-size - Web-Textbook</title>
+<title>flex レイアウト 基礎 2 - Web-Textbook</title>
 
 <!-- stylesheet  -->
 <link rel="stylesheet" href="_css/_common/bootstrap.css">
@@ -50,153 +50,121 @@
 <main id="w-main" class="w-main col-lg-10">
 <div class="container mb-5">
 <article id="w-article">
-        <h1>CSS font-size プロパティ - css</h1>
-        <p><span>category:</span><span class="badge badge-primary">css</span></p>
+        <h1>flex レイアウト 基礎 2 - CSS</h1>
+        <p><span>category:</span> <span class="badge badge-primary">css</span></p>
         <hr>
 <!-- 序章 モジュール -->
 <div class="card mb-4">
 <div class="card-body clearfix">
-<p class="card-text">文字の大きさを設定するプロパティです。</p>
+  <p class="card-text">フレックスレイアウトに支配されているアイテムボックスの制御</p>
+  <p>親要素に display: flex; が指定されていないと動作しないので注意しましょう。</p>
+  <p><a href="https://www.webcreatorbox.com/tech/css-flexbox-cheat-sheet" target="_blank">日本語対応！CSS Flexboxのチートシートを作ったので配布します</a></p>
 </div>
-
 </div>
 
 <!-- 目次 モジュール -->
 <div class="bg-light p-3 mb-4">
 <h2>目次</h2>
 <ul>
-    <li><a href="#s1" data-scroll>font-size</a></li>
+    <li><a href="#s1" data-scroll>order … 順序の指定</a></li>
+    <li><a href="#s2" data-scroll>flex-grow … 子要素の伸びる比率</a></li>
+    <li><a href="#s3" data-scroll>flex-shrink … 子要素の縮む比率</a></li>
+    <li><a href="#s4" data-scroll>flex-basis … 子要素のベースとなる幅の指定</a></li>
+    <li><a href="#s5" data-scroll>align-self … 子要素の垂直方向の揃え</a></li>
 </ul>
 </div>
 <!-- / 目次 モジュール -->
 <!-- 本文のセクション モジュール -->
 <div id="s1" class="mt-n6 pt-6 mb-6 clearfix">
+  <h2>order … 順序の指定</h2>
+<p>通常子要素はHTMLの記述順に配置されますが、order プロパティーを使えば任意の順で並べ替えられます。</p>
+<h4>orderで使える値</h4>
+<p>初期値は0。マイナス値を含む数値のみ指定できます。</p>
+<p>数値が高ほどうしろに表記されます。javascriptなどで検索結果の並び替えをするときなどに使えます。</p>
+<div class="card mb-4">
+<h3 class="card-header">並べ替え</h3>
+<div class="card-body">
+<h4>HTML</h4>
+<p>ウィンドウ上でマウス右クリック＞コンテキストメニュー展開＞検証</p>
+<pre class="line-numbers language-xml" data-src="prism.js"><code>
+  &lt;div class="flexbox"&gt;
+    &lt;div class="item"&gt;Item 1&lt;/div&gt;
+    &lt;div class="item"&gt;Item 2&lt;/div&gt;
+    &lt;div class="item"&gt;Item 3&lt;/div&gt;
+    &lt;div class="item" style="order:-1;"&gt;Item 4&lt;/div&gt;
+  &lt;/div&gt;
+</code></pre>
+<div>
+  <h4>プレビュー</h4>
+<style>
+.flexbox{
+display:flex;
+}
+.item {
+  background-color: aqua;
+  border:1px solid #ccc;
+}
+</style>
+<h5 class="mb-0">flex 4を前に</h5>
+<div class="mb-3 flexbox">
+<div class="item">Item 1</div>
+<div class="item">Item 2</div>
+<div class="item">Item 3</div>
+<div class="item" style="order:-1;">Item 4</div>
+</div>
+</div>
+</div>
+</div>
 
-<h2>Font-size</h2>
-<p>font-sizeは文字の大きさを指定します。指定されているfont-familyによって同じ指定をしても大きさが異なる場合があります。</p>
-<p>サイズ指定の値は単位が必要です。</p>
-<h3>基準のフォントサイズ</h3>
-<p>
-無指定の場合はブラウザの設定の文字の大きさが標準の文字の大きさになります。ほとんどブラウザの文字の大きさは<strong>16px</strong>が標準で「中」と表記されています。
-</p>
-<p>制作するブラウザは文字の設定を<strong>「中」</strong>にしておく。</p>
-<figure>
-  <figcaption>GoogleChrome メニュー＞設定＞デザイン欄の画像</figcaption><img src="_images/_html/42-burazaConfig.png" alt="Google  Chrome 設定　デザインでの確認" class="w-100" style="border:1px solid #ccc;">
-</figure>
-<p>視覚弱者は文字をよみやすいように大に設定することを想定してデザインすることも大切。</p>
+<div id="s2" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>flex-grow … 子要素の伸びる比率</h2>
+<p>親要素に余ったスペースがあった場合、指定のある子要素が他の子要素に対してどれくらい伸びるかを指定します。</p><p>数値のみ指定できます。初期値は0。マイナス値は無効です。</p>
 
-
-<h3>値</h3>
-<blockquote>
-    <ul>
-        <li>
-<h4>xx-small, x-small, small, medium, large, x-large, xx-large
-</h4><p>
-ユーザーの既定のフォントサイズ (つまり medium) を基準とした絶対的なサイズのキーワードです。</p></li>
-<li><h4>larger, smaller</h4><p>
-相対的なサイズのキーワードです。フォントは親要素のフォントサイズから相対的に、上記の絶対的サイズのキーワードで使われている倍率におよそ沿う形で拡大または縮小されます。</p>
-</li>
-<li><h4>長さ</h4><p>正の [length] の値。 (em や ex などの) フォント相対単位のほとんどは、親要素のフォントサイズに対する相対値です。</p><p>よくつかわれる距離の単位</p>
-<h4> css 長さの単位</h4>
-<blockquote>
-  <p><a href="https://developer.mozilla.org/ja/docs/Web/CSS/Length" target="_blank" rel="noopener">length</a></p>
-</blockquote>
+<p>flex-wrap:wrap;の場合flex-content;プロパティの設定が開放される。</p>
+</div>
+<div id="s3" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>flex-shrink … 子要素の縮む比率</h2>
+<p>flex-grow と逆で、親要素に余ったスペースがなくすべての子要素が入り切らない場合、指定のある子要素が他の子要素に対してどれくらい縮むかを指定します。</p>
+<p>数値のみ指定できます。初期値は0。マイナス値は無効です。</p>
+</div>
+<div id="s4" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>flex-basis … 子要素のベースとなる幅の指定</h2>
+<p>詳しくはここで<br>
+<a href="https://developer.mozilla.org/ja/docs/Web/CSS/flex-basis">flex-basis | MDN</a></p>
+<p>子要素に対し width と同じように幅の値を指定できます。auto と指定した場合は子要素のコンテンツのサイズが適応されます。</p>
+<p>親要素に高さ（height:auto;以外）が指定されていないとこのプロパティの値を変更する意味がない。</p>
+<p>メモ: (auto 以外の) flex-basis と width (または flex-direction: column の場合は height) の両方が要素に設定されていた場合、 <strong>flex-basis</strong> が優先されます。</p>
+</div>
+<div id="s5" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>align-self … 子要素の垂直方向の揃え</h2>
+<p>親要素に空きスペースがあった場合、子要素を垂直方向のどの位置に配置するかを指定します。親要素に指定する align-items と全く同じ機能ですが、こちらは子要素に対して指定します。この align-self での指定は、親要素に記述する align-items よりも優先されます。</p>
 <ul>
-<li><h4>rem</h4>
-<p>ルートイーエム　html要素のフォントサイズを基準に設定する。標準フォントサイズが16pxの場合1remは16pxのフォントサイズをしてすることになります。0.5remは8pxです。</p>
-<p>[標準フォントサイズ] / [求めるフォントサイズ]= [答え]rem　</p>
-
-</li>
-<li><h4>em</h4>
-<p>イーエム　親要素のフォントサイズを基準に設定する。親のフォントサイズはその親を継承しているので。祖先要素でフォントサイズを指定している要素を探すとよい。親フォントサイズが30pxの場合1emは30pxのフォントサイズをしてすることになります。0.5emは15pxです。</p>
-<p>[親フォントサイズ] / [求めるフォントサイズ]= [答え]em　</p>
-</li>
-<li><h4>px</h4>
-<p>直接指定できるため書きやすい指定</p>
-<p>ピクセル　解像度素子数でフォントサイズを指定する。デザインカンプから確認する場合はまずpｘで確認する。</p>
-<p>一部のブラウザは文字拡大や文字縮小に対応しない恐れがあるためpxでの指定は避ける傾向にある。</p>
-</li>
+<li>auto（初期値）… 親要素の align-items の値を継承</li>
+<li>stretch … 親要素の高さ、またはコンテンツの一番多い子要素の高さに合わせて広げて配置</li>
+<li>flex-start … 親要素の開始位置から配置。上揃え。</li>
+<li>flex-end … 親要素の終点から配置。下揃え。</li>
+<li>center … 中央揃え</li>
+<li>baseline … ベースラインで揃える</li>
 </ul>
-</li>
-<li><h4>percentage</h4><p>
-正の [<strong>%</strong>] 値で、親要素のフォントサイズからの相対値です。</p>
-</li>
-</ul>
-<footer>
-<p>引用：
-<cite><a href="https://developer.mozilla.org/ja/docs/Web/CSS/font-size" target="_blank" rel="noopener">font-size
-</a></cite></p>
-</footer>
-</blockquote>
-
-<div class="card">
-<div class="card-header">
-<h3>記述例</h3>
-</div>
-<div class="card-body">
-<pre class="line-numbers language-css" data-src="prism.js"><code>
-/* taipo 文字「中」の場合*/
-html{
-    font-size:100%;/*16px 実質書かなくてよい*/
-}
-body{
-    font-size: .875rem;/*14px*/
-}
-
-h1 {
-    font-size: 3rem;/*48px*/
-}
-
-h2 {
-    font-size: 2rem;/* 32px */
-}
-</code></pre>
-</div>
-<p>基準フォントを16px 通常表示するフォントを14pxに設定する。</p>
-<div class="card-body">
-<pre class="line-numbers language-css" data-src="prism.js"><code>
-/* taipo 文字「中」の場合*/
-html{
-    font-size:62.5%;/*10px*/
-}
-body{
-    font-size: 1.4em;/*14px*/
-}
-
-h1 {
-    font-size: 4.8rem;/*48px*/
-}
-
-h2 {
-    font-size: 3.2rem;/* 32px */
-}
-</code></pre>
-</div>
-<p>基準フォントを10px 通常表示するフォントを14pxに設定する。remで設定するとき10pxを基準にするので暗算での指定が楽。</p>
-</div><!--/ .card -->
-
 
 </div>
 </article>
 </div>
 <!-- /container-->
-
 <aside class="print-none" id="w-aside2">
 <div class="row text-white no-gutters justify-content-center">
 <nav aria-label="Page navigation ">
 <ul class="pagination justify-content-center">
-<li class="page-item">
-<a class="page-link" href="42_css_code.html" tabindex="-1" aria-disabled="false">Previous</a>
+<li class="page-item disabled">
+<a class="page-link" href="403_css_code.html" tabindex="-1" aria-disabled="false">Previous</a>
 </li>
 <li class="page-item">
-<a class="page-link" aria-disabled="false"  href="44_css_code.html">Next</a>
+<a class="page-link " aria-disabled="false"  href="41_css_code.html">Next</a>
 </li>
 </ul>
 </nav>
 </div>
-
 <div class="container bg-dark p-3">
-
 
 </div>
 </aside>
@@ -229,7 +197,7 @@ h2 {
 <div id="collapseTwo" class="collapse" aria-labelledby="heading2" data-parent="#accordionAside">
 <!-- OLlist modile -->
 <ul id="w-OLlist" class="list-unstyled">
-        <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+  <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
 </ul>
 <!-- /OLlist modile -->
 </div>
@@ -241,13 +209,13 @@ h2 {
       </h3>
 </div>
 <div id="collapseThree" class="collapse" aria-labelledby="heading3" data-parent="#accordionAside">
-    <!-- OLlist modile -->
-    <ul id="w-MKlist" class="list-unstyled">
-            <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
-    </ul>
-    <!-- /OLlist modile -->
-    </div>
-    </div>
+<!-- OLlist modile -->
+<ul id="w-MKlist" class="list-unstyled">
+  <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}}</a></li>
+</ul>
+<!-- /OLlist modile -->
+</div>
+</div>
 
 <div class="w-subnav">
 <div id="heading4">
@@ -259,7 +227,7 @@ h2 {
 <div id="collapse4" class="collapse" aria-labelledby="heading4" data-parent="#accordionAside">
 <!-- EDlist modile -->
 <ul id="w-EDlist" class="list-unstyled">
-  <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+<li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
 </ul>
 <!-- /EDlist modile -->
 </div>
@@ -279,7 +247,6 @@ h2 {
 <!-- /csslist modile -->
 </div>
 </div>
-
   </div><!-- /accordionAside -->
 </div>
 <script src="_js/_common/VueBOnavlist.js"></script>

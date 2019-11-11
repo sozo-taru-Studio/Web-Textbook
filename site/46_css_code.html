@@ -6,7 +6,7 @@
 <!-- seo -->
 <!--<meta name="description" content="">-->
 <meta name="robots" content="noindex,nofollow">
-<title>CSS font-size - Web-Textbook</title>
+<title>CSS line-height - Web-Textbook</title>
 
 <!-- stylesheet  -->
 <link rel="stylesheet" href="_css/_common/bootstrap.css">
@@ -36,7 +36,7 @@
 </button>
 <nav id="w-nav" class="collapse navbar-collapse">
 <ul class="navbar-nav mr-auto pl-3">
-<li class="nav-item"><a href="20_browser_cord.html" class="nav-link disabled">CSS</a></li>
+<li class="nav-item"><a href="20_browser_cord.html" class="nav-link disabled">HTML</a></li>
 <li class="nav-item"><a href="#" class="nav-link disabled">CSS</a></li>
 <li class="nav-item"><a href="#" class="nav-link">javasceipt</a></li>
 </ul>
@@ -50,13 +50,13 @@
 <main id="w-main" class="w-main col-lg-10">
 <div class="container mb-5">
 <article id="w-article">
-        <h1>CSS font-style プロパティ - css</h1>
+        <h1>CSS text-align プロパティ - css</h1>
         <p><span>category:</span><span class="badge badge-primary">css</span></p>
         <hr>
 <!-- 序章 モジュール -->
 <div class="card mb-4">
 <div class="card-body clearfix">
-<p class="card-text">文字の大きさを設定するプロパティです。</p>
+<p class="card-text">段落の行ぞろえのプロパティです</p>
 </div>
 
 </div>
@@ -65,114 +65,162 @@
 <div class="bg-light p-3 mb-4">
 <h2>目次</h2>
 <ul>
-    <li><a href="#s1" data-scroll>font-style</a></li>
-    <li><a href="#s2" data-scroll>font-weight</a></li>
+    <li><a href="#s1" data-scroll>text-align </a></li>
 </ul>
 </div>
 <!-- / 目次 モジュール -->
 <!-- 本文のセクション モジュール -->
 <div id="s1" class="mt-n6 pt-6 mb-6 clearfix">
 
-<h2>Font-style</h2>
-<p>フォントが font-family の中で通常体 (normal)、筆記体 (italic)、斜体 (oblique) のどれでスタイル付けするかを設定します。</p>
-<p>italic フォントフェイスは通常、本質的に筆記体であり、スタイル付けされていない書体より水平方向の幅が小さいのが一般的です。一方 oblique フェイスはたいてい、通常のフェイスを傾けただけです。 italic と oblique のいずれも、通常のフェイスのグリフを人工的に傾けることによってシミュレートされます (この制御については font-synthesis をご覧ください)。</p>
-<h3>日本語の斜体文字</h3>
+<h2>text-align</h2>
+<p>CSS の text-align プロパティは、インラインまたは表セルボックスの水平方向の配置を設定します。つまり、 vertical-align のように、ただし水平方向に動作します。</p>
+<p>ブロック要素のないのテキストの水平方向の配置そろえを制御します。
+  <strong>このプロパティを持つブロック要素自体の位置はかわりません。</strong>
+</p>
+
+<h3>値</h3>
+<blockquote>
+    <ul>
+        <li>
+<h4>left</h4><p>
+インラインコンテンツは行ボックスの左辺に寄せられます。</p>
+<p>日本のブラウザでは規定値になります。</p>
+</li>
+<li><h4>right</h4><p>
+インラインコンテンツは行ボックスの右辺に寄せられます。</p>
+</li>
+<li>
+  <h4>center</h4>
+  <p>インラインコンテンツは行ボックス内で中央寄せされます。</p>
+</li>
+<li>
+<h4> justify</h4>
+<p>インラインコンテンツは両端揃えされます。テキストは最終行を除いて、その左右の端が行ボックスの左右の端に揃うように語間が空けられます。</p>
+</li>
+
+<li>
+<h4> justify</h4>
+<p>インラインコンテンツは両端揃えされます。テキストは最終行を除いて、その左右の端が行ボックスの左右の端に揃うように語間が空けられます。</p>
+</li>
+
+<li>
+<h4> justify-all(実験的)</h4>
+<p>justify と同じですが、最終行も強制的に両端揃えされます。</p>
+</li>
+
+<li>
+<h4> start(実験的)</h4>
+<p>書字方向が左から右であれば left と、右から左であれば right と同じです。</p>
+</li>
+<li>
+<h4> end(実験的)</h4>
+<p> 書字方向が左から右であれば right と、右から左であれば left と同じです。。</p>
+</li>
+
+</ul>
+<footer>
+<p>引用：
+<cite><p><a href="https://developer.mozilla.org/ja/docs/Web/CSS/text-align" target="_blank" rel="noopener">text-align</a></p></cite></p>
+</footer>
+</blockquote>
+
+<div class="card">
+<div class="card-header">
+<h3>記述例</h3>
+</div>
+<div class="card-body">
+<h3>例</h3>
+<h4>css</h4>
+<pre class="line-numbers language-css" data-src="prism.js"><code>
+/* */
+.green {
+  border: solid limegreen;
+}
+
+.text-justify{
+  text-aligin:justify;
+}
+
+h1 {
+font-size: 30px;
+text-aligin:center;
+}
+
+.box {
+  width: 80%;
+  display:block;
+  vertical-align: top;
+  font-size: 15px;
+}
+
+</code></pre>
+
+
+<h4>HTML</h4>
+<pre class="line-numbers language-xml" data-src="prism.js"><code>
+&lt;div class="box green"&gt;
+ &lt;h1&gt;徒然草&lt;/h1&gt;
+ &lt;p&gt;
+ 「つれづれなるままに、日暮らし、硯にむかひて、心にうつりゆくよしなしごとを、そこはかとなく書きつくれば、あやしうこそものぐるほしけれ。」
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="box green"&gt;
+ &lt;p class="text-justify"&gt;
+Il y avait encore des Prussiens en France. M. Delalot était un personnage. La légitimité venait de s'affirmer en coupant le poing, puis la tête, à Pleignier, à Carbonneau et à Tolleron. Le prince de Talleyrand, grand chambellan, et l'abbé Louis, ministre désigné des finances, se regardaient en riant du rire de deux augures; tous deux avaient célébré, le 14 juillet 1790, la messe de la Fédération au Champ de Mars; Talleyrand l'avait dite comme évêque, Louis l'avait servie comme diacre.
+&lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+
+
+<style>.green{
+  line-height: 1.1;
+  border: solid limegreen;
+}
+.red {
+  line-height: 1.1em;
+  border: solid red;
+}
+b.h {
+  font-size: 30px;
+  display: block;
+  font-weight: 400;
+}
+.box {
+  width: 80%;
+  display: block;
+  vertical-align: top;
+  font-size: 15px;
+  padding:1em;
+  margin: 0 0 20px 0;
+}</style>
+<h4>プレビュー</h4>
+<div class="box green">
+ <h4 class="h text-center"> 徒然草</h4>
+ <p class="text-left">
+ 「つれづれなるままに、日暮らし、硯にむかひて、心にうつりゆくよしなしごとを、そこはかとなく書きつくれば、あやしうこそものぐるほしけれ。」
+ </p>
+</div>
+<h5>ジャスティフファイ</h5>
+<div class="box text-justify green">
 <p>
-日本語の斜体文字は太字より暗喩的な意味統一や連想するものがなく、webでの表現でも小さすぎて判読しづらいのが現状で、つかわない傾向にあります。</p>
-<p>HTMLタグでデフォルトで斜体で表現されているタグをnormalに戻すことぐらいでしか日本文字では使わない感じです。</p>
-
-
-
-<h3>値</h3>
-<blockquote>
-<ul>
-<li>
-<h4>normal</h4><p>
-font-family の中で normal に分類されているフォントを選択します。</p></li>
-<li>
-<h4>italic</h4><p>
-italic として分類されているフォントを選択します。 italic フェイスが使用できない場合は、代わりに oblique に分類されているフォントを選択します。どちらも利用できない場合は、スタイルは人工的にシミュレートされます。</p></li>
-<li><h4>oblique </h4><p>
-oblique として分類されているフォントを選択します。 oblique フェイスが使用できない場合は、代わりに italic に分類されているフォントを選択します。どちらも利用できない場合は、スタイルは人工的にシミュレートされます。</p>
-</li>
-<li><h4>oblique 「angle」</h4><p>
-oblique として分類されているフォントを選択し、加えてテキストの傾きの角度を指定します。選択されたフォントファミリで１つまたは複数の oblique フェイスが利用できる場合、指定した角度に最も近いものが選択されます。 oblique フェイスが利用できない場合、ブラウザーは通常のフェイスを指定した大きさだけ傾けることで、 oblique バージョンを作成します。有効な値は-90以上90以下の角度の値です。角度が指定されない場合、14度の角度が使用されます。正の数では行末に向けて傾け、負の数では行頭に向けて傾けます。
-
-一般に、要求された角度が14度以上の場合、大きな角度が推奨されます。その他の場合は、より小さい角度が推奨されます (アルゴリズムの詳細は、仕様書の font matching section を参照してください)。
-	</p>
-	</li>
-</ul>
-<footer>
-<p>引用：
-<cite><a href="https://developer.mozilla.org/ja/docs/Web/CSS/font-style" target="_blank" rel="noopener">font-style</a></cite></p>
-</footer>
-</blockquote>
-
-<div class="card">
-<div class="card-header">
-<h3>記述例</h3>
+  Il y avait encore des Prussiens en France. M. Delalot était un personnage. La légitimité venait de s'affirmer en coupant le poing, puis la tête, à Pleignier, à Carbonneau et à Tolleron. Le prince de Talleyrand, grand chambellan, et l'abbé Louis, ministre désigné des finances, se regardaient en riant du rire de deux augures; tous deux avaient célébré, le 14 juillet 1790, la messe de la Fédération au Champ de Mars; Talleyrand l'avait dite comme évêque, Louis l'avait servie comme diacre.
+  </p>
 </div>
-<div class="card-body">
-<pre class="line-numbers language-css" data-src="prism.js"><code>
-/* 斜体の設定*/
-em{
-    font-style: normal;
-}
-</code></pre>
+<h5>中央寄せ</h5>
+<div class="box text-center green">
+<p>
+  Il y avait encore des Prussiens en France. M. Delalot était un personnage. La légitimité venait de s'affirmer en coupant le poing, puis la tête, à Pleignier, à Carbonneau et à Tolleron. Le prince de Talleyrand, grand chambellan, et l'abbé Louis, ministre désigné des finances, se regardaient en riant du rire de deux augures; tous deux avaient célébré, le 14 juillet 1790, la messe de la Fédération au Champ de Mars; Talleyrand l'avait dite comme évêque, Louis l'avait servie comme diacre.</p>
 </div>
+<h5>左寄せ</h5>
+<div class="box text-left green">
+<p>
+  Il y avait encore des Prussiens en France. M. Delalot était un personnage. La légitimité venait de s'affirmer en coupant le poing, puis la tête, à Pleignier, à Carbonneau et à Tolleron. Le prince de Talleyrand, grand chambellan, et l'abbé Louis, ministre désigné des finances, se regardaient en riant du rire de deux augures; tous deux avaient célébré, le 14 juillet 1790, la messe de la Fédération au Champ de Mars; Talleyrand l'avait dite comme évêque, Louis l'avait servie comme diacre.
+</p>
+</div>
+</div>
+
 </div><!--/ .card -->
-</div>
-<div id="s2" class="mt-n6 pt-6 mb-6 clearfix">
 
-<h2>Font-weight</h2>
-<p>CSS の font-weight プロパティは、フォントの重み (あるいは太さ) を指定します。実際に表示されるフォントの重みは使用している font-family に依存する場合があります。フォントによっては normal 及び bold のみで利用できます。</p>
-<h3>値</h3>
-<blockquote>
-<ul>
-<li>
-<h4>normal</h4><p>
-通常のフォントの重みです。 400 と同じです。</p></li>
-<li>
-<h4>bold</h4><p>
-太字のフォントの重みです。 700 と同じです。</p></li>
-<li><h4>lighter </h4><p>
-フォントの重みを親要素よりも (フォントで利用可能な重みの中で) 一段階細く設定します。</p>
-</li>
-<li><h4>bolder</h4><p>
-フォントの重みを親要素よりも (フォントで利用可能な重みの中で) 一段階太く設定します。
-	</p>
-	</li>
-</ul>
-<ul>
-<li>100	Thin (Hairline)</li>
-<li>200	Extra Light (Ultra Light)</li>
-<li>300	Light</li>
-<li>400	Normal</li>
-<li>500	Medium</li>
-<li>600	Semi Bold (Demi Bold)</li>
-<li>700	Bold</li>
-<li>800	Extra Bold (Ultra Bold)</li>
-<li>900	Black (Heavy)</li>
-</ul>
-<footer>
-<p>引用：
-<cite><a href="https://developer.mozilla.org/ja/docs/Web/CSS/font-weight" target="_blank" rel="noopener">font-weight</a></cite></p>
-</footer>
-</blockquote>
-<div class="card">
-<div class="card-header">
-<h3>記述例</h3>
-</div>
-<div class="card-body">
-<pre class="line-numbers language-css" data-src="prism.js"><code>
-/* 斜体の設定*/
-em{
-    font-style: normal;
-    font-weight:bold;
-}
-</code></pre>
-</div>
-</div><!--/ .card -->
 
 </div>
 </article>
@@ -184,10 +232,10 @@ em{
 <nav aria-label="Page navigation ">
 <ul class="pagination justify-content-center">
 <li class="page-item">
-<a class="page-link" href="43_css_code.html" tabindex="-1" aria-disabled="false">Previous</a>
+<a class="page-link" href="45_css_code.html" tabindex="-1" aria-disabled="false">Previous</a>
 </li>
 <li class="page-item">
-<a class="page-link" aria-disabled="false"  href="45_css_code.html">Next</a>
+<a class="page-link" aria-disabled="false"  href="47_html_markUp.html">Next</a>
 </li>
 </ul>
 </nav>

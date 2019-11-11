@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- seo -->
+<!--<meta name="description" content="">-->
+<meta name="robots" content="noindex,nofollow">
+<title>CSS vertical-align - Web-Textbook</title>
+
+<!-- stylesheet  -->
+<link rel="stylesheet" href="_css/_common/bootstrap.css">
+<link rel="stylesheet" href="_css/_common/font-awesome.min.css">
+<link rel="stylesheet" href="_css/_common/style.css">
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
+<link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="icon" href="/favicon.ico">
+
+<!-- common js  -->
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="_js/_common/jquery-3.2.1.min.js"></script>
+<script src="_js/_common/bootstrap.min.js"></script>
+<script src="_js/_common/pagescroll.jQuery.js"></script>
+</head>
+
+<body style="height: auto;">
+<div id="w-wrapper" class="w-wrapper">
+<header id="w-pageHeader" class="navbar navbar-dark navbar-expand-lg fixed-top w-pageHeader" data-scroll-header="true">
+<div class="container">
+<a class="navbar-brand" href="/">logo</a><span class="navbar-brand">Web Textbook</span>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#w-nav" aria-controls="w-nav" aria-expanded="false" aria-label="ナビゲーション切替">
+<span class="navbar-toggler-icon"></span>
+</button>
+<nav id="w-nav" class="collapse navbar-collapse">
+<ul class="navbar-nav mr-auto pl-3">
+<li class="nav-item"><a href="20_browser_cord.html" class="nav-link disabled">HTML</a></li>
+<li class="nav-item"><a href="#" class="nav-link disabled">CSS</a></li>
+<li class="nav-item"><a href="#" class="nav-link">javasceipt</a></li>
+</ul>
+</nav>
+<!-- /w-nav-->
+</div>
+<!-- /container-->
+</header>
+<!-- /w-pageHeader-->
+<div class="d-lg-flex flex-row-reverse pt-5">
+<main id="w-main" class="w-main col-lg-10">
+<div class="container mb-5">
+<article id="w-article">
+        <h1>CSS vertical-align プロパティ - css</h1>
+        <p><span>category:</span><span class="badge badge-primary">css</span></p>
+        <hr>
+<!-- 序章 モジュール -->
+<div class="card mb-4">
+<div class="card-body clearfix">
+<p class="card-text">行の表示位置　垂直方向の位置を変更できるプロパティです。行(inline)内の指定するプロパティと表のセルボックス内の文字の表示位置を制御する2種類の値があります。</p>
+</div>
+
+</div>
+
+<!-- 目次 モジュール -->
+<div class="bg-light p-3 mb-4">
+<h2>目次</h2>
+<ul>
+    <li><a href="#s1" data-scroll>vertical-align </a></li>
+</ul>
+</div>
+<!-- / 目次 モジュール -->
+<!-- 本文のセクション モジュール -->
+<div id="s1" class="mt-n6 pt-6 mb-6 clearfix">
+
+<h2>vertical-align</h2>
+<p>CSS の vertical-align プロパティは、インラインボックスまたは表セルボックスの垂直方向の配置を設定します。</p>
+<p></p>
+
+<h3>値</h3>
+	<style>
+			.v-align-base:before{
+			vertical-align:baseline;
+					font-size:3em;
+		}
+
+		.v-align-sub:before{
+			vertical-align: sub;
+				font-size:3em;
+		}
+
+		.v-align-sup:before{
+			vertical-align:super;
+				font-size:3em;
+		}
+
+		.v-align-tt:before{
+				font-size:3em;
+			vertical-align:text-top;
+		}
+		.v-align-tb:before{
+			vertical-align:text-bottom;
+				font-size:3em;
+		}
+		.v-align-top:before{
+			vertical-align:top;
+			font-size:3em;
+		}
+		.v-align-bottom:before{
+			vertical-align:bottom;
+			font-size:3em;
+		}
+		.v-align-m:before{
+			vertical-align:middle;
+				font-size:3em;
+		}
+		.v-align-20:before{
+			vertical-align:20%;
+				font-size:3em;
+		}
+
+		.v-align-3em:before{
+			vertical-align:3em;
+				font-size:3em;
+		}
+
+
+
+
+		.preview{
+			border:3px solid #eee;
+			padding:1em;
+		}
+
+	.preview figcaption{
+		font-size:0.625rem;
+		}
+	.preview p{
+		line-height: 2;
+		text-decoration:underline var(--primary);
+}
+
+		.preview-table{
+			border:solid 1px var(--primary);
+		}
+		.preview-table th{
+			padding: 1em;
+			border:solid 1px var(--primary);
+		}
+		.preview-table td{
+			border:solid 1px var(--primary);
+		}
+		.preview-table .vt{
+			vertical-align:top;
+		}
+		}
+	.preview-table .vm{
+			vertical-align:middle;
+		}
+	.preview-table .vb{
+			vertical-align:bottom;
+		}
+
+
+	</style>
+
+<blockquote>
+    <ul>
+        <li>
+<h4>baseline</h4><p>ほとんどの要素の規定値</p>
+<p>要素のベースラインを親要素のベースラインに揃えます。 &lt;textarea$gt; のような、一部の 置換要素 のベースラインは HTML 仕様で未定義であり、このため、このキーワードの挙動はブラウザにより異なるかもしれません。</p>
+<figure class="preview">
+<figcaption>プレビュー</figcaption>
+	<p style="">基準になる親テキスト<i class="fa fa-flag v-align-base" aria-hidden="true"></i></p>
+</figure>
+</li>
+<li><h4>sub</h4><p>
+要素のベースラインを親要素の subscript-baseline に揃えます。
+<br>sub要素の規定値になっていることが多いです。
+</p>
+<figure class="preview">
+<figcaption>プレビュー</figcaption>
+	<p>基準になる親テキスト<i class="fa fa-flag v-align-sub" aria-hidden="true"></i>
+	</p><p>H<sub>2</sub>O</p>
+</figure>
+</li>
+<li>
+  <h4>super</h4>
+  <p>要素のベースラインを親要素の superscript-baseline に揃えます。<br>sup要素の規定値のはず</p>
+  <figure class="preview">
+<figcaption>プレビュー</figcaption>
+	<p>基準になる親テキスト<i class="fa fa-flag v-align-sup" aria-hidden="true">
+
+	</i></p><p><br>2<sup>2</sup>=4</p>
+</figure>
+</li>
+<li>
+<h4> text-top</h4>
+<p>要素の上端を親要素のフォントの上端に揃えます。</p>
+<figure class="preview">
+<figcaption>プレビュー</figcaption>
+	<p>基準になる親テキスト<i class="fa fa-flag v-align-tt" aria-hidden="true"></i></p>
+</figure>
+</li>
+<li>
+<h4>text-bottom</h4>
+<p>要素の下端を親要素のフォントの下端に揃えます。</p>
+<figure class="preview">
+<figcaption>プレビュー</figcaption>
+	<p>基準になる親テキスト<i class="fa fa-flag v-align-tb" aria-hidden="true"></i></p>
+</figure>
+</li>
+<li>
+<h4>middle</h4>
+<p>要素の下端を親要素のフォントの下端に揃えます。</p>
+<figure class="preview">
+<figcaption>プレビュー</figcaption>
+	<p>基準になる親テキスト<i class="fa fa-flag v-align-m" aria-hidden="true"></i></p>
+</figure>
+</li>
+<li>
+<h4>length</h4>
+<p>要素の下端を親要素のフォントの下端に揃えます。</p>
+<figure class="preview">
+<figcaption>プレビュー 3em </figcaption>
+	<p>基準になる親テキスト<i class="fa fa-flag v-align-3em" aria-hidden="true"></i></p>
+</figure>
+</li>
+<li>
+<h4>percentage</h4>
+<p>値と似ていますが、line-height プロパティに対するパーセンテージで指定します。負の値を使えます。</p>
+<figure class="preview">
+<figcaption>プレビュー 20%</figcaption>
+	<p>基準になる親テキスト<i class="fa fa-flag v-align-20" aria-hidden="true"></i></p>
+</figure>
+</li>
+</ul>
+	<h4>行との相対値</h4>
+	<p>親要素ではなく、行全体に対しての縦方向の整列方法を表します。</p>
+<ul>
+<li>
+<h4>top</h4>
+<p>素と子孫要素の上端を行全体の上端に揃えます。</p>
+<figure class="preview">
+<figcaption>プレビュー </figcaption>
+	<p>基準になる親テキスト<i class="fa fa-flag v-align-top" aria-hidden="true"></i></p>
+</figure>
+</li>
+
+<li>
+<h4>bottom</h4>
+<p>要素と子孫要素の下端を行全体の下端に揃えます。<br>
+ベースラインを持たない要素では、代わりにマージン境界の下端が使われます</p>
+<figure class="preview">
+<figcaption>プレビュー </figcaption>
+	<p>基準になる親テキスト<i class="fa fa-flag v-align-bottom" aria-hidden="true"></i></p>
+</figure>
+</li>
+</ul>
+<p><small>基準になる親テキストにはtext-decolationプロパティunderlineとlineheightを2にしています。旗<i class="fa fa-flag" aria-hidden="true"></i>の絵文字がvartical-alignの対象文字で3emの大きさで表示しています。</small></p>
+<div class="card">
+<div class="card-header">
+<h3>表セル内での値</h3>
+</div>
+<div class="card-body">
+	<p>表の枠（セル）内ではcontentsエリアの描画位置（垂直位置）の指定に使えます。プレビューはそれぞれ「テストテキスト」の描画位置で確認してください。</p>
+<p><small>プレビューはTD要素にのみ設定しています。</small></p>
+<ul>
+<li>
+<h4>baseline (および sub, super, text-top, text-bottom, 「length」, 「percentage」)</h4>
+<p>
+	セルのベースラインを、行内でベースライン揃えにされた他のすべてのセルのベースラインに揃えます。</p>
+	</li>
+<li>
+<h4>top</h4>
+<p>セルの上端のパディング境界を行の上端に揃えます</p>
+<figure class="preview">
+<figcaption>プレビュー</figcaption>
+		<table class="preview-table"><tr><th>top</th><td class="vt">テストテキスト</td></tr></table>
+</figure>
+</li>
+
+<li>
+<h4>middle</h4>
+<p>セルのパディングボックスが行の中央になるようにします。</p>
+<figure class="preview">
+<figcaption>プレビュー</figcaption>
+	<table class="preview-table"><tr><th>middle</th><td class="vm">テストテキスト</td></tr></table>
+</figure>
+</li>
+<li>
+<h4>bottom</h4>
+<p>セルの下端のパディング境界を行の下端に揃えます。</p>
+<figure class="preview">
+<figcaption>プレビュー</figcaption>
+	<table class="preview-table"><tr><th>bottom</th><td class="vb">テストテキスト</td></tr></table>
+</figure>
+</li>
+
+</ul>
+<p><small>プレビューはTD要素にのみ設定しています。</small></p>
+</div>
+</div><!--/ .card -->
+
+<footer>
+<p>引用：
+<cite><p><a href="https://developer.mozilla.org/ja/docs/Web/CSS/text-align" target="_blank" rel="noopener">text-align</a></p></cite></p>
+</footer>
+</blockquote>
+
+<div class="card">
+<div class="card-header">
+<h3>記述例</h3>
+</div>
+<div class="card-body">
+<h3>例</h3>
+<h4>css</h4>
+<pre class="line-numbers language-css" data-src="prism.js"><code>
+/* */
+.green {
+  border: solid limegreen;
+}
+
+.first{
+  font-size:2em;
+  vertical-align:text-bottom;
+}
+
+p {
+font-size: 1rem;
+}
+
+.box {
+  width: 80%;
+  display:block;
+  font-size: 15px;
+}
+
+</code></pre>
+
+
+<h4>HTML</h4>
+<pre class="line-numbers language-xml" data-src="prism.js"><code>
+&lt;div class="box green"&gt;
+ &lt;h1&gt;徒然草&lt;/h1&gt;
+ &lt;p&gt;
+ 「&lt;span class="first"&gt;つ&lt;/span&gt;れづれなるままに、日暮らし、硯にむかひて、心にうつりゆくよしなしごとを、そこはかとなく書きつくれば、あやしうこそものぐるほしけれ。」
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="box green"&gt;
+ &lt;p&gt;
+&lt;span class="first"&gt;I&lt;/span&gt;l y avait encore des Prussiens en France. M. Delalot était un personnage. La légitimité venait de s'affirmer en coupant le poing, puis la tête, à Pleignier, à Carbonneau et à Tolleron. Le prince de Talleyrand, grand chambellan, et l'abbé Louis, ministre désigné des finances, se regardaient en riant du rire de deux augures; tous deux avaient célébré, le 14 juillet 1790, la messe de la Fédération au Champ de Mars; Talleyrand l'avait dite comme évêque, Louis l'avait servie comme diacre.
+&lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+
+
+<style>.green{
+  line-height: 1.1;
+  border: solid limegreen;
+}
+.first{
+  font-size:2em;
+  vertical-align:text-bottom;
+}
+
+.box {
+  width: 80%;
+  display: block;
+  font-size:1rem;
+  padding:1em;
+  margin: 0 0 20px 0;
+}</style>
+<h4>プレビュー</h4>
+<div class="box green">
+ <h4 class="h text-center"> 徒然草</h4>
+ <p class="text-left">
+ 「<span class="first">つ</span>れづれなるままに、日暮らし、硯にむかひて、心にうつりゆくよしなしごとを、そこはかとなく書きつくれば、あやしうこそものぐるほしけれ。」
+ </p>
+</div>
+<h5>ローマ字</h5>
+<div class="box text-justify green">
+<p>
+	<span class="first">I</span>l y avait encore des Prussiens en France. M. Delalot était un personnage. La légitimité venait de s'affirmer en coupant le poing, puis la tête, à Pleignier, à Carbonneau et à Tolleron. Le prince de Talleyrand, grand chambellan, et l'abbé Louis, ministre désigné des finances, se regardaient en riant du rire de deux augures; tous deux avaient célébré, le 14 juillet 1790, la messe de la Fédération au Champ de Mars; Talleyrand l'avait dite comme évêque, Louis l'avait servie comme diacre.
+  </p>
+</div>
+
+</div>
+
+</div><!--/ .card -->
+
+
+</div>
+</article>
+</div>
+<!-- /container-->
+
+<aside class="print-none" id="w-aside2">
+<div class="row text-white no-gutters justify-content-center">
+<nav aria-label="Page navigation ">
+<ul class="pagination justify-content-center">
+<li class="page-item">
+<a class="page-link" href="45_css_code.html" tabindex="-1" aria-disabled="false">Previous</a>
+</li>
+<li class="page-item">
+<a class="page-link" aria-disabled="false"  href="47_html_markUp.html">Next</a>
+</li>
+</ul>
+</nav>
+</div>
+
+<div class="container bg-dark p-3">
+
+
+</div>
+</aside>
+
+</main>
+<!--w-main-->
+<aside class="w-aside col-lg-2 print-none" id="w-aside1">
+<div class="w-aside-inner container">
+<div class="accordion" id="accordionAside">
+<div class="w-subnav">
+<div id="headingOne">
+<h3 class="sticky-top">
+  <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" >basic Operation</button>
+</h3>
+</div>
+<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionAside">
+<!-- BOlist modile -->
+<ul id="w-BOlist" class="list-unstyled">
+        <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+        </ul>
+        <!-- /BOlist modile -->
+</div>
+</div>
+<div class="w-subnav">
+<div id="heading2">
+<h3 class="sticky-top">
+  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">web Outline</button>
+</h3>
+</div>
+<div id="collapseTwo" class="collapse" aria-labelledby="heading2" data-parent="#accordionAside">
+<!-- OLlist modile -->
+<ul id="w-OLlist" class="list-unstyled">
+        <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+</ul>
+<!-- /OLlist modile -->
+</div>
+</div>
+<div class="w-subnav">
+<div id="heading3">
+<h3 class="sticky-top">
+  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">HTML</button>
+      </h3>
+</div>
+<div id="collapseThree" class="collapse" aria-labelledby="heading3" data-parent="#accordionAside">
+    <!-- OLlist modile -->
+    <ul id="w-MKlist" class="list-unstyled">
+            <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+    </ul>
+    <!-- /OLlist modile -->
+    </div>
+    </div>
+
+<div class="w-subnav">
+<div id="heading4">
+<h3 class="sticky-top">
+<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse4" aria-expanded="true" aria-controls="collapse4">Text Editor
+</button>
+</h3>
+</div>
+<div id="collapse4" class="collapse" aria-labelledby="heading4" data-parent="#accordionAside">
+<!-- EDlist modile -->
+<ul id="w-EDlist" class="list-unstyled">
+  <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+</ul>
+<!-- /EDlist modile -->
+</div>
+</div>
+<div class="w-subnav">
+<div id="heading5">
+<h3 class="sticky-top">
+<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse5" aria-expanded="true" aria-controls="collapse4">CSS
+</button>
+</h3>
+</div>
+<div id="collapse5" class="collapse" aria-labelledby="heading4" data-parent="#accordionAside">
+<!-- EDlist modile -->
+<ul id="w-CSSlist" class="list-unstyled">
+  <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+</ul>
+<!-- /csslist modile -->
+</div>
+</div>
+
+  </div><!-- /accordionAside -->
+</div>
+<script src="_js/_common/VueBOnavlist.js"></script>
+</aside>
+
+<!-- /w-aside2-->
+</div>
+<footer id="w-pageFooter">
+<div class="container">
+<small>&copy; shounosuke tarutani</small>
+</div>
+<!-- /container-->
+</footer>
+<!--w-pageFooter-->
+<script src="_js/_common/prism.js"></script>
+</div>
+<!--w-container-->
+</body>
+</html>
