@@ -234,6 +234,16 @@ var mklists = new Vue({
                     titleen:"text-algin ",
                     url:"46_css_code.html"
                 },
+										{
+                    titlename:'バーティカルアライン',
+                    titleen:"vertical-align ",
+                    url:"47_css_code.html"
+                },
+										{
+                    titlename:'詳細度',
+                    titleen:" Specificity",
+                    url:"48_css_code.html"
+                },
                 {
                     titlename:'CSS position プロパティ',
                     titleen:"position ",
