@@ -1,0 +1,15 @@
+// 既定値を上書きするには、このファイル内にキー バインドを挿入しますauto[]
+[
+    {
+        "key": "ctrl+alt+w",
+        "command": "extension.toggleWhitespacePlus"
+    },
+    {
+        "key": "shift+alt+oem_102",
+        "command": "editor.action.toggleWordWrap"
+    },
+    {
+        "key": "alt+z",
+        "command": "-editor.action.toggleWordWrap"
+    }
+]

@@ -1,0 +1,17 @@
+{
+    "editor.fontSize": 20,
+    "editor.renderWhitespace": "all",
+    "editor.renderControlCharacters": true,
+    "editor.cursorSmoothCaretAnimation": true,
+    "window.zoomLevel": 0,
+    "editor.minimap.enabled": true,
+    "editor.wordWrap": "bounded",
+    "html.autoClosingTags": false,
+    "html.format.wrapLineLength": 0,
+    "workbench.tree.indent": 4,
+    "editor.tabSize": 2,
+    "files.trimTrailingWhitespace": true,
+    "workbench.colorTheme": "Kimbie Dark",
+    "editor.emptySelectionClipboard": false,
+    "editor.autoIndent": false
+}
