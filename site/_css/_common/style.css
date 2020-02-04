@@ -240,7 +240,7 @@ pre[data-line] {
   right: 0;
   padding: inherit 0;
   margin-top: 1em;
-  /* Same as .prism窶冱 padding-top */
+  /* Same as .prism’s padding-top */
   background: rgba(153, 122, 102, 0.08);
   background: linear-gradient(to right, rgba(153, 122, 102, 0.1) 70%, rgba(153, 122, 102, 0));
   pointer-events: none;
@@ -400,6 +400,7 @@ script[type='text/plain'].language-markup {
 
 .w-main, .w-aside {
   padding-top: 56px;
+  background-color: #fbfbfb;
 }
 
 .w-subnav {
