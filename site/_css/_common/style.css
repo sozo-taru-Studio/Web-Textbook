@@ -442,6 +442,21 @@ script[type='text/plain'].language-markup {
   color: #011522;
 }
 
+[id="w-pageFooter"] {
+  padding-top: px;
+  background: url(../../_images/footerbg.png) repeat-x center bottom;
+  height: 270px;
+}
+[id="w-pageFooter"] small {
+  display: block;
+  text-align: center;
+}
+
+[id="w-article"] img {
+  max-width: 100%;
+  height: auto;
+}
+
 .clearBoth {
   clear: both;
 }

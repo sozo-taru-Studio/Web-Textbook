@@ -75,6 +75,26 @@ padding-top:56px;
 }
 }
 
+//　footer
+[id="w-pageFooter"]{
+ padding-top:px;
+ background:url(../../_images/footerbg.png) repeat-x center bottom ;
+ height:270px;
+ small{
+  display:block;
+  text-align: center;
+ }
+}
+
+// 記事内
+[id="w-article"]{
+ img{ 
+  max-width:100%;
+  height:auto;
+ }
+}
+
+
 //ただ単にクリアしたいときの
 .clearBoth{clear:both;}
 
