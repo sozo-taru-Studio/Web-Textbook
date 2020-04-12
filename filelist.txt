@@ -1,0 +1,359 @@
+フォルダー パスの一覧
+ボリューム シリアル番号は 1A86-25A5 です
+C:.
+│  filelist.txt
+│  index.html
+│  README.md
+│  
+├─pdf
+│      1-10 - web outline - Web-Textbook.pdf
+│      Accessivility.pdf
+│      webの役割 - web outline - Web-Textbook.pdf
+│      webページ制作の工程 - web outline - Web-Textbook.pdf
+│      webマーケティング - web outline - Web-Textbook.pdf
+│      メディアの特徴を理解し分類してみる - web outline - Web-Textbook.pdf
+│      メディア研究 - web outline - Web-Textbook.pdf
+│      商取引 - web outline - Web-Textbook.pdf
+│      肩書や役職 - web outline - Web-Textbook.pdf
+│      著作権 - web outline - Web-Textbook.pdf
+│      見積もりの作成 - web outline - Web-Textbook.pdf
+│      評価テスト - web outline - Web-Textbook.pdf
+│      電源とアプリケーション - basic Operation - Web-Textbook.pdf
+│      
+├─site
+│  │  00_basic_operation.html
+│  │  01_basic_operation.html
+│  │  02_basic_operation.html
+│  │  03_basic_operation.html
+│  │  04_basic_operation.html
+│  │  05_basic_operation.html
+│  │  10_outline_media.html
+│  │  10_test_outline.html
+│  │  11_outline_media.html
+│  │  12_outline_media.html
+│  │  13_outline_media.html
+│  │  14_outline_media.html
+│  │  15_outline_media.html
+│  │  16_outline_media.html
+│  │  17_outline_media.html
+│  │  18_outline_media.html
+│  │  201_html_markUp.html
+│  │  202_html_markUp.html
+│  │  203_html_markUp.html
+│  │  20_html_markUp.html
+│  │  21_html_markUp.html
+│  │  22_html_markUp.html
+│  │  23_html_markUp.html
+│  │  24_html_markUp.html
+│  │  25_html_markUp.html
+│  │  26_html_markUp.html
+│  │  27_html_markUp.html
+│  │  28_html_markUp.html
+│  │  29_html_markUp.html
+│  │  30_editer_vscord.html
+│  │  _template.html
+│  │  原稿.md
+│  │  原稿.txt
+│  │  
+│  ├─_ASSET
+│  │  ├─bootstrap-4.2.1
+│  │  │  └─scss
+│  │  │      │  bootstrap-grid.scss
+│  │  │      │  bootstrap-reboot.scss
+│  │  │      │  bootstrap.scss
+│  │  │      │  _alert.scss
+│  │  │      │  _badge.scss
+│  │  │      │  _breadcrumb.scss
+│  │  │      │  _button-group.scss
+│  │  │      │  _buttons.scss
+│  │  │      │  _card.scss
+│  │  │      │  _carousel.scss
+│  │  │      │  _close.scss
+│  │  │      │  _code.scss
+│  │  │      │  _custom-forms.scss
+│  │  │      │  _dropdown.scss
+│  │  │      │  _forms.scss
+│  │  │      │  _functions.scss
+│  │  │      │  _grid.scss
+│  │  │      │  _images.scss
+│  │  │      │  _input-group.scss
+│  │  │      │  _jumbotron.scss
+│  │  │      │  _list-group.scss
+│  │  │      │  _media.scss
+│  │  │      │  _mixins.scss
+│  │  │      │  _modal.scss
+│  │  │      │  _nav.scss
+│  │  │      │  _navbar.scss
+│  │  │      │  _pagination.scss
+│  │  │      │  _popover.scss
+│  │  │      │  _print.scss
+│  │  │      │  _progress.scss
+│  │  │      │  _reboot.scss
+│  │  │      │  _root.scss
+│  │  │      │  _spinners.scss
+│  │  │      │  _tables.scss
+│  │  │      │  _toasts.scss
+│  │  │      │  _tooltip.scss
+│  │  │      │  _transitions.scss
+│  │  │      │  _type.scss
+│  │  │      │  _utilities.scss
+│  │  │      │  _variables.scss
+│  │  │      │  
+│  │  │      ├─mixins
+│  │  │      │      _alert.scss
+│  │  │      │      _background-variant.scss
+│  │  │      │      _badge.scss
+│  │  │      │      _border-radius.scss
+│  │  │      │      _box-shadow.scss
+│  │  │      │      _breakpoints.scss
+│  │  │      │      _buttons.scss
+│  │  │      │      _caret.scss
+│  │  │      │      _clearfix.scss
+│  │  │      │      _float.scss
+│  │  │      │      _forms.scss
+│  │  │      │      _gradients.scss
+│  │  │      │      _grid-framework.scss
+│  │  │      │      _grid.scss
+│  │  │      │      _hover.scss
+│  │  │      │      _image.scss
+│  │  │      │      _list-group.scss
+│  │  │      │      _lists.scss
+│  │  │      │      _nav-divider.scss
+│  │  │      │      _pagination.scss
+│  │  │      │      _reset-text.scss
+│  │  │      │      _resize.scss
+│  │  │      │      _screen-reader.scss
+│  │  │      │      _size.scss
+│  │  │      │      _table-row.scss
+│  │  │      │      _text-emphasis.scss
+│  │  │      │      _text-hide.scss
+│  │  │      │      _text-truncate.scss
+│  │  │      │      _transition.scss
+│  │  │      │      _visibility.scss
+│  │  │      │      
+│  │  │      └─utilities
+│  │  │              _align.scss
+│  │  │              _background.scss
+│  │  │              _borders.scss
+│  │  │              _clearfix.scss
+│  │  │              _display.scss
+│  │  │              _embed.scss
+│  │  │              _flex.scss
+│  │  │              _float.scss
+│  │  │              _overflow.scss
+│  │  │              _position.scss
+│  │  │              _screenreaders.scss
+│  │  │              _shadows.scss
+│  │  │              _sizing.scss
+│  │  │              _spacing.scss
+│  │  │              _text.scss
+│  │  │              _visibility.scss
+│  │  │              
+│  │  └─font-awesome-4.7.0
+│  │      │  HELP-US-OUT.txt
+│  │      │  
+│  │      ├─css
+│  │      │      font-awesome.css
+│  │      │      font-awesome.min.css
+│  │      │      
+│  │      ├─fonts
+│  │      │      fontawesome-webfont.eot
+│  │      │      fontawesome-webfont.svg
+│  │      │      fontawesome-webfont.ttf
+│  │      │      fontawesome-webfont.woff
+│  │      │      fontawesome-webfont.woff2
+│  │      │      FontAwesome.otf
+│  │      │      
+│  │      ├─less
+│  │      │      animated.less
+│  │      │      bordered-pulled.less
+│  │      │      core.less
+│  │      │      fixed-width.less
+│  │      │      font-awesome.less
+│  │      │      icons.less
+│  │      │      larger.less
+│  │      │      list.less
+│  │      │      mixins.less
+│  │      │      path.less
+│  │      │      rotated-flipped.less
+│  │      │      screen-reader.less
+│  │      │      stacked.less
+│  │      │      variables.less
+│  │      │      
+│  │      └─scss
+│  │              font-awesome.scss
+│  │              _animated.scss
+│  │              _bordered-pulled.scss
+│  │              _core.scss
+│  │              _fixed-width.scss
+│  │              _icons.scss
+│  │              _larger.scss
+│  │              _list.scss
+│  │              _mixins.scss
+│  │              _path.scss
+│  │              _rotated-flipped.scss
+│  │              _screen-reader.scss
+│  │              _stacked.scss
+│  │              _variables.scss
+│  │              
+│  ├─_css
+│  │  └─_common
+│  │          bootstrap.css
+│  │          bootstrap.css.map
+│  │          font-awesome.min.css
+│  │          prism.css
+│  │          prism.css.map
+│  │          style.css
+│  │          style.css.map
+│  │          _variables.css
+│  │          
+│  ├─_images
+│  │  ├─_BO
+│  │  │      04_Visual-Studio-Code.gif
+│  │  │      finder-conf3.png
+│  │  │      finder-conf4.png
+│  │  │      imac-power-button-callout.jpg
+│  │  │      keyboard-106_1280.png
+│  │  │      keyboard-mac_us_1280.png
+│  │  │      keybordConfigimg.png
+│  │  │      
+│  │  └─_html
+│  │          attr-1.png
+│  │          braleft.png
+│  │          champeix-334494_640.jpg
+│  │          Errer_html.PNG
+│  │          googleSeach.png
+│  │          guitar_640.jpg
+│  │          rePath0.PNG
+│  │          rocks_640.jpg
+│  │          taagswork-2019_05_29-15_09_33.gif
+│  │          Tag.png
+│  │          
+│  ├─_js
+│  │  └─_common
+│  │          bootstrap.min.js
+│  │          jquery-3.2.1.min.js
+│  │          pagescroll.jQuery.js
+│  │          prism.js
+│  │          VueBOnavlist.js
+│  │          
+│  ├─_res
+│  │      errer.html
+│  │      
+│  └─_scss
+│          bootstrap.scss
+│          style.scss
+│          _prism.scss
+│          
+└─text
+    │  10_testoutline.html
+    │  10_testoutline.md
+    │  errer.html
+    │  imagesmd.txt
+    │  tenp.html
+    │  vsCode.md
+    │  
+    ├─biginner
+    │      beginner-tutorial.html
+    │      beginner-tutorial.md
+    │      beginner-tutorial.md.html
+    │      beginner.html
+    │      beginner.md
+    │      beginner.md.html
+    │      biginer.md
+    │      
+    ├─biginner-opelation
+    │      0_On_Offand_end.MD
+    │      keyBord.html
+    │      keyBord.MD
+    │      mouse.md
+    │      shotCutKey.html
+    │      shotCutKey.md
+    │      
+    ├─css
+    │      css.md
+    │      
+    ├─HTML
+    │  │  attr.md
+    │  │  code.html
+    │  │  code.md
+    │  │  cordwrite.html
+    │  │  cordwrite.md
+    │  │  elements.html
+    │  │  elements.md
+    │  │  encord.html
+    │  │  encord.md
+    │  │  file_name.html
+    │  │  file_name.md
+    │  │  Float-and-clear.md
+    │  │  HTML-Elements.html
+    │  │  HTML-Elements.MD
+    │  │  HTMLfiles.html
+    │  │  HTMLfiles.md
+    │  │  images.html
+    │  │  images.md
+    │  │  path.html
+    │  │  path.md
+    │  │  position.md
+    │  │  table_attr.html
+    │  │  table_attr.md
+    │  │  W3C.html
+    │  │  W3C.md
+    │  │  原稿.md
+    │  │  
+    │  └─images
+    ├─images
+    │  │  0-folderMake-Mov.gif
+    │  │  attr-1.png
+    │  │  attr.PNG
+    │  │  braleft.png
+    │  │  br_rightTop.PNG
+    │  │  code-shot0.png
+    │  │  cssCode.png
+    │  │  easy-code.png
+    │  │  Errer_html.PNG
+    │  │  finish.png
+    │  │  grumpy-cat-small.png
+    │  │  h1.png
+    │  │  kaisya_shigoto_music_woman.png
+    │  │  kenshou.PNG
+    │  │  p.png
+    │  │  rePath0.PNG
+    │  │  rePath1.PNG
+    │  │  taagswork-2019_05_29-15_09_33.gif
+    │  │  Tag.png
+    │  │  text-only.png
+    │  │  tutorial-1.png
+    │  │  tutorial-2.png
+    │  │  tutorial-3.png
+    │  │  tutorial.png
+    │  │  
+    │  ├─mp4
+    │  │      taagswork 2019_05_29 15_09_33.mp4
+    │  │      
+    │  └─編集前原本
+    │          0-folderMake-Mov.mov
+    │          1makeFiles.mov
+    │          2past.mov
+    │          3htmlCoding.mov
+    │          attr-1.fw.png
+    │          tutorial-1原本.png
+    │          
+    └─outline
+            Accessivility.html
+            Accessivility.md
+            Commerce.html
+            Commerce.MD
+            copyRight.html
+            copyRight.md
+            devstep.html
+            devstep.md
+            mitumori.html
+            mitumori.md
+            staff.html
+            staff.md
+            webMarketing.html
+            webMarketing.md
+            webOutline1.html
+            webOutline1.md
+            

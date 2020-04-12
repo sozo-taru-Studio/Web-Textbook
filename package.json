@@ -1,0 +1,38 @@
+{
+  "name": "web-textbook",
+  "version": "0.0.0",
+  "description": "web-textbook ウェブの教科書、MDNのリファレンスを私的に解釈して記述したもの。",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sozo-taru-Studio/Web-Textbook.git"
+  },
+  "author": "shounosuke Tarutani",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sozo-taru-Studio/Web-Textbook/issues"
+  },
+  "homepage": "https://github.com/sozo-taru-Studio/Web-Textbook#readme",
+  "devDependencies": {
+    "assemble": "^0.24.3",
+    "browser-sync": "^2.26.7",
+    "gulp": "^4.0.2",
+    "gulp-compile-handlebars": "^0.6.1",
+    "gulp-handlebars": "^5.0.2",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-livereload": "^4.0.2",
+    "gulp-plumber": "^1.2.1",
+    "gulp-sass": "^4.0.2",
+    "gulp-webserver": "^0.9.1",
+    "handlebars": "^4.7.3",
+    "path": "^0.12.7",
+    "require-dir": "^1.2.0"
+  },
+  "dependencies": {
+    "gulp-extname": "^0.2.2",
+    "gulp-rename": "^2.0.0"
+  }
+}
