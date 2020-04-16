@@ -137,76 +137,110 @@ var MK = {
                 {
                     titlename:'ブラウザとHTMLコード',
                     titleen:"browser",
-                    url:"20_html_markUp.html"
+                    url:"20_html_markUp.html",
+                    dis:"インターネットの情報を閲覧するブラウザと情報のデータ形式HTMLについて",
+                    img: "_images/_MK/computer_640.jpg"
                 },
                 {
                     titlename:'HTMLファイルのファイル名の付け方。',
                     titleen:"way of naming file",
-                    url:"21_html_markUp.html"
+                    url:"21_html_markUp.html",
+                    dis: "Linax形式のファイル命名のルールを解説します。",
+                    img: "_images/_MK/name.jpg"
                 },
                 {
                     titlename:'HTMLファイル形式の構造',
                     titleen:"HTML file",
-                    url:"22_html_markUp.html"
+                    url:"22_html_markUp.html",
+                    dis: "ドキュメント宣言とHTML要素",
+                    img: "_images/_MK/dtd.jpg"
+
                 },
                 {
                     titlename:'HTMLを間違えずに書く書き方',
                     titleen:"How to HTML tages",
-                    url:"23_html_markUp.html"
+                    url:"23_html_markUp.html",
+                    dis: "初心者にありがちのタイピングミス打ち忘れをなくす習慣をつけましょう。",
+                    img:"_images/_MK/write.PNG"
                 },
                 {
                     titlename:'W3C（ダブリュ３シー）について',
                     titleen:"about World Wide Web Consortium (W3C)",
-                    url:"24_html_markUp.html"
+                    url:"24_html_markUp.html",
+                    dis: "HTMLとCSSのルールを標準化する団体について知りましょう。",
+                    img:"_images/_MK/W3C_page.jpg"
                 },
                 {
                     titlename:'HTML要素',
                     titleen:"HTML elements",
-                    url:"25_html_markUp.html"
+                    url:"25_html_markUp.html",
+                    dis: "要素の解説",
+                    img:"_images/_MK/elm.jpg"
                 },
                 {
                     titlename:'要素辞書の見方',
                     titleen:"How to read Elements dictionary",
-                    url:"26_html_markUp.html"
+                    url:"26_html_markUp.html",
+                    dis:"HTML要素を効率よく調べてる方法を知りましょう。",
+                    img:"_images/_MK/MDN_site.jpg"
+
                 },
                 {
                     titlename:'「<」「>」の中と外',
                     titleen:"<> inside and outside",
-                    url:"27_html_markUp.html"
+                    url:"27_html_markUp.html",
+                    dis:"プラグラムへの指示情報と人にお知らせする情報を見分けれるようになりましょう",
+                    img:"_images/_MK/CDATA.jpg"
                 },
                 {
                     titlename:'HTMLのコメントアウト',
                     titleen:"HTMLs comment out",
-                    url:"28_html_markUp.html"
+                    url:"28_html_markUp.html",
+                    dis:"htmlコードのコメントアウトは制作者の目印などに使い閲覧者には見えないコードです。",
+                    img:"_images/_MK/commentOut.jpg"
+
                 },
                 {
                     titlename:'文字コード',
                     titleen:"charset code",
-                    url:"29_html_markUp.html"
+                    url:"29_html_markUp.html",
+                    dis:"文字化けを回避するため文字コードを知る",
+                    img:"_images/_MK/char.jpg"
                 },
                 {
                     titlename:'画像ファイルの種類',
                     titleen:"images files type",
-                    url:"201_html_markUp.html"
+                    url:"201_html_markUp.html",
+                    dis:"インターネットで使う画像の形式",
+                    img:"_images/_MK/50 File Type Vector Icons.svg"
                 },
                 {
                     titlename:'table の属性',
                     titleen:"table attribute",
-                    url:"202_html_markUp.html"
+                    url:"202_html_markUp.html",
+                    dis:"表を構成するにあたっての知っておくべき属性",
+                    img:"_images/_MK/timetable_640.jpg"
                 },
                 {
                     titlename:'ファイルパス',
                     titleen:"file path",
-                    url:"203_html_markUp.html"
+                    url:"203_html_markUp.html",
+                    dis:"ファイルをリンクさせて関連づける方式について学びます",
+                    img:"_images/_MK/pipe_640.jpg"
                 },
                 {
                     titlename:'float clearとレイアウト',
                     titleen:"float clear",
-                    url:"204_html_markUp.html"
-                },{
+                    url:"204_html_markUp.html",
+                    dis:"フロートレイアウトの実装と抑えるポイント",
+                    img:"_images/_MK/float_640.png"
+                },
+                {
                     titlename:'HTML コンテンツモデル',
                     titleen:"content model",
-                    url:"205_html_markUp.html"
+                    url:"205_html_markUp.html",
+                    dis:"HTMLのタグの種類と役割を解説",
+                    img:"_images/_MK/contents.jpg"
                 },
                 /*{
                     titlename:'float clearとレイアウト',
@@ -214,9 +248,11 @@ var MK = {
                     url:"206_html_markUp.html"
                 },*/
                 {
-                    titlename:'メディアクエリ-',
+                    titlename:'メディアクエリー',
                     titleen:"media query",
-                    url:"207_html_markUp.html"
+                    url:"207_html_markUp.html",
+                    dis:"レスポンシブルレイアウトの知識",
+                    img:"_images/_MK/responsive_640.jpg"
                 }
             ]
    }
@@ -234,7 +270,9 @@ var ED = {
                 {
                     titlename:'Visual Studio Code',
                     titleen:"Visual Studio Code",
-                    url:"30_editer_vscord.html"
+                    url:"30_editer_vscord.html",
+                    dis:"無料で使えるVisual Studio Codeでプログラミングしましょう。",
+                    img:"_images/_MK/vscode.jpg"
                 }
             ]
    }
@@ -321,7 +359,7 @@ var cssPages = new Vue(ST);
  // CSS
 
   var JS = {
-    el: '#w-CSSlist',
+    el: '#w-JSlist',
     data: {
          titles:[
                 {
@@ -334,5 +372,5 @@ var cssPages = new Vue(ST);
 };
 
 var JSlist = new Vue(JS);
-JS.le = "#w-JSpages";
+JS.el = "#w-JSpages";
 var JSpages = new Vue(JS);
