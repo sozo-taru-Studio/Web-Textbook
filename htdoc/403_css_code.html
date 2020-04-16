@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="description" content="discription">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">  <title>flex レイアウト 基礎 2</title>
+  <!-- stylesheet  -->
+  <link rel="stylesheet" href="_css/_common/bootstrap.css">
+  <link rel="stylesheet" href="_css/_common/font-awesome.min.css">
+  <link rel="stylesheet" href="_css/_common/style.css">  <!--  Favicons  -->
+  <link rel="icon" href="favicon.ico">  <!-- common js  -->
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="_js/_common/jquery-3.2.1.min.js"></script>
+  <script src="_js/_common/bootstrap.min.js"></script>
+  <script src="_js/_common/pagescroll.jQuery.js"></script></head>
+<body class="css">
+<div id="w-wrapper" class="w-wrapper">
+<!-- header -->
+<header id="w-pageHeader" class="navbar navbar-dark navbar-expand-lg fixed-top w-pageHeader" data-scroll-header="true">
+<div class="container">
+<a class="navbar-brand" href="index.html">logo</a><span class="navbar-brand">Web Textbook</span>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#w-nav" aria-controls="w-nav" aria-expanded="false" aria-label="ナビゲーション切替">
+<span class="navbar-toggler-icon"></span>
+</button>
+<nav id="w-nav" class="collapse navbar-collapse">
+<ul class="navbar-nav mr-auto pl-3">
+<li class="nav-item"><a href="20_browser_cord.html" class="nav-link disabled">HTML</a></li>
+<li class="nav-item"><a href="#" class="nav-link disabled">CSS</a></li>
+<li class="nav-item"><a href="#" class="nav-link">javasceipt</a></li>
+</ul>
+</nav>
+<!-- /w-nav-->
+</div>
+<!-- /container--></header>
+<!-- /w-pageHeader-->
+<div class="d-lg-flex pt-5" id="main-wrap">
+<main id="w-main" class="w-main col-lg-8 order-1">
+   <div class="container mb-5">
+<article id="w-article">
+<!-- editable area ########             -->
+        <h1>flex レイアウト 基礎 2 - css</h1>
+        <p><span>category:</span> <span class="badge badge-primary">css</span></p>
+        <hr>
+<!-- 序章 モジュール -->
+<div class="card mb-4">
+<div class="card-body clearfix">
+  <p class="card-text">フレックスレイアウトに支配されているアイテムボックスの制御</p>
+  <p>親要素に display: flex; が指定されていないと動作しないので注意しましょう。</p>
+  <p><a href="https://www.webcreatorbox.com/tech/css-flexbox-cheat-sheet" target="_blank">日本語対応！CSS Flexboxのチートシートを作ったので配布します</a></p>
+</div>
+</div>
+
+<!-- 目次 モジュール -->
+<div class="bg-light p-3 mb-4">
+<h2>目次</h2>
+<ul>
+    <li><a href="#s1" data-scroll>order … 順序の指定</a></li>
+    <li><a href="#s2" data-scroll>flex-grow … 子要素の伸びる比率</a></li>
+    <li><a href="#s3" data-scroll>flex-shrink … 子要素の縮む比率</a></li>
+    <li><a href="#s4" data-scroll>flex-basis … 子要素のベースとなる幅の指定</a></li>
+    <li><a href="#s5" data-scroll>align-self … 子要素の垂直方向の揃え</a></li>
+</ul>
+</div>
+<!-- / 目次 モジュール -->
+<!-- 本文のセクション モジュール -->
+<div id="s1" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>order … 順序の指定</h2>
+<p>通常子要素はHTMLの記述順に配置されますが、order プロパティーを使えば任意の順で並べ替えられます。</p>
+<h4>orderで使える値</h4>
+<p>初期値は0。マイナス値を含む数値のみ指定できます。</p>
+<p>数値が高ほどうしろに表記されます。javascriptなどで検索結果の並び替えをするときなどに使えます。</p>
+<div class="card mb-4">
+<h3 class="card-header">並べ替え</h3>
+<div class="card-body">
+<h4>HTML</h4>
+<p>四番目の要素が一番最初に出る</p>
+<pre class="line-numbers language-xml" data-src="prism.js"><code>
+  &lt;div class="flexbox"&gt;
+    &lt;div class="item"&gt;Item 1&lt;/div&gt;
+    &lt;div class="item"&gt;Item 2&lt;/div&gt;
+    &lt;div class="item"&gt;Item 3&lt;/div&gt;
+    &lt;div class="item" style="order:-1;"&gt;Item 4&lt;/div&gt;
+  &lt;/div&gt;
+</code></pre>
+<div>
+  <h4>プレビュー</h4>
+<style>
+.flexbox{
+display:flex;
+}
+.item {
+  background-color: aqua;
+  border:5px solid #ccc;
+  padding:1em;
+}
+.item:nth-child(4){
+  background-color: #f7a0c0
+}
+
+</style>
+<h5 class="mb-0">flex 4を前に</h5>
+<div class="mb-3 flexbox">
+<div class="item">Item 1</div>
+<div class="item">Item 2</div>
+<div class="item">Item 3</div>
+<div class="item" style="order:-1;">Item 4</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="s2" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>flex-grow … 子要素の伸びる順位設定</h2>
+<p>親要素に余ったスペースがあった場合、指定のある子要素が他の子要素に対してどれくらい伸びるかを指定します。</p><p>数値のみ指定できます。初期値は0。マイナス値は無効です。</p>
+
+<p>flex-wrap:wrap;の場合flex-content;プロパティの設定が開放される。</p>
+
+<div class="card mb-4">
+<h3 class="card-header">伸縮</h3>
+<div class="card-body">
+<h4>HTML</h4>
+<p> 四番目の要素が優先して横幅が伸びる </p>
+<pre class="line-numbers language-xml" data-src="prism.js"><code>
+  &lt;div class="flexbox"&gt;
+    &lt;div class="item"&gt;Item 1&lt;/div&gt;
+    &lt;div class="item"&gt;Item 2&lt;/div&gt;
+    &lt;div class="item"&gt;Item 3&lt;/div&gt;
+    &lt;div class="item" style="flex-grow:1;"&gt;Item 4&lt;/div&gt;
+  &lt;/div&gt;
+</code></pre>
+<div>
+  <h4>プレビュー</h4>
+<h5 class="mb-0">Item 4が伸びる</h5>
+<div class="mb-3 flexbox">
+<div class="item">Item 1</div>
+<div class="item">Item 2</div>
+<div class="item">Item 3</div>
+<div class="item" style="flex-grow:1;">Item 4 <br>flex-grow:1;</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+<div id="s3" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>flex-shrink … 子要素の縮む順位設定</h2>
+<p>flex-grow と逆で、親要素に余ったスペースがなくすべての子要素が入り切らない場合、指定のある子要素が他の子要素に対してどれくらい縮むかを指定します。</p>
+<p>数値のみ指定できます。初期値は0。マイナス値は無効です。</p>
+<div class="card mb-4">
+<h3 class="card-header">伸縮</h3>
+<div class="card-body">
+<h4>HTML</h4>
+<p> 四番目の要素が優先して横幅が縮む </p>
+<pre class="line-numbers language-xml" data-src="prism.js"><code>
+  &lt;div class="flexbox"&gt;
+    &lt;div class="item" style="flex-grow:1;"&gt;Item 1&lt;/div&gt;
+    &lt;div class="item" style="flex-grow:1;"&gt;Item 2&lt;/div&gt;
+    &lt;div class="item" style="flex-grow:1;"&gt;Item 3&lt;/div&gt;
+    &lt;div class="item" style="flex-shrink:1;"&gt;Item 4&lt;/div&gt;
+  &lt;/div&gt;
+</code></pre>
+<div>
+  <h4>プレビュー</h4>
+<h5 class="mb-0">Item 4が縮む</h5>
+<div class="mb-3 flexbox">
+<div class="item" style="flex-grow:1;">Item 1<br>flex-grow:1;</div>
+<div class="item" style="flex-grow:1;">Item 2<br>flex-grow:1;</div>
+<div class="item" style="flex-grow:1;">Item 3<br>flex-grow:1;</div>
+<div class="item" style="flex-shrink:1;">Item 4<br>flex-shrink:1;</div>
+</div>
+</div>
+</div>
+</div>
+
+
+</div>
+<div id="s4" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>flex-basis … 子要素のベースとなる幅の指定</h2>
+<p>詳しくはここで<br>
+<a href="https://developer.mozilla.org/ja/docs/Web/CSS/flex-basis">flex-basis | MDN</a></p>
+<p>子要素に対し width と同じように幅の値を指定できます。auto と指定した場合は子要素のコンテンツのサイズが適応されます。</p>
+<p>親要素に高さ（height:auto;以外）が指定されていないとこのプロパティの値を変更する意味がない。</p>
+<p>メモ: (auto 以外の) flex-basis と width (または flex-direction: column の場合は height) の両方が要素に設定されていた場合、 <strong>flex-basis</strong> が優先されます。</p>
+
+<div class="card mb-4">
+<h3 class="card-header">横幅の規定値の設定</h3>
+<div class="card-body">
+<h4>HTML</h4>
+<p> 四番目の要素が親要素の40%の幅になる そのほかは自動で幅が調整される</p>
+<pre class="line-numbers language-xml" data-src="prism.js"><code>
+  &lt;div class="flexbox"&gt;
+    &lt;div class="item"&gt;Item 1&lt;/div&gt;
+    &lt;div class="item"&gt;Item 2&lt;/div&gt;
+    &lt;div class="item"&gt;Item 3&lt;/div&gt;
+    &lt;div class="item" style="flex-basis:40%;"&gt;Item 4&lt;/div&gt;
+  &lt;/div&gt;
+</code></pre>
+<div>
+  <h4>プレビュー</h4>
+<h5 class="mb-0">Item 4の幅は親要素の40%</h5>
+<div class="mb-3 flexbox">
+<div class="item">Item 1</div>
+<div class="item">Item 2</div>
+<div class="item">Item 3</div>
+<div class="item" style="flex-basis:40%;">Item 4 <br>flex-basis:40%;</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+<div id="s5" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>align-self … 子要素の垂直方向の揃え</h2>
+<p>親要素に空きスペースがあった場合、子要素を垂直方向のどの位置に配置するかを指定します。親要素に指定する align-items と全く同じ機能ですが、こちらは子要素に対して指定します。この align-self での指定は、親要素に記述する align-items よりも優先されます。</p>
+<ul>
+<li>auto（初期値）… 親要素の align-items の値を継承</li>
+<li>stretch … 親要素の高さ、またはコンテンツの一番多い子要素の高さに合わせて広げて配置</li>
+<li>flex-start … 親要素の開始位置から配置。上揃え。</li>
+<li>flex-end … 親要素の終点から配置。下揃え。</li>
+<li>center … 中央揃え</li>
+<li>baseline … ベースラインで揃える</li>
+</ul>
+
+<div class="card mb-4">
+<h3 class="card-header">上下垂直方向の</h3>
+<div class="card-body">
+<h4>HTML</h4>
+<p>それぞれの値を子要素に設定し出現位置を確認してください</p>
+<pre class="line-numbers language-xml" data-src="prism.js"><code>
+  &lt;div class="flexbox"&gt;
+    &lt;div class="item" style="align-self:auto"&gt;Item 1&lt;/div&gt;
+    &lt;div class="item" style="align-self:stretch;"&gt;Item 2&lt;/div&gt;
+    &lt;div class="item" style="align-self:flex-start"&gt;Item 3&lt;/div&gt;
+    &lt;div class="item" style="align-self:flex-end"&gt;Item 4&lt;/div&gt;
+    &lt;div class="item" style="align-self:center;"&gt;Item 5&lt;/div&gt;
+    &lt;div class="item" style="align-self:baseline"&gt;Item 6&lt;/div&gt;
+  &lt;/div&gt;
+</code></pre>
+<div>
+  <h4>プレビュー</h4>
+<h5 class="mb-0">垂直方向の出現位置と伸縮の設定プロパティ</h5>
+<div class="mb-3 flexbox" style="height:300px;background-color:#f0f0f0;">
+<div class="item" style="align-self:auto">Item 1 <br>align-self:auto</div>
+<div class="item" style="align-self:stretch;">Item 2 <br>align-self:stretch;</div>
+<div class="item" style="align-self:flex-start;">Item 3 <br>align-self:flex-start;</div>
+<div class="item" style="align-self:flex-end;background-color:aqua">Item 4 <br>align-self:flex-end;</div>
+<div class="item" style="align-self:center;">Item 5 <br>align-self:center;</div>
+<div class="item" style="align-self:baseline;">Item 6 <br>align-self:baseline;</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+</div>
+<!-- editable area end ########             -->
+</article>
+</div>
+<!-- /container-->
+
+<!-- / w-aside2 --->
+
+<aside class="print-none" id="w-aside2">
+<div class="row text-white no-gutters justify-content-center">
+<nav aria-label="Page navigation">
+<ul class="pagination justify-content-center">
+<li class="page-item disabled">
+<a class="page-link" href="403_css_code.html" tabindex="-1" aria-disabled="false">Previous</a>
+</li>
+<li class="page-item">
+<a class="page-link " aria-disabled="false"  href="41_css_code.html">Next</a>
+</li>
+</ul>
+</nav>
+</div>
+<div class="container p-3"></div>
+</aside>
+</main>
+<aside class="w-aside col-lg-2 print-none order-0" id="w-aside1">
+<div class="w-aside-inner container">
+<div class="accordion" id="accordionAside">
+<div class="w-subnav">
+<div id="headingOne">
+<h3 class="sticky-top">
+  <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" >
+PC Operation</button>
+</h3>
+</div>
+<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionAside">
+<!-- BOlist modile -->
+<ul id="w-BOlist" class="list-unstyled w-BOlist">
+        <li class="" v-for="title in titles"><a v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+        </ul>
+        <!-- /BOlist modile -->
+</div>
+</div>
+<div class="w-subnav">
+<div id="heading2">
+<h3 class="sticky-top">
+  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">web Outline</button>
+</h3>
+</div>
+<div id="collapseTwo" class="collapse" aria-labelledby="heading2" data-parent="#accordionAside">
+<!-- OLlist modile -->
+<ul id="w-OLlist" class="list-unstyled">
+  <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+</ul>
+<!-- /OLlist modile -->
+</div>
+</div>
+<div class="w-subnav">
+<div id="heading3">
+<h3 class="sticky-top">
+  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">HTML</button>
+      </h3>
+</div>
+<div id="collapseThree" class="collapse" aria-labelledby="heading3" data-parent="#accordionAside">
+<!-- OLlist modile -->
+<ul id="w-MKlist" class="list-unstyled">
+  <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}}</a></li>
+</ul>
+<!-- /OLlist modile -->
+</div>
+</div>
+
+<div class="w-subnav">
+<div id="heading4">
+<h3 class="sticky-top">
+<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse4" aria-expanded="true" aria-controls="collapse4">Text Editor
+</button>
+</h3>
+</div>
+<div id="collapse4" class="collapse" aria-labelledby="heading4" data-parent="#accordionAside">
+<!-- EDlist modile -->
+<ul id="w-EDlist" class="list-unstyled">
+<li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}}</a></li>
+</ul>
+<!-- /EDlist modile -->
+</div>
+</div>
+<div class="w-subnav">
+<div id="heading5">
+<h3 class="sticky-top">
+<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse5" aria-expanded="true" aria-controls="collapse4">CSS
+</button>
+</h3>
+</div>
+<div id="collapse5" class="collapse" aria-labelledby="heading4" data-parent="#accordionAside">
+<!-- EDlist modile -->
+<ul id="w-CSSlist" class="list-unstyled">
+  <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+</ul>
+<!-- /csslist modile -->
+</div>
+</div>
+  </div><!-- /accordionAside -->
+</div>
+<script src="_js/_common/VueBOnavlist.js"></script>
+</aside>
+<aside class="w-aside w-indexlistbox col-lg-2 .d-lg-none .d-xl-block order-2" id="w-aside2">
+<div class="indexlist-inner container">
+<div><h3>page navigation</h3></div>
+<ol class="list-unstyled list-group" id="w-indexlists">
+  <li class="index-list" v-for="item in items">
+    <a v-bind:href="item.id" class="indexlist-link" data-scroll ></a>
+  </li>
+</ol>
+</div>
+</aside>
+</div><!-- /main-wrap -->
+<!-- footer -->
+<footer id="w-pageFooter">
+<div class="container d-flex">
+  <p class="site-copy">
+<small>&copy; shounosuke tarutani</small>
+</p><!-- /site-copy -->
+</div>
+<!-- /container-->
+</footer>
+<!--w-pageFooter--><script src="_js/_common/Vuepagelist.js"></script>
+<script src="_js/_common/prism.js"></script>
+</div>
+<!--w-wrapper-->
+</body>
+</html>
