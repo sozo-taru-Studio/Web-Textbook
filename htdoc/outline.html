@@ -21,7 +21,7 @@
 <!-- header -->
 <header id="w-pageHeader" class="navbar navbar-dark navbar-expand-lg fixed-top w-pageHeader" data-scroll-header="true">
 <div class="container">
-<a class="navbar-brand" href="/">logo</a><span class="navbar-brand">Web Textbook</span>
+<a class="navbar-brand" href="index.html">logo</a><span class="navbar-brand">Web Textbook</span>
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#w-nav" aria-controls="w-nav" aria-expanded="false" aria-label="ナビゲーション切替">
 <span class="navbar-toggler-icon"></span>
 </button>
@@ -36,8 +36,8 @@
 </div>
 <!-- /container--></header>
 <!-- /w-pageHeader-->
-<div class="d-lg-flex flex-row-reverse pt-5" id="main-wrap">
-<main id="w-main" class="w-main col-lg-10">
+<div class="d-lg-flex pt-5" id="main-wrap">
+<main id="w-main" class="w-main col-lg-8 order-1">
    <h1>:XXXX</h1>
 <h2>:yyyy</h2>
 <div></div>
@@ -54,24 +54,23 @@
 </ul>
 </nav>
 </div>
-<div class="container bg-dark p-3">
-</div>
+<div class="container p-3"></div>
 </aside>
 </main>
-<aside class="w-aside col-lg-2 print-none" id="w-aside1">
+<aside class="w-aside col-lg-2 print-none order-0" id="w-aside1">
 <div class="w-aside-inner container">
 <div class="accordion" id="accordionAside">
 <div class="w-subnav">
 <div id="headingOne">
 <h3 class="sticky-top">
   <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" >
-agurobasic Operation</button>
+PC Operation</button>
 </h3>
 </div>
 <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionAside">
 <!-- BOlist modile -->
-<ul id="w-BOlist" class="list-unstyled">
-        <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen"> </a></li>
+<ul id="w-BOlist" class="list-unstyled w-BOlist">
+        <li class="" v-for="title in titles"><a v-bind:href="title.url" v-bind:title="title.titleen"> </a></li>
         </ul>
         <!-- /BOlist modile -->
 </div>
@@ -139,15 +138,28 @@ agurobasic Operation</button>
 </div>
 <script src="_js/_common/VueBOnavlist.js"></script>
 </aside>
+<aside class="w-aside w-indexlistbox col-lg-2 .d-lg-none .d-xl-block order-2" id="w-aside2">
+<div class="indexlist-inner container">
+<div><h3>page navigation</h3></div>
+<ol class="list-unstyled list-group" id="w-indexlists">
+  <li class="index-list" v-for="item in items">
+    <a v-bind:href="item.id" class="indexlist-link" data-scroll ></a>
+  </li>
+</ol>
+</div>
+</aside>
 </div><!-- /main-wrap -->
 <!-- footer -->
 <footer id="w-pageFooter">
-<div class="container">
+<div class="container d-flex">
+  <p class="site-copy">
 <small>&copy; shounosuke tarutani</small>
+</p><!-- /site-copy -->
 </div>
 <!-- /container-->
 </footer>
-<!--w-pageFooter--><script src="_js/_common/prism.js"></script>
+<!--w-pageFooter--><script src="_js/_common/Vuepagelist.js"></script>
+<script src="_js/_common/prism.js"></script>
 </div>
 <!--w-wrapper-->
 </body>
