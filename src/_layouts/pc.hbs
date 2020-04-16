@@ -21,8 +21,8 @@
 {{>common_header}}
 </header>
 <!-- /w-pageHeader-->
-<div class="d-lg-flex flex-row-reverse pt-5" id="main-wrap">
-<main id="w-main" class="w-main col-lg-10">
+<div class="d-lg-flex pt-5" id="main-wrap">
+<main id="w-main" class="w-main col-lg-8 order-1">
    {% body %}
 <aside class="print-none" id="w-aside2">
 <div class="row text-white no-gutters justify-content-center">
@@ -37,14 +37,24 @@
 </ul>
 </nav>
 </div>
-<div class="container bg-dark p-3">
-</div>
+<div class="container p-3"></div>
 </aside>
 </main>
 {{>common_aside1}}
+<aside class="w-aside w-indexlistbox col-lg-2 .d-lg-none .d-xl-block order-2" id="w-aside2">
+<div class="indexlist-inner container">
+<div><h3>page navigation</h3></div>
+<ol class="list-unstyled list-group" id="w-indexlists">
+  <li class="index-list" v-for="item in items">
+    <a v-bind:href="item.id" class="indexlist-link" data-scroll >{{text}}</a>
+  </li>
+</ol>
+</div>
+</aside>
 </div><!-- /main-wrap -->
 <!-- footer -->
 {{>common_footer}}
+<script src="_js/_common/Vuepagelist.js"></script>
 <script src="_js/_common/prism.js"></script>
 </div>
 <!--w-wrapper-->

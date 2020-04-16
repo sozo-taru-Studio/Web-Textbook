@@ -1,97 +1,136 @@
 // basic Operation - Web-Textbook リスト生成
-var BOlists = new Vue({
+var BO = {
     el: '#w-BOlist',
     data: {
          titles:[
-                { titlename:'電源とアプリケーション',
+                {
+                    titlename:'電源とアプリケーション',
                     titleen:"power on off",
-                    url:"00_basic_operation.html"
+                    url:"00_basic_operation.html",
+                    dis:"電源の入れ方と切り方",
+                    img: '_images/_BO/power_640.jpg'
                 },
                 {
                     titlename:"マウス操作",
                     titleen:"mouse",
-                    url:"01_basic_operation.html"
+                    url:"01_basic_operation.html",
+                    dis:"ドラック&ドロップできますか？",
+                    img: "_images/_BO/mouse_640.jpg"
                 },
                 {
                     titlename:"キーボード操作",
                     titleen:"keybord",
-                    url:"02_basic_operation.html"
+                    url:"02_basic_operation.html",
+                    dis:"キーボードの複合キーを覚えて操作を簡略化しましょう。",
+                    img: "_images/_BO/KeyBord_600.jpg"
                 },
                 {
                     titlename:"USBメモリーデバイスの使い方",
                     titleen:"mobileDrive",
-                    url:"03_basic_operation.html"
+                    url:"03_basic_operation.html",
+                    dis:"デバイスの接続と接続の解除を覚えましょう",
+                    img: "_images/_BO/flash-memory-_640.jpg"
                 },
                 {
                     titlename:"基本的なキーボードショートカット",
                     titleen:"keybord-Shortcut",
-                    url:"04_basic_operation.html"
+                    url:"04_basic_operation.html",
+                    dis:"基本的なキーボードショートカットを使って作業を省略化しましょう",
+                    img: "_images/_BO/shortcut_640.jpg"
                 },
                 {
                     titlename:"ファイルとフォルダの操作",
                     titleen:"directory-opelation",
-                    url:"05_basic_operation.html"
+                    url:"05_basic_operation.html",
+                    dis:"ファイルの役割フォルダの役割を知りましょう",
+                    img: "_images/_BO/file-folda.jpg"
                 }
                 ]
-
-
    }
-  });
+  };
+var BOlists = new Vue(BO);
+// ページモジュールへコピー
+BO.el = '#w-BOpages';
+var BOpages = new Vue(BO);
+
+
  // web概論
-  var OLlists = new Vue({
+  var OL = {
     el: '#w-OLlist',
     data: {
          titles:[
                 { titlename:'メディア研究',
                     titleen:"Whats Media!",
-                    url:"10_outline_media.html"
+                    url:"10_outline_media.html",
+                     dis:"ファイルの役割フォルダの役割を知りましょう",
+                    img: "_images/_OL/media_640.jpg"
                 },
                 {
                     titlename:'メディアの特徴を理解し分類してみる',
                     titleen:"Media type",
-                    url:"11_outline_media.html"
+                    url:"11_outline_media.html",
+                     dis:"ファイルの役割フォルダの役割を知りましょう",
+                    img: "_images/_OL/media_2_640.jpg"
                 },
                 {
                     titlename:'webの役割',
                     titleen:"web rol",
-                    url:"12_outline_media.html"
+                    url:"12_outline_media.html",
+                     dis:"ファイルの役割フォルダの役割を知りましょう",
+                    img: "_images/_OL/webIcon_640.jpg"
                 },
                 {
                     titlename:'見積もりの作成',
                     titleen:"How much is",
-                    url:"13_outline_media.html"
+                    url:"13_outline_media.html",
+                     dis:"自分の労働単価に関して無関心や無知であることだけは避けましょう",
+                    img: "_images/_OL/accountant-.jpg"
                 },
                 {
                     titlename:'著作権',
                     titleen:"Copyright",
-                    url:"14_outline_media.html"
+                    url:"14_outline_media.html",
+                     dis:"ファイルの役割フォルダの役割を知りましょう",
+                    img: "_images/_OL/flag_640.jpg"
                 },
                 {
                     titlename:'商取引',
                     titleen:"Commerce",
-                    url:"15_outline_media.html"
+                    url:"15_outline_media.html",
+                     dis:"ファイルの役割フォルダの役割を知りましょう",
+                    img: "_images/_OL/deal_640.jpg"
                 },
                 {
                     titlename:'webマーケティング',
                     titleen:"web marketing",
-                    url:"16_outline_media.html"
+                    url:"16_outline_media.html",
+                    dis:"ファイルの役割フォルダの役割を知りましょう",
+                    img: "_images/_OL/paper_640.jpg"
                 },
                 {
                     titlename:'webページ制作の工程',
                     titleen:"Production process",
-                    url:"17_outline_media.html"
+                    url:"17_outline_media.html",
+                    dis:"ファイルの役割フォルダの役割を知りましょう",
+                    img: "_images/_OL/falls_640.jpg"
                 },
                 {
                     titlename:'肩書や役職',
                     titleen:"staff",
-                    url:"18_outline_media.html"
+                    url:"18_outline_media.html",
+                    dis:"ファイルの役割フォルダの役割を知りましょう",
+                    img: "_images/_OL/programming_640.jpg"
                 }
-
             ]
    }
-  });
+  };
+
+var OLlists = new Vue(OL);
+OL.el = '#w-OLpages';
+var OLpages = new Vue(OL);
+
 // markuop
-var mklists = new Vue({
+var MK = {
     el: '#w-MKlist',
     data: {
          titles:[
@@ -181,8 +220,14 @@ var mklists = new Vue({
                 }
             ]
    }
-  });
-  var edlists = new Vue({
+  };
+
+var mklists = new Vue(MK)
+MK.el = "#w-MKpages";
+var MKpages = new Vue(MK)
+// HTML
+
+var ED = {
     el: '#w-EDlist',
     data: {
          titles:[
@@ -191,11 +236,16 @@ var mklists = new Vue({
                     titleen:"Visual Studio Code",
                     url:"30_editer_vscord.html"
                 }
-
             ]
    }
-  });
-  var csslists = new Vue({
+  };
+
+var edlists = new Vue(ED);
+ED.el= "#w-EDpages";
+var EDpages = new Vue(ED);
+// vsediter
+
+  var ST = {
     el: '#w-CSSlist',
     data: {
          titles:[
@@ -234,12 +284,12 @@ var mklists = new Vue({
                     titleen:"text-algin ",
                     url:"46_css_code.html"
                 },
-										      {
+                {
                     titlename:'バーティカルアライン',
                     titleen:"vertical-align ",
                     url:"47_css_code.html"
                 },
-										      {
+                {
                     titlename:'詳細度',
                     titleen:" Specificity",
                     url:"48_css_code.html"
@@ -263,4 +313,26 @@ var mklists = new Vue({
                 }
             ]
    }
-  });
+  };
+
+  var csslists = new Vue(ST);
+ST.el = "#w-STpages";
+var cssPages = new Vue(ST);
+ // CSS
+
+  var JS = {
+    el: '#w-CSSlist',
+    data: {
+         titles:[
+                {
+                    titlename:'CSSの基礎知識 ファイル定義',
+                    titleen:"base style sheet files",
+                    url:"40_css_code.html"
+                }
+         ]
+    }
+};
+
+var JSlist = new Vue(JS);
+JS.le = "#w-JSpages";
+var JSpages = new Vue(JS);
