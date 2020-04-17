@@ -53,6 +53,16 @@
   <p><a href="https://www.webcreatorbox.com/tech/css-flexbox-cheat-sheet" target="_blank">日本語対応！CSS Flexboxのチートシートを作ったので配布します</a></p>
 </div>
 </div>
+<!-- 目次 モジュール -->
+<div class="bg-light p-3 mb-4">
+<h2>目次</h2>
+<ul id="w-indexlistBox">
+    <li v-for="item in items" class="w-indexlistBox-list">
+      <a v-bind:href="item.id" data-scroll >{{item.text}}</a>
+    </li>
+</ul>
+</div>
+<!-- / 目次 モジュール -->
 
 <!-- 目次 モジュール -->
 <div class="bg-light p-3 mb-4">
@@ -380,12 +390,12 @@ PC Operation</button>
 </div>
 <script src="_js/_common/VueBOnavlist.js"></script>
 </aside>
-<aside class="w-aside w-indexlistbox col-lg-2 .d-lg-none .d-xl-block order-2" id="w-aside2">
+<aside class="w-aside w-indexlistbox col-lg-2 order-2" id="w-aside2">
 <div class="indexlist-inner container">
 <div><h3>page navigation</h3></div>
 <ol class="list-unstyled list-group" id="w-indexlists">
   <li class="index-list" v-for="item in items">
-    <a v-bind:href="item.id" class="indexlist-link" data-scroll ></a>
+    <a v-bind:href="item.id" class="indexlist-link" data-scroll >{{item.text}}</a>
   </li>
 </ol>
 </div>
