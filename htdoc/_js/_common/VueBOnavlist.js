@@ -290,64 +290,92 @@ var EDpages = new Vue(ED);
                 {
                     titlename:'CSSの基礎知識 ファイル定義',
                     titleen:"base style sheet files",
-                    url:"40_css_code.html"
+                    url:"40_css_code.html",
+                    dis:"HTMLファイルにスタイルシートを適応する方法",
+                    img:"_images/_ST/css.jpg"
                 },
                 {
                     titlename:'CSSの基礎知識 ',
                     titleen:"base style sheet ",
-                    url:"401_css_code.html"
+                    url:"401_css_code.html",
+                    dis:"スタイルシートの書式",
+                    img:"_images/_ST/block.jpg"
                 },
                 {
                     titlename:'フォント ファミリー',
                     titleen:"font-family",
-                    url:"42_css_code.html"
+                    url:"42_css_code.html",
+                    dis:"書体を設定するプロパティと値を学びます",
+                    img:"_images/_ST/fontF.jpg"
                 },
                 {
                     titlename:'フォント サイズ',
                     titleen:"font-size",
-                    url:"43_css_code.html"
+                    url:"43_css_code.html",
+                    dis:"文字の大きさを設定するプロパティと値を学びます",
+                    img:"_images/_ST/fontSize.jpg"
                 },
                 {
-                    titlename:'フォントスタイル ウエイト ',
+                    titlename:'フォントのスタイル と ウエイト ',
                     titleen:"font-style ",
-                    url:"44_css_code.html"
+                    url:"44_css_code.html",
+                    dis:"斜体と太さを設定するプロパティと値を学びます",
+                    img:"_images/_ST/fontWeight.jpg"
                 },
                 {
                     titlename:'ラインハイト ',
                     titleen:"line-height ",
-                    url:"45_css_code.html"
+                    url:"45_css_code.html",
+                    dis:"行と行の間の隙間を行間といいます。",
+                    img:"_images/_ST/line-hight.jpg"
                 },
                 {
                     titlename:'テキストアライン',
                     titleen:"text-algin ",
-                    url:"46_css_code.html"
+                    url:"46_css_code.html",
+                    dis:"段落ボックスのなかの文字の出現位置の設定",
+                    img:"_images/_ST/align.jpg"
                 },
                 {
                     titlename:'バーティカルアライン',
                     titleen:"vertical-align ",
-                    url:"47_css_code.html"
+                    url:"47_css_code.html",
+                    dis:"垂直方向の文字の出現位置の設定",
+                    img:"_images/_ST/ver.jpg"
                 },
                 {
                     titlename:'詳細度',
                     titleen:" Specificity",
-                    url:"48_css_code.html"
+                    url:"48_css_code.html",
+                    dis:"セレクタの書き方でCSSの適応をコントロールする",
+                    img:"_images/_ST/detail.jpg"
                 },
                 {
                     titlename:'CSS position プロパティ',
                     titleen:"position ",
-                    url:"41_css_code.html"
+                    url:"41_css_code.html",
+                    dis:"要素を重ねるレイアウト",
+                    img:"_images/_ST/positon.jpg"
                 },{
                     titlename:'HTML CSSのデバッグ',
                     titleen:"debug ",
-                    url:"402_css_code.html"
+                    url:"402_css_code.html",
+                    dis:"ブラウザの検証モードでCSSの間違いを探す",
+                    img:"_images/_ST/debug.jpg"
+
                 },{
                     titlename:'flex レイアウト 基礎',
                     titleen:"flex ",
-                    url:"403_css_code.html"
+                    url:"403_css_code.html",
+                    dis:"flexプロパティでレイアウトをします。フレックスレイアウトに設定された要素の子要素は横に並びます。",
+                    img:"_images/_ST/flex.jpg"
                 },{
                     titlename:'flex レイアウト 2',
                     titleen:"flex 2",
-                    url:"404_css_code.html"
+                    url:"404_css_code.html",
+                    dis:"flexプロパティでレイアウトをします。子要素に各々にプロパティを設定してレイアウトを調整する方法",
+                    img:"_images/_ST/flex2.jpg"
+
                 }
             ]
    }
@@ -365,7 +393,9 @@ var cssPages = new Vue(ST);
                 {
                     titlename:'CSSの基礎知識 ファイル定義',
                     titleen:"base style sheet files",
-                    url:"40_css_code.html"
+                    url:"40_css_code.html",
+                    dis:"javascriptの新規ファイル作成とHTMLファイルに関連づける",
+                    img:"_images/_JS/javascript.jpg"
                 }
          ]
     }
@@ -374,3 +404,4 @@ var cssPages = new Vue(ST);
 var JSlist = new Vue(JS);
 JS.el = "#w-JSpages";
 var JSpages = new Vue(JS);
+//JS

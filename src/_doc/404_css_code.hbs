@@ -6,6 +6,8 @@ next-page-url: "#"
 prev-page-url: 403_css_code.html
 titlename: "{{title.titlename}}"
 filename: 404_css_code.html
+text: "{{item.text}}"
+text2: "{{item.text}}"
 ---
 <div class="container mb-5">
 <article id="w-article">
@@ -22,6 +24,16 @@ filename: 404_css_code.html
   <p><a href="https://www.webcreatorbox.com/tech/css-flexbox-cheat-sheet" target="_blank">日本語対応！CSS Flexboxのチートシートを作ったので配布します</a></p>
 </div>
 </div>
+<!-- 目次 モジュール -->
+<div class="bg-light p-3 mb-4">
+<h2>目次</h2>
+<ul id="w-indexlistBox">
+    <li v-for="item in items" class="w-indexlistBox-list">
+      <a v-bind:href="item.id" data-scroll >{{text2}}</a>
+    </li>
+</ul>
+</div>
+<!-- / 目次 モジュール -->
 
 <!-- 目次 モジュール -->
 <div class="bg-light p-3 mb-4">

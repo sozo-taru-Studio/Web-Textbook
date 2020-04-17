@@ -169,6 +169,16 @@ blockquote{
     overflow-y: auto;
 }
 }//
+
+@media (max-width: 991.98px) {
+	[id="w-aside2"]{
+    display:none;
+}
+
+}
+
+
+
  @media print {
 		html{
 			font-size:12pt;
@@ -181,6 +191,7 @@ blockquote{
       page-break-inside: avoid;
   }
 }/* end @media print*/
+
 
 
 /*
