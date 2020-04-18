@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="description" content="discription">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">  <title>ファイルとフォルダの操作 - コンピューターの基本操作 - Web TextBook</title>
+  <!-- stylesheet  -->
+  <link rel="stylesheet" href="_css/_common/bootstrap.css">
+  <link rel="stylesheet" href="_css/_common/font-awesome.min.css">
+  <link rel="stylesheet" href="_css/_common/style.css">  <!--  Favicons  -->
+  <link rel="icon" href="favicon.ico">  <!-- common js  -->
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="_js/_common/jquery-3.2.1.min.js"></script>
+  <script src="_js/_common/bootstrap.min.js"></script>
+  <script src="_js/_common/pagescroll.jQuery.js"></script></head>
+<body class="コンピューターの基本操作">
+<div id="w-wrapper" class="w-wrapper">
+<!-- header -->
+<header id="w-pageHeader" class="navbar navbar-dark navbar-expand-lg fixed-top w-pageHeader" data-scroll-header="true">
+<div class="container">
+<a class="navbar-brand" href="index.html">logo</a><span class="navbar-brand">Web Textbook</span>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#w-nav" aria-controls="w-nav" aria-expanded="false" aria-label="ナビゲーション切替">
+<span class="navbar-toggler-icon"></span>
+</button>
+<nav id="w-nav" class="collapse navbar-collapse">
+<ul class="navbar-nav mr-auto pl-3">
+<li class="nav-item"><a href="20_browser_cord.html" class="nav-link disabled">HTML</a></li>
+<li class="nav-item"><a href="#" class="nav-link disabled">CSS</a></li>
+<li class="nav-item"><a href="#" class="nav-link">javasceipt</a></li>
+</ul>
+</nav>
+<!-- /w-nav-->
+</div>
+<!-- /container--></header>
+<!-- /w-pageHeader-->
+<div class="d-lg-flex pt-5" id="main-wrap">
+<main id="w-main" class="w-main col-lg-8 order-1">
+   <div class="container mb-5">
+<article id="w-article">
+<!-- editable area ########             -->
+        <h1>ファイルとフォルダの操作 - コンピューターの基本操作</h1>
+        <p><span>category:</span> <span class="badge badge-primary">コンピューターの基本操作</span></p>
+        <hr>
+
+<!-- 序章 モジュール -->
+<div class="card mb-4">
+<div class="card-body">
+<div class="alert alert-info">
+<p class="mb-0"> ファイルとフォルダの説明とハードディスクのなかでどうファイルは整理保存されているか説明してます。またfinderの設定ファイルの複製、リネーム、圧縮と解凍の基本操作を説明します。</p>
+</div>
+</div>
+</div>
+<!-- 目次 モジュール -->
+<div class="bg-light p-3 mb-4">
+<h2>目次</h2>
+<ul id="w-indexlistBox">
+    <li v-for="item in items" class="w-indexlistBox-list">
+      <a v-bind:href="item.id" data-scroll >{{item.text}}</a>
+    </li>
+</ul>
+</div>
+<!-- / 目次 モジュール -->
+
+<<!-- 本文のセクション モジュール -->
+<div id="s1" class="mt-n6 pt-6 mb-6 clearfix">
+    <h2>ファイルとフォルダ</h2>
+    <dl>
+      <dt><i class="fa fa-file-o" aria-hidden="true"></i>ファイル</dt>
+      <dd><p>データやプログラムが書かれた電子上データ、実際には電子上のデータで実態はないが紙をイメージしてファイルと呼びます。</p><p>ファイルはドット「.」で始まる拡張子の種類でファイルの種別を確認できます。</p></dd>
+    </dl>
+
+    <dl>
+      <dt><i class="fa fa-folder-o" aria-hidden="true"></i>ファイル/ディレクトリー</dt>
+      <dd><p>フォルダはデータやプログラムの所属を明確にし整理するためファイルをまとめる役割がります。現実の書類をまとめて冊子状にしておくフォルダをイメージしてこう呼ばれます。/OS Unix系 MacOSX系 は「ディレクトリー」と呼びます。名前の由来は違いますが同じ機能です。</p><p>フォルダはファイルを保存するための部屋のような役割をします。　ファイルの中身は関係なく拡張子はつけません。</p>
+      </dd>
+    </dl>
+
+</div>
+<div>
+  <h2 id="s2"  class="mt-n6 pt-6 mb-6">finderの環境設定</h2>
+<p>finederはMac OSXのファイル操作（GUI）アプリケーションです。　windows10でいうファイルエクスプローラーです。
+マウスで操作でき直観的な操作で学習しやすく慣れやすいように設計されています。
+</p>
+<p>finder環境設定を変えて若干わかりにくい部分を表示させて探しやすくします。</p>
+<h3>「メニューバー」＞「finder」＞「環境設定」 </h3>
+<div class="d-lg-flex">
+<div class="card mb-4 col-lg-6">
+    <img src="_images/_BO/finder-conf3.png" class="card-img-top img-fluid mb-3" alt="「サイドバー」タブ">
+    <h5 class="card-title">
+「サイドバー」タブ</h5>
+<div class="card-body">
+<p>「よく使う項目」に下記項目をいれておく。(そのほかはお好みで・・・)</p>
+  <ul>
+    <li>デスクトップ、</li>
+    <li>アプリケーション</li>
+    <li>外部ディスク</li>
+  </ul>
+<p>よく使う項目,よく探しに行くフォルダーにチェックを入れておく。</p>
+</div>
+</div>
+<div class="card mb-4 col-lg-6">
+    <img src="_images/_BO/finder-conf4.png" class="card-img-top img-fluid mb-3" alt="「詳細」タブ">
+    <h5 class="card-title">「詳細」タブ</h5>
+    <div class="card-body">
+    <p class="card-text">「すべてのファイル拡張子を表示」にチェックを入れておく</p>
+    <p>拡張子をみてどのドキュメントファイルかを判断するようにしてください。</p>
+  </div>
+</div>
+</div>
+
+
+
+
+<div>
+    <h3>「メニューバー」＞「finder」＞「表示」 </h3>
+    <ul>
+      <li>パスバーの表示 [フォルダの位置を表示]</li>
+      <li>サイドバーの表示[ショートカットアイコンの表示]</li>
+    </ul>
+    <p>上記をONにしておく
+    <br>バージョンにもよるが表示状態だと「非表示にする」メニューが見えるはずです。</p>
+</div>
+
+
+
+
+<div id="s3" class="mt-n6 pt-6 mb-6">
+    <h2>名前を変える名前を付ける</h2>
+    <p>リネーム作業を教えます。新規のフォルダ作成から始めます。</p>
+
+<ol>
+  <li><h3 class="h4">デスクトップフォルダに「新規フォルダ」を作る</h3>
+     <p> デスクトップを直接クリックしコンテキストメニューから「新規フォルダー」を作成する。フォルダーの名前が「新規フォルダー」のままなのでクリックして名前を変えます。<br>
+      名前がつけられない場合、名前の変更はフォルダをマウスで選んで<kbd>Return</kbd>キーを押すと編集モードどになります。<br>
+      ウィンドウズでは<kbd>「F-2」</kbd>キーがショートカットキーになっています。</p>
+<div class="card mb-4">
+  <h5 class="card-header">課題</h5>
+  <div class="card-body">
+ <p class="card-text"> テキストエディタ-を立ち上げからファイルメニューを使ってそこに新しいファイルを保存してみましょう。ファイルの名前はなんでもかまいません。最後に拡張子「.txt」をつけましょう。</p>
+ <div style="width: 8rem;" class="text-center">
+   <i class="fa fa-file-o" aria-hidden="true" style="font-size: 2em;"></i><br>
+ <span>somtingName.txt</span>
+  </div>
+  </div>
+</div>
+
+</li>
+<li>
+  <h3 class="h4">finderを使った「フォルダ」間の移動</h3>
+<div>
+<p>作ったファイルをドラッグ&ドロップでデスクトップに移動しましょう。</p>
+<p>移動したあとドラッグ&ドロップで元のフォルダにもどしましょう。</p>
+</div>
+</li>
+</ol>
+<div class="card mb-4 alert alert-info">
+  <h5 class="card-title">memo「デスクトップの位置」</h5>
+<div class="card-body">
+<p>デスクトップはHDのどこにあるでしょうか？</p>
+<ul class="d-flex list-unstyled">
+  <li>HD　＞</li>
+  <li>ユーザー　＞</li>
+  <li>ユーザーネーム ＞</li>
+  <li>デスクトップ </li>
+</ul>
+<p>デスクトップやアプリケーションもフォルダーです。見つけやすいようにほかのアイコンと変更しています。</p>
+</div>
+</div>
+
+
+
+</div>
+<!-- / #s2 -->
+
+<div id="s4"  class="mt-n6 pt-6 mb-4 mb-6">
+<h2>ファイルのコピーと貼り付け</h2>
+<h3>ショートカットキーでのコピーと貼り付け（ペースト）</h3>
+<p>対象ファイルをマウスカーソルで選び<br>
+<kbd>ctrl/command</kbd>+<kbd>C</kbd><br>
+保存したいフォルダーをファインダーで選び<br>
+<kbd>ctrl/command</kbd>+<kbd>ｖ</kbd></p>
+
+<h3>Option（Alt）キーを使ってのコピーとペースト</h3>
+<p>マウスでドラッグ中のファイルやフォルダを<kbd>Option</kbd>キーをおすことで　アイコンに「+」マークがでます。　任意のフォルダーでドラッグするとコピーになります。</p>
+
+
+
+<h3>コンテキストメニューからのコピーと貼り付け</h3>
+<p>対象ファイルをマウスカーソルで選び
+  右クリックしてコンテキストメニューを開き、下の方にある「XXX.xxx」をコピーを選ぶ<br>
+  移動したいファイルを選んでその項目でお好みのペーストコマンドコンテキストメニューから「項目をペースト」。<br>　
+  <p>移動：<kbd>Option</kbd> + <kbd>command</kbd> + <kbd> v </kbd></p>
+</p>
+</div>
+
+<div id="s5"  class="mt-n6 pt-6 mb-4 mb-6">
+<h2>アプリケーションを使ってZipに変換する</h2>
+<h3>コンテキストメニューから圧縮</h3>
+<p>
+任意のファイルやフォルダを選び　コンテキストメニューから「圧縮」を選ぶと.zip形式の圧縮ファイルが同じフォルダに制作されます。
+</p>
+<p>zipファイルの圧縮はメールなど大量のファイルを添付できないとき一度にまとめるときに使います。メールなどは転送容量の限界がありますのでzipにしたからといって大幅に圧縮されるわけではありありません。ファイル情報をみて実際のファイルの容量を確認しましょう。</p>
+<h3>コンテキストメニューから解凍</h3>
+<p>zipファイルの解凍もコンテキストメニューから解凍できます。
+    右クリック ＞ コンテキストメニュー ＞ アプリケーション ＞ アーカイブユーティリティー　から解凍することができます。
+</p>
+</div>
+
+
+<div id="s5"  class="mt-n6 pt-6 mb-4 mb-6">
+    <h2>ファイルを捨てる</h2>
+    <p>要らなくなったファイルやフォルダはゴミ箱に移動することで削除することができます。削除することでドライブやメモリーの容量の圧迫をおさえることができます。</p>
+    <h3>ゴミ箱へドラッグ</h3>
+    <p>ファイル、フォルダはドラックドロップで捨てれます。<br>macの場合はデバイスや外部ドライブはゴミ箱に捨てると「取り外し」になります。</p>
+
+  <h3>コンテキストメニューから削除</h3>
+    <p>
+        右クリック ＞ コンテキストメニュー ＞ ゴミ箱にすてる
+    </p>
+    <h3>ゴミ箱を空にする</h3>
+    <p>ゴミ箱はメモリーに常駐していますのでゴミ箱の中身が多いと処理パフォーマンスに影響します。（遅くなる）<br>
+      ゴミ箱は空にして帰るようにしましょう。ただし空にしたゴミ箱の<strong class="badge badge-danger" style="font-size: 1rm">ファイルは復旧できません。</strong>    </p>
+
+  </div>
+
+<!-- editable area end ########             -->
+</article>
+</div>
+<!-- /container-->
+
+<!-- / w-aside2 --->
+
+<aside class="print-none" id="w-aside2">
+<div class="row text-white no-gutters justify-content-center">
+<nav aria-label="Page navigation">
+<ul class="pagination justify-content-center">
+<li class="page-item">
+<a class="page-link" href="04_basic_operation.html" tabindex="-1" aria-disabled="false">Previous</a>
+</li>
+<li class="page-item">
+<a class="page-link " aria-disabled="false"  href="#">Next</a>
+</li>
+</ul>
+</nav>
+</div>
+<div class="container p-3"></div>
+</aside>
+</main>
+<aside class="w-aside col-lg-2 print-none order-0" id="w-aside1">
+<div class="w-aside-inner container">
+<div class="accordion" id="accordionAside">
+<div class="w-subnav">
+<div id="headingOne">
+<h3 class="sticky-top">
+  <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" >
+PC Operation</button>
+</h3>
+</div>
+<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionAside">
+<!-- BOlist modile -->
+<ul id="w-BOlist" class="list-unstyled w-BOlist">
+        <li class="" v-for="title in titles"><a v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+        </ul>
+        <!-- /BOlist modile -->
+</div>
+</div>
+<div class="w-subnav">
+<div id="heading2">
+<h3 class="sticky-top">
+  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">web Outline</button>
+</h3>
+</div>
+<div id="collapseTwo" class="collapse" aria-labelledby="heading2" data-parent="#accordionAside">
+<!-- OLlist modile -->
+<ul id="w-OLlist" class="list-unstyled">
+  <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+</ul>
+<!-- /OLlist modile -->
+</div>
+</div>
+<div class="w-subnav">
+<div id="heading3">
+<h3 class="sticky-top">
+  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">HTML</button>
+      </h3>
+</div>
+<div id="collapseThree" class="collapse" aria-labelledby="heading3" data-parent="#accordionAside">
+<!-- OLlist modile -->
+<ul id="w-MKlist" class="list-unstyled">
+  <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}}</a></li>
+</ul>
+<!-- /OLlist modile -->
+</div>
+</div>
+
+<div class="w-subnav">
+<div id="heading4">
+<h3 class="sticky-top">
+<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse4" aria-expanded="true" aria-controls="collapse4">Text Editor
+</button>
+</h3>
+</div>
+<div id="collapse4" class="collapse" aria-labelledby="heading4" data-parent="#accordionAside">
+<!-- EDlist modile -->
+<ul id="w-EDlist" class="list-unstyled">
+<li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}}</a></li>
+</ul>
+<!-- /EDlist modile -->
+</div>
+</div>
+<div class="w-subnav">
+<div id="heading5">
+<h3 class="sticky-top">
+<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse5" aria-expanded="true" aria-controls="collapse5">CSS
+</button>
+</h3>
+</div>
+<div id="collapse5" class="collapse" aria-labelledby="heading4" data-parent="#accordionAside">
+<!-- EDlist modile -->
+<ul id="w-CSSlist" class="list-unstyled">
+  <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+</ul>
+<!-- /csslist modile -->
+</div>
+</div>
+
+<div class="w-subnav">
+<div id="heading6">
+<h3 class="sticky-top">
+<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse6" aria-expanded="true" aria-controls="collapse6">javascript
+</button>
+</h3>
+</div>
+<div id="collapse6" class="collapse" aria-labelledby="heading4" data-parent="#accordionAside">
+<!-- EDlist modile -->
+<ul id="w-JSlist" class="list-unstyled">
+  <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+</ul>
+<!-- /jslist modile -->
+</div>
+</div>
+
+  </div><!-- /accordionAside -->
+</div>
+<script src="_js/_common/VueBOnavlist.js"></script>
+</aside>
+<aside class="w-aside w-indexlistbox col-lg-2 order-2" id="w-aside3">
+<div class="indexlist-inner container">
+<div><h3>page navigation</h3></div>
+<ol class="list-unstyled list-group" id="w-indexlists">
+  <li class="index-list" v-for="item in items">
+    <a v-bind:href="item.id" class="indexlist-link" data-scroll >{{item.text}}</a>
+  </li>
+</ol>
+</div>
+</aside>
+</div><!-- /main-wrap -->
+<!-- footer -->
+<footer id="w-pageFooter">
+<div class="container d-flex">
+  <p class="site-copy">
+<small>&copy; shounosuke tarutani</small>
+</p><!-- /site-copy -->
+</div>
+<!-- /container-->
+</footer>
+<!--w-pageFooter--><script src="_js/_common/Vuepagelist.js"></script>
+<script src="_js/_common/prism.js"></script>
+</div>
+<!--w-wrapper-->
+</body>
+</html>
