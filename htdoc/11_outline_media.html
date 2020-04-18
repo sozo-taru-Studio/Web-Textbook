@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="description" content="discription">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">  <title>メディアの特徴を理解し分類してみる - web総合概論 - Web TextBook</title>
+  <!-- stylesheet  -->
+  <link rel="stylesheet" href="_css/_common/bootstrap.css">
+  <link rel="stylesheet" href="_css/_common/font-awesome.min.css">
+  <link rel="stylesheet" href="_css/_common/style.css">  <!--  Favicons  -->
+  <link rel="icon" href="favicon.ico">  <!-- common js  -->
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="_js/_common/jquery-3.2.1.min.js"></script>
+  <script src="_js/_common/bootstrap.min.js"></script>
+  <script src="_js/_common/pagescroll.jQuery.js"></script></head>
+<body class="web総合概論">
+<div id="w-wrapper" class="w-wrapper">
+<!-- header -->
+<header id="w-pageHeader" class="navbar navbar-dark navbar-expand-lg fixed-top w-pageHeader" data-scroll-header="true">
+<div class="container">
+<a class="navbar-brand" href="index.html">logo</a><span class="navbar-brand">Web Textbook</span>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#w-nav" aria-controls="w-nav" aria-expanded="false" aria-label="ナビゲーション切替">
+<span class="navbar-toggler-icon"></span>
+</button>
+<nav id="w-nav" class="collapse navbar-collapse">
+<ul class="navbar-nav mr-auto pl-3">
+<li class="nav-item"><a href="20_browser_cord.html" class="nav-link disabled">HTML</a></li>
+<li class="nav-item"><a href="#" class="nav-link disabled">CSS</a></li>
+<li class="nav-item"><a href="#" class="nav-link">javasceipt</a></li>
+</ul>
+</nav>
+<!-- /w-nav-->
+</div>
+<!-- /container--></header>
+<!-- /w-pageHeader-->
+<div class="d-lg-flex pt-5" id="main-wrap">
+<main id="w-main" class="w-main col-lg-8 order-1">
+   <div class="container mb-5">
+<article id="w-article">
+<!-- editable area ########             -->
+        <h1>メディアの特徴を理解し分類してみる - web総合概論</h1>
+        <p><span>category:</span> <span class="badge badge-primary">web総合概論</span></p>
+        <hr>
+
+<div class="card mb-4">
+<div class="card-body">
+<p  class="card-text">メディアの特徴を確認します。</p>
+<p  class="card-text">社会の変化や新技術で既存のメディアの概念では抑えられない新しいメディアがつぎつぎに誕生してきます。
+<br>webを使ったコミュニケーションは新しいメディアが誕生する土壌になっています。</p>
+</div>
+</div>
+<!-- 目次 モジュール -->
+<div class="bg-light p-3 mb-4">
+<h2>目次</h2>
+<ul id="w-indexlistBox">
+    <li v-for="item in items" class="w-indexlistBox-list">
+      <a v-bind:href="item.id" data-scroll >{{item.text}}</a>
+    </li>
+</ul>
+</div>
+<!-- / 目次 モジュール -->
+
+<!-- 本文のセクション モジュール -->
+<div id="s1" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>メディアの特徴を理解し分類してみる</h2>
+<p>ウィキペディアでしらべてみましょう。</p>
+<h4 class="h5">参考</h4>
+<blockquote class="blockquote">
+<p><a href="https://ja.wikipedia.org/wiki/%E3%83%A1%E3%83%87%E3%82%A3%E3%82%A2_(%E5%AA%92%E4%BD%93)" target="_blank">メディア|wikipedia</a></p>
+</blockquote>
+
+<p>ウィキペディアによれば、コミュニケーションをするための道具そのものをメディアともよぶ、CD やオーディオテープなど<br> また、不特定多数に情報を伝達する手段を要する組織、たとえば放送局、新聞社、雑誌社など情報伝達する経路と仕組み全体もメディアと呼ぶことがある。これをおもに「マスメディア」と呼んでいる。</p>
+<dl>
+<dt>マスメディア</dt>
+<dd>
+    <p>少数の送り手が不特定多数の受け手にむけ伝達する際に用いられる</p>
+</dd>
+</dl>
+<dl>
+<dt>ネットワークメディア</dt>
+<dd><p>多数の情報源が不特定多数の受け手に情報を伝達する仕組み</p></dd>
+</dl>
+</div>
+<div id="s2" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>各メディアの特性に応じたメディアの呼び方</h2>
+<dl>
+<dt>パーソナルメディア</dt>
+<dd><p>自分の行動を記録したり「編集」さらに配信したり。比較的仲間内で共有したりするメディア</p>
+</dd>
+</dl>
+<dl>
+<dt>双方向メディア（インタラクティブメディア）</dt>
+<dd><p>電話やチャット（テキスト会話型リアルタイムコミュニケーション）など双方が話題を起案する対話型のメディア</p>
+</dd>
+</dl>
+<h3>同期型メディア と 非同期型メディア</h3>
+<p>情報の発信と受信の時間差によるメディアの種別</p>
+
+<dl>
+<dt>同期型メディア</dt>
+<dd><p>同期型メディアは発信と受信がほぼ同時で起こるメディア</p>
+    <p>電話 TV ラジオ 掲示板（更新を監視していたばあい）</p>
+</dd>
+</dl>
+<dl>
+<dt>非同期型メディア</dt>
+<dd><p> 非同期は 発信と受信に時間差があるメディア。 webブログ 新聞 手紙など</p>
+</dd>
+</dl>
+<h3>マルチメディア</h3>
+<p>使用メディアによって伝達可能な情報が制限される。ラジオや電話では文字が送れない。（音声と視覚） 文字、音声、映像、動画、など複数の情報媒体一緒に送るのに用いることができるメディアを指して「マルチメディア」と言うことがある。
+</p>
+<h3>クロスメディア</h3>
+<p>漫画、アニメーション（tv 映画）、ゲーム、音楽CDなどで複数のメディアを販売する戦略 「おもちゃ　ゲーム」会社がよくやる戦略</p>
+</div>
+
+
+<!-- editable area end ########             -->
+</article>
+</div>
+<!-- /container-->
+
+<!-- / w-aside2 --->
+
+<aside class="print-none" id="w-aside2">
+<div class="row text-white no-gutters justify-content-center">
+<nav aria-label="Page navigation">
+<ul class="pagination justify-content-center">
+<li class="page-item">
+<a class="page-link" href="10_outline_media.html" tabindex="-1" aria-disabled="false">Previous</a>
+</li>
+<li class="page-item">
+<a class="page-link " aria-disabled="false"  href="12_outline_media.html">Next</a>
+</li>
+</ul>
+</nav>
+</div>
+<div class="container p-3"></div>
+</aside>
+</main>
+<aside class="w-aside col-lg-2 print-none order-0" id="w-aside1">
+<div class="w-aside-inner container">
+<div class="accordion" id="accordionAside">
+<div class="w-subnav">
+<div id="headingOne">
+<h3 class="sticky-top">
+  <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" >
+PC Operation</button>
+</h3>
+</div>
+<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionAside">
+<!-- BOlist modile -->
+<ul id="w-BOlist" class="list-unstyled w-BOlist">
+        <li class="" v-for="title in titles"><a v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+        </ul>
+        <!-- /BOlist modile -->
+</div>
+</div>
+<div class="w-subnav">
+<div id="heading2">
+<h3 class="sticky-top">
+  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">web Outline</button>
+</h3>
+</div>
+<div id="collapseTwo" class="collapse" aria-labelledby="heading2" data-parent="#accordionAside">
+<!-- OLlist modile -->
+<ul id="w-OLlist" class="list-unstyled">
+  <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+</ul>
+<!-- /OLlist modile -->
+</div>
+</div>
+<div class="w-subnav">
+<div id="heading3">
+<h3 class="sticky-top">
+  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">HTML</button>
+      </h3>
+</div>
+<div id="collapseThree" class="collapse" aria-labelledby="heading3" data-parent="#accordionAside">
+<!-- OLlist modile -->
+<ul id="w-MKlist" class="list-unstyled">
+  <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}}</a></li>
+</ul>
+<!-- /OLlist modile -->
+</div>
+</div>
+
+<div class="w-subnav">
+<div id="heading4">
+<h3 class="sticky-top">
+<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse4" aria-expanded="true" aria-controls="collapse4">Text Editor
+</button>
+</h3>
+</div>
+<div id="collapse4" class="collapse" aria-labelledby="heading4" data-parent="#accordionAside">
+<!-- EDlist modile -->
+<ul id="w-EDlist" class="list-unstyled">
+<li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}}</a></li>
+</ul>
+<!-- /EDlist modile -->
+</div>
+</div>
+<div class="w-subnav">
+<div id="heading5">
+<h3 class="sticky-top">
+<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse5" aria-expanded="true" aria-controls="collapse5">CSS
+</button>
+</h3>
+</div>
+<div id="collapse5" class="collapse" aria-labelledby="heading4" data-parent="#accordionAside">
+<!-- EDlist modile -->
+<ul id="w-CSSlist" class="list-unstyled">
+  <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+</ul>
+<!-- /csslist modile -->
+</div>
+</div>
+
+<div class="w-subnav">
+<div id="heading6">
+<h3 class="sticky-top">
+<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse6" aria-expanded="true" aria-controls="collapse6">javascript
+</button>
+</h3>
+</div>
+<div id="collapse6" class="collapse" aria-labelledby="heading4" data-parent="#accordionAside">
+<!-- EDlist modile -->
+<ul id="w-JSlist" class="list-unstyled">
+  <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+</ul>
+<!-- /jslist modile -->
+</div>
+</div>
+
+  </div><!-- /accordionAside -->
+</div>
+<script src="_js/_common/VueBOnavlist.js"></script>
+</aside>
+<aside class="w-aside w-indexlistbox col-lg-2 order-2" id="w-aside3">
+<div class="indexlist-inner container">
+<div><h3>page navigation</h3></div>
+<ol class="list-unstyled list-group" id="w-indexlists">
+  <li class="index-list" v-for="item in items">
+    <a v-bind:href="item.id" class="indexlist-link" data-scroll >{{item.text}}</a>
+  </li>
+</ol>
+</div>
+</aside>
+</div><!-- /main-wrap -->
+<!-- footer -->
+<footer id="w-pageFooter">
+<div class="container d-flex">
+  <p class="site-copy">
+<small>&copy; shounosuke tarutani</small>
+</p><!-- /site-copy -->
+</div>
+<!-- /container-->
+</footer>
+<!--w-pageFooter--><script src="_js/_common/Vuepagelist.js"></script>
+<script src="_js/_common/prism.js"></script>
+</div>
+<!--w-wrapper-->
+</body>
+</html>

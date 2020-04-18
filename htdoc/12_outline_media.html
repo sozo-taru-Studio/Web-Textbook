@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="description" content="discription">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">  <title>webの役割 - web総合概論 - Web TextBook</title>
+  <!-- stylesheet  -->
+  <link rel="stylesheet" href="_css/_common/bootstrap.css">
+  <link rel="stylesheet" href="_css/_common/font-awesome.min.css">
+  <link rel="stylesheet" href="_css/_common/style.css">  <!--  Favicons  -->
+  <link rel="icon" href="favicon.ico">  <!-- common js  -->
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="_js/_common/jquery-3.2.1.min.js"></script>
+  <script src="_js/_common/bootstrap.min.js"></script>
+  <script src="_js/_common/pagescroll.jQuery.js"></script></head>
+<body class="web総合概論">
+<div id="w-wrapper" class="w-wrapper">
+<!-- header -->
+<header id="w-pageHeader" class="navbar navbar-dark navbar-expand-lg fixed-top w-pageHeader" data-scroll-header="true">
+<div class="container">
+<a class="navbar-brand" href="index.html">logo</a><span class="navbar-brand">Web Textbook</span>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#w-nav" aria-controls="w-nav" aria-expanded="false" aria-label="ナビゲーション切替">
+<span class="navbar-toggler-icon"></span>
+</button>
+<nav id="w-nav" class="collapse navbar-collapse">
+<ul class="navbar-nav mr-auto pl-3">
+<li class="nav-item"><a href="20_browser_cord.html" class="nav-link disabled">HTML</a></li>
+<li class="nav-item"><a href="#" class="nav-link disabled">CSS</a></li>
+<li class="nav-item"><a href="#" class="nav-link">javasceipt</a></li>
+</ul>
+</nav>
+<!-- /w-nav-->
+</div>
+<!-- /container--></header>
+<!-- /w-pageHeader-->
+<div class="d-lg-flex pt-5" id="main-wrap">
+<main id="w-main" class="w-main col-lg-8 order-1">
+   <div class="container mb-5">
+<article id="w-article">
+<!-- editable area ########             -->
+        <h1>webの役割 - web総合概論</h1>
+        <p><span>category:</span> <span class="badge badge-primary">web総合概論</span></p>
+        <hr>
+
+<!-- 序章 モジュール -->
+<div class="card mb-4">
+<div class="card-body">
+<p  class="card-text">web技術の構成要素とその誕生の理由を簡素にまとめました。</p>
+</div>
+</div>
+<!-- 目次 モジュール -->
+<div class="bg-light p-3 mb-4">
+<h2>目次</h2>
+<ul id="w-indexlistBox">
+    <li v-for="item in items" class="w-indexlistBox-list">
+      <a v-bind:href="item.id" data-scroll >{{item.text}}</a>
+    </li>
+</ul>
+</div>
+<!-- / 目次 モジュール -->
+
+<!-- 本文のセクション モジュール -->
+<div id="s1"  class="mt-n6 pt-6 mb-4 mb-6">
+<h2>webの役割</h2>
+<p>webの役割はコミュニケーションによる課題の解決を助ける道具である。</p>
+<p>インターネットとweb技術そのものがメディアである。</p>
+<p>webとかインターネットとホームページなどと呼ばれているが、このネットワークを構成する3つの機能すなわちインターネット、world wide web ,検索エンジンについて開発された経緯である抱えていた問題（課題）とその解決策の側面から解説します。</p>
+
+<div class="card col px-0 mb-5">
+<div class="card-header">
+<h3 class="h4">インターネットの生まれた理由</h3>
+</div>
+<div class="card-body">
+<p>そもそもインターネットがなぜ開発されたか？ アメリカの軍事目的で開発されました。　GPSとかもそうですが。重要な情報がハブとなる部分で破壊されると末端は機能しなくなる。その弱点をカバーするための通信手段として研究されました。</p>
+</div>
+<div class="d-flex justify-content-lg-around">
+<div class="card bg-light mb-3 col-lg-5 px-0">
+    <div class="card-header">課題 </div>
+    <div class="card-body">
+        <p class="card-text">情報の中継基地を破壊されるとウチの軍、激弱！<br> 大切な情報をやり取りできる人が機能しなくなるとその人に付属していた人も機能しなくなる。</p>
+    </div>
+    </div>
+    <div class="card bg-light mb-3 col-lg-5 px-0">
+    <div class="card-header">解決</div>
+    <div class="card-body">
+        <p class="card-text">情報の中継基地を複数設置し連絡をそれぞれできるようにしていると破壊にされても補完し合える。末端の部隊がマヒしずらい。</p>
+    </div>
+    </div>
+    </div>
+</div>
+
+<div class="card col px-0  mb-5">
+<div class="card-header">
+<h3 class="h4">world wide web</h3>
+</div>
+<div class="card-body">
+<p>インターネットを使った情報のやり取りをする仕組み。 <a href="https://www.w3.org/" target="_blank" rel="noopener">w3c</a>がwww技術の標準化の活動をしている。 HTMLとCSSの勧告は2019年5月より<a href="https://momdo.github.io/html/" target="_blank" rel="noopener">（WHATWG）</a>が作業をする。</p>
+</div>
+<div class="d-flex justify-content-lg-around">
+<div class="card bg-light mb-3 col-lg-5 px-0">
+    <div class="card-header">課題 </div>
+    <div class="card-body">
+        <p class="card-text">論文を早く手軽に読みたい。共有したい。コピーしたい。</p>
+    </div>
+    </div>
+    <div class="card bg-light mb-3 col-lg-5 px-0">
+        <div class="card-header">解決</div>
+        <div class="card-body">
+            <p class="card-text">インターネットブラウザーで文書を閲覧できるようにした。</p>
+        </div>
+        </div>
+</div>
+</div>
+
+<div class="card col px-0  mb-5">
+    <div class="card-header">
+    <h3 class="h4">検索エンジンサービス（googleの場合）</h3>
+    </div>
+    <p>数個のキーワードをヒントに数十億のwebサイトから該当の情報をリストアップしてくれるサービス</p>
+    <div class="d-flex justify-content-lg-around">
+    <div class="card bg-light mb-3 col-lg-5 px-0">
+        <div class="card-header">課題 </div>
+        <div class="card-body">
+        <p class="card-text">しらないことがあり調べたい。（ジャンルをほぼ問わない）</p>
+        </div>
+        </div>
+        <div class="card bg-light mb-3 col-lg-5 px-0">
+        <div class="card-header">解決</div>
+        <div class="card-body">
+            <p class="card-text">すべてのwebサイトの情報を閲覧して目録化し関連キーワードでリスト化するシステムを構築</p>
+        </div>
+        </div>
+</div>
+</div>
+<div>
+
+</div>
+
+<div class="card bg-light mb-3 px-0">
+        <div class="card-header">colum</div>
+        <div class="card-body">
+        <p class="card-text"><a href="https://wired.jp/2019/03/25/tim-berners-lee-world-wide-web-anniversary/" target="_blank" rel="noopener">ティム・バーナーズ＝リーの提言：WWWの誕生から30年、インターネットはどこに向かうのか</a></p>
+        </div>
+        </div>
+</div>
+
+
+<div id="s2"  class="mt-n6 pt-6 mb-4 mb-6">
+<h2>インターネット上で体験できるメディア・サービス。</h2>
+<h3>マスメディア </h3>
+<p>壱対多の従来型の情報伝達方法 インタラクティブ化をどのサービスも進めている。</p>
+<ul>
+<li>ネットTV</li>
+<li>ネットラジオ</li>
+<li>ブランドサイト</li>
+<li>電子メール</li>
+</ul>
+<h3>双方向メディア</h3>
+<p>双方のやり取りを主軸に使われるメディア</p>
+<ul>
+<li>Line</li>
+<li>ニコニコ動画</li>
+<li>ネット電話</li>
+<li>skype</li>
+<li>wikipedia</li>
+</ul>
+<h3>ソーシャルメディア</h3>
+<P>facebookに代表されるソーシャルメディア</P>
+<ul>
+    <li>twitter(同期的でありマスメディア的にもつかえるしコミュニケーションにもつかえる。)</li>
+    <li>facebook</li>
+    <li>instagram</li>
+</ul>
+<h3>記憶媒体(クラウドサービス)</h3>
+<ul>
+<li>GoogleDrive 個人のデータを保存するサービス</li>
+<li>Doropbox 個人のデータを保存するサービス</li>
+<li>gitHub プロジェクトのクラウドサービス</li>
+<li>evernote　メモのクラウドサービス</li>
+</ul>
+</div>
+<hr>
+<div id="s3" class="mt-n6 pt-6 mb-4 mb-6">
+<h2>メディア戦略　（広告としての使われ方）</h2>
+<p>メディア戦略はマーケティングの活動の一部であるwebマーケティングとして位置付けられます。
+    </p>
+<dl>
+    <dt>広告 </dt>
+    <dd>企業の活動やサービスをコストをかけて告知する。<br>大規模な告知などは広告代理店が仲介してサービスを告知する。</dd>
+</dl>
+<p>webメディアは簡単には種類分けできないような複雑な機能をもったコミュニケーションツールとして進化しています。<br>
+</p>
+<div class="card mb-4">
+    <div class="card-body">
+<p>webマーケティングはマーケティングの一つの手段です</p>
+<div class="badge badge-secondary p-3"><p class="card-text">マーケティング</p>
+<div class="badge badge-light p-3"><p class="card-text">メディア戦略</p>
+ <p class="card-text badge badge-info"><span class="lead">webマーケティング</span></p>
+</div>
+</div>
+</div>
+</div>
+
+<h3>顧客との親密度（距離感）で使い分け</h3>
+<p>距離感とは顧客セグメントに応じた種別分けをしそのターゲットに合った商品への告知をしていきます。</p>
+
+<h4>親しくない顧客</h4>
+
+    <p>サービスをまだ利用していない潜在的な顧客を注目させる。（Attention） ラジオ、TVCF　動画広告 新聞広告 ビラ配り　ポスティング　など　インターネットを頻繁に使わない従来型の顧客へのアプローチ</p>
+
+<h4>親しい顧客で自から情報を収集する顧客</h4>
+<p>広告　告知をするなかでwebを使った告知が当たり前になってきました。<br>
+電子メール　ブログ　twitter　やfacebookページでサービスの告知をします。また顧客名簿があり、事前に許可を得ていれば電話でのサービスの告知などもします。</p>
+<h5>リスティング広告</h5>
+<blockquote>
+<p>検索キーワードに応じて検索結果上に表示される広告を指します。 検索連動型広告とも呼ばれ、ユーザーがクリックするごとに課金される(PPC:Pay Per Click)のがその特徴です。 Google AdWordsやYahoo! プロモーション広告が有名です。</p>
+</blockquote>
+<h5>ランディングページ（LP）</h5>
+<p>リスティング広告の先にあるページでサービスの詳細な情報とサービスの申し込みがゴールとして設置された1ページものwebページ</p>
+<p>代表的なLP<br>
+<a href="http://cp.kenkoukazoku.co.jp/ad/dnr31/pc001001/index.html" target="_blank" rel="noopener">伝統にんにく卵黄</a></p>
+<hr>
+<h3>webを使った潜在顧客へのアプローチ</h3>
+<h4>オウンドメディア</h4>
+<p>SNSや自社ブログで自社の活動を告知しサービスや会社に興味をもたせるためのツール。<br>
+目的や課題がはっきりしないで始めるとネタ切れ、企画倒れになる。
+長期的にどう展開していくか？
+自社の魅力を顧客に植え付けるのかをしっかり考えて実施する必要がある。</p>
+<h4>「記事広告」</h4>
+<blockquote class="blockquote">
+<p><a href="https://liginc.co.jp/470618" target="_blank" rel="noopener">記事広告で解決できることって？300本以上の記事広告を企画提案してきたマネージャーよすけが解説します。</a></p>
+</blockquote>
+<h4>ブロガーとユーチューバー</h4>
+<p>広告で収入を得ているアフィリエイターも記事広告とは厳密にはちがいます。しかしサービスの面白さや使い勝手を潜在顧客に告知する良い広告になっています。
+アフィリエイト系の広告はPV数や再生数などで料金が発生します。
+</p>
+
+<p>ステルスマーケティングとかいわれる手法ですが そもそも ステマ ダイマの使い方ステルス広告　ダイレクト広告が正しい言葉だとおもいます。</p>
+
+<h3>インターネットメディア対応</h3>
+<p>インターネットを使った告知は企業として当たり前になってきました。<br>
+インターネットの普及で従来の口コミやマスメディアでのイメージ戦略より格段に拡散され認知速度が早くなってきています。</p>
+<p>例えばgoogeleMapにある店舗情報などはインターネットを店舗の支配人や運営者が直接係わらなくても口コミを書き込まれる状況にあります。</p>
+<p>運営者側からうまく情報を管理しないと間違った情報がインターネット上で公開される事も珍しくありません。自分の管理しているメディアだけに注意をむけておけばいい時代でもなくなっています。</p>
+<h3>インターネットメディアのメリット</h3>
+<p>製造業からみればエンドユーザーの実体がわかりやすく、次の施策が立てやすい。</p>
+<h3>サイト解析（アナリティクス）</h3>
+<p>アナリティクスとは「googleanalytics」に代表されるwebサイトの解析サービスです。<br>
+ページのプレビュー数（PV）閲覧デバイスの種類 ユニークユーザー リピートユーザー クリックした箇所サイト内遷移（コンバーション）などが数値として確認し、広告の効果を確認したり次の施策を計画します。</p>
+<p>webでの広告活動の利点は既存のマスメディアよりターゲットユーザーに届いているのかが判断しやすいのが新しい機軸になっています。</p>
+<p>TVの視聴率とネットのプレビュー（PV）数では現実的な閲覧者値はネットの方が正確です。
+<br>視聴率は午後の番組で例えると、
+「ひるおび」＞「アラウンドフォーティ」＞ 2-4％視聴率(ビデオリサーチ)　広告(スポンサー)は
+「でも本当に2-4％の視聴者はスポンサーのターゲットなのか」は疑問になります。どちらもおおよそにはなりますが確度がwebの方が高くなります。売上があがったから広告効果があったんだね。・・・・程度の感覚です。</p>
+<p>テレビもデジタル化して双方向化する番組作りをしている。とくにNHKはよくｄボタンを押させようとしてます。</p>
+<h3>インターネットメディアのデメリット</h3>
+<h3>消えない情報</h3>
+<p>良い内容も悪い内容も一度記述されるとなかなか消えませんしなかなか消せません。事実無根の誹謗中傷を取り下げるにも多くの人を巻き込みコストがかかります。問題はそれが個人レベルで起きることです。
+一度でも、何かのメディアに掲載されると拡散されていきます。<br>
+とくに悪い噂は拡散される傾向にあります。<br>
+受け手判断もあるでしょうが関係性の薄い受け手は事情を鑑みることはほとんどなく鵜呑みに情報をうけとります。</p>
+<p>悪いことや他人の失敗には興味がひかれますがその情報の信憑性やなぜそうなったのかなどいろいろ考えて情報を判断しましょう。</p>
+<h3>仕事の成否は顧客の合点がいったかどうか？できまる。</h3>
+<p>個人的におもうことで申し訳ないですですが
+どんなツールをつかって告知をしてもサービスの実体が顧客の思っていたものとギャップがあったり（誤解も含め）すると逆効果です。
+広告にコストをかるよりサービスにコストをかけてよい体験を顧客にしてもらいブランドを構築していくことが重要とおもいます。
+ですから　web制作をするにあたってどのようなサービスを告知するかをどの程度深く理解するかは重要な作業になります。</p>
+<h3 id="iot">なんか最近よく聞くあたらしいことば「Iot」</h3>
+<p>参考</p>
+<blockquote>
+<p><a href="https://ja.wikipedia.org/wiki/%E3%83%A2%E3%83%8E%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%8D%E3%83%83%E3%83%88" target="_blank" rel="noopener">モノのインターネット </a></p>
+</blockquote>
+<p>インターネットと接続したもの スマート家電など</p>
+<ul>
+<li>スマートスピーカー</li>
+<li>介護 ペットの見守り端末など</li>
+<li>ポケトーク</li>
+</ul>
+<p>スマート家電の「冷蔵庫」などは
+食品の入庫や出庫を管理して廃棄時期 発注購入までをネットでしてくれるシステムとか</p>
+<p>従来のPCやスマートフォンのような汎用性のあるデバイスではなく、その機能に特価したプログラムと機能だけを提供する。</p>
+</div>
+<div class="card">
+<h4 class="h5 card-header">参考</h4>
+<blockquote class="blockquote">
+<p class="card-text"><a href="https://ja.wikipedia.org/wiki/%E3%83%A1%E3%83%87%E3%82%A3%E3%82%A2_(%E5%AA%92%E4%BD%93)" target="_blank" rel="noopener">
+</blockquote>
+</div>
+<div id="s4"  class="mt-n6 pt-6 mb-4 mb-6">
+<h2>webの効果</h2>
+<p>アプリケーションやサービスにより様々でこれという効果の正解を見いだせないですが。<br>デジタル化によりそれ以前の社会の変化をわたくしなりに書き出しました。皆さんも以下の項目以外に実感したり体験したことをリストアップしてみましょう。</p>
+<h3>webのメリット</h3>
+<ul>
+    <li>顧客分類がより把握しやすくなった。</li>
+    <li>SNSによって囲い込みができるようになった。</li>
+    <li>ポスティングが簡単になった。</li>
+    <li>誰もが発信者になれるようになった。</li>
+    <li>容易に情報が手に入り情報の伝搬力がより早くなった。</li>
+</ul>
+<h3>webのデメリット</h3>
+<ul>
+    <li>情報の規制や保存体制にコストが増える</li>
+    <li>情報のリソースが不確かであるにもかかわらず伝搬する。（バズる　炎上する）</li>
+    <li>消したい情報が消えない</li>
+    <li>消費者（ユーザー）は管理されやすくなった。</li>
+</ul>
+</div>
+
+
+<!-- editable area end ########             -->
+</article>
+</div>
+<!-- /container-->
+
+<!-- / w-aside2 --->
+
+<aside class="print-none" id="w-aside2">
+<div class="row text-white no-gutters justify-content-center">
+<nav aria-label="Page navigation">
+<ul class="pagination justify-content-center">
+<li class="page-item">
+<a class="page-link" href="11_outline_media.html" tabindex="-1" aria-disabled="false">Previous</a>
+</li>
+<li class="page-item">
+<a class="page-link " aria-disabled="false"  href="13_outline_media.html">Next</a>
+</li>
+</ul>
+</nav>
+</div>
+<div class="container p-3"></div>
+</aside>
+</main>
+<aside class="w-aside col-lg-2 print-none order-0" id="w-aside1">
+<div class="w-aside-inner container">
+<div class="accordion" id="accordionAside">
+<div class="w-subnav">
+<div id="headingOne">
+<h3 class="sticky-top">
+  <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" >
+PC Operation</button>
+</h3>
+</div>
+<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionAside">
+<!-- BOlist modile -->
+<ul id="w-BOlist" class="list-unstyled w-BOlist">
+        <li class="" v-for="title in titles"><a v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+        </ul>
+        <!-- /BOlist modile -->
+</div>
+</div>
+<div class="w-subnav">
+<div id="heading2">
+<h3 class="sticky-top">
+  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">web Outline</button>
+</h3>
+</div>
+<div id="collapseTwo" class="collapse" aria-labelledby="heading2" data-parent="#accordionAside">
+<!-- OLlist modile -->
+<ul id="w-OLlist" class="list-unstyled">
+  <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+</ul>
+<!-- /OLlist modile -->
+</div>
+</div>
+<div class="w-subnav">
+<div id="heading3">
+<h3 class="sticky-top">
+  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">HTML</button>
+      </h3>
+</div>
+<div id="collapseThree" class="collapse" aria-labelledby="heading3" data-parent="#accordionAside">
+<!-- OLlist modile -->
+<ul id="w-MKlist" class="list-unstyled">
+  <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}}</a></li>
+</ul>
+<!-- /OLlist modile -->
+</div>
+</div>
+
+<div class="w-subnav">
+<div id="heading4">
+<h3 class="sticky-top">
+<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse4" aria-expanded="true" aria-controls="collapse4">Text Editor
+</button>
+</h3>
+</div>
+<div id="collapse4" class="collapse" aria-labelledby="heading4" data-parent="#accordionAside">
+<!-- EDlist modile -->
+<ul id="w-EDlist" class="list-unstyled">
+<li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}}</a></li>
+</ul>
+<!-- /EDlist modile -->
+</div>
+</div>
+<div class="w-subnav">
+<div id="heading5">
+<h3 class="sticky-top">
+<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse5" aria-expanded="true" aria-controls="collapse5">CSS
+</button>
+</h3>
+</div>
+<div id="collapse5" class="collapse" aria-labelledby="heading4" data-parent="#accordionAside">
+<!-- EDlist modile -->
+<ul id="w-CSSlist" class="list-unstyled">
+  <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+</ul>
+<!-- /csslist modile -->
+</div>
+</div>
+
+<div class="w-subnav">
+<div id="heading6">
+<h3 class="sticky-top">
+<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse6" aria-expanded="true" aria-controls="collapse6">javascript
+</button>
+</h3>
+</div>
+<div id="collapse6" class="collapse" aria-labelledby="heading4" data-parent="#accordionAside">
+<!-- EDlist modile -->
+<ul id="w-JSlist" class="list-unstyled">
+  <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+</ul>
+<!-- /jslist modile -->
+</div>
+</div>
+
+  </div><!-- /accordionAside -->
+</div>
+<script src="_js/_common/VueBOnavlist.js"></script>
+</aside>
+<aside class="w-aside w-indexlistbox col-lg-2 order-2" id="w-aside3">
+<div class="indexlist-inner container">
+<div><h3>page navigation</h3></div>
+<ol class="list-unstyled list-group" id="w-indexlists">
+  <li class="index-list" v-for="item in items">
+    <a v-bind:href="item.id" class="indexlist-link" data-scroll >{{item.text}}</a>
+  </li>
+</ol>
+</div>
+</aside>
+</div><!-- /main-wrap -->
+<!-- footer -->
+<footer id="w-pageFooter">
+<div class="container d-flex">
+  <p class="site-copy">
+<small>&copy; shounosuke tarutani</small>
+</p><!-- /site-copy -->
+</div>
+<!-- /container-->
+</footer>
+<!--w-pageFooter--><script src="_js/_common/Vuepagelist.js"></script>
+<script src="_js/_common/prism.js"></script>
+</div>
+<!--w-wrapper-->
+</body>
+</html>

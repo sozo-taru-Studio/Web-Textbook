@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="description" content="discription">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">  <title>見積もりの作成 - web総合概論 - Web TextBook</title>
+  <!-- stylesheet  -->
+  <link rel="stylesheet" href="_css/_common/bootstrap.css">
+  <link rel="stylesheet" href="_css/_common/font-awesome.min.css">
+  <link rel="stylesheet" href="_css/_common/style.css">  <!--  Favicons  -->
+  <link rel="icon" href="favicon.ico">  <!-- common js  -->
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="_js/_common/jquery-3.2.1.min.js"></script>
+  <script src="_js/_common/bootstrap.min.js"></script>
+  <script src="_js/_common/pagescroll.jQuery.js"></script></head>
+<body class="web総合概論">
+<div id="w-wrapper" class="w-wrapper">
+<!-- header -->
+<header id="w-pageHeader" class="navbar navbar-dark navbar-expand-lg fixed-top w-pageHeader" data-scroll-header="true">
+<div class="container">
+<a class="navbar-brand" href="index.html">logo</a><span class="navbar-brand">Web Textbook</span>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#w-nav" aria-controls="w-nav" aria-expanded="false" aria-label="ナビゲーション切替">
+<span class="navbar-toggler-icon"></span>
+</button>
+<nav id="w-nav" class="collapse navbar-collapse">
+<ul class="navbar-nav mr-auto pl-3">
+<li class="nav-item"><a href="20_browser_cord.html" class="nav-link disabled">HTML</a></li>
+<li class="nav-item"><a href="#" class="nav-link disabled">CSS</a></li>
+<li class="nav-item"><a href="#" class="nav-link">javasceipt</a></li>
+</ul>
+</nav>
+<!-- /w-nav-->
+</div>
+<!-- /container--></header>
+<!-- /w-pageHeader-->
+<div class="d-lg-flex pt-5" id="main-wrap">
+<main id="w-main" class="w-main col-lg-8 order-1">
+   <div class="container mb-5">
+<article id="w-article">
+<!-- editable area ########             -->
+        <h1>見積もりの作成 - web総合概論</h1>
+        <p><span>category:</span> <span class="badge badge-primary">web総合概論</span></p>
+        <hr>
+<!-- 序章 モジュール -->
+<div class=" mb-4 alert alert-info">
+<div class="card-body">
+<p class="card-text">そもそもなんのみつもりやねん？？</p>
+<p>さてこの段階でこのお話をされて合点がいくのかわかりませんが<br>
+    webページの制作における見積もり書の話をします。</p>
+    <p>なぜこんなことを書くかというとここにはまだ　マークアップやデザインソフトをつかっての制作の経験がない人ばかりが集まっている可能性があるからです。みなさんにその経験があればなんとなく見えてくる部分もあるでしょうが想像すらつかない話が展開されるかもしれません。ご容赦ください。</p>
+</div>
+</div>
+<!-- 目次 モジュール -->
+<div class="bg-light p-3 mb-4">
+<h2>目次</h2>
+<ul id="w-indexlistBox">
+    <li v-for="item in items" class="w-indexlistBox-list">
+      <a v-bind:href="item.id" data-scroll >{{item.text}}</a>
+    </li>
+</ul>
+</div>
+<!-- / 目次 モジュール -->
+
+<!-- 本文のセクション モジュール -->
+<div id="s1"  class="mt-n6 pt-6 mb-6">
+    <div class="card mb-4">
+    <div class="card-header">参考資料</div>
+    <div class="card-body">
+        <blockquote>
+        <p><a href="https://liginc.co.jp/457524?fbclid=IwAR0pqWn6ZNFlNPoE5hMujrRW7zPihbQxzQ-shFR3uEVXapbKlCJxT4VtNLI" target="_blank" rel="noopener">拝啓、お客様。Webサイト制作のコストはここにかかります。</a></p>
+        </blockquote>
+        </div>
+    </div>
+
+<h2>正確な見積もりなどかけない</h2>
+<p>経験のないみなさんに見積もりをつくるのは無理です。技術職はその経験することでその作業に係る時間や工数もかわります。かかわる人にもよってもかわります。<br>
+だから開き直ってかんがえましょう。</p>
+<p>私も未だに見積もり書作成作業は経験不足から非常にコストをかけてしまします。</p>
+<p>相場？ ワンオフのwebサイトでお客様の課題や要望もさまざまなので同じ条件をいわれても制作会社それぞれです。<br>
+安い制作会社に依頼しても高い制作会社に依頼しても同じ課題でも同じwebサイトなどできません。</p>
+<p>制作会社に入る方は会社の見積もり方法を別途学んでください。</p>
+
+
+
+<div class="card col px-0 mb-5">
+<div class="card-header">
+<h3 class="h4">アドバイス</h3>
+</div>
+<div class="card-body">
+<h5>確実のいえることは　未経験でフリーランスになるな!</h5>
+<p>派遣でもなんでもいいんで修行しなさい。ハーバード大学を出た人や東京大学をだてような超適応能力の高い人は修行などいらないといわれるが、自分が最低限周りの同じ作業をしている人と同じクオリティーに達するまではフリーランスは考えない方がいい。自分である程度仕事を回せるようになってから独立を考えなさい。それまで糞雑魚ナメクジなんだからだれかの守られていた方が絶対いいですよ。</p>
+<h5>フリーランスの私の話</h5>
+<p>私の先輩の受け売りですが自分ができそうなことやできることへの対価をいつも考えてリストアップしておきましょう。<br>
+その値段は自分できめていいです。<br>
+その上でいくらの金額でその課題をクリアしたいのかを予算をクライアントに聞き自分ならここまでできるという<strong>物差し</strong>をもっておくことが大切です。
+いやこれできるのにかなり場数が必要ですけど・・・・</p>
+<p>ようは<strong>物差し</strong>ができるまでは人脈づくりをしておきましょう。</p>
+</div>
+</div>
+<h3>見積もりは見積もり請求は請求</h3>
+<p>発注前に業務契約について話をつめましょう。
+発注をうけたらまず業務契約書をかわしましょう。
+（発注逃げはたまにあります。）
+入金のタイミングや納品の方法も事前にすり合わせします。</p>
+<p>工数を事前にみつもり日数や費用に無理が出るような場合は別途費用をいただくようにしましょう。
+そのためにもしなければならないことの洗い出し綿密に見積もりの料金で行う作業の量や目標を
+クライアントとで確認し同意をとっておきましょう。</p>
+<h3>やすかろう悪かろう</h3>
+<p>無理な日程、巻き戻し、予算不足はいいものがつくれません、上がってきません。</p>
+<h3>クライアントに花をもたせる文化</h3>
+<p>クライアントとフリーランサーは元請けの元請けという仕事が多いので小作人のような関係になりがちですね。
+技術面でまだ一人前ではなく勉強がしたいなど双方の理解や信頼関係を構築できているのなら多少の安い料金でもつづけていってもいいんではないでしょうか？
+でもすごく安い単価のしごとを延々と出し続けてくるクライアントには今後付き合い方をかえたほうがいいとおもいます。
+よほどのこだわりがないかぎり良いお金をだしてくれるクライアントが優先です。
+そしてできないときは断りましょう。</p>
+</div>
+<div id="s2"  class="mt-n6 pt-6 mb-4 mb-6">
+<h2>何基準に算出するか？</h2>
+<h3>一般的によく見るリストwebサイトのローンチ（制作立ち上げの場合） </h3>
+<ul>
+<li>交通費:（回数まで無料とか）</li>
+<li>出張費:（回数まで無料とか）</li>
+<li>デレクション費用:（チームの調整など進捗管理料 責任者料 仕様書の作成料金など）
+デザイン料:（ページ単価 デザインカンプ作成料金）</li>
+<li>ゴーディング料:（単価ページ 仕様に基づいたマークアップとスタイリング料金）</li>
+<li>スクリプティング料:（仕様書に基づいたjavascriptプログラミング料金）</li>
+<li>アナリティクス組み込みおよび登録代行料</li>
+<li>既存ページ移行料 : 旧ページの内容を新規ページ用にリデザインして移植する料金。</li>
+<li>マニュアルや仕様書の作成料金 : 依頼を受ければ</li>
+</ul>
+<h4>サーバーに関する料金（バックヤード）</h4>
+<p>代行料</p>
+<ul>
+<li>サーバー開設手数料:レンタルサーバーとの契約と支払いの手続き</li>
+<li>ドメイン取得手数料:ドメインの取得と支払いの手続き</li>
+<li>サイトのアップロード作業料金:（納品）</li>
+</ul>
+<h4>CMS 動的サイトの場合</h4>
+<ul>
+<li>CMS組み込み料金　:CMSをサーバーにアップロードして初期の可動状態にする。</li>
+<li>CMS調整料金（プログラミング）:お客様用にカスタマイズ料金デザインの適応</li>
+<li>CMSページ開設料金（インポート料金）:旧サイトからの移行料金</li>
+<li>プログラミングやデータベースプログラミング料金 : CMSに標準装備されていないその他のプロイグラムを実装するときの料金。</li>
+</ul>
+
+<p><a href="https://ja.wikipedia.org/wiki/%E3%83%90%E3%83%BC%E3%83%81%E3%83%A3%E3%83%AB%E3%83%BB%E3%83%97%E3%83%A9%E3%82%A4%E3%83%99%E3%83%BC%E3%83%88%E3%83%BB%E3%82%B5%E3%83%BC%E3%83%90" target="_blank" rel="noopener">VPSサーバー</a>もしくは専用サーバーの場合環境構築料金</p>
+<p>etc.....</p>
+
+<h3>メンテナンス料</h3>
+<p>運用中のアナリティクスリポートを書いて提出したりサイトの更新や修正をする場合の見積もり</p>
+
+<ul>
+<li>アナリティクスリポート</li>
+<li>管理画面アカウント管理責任</li>
+</ul>
+<p>メディアの形式にもよりますが月単位や日単位などで工数や回数を決めて料金を気まます。</p>
+<ul>
+<li>記事の代理投稿</li>
+<li>記事の修正</li>
+<li>写真の修正料や投稿</li>
+<li>広告バナーの作成や差し替え</li>
+</ul>
+<h3>webサイトのランニングに必要な経費</h3>
+<h4>絶対に必要な経費</h4>
+<ul>
+<li>サーバ-料金</li>
+<li>人件費</li>
+</ul>
+<h4>任意で必要な費用</h4>
+<ul>
+<li>ドメイン料金</li>
+<li>SSL証明料金</li>
+<li>その他のwebサービス料金:などサイトの課題に応じたASPなどの使用料金</li>
+<li>ショッピングカート使用料金</li>
+<li>有料の解析ツール</li>
+<li>予約フォームクラウドサービス</li>
+<li>FQAクラウドサービス</li>
+<li>有料webフォント</li>
+<li>有料動画クラウドサービス</li>
+</ul>
+</div>
+<div id="s3" class="mt-n6 pt-6 mb-6">
+<h2>人件費から算出する。</h2>
+<p>あくまで一人での作業を仮定した場合単純に時給に換算します。
+例えば時給を2000円で設定します。
+もっともらっていいよ。ｗｗｗ</p>
+<p>1日1ページ5時間の作業で時給2000円で1ページ10000円のコーディング料金 コスト計算の基準をもっておきましょう。
+1ページ5時間でできなかった場合は時給が下がる仕組みです。
+かならず自分が生きていける料金以上をいただきましょう。
+いままで投資し勉強してきたコストである技術料は必ず含めましょう。
+そうでなければ別のしごとについたほうがいいでしょう。</p>
+</div>
+
+<div id="s4" class="mt-n6 pt-6 mb-6">
+<h4>まとめ</h4>
+<p>見積もりはデレクションの大切な仕事です。
+しかし適切で妥当な金額を算出するには業務の経験が必要です。
+多くても少なくても不幸をうみます。
+制作する立場にある方々はコスト意識をもって業務にあたりましょう。</p>
+<blockquote>
+<h5>参考</h5>
+<p><a href="https://www.unionnet.jp/knowledge/production-fee/">WEB制作の価格の決まり方。見積もり方法と確認すべき4つのポイント</a></p>
+</blockquote>
+</div>
+
+
+<!-- editable area end ########             -->
+</article>
+</div>
+<!-- /container-->
+
+<!-- / w-aside2 --->
+
+<aside class="print-none" id="w-aside2">
+<div class="row text-white no-gutters justify-content-center">
+<nav aria-label="Page navigation">
+<ul class="pagination justify-content-center">
+<li class="page-item">
+<a class="page-link" href="12_outline_media.html" tabindex="-1" aria-disabled="false">Previous</a>
+</li>
+<li class="page-item">
+<a class="page-link " aria-disabled="false"  href="14_outline_media.html">Next</a>
+</li>
+</ul>
+</nav>
+</div>
+<div class="container p-3"></div>
+</aside>
+</main>
+<aside class="w-aside col-lg-2 print-none order-0" id="w-aside1">
+<div class="w-aside-inner container">
+<div class="accordion" id="accordionAside">
+<div class="w-subnav">
+<div id="headingOne">
+<h3 class="sticky-top">
+  <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" >
+PC Operation</button>
+</h3>
+</div>
+<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionAside">
+<!-- BOlist modile -->
+<ul id="w-BOlist" class="list-unstyled w-BOlist">
+        <li class="" v-for="title in titles"><a v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+        </ul>
+        <!-- /BOlist modile -->
+</div>
+</div>
+<div class="w-subnav">
+<div id="heading2">
+<h3 class="sticky-top">
+  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">web Outline</button>
+</h3>
+</div>
+<div id="collapseTwo" class="collapse" aria-labelledby="heading2" data-parent="#accordionAside">
+<!-- OLlist modile -->
+<ul id="w-OLlist" class="list-unstyled">
+  <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+</ul>
+<!-- /OLlist modile -->
+</div>
+</div>
+<div class="w-subnav">
+<div id="heading3">
+<h3 class="sticky-top">
+  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">HTML</button>
+      </h3>
+</div>
+<div id="collapseThree" class="collapse" aria-labelledby="heading3" data-parent="#accordionAside">
+<!-- OLlist modile -->
+<ul id="w-MKlist" class="list-unstyled">
+  <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}}</a></li>
+</ul>
+<!-- /OLlist modile -->
+</div>
+</div>
+
+<div class="w-subnav">
+<div id="heading4">
+<h3 class="sticky-top">
+<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse4" aria-expanded="true" aria-controls="collapse4">Text Editor
+</button>
+</h3>
+</div>
+<div id="collapse4" class="collapse" aria-labelledby="heading4" data-parent="#accordionAside">
+<!-- EDlist modile -->
+<ul id="w-EDlist" class="list-unstyled">
+<li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}}</a></li>
+</ul>
+<!-- /EDlist modile -->
+</div>
+</div>
+<div class="w-subnav">
+<div id="heading5">
+<h3 class="sticky-top">
+<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse5" aria-expanded="true" aria-controls="collapse5">CSS
+</button>
+</h3>
+</div>
+<div id="collapse5" class="collapse" aria-labelledby="heading4" data-parent="#accordionAside">
+<!-- EDlist modile -->
+<ul id="w-CSSlist" class="list-unstyled">
+  <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+</ul>
+<!-- /csslist modile -->
+</div>
+</div>
+
+<div class="w-subnav">
+<div id="heading6">
+<h3 class="sticky-top">
+<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse6" aria-expanded="true" aria-controls="collapse6">javascript
+</button>
+</h3>
+</div>
+<div id="collapse6" class="collapse" aria-labelledby="heading4" data-parent="#accordionAside">
+<!-- EDlist modile -->
+<ul id="w-JSlist" class="list-unstyled">
+  <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+</ul>
+<!-- /jslist modile -->
+</div>
+</div>
+
+  </div><!-- /accordionAside -->
+</div>
+<script src="_js/_common/VueBOnavlist.js"></script>
+</aside>
+<aside class="w-aside w-indexlistbox col-lg-2 order-2" id="w-aside3">
+<div class="indexlist-inner container">
+<div><h3>page navigation</h3></div>
+<ol class="list-unstyled list-group" id="w-indexlists">
+  <li class="index-list" v-for="item in items">
+    <a v-bind:href="item.id" class="indexlist-link" data-scroll >{{item.text}}</a>
+  </li>
+</ol>
+</div>
+</aside>
+</div><!-- /main-wrap -->
+<!-- footer -->
+<footer id="w-pageFooter">
+<div class="container d-flex">
+  <p class="site-copy">
+<small>&copy; shounosuke tarutani</small>
+</p><!-- /site-copy -->
+</div>
+<!-- /container-->
+</footer>
+<!--w-pageFooter--><script src="_js/_common/Vuepagelist.js"></script>
+<script src="_js/_common/prism.js"></script>
+</div>
+<!--w-wrapper-->
+</body>
+</html>

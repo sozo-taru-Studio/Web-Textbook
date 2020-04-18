@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="description" content="discription">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">  <title>商取引 - web総合概論 - Web TextBook</title>
+  <!-- stylesheet  -->
+  <link rel="stylesheet" href="_css/_common/bootstrap.css">
+  <link rel="stylesheet" href="_css/_common/font-awesome.min.css">
+  <link rel="stylesheet" href="_css/_common/style.css">  <!--  Favicons  -->
+  <link rel="icon" href="favicon.ico">  <!-- common js  -->
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="_js/_common/jquery-3.2.1.min.js"></script>
+  <script src="_js/_common/bootstrap.min.js"></script>
+  <script src="_js/_common/pagescroll.jQuery.js"></script></head>
+<body class="web総合概論">
+<div id="w-wrapper" class="w-wrapper">
+<!-- header -->
+<header id="w-pageHeader" class="navbar navbar-dark navbar-expand-lg fixed-top w-pageHeader" data-scroll-header="true">
+<div class="container">
+<a class="navbar-brand" href="index.html">logo</a><span class="navbar-brand">Web Textbook</span>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#w-nav" aria-controls="w-nav" aria-expanded="false" aria-label="ナビゲーション切替">
+<span class="navbar-toggler-icon"></span>
+</button>
+<nav id="w-nav" class="collapse navbar-collapse">
+<ul class="navbar-nav mr-auto pl-3">
+<li class="nav-item"><a href="20_browser_cord.html" class="nav-link disabled">HTML</a></li>
+<li class="nav-item"><a href="#" class="nav-link disabled">CSS</a></li>
+<li class="nav-item"><a href="#" class="nav-link">javasceipt</a></li>
+</ul>
+</nav>
+<!-- /w-nav-->
+</div>
+<!-- /container--></header>
+<!-- /w-pageHeader-->
+<div class="d-lg-flex pt-5" id="main-wrap">
+<main id="w-main" class="w-main col-lg-8 order-1">
+   <div class="container mb-5">
+<article id="w-article">
+<!-- editable area ########             -->
+        <h1>商取引 - web総合概論</h1>
+        <p><span>category:</span> <span class="badge badge-primary">web総合概論</span></p>
+        <hr>
+
+<!-- 序章 モジュール -->
+<div class=" mb-4 alert alert-info">
+<div class="card-body">
+<p class="card-text">一般的にいうとこのお金と物品やサービスの交換のはなし。</p>
+</div>
+</div>
+
+<!-- 目次 モジュール -->
+<div class="bg-light p-3 mb-4">
+<h2>目次</h2>
+<ul id="w-indexlistBox">
+    <li v-for="item in items" class="w-indexlistBox-list">
+      <a v-bind:href="item.id" data-scroll >{{item.text}}</a>
+    </li>
+</ul>
+</div>
+<!-- / 目次 モジュール -->
+<!-- 本文のセクション モジュール -->
+<h2>客商売をしていて思ったこと</h2>
+<ul>
+    <li>売りて買い手 お互い対等な立場である。<br>（気にいらなければ買わなくていい売らなくていい）</li>
+    <li>金の切れ目が縁の切れ目</li>
+    <li>値段は売りてが自由に決めれる。</li>
+    <li>客はみている。</li>
+</ul>
+<div id="s1"  class="mt-n6 pt-6 mb-6">
+<h2>webでの経済(取引)</h2>
+
+<h3>電子マネー（決済）</h3>
+<p>ここ10年以上電子マネーが日本ではつかわれてきましたが、どうでようか？
+鉄道系の電子マネーなどで実際につかっている方は増えてきていると思います。
+携帯電話に付属しているタイプもあります。</p>
+<p>チャージ型:事前に入金するタイプ（審査がいらない）<br>
+ポストペイ型:1クレジットカードや銀行口座と連携して引き落とすタイプの2種類があります。</p>
+<p>発行枚数が多いのは「楽天Edy」だそうです。
+取引回数が多いのは「Suica」です。</p>
+<h3>電子マネーの狙い</h3>
+<div class="card">
+<p class="card-header">小売店</p>
+<div class="card-body">
+<h4>メリット</h4>
+<ul>
+<li>現金の取扱業務の軽減</li>
+<li>売上の素早い把握</li>
+<li>顧客の把握（ポス）</li>
+</ul>
+<h4>デメリット</h4>
+<ul>
+<li>決済手数料</li>
+<li>端末手数料</li>
+<li>入会案内業務（普及とともに軽減）</li>
+</ul>
+</div>
+</div>
+<div class="card mb-4">
+<p class="card-header">買い手</p>
+<div class="card-body">
+<h4>メリット</h4>
+<ul>
+<li>現金をもたなくてよい</li>
+<li>レジが早い</li>
+<li>ノックアウト強盗などの被害に会いにくい。</li>
+</ul>
+<h4>デメリット</h4>
+<ul>
+<li>紛失の手続き</li>
+<li>いくらつかったか分からなくなる。</li>
+<li>個人情報は提携会社にわたさないといけない。</li>
+</ul>
+</div>
+</div>
+
+
+<h3>北欧のとある国</h3>
+<p><a href="https://dent-sweden.com/swedish-culture/scandinavian-culture/cash-free" target="_blank" rel="noopener">キャッシュレス化した北欧の電子決済事情と旅行者への注意点</a></p>
+<p>なんにしろ 持ってる人は落とさないように。</p>
+</div>
+
+<div id="s2"  class="mt-n6 pt-6 mb-6">
+<h2>IT企業の金策</h2>
+<p>どんなサービスで収益を？</p>
+<ol>
+<li>
+<p>広告代理店<br>
+web上で広告代理で展開するサービス会社。
+<abbr title="pay per click">PPC</abbr>広告やブログ広告などをサービスにしています。費用や効果測定は会社でさまざま。</p>
+</li>
+<li>
+<p>SEO SEM系webコンサルティング<br>
+検索エンジン最適化で、あるキーワードで上位に上がるようにすることで報酬を得る</p>
+</li>
+<li>
+<p>制作会社 webデベロッパー<br>
+webサイトを制作し納品するのが主なサービス、運営の代行や上記 1.2の業務を兼任していることが多い。</p>
+</li>
+<li>
+<p>webサービス系<br>
+なんらかのweb上で使えるアプリケーションを開発提供している会社。
+顧客から使用料をなんらかの形でいただいてサービスを継続している。
+</p>
+</li>
+<li>
+<p>エンジニア派遣会社<br>
+IT技術エンジニアを制作会社や大手家電やインフラ会社などのIT部門に派遣する会社</p>
+</li>
+<li>
+<p>ネットショップ。<br>
+サービスをwebを媒体にして提供している。Eコマース。</p>
+</li>
+</ol>
+<div id="s3" class="mt-n6 pt-6 mb-4 mb-6">
+<h2>ネットショップ</h2>
+<p>ネットショップの良いところはいままでての届かなかった商品や顧客で商売が成立することです。</p>
+<h3>3種類のネットショップの系統</h3>
+<p>「独自ドメイン」「 顧客管理と集客 」「サーバーと通信負荷」「 扱う商品」などでECサイトプラットフォームをえらんでいきます。</p>
+<h4>「独自ドメイン」</h4>
+<p>アクセスで独自ドメインをもつのともたないの違い(SEM)
+ショッピングモール系はいったんショッピングモールに入っての商品の検索になりますので自社の商品が埋もれる可能性があります。
+独自ドメインをもっていると自社のサイトを検索エンジンから直接アクセスしてもらえるチャンスが増えます。ブランドを意識し差別化を測りたい場合は独自ドメインを取得しECサイトを運営する会社がおおいです。</p>
+<div class="card mb-4">
+
+<h4 class="card-header">独自ドメインの説明</h4>
+<div class="card-body">
+<p>独自ドメインとはネットショップに限らずwebサーバーはその運営会社がドメインを取得しています。その支配下で運営するネットショップはどうしても管理会社のドメインを最初にいただかないとURLが構成できません。</p>
+<p>例えば<pre>https://NETSHOP.myshopname/</pre></p>
+<p>現実のイオンモールを想像してみてください。あなたの会社はイオンモールにテナントをもっています。お客さまにお店を案内する場合まずそのイオンモールの中にはいってもらわないといけません。</p>
+<p>同じような現象がネットショップでもおこるわけです。</p>
+</div>
+</div>
+
+<h4>「 顧客管理と集客 」</h4>
+<p>顧客の登録は自社がするかそれとも別の会社がするかの問題です。<br>
+ポイントの蓄積管理や顧客信用情報、POS情報などを誰が管理するかです。<br>
+商品の売買のトラブルは自社がみおなければならないですが、顧客情報の漏洩や個人情報保護法の対策などこまごまとした手続きはモールが代行してくれます。</p>
+独自でwebマーケティングや在庫連動やPOS管理をしたい場合ショッピングモールでは対応できない場合があります。</p>
+<h4>「サーバーと通信負荷」</h4>
+<p>扱える商品量とアクセス数の緩急が激しい商品を扱う場合、
+通常ショッピングモールやASPは同じサーバーにたくさんのテナントを入れて運営していますが、特定の店舗のみ異常なアクセスがあった場合サーバーがダウンする可能性があります。（最近は負荷に耐えれるようにつくっている。）</p>
+<h4>「扱う商品での系統」</h4>
+<p>生鮮食品、オーダーメイドの発注、など既存の枠にはまらない発注体型の商品をECで扱う場合既存のシステムでは対応できない場合ある。</p>
+<hr>
+<h3>ショッピングモール系</h3>
+<p>顧客の登録は自社がするのではなくモール側がもっています。
+メリットは信用取引決済やポイントもすべてうけもってもらえる。
+<br>
+デメリットは自社と同じサービスを展開していると会社との競争に差をつけにくい。売上で階級ができてしまう。イベントに強制的に参加させられるなどデメリットと感じることもあります。</p>
+<p>百貨店に出店するようなタイプ
+例)楽天 Amazon Alibaba.com ZOZOTOWNなど
+手数料と顧客情報をひきかえに割引 顧客との決済システム ポイント付加や割引イベントなどの集客策　メンテナンスすべておまかせできる中小店舗はまずここからスタートした店舗がおおいのでは・・・・</p>
+
+<h3>ASP系 (アプリケーションサービスプロバイダー)</h3>
+<p>ドメインを取得し自社ブランドでのECショップ。
+サーバー以外は自分で面倒をみないといけない。
+独自のサービスや顧客解析ができるのがメリット
+利用料金はASP会社の独自の料金設定。
+取引件数や登録商品数などオプションで上下する。
+別途 決済サービス会社と契約する必要がある。（会社による）</p>
+<h4 class="h5">利用店舗</h4>
+<p>ブランド意識や個性が高い ファッションやスポーツなどの商品を扱うお店がおおい。</p>
+<p>ショッピングモールでなくてもweb上で独自集客できる自信がある店舗</p>
+<div class="card mb-4">
+<h4 class="card-header">アプリケーションサービスプロバイダー</h4>
+<div class="card-body">
+<p>アプリケーションサービスプロバイダーはサーバーで動くのアプリケーションを顧客に利用してもらうサービスです。平たくいうとネットショップシステムを提供する会社です。
+</p>
+</div>
+</div>
+
+<h3>すべてを独自で作る系</h3>
+<p>基礎的なEコマースシステムはEC CUBEなどつかい。サーバーの構築からすべてをオーダーカスタマイズしてつくるECショップ。
+特殊な発注などをしなければならない事案(決済が国内だけではない)とか
+別のアプリケーションと複合しないといけないとか複雑な事案など上記のシステムで対応できないショップ</p>
+<h4 class="h5">利用店舗</h5>
+<p>すごく大きく有名な会社
+Apple : 出店数はすくないが多言語化され販売できる国家すべてを同じサイトでさばいている。</p>
+</div>
+
+<div id="s4" class="mt-n6 pt-6 mb-6">
+<h3>個人はフリマ系</h3>
+<p>yahoo オークションやSPアプリのメルカリなど個人売買の仲介をしてくれるアプリケーション。</p>
+<h5>個人利用の転売問題</h5>
+<ul>
+<li>中古品の転売は古物商の登録が必要</li>
+<li>自分のつかっていたものを売るのは古物商の登録不要</li>
+</ul>
+<p><a href="http://www.watatani-houmu.com/merukari-kobutushou/" target="_blank" rel="noopener">メルカリに出品するのに古物商の許可は必要？</a></p>
+<hr>
+<h4>Ecの裏側</h4>
+<p>ネットショップはなんでもかんでもオートメーションで作業が楽ちんとお考えのかたもいるでしょうが、バーチャルなお店が<br>ただインターネット上にあるだけです。<br>
+在庫管理、顧客対応、発送業務はすべて人の力（ジンリキ）です。<br>
+在庫と顧客などのデータ管理は別途POSシステムが必要です。なので実店舗とネット店舗で在庫が合わずお客さまに迷惑をかけることもあります。<br>
+商品の入力もCSVを事前に作らないといけないので大量の商品入力はすごく手間がかかります。<br>
+実店舗と同じぐらい大変ですので人でが必要です。</p>
+</div>
+
+<!-- editable area end ########             -->
+</article>
+</div>
+<!-- /container-->
+
+<!-- / w-aside2 --->
+
+<aside class="print-none" id="w-aside2">
+<div class="row text-white no-gutters justify-content-center">
+<nav aria-label="Page navigation">
+<ul class="pagination justify-content-center">
+<li class="page-item">
+<a class="page-link" href="14_outline_media.html" tabindex="-1" aria-disabled="false">Previous</a>
+</li>
+<li class="page-item">
+<a class="page-link " aria-disabled="false"  href="16_outline_media.html">Next</a>
+</li>
+</ul>
+</nav>
+</div>
+<div class="container p-3"></div>
+</aside>
+</main>
+<aside class="w-aside col-lg-2 print-none order-0" id="w-aside1">
+<div class="w-aside-inner container">
+<div class="accordion" id="accordionAside">
+<div class="w-subnav">
+<div id="headingOne">
+<h3 class="sticky-top">
+  <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" >
+PC Operation</button>
+</h3>
+</div>
+<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionAside">
+<!-- BOlist modile -->
+<ul id="w-BOlist" class="list-unstyled w-BOlist">
+        <li class="" v-for="title in titles"><a v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+        </ul>
+        <!-- /BOlist modile -->
+</div>
+</div>
+<div class="w-subnav">
+<div id="heading2">
+<h3 class="sticky-top">
+  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">web Outline</button>
+</h3>
+</div>
+<div id="collapseTwo" class="collapse" aria-labelledby="heading2" data-parent="#accordionAside">
+<!-- OLlist modile -->
+<ul id="w-OLlist" class="list-unstyled">
+  <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+</ul>
+<!-- /OLlist modile -->
+</div>
+</div>
+<div class="w-subnav">
+<div id="heading3">
+<h3 class="sticky-top">
+  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">HTML</button>
+      </h3>
+</div>
+<div id="collapseThree" class="collapse" aria-labelledby="heading3" data-parent="#accordionAside">
+<!-- OLlist modile -->
+<ul id="w-MKlist" class="list-unstyled">
+  <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}}</a></li>
+</ul>
+<!-- /OLlist modile -->
+</div>
+</div>
+
+<div class="w-subnav">
+<div id="heading4">
+<h3 class="sticky-top">
+<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse4" aria-expanded="true" aria-controls="collapse4">Text Editor
+</button>
+</h3>
+</div>
+<div id="collapse4" class="collapse" aria-labelledby="heading4" data-parent="#accordionAside">
+<!-- EDlist modile -->
+<ul id="w-EDlist" class="list-unstyled">
+<li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}}</a></li>
+</ul>
+<!-- /EDlist modile -->
+</div>
+</div>
+<div class="w-subnav">
+<div id="heading5">
+<h3 class="sticky-top">
+<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse5" aria-expanded="true" aria-controls="collapse5">CSS
+</button>
+</h3>
+</div>
+<div id="collapse5" class="collapse" aria-labelledby="heading4" data-parent="#accordionAside">
+<!-- EDlist modile -->
+<ul id="w-CSSlist" class="list-unstyled">
+  <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+</ul>
+<!-- /csslist modile -->
+</div>
+</div>
+
+<div class="w-subnav">
+<div id="heading6">
+<h3 class="sticky-top">
+<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse6" aria-expanded="true" aria-controls="collapse6">javascript
+</button>
+</h3>
+</div>
+<div id="collapse6" class="collapse" aria-labelledby="heading4" data-parent="#accordionAside">
+<!-- EDlist modile -->
+<ul id="w-JSlist" class="list-unstyled">
+  <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+</ul>
+<!-- /jslist modile -->
+</div>
+</div>
+
+  </div><!-- /accordionAside -->
+</div>
+<script src="_js/_common/VueBOnavlist.js"></script>
+</aside>
+<aside class="w-aside w-indexlistbox col-lg-2 order-2" id="w-aside3">
+<div class="indexlist-inner container">
+<div><h3>page navigation</h3></div>
+<ol class="list-unstyled list-group" id="w-indexlists">
+  <li class="index-list" v-for="item in items">
+    <a v-bind:href="item.id" class="indexlist-link" data-scroll >{{item.text}}</a>
+  </li>
+</ol>
+</div>
+</aside>
+</div><!-- /main-wrap -->
+<!-- footer -->
+<footer id="w-pageFooter">
+<div class="container d-flex">
+  <p class="site-copy">
+<small>&copy; shounosuke tarutani</small>
+</p><!-- /site-copy -->
+</div>
+<!-- /container-->
+</footer>
+<!--w-pageFooter--><script src="_js/_common/Vuepagelist.js"></script>
+<script src="_js/_common/prism.js"></script>
+</div>
+<!--w-wrapper-->
+</body>
+</html>

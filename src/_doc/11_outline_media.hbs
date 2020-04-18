@@ -1,0 +1,97 @@
+---
+title: メディアの特徴を理解し分類してみる
+discription: discription
+cat: web総合概論
+next-page-url: "12_outline_media.html"
+filename: 11_outline_media.html
+prev-page-url: "10_outline_media.html"
+titlename: "{{title.titlename}}"
+text: "{{item.text}}"
+text2: "{{item.text}}"
+---
+<div class="container mb-5">
+<article id="w-article">
+<!-- editable area ########             -->
+        <h1>{{title}} - {{cat}}</h1>
+        <p><span>category:</span> <span class="badge badge-primary">{{cat}}</span></p>
+        <hr>
+
+<div class="card mb-4">
+<div class="card-body">
+<p  class="card-text">メディアの特徴を確認します。</p>
+<p  class="card-text">社会の変化や新技術で既存のメディアの概念では抑えられない新しいメディアがつぎつぎに誕生してきます。
+<br>webを使ったコミュニケーションは新しいメディアが誕生する土壌になっています。</p>
+</div>
+</div>
+<!-- 目次 モジュール -->
+<div class="bg-light p-3 mb-4">
+<h2>目次</h2>
+<ul id="w-indexlistBox">
+    <li v-for="item in items" class="w-indexlistBox-list">
+      <a v-bind:href="item.id" data-scroll >{{text2}}</a>
+    </li>
+</ul>
+</div>
+<!-- / 目次 モジュール -->
+
+<!-- 本文のセクション モジュール -->
+<div id="s1" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>メディアの特徴を理解し分類してみる</h2>
+<p>ウィキペディアでしらべてみましょう。</p>
+<h4 class="h5">参考</h4>
+<blockquote class="blockquote">
+<p><a href="https://ja.wikipedia.org/wiki/%E3%83%A1%E3%83%87%E3%82%A3%E3%82%A2_(%E5%AA%92%E4%BD%93)" target="_blank">メディア|wikipedia</a></p>
+</blockquote>
+
+<p>ウィキペディアによれば、コミュニケーションをするための道具そのものをメディアともよぶ、CD やオーディオテープなど<br> また、不特定多数に情報を伝達する手段を要する組織、たとえば放送局、新聞社、雑誌社など情報伝達する経路と仕組み全体もメディアと呼ぶことがある。これをおもに「マスメディア」と呼んでいる。</p>
+<dl>
+<dt>マスメディア</dt>
+<dd>
+    <p>少数の送り手が不特定多数の受け手にむけ伝達する際に用いられる</p>
+</dd>
+</dl>
+<dl>
+<dt>ネットワークメディア</dt>
+<dd><p>多数の情報源が不特定多数の受け手に情報を伝達する仕組み</p></dd>
+</dl>
+</div>
+<div id="s2" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>各メディアの特性に応じたメディアの呼び方</h2>
+<dl>
+<dt>パーソナルメディア</dt>
+<dd><p>自分の行動を記録したり「編集」さらに配信したり。比較的仲間内で共有したりするメディア</p>
+</dd>
+</dl>
+<dl>
+<dt>双方向メディア（インタラクティブメディア）</dt>
+<dd><p>電話やチャット（テキスト会話型リアルタイムコミュニケーション）など双方が話題を起案する対話型のメディア</p>
+</dd>
+</dl>
+<h3>同期型メディア と 非同期型メディア</h3>
+<p>情報の発信と受信の時間差によるメディアの種別</p>
+
+<dl>
+<dt>同期型メディア</dt>
+<dd><p>同期型メディアは発信と受信がほぼ同時で起こるメディア</p>
+    <p>電話 TV ラジオ 掲示板（更新を監視していたばあい）</p>
+</dd>
+</dl>
+<dl>
+<dt>非同期型メディア</dt>
+<dd><p> 非同期は 発信と受信に時間差があるメディア。 webブログ 新聞 手紙など</p>
+</dd>
+</dl>
+<h3>マルチメディア</h3>
+<p>使用メディアによって伝達可能な情報が制限される。ラジオや電話では文字が送れない。（音声と視覚） 文字、音声、映像、動画、など複数の情報媒体一緒に送るのに用いることができるメディアを指して「マルチメディア」と言うことがある。
+</p>
+<h3>クロスメディア</h3>
+<p>漫画、アニメーション（tv 映画）、ゲーム、音楽CDなどで複数のメディアを販売する戦略 「おもちゃ　ゲーム」会社がよくやる戦略</p>
+</div>
+
+
+<!-- editable area end ########             -->
+</article>
+</div>
+<!-- /container-->
+
+<!-- / w-aside2 --->

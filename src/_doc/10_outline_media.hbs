@@ -1,0 +1,65 @@
+---
+title: メディア研究
+discription: discription
+cat: web総合概論
+next-page-url: "11_outline_media.html"
+filename: 10_outline_media.html
+prev-page-url: "#"
+titlename: "{{title.titlename}}"
+text: "{{item.text}}"
+text2: "{{item.text}}"
+---
+<div class="container mb-5">
+<article id="w-article">
+<!-- editable area ########             -->
+        <h1>{{title}} - {{cat}}</h1>
+        <p><span>category:</span> <span class="badge badge-primary">{{cat}}</span></p>
+        <hr>
+
+<!-- 序章 モジュール -->
+<div class="card mb-4">
+<div class="card-body">
+<p  class="card-text">各メディアの特徴とWebの関係、メディアの役割とその効果はなんでしょうか？</p>
+<p>メディアというキーワードを使って webの役割と期待される事を考えてみましょう。</p>
+<div class="alert alert-info">
+<p class="mb-0"><small >※調べる 書く 発表する</small></p>
+</div>
+</div>
+</div>
+<!-- 目次 モジュール -->
+<div class="bg-light p-3 mb-4">
+<h2>目次</h2>
+<ul id="w-indexlistBox">
+    <li v-for="item in items" class="w-indexlistBox-list">
+      <a v-bind:href="item.id" data-scroll >{{text2}}</a>
+    </li>
+</ul>
+</div>
+<!-- / 目次 モジュール -->
+
+<!-- 本文のセクション モジュール -->
+<div id="s1" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>メディア</h2>
+<dl>
+    <dt>メディア</dt>
+    <dd><p>手段　媒体</p>
+        <p>情報を発信する道具のこと。
+        文字　音声　画像　点字　などで人間の感覺器官に刺激を与え情報を伝達と記録するための中間に位置する道具全般</p>
+    </dd>
+</dl>
+
+<div class=" card">
+        <h3 class="card-header">メディアを列挙してみよう。</h3>
+        <div class="card-body text-center">
+                <p class="text-left">自分でよく使うメディアやそうじゃないかな？と思うものをメモや黒板に書き出してみよう。</p>
+<textarea cols="46" rows="12" class="col-lg-10 mx-auto"></textarea>
+</div>
+</div>
+</div>
+
+<!-- editable area end ########             -->
+</article>
+</div>
+<!-- /container-->
+
+<!-- / w-aside2 --->
