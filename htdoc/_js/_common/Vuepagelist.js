@@ -8,7 +8,8 @@ var Headerlist = {
 };
 
 ((function($,Obj){
-    $(function(){
+$(function(){
+    var linkelm = $("#w-aside2 .page-item");
     if($("body").hasClass("toppage")){
     var Art = $("#w-article [id^=s] h3");
     } else {
@@ -28,7 +29,19 @@ Obj.data.items[i]={"id":"#s"+(i+1),"text" : item};
 var indexlist = new Vue(Obj);
 Obj.el="#w-indexlistBox";
 var indexlistBox = new Vue(Obj);
+// pageNavigetion
+//console.log(linkelm);
 
+var h,st;
+linkelm.each(function(i,elm){
+ h = linkelm[i].children[0].href;
+//console.log(i + ":" + h);
+st=h.slice( -1 );
+if(st=== "#"){
+        $(this).addClass("disabled");
+        $(this).find("a.page-link").attr('aria-disabled','true');
+    }
 });
 
+});
 })(jQuery,Headerlist));
