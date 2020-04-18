@@ -1,0 +1,177 @@
+---
+title: キーボード （Macのキーボード）
+discription: キーボードの複合キーを覚えて操作を簡略化しましょう。
+cat: コンピューターの基本操作
+next-page-url: 03_basic_operation.html
+filename: 02_basic_operation.html
+prev-page-url: 01_basic_operation.html
+titlename: "{{title.titlename}}"
+text: "{{item.text}}"
+text2: "{{item.text}}"
+---
+<div class="container mb-5">
+<article id="w-article">
+<!-- editable area ########             -->
+        <h1>{{title}} - {{cat}}</h1>
+        <p><span>category:</span> <span class="badge badge-primary">{{cat}}</span></p>
+        <hr>
+
+<!-- 序章 モジュール -->
+<div class="card mb-4">
+<div class="card-body">
+<p  class="card-text">文字を打つ以外に使う便利な修飾キーを中心に確認しましょう。</p>
+<p>修飾キーを使えるようになるとマウスを持ち変える数秒の時間がへります。小さな作業工数が減るだけですがチリも積もれば</p>
+<div class="alert alert-info">
+<p class="mb-0"><small >※実際のキーボードを触りながら確認していきます。</small></p>
+</div>
+</div>
+</div>
+
+<!-- 目次 モジュール -->
+<div class="bg-light p-3 mb-4">
+<h2>目次</h2>
+<ul id="w-indexlistBox">
+    <li v-for="item in items" class="w-indexlistBox-list">
+      <a v-bind:href="item.id" data-scroll >{{text2}}</a>
+    </li>
+</ul>
+</div>
+<!-- / 目次 モジュール -->
+
+<!-- 本文のセクション モジュール -->
+<div id="s1" class="mt-n6 pt-6 mb-6 clearfix">
+    <h2>修飾キー</h2>
+    <p><i class="fa fa-keyboard-o" aria-hidden="true"></i>　修飾キー(モディファイアキー)</p>
+
+<div class="card col px-0 mb-1">
+<div class="card-header">
+<h3 class="h4">Mac USキーボード</h3>
+</div>
+<div class="card-body">
+<!-- <div class="col-lg-6">
+<figure>
+<figcaption>windows用英字USキーボード</figcaption>
+<img src="_images/_BO/keyboard-106_1280.png" alt="windows用英字USキーボード" class="img-fluid">
+</figure>
+</div> -->
+<div class="col-lg-6">
+<figure>
+<figcaption>mac USキーボード</figcaption>
+<img src="_images/_BO/keyboard-mac_us_1280.png" alt="mac USキーボード" class="img-fluid">
+</figure>
+</div>
+</div>
+</div>
+
+<div class="alert alert-secondary">
+<h3 class="h5">参考サイト</h3>
+<ul>
+    <li><a href="https://ja.wikipedia.org/wiki/%E4%BF%AE%E9%A3%BE%E3%82%AD%E3%83%BC" target="_blank" rel="noopener">修飾キー - Wikipedia </a></li>
+    <li><a href="https://support.apple.com/ja-jp/HT201236" target="_blank" rel="noopener">Mac のキーボードショートカット</a></li>
+</ul>
+</div>
+</div><!-- / s1 -->
+
+<div id="s2" class="mt-n6 pt-6 mb-6 clearfix">
+<div class=" table-responsive-sm">
+<h2>修飾キー表</h2>
+<p>主にFinderの操作（ファイル操作）のときに使うキーを紹介します。アクティブなアプリケーションがある場合は機能がかわります。</p>
+<p>システム環境設定 > キーボードで設定で設定が変更できます。</p>
+<table class="table table-striped">
+<thead>
+<tr>
+<th scope="col">キー名</th>
+<th scope="col">主な機能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><kbd>shift</kbd></td>
+<td>複数のアイコンを並びで選択するときの修飾キー</td>
+</tr>
+<tr>
+<td><kbd>ctrl/command</kbd></td>
+<td>複数のアイコンを飛び飛びで選択するときの修飾キー</td>
+</tr>
+<tr>
+<td><kbd>alt/option</kbd></td>
+<td>修飾キー 複製 </td>
+</tr>
+<tr>
+<td><kbd>control</kbd></td>
+<td>MacOS用のキー（windowsキーに近い）コンテキストメニューを出すときにつかう。</td>
+</tr>
+<tr>
+<td><kbd>fn</kbd></td>
+<td>F-1からF-12のキーを特殊機能キーとしてつかう</td>
+</tr>
+<tr>
+<td><kbd>tab</kbd></td>
+<td>入力項目や選択中のファイルの選択の移動</td>
+</tr>
+<tr>
+<td><kbd>かな</kbd></td>
+<td>ことえりのかな（全角入力）</td>
+</tr>
+<tr>
+<td><kbd>英数</kbd></td>
+<td>ことえりの英文字（半角角入力）</td>
+</tr>
+<tr>
+<td><kbd>caps Lock</kbd></td>
+<td>大文字入力固定</td>
+</tr>
+<tr>
+<td><kbd>num Lock</kbd></td>
+<td>テンキーパッドの数字入力矢印入力変更</td>
+</tr>
+<td><kbd>Esc</kbd></td>
+<td>機能実行の停止 選択の解除</td>
+</tr>
+</tr>
+<td><kbd>Delete</kbd></td>
+<td>ゴミ箱へ移動</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="s3"  class="mt-n6 pt-6 mb-4 mb-6">
+<h2>システム環境設定 > キーボード。</h2>
+<div class="card px-0 mb-1">
+<div class="card-header">
+<h3 class="h4">日本語の変換ショートカット割り当てる</h3>
+</div>
+<p>「日本語IME」全角モードで日本語を入力しているときに半角英語を打ちたいのにモードを切り替えずに打ってしまったとき（確定前）F-10キーで半角にすることができます。</p>
+<ul>
+    <li><kbd>F-5</kbd> 部首変換 </li>
+    <li><kbd>F-6</kbd>ひらがな変換</li>
+    <li><kbd>F-7</kbd>全角カタカナ変換</li>
+    <li><kbd>F-8</kbd>半角変換</li>
+    <li><kbd>F-9</kbd>全角英数変換</li>
+    <li><kbd>F-10</kbd>半角英数変換</li>
+</ul>
+<p>「ことえり」でもできます。（OSのバージョンによってなくなるかも・・・）「F1、F2などを標準ファンクションキーとして仕様」にチェックを入れておくと入力変換のショートカットがwindowsのIMEと同じになります。</p>
+<div class="card-body row justify-content-center">
+<div class="col-lg-6">
+<figure>
+<figcaption>システム環境設定 > キーボードのダイアログボックス</figcaption>
+<img src="_images/_BO/keybordConfigimg.png" alt="システム環境設定 > キーボード" class="img-fluid">
+</figure>
+</div>
+</div>
+</div>
+<div class="alert alert-secondary">
+<h3 class="h5">参考サイト</h3>
+<ul>
+<li><a href="https://qiita.com/kamorits/items/781e07d4779d6eb44b2f" target="_blank" rel="noopener">MacでF7みたいにカタカナに一発で変換する方法（半角英数も）</a></li>
+</ul>
+</div>
+</div>
+<!-- editable area end ########             -->
+</article>
+</div>
+<!-- /container-->
+
+<!-- / w-aside2 --->

@@ -1,0 +1,196 @@
+---
+title: 電源とアプリケーション
+discription: discription
+cat: コンピューターの基本操作
+next-page-url: 01_basic_operation.html
+prev-page-url: "#"
+titlename: "{{title.titlename}}"
+filename: 00_basic_operation.html
+text: "{{item.text}}"
+text2: "{{item.text}}"
+---
+<div class="container mb-5">
+<article id="w-article">
+<!-- editable area ########             -->
+        <h1>{{title}} - {{cat}}</h1>
+        <p><span>category:</span> <span class="badge badge-primary">{{cat}}</span></p>
+        <hr>
+<!-- 序章 モジュール -->
+<div class="card mb-4">
+<div class="card-body">
+<p  class="card-text">PCの電源を入れる切る及び アプリケーションの開閉の方法を開設します。当たり前な内容ですが確認も含めてもう一度見直しましょう</p>
+<div class="alert alert-info">
+<p class="mb-0"><small >※文字ばかりでもうしわけありません。実際のPCを触りながら確認していきます。</small></p>
+<p class="mb-0"><small>※パーソナルコンピュータ全般をOSを問わず「PC」とここでは書いています。</small></p><p class="mb-0"><small>※OSXはApple社のOSです。windows10はマイクロソフト社のOSです。</small></p>
+</div>
+</div>
+</div>
+<!-- 目次 モジュール -->
+<div class="bg-light p-3 mb-4">
+<h2>目次</h2>
+<ul id="w-indexlistBox">
+    <li v-for="item in items" class="w-indexlistBox-list">
+      <a v-bind:href="item.id" data-scroll >{{text2}}</a>
+    </li>
+</ul>
+</div>
+<!-- / 目次 モジュール -->
+
+<!-- 本文のセクション モジュール -->
+    <div id="s1" class="mt-n6 pt-6 mb-6 clearfix">
+    <h2>電源の位置</h2>
+    <p><i class="fa fa-power-off" aria-hidden="true"></i>　一般的な電源スイッチの記号</p>
+<p>PCの電源がきれているかどうかは　モニターとわかれたデスクトップの場合PC本体の電源ダイオード（ランプ）を目視で確認してください。iMacタイプのPCは画面の左下の裏面にあります。</p>
+
+<div class="card float-lg-right col-lg-5 px-0 ml-3">
+        <div class="card-header">
+                "Mac デスクトップ iMacの背面にある電源の位置
+        </div>
+        <div class="card-body">
+          <blockquote class="blockquote mb-0">
+                <div><img src="_images/_BO/imac-power-button-callout.jpg" alt="iMacの背面にある電源のいち" class="img-fluid"></div>
+            <footer class="blockquote-footer"><cite title="Mac の電源を入れる／切る方法"><cite><a href="https://support.apple.com/ja-jp/HT201150#turnon" target="_blank" rel="noopener">Mac の電源を入れる／切る方法 </a></cite></footer>
+          </blockquote>
+        </div>
+      </div>
+<ul>
+    <li><a href="https://support.apple.com/ja-jp/HT201150#turnon" target="_blank" rel="noopener">Mac の電源を入れる／切る方法 </a></li>
+    <li><a href="https://ameblo.jp/sumitak1329/entry-11270382958.html" target="_blank" rel="noopener">パソコンの電源の入れ方って？ | パソコンが好きになるブログ〜表技・裏技・便利技伝授！</a></li>
+</ul>
+<h3>スリープ状態に気をつけて</h3>
+<p>作業から離れて30分ほど経過するとPCはスリープ状態（省電力モード）になります。キーボードやマウスのいずれかのキーを押下することでモニタ-が点灯しスリープ状態から回復します。</p>
+</div>
+
+<div id="s2"  class="mt-n6 pt-6 mb-6">
+    <h2>電源のONからログインまで</h2>
+    <p>アカウントを選んでパスワードを入力し自分のパーソナルモード（デスクトップ）での作業になります。 PCはマルチユーザーでの操作を前提につくられていますのでパーソナルといえどパスワードでユーザーの切り替えができ家族で1台のパソコンがつかえたりします。</p>
+ <ol class="card justify-content-around">
+  <li class="">電源を入れる</li>
+  <li class="">アプリケーション使う</li>
+  <li class="">アプリケーションを切る</li>
+  <li class="">電源を切る</li>
+ </ol>
+    <div class="alert alert-warning">
+    <p><strong>学校ではパスワードをいれません</strong></p>
+<p>学校ではオープンのユーザーアカウント（生徒用）で操作します。　パスワードも必要ありません。 だれでも入れるPCですので個人情報など知られたくない情報や大切な情報の管理は<strong>自己責任</strong>でおねがいします。 万が一あなたの大切なデータが破損 盗作盗難にあっても私共は責任をおいません。 大切なデータはデスクトップやドキュメントフォルダに保存したままにせず<strong>毎回確実に破棄して</strong>帰宅してください。 googleChremeなどのパーソナルアカウントやSNSのパスワードなどセッションの保持にも気を付けてください。</p></div>
+<div>
+<h3>ネットワークとつながっているか？</h3>
+<p>画面上にあるメニューバーの右側にあるWi-fiマークを確認し　びっくりマーク「！」や扇マークになっていなければ接続されています。ただしネットワークの種類によってはパスワードを入力しなければなりません。学校の場合は設定済みです。</p>
+</div>
+<div>
+<div class="card">
+    <h3 class="card-header">アプリケーションとは</h3>
+<div class="card-body">
+    <p>オペレーションシステムの元で動くソフトウエアです。</p>
+    <p>アプリと略して呼ばれます</p>
+<div class=" table-responsive-sm">
+<table class="table table-striped table-b table-bordered">
+<caption>コンピュータが機能するまでのパーツと役割の表</caption>
+<thead>
+
+<tr>
+                <th scope="col">パーツ</th>
+                <th scope="col">総称</th>
+                <th scope="col">役割</th>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+            <th scope="row">操作する人</th>
+            <td>-</td>
+            <td>情報を入力しその計算結果を確認する。</td>
+    </tr>
+    <tr>
+            <th scope="row">PC/コンピューター</th>
+            <td>ハードウェア</td>
+            <td>物理的な操作する装置や計算する装置結果を表示する装置</td>
+
+    </tr>
+    <tr>
+            <th scope="row">OS/オペレーションシステム</th>
+            <td scope="row">ソフトウェア</td>
+            <td>入力出力計算記録を制御する基本プログラム</td>
+    </tr>
+    <tr>
+            <th scope="row">アプリケーション</th>
+            <td>ソフトウェア</td>
+            <td>オペレーションソフトから目的に合ったデータの入力と処理をして結果を人に伝える。</td>
+    </tr>
+</tbody>
+</table>
+</div>
+<p>
+ハードウエアであるPCの装置制御や入力出力の基礎制御をするソフトウエア（運用システム）がオペレーションシステムです。
+オペレーションシステムを使ってオペレーションシステムの機能では表現できない多岐多種にわたる役割を提供するのがアプリケーションです。</p>
+<p>人はPC、OS、アプリケーションどれがかけてもコンピュータを扱えません。</p>
+<p>実際のOSは人が操作できるようにいくつかのアプリケーションプログラムを携えて販売されています。</p>
+</div><!-- /card-body -->
+</div><!--/ cord -->
+
+<div class="alert alert-warning">
+    <h3>自己判断でのアプリケーションの追加の禁止</h3>
+    <p>必要なアプリケーションは入っているはずです。<br>しかし入ってない場合や不具合がある場合は講師もしくはアシスタントにお声がけください。<br> みなさんの任意の判断でのアプリケーションのダウンロードとインストールは禁止です。不具合やPCの劣化を防ぐためご了承ください。</p>
+</div>
+</div>
+</div>
+
+<div id="s3"  class="mt-n6 pt-6 mb-4 mb-6">
+    <h2>アプリケーションの立ち上げ</h2>
+    <p>いくつかの方法でアプリケーションをアクティブ（使える状態）にできます。</p>
+    <ul>
+        <li>マウスでアイコンをダブルクリック</li>
+        <li>ファインダーからアプリケーション アプリケーションの選択から起動</li>
+        <li>任意のファイルアイコンをダブルクリック（OSで設定されたアプリケーションが開く）</li>
+        <li>任意のファイルアイコンを右クリックしてコンテキストメニューをひらきアプリケーションから開く。</li>
+        <li>ファイルをアプリケーションアイコンにドラッグしてアプリケーションを開く</li>
+    </ul>
+    <p>以上の5つの方法があります。状況に応じてつかいわけてください。</p>
+<h3>任意のアプリケーションを立ち上げてみる</h3>
+<h4>テキストを編集するアプリケーション</h4>
+<p>テキストエディタをアクティブにする。テキストエディターはプレーンテキストと呼ばれる文字情報だけを記述保存編集するアプリケーションです。</p>
+<h4>。webサイトを見るアプリケーション</h4>
+<p>webブラウザをアクティブにする。webブラウザ（以下ブラウザ）はインターネットを使ってサーバーにあるデータを閲覧するアプリケーションです</p>
+
+</div>
+<div id="s4"  class="mt-n6 pt-6 mb-4 mb-6">
+    <h2>アプリケーションの終了</h2>
+    <p>OSXはウインドウの左上の赤いボタンはアプリケーションの一時隠すだけです。アプリケーションを終了するには下記方法で終了してください。</p>
+    <ul>
+        <li>メニューバーから「ファイル」メニュー -&gt;「アプリケーションの終了」一番下のメニュー項目に設定されていることが多いです。</li>
+        <li><kbd>command</kbd> + <kbd>Q</kbd></li>
+    </ul>
+        <h3>アプリケーションの強制終了</h3>
+        <p>アプリケーションがフリーズしいくら待っても次の処理に移行しないとき。<kbd>command</kbd> + <kbd>Alt</kbd>+<kbd>esc</kbd>で該当のアプリケーションを終了することができます。</p>
+        <div class="card ">
+        <blockquote class="card-body mb-0">
+        <a href="https://support.apple.com/ja-jp/HT201276" target="_blank" rel="noopener">
+            Mac で App を強制的に終了する方法</a></blockquote>
+
+        </div>
+
+</div>
+
+<div id="s5"  class="mt-n6 pt-6 mb-4 mb-6">
+<h2>コンピューターの終了 電源を切る</h2>
+        <p>OSXの場合　メニューバーのアップルマークから「システムの終了」を選択してください。</p>
+        <p>スリープ状態は電源がきれていないので不在時の故障の原因になります。帰宅時には必ず電源を切って帰宅してください。</p>
+<blockquote>
+        <h4>Mac の電源を切る (システム終了する)</h4>
+        <p>Mac の電源を切る場合は、Apple () メニューから「システム終了」を選択する方法が一番確実です。</p>
+
+        <p>Mac の電源が入った後に起動プロセスが始まるのと同じように、電源が切れる前にシステム終了のプロセスが進められます。開いている App がすべて自動的に閉じ、macOS ユーザアカウントからログアウトされます。 </p>
+
+        <p>Mac がシステム終了しない場合は、反応しない App を強制終了してみてください。それでもシステム終了しない場合は、電源が切れるまで、電源ボタンを押し続けてください。</p>
+        <cite><a href="https://support.apple.com/ja-jp/HT201150#turnon" target="_blank" rel="noopener">Mac の電源を入れる／切る方法 </a></cite>
+    </blockquote>
+
+
+
+
+</div>
+<!-- editable area end ########             -->
+</article>
+</div>
+<!-- /container-->
+
+<!-- / w-aside2 --->

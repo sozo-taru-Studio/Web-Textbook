@@ -1,0 +1,274 @@
+---
+title: 基本的なキーボードショートカット
+discription: discription
+cat: コンピューターの基本操作
+next-page-url: 05_basic_operation.html
+filename: 04_basic_operation.html
+prev-page-url: 03_basic_operation.html
+titlename: "{{title.titlename}}"
+text: "{{item.text}}"
+text2: "{{item.text}}"
+---
+<div class="container mb-5">
+<article id="w-article">
+<!-- editable area ########             -->
+        <h1>{{title}} - {{cat}}</h1>
+        <p><span>category:</span> <span class="badge badge-primary">{{cat}}</span></p>
+        <hr>
+
+<!-- 序章 モジュール -->
+<div class="card mb-4">
+<div class="card-body">
+<p  class="card-text">
+    <p><strong>ショートカットを使いこなすことは作業の短縮の一翼を担います。</strong></p>
+    <p>マウスオペレーションは便利ですが、アクションに時間がかかります。<br>
+    キーボードオペレーションは同じ時間でも多くの工数をこなせます。<br>
+    3秒かかっていたことが1秒で終わる。たった2秒の短縮ですが1年間の仕事時間を加算すればかなりの時間をかせげます。<br>
+    その分　ぼーっとしていてもこなした仕事量はかわりません。<strong>サッサとやってサッサとおうちにかえりましょう。</strong></p>
+    <p>よく使うソフトはキーボードショートカットを覚える価値があります。</p>
+<div class="alert alert-info">
+<p class="mb-0"><small >※キーボードショートカットを使ってさっさと帰ろう。</small></p>
+</div>
+</div>
+</div>
+<!-- 目次 モジュール -->
+<div class="bg-light p-3 mb-4">
+<h2>目次</h2>
+<ul id="w-indexlistBox">
+    <li v-for="item in items" class="w-indexlistBox-list">
+      <a v-bind:href="item.id" data-scroll >{{text2}}</a>
+    </li>
+</ul>
+</div>
+<!-- / 目次 モジュール -->
+
+<!-- 本文のセクション モジュール -->
+<div id="s1" class="mt-n6 pt-6 mb-6 clearfix">
+    <h2>キーボードは10本の手の指を使います。</h2>
+    <p><i class="fa fa-keyboard-o" aria-hidden="true"></i><strong> 体を最大限利用しましょう。</strong></p>
+    <p>もしなんらかの理由で10本の指をつかえなかったらごめんなさい。でも使える方は最大限つかいましょう。</p>
+    <p>指2本でも分間250キーを打てるスピートと正確さをお持ちの方は10本にフォームチェンジしなくていいですが自分はキーパンチになれていないならフォームポジションを練習するのをお勧めします。
+    </p>
+    <p>個人的感想ですが、作業の遅いひと。学習の遅いひとに共通に感じる点は機器にさわりなれていないことです。<br>意識して右手にはマウスと左手にはキーボードを使うようにしましょう。
+    ショードカットは両手をつかってはじめて動くものが多いです。特にイラレとフォトショは両手での作業が強いられますので機能を十分に生かせた動きができていないのなら片手での操作はまだ早いです。</p>
+
+</div>
+<div id="s2" class="mt-n6 pt-6 mb-6">
+    <h2>windows と macの修飾キーの違い</h2>
+    <p>commandとOptionのキーの位置がちがうもののなれればほとんど同じです。<br>
+        初心者はMacは<kbd>command</kbd>キー　windowsは<kbd>Ctrl</kbd>キーが同じ役割と覚えておくだけでいいです。<br>
+        このサイトでは　Macの<kbd>command</kbd>キーを <kbd>Ctrl</kbd>と表記するとが多いです。</p>
+        <p>ちなみにMacには<kbd>contrl</kbd>キーと呼ばれる別のキーがあります。</p>
+        <p>日本語jisキーボード 修飾キー</p>
+<div class=" table-responsive-sm">
+        <table class="table table-striped">
+        <thead>
+        <tr>
+        <th style="text-align:left">Key</th>
+        <th>mac</th>
+        <th>windows</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+        <td style="text-align:left">コマンド</td>
+        <td><kbd>command</kbd></td>
+        <td><kbd>Ctrl</kbd></td>
+        </tr>
+        <tr>
+        <td style="text-align:left">オプション/オルト</td>
+        <td><kbd>option/Alt</kbd></td>
+        <td><kbd>Alt</kbd></td>
+        </tr>
+        <tr>
+        <td style="text-align:left">コントロール</td>
+        <td><kbd>cotrol</kbd></td>
+        <td>無し</td>
+        </tr>
+        <tr>
+        <td style="text-align:left">シフト</td>
+        <td><kbd>shift</kbd></td>
+        <td><kbd>shift</kbd></td>
+        </tr>
+        </tbody>
+        </table>
+</div>
+<p>アプリケーションのほとんどにはショートカットキーがあります。
+下記のショートカットキーはおおよそ共通のショートカットとして見られるキー配置になります。</p>
+<p>使っているアプリケーションのヘルプメニューや　メニューバーのコマンド名の左にショートカットキーの案内があるはずです。ここをみながら使って覚えます。</p>
+<div class="accordion" id="accordionExample">
+<div class="card">
+<div class="card-header" id="headingOne">
+    <h5 class="mb-0">
+    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            VScodeのショートカットをメニューバーから調べてるGifアニメーション
+    </button>
+    </h5>
+</div>
+<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+<div class="card-body">
+<div class="col-lg-12">
+<figure>
+<figcaption>VScodeのショートカットをメニューバーから調べてるGifアニメーション</figcaption>
+<img src="_images/_BO/04_Visual-Studio-Code.gif" alt="VScodeのショートカットメニュー" class="img-fluid">
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- / #s2 -->
+
+<div id="s3"  class="mt-n6 pt-6 mb-4 mb-6">
+<h2>ファイル操作のショートカットキー</h2>
+<div class="alert alert-warning">
+<p><strong>ショートカットキーは使わないと指がうごきません。　使って覚えましょう。</strong></p>
+</div>
+<div class=" table-responsive-sm">
+<table class="table table-striped">
+<thead>
+<tr>
+<th style="text-align:left">機能</th>
+<th>ショートカットキー</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">保存/新規保存</td>
+<td><kbd>Ctrl</kbd>+<kbd>s</kbd></td>
+</tr>
+<tr>
+<td style="text-align:left">命名保存/別名保存</td>
+<td><kbd>Ctrl</kbd>+<kbd>shift</kbd>+<kbd>s</kbd></td>
+</tr>
+<tr>
+<td style="text-align:left">開く</td>
+<td><kbd>Ctrl</kbd>+<kbd>o</kbd></td>
+</tr>
+<tr>
+<td style="text-align:left">アプリ終了</td>
+<td><kbd>Ctrl</kbd>+<kbd>q</kbd></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>特に<strong>保存</strong>から覚えること。作業したら保存の癖は身に着けるべきスキル</p>
+</div>
+
+<div id="s4"  class="mt-n6 pt-6 mb-4 mb-6">
+<h2>編集メニューのショートカット</h2>
+<div class=" table-responsive-sm">
+<table class="table table-striped">
+<thead>
+<tr>
+<th style="text-align:left">機能</th>
+<th>ショートカットキー</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">コピー</td>
+<td><kbd>Ctrl</kbd>+<kbd>c</kbd></td>
+</tr>
+<tr>
+<td style="text-align:left">貼り付け</td>
+<td><kbd>Ctrl</kbd>+<kbd>v</kbd></td>
+</tr>
+<tr>
+<td style="text-align:left">カット/移動</td>
+<td><kbd>Ctrl</kbd>+<kbd>x</kbd></td>
+</tr>
+<tr>
+<td style="text-align:left">検索</td>
+<td><kbd>Ctrl</kbd>+<kbd>f</kbd></td>
+</tr>
+<tr>
+<td style="text-align:left">置き換え</td>
+<td><kbd>Ctrl</kbd>+<kbd>h</kbd></td>
+</tr>
+<tr>
+<td style="text-align:left">編集をやり直し</td>
+<td><kbd>Ctrl</kbd>+<kbd>ｚ</kbd></td>
+</tr>
+<tr>
+<td style="text-align:left">編集のやり直しのやり直し</td>
+<td><kbd>Ctrl</kbd>+<kbd>y</kbd></td>
+</tr>
+<tr>
+<td style="text-align:left">編集のやり直しのやり直し</td>
+<td><kbd>Ctrl</kbd>+<kbd>shift</kbd>+<kbd>z</kbd></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</div>
+
+<div id="s5"  class="mt-n6 pt-6 mb-4 mb-6">
+<h2>選択メニューでのショートカット</h2>
+<div class=" table-responsive-sm">
+<table class="table table-striped">
+<thead>
+<tr>
+<th style="text-align:left">機能</th>
+<th>ショートカットキー</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">すべてを選択</td>
+<td><kbd>Ctrl</kbd>+<kbd>a</kbd></td>
+</tr>
+<tr>
+<td style="text-align:left">行を選択</td>
+<td><kbd>Ctrl</kbd>+<kbd>L</kbd></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="s6"  class="mt-n6 pt-6 mb-4 mb-6">
+<h2>表示メニューでのショートカット</h2>
+<div class=" table-responsive-sm">
+<table class="table table-striped">
+<thead>
+<tr>
+<th style="text-align:left">機能</th>
+<th>ショートカットキー</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">拡大</td>
+<td><kbd>Ctrl</kbd>+<kbd>+</kbd></td>
+</tr>
+<tr>
+<td style="text-align:left">縮小</td>
+<td><kbd>Ctrl</kbd>+<kbd>-</kbd></td>
+</tr>
+<tr>
+<td style="text-align:left">表示100％</td>
+<td><kbd>Ctrl</kbd>+<kbd>0</kbd></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div class="card text-white bg-primary mb-3">
+<div class="card-header"><p class="mb-0">触れるしかない　つかうしかない</p></div>
+  <div class="card-body">
+    <h5 class="card-title">一つ一つ使うことからはじめよう</h5>
+    <p class="card-text">
+        最初はショートカットを忘れてついついマウスでのオペレーションを使いがちになります、よく使うアプリの機能はショートカットキーを覚えてもっとアプリを楽しんでください。</p>
+  </div>
+
+</div>
+<!-- editable area end ########             -->
+</article>
+</div>
+<!-- /container-->
+
+<!-- / w-aside2 --->

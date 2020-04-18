@@ -1,0 +1,205 @@
+---
+title: ファイルとフォルダの操作
+discription: discription
+cat: コンピューターの基本操作
+next-page-url: "#"
+filename: 05_basic_operation.html
+prev-page-url: 04_basic_operation.html
+titlename: "{{title.titlename}}"
+text: "{{item.text}}"
+text2: "{{item.text}}"
+---
+<div class="container mb-5">
+<article id="w-article">
+<!-- editable area ########             -->
+        <h1>{{title}} - {{cat}}</h1>
+        <p><span>category:</span> <span class="badge badge-primary">{{cat}}</span></p>
+        <hr>
+
+<!-- 序章 モジュール -->
+<div class="card mb-4">
+<div class="card-body">
+<div class="alert alert-info">
+<p class="mb-0"> ファイルとフォルダの説明とハードディスクのなかでどうファイルは整理保存されているか説明してます。またfinderの設定ファイルの複製、リネーム、圧縮と解凍の基本操作を説明します。</p>
+</div>
+</div>
+</div>
+<!-- 目次 モジュール -->
+<div class="bg-light p-3 mb-4">
+<h2>目次</h2>
+<ul id="w-indexlistBox">
+    <li v-for="item in items" class="w-indexlistBox-list">
+      <a v-bind:href="item.id" data-scroll >{{text2}}</a>
+    </li>
+</ul>
+</div>
+<!-- / 目次 モジュール -->
+
+<!-- 本文のセクション モジュール -->
+<div id="s1" class="mt-n6 pt-6 mb-6 clearfix">
+    <h2>ファイルとフォルダ</h2>
+    <dl>
+      <dt><i class="fa fa-file-o" aria-hidden="true"></i>ファイル</dt>
+      <dd><p>データやプログラムが書かれた電子上データ、実際には電子上のデータで実態はないが紙をイメージしてファイルと呼びます。</p><p>ファイルはドット「.」で始まる拡張子の種類でファイルの種別を確認できます。</p></dd>
+    </dl>
+
+    <dl>
+      <dt><i class="fa fa-folder-o" aria-hidden="true"></i>ファイル/ディレクトリー</dt>
+      <dd><p>フォルダはデータやプログラムの所属を明確にし整理するためファイルをまとめる役割がります。現実の書類をまとめて冊子状にしておくフォルダをイメージしてこう呼ばれます。/OS Unix系 MacOSX系 は「ディレクトリー」と呼びます。名前の由来は違いますが同じ機能です。</p><p>フォルダはファイルを保存するための部屋のような役割をします。　ファイルの中身は関係なく拡張子はつけません。</p>
+      </dd>
+    </dl>
+
+</div>
+<div>
+  <h2 id="s2"  class="mt-n6 pt-6 mb-6">finderの環境設定</h2>
+<p>finederはMac OSXのファイル操作（GUI）アプリケーションです。　windows10でいうファイルエクスプローラーです。
+マウスで操作でき直観的な操作で学習しやすく慣れやすいように設計されています。
+</p>
+<p>finder環境設定を変えて若干わかりにくい部分を表示させて探しやすくします。</p>
+<h3>「メニューバー」＞「finder」＞「環境設定」 </h3>
+<div class="d-lg-flex">
+<div class="card mb-4 col-lg-6">
+    <img src="_images/_BO/finder-conf3.png" class="card-img-top img-fluid mb-3" alt="「サイドバー」タブ">
+    <h5 class="card-title">
+「サイドバー」タブ</h5>
+<div class="card-body">
+<p>「よく使う項目」に下記項目をいれておく。(そのほかはお好みで・・・)</p>
+  <ul>
+    <li>デスクトップ、</li>
+    <li>アプリケーション</li>
+    <li>外部ディスク</li>
+  </ul>
+<p>よく使う項目,よく探しに行くフォルダーにチェックを入れておく。</p>
+</div>
+</div>
+<div class="card mb-4 col-lg-6">
+    <img src="_images/_BO/finder-conf4.png" class="card-img-top img-fluid mb-3" alt="「詳細」タブ">
+    <h5 class="card-title">「詳細」タブ</h5>
+    <div class="card-body">
+    <p class="card-text">「すべてのファイル拡張子を表示」にチェックを入れておく</p>
+    <p>拡張子をみてどのドキュメントファイルかを判断するようにしてください。</p>
+  </div>
+</div>
+</div>
+
+
+
+
+<div>
+    <h3>「メニューバー」＞「finder」＞「表示」 </h3>
+    <ul>
+      <li>パスバーの表示 [フォルダの位置を表示]</li>
+      <li>サイドバーの表示[ショートカットアイコンの表示]</li>
+    </ul>
+    <p>上記をONにしておく
+    <br>バージョンにもよるが表示状態だと「非表示にする」メニューが見えるはずです。</p>
+</div>
+
+
+
+
+<div id="s3" class="mt-n6 pt-6 mb-6">
+    <h2>名前を変える名前を付ける</h2>
+    <p>リネーム作業を教えます。新規のフォルダ作成から始めます。</p>
+
+<ol>
+  <li><h3 class="h4">デスクトップフォルダに「新規フォルダ」を作る</h3>
+     <p> デスクトップを直接クリックしコンテキストメニューから「新規フォルダー」を作成する。フォルダーの名前が「新規フォルダー」のままなのでクリックして名前を変えます。<br>
+      名前がつけられない場合、名前の変更はフォルダをマウスで選んで<kbd>Return</kbd>キーを押すと編集モードどになります。<br>
+      ウィンドウズでは<kbd>「F-2」</kbd>キーがショートカットキーになっています。</p>
+<div class="card mb-4">
+  <h5 class="card-header">課題</h5>
+  <div class="card-body">
+ <p class="card-text"> テキストエディタ-を立ち上げからファイルメニューを使ってそこに新しいファイルを保存してみましょう。ファイルの名前はなんでもかまいません。最後に拡張子「.txt」をつけましょう。</p>
+ <div style="width: 8rem;" class="text-center">
+   <i class="fa fa-file-o" aria-hidden="true" style="font-size: 2em;"></i><br>
+ <span>somtingName.txt</span>
+  </div>
+  </div>
+</div>
+
+</li>
+<li>
+  <h3 class="h4">finderを使った「フォルダ」間の移動</h3>
+<div>
+<p>作ったファイルをドラッグ&ドロップでデスクトップに移動しましょう。</p>
+<p>移動したあとドラッグ&ドロップで元のフォルダにもどしましょう。</p>
+</div>
+</li>
+</ol>
+<div class="card mb-4 alert alert-info">
+  <h5 class="card-title">memo「デスクトップの位置」</h5>
+<div class="card-body">
+<p>デスクトップはHDのどこにあるでしょうか？</p>
+<ul class="d-flex list-unstyled">
+  <li>HD　＞</li>
+  <li>ユーザー　＞</li>
+  <li>ユーザーネーム ＞</li>
+  <li>デスクトップ </li>
+</ul>
+<p>デスクトップやアプリケーションもフォルダーです。見つけやすいようにほかのアイコンと変更しています。</p>
+</div>
+</div>
+
+
+
+</div>
+<!-- / #s2 -->
+
+<div id="s4"  class="mt-n6 pt-6 mb-4 mb-6">
+<h2>ファイルのコピーと貼り付け</h2>
+<h3>ショートカットキーでのコピーと貼り付け（ペースト）</h3>
+<p>対象ファイルをマウスカーソルで選び<br>
+<kbd>ctrl/command</kbd>+<kbd>C</kbd><br>
+保存したいフォルダーをファインダーで選び<br>
+<kbd>ctrl/command</kbd>+<kbd>ｖ</kbd></p>
+
+<h3>Option（Alt）キーを使ってのコピーとペースト</h3>
+<p>マウスでドラッグ中のファイルやフォルダを<kbd>Option</kbd>キーをおすことで　アイコンに「+」マークがでます。　任意のフォルダーでドラッグするとコピーになります。</p>
+
+
+
+<h3>コンテキストメニューからのコピーと貼り付け</h3>
+<p>対象ファイルをマウスカーソルで選び
+  右クリックしてコンテキストメニューを開き、下の方にある「XXX.xxx」をコピーを選ぶ<br>
+  移動したいファイルを選んでその項目でお好みのペーストコマンドコンテキストメニューから「項目をペースト」。<br>　
+  <p>移動：<kbd>Option</kbd> + <kbd>command</kbd> + <kbd> v </kbd></p>
+</p>
+</div>
+
+<div id="s5"  class="mt-n6 pt-6 mb-4 mb-6">
+<h2>アプリケーションを使ってZipに変換する</h2>
+<h3>コンテキストメニューから圧縮</h3>
+<p>
+任意のファイルやフォルダを選び　コンテキストメニューから「圧縮」を選ぶと.zip形式の圧縮ファイルが同じフォルダに制作されます。
+</p>
+<p>zipファイルの圧縮はメールなど大量のファイルを添付できないとき一度にまとめるときに使います。メールなどは転送容量の限界がありますのでzipにしたからといって大幅に圧縮されるわけではありありません。ファイル情報をみて実際のファイルの容量を確認しましょう。</p>
+<h3>コンテキストメニューから解凍</h3>
+<p>zipファイルの解凍もコンテキストメニューから解凍できます。
+    右クリック ＞ コンテキストメニュー ＞ アプリケーション ＞ アーカイブユーティリティー　から解凍することができます。
+</p>
+</div>
+
+
+<div id="s5"  class="mt-n6 pt-6 mb-4 mb-6">
+    <h2>ファイルを捨てる</h2>
+    <p>要らなくなったファイルやフォルダはゴミ箱に移動することで削除することができます。削除することでドライブやメモリーの容量の圧迫をおさえることができます。</p>
+    <h3>ゴミ箱へドラッグ</h3>
+    <p>ファイル、フォルダはドラックドロップで捨てれます。<br>macの場合はデバイスや外部ドライブはゴミ箱に捨てると「取り外し」になります。</p>
+
+  <h3>コンテキストメニューから削除</h3>
+    <p>
+        右クリック ＞ コンテキストメニュー ＞ ゴミ箱にすてる
+    </p>
+    <h3>ゴミ箱を空にする</h3>
+    <p>ゴミ箱はメモリーに常駐していますのでゴミ箱の中身が多いと処理パフォーマンスに影響します。（遅くなる）<br>
+      ゴミ箱は空にして帰るようにしましょう。ただし空にしたゴミ箱の<strong class="badge badge-danger" style="font-size: 1rm">ファイルは復旧できません。</strong>    </p>
+
+  </div>
+
+<!-- editable area end ########             -->
+</article>
+</div>
+<!-- /container-->
+
+<!-- / w-aside2 --->

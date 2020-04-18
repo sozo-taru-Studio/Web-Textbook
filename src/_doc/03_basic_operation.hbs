@@ -1,0 +1,115 @@
+---
+title: USBメモリーデバイスの使い方
+discription: discription
+cat: コンピューターの基本操作
+next-page-url: 04_basic_operation.html
+filename: 03_basic_operation.html
+prev-page-url: 02_basic_operation.html
+titlename: "{{title.titlename}}"
+text: "{{item.text}}"
+text2: "{{item.text}}"
+---
+<div class="container mb-5">
+<article id="w-article">
+<!-- editable area ########             -->
+        <h1>{{title}} - {{cat}}</h1>
+        <p><span>category:</span> <span class="badge badge-primary">{{cat}}</span></p>
+        <hr>
+
+<!-- 序章 モジュール -->
+<div class="card mb-4">
+<div class="card-body">
+<div class="row">
+<p  class="card-text col-lg-9">USBメモリーデバイス（以下 USBメモリー）は安価で軽く多くのデータを持ち運べる便利な媒体です。<br>しかし
+USBメモリーはウイルスを媒介しやすい媒体です。<br>お財布に余裕があるかたは新規での購入をおすすめします。<br>もしくはUSBメモリーに何も保存されてない状態にして（フォーマット）して学校ではご利用ください。</p>
+<p class="col-lg-3"><img src="_images/_html/flash-memory-_640s.jpg" alt="USBメモリー" class="img-fluid" ></p>
+</div>
+</div>
+</div>
+<!-- 目次 モジュール -->
+<div class="bg-light p-3 mb-4">
+<h2>目次</h2>
+<ul id="w-indexlistBox">
+    <li v-for="item in items" class="w-indexlistBox-list">
+      <a v-bind:href="item.id" data-scroll >{{text2}}</a>
+    </li>
+</ul>
+</div>
+<!-- / 目次 モジュール -->
+
+<!-- 本文のセクション モジュール -->
+    <div id="s1" class="mt-n6 pt-6 mb-6 clearfix">
+    <h2>コネクトのしかた</h2>
+    <p>USBメモリーは背後にあるコネクターに指します。
+        <br>差し込みには向きがあり<strong>無理に押し込まない</strong>ようにしてください。<br>サンダーボルトコネクターに似ていますので間違えないでください。</p>
+        <h3.class="h5">iMac背面の詳細はこちらをご覧ください。</h3>
+        <blockquote class="blockquote">
+          <a href="https://support.apple.com/ja-jp/guide/imac/apddfab3bd1b/mac" target="blank" rel="noopener">iMacの基本</a>
+        </blockquote>
+        <p><small>※キーボードの左右にもありますが若干背面のコネクターのほうがアクセスは早いです。</small></p>
+        <h3 class="h5">iMac以外のPCの場合</h3>
+        <p> おのおののPCのUSBコネクターの位置を目視で確認してください。 </p>
+</div>
+
+
+<div id="s1" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>USBの中身をみる MAC</h2>
+<p>コネクトするとメディアアイコン(ボリュームアイコン)がでます。<br>これをfinderで開くと中身の操作ができます。</p>
+<figure>
+  <figcuption>USBデバイスをさすとデスクトップにデバイスのアイコンがでてくる</figcuption>
+  <img src="_images/_BO/device.png" alt="Macに映るボリューム">
+</figure>
+<p>デスクトップに表示されていない場合、finderの設定を変える必要があります。下記リンクが参考になります。</p>
+<p>finder をアクティブにしてメニューバーの左側＜finder＞から＜環境設定＞を選ぶ。<br>
+＜一般＞タブから＜デスクトップに表示する項目：＞ の＜外部ディスク＞にチェックが入っているか確認してください。
+</p>
+<p><a href="https://www.buffalo.jp/support/faq/detail/12872.html" target="_blank" rel="noopener">Macでデスクトップに商品のアイコンが表示されません</a></p>
+
+<h2>USBの中身をみる Windows10</h2>
+<div class="row">
+<p>windowsはファイルエクスプローラーをタスクバーから立ち上げる。</p>
+<p><img src="_images/_html/taskMG.png" alt="タスクバーのファイルエクプスローラー" class="img-fluid" ></p>
+<p>左側の列にあるDEVICEまたはドライブを選びます。</p>
+<p class="col-lg-8 text-center"><img src="_images/_html/windowsfileEx.PNG" alt="ファイルエクプスローラー" class="img-fluid" ></p>
+</div>
+</div>
+
+<div id="s3"  class="mt-n6 pt-6 mb-4 mb-6">
+<h2>外すとき</h2>
+<div class="alert  alert-warning">
+<p><strong>注意: そのまま抜いてはいけません。</strong>
+<br>保存中など処理中の場合最悪データが破損してつかえなくなります。</p>
+<p>USBメモリーのアクセスランプの点灯がなくなってからぬきましょう。</p>
+<p>データが破損した場合、すぐに復旧はできないです。多くの時間を費やしたデータを無に帰さないよう注意ねがいます。</p>
+</div>
+
+<h3>外しかた。</h3>
+<p>外し方はMacとwindowsでは若干の違いがあります。</p>
+<ul>
+<li>MACの場合はDockのゴミ箱アイコンにドラック&amp;ドロップ</li>
+<li>windowsおよびMacはコンテキストメニュー（右クリック）から「デバイス（ドライブ）を外す」を選択してください。</li>
+</ul>
+<p>上記何れかの作業をして<strong>アクセスランプの点灯が終わって</strong>からUSBを優しくぬきます。</p>
+<div class="card alert-info text-dark">
+<div class="card-body">
+<h3>USBメモリーので保管と作業での注意</h3>
+<p>毎日朝必要な作業データをUSBメモリーからデスクトップに移動して、編集はHDをに保存（コピー）されたファイルを開いて編集すること<br>
+帰りの支度はデスクトップにある作業データをUSBメモリーに保存して。<strong>安全に抜いてから</strong>帰宅してください。</p>
+</div>
+</div>
+
+</div>
+<div class="card">
+<div class="card-body">
+<h4>動画</h4>
+<p><a href="https://youtu.be/7Pn8YxyAt8U" target="_blank" rel="noopener">USBフラッシュメモリの使い方【初心者でも理解できる】 金子晃之 </a></p>
+</div>
+</div>
+
+
+<!-- editable area end ########             -->
+</article>
+</div>
+<!-- /container-->
+
+<!-- / w-aside2 --->
