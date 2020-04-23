@@ -1,0 +1,192 @@
+---
+title: ファイルパス
+discription: discription
+cat: HTML
+next-page-url: "204_html_markUp.html"
+filename: 203_html_markUp.html
+prev-page-url: "202_html_markUp.html"
+titlename: "{{title.titlename}}"
+text: "{{item.text}}"
+text2: "{{item.text}}"
+---
+<div class="container mb-5">
+<article id="w-article">
+<!-- editable area ########             -->
+        <h1>{{title}} - {{cat}}</h1>
+        <p><span>category:</span> <span class="badge badge-primary">{{cat}}</span></p>
+        <hr>
+<!-- 序章 モジュール -->
+<div class="card mb-4">
+<div class="card-body">
+<p  class="card-text">
+	ファイルパスの書き方と種類を解説します。<br>
+	画像や動画をページに挿入したり。ページの遷移をするアンカータグに必要な知識です。</p>
+</div>
+</div>
+
+<!-- 目次 モジュール -->
+<div class="bg-light p-3 mb-4">
+<h2>目次</h2>
+<ul id="w-indexlistBox">
+    <li v-for="item in items" class="w-indexlistBox-list">
+      <a v-bind:href="item.id" data-scroll >{{text2}}</a>
+    </li>
+</ul>
+</div>
+<!-- /目次 モジュール -->
+
+<!-- 本文のセクション モジュール -->
+<div id="s1" class="mt-n6 pt-6 mb-6 clearfix">
+		<h2>パス（ファイルパス）とは</h2>
+<p>単にパスとも現場ではいわれていますが。パスとは日本語で訳すと「通す」という意味で、リクエストを通すとか関連づけるとか紐付けるとなどといいかえられます。ファイルやデータ間の関連性を明示するための技術です。</p>
+<h3><abbr title="Uniform Resource Identifier">URI</abbr></h3>
+<p>URI（Uniform Resource Identifier）形式とは　ファイルとフォルダーの保管場所を表す方式でコンピューター技術で一般的に使われる。ファイル位置の表記方法です。パソコンの中の住所表記方法とでもおもっておいてください。</p>
+<blockquote class="blockquote">
+<a href="http://e-words.jp/w/URI.html"> 	URI  【 Uniform Resource Identifier 】 </a>
+</blockquote>
+<h3>リソース</h3>
+<p>リソースとは資源という意味です。Webサイト制作ではページを構成するのに必要な画像データやファイル　プログラムなどHTMLファイルがリクエストするデータやファイルのことを総称して呼びます。</p>
+</div>
+<div id="s2" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>ファイルパスの表記方法</h2>
+<p>ファイルの位置を示す方式(URI方式)には以下の書き方があります。</p>
+
+<ul>
+	<li>1.絶対パス</li>
+	<li>2.相対パス</li>
+	<li>3.ルートからの相対パス</li>
+</ul>
+</div>
+<div id="s3" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>1. 絶対パス。</h2>
+<p>URL（Uniform Resource Locator）で指定します。（ブラウザのアドレスバーに表記される文字列）
+絶対パスはドメインからのファイルの位置を指定する記述です。絶対パスで同じファイルを指定する場合は
+理論上常に同じです。</p>
+<p>例えばGitの公開リポジトリアドレス。<br>
+ex) https://github.com/sozo-taru-Studio</p>
+<table class="table table-bordered ">
+<tr>
+  <th scope="row"><code>https://github.com</code></th><td>サイトのドメイン</td>
+</tr>
+<tr>
+    <th scope="row"><code>/</code> </th><td> セパレーター [所属のとか、からの]　日本語の助詞にあたるもの</td></tr>
+<tr>
+  <th scope="row"><code>sozo-taru-Studio</code> </th><td> （リポジトリ）フォルダー名</td></tr>
+</table>
+<h3>ドメイン</h3>
+<p>インターネットはIPアドレスでインターネット上の位置を判別しています。サーバーの位置もIPアドレスで判断できます。<br>
+IPアドレスは機械的には便利なのですが人が扱うのには不便です。
+IPアドレスは数字の羅列でユニークさを識別しています。
+サーバーの引っ越しなどをしたときIPアドレスだけでの判別をしていた場合
+そのサイトを愛用していた人たちはIPアドレスのブックマークしなおしをする手間をかけます。<br>
+ドメインの役割はIPアドレスとユニークな文字列を紐付けしてくれるサービスでドメインを管理する会社が登録してくれます。<br>
+IPアドレスをドメインに変換してもらうことで同じドメイン名で同じ場所にユーザーが遷移できるよになります。<br>
+ドメインをもっと詳しくしりたいかたはドメイン管理会社のページなどを読んでみてください。</p>
+<h3>絶対パスのマナ-</h3>
+<p>絶対パスがわかればせ世界中のリソースをインターネットからコピーできます。（もちろんブロックもできますがサーバーの設定をこまかくいじらないといけません。）</p>
+<p>ですので自分で取った写真や動画が他人に使われる。または使うことは簡単にできます。</p>
+<h3>許可されたリソースでも直接リンクを張らない。</h3>
+<p>動画や写真音源は例えパブリックドメイン（利用可）でも直接公開サーバーからアクセスするのではなく自分のプロジェクトフォルダーで管理してパス書きます。
+リソース源が削除された場合消える事故もなくなります。</p>
+<h3>絶対パスを使う場面</h3>
+<ul>
+<li>他サイトへのアンカーリンク。</li>
+<li>CDNや共有サイトをつかうとき。</li>
+</ul>
+<p>CDN<a href="https://www.idcf.jp/words/cdn.html" target="_blank" rel="noopener" >CDN</a></p>
+
+</div>
+<div id="s4" class="mt-n6 pt-6 mb-6 clearfix">
+  <h2>2. 相対パス</h2>
+  <p>相対パスはリクエストするファイルを基準に記述します。</p>
+  <p>つまり記述するファイルが違う場合同じ画像ファイルでも書き方がかわります。<br>
+  相対パスの書き方を理解できないと今後の学習の進展しないのでしっかり覚えましょう。</p>
+  <h3>フォルダ構成を理解する。</h3>
+  <div class="card mb-3">
+  <div class="card-body">
+  <h4>例1　同じフォルダー内</h4>
+  <p><img src="_images/_html/rePath0.PNG" alt="例1相対パス"></p>
+
+  <h4>ファイルの構成図</h4>
+  <pre class="hljs"><code><div>
+  ├ test─site
+      │  index.html
+      │  style.css
+  </div></code></pre>
+  <p>index.htmlにstyle.cssを読み込むとき。</p>
+  <p>フォルダの中に並列で存在する場合はそのファイル名を記述するだけで指定できます。</p>
+  <pre class="line-numbers language-xml" data-src="prism.js"><code>&lt;link href="style.css" rel="stylesheet" &gt;
+  </code></pre>
+  </div>
+</div>
+<div class="card mb-3">
+    <div class="card-body">
+  <h4>例2　深いフォルダーへの相対パス。</h4>
+  <p><img src="_images/_html/rePath1.PNG" alt="例2相対パス"></p>
+  <h5>フォルダ図</h5>
+  <pre class="hljs"><code><div>
+    ├ test─site
+      │  index.html
+      ├  css
+         |  style.css
+  </div></code></pre>
+  <p>相対パスを記述するファイルが基準になります。
+  深いフォルダーにリンクしたいファイルがある場合は
+  まずそのファイルの所属するフォルダー名を指定します。
+  セパレーターとなる<code>/</code>スラッシュを記述し。お目当てのファイル名を記述します。</p>
+  <h5>index.htmlにstyle.cssを読み込むとき。</h5>
+  <pre class="line-numbers language-xml" data-src="prism.js"><code>&lt;link href="css/style.css" rel="stylesheet" &gt;
+    </code></pre>
+  <p>フォルダとファイルの名前の区切りは<code>/</code>です。</p>
+  </div>
+</div>
+<div class="card mb-3">
+  <div class="card-body">
+  <h4 >例3　記述ファイルの上の層フォルダーを指定する場合。</h4>
+  <p>フォルダもファイルも１つのフォルダに所属しているルールなので。上の層を指定する場合は<code>..</code>ピリオド２つを記述します。</p>
+  <p>セパレーターをいれて上の層のファイルやフォルダーを指定します。</p>
+  <p><code>../</code> :一回層上のフォルダを指定
+  <code>../../</code>２階層上のフォルダを指定する。</p>
+  <p>相対パスはローカルPCで作成中のwebサイトでリソースをリンクするのに便利ですが、一度決まったフォルダ名やリンク先のファイルが移動したりするとリンク切れを起こす可能性があります。サーバーに上げずにモックアップを作る場合便利です。</p>
+<h5>フォルダ図</h5>
+  <pre class="hljs"><code><div>
+      ├ images
+        | img01.jpg
+      ├ test─site
+        │  index.html
+    </div></code></pre>
+   <h5> index.htmlに画像の「img01.jpg」を読み込むとき。</h5>
+    <pre class="line-numbers language-xml" data-src="prism.js"><code>&lt;img src="../images/img01.jpg" alt="" &gt;</code></pre>
+  </div>
+</div>
+</div>
+
+<div id="s5" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>ルートからの絶対パス。</h2>
+<p>ルート（元祖）とはレンタルサーバーの公開フォルダーのことです。</p>
+<h3>この書き方メリット</h3>
+<p>ドメインが確定していない場合やローカルサーバーでの制作の場合につかわれます。
+フォルダの移動してパスがとおらなくなっるくとを防ぎます。
+コードのスニペット化（使いまわし）にも便利なパスの書き方です。
+例えばスポンサーバナーを多数のページに複数表示するとき。相対パスだとページごとにパスを書き変える必要がありますがこの方法だとバナーへのパスを含めたコードをコピペするだけで表示できます。</p>
+<p>サーバー側の設定で「<code>/</code>」のみをルートフォルダーと解釈するように設定されています。</p>
+<p>例えば<code>http://example.com</code>の最初のページをリクエストする場合、どの階層からのページでも「<code>/</code>」で遷移できます。
+つまり 「<code>/</code>」 = 「<code>http://example.com</code>」です。</p>
+<p>「<code>&lt;a href=&quot;/&quot;&gt;トップページへ&lt;/a&gt;</code>」 こんな感じのことができます。</p>
+
+<div class="card mb-3">
+    <div class="card-body">
+<h4>使用例</h4>
+<pre class="line-numbers language-xml" data-src="prism.js"><code>&lt;link href="/css/style.css" rel="stylesheet"&gt; </code></pre>
+<p>スタイルシートがリンクできます。</p>
+<p><strong class="badge-warning">windowsやOSXのローカル領域での検証ではリンクが切れます。</strong></p>
+<p>昨今の制作案件ではドメインがまだきまっていなかったり、開発用の閉鎖されたサーバーでの制作をすることからよく使われます。</p>
+</div>
+</div>
+</div>
+<!-- editable area end ########             -->
+</article>
+</div>
+<!-- /container-->
+
+<!-- / w-aside2 --->

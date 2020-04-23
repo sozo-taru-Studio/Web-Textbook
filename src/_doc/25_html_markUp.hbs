@@ -1,0 +1,254 @@
+---
+title: HTML要素
+discription: discription
+cat: HTML
+next-page-url: "26_html_markUp.html"
+filename: 25_html_markUp.html
+prev-page-url: "24_html_markUp.html"
+titlename: "{{title.titlename}}"
+text: "{{item.text}}"
+text2: "{{item.text}}"
+---
+<div class="container mb-5">
+<article id="w-article">
+<!-- editable area ########             -->
+        <h1>{{title}} - {{cat}}</h1>
+        <p><span>category:</span> <span class="badge badge-primary">{{cat}}</span></p>
+        <hr>
+
+<!-- 序章 モジュール -->
+<!-- 序章 モジュール -->
+<div class="card mb-4">
+<div class="card-body">
+<p  class="card-text">HTMLコードを書く上での基礎知識です。
+    知らなくてもかけるけど。知っておくとなぜ書き間違えたかがりかいできます。
+    したがって間違いの少ないコードを変えるようになります。</p>
+</div>
+</div>
+
+
+
+<!-- 目次 モジュール -->
+<div class="bg-light p-3 mb-4">
+<h2>目次</h2>
+<ul id="w-indexlistBox">
+    <li v-for="item in items" class="w-indexlistBox-list">
+      <a v-bind:href="item.id" data-scroll >{{text2}}</a>
+    </li>
+</ul>
+</div>
+<!-- 本文のセクション モジュール -->
+<div id="s1" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>HTML要素の部位解説</h2>
+
+    <div class="card">
+        <div class="card-header">
+    <h3 class="h5">参考資料</h3>
+  </div>
+    <div class="card-body">
+    <blockquote>
+    <p><a href="https://developer.mozilla.org/ja/docs/Learn/HTML/Introduction_to_HTML/Getting_started" target="_blank" rel="noopener">HTML を始めよう
+    </a></p>
+    </blockquote>
+    </div>
+  </div>
+
+<h3>要素 エレメント</h3>
+
+<div class="card">
+<div class="card-header">
+    <h4>要素をdiv要素で各部位の名称と役割を解説</h4>
+</div>
+<div class="card-body">
+    <pre class="line-numbers language-xml" data-src="prism.js"><code>&lt;div&gt;内容&lt;/div&gt;</code></pre>
+  <div class="mb-3">
+      <img src="_images/_MK/tags.jpg" alt="タグの構造" class="img-fluid">
+  </div>
+  <ul>
+      <li><h5>要素 エレメント</h5>
+        <p>「開始タグ」から「終了タグ」までを含めた部分を<b class="badge badge-primary" style="font-size:1em;">要素</b>と呼びます。
+            つまり要素(Element)は「 開始タグ」 + 「内容」 + 「終了タグ」が要素になります。</p>
+      </li>
+      <li><h5>開始タグ</h5>
+        <p>「開始タグ(Opening tag)」は 要素名 (この場合は &quot;div&quot;)、囲っている開き山括弧と閉じ山括弧で構成されています。これは要素が始まってその効果が開始する位置を宣言します。<br>この場合、DIV要素ブロックが始まる位置です。</p>
+      </li>
+      <li><h5>終了タグ</h5>
+        <p>終了タグ(Closing tag)は 要素名の前に一つのスラッシュが含まれることを除けば、開始タグと同じです。これは要素の終了を宣言しますーこの場合、Div要素が終わる位置です。<br>
+            終了タグを忘れるのは初心者にありがちなミスで、見た目が期待とおりにならない場合があります。</p>
+      </li>
+      <li><h5>内容</h5>
+      <p>内容(Content): これは要素の内容で、開始タグと終了タグに挟まれた部分が内容となります。内容にはテキストだけでなく子供となる<b class="badge badge-primary" style="font-size:1em;">要素</b>も入ります。</p>
+      </li>
+      </ul>
+      <h5>ポイント</h5>
+      <ul>
+      <li>開始タグ　終了タグ　内容の順番で書くとミスが減ります。くわしくは　「<a href="23_html_markUp.html">HTMLを間違えずに書く書き方</a>」で</li>
+      </ul>
+</div>
+</div>
+</div>
+
+<div id="s2" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>ネスト構造 (入れ子構造)</h2>
+<blockquote class="blockquote">
+    <p><a href="https://developer.mozilla.org/ja/docs/Learn/HTML/Introduction_to_HTML/Getting_started#Nesting_elements" target="_blank" rel="noopener">ネスト構造 </a></p>
+
+<p>要素の中に要素を入れることができますーこれは“ネスト” (入れ子) と呼ばれています。たとえば “私たち人間という存在は、身と心によって成り立っている。” と記述したい場合、“身と心” という語を strong 要素で囲むことができ、それはその語がより強く強調表示されることを意味します：</p>
+<pre class="line-numbers language-xml" data-src="prism.js"><code>&lt;p&gt;私たち人間という存在は、&lt;strong&gt;身と心&lt;/strong&gt;によって成り立っている。&lt;/p&gt;</code></pre>
+</blockquote>
+<p>要素の内容はテキストだけでなく別の要素をいれれることができます。
+  これを親子構造もしくはネスト構造とよびます。HTML要素はこのネスト構造（入れ子構造）で構成されています。</p>
+<h3>要素ごとにいれれる決まった内容がある。</h3>
+<p>UL要素のように　箇条書きを構成するためには箇条書きのアイテムであるli要素が必ず子要素として並列に構成される、　このように決まった内容が合理的にきめられている。　このルールは要素ごとに覚えていかないといけない。</p>
+
+<h3>正しい要素の終了を示さないといけない。</h3>
+	<p><strong class="badge badge-warning font-size-1">親要素の<strong>終了</strong>の前に子要素の終了がないといけません。</strong></p>
+<p>例えば P要素の中にストロング要素が入っている状態にしないといけません。</p>
+<div class="card alert-success">
+<div class="card-header"><h4>OK例</h4></div>
+<div class="card-body">
+<pre class="line-numbers language-xml" data-src="prism.js"><code>&lt;p&gt;私たち人間という存在は、<mark class="bg-warning">&lt;strong&gt;</mark>身と心によって成り立っている。<mark class="bg-warning">&lt;/strong&gt;</mark>&lt;/p&gt;</code></pre>
+</div>
+</div>
+<div class="card alert-danger">
+<div class="card-header"><h4>NG例</h4></div>
+<div class="card-body">
+    <h5>親子関係が崩れたマークアップはNGです。</h5>
+    <pre class="line-numbers language-xml" data-src="prism.js"><code>&lt;p&gt;私たち人間という存在は、&lt;strong&gt;身と心によって成り立っている。&lt;/p&gt;<mark class="bg-warning">&lt;/strong&gt;</mark></code></pre>
+    <p>開始タグでもだめなものはだめ</p>
+    <pre class="line-numbers language-xml" data-src="prism.js"><code><mark class="bg-warning">&lt;strong&gt;</mark>&lt;p&gt;私たち人間という存在は、身と心&lt;/strong&gt;によって成り立っている。&lt;/p&gt;</code></pre>
+    <p>ちなみにストロング要素はp要素の親要素には性質上なりえません。（ルールは後述）</p>
+
+</div>
+</div>
+
+<p>意識してコーディングしていればこのエラーはあまり起こさないようになります。
+コピー＆ペーストやカットをするときも要素の切れ目や親子関係をよく見てからしましょう。</p>
+<p>複雑なコーディングをするときは同じ名前の要素がたくさん出て来て、終了タグと開始タグの組み合わせが解らなくなることがあります。
+コメントアウトをうまくつかってネストエラーを防ぎましょう。
+HTMLのデバックの半分はこのネストエラーです。</p>
+
+
+<div class="card">
+    <div class="card-header"><h4>ポイント</h4></div>
+    <div class="card-body">
+
+<ul>
+<li>HTML要素はマトリョーシカのような入れ子構造になっている よく似た構造のもの 箪笥構造（箪笥-引出-棚や小箱-衣服） - 樹木構造（木-幹-枝-葉っぱ）</li>
+<li>ネスト構造が崩れると表示が崩れます。</li>
+<li>必ず親要素がある。</li>
+<li>元祖要素はHTML要素</li>
+</ul>
+</div>
+</div>
+
+</div>
+
+    <div id="s3" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>空要素</h2>
+
+<p>空要素は終了タグがありません。
+挿入したり　改行するポイントを指定したりする役割のタグ、内容をもたない要素を空要素と呼びます。</p>
+<h3>初期に覚える空要素</h3>
+<p>例）</p>
+<div class="table-responsive">
+<table class="table table-bordered table-striped">
+<thead>
+<tr>
+<th style="text-align:left">要素名</th>
+<th>役割</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><a href="https://developer.mozilla.org/ja/docs/Web/HTML/Element/meta" target="_blank" rel="noopener">&lt;meta&gt;</a></td>
+<td>htmlファイルの文書設定</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://developer.mozilla.org/ja/docs/Web/HTML/Element/link" target="_blank" rel="noopener">&lt;link&gt;</a></td>
+<td>htmlファイルとリンクする関係を設定</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://developer.mozilla.org/ja/docs/Web/HTML/Element/img" target="_blank" rel="noopener">&lt;img&gt;</a></td>
+<td>画像を挿入する。</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://developer.mozilla.org/ja/docs/Web/HTML/Element/hr" target="_blank" rel="noopener">&lt;hr&gt;</a></td>
+<td>推移線を挿入する 話題転換 場面転換</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://developer.mozilla.org/ja/docs/Web/HTML/Element/br" target="_blank" rel="noopener">&lt;br&gt;</a></td>
+<td>テキストを強制改行する</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://developer.mozilla.org/ja/docs/Web/HTML/Element/input" target="_blank" rel="noopener">&lt;input type=&quot;text&quot;&gt;</a></td>
+<td>入力アイテム</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h5 id="%E3%83%9D%E3%82%A4%E3%83%B3%E3%83%88">ポイント</h5>
+<ul>
+<li>空要素は終了タグが無い（書いてはいけない）</li>
+<li>上記の空要素をは抑えておく。</li>
+</ul>
+</div>
+<div id="s4" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>属性と属性値</h2>
+<p><a href="https://developer.mozilla.org/ja/docs/Learn/HTML/Introduction_to_HTML/Getting_started#Attributes" target="_blank" rel="noopener">属性</a></p>
+<p>属性は要素追加情報をセットします。属性の名前と属性値で構成されます。<br>必ず開始タグの中に書きます。<br>
+２つ以上の属性をセットする場合は半角のスペースで区切ります。</p>
+<h4>開始要素　属性付きの表記</h4>
+<ol>
+<li><kbd>&lt;</kbd></li>
+<li><kbd>開始タグ名</kbd></li>
+<li><kbd>半角スペース</kbd></li>
+<li><kbd>属性名</kbd></li>
+<li><kbd>イコール</kbd></li>
+<li><kbd>ダブルクオート（はじまり）</kbd></li>
+<li><kbd>属性値</kbd></li>
+<li><kbd>ダブルクオート（おわり）</kbd></li>
+<li><kbd>（次の属性があれば） 半角スペース</kbd></li>
+<li><kbd>&gt;</kbd></li>
+</ol>
+<p>の順番で並びます。<br>
+終了の&gt;や引用符内以外に余計なスペースや改行などの制御コードを入れないように書きます。</p>
+<p><img src="_images/_html/attr-1.png" alt="属性" class="img-fluid"></p>
+<p>正しい書き方の例</p>
+<pre class="line-numbers language-xml" data-src="prism.js"><code>&lt;img src=&quot;images/sample.png&quot; alt=&quot;サンプル画像&quot;&gt;
+
+&lt;a href=&quot;https://developer.mozilla.org/ja/docs/Learn/HTML/Introduction_to_HTML/Getting_started#Attributes&quot;&gt;属性の説明&lt;/a&gt;</code></pre>
+
+<h6>ポイント</h6>
+<ul>
+<li>開始タグの中に属性名と属性値</li>
+<li>属性名と属性値の間はイコールが入る</li>
+<li>属性値は引用符で囲まれる。</li>
+<li>開始タグと属性値の区切りは半角スペース</li>
+<li>属性値と次の属性名の間の区切りも半角スペース</li>
+</ul>
+<h3>属性と属性値種類</h3>
+<p>属性の種類についてかるく書きますが実際にタグを覚えながら属性も覚えていくのがいいとおもいます。
+辞書を引きつつセットでおぼえていってください。</p>
+<h4>必須属性</h4>
+<p>img要素のsrc属性（エスアールシー属性）やalt属性（オルト属性）a要素のhref属性（エイチレフ属性）
+など記述がないとタグの機能を発揮しない属性があります。
+属性値の値の書き方も含め要素を覚えると一緒にセットでおぼえましょう。</p>
+<h4>汎用属性(グローバル属性)</h4>
+<p>class属性やid属性title属性などほとんど要素にセットできる属性もあります。
+役割を理解して使用することでブラウザの機能をうまく利用することができます。</p>
+<h4>真偽値</h4>
+<p>真偽値とは「true」と[flse]　
+「ON」と「OFF」や　「正」と「偽」とほぼ同じ意味になります。
+HTML5になり真偽値系の属性は属性名を記述するだけでその値が「true」とブラウザが読み取るようにプログラミングされています。</p>
+<pre class="line-numbers language-xml" data-src="prism.js"><code>&lt;input type=&quot;button&quot; value=&quot;cant push&quot; disabled&gt;　
+&lt;input type=&quot;button&quot; value=&quot;can push&quot;&gt;</code></pre>
+<hr>
+</div>
+
+<!-- editable area end ########             -->
+</article>
+</div>
+<!-- /container-->
+
+<!-- / w-aside2 --->

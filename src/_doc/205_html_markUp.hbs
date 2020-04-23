@@ -1,0 +1,170 @@
+---
+title: HTML コンテンツモデル
+discription: discription
+cat: HTML
+next-page-url: "206_html_markUp.html"
+filename: 205_html_markUp.html
+prev-page-url: "204_html_markUp.html"
+titlename: "{{title.titlename}}"
+text: "{{item.text}}"
+text2: "{{item.text}}"
+---
+<div class="container mb-5">
+<article id="w-article">
+<!-- editable area ########             -->
+        <h1>{{title}} - {{cat}}</h1>
+        <p><span>category:</span> <span class="badge badge-primary">{{cat}}</span></p>
+        <hr>
+<!-- 序章 モジュール -->
+<div class="card mb-4">
+<div class="card-body clearfix">
+<p class="card-text">HTML5のコンテンツモデルは複雑ですが　その要素の役割を覚えればおのずと内包する要素がなんであるかをなやまなくてすむのではないでしょうか？
+ 試験などノーヒントで聞かれる場合を除いて初見の要素は必ず辞書を引いて何のための要素か？何が内包されるかを理解するだけでOKです。いざとなったらバリデーションサービスをつかいましょう。
+一度に覚えるのは大変ですのでざっくりとしたルールだけまず覚えましょう。</p>
+</div>
+</div>
+
+<!-- 目次 モジュール -->
+<div class="bg-light p-3 mb-4">
+<h2>目次</h2>
+<ul id="w-indexlistBox">
+    <li v-for="item in items" class="w-indexlistBox-list">
+      <a v-bind:href="item.id" data-scroll >{{text2}}</a>
+    </li>
+</ul>
+</div>
+<!-- /目次 モジュール -->
+
+!-- 本文のセクション モジュール -->
+<div id="s1" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>以前の要素のカテゴリーとHTML5のコンテンツモデル</h2>
+<p>以前は表示される用のタグはブロックレベル要素とインライン要素に分かれて整理されて解説されていました。
+HTML5になり新しい技術を取り込めるようにするため要素の種類の考え方が見直され、コンテンツモデルとよばれる要素の種類分けをするようになりました・また全ての要素がどれか一つにはいるのではなくそれぞれの要素の役割によって種別されているようです。</p>
+<blockquote class="blockquote">
+    <p><a href="https://webgoto.net/html5/" target="_blank" rel="noopener">HTML5 コンテンツモデル ガイド</a></p>
+</blockquote>
+</div>
+
+<div id="s2" class="mt-n6 pt-6 mb-6 clearfix">
+    <h2>（旧）インライン</h2>
+    <p>インラインとは文字列の行を意味します。行をマークアップし意味付けする要素をインライン要素と呼んでいました。</p>
+    <p>表示はCSS displayプロパティはinlineで文字列のように表示幅が詰まると改行します。</p>
+<div class="card mb-3">
+<h3 class="card-header h5">html4.01からつかわれていたインライン要素の代表例</h3>
+<div class="card-body">
+  <ul>
+    <li>span [インライン要素のグループ化]</li>
+    <li>strong [重要な言葉]</li>
+    <li>em [強調　強勢したい言葉]</li>
+    <li>img [画像の挿入]</li>
+    <li>br [強制改行]</li>
+    <li>cite [出典著者 出典著書 出典元]</li>
+    <li>small [細目 注釈 帰属 著作]</li>
+  </ul>
+<p>行のなかで一部の文字列をマークアップし意味付けするためにあります。</p>
+</div>
+</div>
+</div>
+
+<div id="s3" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>(旧)ブロックレベル</h2>
+<p>ブロックレベル要素はHTMLファイルの表示部分で高さと横幅の区域（長方形領域）を作りその区域に要素の意味を付加します。</p>
+<p>CSSのdispkayプロパティの値はBlockです。一般的な要素は横幅に指定がない場合、親要素と同じ幅をとります。高さは要素の内容の量にあわせます。CSSプロパティmargin border paddingの余白領域があります。</p>
+<div class="card mb-3">
+<h3 class="card-header h5">html4.01からつかわれていた要素の代表例</h3>
+<div class="card-body">
+<ul>
+<li>div [要素のグループ化]</li>
+<li>address [サイト運営者の連絡先]</li>
+<li>blockquote [引用]</li>
+<li>ol [順番リスト]</li>
+<li>ul [箇条書き]</li>
+<li>li [リスト項目]</li>
+<li>dl [定義リスト]</li>
+<li>dt [定義の文字]</li>
+<li>dd [定義された内容]</li>
+<li>p [段落]</li>
+<li>h1-h6 [見出し]</li>
+</ul>
+<p> などなど </p>
+</div>
+</div>
+
+<div id="s4" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>インライン要素にブロックレベル要素を含めることができません</h2>
+<p>要素のなかに入れる内容となる要素を子要素といいます。要素には内容となる要素がきめられています。要素が要素を含めることを内包と呼びます。
+ブロックレベル要素はそれぞれの役割で内包できる要素がきまっています。
+ul要素やol要素はli要素しかふくめることがでいません。
+このように決まっている要素はそれぞれおぼえればいいのですがその他の要素はどうしたらいいか？といううと単純に ブロックレベル要素はインラインレベル要素を内包できるが
+逆に<strong class="badge font-size-1 badge-primary">インライン要素はブロックレベル要素を内包出来ない</strong>とおぼておきましょう。</p>
+</div>
+
+<div id="s5" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>覚えておきたい要素の内包要素</h2>
+<h3>div要素はなんでも入る。</h3>
+<p>div要素はなんでも内包できます。この要素の役割はレイアウトや画面の区域を作るためにありとあらゆる要素をグループ化するためにあるます。</p>
+
+<h3>a 要素が変わった。</h3>
+<p>アンカー要素はHTML4.0の時はブロック要素を内包できませんでした。
+しかしHTML5ではトランスペアレントモデルになり親要素の見た目を継承します。アンカーをブロック要素にいれれるようになりました。</p>
+<pre class="line-numbers language-xml" data-src="prism.js"><code>&lt;!-- good  --&gt;
+&lt;a href=&quot;#&quot;&gt;
+  &lt;div&gt;リンクテキスト&lt;/div&gt;
+&lt;/a&gt;</code></pre>
+<h3>アンカータグの内容でしてはいけないもの</h3>
+  <p>子孫要素にアンカー要素を入れないようにしましょう。（2重リンク）</p>
+<pre class="line-numbers language-xml" data-src="prism.js"><code>
+&lt;!-- NG --&gt;
+&lt;a href=&quot;#&quot;&gt;
+&lt;div&gt;&lt;a href=&quot;#_#&quot;&gt;リンクテキスト&lt;/a&gt;&lt;/div&gt;
+&lt;/a&gt;
+</code></pre>
+</div>
+
+<div id="s6" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>HTML5におけるコンテンツモデル</h2>
+    <p>HTML5におけるコンテンツモデルはさまざまなサイトで解説されていますのでここでは簡単に解説しておきます。</p>
+    <table class="table table-bordered">
+    <tr>
+    <th scope="row">メタデータ・コンテンツ<br>（Metadata content）</th>
+    <td>文書情報や他の文書との関係を定義するもの</td>
+    <tr>
+    </tr>
+    <th scope="row">フロー・コンテンツ<br>（Flow content）</th>
+    <td>子孫にテキストなどを持つもの</td>
+    <tr>
+    </tr>
+    <th scope="row">セクショニング・コンテンツ<br>（Sectioning content）</th>
+    <td>見出しと概要を付けられるもの</td>
+    <tr>
+    </tr>
+    <th scope="row">ヘッディング・コンテンツ<br>（Heading content）</th>
+    <td>セクションの見出しとなるもの</td>
+    <tr>
+    </tr>
+    <th scope="row">フレージング・コンテンツ<br>（Phrasing content）</th>
+    <td>段落などの中に含まれる文節・語句など</td>
+    <tr>
+    </tr>
+    <th scope="row">エンベッディッド・コンテンツ<br>（Embedded content）</th>
+    <td>文書に他のリソースを埋め込むもの</td>
+    <tr>
+    </tr>
+    <th scope="row">インタラクティブ・コンテンツ<br>（Interactive content）</th>
+    <td>ユーザーによる操作に対応するもの</td>
+    </tr>
+    </table>
+    <blockquote>
+    <p><a href="http://www.htmq.com/html5/007.shtml" target="_blank" rel="noopener">HTML5における要素の分類（コンテンツ・モデル）</a></p>
+    </blockquote>
+    <h4>フィッシングや別のページに飛ばされないようにする。</h4>
+    <p><a href="https://developers.google.com/web/tools/lighthouse/audits/noopener?hl=ja" target="_blank" rel="noopener">サイトで rel=&quot;noopener&quot; を使用して外部アンカーを開く</a></p>
+</div>
+</div>
+
+<!-- editable area end ########             -->
+</article>
+</div>
+<!-- /container-->
+
+<!-- / w-aside2 --->

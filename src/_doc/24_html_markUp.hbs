@@ -1,0 +1,114 @@
+---
+title: W3C（ダブリュ３シー）について
+discription: discription
+cat: HTML
+next-page-url: "25_html_markUp.html"
+filename: 24_html_markUp.html
+prev-page-url: "23_html_markUp.html"
+titlename: "{{title.titlename}}"
+text: "{{item.text}}"
+text2: "{{item.text}}"
+---
+<div class="container mb-5">
+<article id="w-article">
+<!-- editable area ########             -->
+        <h1>{{title}} - {{cat}}</h1>
+        <p><span>category:</span> <span class="badge badge-primary">{{cat}}</span></p>
+        <hr>
+
+<!-- 序章 モジュール -->
+<div class="card mb-4">
+<div class="card-body">
+<p  class="card-text"><a href="https://www.w3.org/"  target="_blank" rel="noopener">World Wide Web Consortium (W3C)</a></p>
+<p><a href="https://www.w3.org/Consortium/Translation/Japanese" target="_blank" rel="noopener">W3Cの仕様書等の文書の日本語訳集</a></p>
+<p>ワールドワイドウェブソローシアムは
+インターネットとそのリソースの規格や標準化を勧告する団体です。デベロッパーにとって身近な部分では
+HTMLで使われる要素の役割やCSSのプロパティやバリューを草案から設計そして勧告したりする組織です。インターネットで情報がみれるのもこの団体のおかげです。</p>
+</div>
+</div>
+
+
+
+<!-- 目次 モジュール -->
+<div class="bg-light p-3 mb-4">
+<h2>目次</h2>
+<ul id="w-indexlistBox">
+    <li v-for="item in items" class="w-indexlistBox-list">
+      <a v-bind:href="item.id" data-scroll >{{text2}}</a>
+    </li>
+</ul>
+</div>
+<!-- / 目次 モジュール -->
+<div id="s1" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>W3Cミッション の役割</h2>
+<p><a href="https://www.w3.org/Consortium/mission">W3Cミッション</a></p>
+
+<p>各社が開発するインターネットブラウザ機能拡充、互換性や解釈の誤解をうまないようにしています。
+そのためユーザーやインターネット開発業者の不利益が防げるやくわりがあります。</p>
+<p>W3Cはすべてひとにインターネットにアクセスできるよう活動しています。
+アクセシビリティを重要視し、より多くの人で様々なデバイスでインターネットで情報がやり取りできるように活動しています</p>
+
+<div class="card">
+<div class="card-header">
+  <h3>w3c,ブラウザメーカー,デベロッパーの役割</h3>
+</div>
+<div class="card-body">
+<p><span class="badge badge-primary">W3C</span>はHTMLCSSの機能、記述方法などを設計標準化する。</p>
+<p><span class="badge badge-primary">ブラウザメーカー</span>はW3Cの勧告に沿った機能をブラウザに実装する。（努力をしている）</p>
+<p><span class="badge badge-primary">制作者</span>はW3Cの勧告あったにコーディングをしユーザーにwebsiteを公開する。</p>
+</div>
+</div>
+</div>
+
+<div id="s2" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>HTMLやCSSの仕様を正確に知るには</h2>
+<p>HTML&amp;CSSのリファレンスや仕様を確認する場合ここで確認するのが正確です。
+    またブラウザメーカ-のリファレンスなどもみなW3Cの勧告をもとに辞書などを作成しています。
+    講師に教わることの元はここにのっているとおもってください。</p>
+    <ul>
+    <li>HTMLやCSSはW3Cが決めている。</li>
+    <li>W3Cは世界のすべてのひとにインターネットで情報を享受できるように活動しています。</li>
+    </ul>
+    <p>英語を機械翻訳しても難解なので有志の方々が翻訳をされております。でもまだ専門用語が多くてわからないのは専門用語を理解するぐらいまでしらべてください。専門家になるためのハードルとおもってください。</p>
+    <h3 id="mdn">MDN</h3>
+    <h4>ブラウザメーカーのリファレンス</h4>
+    <ul><li>
+    <a href="https://developer.mozilla.org/ja/" target="_blank" rel="noopener">開発者による開発者のためのリソース。</a></li>
+    <li><a href="https://developer.mozilla.org/ja/docs/Learn" target="_blank" rel="noopener">Web 開発を学ぶ</a></li>
+    </ul>
+    <p>実際に疑問を解決したい時は
+    google検索からリンクされた各々の要素や使用例をみると作業が早いです。</p>
+    <p>検索キーワード例[HTML][a ][ mdn] など
+    </p>
+    </div>
+    <div id="s3" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>HTMLのルール違反を探す</h2>
+<p>頑張ってかいても間違いはでます。違反を探し出すwebサービス</p>
+    <h3>W3Cバリデーター</h3>
+  <p><a href="https://validator.w3.org/" target="_blank" rel="noopener"> Markup Validation Service</a></p>
+  <p>HTMLの文書の間違いを発見してくれるサービスただし英語で返答がくるので慣れが必要です。</p>
+  <p>タブで入力方法を選んで。送信するとバリデーションの結果をもらえます。</p>
+<h4>一定の品質を保つことが大切</h4>
+<p>このバリデーションはあくまで目安です。なかにはエラーや警告があっても仕方がない技術的な事象もあります。エラーがなくても見た目が変ということもあります。<br>
+  あくまでW3Cが決めたことを機械判定してエラーを検出してくれています。</p>
+<hr>
+</div>
+<div id="s4" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>世界中のwebサイトはW3Cに従順なのか？</h2>
+<div class="card">
+<div class="card-body">
+<p>W3Cは年単位で勧告されたものを含め言っている事が微妙に変わります。
+    特に新しいく実装されたりまだ協議中のタグなどは使い方を含め変更があります。
+    ブラウザ側も後方互換性を考えると廃止予定のタグも表示しなくてはならなかったりと非常に判断がつきづらいです。</p>
+    <p>結局安定してつかわれてきたタグや技術が主流だったりしますし、w3cがやブラウザメーカーが目指してきた理念や理屈なんかを理解しながらマークアップしてもらうとあまり大きな間違いのあるコーディングは避けれるれるのではないでしょうか？</p>
+    <p>ちょっと宗教じみていますが、w3cの理念を理解して意味をおもんばかれる努力をしなければいつまでたっても独りよがりで独善的なマークアップになります。<br>この業界は<strong class="badge badge-info">日々修正日々更新</strong>です。</p>
+</div>
+</div>
+</div>
+
+<!-- editable area end ########             -->
+</article>
+</div>
+<!-- /container-->
+
+<!-- / w-aside2 --->

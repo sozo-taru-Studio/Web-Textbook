@@ -1,0 +1,122 @@
+---
+title: 「<」「>」の中と外
+discription: discription
+cat: HTML
+next-page-url: "28_html_markUp.html"
+filename: 27_html_markUp.html
+prev-page-url: "26_html_markUp.html"
+titlename: "{{title.titlename}}"
+text: "{{item.text}}"
+text2: "{{item.text}}"
+---
+<div class="container mb-5">
+<article id="w-article">
+<!-- editable area ########             -->
+        <h1>{{title}} - {{cat}}</h1>
+        <p><span>category:</span> <span class="badge badge-primary">{{cat}}</span></p>
+        <hr>
+
+<!-- 序章 モジュール -->
+<div class="card mb-4">
+<div class="card-body">
+<p  class="card-text">「&lt;」「&gt;」のなかと外の役割を解説します。
+  <br>端的に言えば外が表示用　中がブラウザへの指示です。</p>
+<p>ダブルクオートとシングルクオート 空白「制御文字」の表示や扱いも解説しています。</p>
+</div>
+</div>
+
+<!-- 目次 モジュール -->
+<div class="bg-light p-3 mb-4">
+<h2>目次</h2>
+<ul id="w-indexlistBox">
+    <li v-for="item in items" class="w-indexlistBox-list">
+      <a v-bind:href="item.id" data-scroll >{{text2}}</a>
+    </li>
+</ul>
+</div>
+
+<!-- 本文のセクション モジュール -->
+<div id="s1" class="mt-n6 pt-6 mb-6 clearfix">
+
+<h2>「&lt;」「&gt;」の中と外</h2>
+<h3>「&lt;」「&gt;」の外</h3>
+<p>テキストなど生の文字列がはいります。ここはユーザーに見せるための文字列としてあつかわれます。
+また子要素としてまた要素の開始宣言が始まります。</p>
+<h3>「&lt;」「&gt;」の中</h3>
+<p>HTMLやXHTML XMLなどの表示データ形式は
+データとしてのプログラムの指示部分を冒頭を半角小なり<code>&amp;lt;</code>で始め<br>
+半角の大なり<code>&amp;gt;</code>でおわります</p>
+<p>表示されるためではなく要素が始まる宣言と終わりの宣言であるため中身の文字を機械的に処理します。表示のためのテキストとは判断しないわけです。</p>
+<p>例えばa要素はクリックすると遷移する仕組みをもっていますが、a要素の開始タグのなかに遷移するページの情報を保持してユーザーがクリックするのを待っています。<br>
+  a要素の内容はユーザーに表示されクリックされるリンクテキストとして装飾されるわけです。</p>
+<pre class="line-numbers language-xml" data-src="prism.js">
+<code>&lt;a href=&quot;#&quot;&gt;[表示用の文字列]&lt;/a&gt;
+</code></pre>
+<div class="alert-info p-4">
+<h5>ポイント</h5>
+<ul><li> 「&lt;」「&gt;」の中は機械がよむ情報。外は人に知らせる情報</li></ul>
+</div>
+</div>
+<hr>
+
+<div id="s2" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>半角スペースとタブ</h2>
+<h4>参考</h4>
+<blockquote class="blockquote">
+<p><a href="https://developer.mozilla.org/ja/docs/Learn/HTML/Introduction_to_HTML/Getting_started#Whitespace_in_HTML" target="_blank" rel="noopener">HTML 内の空白</a></p>
+</blockquote>
+<dl>
+  <dt>制御文字</dt>
+<dd>制御文字とはテキストエディターなどで文字を打つとき「改行」や「半角のスペース」「タブスペース」など日本語や英語などの言語で構造化するために必要な記号を制御文字といいます。</dd>
+</dl>
+<p>キャラクターデータ内では半角とタブは２つ以上入力しても１つとして表示されます。
+また改行コードも若干の空白を表示します。</p>
+<p>半角スペースはHTMLタグのセパレータとして使う部分以外は無視される。</p>
+<p>全角の空白は完全な空白の文字として扱われます</p>
+<p>タブはコードインデント以外はタブをつかわない。</p>
+<p>ポイント</p>
+<ul>
+<li>半角スペース　改行コード タブは内容だと半角スぺース一つ分の空白になる。</li>
+<li>全角スペースはただの文字</li>
+<li>タグのなかでは決められたところ以外半角スペースをいれない。改行もでるだけしない。</li>
+<li>コードインデント以外でTabをすかわない。</li>
+</ul>
+<h5>コードインデント（行送り）</h5>
+<p>コードインデントの数や種類はプロジェクトによりことなります。
+半角スペース4つ分もしくはタブ一つがよくみるインデントのルールです。
+決まったインデントのルールを守りましょう。
+コードを整理できるようテキストエディタの機能をつかいましょう。
+UPするサーバや使うCMSによりことなります。</p>
+</div>
+<div id="s3" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>ダブルクオートとシングルクオート</h2>
+<p>いわゆる引用符と呼ばれる部分の範囲を明示してくれるダブルクオートとシングルクオート</p>
+<p>HTMLでは属性値を属性にセットするときに使います。</p>
+<pre class="line-numbers language-xml" data-src="prism.js">&lt;a href=&quot;URL&quot;&gt;link-text&lt;/a&gt;</code></pre>
+<pre class="line-numbers language-xml" data-src="prism.js">
+&quot;&quot; OR '' </code></pre>
+<p>属性値に入力されるときに挟み込むダブルクオートとシングルクオートですが　基本的にペアになっていればどちらでもOKです。</p>
+<div class="card  alert-danger mb-4">
+<div clas="card-body">
+<h3>NG例</h3>
+<p>シングルクオートをダブルクォートはペアとして囲まれた範囲と認識されない。</p>
+<pre class="line-numbers language-xml" data-src="prism.js"><code>&lt;a href=&quot;#'&gt; link-text &lt;/a&gt;
+</code></pre></div>
+</div>
+<p>しかし後で勉強する「PHP」や「Javascript」の記述とごっちゃになるのでHTMLファイルレベルでは<em class="badge badge-primary font-size-1">ダブルクオート</em>で統一しています。</p>
+
+<div class="alert-info p-4">
+<h6>ポイント</h6>
+<ul>
+<li>HTML CSSでは引用符はダブルクオートにする。</li>
+<li>必ず始まりと終わりのダブルクオートを書かないといけません。</li>
+</ul>
+</div>
+</div>
+
+<!-- editable area end ########             -->
+</article>
+</div>
+<!-- /container-->
+
+<!-- / w-aside2 --->

@@ -1,0 +1,175 @@
+---
+title: メディアクエリー
+discription: discription
+cat: HTML
+next-page-url: "#"
+filename: 207_html_markUp.html
+prev-page-url: "205_html_markUp.html"
+titlename: "{{title.titlename}}"
+text: "{{item.text}}"
+text2: "{{item.text}}"
+---
+<div class="container mb-5">
+<article id="w-article">
+<!-- editable area ########             -->
+        <h1>{{title}} - {{cat}}</h1>
+        <p><span>category:</span> <span class="badge badge-primary">{{cat}}</span></p>
+        <hr>
+<!-- 序章 モジュール -->
+<div class="card mb-4">
+<div class="card-body clearfix">
+<p class="card-text">
+  HTMLとCSSでPCデバイスで見れるサイトをデザインつくれるようになったら スマートフォンやタブレットPCも同じソースで見れるサイトを作ってみましょう。</p>
+</div>
+
+</div>
+
+<!-- 目次 モジュール -->
+<div class="bg-light p-3 mb-4">
+<h2>目次</h2>
+<ul id="w-indexlistBox">
+    <li v-for="item in items" class="w-indexlistBox-list">
+      <a v-bind:href="item.id" data-scroll >{{text2}}</a>
+    </li>
+</ul>
+</div>
+<!-- /目次 モジュール -->
+
+<!-- 本文のセクション モジュール -->
+<div id="s4" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>レスポンシブルサイト</h2>
+<p>理想としては
+リクエストされるデバイスに問わず、同じ質の情報を提供できるサイト。　デバイスによって変更や修正調整の工数が少なくてすみたい。（無くてすむ。）とくに急に言われても困る。</p>
+<p>おもにメディアクエリー技術をつかったPCとSPの多様な大きさと解像度のスクリーンデバイスに対応したONEソースサイトのこと。</p>
+<p>内容の変更や修正があったとき。該当の場所を修正変更すればいいので工数が少なくてすむ。</p>
+<p>昔は　PC　ガラケー　スマートフォンと3元管理や2元管理で工数が多かった。</p>
+</div>
+<div id="s1" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>メディアクエリ-</h2>
+<div class="p-3 border border-dark">
+<p><a href="https://sole-color-blog.com/blog/71/">レスポンシブの基本、メディアクエリの書き方</a></p>
+<h3>media 属性と値</h3>
+<p>反映するメディアを限定できる。専用にできる。</p>
+<p>デバイスの違いで見た目を変更する。</p>
+<p>印刷とモニターと見た目を変更する。</p>
+<p>例えば 白の文字は印刷されない。背景色を設定しすぎてインクを多量に使う。
+などの理由で印刷はシンプルにしたい。ときにつかわれていました。</p>
+<p>スクリーンにのみ設定さる場合。</p>
+<pre class="line-numbers language-xml" data-src="prism.js"><code>
+&lt;link rel=&quot;stylesheet&quot; href=&quot;css/style.css&quot; media=&quot;screen&quot;&gt;
+</code></pre>
+<h4>用語説明</h4>
+<ul>
+  <li>sp : スマートフォン</li>
+  <li>pc : パーソナルコンピューター</li>
+</ul>
+</div>
+<hr>
+
+
+
+<h3>値</h3>
+<p>本来　媒体への切り替えでつかわれていた値</p>　
+<h4>媒体</h4>
+<ul>
+<li>screen（一般的ディスプレイ）、</li>
+<li>projection(プロジェクター)、</li>
+<li>(プリンタ)、<li>tv(テレビ)、<li>all(すべて)</li>
+</ul>
+<p>など</p>
+<p>CSS3からデバイスの横幅でCSSを切り替れるようになった。<br>
+リンクタグのmedia属性だけでなくCSS内での｛｝の中で分岐できるようになった。</p>
+<h4>デメリット</h4>
+<p>ブラウザはCSSをすべて解析する。なので捨てるCSSが増える。（デバイスによって関係のないCSSがある）</p>
+</div>
+<div id="s2" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>PCファースト</h2>
+<div class="card">
+<h5 class="card-header">例　PCファーストpcの幅を先にCSSで組みspは後で組む</h5>
+<div class="card-body">
+<p>max-width : XXX<br>
+XXX の幅までのスクリーンデバイスこのCSSが適応される。</p>
+<p>学生や練習にはとっつきやすい。</p>
+<pre class="line-numbers language-css" data-src="prism.js"><code>
+@media screen and (max-width: 1024px) {
+/* 1024pxまでの幅の場合に適応される */
+    body {
+        background-color:#2262D1;
+    }
+}
+</code></pre>
+</div>
+</div>
+</div>
+<div id="s3" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>spファースト</h2>
+<p>デバイスの通信環境からこちらが主流
+　spの幅を先にCSSで組み　PCは後で読む</p>
+<p>min-width : XXX
+XXX の幅からのスクリーンデバイスにCSSが適応される。</p>
+<div class="card">
+  <h5 class="card-header">spの幅を先にCSSで組みPCは後で組む</h5>
+<div class="card-body">
+<pre class="line-numbers language-css" data-src="prism.js"><code>
+@media screen and (min-width: 769px) {
+/* 769px (から)以上の幅の場合に適応される */
+    body {
+        background-color:#2262D1;
+    }
+}
+</code></pre>
+<p>アイフォンを中心にしたメディアクエリの分岐例</p>
+<pre class="line-numbers language-css" data-src="prism.js"><code>
+* iPhone 縦 */
+@media screen and (min-width:480px) {
+    /* for iPhone Landscape (iPhone 横) */
+}
+
+@media screen and (min-width:768px) and ( max-width:1024px) {
+    /* for iPad  */
+}
+
+@media screen and (min-width:1024px) {
+    /* for PC */
+}
+</code></pre>
+</div>
+</div>
+</div>
+
+<div id="s5" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>メタタグ viewport</h2>
+<pre class="line-numbers language-xml" data-src="prism.js"><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+</code></pre>
+<p>スマートフォンには描画モードの縮尺率にviewportとう設定があります。</p>
+<code>name=&quot;viewport&quot;
+</code>
+<p>iphoneのviewportは通常3/1に表示される。
+PCとスマートフォンのコンテンツの幅を変更させる1/1に表示されるようにセットしなおす。</p>
+<p>下記の記述はデバイスの幅と同じにする。</p>
+<code>width=device-width,</code>
+<p>ピッチしてスケールを大きくするあれを1（元の倍率）にする。</p>
+<code>initial-scale=1.0</code>
+<p>ビューポートの設定メタタグとcss メディアクエリ を設定して準備はOKです。</p>
+
+<h4>ここらへんにかいてください。</h4>
+<pre class="line-numbers language-xml" data-src="prism.js"><code>
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;jp&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+  &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+  &lt;title&gt; - &lt;/title&gt;
+&lt;/head&gt;
+</code></pre>
+
+
+</div>
+
+<!-- editable area end ########             -->
+</article>
+</div>
+<!-- /container-->
+
+<!-- / w-aside2 --->

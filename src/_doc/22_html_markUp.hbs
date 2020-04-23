@@ -1,0 +1,113 @@
+---
+title: HTMLファイル形式の構造
+discription: discription
+cat: HTML
+next-page-url: "23_html_markUp.html"
+filename: 22_html_markUp.html
+prev-page-url: "21_html_markUp.html"
+titlename: "{{title.titlename}}"
+text: "{{item.text}}"
+text2: "{{item.text}}"
+---
+<div class="container mb-5">
+<article id="w-article">
+<!-- editable area ########             -->
+        <h1>{{title}} - {{cat}}</h1>
+        <p><span>category:</span> <span class="badge badge-primary">{{cat}}</span></p>
+        <hr>
+
+<!-- 序章 モジュール -->
+<div class="card mb-4">
+<div class="card-body">
+<p  class="card-text">HTMLファイル形式の構造は以下の2つの文で構成されています。</p>
+  <ol>
+  <li>文書型宣言文</li>
+  <li>HTML要素 </li>
+</ol>
+  <p>大きく２つの構造になります。</p>
+  <p>たまごで例えるところの黄身と白身みたいな感じです。</p>
+<div class="alert alert-info">
+    <p>思った通りの表示や伝わりかたをさせるために必要なルールです。</p>
+</div>
+</div>
+</div>
+
+
+
+<!-- 目次 モジュール -->
+<div class="bg-light p-3 mb-4">
+<h2>目次</h2>
+<ul id="w-indexlistBox">
+    <li v-for="item in items" class="w-indexlistBox-list">
+      <a v-bind:href="item.id" data-scroll >{{text2}}</a>
+    </li>
+</ul>
+</div>
+<!-- / 目次 モジュール -->
+<!-- 本文のセクション モジュール -->
+<div id="s1" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>書型宣言文</h2>
+<p>Document Type Definition 文書定義型宣言</p>
+<p><a href="https://developer.mozilla.org/ja/docs/Glossary/DTD" target="_blank" rel="noopener">DTD</a></p>
+<blockquote class="blockquote">
+    <p>HTML において、 DOCTYPE はすべての文書の先頭に見られる &quot;&lt;!DOCTYPE html&gt;&quot; という必須の前置きです。その唯一の目的は、ブラウザーが文書をレンダリングするときにいわゆる「後方互換モード (quirks mode)」に切り替わるのを防ぐことです。つまり、 &quot;&lt;!DOCTYPE html&gt;&quot; という DOCTYPE は、ブラウザーがいくつかの仕様で互換性のない別のレンダリングモードを使用するのではなく、関連する仕様に従って最大限の努力を試みるようにします。</p>
+    </blockquote>
+    <p>レンダリング：とはデバイスがユーザーにむけて表現することです。</p>
+    <p>HTML文章はその発展の過程で様々なルールがありました。<br> HTML4.1,XHTML1.0などいまでもサーバーで配信されている文書はたくさんあります。<br>
+      モダンブラウザはその過去のルールでの表現も実装している場合があります。「後方互換モード」</p><p>DTD宣言はHTML要素がHTML5のルールで文書作成していることをブラウザにあらかじめ知らせます。指示されたブラウザはHTML5のレンダリングモードで文書をウィンドウに表現しようとします。 　（人が書くものだから間違いがあるのでその揺らぎを「表現しようとする。」という書き方になります。）</p>
+      <marquee>廃止された要素（marquee）が書かれていてもブラウザによっては表示されるよ。</marquee>
+    <h3>html5以降の宣言は以下に統一されました。</h3>
+    <div>
+      <pre class="line-numbers language-xml" data-src="prism.js"><code>&lt;!DOCTYPE html&gt;</code></pre>
+      </div>
+<h4>過去の文書型宣言とその仕様に詳しいサイト</h4>
+      <ul>
+  <li>
+  <a href="https://ja.wikipedia.org/wiki/%E6%96%87%E6%9B%B8%E5%9E%8B%E5%AE%A3%E8%A8%80" target="_blank" rel="noopener">文書型宣言 | wikipedia</a></li>
+</ul>
+<p>html5の記述ルールはXHTML1.0のルールをある程度継承しています。</p>
+<div class="card">
+<h4 class="card-header">HTMLの母体SGML と XML</h4>
+<div class="card-body">
+  <p>SGMLはHTMLを作る前に参考にされた言語でもともとは電子辞書のデータをマークアップするた言語でした。　電子辞書で扱う単語が数千万語を実際にタイピングしてデータ入力していたようで、終了タグの省略など辞書の電子化の工数を減らす目的でSGMLが設計されたようです。　その名残から終了タグの省略の文化がHTMLにも残っています。例えばli要素やp要素は終了タグが省略してもレンダリングに影響しにくい設計になっています。</p>
+  <p>一方XMLは機械のマニュアルを電子化し共有する目的で設計されました。いまでも様々なアプリケーションのデータリソースとして残っており、XML形式の言語は現役です。
+  XMLはプログラムがスムーズな処理ができるように設計されています。　そのため、SGMLのように処理に終了タグを省略できません。（要素の終了がプログラムに理解されない。要素の終了を監視しない）</p>
+  <p>厳密に書式ルールが決まっているため、伝搬や拡張性が高く多くのプログラムが利用しやすい利点があります。</p>
+  <p>反面データを書く人にとっては間違ったマークアップしないように学習と訓練が必要です。</p>
+  <p>HTMLはこの2つの親のマークアップ言語を持って発展してきました。</p>
+</div>
+</div>
+</div>
+
+<div id="s2" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>html要素</h2>
+<blockquote>
+<p><a href="https://developer.mozilla.org/ja/docs/Learn/HTML/Introduction_to_HTML/Getting_started" target="_blank" rel="noopener">HTML を始めよう</a>
+</p></blockquote>
+
+<p>HTMLファイルの本文です。</p>
+  <br>編集はすべてこのHTML要素内でおこなわれます。</p>
+  <div>
+<pre class="line-numbers language-xml" data-src="prism.js"><code>&lt;html&gt;[この部分を編集する。(内容が入る)]&lt;/html&gt;</code></pre>
+</div>
+  <p>文章を正しく表記させる記述文書がた宣言と表示内容であるHTML要素、この２つがHTMLファイルの大枠です。</p>
+<div class="card">
+  <div class="card-header">HTMLファイル大構造</div>
+<div class="card-body">
+<figure>
+<figcaption>どんなHTMLファイルもこの大枠の構造を持っている。</figcaption>
+<pre class="line-numbers language-xml" data-src="prism.js"><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;/html&gt;
+</code></pre>
+</figure>
+</div>
+</div>
+</div>
+
+<!-- editable area end ########             -->
+</article>
+</div>
+<!-- /container-->
+
+<!-- / w-aside2 --->

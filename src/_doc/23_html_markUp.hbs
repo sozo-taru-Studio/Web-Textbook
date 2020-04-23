@@ -1,0 +1,117 @@
+---
+title: HTMLを間違えずに書く方法
+discription: discription
+cat: HTML
+next-page-url: "24_html_markUp.html"
+filename: 23_html_markUp.html
+prev-page-url: "22_html_markUp.html"
+titlename: "{{title.titlename}}"
+text: "{{item.text}}"
+text2: "{{item.text}}"
+---
+<div class="container mb-5">
+<article id="w-article">
+<!-- editable area ########             -->
+        <h1>{{title}} - {{cat}}</h1>
+        <p><span>category:</span> <span class="badge badge-primary">{{cat}}</span></p>
+        <hr>
+
+<!-- 序章 モジュール -->
+<div class="card mb-4">
+<div class="card-body">
+<p  class="card-text">つかうエディターで多少の書き方がかわるという前提ですが<br>
+書かなければならない部分を<strong>忘れず必ず書く</strong><br>にはどうしたらいいかを主眼に私が教えられた記述方法を解説します。</p>
+<p>書き方の形、様式を覚えてからでいいので目をとうしてください。</p>
+</div>
+</div>
+
+
+<!-- 目次 モジュール -->
+<div class="bg-light p-3 mb-4">
+<h2>目次</h2>
+<ul id="w-indexlistBox">
+    <li v-for="item in items" class="w-indexlistBox-list">
+      <a v-bind:href="item.id" data-scroll >{{text2}}</a>
+    </li>
+</ul>
+</div>
+<!-- / 目次 モジュール -->
+<!-- 本文のセクション モジュール -->
+<div id="s1" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>HTMLの書き方</h2>
+<p>HTMLに限らず、プログラムは２つの記号や言葉がペアになって構文を構成することがおおいです。<br>
+    高機能なテキストエディターを使いだすとあまり気にならないTIPSかもしれませんが、コードの読み書きや間違いが解らない段階ではアシストなしのエディターで記述し間違いを探せるようになった方がおすすめです。<br>
+    従来の記述方法では右から左で記述していきますが、この対になることを意識して記述すると間違いがガクンと減ります。</p>
+
+<div class="card">
+<div class="card-header">
+  <h3>HTMLの場合タグ</h3>
+</div>
+<div class="card-body">
+<p>HTMLソースコードに対応するアシストがない場合書き方です。</p>
+  <h4 class="h6"><code>&lt;p&gt;</code>開始タグの場合キーボードの操作順番</h4>
+<ol>
+<li><kbd>&lt;</kbd></li>
+<li><kbd>&gt;</kbd></li>
+<li><kbd>←</kbd>カッコの中にカーソルを戻す</li>
+<li><kbd>p</kbd></li>
+</ol>
+<p>の順番書く</p>
+
+<h4 class="h6"><code>&lt;/p&gt;</code>終了タグの場合キーボードの操作順番</h4>
+<ol>
+<li><kbd>&lt;</kbd></li>
+<li><kbd>&gt;</kbd></li>
+<li><kbd>←</kbd>カッコの中にカーソルを戻す</li>
+<li><kbd>/</kbd></li>
+<li><kbd>p</kbd></li>
+</ol>
+<p>の順番書く</p>
+<p>アシストがついているエディターは<kbd>&lt;</kbd><kbd>/</kbd>を書いた段階で閉じタグが書かれます。</p>
+<p>
+  ただし　文章の途中で閉じタグを書き忘れいた場合、その忘れたタグがアシストされて書かれます。特によく書くdiv要素などは正しいか正しいアシストがわからないなど慣れが必要です。
+</p>
+</div>
+</div>
+
+<div class="card">
+    <div class="card-header">書き方の動画</div>
+  <div class="card-body">
+  <figure>
+  <figcaption>どんなHTMLファイルもこの大枠の構造を持っている。</figcaption>
+  </figure>
+  <p><img src="_images/_html/taagswork-2019_05_29-15_09_33.gif" alt="動画" class="img-fluid"><br>
+    使用エディタ　：　Visual Studio Code</p>
+</div>
+</div>
+
+<div class="card">
+    <div class="card-header">
+<h3>引用符の場合</h3></div>
+<div class="card-body">
+<h4 class="h5">属性がある開始タグ</h4>
+<p><code>&lt;a href="#"&gt;</code></p>
+<ol>
+  <li><kbd>&lt;</kbd></li>
+  <li><kbd>&gt;</kbd></li>
+  <li><kbd>←</kbd>(矢印キーで左カーソルを戻す)　</li>
+  <li><kbd>a</kbd></li>
+  <li><kbd> href= </kbd></li>
+  <li><kbd> &quot;</kbd></li>
+  <li><kbd> &quot;</kbd></li>
+  <li><kbd>←</kbd>(矢印キーで左カーソルを戻す)</li>
+  <li><kbd>#</kbd> （URLを記述） </li>
+</ol>
+<p>の順番で記述します。</p>
+<p>対になる記号　&lt;&gt; や　引用符　””　のペアをさきに書いて。マウスを使わず。矢印キーでカーソルを移動して入力する場所に移動します。</p>
+<p>この書き方を習慣にすることで<strong class="badge badge-primary" style="font-size: 1rem;">コードエラーを防ぎます。</strong></p>
+</div>
+</div>
+</div>
+
+<!-- editable area end ########             -->
+</article>
+</div>
+<!-- /container-->
+
+<!-- / w-aside2 --->

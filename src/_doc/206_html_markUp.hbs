@@ -1,0 +1,118 @@
+---
+title: float の 練習
+discription: discription
+cat: HTML
+next-page-url: "207_html_markUp.html"
+filename: 206_html_markUp.html
+prev-page-url: "205_html_markUp.html"
+titlename: "{{title.titlename}}"
+text: "{{item.text}}"
+text2: "{{item.text}}"
+---
+<div class="container mb-5">
+<article id="w-article">
+<!-- editable area ########             -->
+        <h1>{{title}} - {{cat}}</h1>
+        <p><span>category:</span> <span class="badge badge-primary">{{cat}}</span></p>
+        <hr>
+<!-- 序章 モジュール -->
+<div class="card mb-4">
+<div class="card-body clearfix">
+<p class="card-text">float の練習しましょう</p>
+</div>
+
+</div>
+
+<!-- 目次 モジュール -->
+<div class="bg-light p-3 mb-4">
+<h2>目次</h2>
+<ul id="w-indexlistBox">
+    <li v-for="item in items" class="w-indexlistBox-list">
+      <a v-bind:href="item.id" data-scroll >{{text2}}</a>
+    </li>
+</ul>
+</div>
+<!-- /目次 モジュール -->
+
+<!-- 本文のセクション モジュール -->
+<div id="s1" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>2カラムレイアウト</h2>
+<div class="p-3 border border-dark">
+<div class="float-left w-50 text-center border border-dark" style="background-color: #e7e7e7;">右 幅50% </div>
+<div class="float-right w-50 text-center border border-dark" style="background-color: #ee7777;">左 幅50% </div>
+<footer class="clearBoth border border-dark">clear</footer>
+</div>
+<hr>
+
+<h2>同じモジュールが2つ以上ならぶ。</h2>
+
+<div class="p-3 border border-dark">
+    <div class="float-left w-50">
+
+        <div class="p-2">
+            <div>
+              <img src="_images/_html/guitar_640.jpg" alt="" class="img-fluid">
+            </div>
+            <div class="p-3">
+              <h4>heading text</h4>
+              <p>text text text text text</p>
+            </div>
+          </div>
+
+    </div>
+    <div class="float-right w-50">
+
+      <div class="clearfix p-2">
+        <div>
+          <img src="_images/_html/guitar_640.jpg" alt="" class="img-fluid">
+        </div>
+        <div class="p-3">
+          <h4>heading text</h4>
+          <p>text text text text text</p>
+        </div>
+      </div>
+
+
+     </div>
+     <footer class="clearBoth border border-dark">clear</footer>
+
+    </div>
+
+    <h2>2カラムの入れ子</h2>
+
+<div class="p-3 border border-dark">
+    <div class="float-left w-50">
+
+        <div class="clearfix p-1 border border-dark">
+            <div class="w-50 float-left">
+              <img src="_images/_html/guitar_640.jpg" alt="" class="img-fluid">
+            </div>
+            <div class="w-50 float-left pl-3">
+              <h4>heading text</h4>
+              <p>text text text text text</p>
+            </div>
+          </div>
+
+    </div>
+    <div class="float-right w-50">
+
+      <div class="clearfix p-1 border border-dark">
+        <div class="w-50 float-left">
+          <img src="_images/_html/guitar_640.jpg" alt="" class="img-fluid">
+           </div>
+        <div class="w-50 float-left pl-3">
+          <h4>heading text</h4>
+          <p>text text text text text</p>
+        </div>
+      </div>
+     </div>
+     <footer class="clearBoth border border-dark">clear</footer>
+    </div>
+</div>
+
+<!-- editable area end ########             -->
+</article>
+</div>
+<!-- /container-->
+
+<!-- / w-aside2 --->

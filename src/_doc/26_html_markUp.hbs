@@ -1,0 +1,86 @@
+---
+title: 要素辞書の見方
+discription: discription
+cat: HTML
+next-page-url: "27_html_markUp.html"
+filename: 26_html_markUp.html
+prev-page-url: "25_html_markUp.html"
+titlename: "{{title.titlename}}"
+text: "{{item.text}}"
+text2: "{{item.text}}"
+---
+<div class="container mb-5">
+<article id="w-article">
+<!-- editable area ########             -->
+        <h1>{{title}} - {{cat}}</h1>
+        <p><span>category:</span> <span class="badge badge-primary">{{cat}}</span></p>
+        <hr>
+
+<!-- 序章 モジュール -->
+<!-- 序章 モジュール -->
+<div class="card mb-4">
+<div class="card-body">
+<p  class="card-text">HTMLタグを勉強するときwebで辞書をひきます。</p>
+<p>要素辞書サイト数々ありますがお勧めのサイトはMDNです。</p>
+<p>'MDN,HTML,要素名' この３つのキーワードでGoogle検索だとMDNさんの辞書にたどりつけます。</p>
+</div>
+</div>
+
+<!-- 目次 モジュール -->
+<div class="bg-light p-3 mb-4">
+<h2>目次</h2>
+<ul id="w-indexlistBox">
+    <li v-for="item in items" class="w-indexlistBox-list">
+      <a v-bind:href="item.id" data-scroll >{{text2}}</a>
+    </li>
+</ul>
+</div>
+
+<!-- 本文のセクション モジュール -->
+<div id="s1" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>MDN(Mozilla Developer Network )</h2>
+<p>MDN(Mozilla Developer Network )をなぜすすめるのか？</p>
+<p>ブラウザfireFoxのメーカーであり
+GoogleChrme,Edgeのタグリファレンスをまかされている会社だからです。
+日本語化も進み,専門用語もおおく難解ではありますがW3Cを翻訳してくれています。</p>
+<blockquote class="blockquote"><a href="https://developer.mozilla.org/ja/docs/Web/HTML/Element/p" target="_blank" rel="noopener noreferrer">p要素
+</a>
+</blockquote>
+<div class="card">
+<div class="card-header">
+<h3>辞書で抑える項目</h3>
+</div>
+<div class="card-body">
+    <h4>終了タグ省略可</h4>
+<p>要素によっては終了タグを省略可能な場合があります。<br>
+ブラウザの仕様上省略されたばあい終了部分を予測して要素を確定しますが。<strong>明示的に制作者が終了タグを明記するべき</strong>です。</p>
+<h4>内容の制限</h4>
+
+<p>要素によっては内容になるコンテンツモデルがきまっています。コードエラーを起こさないためにも要素ごとに何がいれれるのかを理解してマークアップします。
+<em>これができないと仕事になりません。</em></p>
+<p>コンテンツモデルとは要素の分類（種類）です。
+詳しくは後ほど。</p>
+
+<h4>勧告段階</h4>
+<p>要素や属性がW3Cでどの審議ステータスにあるかを知ることができます。
+勧告済みが最終です。</p>
+<h4>実装ブラウザ</h4>
+<p>要素によっては審議中やメーカーが重視せず未実装の要素などもあります。
+実装されてからの勉強になります。</p>
+<h4>使い方の見本コード</h4>
+<p>コードの見本がありますので使い方の具体的な確認ができます。</p>
+<h4>必須属性</h4>
+<p>アンカー要素のような要素の役割によっては属性が必ず必要になります。
+なにが必要かだけは押さえておきましょう。</p>
+</div></div>
+
+
+
+</div>
+
+<!-- editable area end ########             -->
+</article>
+</div>
+<!-- /container-->
+
+<!-- / w-aside2 --->

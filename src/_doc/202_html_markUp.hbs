@@ -1,0 +1,497 @@
+---
+title: table の属性
+discription: discription
+cat: HTML
+next-page-url: "203_html_markUp.html"
+filename: 202_html_markUp.html
+prev-page-url: "201_html_markUp.html"
+titlename: "{{title.titlename}}"
+text: "{{item.text}}"
+text2: "{{item.text}}"
+---
+<div class="container mb-5">
+<article id="w-article">
+<!-- editable area ########             -->
+        <h1>{{title}} - {{cat}}</h1>
+        <p><span>category:</span> <span class="badge badge-primary">{{cat}}</span></p>
+        <hr>
+<!-- 序章 モジュール -->
+<div class="card mb-4">
+<div class="card-body">
+<p  class="card-text">
+このページは表を構成する要素やCSSのプロパティを解説しています。基本的な要素の買い方やCSSの学習がすんだ方にむけて書いています。<br>
+表をデザインするにあたって複雑なデザインのオプションを確認しましょう。</p>
+</div>
+</div>
+
+<!-- 目次 モジュール -->
+<div class="bg-light p-3 mb-4">
+<h2>目次</h2>
+<ul id="w-indexlistBox">
+    <li v-for="item in items" class="w-indexlistBox-list">
+      <a v-bind:href="item.id" data-scroll >{{text2}}</a>
+    </li>
+</ul>
+</div>
+<!-- /目次 モジュール -->
+
+<!-- 本文のセクション モジュール -->
+<div id="s1" class="mt-n6 pt-6 mb-6 clearfix">
+    <h2>表タグ</h2>
+  <div class="card mb-3">
+  <div class="card-body">
+    <h3>表タグ確認します。</h3>
+<p>おさらい</p>
+<pre class="line-numbers language-xml" data-src="prism.js"><code>&lt;table class=&quot;table&quot;&gt;
+&lt;/table&gt;
+</code></pre>
+<p>表を構成する最低限の表タグ構成</p>
+
+<pre class="line-numbers language-xml" data-src="prism.js"><code>&lt;table class=&quot;table&quot;&gt;
+&lt;caption&gt;表の表題&lt;/caption&gt;
+&lt;tr&gt;
+  &lt;th&gt;表の見出し&lt;/th&gt;
+  &lt;td&gt;表のデータ&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+</code></pre>
+<h5>プレビュー</h5>
+<div>
+    <table class="table table-bordered">
+      <tr>
+        <th>表の見出し</th>
+        <td>表のデータ</td>
+      </tr>
+      </table>
+</div>
+
+  </div></div>
+</div>
+
+<div id="s2" class="mt-n6 pt-6 mb-6 clearfix">
+  <h2>thの属性 scope</h2>
+
+  <pre class="line-numbers language-xml" data-src="prism.js"><code>
+      &lt;table class=&quot;table&quot;&gt;
+      &lt;caption&gt;8月21日 決勝&lt;/caption&gt;
+      &lt;tr&gt;
+        &lt;th scope=&quot;col&quot;&gt;チーム&lt;/th&gt;
+        &lt;th scope=&quot;col&quot;&gt;1&lt;/th&gt;
+        &lt;th scope=&quot;col&quot;&gt;2&lt;/th&gt;
+        &lt;th scope=&quot;col&quot;&gt;3&lt;/th&gt;
+        &lt;th scope=&quot;col&quot;&gt;4&lt;/th&gt;
+        &lt;th scope=&quot;col&quot;&gt;5&lt;/th&gt;
+        &lt;th scope=&quot;col&quot;&gt;6&lt;/th&gt;
+        &lt;th scope=&quot;col&quot;&gt;7&lt;/th&gt;
+        &lt;th scope=&quot;col&quot;&gt;8&lt;/th&gt;
+        &lt;th scope=&quot;col&quot;&gt;9&lt;/th&gt;
+        &lt;th scope=&quot;col&quot;&gt;R&lt;/th&gt;
+        &lt;th scope=&quot;col&quot;&gt;H&lt;/th&gt;
+        &lt;th scope=&quot;col&quot;&gt;E&lt;/th&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;th scope=&quot;row&quot;&gt;金足農業&lt;/th&gt;
+        &lt;td&gt;0&lt;/td&gt;
+        &lt;td&gt;0&lt;/td&gt;
+        &lt;td&gt;1&lt;/td&gt;
+        &lt;td&gt;0&lt;/td&gt;
+        &lt;td&gt;0&lt;/td&gt;
+        &lt;td&gt;0&lt;/td&gt;
+        &lt;td&gt;1&lt;/td&gt;
+        &lt;td&gt;0&lt;/td&gt;
+        &lt;td&gt;0&lt;/td&gt;
+        &lt;td&gt;2&lt;/td&gt;
+        &lt;td&gt;5&lt;/td&gt;
+        &lt;td&gt;1&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;th scope=&quot;row&quot;&gt;大阪桐蔭&lt;/th&gt;
+        &lt;td&gt;3&lt;/td&gt;
+        &lt;td&gt;0&lt;/td&gt;
+        &lt;td&gt;0&lt;/td&gt;
+        &lt;td&gt;3&lt;/td&gt;
+        &lt;td&gt;6&lt;/td&gt;
+        &lt;td&gt;0&lt;/td&gt;
+        &lt;td&gt;1&lt;/td&gt;
+        &lt;td&gt;0&lt;/td&gt;
+        &lt;td&gt;X&lt;/td&gt;
+        &lt;td&gt;13&lt;/td&gt;
+        &lt;td&gt;15&lt;/td&gt;
+        &lt;td&gt;0&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;/table&gt;
+  </code></pre>
+  <div class="card mb-3">
+    <h3 class="body-header h5">プレビュー</h3>
+    <div class="card-body">
+        <div class="table-responsive">
+        <table class="table table-bordered">
+            <caption>8月21日 決勝</caption>
+            <tr>
+              <th scope="col">チーム</th>
+              <th scope="col">1</th>
+              <th scope="col">2</th>
+              <th scope="col">3</th>
+              <th scope="col">4</th>
+              <th scope="col">5</th>
+              <th scope="col">6</th>
+              <th scope="col">7</th>
+              <th scope="col">8</th>
+              <th scope="col">9</th>
+              <th scope="col">R</th>
+              <th scope="col">H</th>
+              <th scope="col">E</th>
+            </tr>
+            <tr>
+              <th scope="row">金足農業</th>
+              <td>0</td>
+              <td>0</td>
+              <td>1</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>1</td>
+              <td>0</td>
+              <td>0</td>
+              <td>2</td>
+              <td>5</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <th scope="row">大阪桐蔭</th>
+              <td>3</td>
+              <td>0</td>
+              <td>0</td>
+              <td>3</td>
+              <td>6</td>
+              <td>0</td>
+              <td>1</td>
+              <td>0</td>
+              <td>X</td>
+              <td>13</td>
+              <td>15</td>
+              <td>0</td>
+            </tr>
+            </table>
+        </div>
+</div></div>
+  <p>thは表のラベルで変化するデータがなんなのかを総称する言葉をいれる。
+      tdはテーブルデータで情報をいれる。</p>
+      <p>scopeはデータの読む方向を指定する属性です。
+      colは列、表の縦方向に関連づけしていきます。
+      rowは行、表の横方向の関連付けをします。</p>
+      <p>人間は表を見るだけで表をどの方向でみるか　なんの表なのか　
+      初めて見た表でもしばらくながめていればわかるとおもいます。</p>
+      <p>しかし　見る情報以外でこの情報を伝達する場合　または音声だけで伝える場合scope属性
+      がないとどちらに読んでいいのか解らないことになります。</p>
+      <p>アクセシビリティの観点では重要な属性です。</p>
+      <p>参考 :</p>
+      <p><a href="https://developer.mozilla.org/ja/docs/Web/HTML/Element/th" target="_blank" rel="noopener">th | MDN</a></p>
+</div>
+<div id="s3" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>colspan属性とrowspan属性</h2>
+<div class="mb-4">
+<pre class="line-numbers language-xml" data-src="prism.js"><code>&lt;table class=&quot;table&quot;&gt;
+    &lt;caption&gt;4*4&lt;/caption&gt;
+    &lt;tr&gt;
+      &lt;th scope=&quot;col&quot;&gt;10&lt;/th&gt;
+      &lt;th scope=&quot;col&quot;&gt;11&lt;/th&gt;
+      &lt;th scope=&quot;col&quot;&gt;12&lt;/th&gt;
+      &lt;th scope=&quot;col&quot;&gt;13&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;20&lt;/th&gt;
+      &lt;td&gt;21&lt;/td&gt;
+      &lt;td&gt;23&lt;/td&gt;
+      &lt;td&gt;24&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;30&lt;/th&gt;
+      &lt;td&gt;31&lt;/td&gt;
+      &lt;td&gt;32&lt;/td&gt;
+    &lt;td&gt;33&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;40&lt;/th&gt;
+      &lt;td&gt;41&lt;/td&gt;
+      &lt;td&gt;42&lt;/td&gt;
+      &lt;td&gt;43&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+</code></pre>
+</div>
+
+<div class="card mb-3">
+    <h3 class="body-header h5">プレビュー</h3>
+    <div class="card-body">
+<div class="table-responsive">
+<table class="table table-bordered table-striped">
+    <caption>4*4</caption>
+    <tr>
+      <th scope="col">10</th>
+      <th scope="col">11</th>
+      <th scope="col">12</th>
+      <th scope="col">13</th>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>21</td>
+      <td>23</td>
+      <td>24</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>31</td>
+      <td>32</td>
+    <td>33</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>41</td>
+      <td>42</td>
+      <td>43</td>
+    </tr>
+</table>
+</div>
+</div>
+</div>
+<div>
+<pre class="line-numbers language-xml" data-src="prism.js"><code>
+    &lt;table class=&quot;table&quot;&gt;
+    &lt;caption&gt;4*4&lt;/caption&gt;
+    &lt;tr&gt;
+      &lt;th scope=&quot;col&quot; colspan=&quot;4&quot;&gt;10&lt;/th&gt;
+     /tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;20&lt;/th&gt;
+      &lt;td&gt;21&lt;/td&gt;
+      &lt;td&gt;23&lt;/td&gt;
+      &lt;td&gt;24&lt;/td&gt;
+     /tr&gt;
+    &lt;tr&gt;
+      &lt;th rowspan=&quot;2&quot;&gt;30&lt;/th&gt;
+      &lt;td&gt;31&lt;/td&gt;
+      &lt;td&gt;32&lt;/td&gt;
+      &lt;td&gt;33&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;41&lt;/td&gt;
+      &lt;td&gt;42&lt;/td&gt;
+      &lt;td&gt;43&lt;/td&gt;
+     /tr&gt;
+    &lt;/table&gt;
+</code></pre>
+</div>
+
+<div class="card mb-3">
+  <h3 class="body-header h5">プレビュー</h3>
+<div class="card-body">
+<div class="table-responsive">
+<table class="table table-bordered table-striped">
+    <caption>4*4</caption>
+    <tr>
+      <th scope="col" colspan="4">10</th>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>21</td>
+      <td>23</td>
+      <td>24</td>
+    </tr>
+    <tr>
+      <th rowspan="2">30</th>
+      <td>31</td>
+      <td>32</td>
+      <td>33</td>
+    </tr>
+    <tr>
+      <td>41</td>
+      <td>42</td>
+      <td>43</td>
+    </tr>
+    </table>
+</div>
+</div>
+</div>
+  <h3>colspan属性 左右でドッキング</h3>
+  <p>初期値は1　セル横軸同士でをドッキングさせる　2以上が入るとセル縦軸で2つをドッキングさせる。その分該当する要素を減らさないといけない。
+      左右でドッキング</p>
+<figure><figcaption>処理前</figcaption>
+<pre class="line-numbers language-xml" data-src="prism.js"><code>&lt;tr&gt;
+  &lt;th&quot;&gt;10&lt;/th&gt;
+  &lt;th&quot;&gt;11&lt;/th&gt;
+&lt;/tr&gt;
+</code></pre></figure>
+<p>colspan2の場合　隣のtrをさせる削除しないといけない。</p>
+<figure><figcaption>処理後</figcaption>
+<pre class="line-numbers language-xml" data-src="prism.js"><code>&lt;tr&gt;
+  &lt;th&quot; colspan=&quot;2&quot;&gt;10&lt;/th&gt;
+&lt;/tr&gt;
+</code></pre>
+</figure>
+        <h3>rowspan属性 上下でドッキング</h3>
+        <p>初期値は1　セル縦軸同士でをドッキングさせる　2以上が入るとセル縦軸で2つをドッキングさせる。その分該当する要素を減らさないといけない。</p>
+<figure><figcaption>処理前</figcaption>
+<pre class="line-numbers language-xml" data-src="prism.js"><code>&lt;tr&gt;
+  &lt;th&quot;&gt;10&lt;/th&gt;
+  &lt;th&quot;&gt;11&lt;/th&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td&quot;&gt;20&lt;/td&gt;
+  &lt;td&quot;&gt;21&lt;/td&gt;
+&lt;/tr&gt;
+</code></pre>
+</figure>
+<p>rowspanは2の場合　下のtdを削除しないといけない。</p>
+<figure><figcaption>処理前</figcaption>
+<pre class="line-numbers language-xml" data-src="prism.js"><code>&lt;tr&gt;
+  &lt;th&quot; rowspan=&quot;2&quot;&gt;10&lt;/th&gt;
+  &lt;th&quot;&gt;11&lt;/th&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td&quot;&gt;21&lt;/td&gt;
+&lt;/tr&gt;
+</code></pre>
+</figure>
+<p>セルを消し忘れるとセルがはみ出るよ。</p>
+        <p><a href="https://developer.mozilla.org/ja/docs/Web/HTML/Element/td" target="_blank" rel="noopener">表データセル要素 |MDN</a></p>
+</div>
+<div id="s4" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>CSS border-collapseプロパティ</h2>
+  <p>CSS の border-collapse プロパティは、 &lt;table&gt; の中のセルが境界線を共有するか分離するかを設定します。<br>
+  <a href="https://developer.mozilla.org/ja/docs/Web/CSS/border-collapse" target="_blank" rel="noopener">border-collapse|MDN </a>このページでは
+  テーブルの特殊なborderプロパティの制御について分かりやすい図で解説しています。表の罫線をセル毎に変化させたい場合は参考にしてください。</p>
+<pre class="line-numbers language-xml" data-src="prism.js"><code>border-collapse:collapse;/* 共有 */
+border-collapse:separate;/* 分かれる */</code></pre>
+
+<div class="card mb-3">
+  <h3 class="body-header h5">プレビュー</h3>
+<div class="card-body bg-secondary">
+  <div class="table-responsive">
+<style>
+.table-mytable tr th,.table-mytable tr td {
+    border-color:#f0f0f0;
+}
+</style>
+    <table class="table table-bordered table-striped table-sm table-dark table-mytable">
+    <caption>ボーダコラプス</caption>
+    <tr>
+      <th scope="col" colspan="4">ボーダコラプス</th>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>21</td>
+      <td>23</td>
+      <td>24</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>31</td>
+      <td>32</td>
+      <td>33</td>
+    </tr>
+    <tr>
+        <td>40</td>
+      <td>41</td>
+      <td>42</td>
+      <td>43</td>
+    </tr>
+    </table>
+</div>
+<div class="table-responsive">
+  <style>
+  .table-mytable tr th,.table-mytable tr td {
+ border-color:#f0f0f0;
+  }
+  </style>
+  <table class="table table-bordered table-striped table-sm table-dark table-mytable" style="border-collapse:separate;">
+        <caption>ボーダセパレート</caption>
+        <tr>
+          <th scope="col" colspan="4">ボーダセパレート（通常表示）</th>
+        </tr>
+        <tr>
+          <th>20</th>
+          <td>21</td>
+          <td>23</td>
+          <td>24</td>
+        </tr>
+        <tr>
+          <th>30</th>
+          <td>31</td>
+          <td>32</td>
+          <td>33</td>
+        </tr>
+        <tr>
+            <td>40</td>
+          <td>41</td>
+          <td>42</td>
+          <td>43</td>
+        </tr>
+        </table>
+    </div>
+
+</div>
+</div>
+
+</div>
+
+
+
+
+
+<div id="s5" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>CSS border-spacingプロパティ</h2>
+  <p>CSS の border-spacing プロパティは、 &lt;table&gt; における隣り合うセルの枠線同士の間隔を定めます。<br>このプロパティは border-collapse が separate のときのみ適用されます。<br>
+  <a href="https://developer.mozilla.org/ja/docs/Web/CSS/border-spacing" target="_blank" rel="noopener">border-spacing</a></p>
+<div class="card mb-3">
+  <h3 class="body-header h5">プレビュー</h3>
+<div class="card-body bg-secondary">
+  <div class="table-responsive">
+<style>
+.table-mytable tr th,.table-mytable tr td {
+    border-color:#f0f0f0;
+}
+</style>
+<div class="table-responsive">
+  <style>
+  .table-mytable tr th,.table-mytable tr td {
+ border-color:#f0f0f0;
+  }
+  </style>
+  <table class="table table-bordered table-striped table-sm table-dark table-mytable" style="border-collapse:separate; border-spacing:.5rem;">
+        <caption>ボーダセパレート</caption>
+        <tr>
+          <th scope="col" colspan="4">ボーダセパレート（通常表示）</th>
+        </tr>
+        <tr>
+          <th>20</th>
+          <td>21</td>
+          <td>23</td>
+          <td>24</td>
+        </tr>
+        <tr>
+          <th>30</th>
+          <td>31</td>
+          <td>32</td>
+          <td>33</td>
+        </tr>
+        <tr>
+            <td>40</td>
+          <td>41</td>
+          <td>42</td>
+          <td>43</td>
+        </tr>
+        </table>
+    </div>
+
+</div>
+</div>
+
+
+</div>
+<!-- editable area end ########             -->
+</article>
+</div>
+<!-- /container-->
+
+<!-- / w-aside2 --->

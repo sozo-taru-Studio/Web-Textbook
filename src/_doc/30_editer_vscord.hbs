@@ -1,0 +1,64 @@
+---
+title: Visual Studio Code
+discription: discription
+cat: Editer
+next-page-url: "#"
+filename: 30_editer_vscord.html
+prev-page-url: "#"
+titlename: "{{title.titlename}}"
+text: "{{item.text}}"
+text2: "{{item.text}}"
+---
+<div class="container mb-5">
+<article id="w-article">
+<!-- editable area ########             -->
+        <h1>{{title}} - {{cat}}</h1>
+        <p><span>category:</span> <span class="badge badge-primary">{{cat}}</span></p>
+        <hr>
+<!-- 序章 モジュール -->
+<div class="card mb-4">
+<div class="card-body">
+<p  class="card-text">Visual Studio Code</p>
+<div class="alert alert-info">
+      <p>マイクロソフトが作ったエンドユーザー向けのソフトウエアで、ほんと久々に使いやすいとおもった。（こなみ）</p>
+</div>
+</div>
+</div>
+<!-- 目次 モジュール -->
+<div class="bg-light p-3 mb-4">
+<h2>目次</h2>
+<ul id="w-indexlistBox">
+    <li v-for="item in items" class="w-indexlistBox-list">
+      <a v-bind:href="item.id" data-scroll >{{text2}}</a>
+    </li>
+</ul>
+</div>
+<!-- /目次 モジュール -->
+
+<!-- 本文のセクション モジュール -->
+    <div id="s1" class="mt-n6 pt-6 mb-6 clearfix">
+
+        <h2>Visual Studio Code [vsCode]</h2>
+        <a href="https://azure.microsoft.com/ja-jp/products/visual-studio-code/" target="_blank" rel="noopener">配布サイト</a>
+
+<h2>日本語で使いたい場合のプラグイン</h2>
+<ul>
+  <li><a href="https://qiita.com/ntkgcj/items/e77331932c7983dea830" target="_blank" rel="noopener">Visual Studio Code [vsCode] 日本語化</a></li>
+  <li><a href="https://qiita.com/satokaz/items/cb45d82f6f8f1e24c0d6" target="_blank" rel="noopener">VS Code でドキュメントの空白文字を見やすくしてみる</a></li>
+</ul>
+<p>そのほかいろいろためしたいでしょうけど　HTMLの更新　作成業務では上記のプラグインがあれば十分に使えると感じました。</p>
+
+<p>学習が進んでHTMLやCSSを読み書きできるようになってからさらに便利なプラグインをいれてください。</p>
+<p><small>ソフトウエアのダウンロードやその後にソフトを使っている障害や損害についての責任は負いかねます。
+</small></p>
+<p> こまかな初期設定。
+<a href="https://www.off-soft.net/ja/software/develop2/visual-studio-code-preuse-settings.html#visual_studio_code_12" target="_blank" rel="noopener" rel="noopener">Visual Studio Code を使う前に最初にやっておきたいこと</a>
+</p>
+</div>
+
+<!-- editable area end ########             -->
+</article>
+</div>
+<!-- /container-->
+
+<!-- / w-aside2 --->
