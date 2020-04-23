@@ -1,10 +1,13 @@
 ---
-title: flex レイアウト 基礎 2
+title: flex レイアウト 1
 discription: discription
-cat: css
-next-page-url: 41_css_code.html
-prev-page-url: 403_css_code.html
+cat: CSS
+next-page-url: "404_css_code.html"
+filename: 403_css_code.html
+prev-page-url: "402_css_code.html"
 titlename: "{{title.titlename}}"
+text: "{{item.text}}"
+text2: "{{item.text}}"
 ---
 <div class="container mb-5">
 <article id="w-article">
@@ -15,217 +18,315 @@ titlename: "{{title.titlename}}"
 <!-- 序章 モジュール -->
 <div class="card mb-4">
 <div class="card-body clearfix">
-  <p class="card-text">フレックスレイアウトに支配されているアイテムボックスの制御</p>
-  <p>親要素に display: flex; が指定されていないと動作しないので注意しましょう。</p>
-  <p><a href="https://www.webcreatorbox.com/tech/css-flexbox-cheat-sheet" target="_blank">日本語対応！CSS Flexboxのチートシートを作ったので配布します</a></p>
+  <p class="card-text">flex boxはFlexible Box Layout Moduleのことで従来のレイアウトより柔軟にレイアウトが組める、displayプロパティのです。</p>
+    <p>新規でサイトを組む場合flex で組んだほうがよういでしょう。floatでレイアウトを組むよりもより簡単で、習得すれは多くのレイアウトをこのFlexレイアウトで組むことができるようになるでしょう。</p>
 </div>
 </div>
 
 <!-- 目次 モジュール -->
 <div class="bg-light p-3 mb-4">
 <h2>目次</h2>
-<ul>
-    <li><a href="#s1" data-scroll>order … 順序の指定</a></li>
-    <li><a href="#s2" data-scroll>flex-grow … 子要素の伸びる比率</a></li>
-    <li><a href="#s3" data-scroll>flex-shrink … 子要素の縮む比率</a></li>
-    <li><a href="#s4" data-scroll>flex-basis … 子要素のベースとなる幅の指定</a></li>
-    <li><a href="#s5" data-scroll>align-self … 子要素の垂直方向の揃え</a></li>
+<ul id="w-indexlistBox">
+    <li v-for="item in items" class="w-indexlistBox-list">
+      <a v-bind:href="item.id" data-scroll >{{text2}}</a>
+    </li>
 </ul>
 </div>
-<!-- / 目次 モジュール -->
-<!-- 本文のセクション モジュール -->
+<!-- /目次 モジュール -->
+
+<!-- 本文のセクション モジュール --><!-- 本文のセクション モジュール -->
 <div id="s1" class="mt-n6 pt-6 mb-6 clearfix">
-<h2>order … 順序の指定</h2>
-<p>通常子要素はHTMLの記述順に配置されますが、order プロパティーを使えば任意の順で並べ替えられます。</p>
-<h4>orderで使える値</h4>
-<p>初期値は0。マイナス値を含む数値のみ指定できます。</p>
-<p>数値が高ほどうしろに表記されます。javascriptなどで検索結果の並び替えをするときなどに使えます。</p>
+  <h2>display：flex；で始まるflexレイアウト</h2>
+<p>下記のサイトがわかりやすいかったので紹介します。</p>
+  <p><a href="https://www.webcreatorbox.com/tech/css-flexbox-cheat-sheet" target="_blank" rel="noopener">日本語対応！CSS Flexboxのチートシートを作ったので配布します</a></p>
 <div class="card mb-4">
-<h3 class="card-header">並べ替え</h3>
+<h3 class="card-header">起動の仕方</h3>
 <div class="card-body">
 <h4>HTML</h4>
-<p>四番目の要素が一番最初に出る</p>
+<p>ウィンドウ上でマウス右クリック＞コンテキストメニュー展開＞検証</p>
 <pre class="line-numbers language-xml" data-src="prism.js"><code>
   &lt;div class="flexbox"&gt;
     &lt;div class="item"&gt;Item 1&lt;/div&gt;
     &lt;div class="item"&gt;Item 2&lt;/div&gt;
     &lt;div class="item"&gt;Item 3&lt;/div&gt;
-    &lt;div class="item" style="order:-1;"&gt;Item 4&lt;/div&gt;
+    &lt;div class="item"&gt;Item 4&lt;/div&gt;
   &lt;/div&gt;
 </code></pre>
-<div>
+<h4>CSS</h4>
+<pre class="line-numbers language-css" data-src="prism.js"><code>.flexbox{
+display:flex;
+}
+</code></pre>
+<p>親要素クラスflexboxのdisplayプロパティが flexになったとき。内包された子要素はflexレイアウトモードになる。</p>
+<p>クラスitem要素がフレックスレイアウトモードになる。</p>
+<p>横に並ぶ要素の親要素にフレックスレイアウトを設定する。<br>
+並ぶ要素はフレックスアイテムと呼びます。
+</p>
+<div class="card">
   <h4>プレビュー</h4>
 <style>
 .flexbox{
 display:flex;
+background-color:rgba(0,0,0,.015);
+padding:.6em;
+border:3px solid #f0f0f0;
 }
 .item {
   background-color: aqua;
   border:5px solid #ccc;
   padding:1em;
 }
-.item:nth-child(4){
-  background-color: #f7a0c0
+.f-wrap{
+  flex-wrap:wrap;
+}
+.f-wrap-reverse{
+  flex-wrap:wrap-reverse;
 }
 
 </style>
-<h5 class="mb-0">flex 4を前に</h5>
-<div class="mb-3 flexbox">
+<h5 class="mb-0">flex 適応前  display:block</h5>
+<div class="mb-3">
 <div class="item">Item 1</div>
 <div class="item">Item 2</div>
 <div class="item">Item 3</div>
-<div class="item" style="order:-1;">Item 4</div>
+<div class="item">Item 4</div>
+</div>
+<h5 class="mb-0">flex 適応後  display:flex</h5>
+<div class="flexbox">
+<div class="item">Item 1</div>
+<div class="item">Item 2</div>
+<div class="item">Item 3</div>
+<div class="item">Item 4</div>
+</div>
+<p>フレックスレイアウトはフロートレイアウトのようにクリアプロパティなどの事後処理が不要です。</p>
+<p>普通の設定では子要素が横並びになり。<em>要素の幅は余白とボーダーのプロパティを含めたコンテンツの幅と同じ</em>になる。</p>
 </div>
 </div>
 </div>
-</div>
-
 <div id="s2" class="mt-n6 pt-6 mb-6 clearfix">
-<h2>flex-grow … 子要素の伸びる順位設定</h2>
-<p>親要素に余ったスペースがあった場合、指定のある子要素が他の子要素に対してどれくらい伸びるかを指定します。</p><p>数値のみ指定できます。初期値は0。マイナス値は無効です。</p>
-
-<p>flex-wrap:wrap;の場合flex-content;プロパティの設定が開放される。</p>
-
-<div class="card mb-4">
-<h3 class="card-header">伸縮</h3>
-<div class="card-body">
-<h4>HTML</h4>
-<p> 四番目の要素が優先して横幅が伸びる </p>
-<pre class="line-numbers language-xml" data-src="prism.js"><code>
-  &lt;div class="flexbox"&gt;
-    &lt;div class="item"&gt;Item 1&lt;/div&gt;
-    &lt;div class="item"&gt;Item 2&lt;/div&gt;
-    &lt;div class="item"&gt;Item 3&lt;/div&gt;
-    &lt;div class="item" style="flex-grow:1;"&gt;Item 4&lt;/div&gt;
-  &lt;/div&gt;
-</code></pre>
-<div>
-  <h4>プレビュー</h4>
-<h5 class="mb-0">Item 4が伸びる</h5>
-<div class="mb-3 flexbox">
+<h2> flex-direction 配置方向と順番</h2>
+<p>要素の並び順　水平方向　垂直方向を気前う。</p>
+<ul>
+<li>row（初期値） 「子要素を左から右に配置」
+<div class="flexbox w-100">
 <div class="item">Item 1</div>
 <div class="item">Item 2</div>
 <div class="item">Item 3</div>
-<div class="item" style="flex-grow:1;">Item 4 <br>flex-grow:1;</div>
+<div class="item">Item 4</div>
 </div>
+</li>
+<li>row-revrse 「子要素を右から左に配置」
+<div class="flexbox flex-row-reverse w-100">
+<div class="item">Item 1</div>
+<div class="item">Item 2</div>
+<div class="item">Item 3</div>
+<div class="item">Item 4</div>
 </div>
+</li>
+<li>column 「上から下に配置」  display:blockと同じ見え方になる。
+<div class="flexbox flex-column w-100">
+<div class="item">Item 1</div>
+<div class="item">Item 2</div>
+<div class="item">Item 3</div>
+<div class="item">Item 4</div>
 </div>
+</li>
+<li>column-revrse 「子要素を下から上に配置」
+<div class="flexbox flex-column-reverse w-100">
+<div class="item">Item 1</div>
+<div class="item">Item 2</div>
+<div class="item">Item 3</div>
+<div class="item">Item 4</div>
 </div>
-
+</li>
+</ul>
 </div>
 <div id="s3" class="mt-n6 pt-6 mb-6 clearfix">
-<h2>flex-shrink … 子要素の縮む順位設定</h2>
-<p>flex-grow と逆で、親要素に余ったスペースがなくすべての子要素が入り切らない場合、指定のある子要素が他の子要素に対してどれくらい縮むかを指定します。</p>
-<p>数値のみ指定できます。初期値は0。マイナス値は無効です。</p>
-<div class="card mb-4">
-<h3 class="card-header">伸縮</h3>
-<div class="card-body">
-<h4>HTML</h4>
-<p> 四番目の要素が優先して横幅が縮む </p>
-<pre class="line-numbers language-xml" data-src="prism.js"><code>
-  &lt;div class="flexbox"&gt;
-    &lt;div class="item" style="flex-grow:1;"&gt;Item 1&lt;/div&gt;
-    &lt;div class="item" style="flex-grow:1;"&gt;Item 2&lt;/div&gt;
-    &lt;div class="item" style="flex-grow:1;"&gt;Item 3&lt;/div&gt;
-    &lt;div class="item" style="flex-shrink:1;"&gt;Item 4&lt;/div&gt;
-  &lt;/div&gt;
-</code></pre>
-<div>
-  <h4>プレビュー</h4>
-<h5 class="mb-0">Item 4が縮む</h5>
-<div class="mb-3 flexbox">
-<div class="item" style="flex-grow:1;">Item 1<br>flex-grow:1;</div>
-<div class="item" style="flex-grow:1;">Item 2<br>flex-grow:1;</div>
-<div class="item" style="flex-grow:1;">Item 3<br>flex-grow:1;</div>
-<div class="item" style="flex-shrink:1;">Item 4<br>flex-shrink:1;</div>
-</div>
-</div>
-</div>
-</div>
-
-
-</div>
-<div id="s4" class="mt-n6 pt-6 mb-6 clearfix">
-<h2>flex-basis … 子要素のベースとなる幅の指定</h2>
-<p>詳しくはここで<br>
-<a href="https://developer.mozilla.org/ja/docs/Web/CSS/flex-basis">flex-basis | MDN</a></p>
-<p>子要素に対し width と同じように幅の値を指定できます。auto と指定した場合は子要素のコンテンツのサイズが適応されます。</p>
-<p>親要素に高さ（height:auto;以外）が指定されていないとこのプロパティの値を変更する意味がない。</p>
-<p>メモ: (auto 以外の) flex-basis と width (または flex-direction: column の場合は height) の両方が要素に設定されていた場合、 <strong>flex-basis</strong> が優先されます。</p>
-
-<div class="card mb-4">
-<h3 class="card-header">横幅の規定値の設定</h3>
-<div class="card-body">
-<h4>HTML</h4>
-<p> 四番目の要素が親要素の40%の幅になる そのほかは自動で幅が調整される</p>
-<pre class="line-numbers language-xml" data-src="prism.js"><code>
-  &lt;div class="flexbox"&gt;
-    &lt;div class="item"&gt;Item 1&lt;/div&gt;
-    &lt;div class="item"&gt;Item 2&lt;/div&gt;
-    &lt;div class="item"&gt;Item 3&lt;/div&gt;
-    &lt;div class="item" style="flex-basis:40%;"&gt;Item 4&lt;/div&gt;
-  &lt;/div&gt;
-</code></pre>
-<div>
-  <h4>プレビュー</h4>
-<h5 class="mb-0">Item 4の幅は親要素の40%</h5>
-<div class="mb-3 flexbox">
+<h2>flex-wrap 子要素の折り返し</h2>
+<p>子要素たちが親要素の幅を超えた場合の処理</p>
+<ul>
+<li>nowrap（初期値）… 「子要素を折り返しせず、一行に並べる」
+<div class="flexbox w-100">
 <div class="item">Item 1</div>
 <div class="item">Item 2</div>
 <div class="item">Item 3</div>
-<div class="item" style="flex-basis:40%;">Item 4 <br>flex-basis:40%;</div>
-</div>
-</div>
-</div>
+<div class="item">Item 4</div>
 </div>
 
+</li>
+<li>wrap … 「子要素を折り返し、複数行に上から下へ並べる」
+
+<div class="flexbox w-100 f-wrap">
+<div class="item w-50">Item 1 width:50%;</div>
+<div class="item w-50">Item 2 width:50%;</div>
+<div class="item w-50">Item 3 width:50%;</div>
+<div class="item w-50">Item 4 width:50%;</div>
+</div>
+</li>
+<li>wrap-reverse … 子要素を折り返し、複数行に下から上へ並べる
+<div class="flexbox w-100 f-wrap-reverse ">
+<div class="item w-75">Item 1</div>
+<div class="item w-25">Item 2</div>
+<div class="item w-25">Item 3</div>
+<div class="item w-25">Item 4</div>
+</div>
+
+</li>
+</ul>
+</div>
+
+<div id="s4" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>justify-content … 水平方向の揃え</h2>
+<p>子要素の並びの隙間を同計算してならべるのか？を指定する。</p>
+<ul>
+<li>flex-start（初期値）… 「行の開始位置から配置。左揃え。」
+<div class="flexbox w-100">
+<div class="item">Item 1</div>
+<div class="item">Item 2</div>
+<div class="item">Item 3</div>
+<div class="item">Item 4</div>
+</div>
+</li>
+<li>flex-end … 「行末から配置。右揃え。」
+<div class="flexbox w-100 justify-content-end">
+<div class="item">Item 1</div>
+<div class="item">Item 2</div>
+<div class="item">Item 3</div>
+<div class="item">Item 4</div>
+</div>
+</li>
+<li>center … 「中央揃え」
+<div class="flexbox w-100 justify-content-center">
+<div class="item">Item 1</div>
+<div class="item">Item 2</div>
+<div class="item">Item 3</div>
+<div class="item">Item 4</div>
+</div>
+</li>
+<li>space-between … 「最初と最後の子要素を両端に配置し、残りの要素は均等に間隔をあけて配置」
+<div class="flexbox w-100 justify-content-between">
+<div class="item">Item 1</div>
+<div class="item">Item 2</div>
+<div class="item">Item 3</div>
+<div class="item">Item 4</div>
+</div>
+</li>
+<li>space-around … 「両端の子要素も含め、均等に間隔をあけて配置」
+<div class="flexbox w-100 justify-content-around">
+<div class="item">Item 1</div>
+<div class="item">Item 2</div>
+<div class="item">Item 3</div>
+<div class="item">Item 4</div>
+</div>
+</li>
+</ul>
 </div>
 <div id="s5" class="mt-n6 pt-6 mb-6 clearfix">
-<h2>align-self … 子要素の垂直方向の揃え</h2>
-<p>親要素に空きスペースがあった場合、子要素を垂直方向のどの位置に配置するかを指定します。親要素に指定する align-items と全く同じ機能ですが、こちらは子要素に対して指定します。この align-self での指定は、親要素に記述する align-items よりも優先されます。</p>
+<h2>align-items 垂直方向の揃え</h2>
+<p>親要素の空きがあったときの処理</p>
+<p>親要素に高さ（height:auto;以外）が指定されていないとこのプロパティの値を変更する意味がない。</p>
 <ul>
-<li>auto（初期値）… 親要素の align-items の値を継承</li>
-<li>stretch … 親要素の高さ、またはコンテンツの一番多い子要素の高さに合わせて広げて配置</li>
-<li>flex-start … 親要素の開始位置から配置。上揃え。</li>
-<li>flex-end … 親要素の終点から配置。下揃え。</li>
-<li>center … 中央揃え</li>
-<li>baseline … ベースラインで揃える</li>
+<li>stretch（初期値）… 親要素の高さ、またはコンテンツの一番多い子要素の高さに合わせて広げて配置
+<div class="flexbox w-100" style="height:150px;">
+<div class="item">Item 1</div>
+<div class="item">Item 2</div>
+<div class="item">Item 3</div>
+<div class="item">Item 4</div>
+</div>
+</li>
+<li>flex-start … 親要素の開始位置から配置。上揃え。
+  <div class="flexbox w-100 align-items-start" style="height:150px;">
+<div class="item">Item 1</div>
+<div class="item">Item 2</div>
+<div class="item">Item 3</div>
+<div class="item">Item 4</div>
+</div>
+
+</li>
+<li>flex-end … 親要素の終点から配置。下揃え。
+  <div class="flexbox w-100 align-items-end" style="height:150px;">
+<div class="item">Item 1</div>
+<div class="item">Item 2</div>
+<div class="item">Item 3</div>
+<div class="item">Item 4</div>
+</div>
+
+</li>
+<li>center … 中央揃え
+  <div class="flexbox w-100 align-items-center" style="height:150px;">
+<div class="item">Item 1</div>
+<div class="item">Item 2</div>
+<div class="item">Item 3</div>
+<div class="item">Item 4</div>
+</div>
+
+</li>
+<li>baseline … ベースラインで揃える
+  <div class="flexbox w-100 align-items-baseline" style="height:150px;">
+<div class="item h4">Item 1</div>
+<div class="item">Item 2</div>
+<div class="item h3">Item 3</div>
+<div class="item h5">Item 4</div>
+</div>
+</li>
 </ul>
 
-<div class="card mb-4">
-<h3 class="card-header">上下垂直方向の</h3>
-<div class="card-body">
-<h4>HTML</h4>
-<p>それぞれの値を子要素に設定し出現位置を確認してください</p>
-<pre class="line-numbers language-xml" data-src="prism.js"><code>
-  &lt;div class="flexbox"&gt;
-    &lt;div class="item" style="align-self:auto"&gt;Item 1&lt;/div&gt;
-    &lt;div class="item" style="align-self:stretch;"&gt;Item 2&lt;/div&gt;
-    &lt;div class="item" style="align-self:flex-start"&gt;Item 3&lt;/div&gt;
-    &lt;div class="item" style="align-self:flex-end"&gt;Item 4&lt;/div&gt;
-    &lt;div class="item" style="align-self:center;"&gt;Item 5&lt;/div&gt;
-    &lt;div class="item" style="align-self:baseline"&gt;Item 6&lt;/div&gt;
-  &lt;/div&gt;
-</code></pre>
-<div>
-  <h4>プレビュー</h4>
-<h5 class="mb-0">垂直方向の出現位置と伸縮の設定プロパティ</h5>
-<div class="mb-3 flexbox" style="height:300px;background-color:#f0f0f0;">
-<div class="item" style="align-self:auto">Item 1 <br>align-self:auto</div>
-<div class="item" style="align-self:stretch;">Item 2 <br>align-self:stretch;</div>
-<div class="item" style="align-self:flex-start;">Item 3 <br>align-self:flex-start;</div>
-<div class="item" style="align-self:flex-end;background-color:aqua">Item 4 <br>align-self:flex-end;</div>
-<div class="item" style="align-self:center;">Item 5 <br>align-self:center;</div>
-<div class="item" style="align-self:baseline;">Item 6 <br>align-self:baseline;</div>
 </div>
+<div id="s6" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>align-content … 複数行にした時の揃え</h2>
+<p>子要素が複数行に渡った場合の垂直方向の揃えを指定します。flex-wrap: nowrap; が適応されていると子要素が一行になるので、align-content は無効になります。</p>
+<ul>
+<li>stretch（初期値）… 親要素の高さに合わせて広げて配置
+  <div class="flexbox w-100 f-wrap" style="height:300px;">
+<div class="item w-50">Item 1 width:50%;</div>
+<div class="item w-50">Item 2 width:50%;</div>
+<div class="item w-50">Item 3 width:50%;</div>
+<div class="item w-50">Item 4 width:50%;</div>
 </div>
+</li>
+<li>flex-start … 親要素の開始位置から配置。上揃え。
+  <div class="flexbox w-100 f-wrap align-content-start" style="height:300px;">
+<div class="item w-50">Item 1 width:50%;</div>
+<div class="item w-50">Item 2 width:50%;</div>
+<div class="item w-50">Item 3 width:50%;</div>
+<div class="item w-50">Item 4 width:50%;</div>
 </div>
+</li>
+<li>flex-end … 親要素の終点から配置。下揃え。
+  <div class="flexbox w-100 f-wrap align-content-end" style="height:300px;">
+<div class="item w-50">Item 1 width:50%;</div>
+<div class="item w-50">Item 2 width:50%;</div>
+<div class="item w-50">Item 3 width:50%;</div>
+<div class="item w-50">Item 4 width:50%;</div>
 </div>
+</li>
+<li>center … 中央揃え
+  <div class="flexbox w-100 f-wrap align-content-center" style="height:300px;">
+<div class="item w-50">Item 1 width:50%;</div>
+<div class="item w-50">Item 2 width:50%;</div>
+<div class="item w-50">Item 3 width:50%;</div>
+<div class="item w-50">Item 4 width:50%;</div>
+</div>
+</li>
+<li>space-between … 最初と最後の子要素を上下の端に配置し、残りの要素は均等に間隔をあけて配置
+  <div class="flexbox w-100 f-wrap align-content-between" style="height:300px;">
+<div class="item w-50">Item 1 width:50%;</div>
+<div class="item w-50">Item 2 width:50%;</div>
+<div class="item w-50">Item 3 width:50%;</div>
+<div class="item w-50">Item 4 width:50%;</div>
+</div>
+</li>
+<li>space-around … 上下端にある子要素も含め、均等に間隔をあけて配置
+  <div class="flexbox w-100 f-wrap align-content-around" style="height:300px;">
+<div class="item w-50">Item 1 width:50%;</div>
+<div class="item w-50">Item 2 width:50%;</div>
+<div class="item w-50">Item 3 width:50%;</div>
+<div class="item w-50">Item 4 width:50%;</div>
+</div>
+</li>
+</ul>
 </div>
 
-
-
-</div>
 <!-- editable area end ########             -->
 </article>
 </div>

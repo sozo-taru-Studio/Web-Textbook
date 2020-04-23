@@ -384,6 +384,10 @@ script[type='text/plain'].language-markup {
   overflow: auto;
 }
 
+:root {
+  --Textoutline:1px 1px 0 #fff,-1px 1px 0 #fff,1px -1px 0 #fff,-1px -1px 0 #fff;
+}
+
 .count-reset {
   counter-reset: cont;
 }
@@ -416,6 +420,15 @@ script[type='text/plain'].language-markup {
 .w-subnav ul li > a {
   display: block;
   padding-left: 1em;
+  text-shadow: var(--Textoutline);
+  background-color: transparent;
+  transition: background-color,color .3s linear;
+}
+
+.w-subnav ul li > a:hover {
+  text-decoration: none;
+  background-color: rgba(0, 0, 50, 0.03);
+  color: #025f98;
 }
 
 .w-aside h3 .btn.btn-link {
@@ -426,6 +439,7 @@ script[type='text/plain'].language-markup {
   line-height: 1.2;
   text-decoration: none;
   transition: color .3s ease-in;
+  text-shadow: var(--Textoutline);
 }
 
 .w-aside h3:hover {
@@ -521,6 +535,7 @@ blockquote {
     max-width: 16.66667%;
     height: 100vh;
     overflow-y: auto;
+    padding-bottom: 100px;
   }
   [id="w-article"] h2 {
     font-size: 2.4rem;

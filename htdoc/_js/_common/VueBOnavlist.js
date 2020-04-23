@@ -157,7 +157,7 @@ var MK = {
 
                 },
                 {
-                    titlename:'HTMLを間違えずに書く書き方',
+                    titlename:'HTMLを間違えずに書く方法',
                     titleen:"How to HTML tages",
                     url:"23_html_markUp.html",
                     dis: "初心者にありがちのタイピングミス打ち忘れをなくす習慣をつけましょう。",
@@ -391,12 +391,133 @@ var cssPages = new Vue(ST);
     data: {
          titles:[
                 {
-                    titlename:'CSSの基礎知識 ファイル定義',
-                    titleen:"base style sheet files",
-                    url:"40_css_code.html",
-                    dis:"javascriptの新規ファイル作成とHTMLファイルに関連づける",
+                    titlename:'HTML CSS javascript 関係性',
+                    titleen:"javascript base",
+                    url:"500_js_code.html",
+                    dis:"Webページにおけるjavascriptの役割",
                     img:"_images/_JS/javascript.jpg"
+                },
+                {
+                    titlename:'javascriptを書く準備',
+                    titleen:"javascript writing",
+                    url:"501_js_code.html",
+                    dis:"javascriptをWebページに適応させる方法",
+                    img:"_images/_JS/chain_640.jpg"
+                },
+                {
+                    titlename:'デバックモードでデバッグ',
+                    titleen:"javascript debug",
+                    url:"502_js_code.html",
+                    dis:"検証モードでデバックする。",
+                    img:"_images/_JS/chremconsole.PNG"
+                },
+                {
+
+                    titlename:'書式 と コメント',
+                    titleen:"javascript Format statement",
+                    url:"503_js_code.html",
+                    dis:"書式とコメントアウトです。書き方のルールを習得しましょう。",
+                    img:"_images/_JS/state.jpg"
+                },
+                {
+                    titlename:'変数',
+                    titleen:"variable",
+                    url:"504_js_code.html",
+                    dis:"javascriptの変数の書き方のルールや仕組みを知りましょう",
+                    img:"_images/_JS/memo-640.jpg"
+                },
+                {
+                    titlename:'データ',
+                    titleen:"data",
+                    url:"505_js_code.html",
+                    dis:"javascriptのデータの種類を知りましょう",
+                    img:"_images/_JS/statistic-1606951_640.png"
+                },
+                {
+                    titlename:'演算子',
+                    titleen:"javascript operator",
+                    url:"506_js_code.html",
+                    dis:"足算や引き算などの演算のお話し",
+                    img:"_images/_JS/operation.jpg"
+                },
+                 {
+                    titlename:'制御フロー(条件文)',
+                    titleen:"javascript Control flow",
+                    url:"507_js_code.html",
+                    dis:"条件に応じて処理を切り替える方法です。",
+                    img:"_images/_JS/coffee-beans.jpg"
+                },
+                {
+                    titlename:'関数',
+                    titleen:"javascript Function",
+                    url:"508_js_code.html",
+                    dis:"様々な処理をまとめ、呼び出します",
+                    img:"_images/_JS/spices-2419055_640.jpg"
+                },
+                {
+                    titlename:'反復処理',
+                    titleen:"javascript repetition",
+                    url:"509_js_code.html",
+                    dis:"様々な処理を条件がみたされるまでくりかえします。",
+                    img:"_images/_JS/lithuania_640.jpg"
+                },
+                {
+                    titlename:'documentインターフェイス',
+                    titleen:"document API",
+                    url:"510_js_code.html",
+                    dis:"html要素（DOM）にアクセスし操作する。",
+                    img:"_images/_JS/doc_640.jpg"
+                },
+                {
+                    titlename:'関数と変数の範囲',
+                    titleen:"scope",
+                    url:"511_js_code.html",
+                    dis:"変数の有効範囲（スコープ）について。",
+                    img:"_images/_JS/scope_640.jpg"
+                },
+                {
+                    titlename:'jQueryとHTMLへの読み込み',
+                    titleen:"jQuery",
+                    url:"512_js_code.html",
+                    dis:"jQueryのライブラリーについて。",
+                    img:"_images/_JS/technology-1283624_640.jpg"
+                },
+                {
+                    titlename:'jQuery の 動作確認',
+                    titleen:"jQuery ",
+                    url:"513_js_code.html",
+                    dis:"jQueryは動いてんの？ うごいてないの？",
+                    img:"_images/_JS/matrix_640.jpg"
+                },
+                {
+                    titlename:'入力フォームのvalue="値"をとる',
+                    titleen:"form value",
+                    url:"514_js_code.html",
+                    dis:"入力フォームの値をとってJQueryの便利さを実感しよう。",
+                    img:"_images/_JS/african-woman_640.jpg"
+                },
+                 {
+                    titlename:'オブジェクトを定義してみる',
+                    titleen:"object",
+                    url:"515_js_code.html",
+                    dis:"オブジェクトを定義する",
+                    img:"_images/_JS/plexiglas_640.jpg"
+                },
+                {
+                    titlename:'jqueryプラグインを作ってみる',
+                    titleen:"jQuery plugin 2",
+                    url:"516_js_code.html",
+                    dis:"オブジェクトがつくれるようになったらプラグインつくってみましょう",
+                    img:"_images/_JS/bulb-_640.jpg"
+                },
+                 {
+                    titlename:'jqueryプラグインを作ってみる 拡張編 session Extend',
+                    titleen:"jQuery plugin 2",
+                    url:"517_js_code.html",
+                    dis:"オプションを持つプラグインつくってみましょう",
+                    img:"_images/_JS/cable-541068_640.jpg"
                 }
+
          ]
     }
 };
@@ -404,4 +525,4 @@ var cssPages = new Vue(ST);
 var JSlist = new Vue(JS);
 JS.el = "#w-JSpages";
 var JSpages = new Vue(JS);
-//JS
+//JSJquery

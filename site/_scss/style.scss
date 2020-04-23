@@ -5,6 +5,10 @@ bootstrapを先に読み込む
 --------------------------------------------------------------*/
 @import "_prism";
 
+:root{
+	--Textoutline:1px 1px 0 #fff,-1px 1px 0 #fff,1px -1px 0 #fff,-1px -1px 0 #fff;
+
+}
 
 // counter
 .count-reset{
@@ -29,11 +33,19 @@ padding-top:56px;
 .w-subnav{
 	font-size: .8rem;
 	ul li {
-		margin-bottom: .6rem;
+					margin-bottom: .6rem;
 					border-left: 3px solid  #025f98;
 		&>a {
 	 display: block;
 	 padding-left: 1em;
+	 text-shadow: var(--Textoutline);
+	 background-color:transparent;
+	 transition:background-color,color .3s linear;
+		}
+		&>a:hover{
+			text-decoration: none;
+			background-color:rgba(0,0,50,.03);
+			color:#025f98;
 		}
 	}
 }
@@ -47,7 +59,8 @@ padding-top:56px;
 			text-align:left;
 			line-height: 1.2;
 			text-decoration: none;
-			transition: color .3s ease-in
+			transition: color .3s ease-in;
+			 text-shadow: var(--Textoutline);
 		}
 		&:hover{
 			color:#025f98;
@@ -154,6 +167,7 @@ blockquote{
     max-width: 16.66667%;
     height:100vh;
     overflow-y: auto;
+		padding-bottom:100px;
 }
 	[id="w-article"]{
 		h2{
