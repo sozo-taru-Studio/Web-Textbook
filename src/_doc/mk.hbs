@@ -1,0 +1,80 @@
+---
+title: HTMLのマークアップ
+discription: ウェブの教科図書 このサイトの使い方と学習順を確認できます。もう一度見直したいとき書いている内容を探したいときにみてください。
+cat: page
+next-page-url: "#"
+prev-page-url: "#"
+titlename: "{{title.titlename}}"
+titledis: "{{title.dis}}"
+filename: index.html
+text: "{{item.text}}"
+text2: "{{item.text}}"
+---
+<div class="container mb-5">
+<article id="w-article">
+<!-- editable area ########             -->
+        <h1>{{title}} - {{cat}}</h1>
+        <p><span>category:</span> <span class="badge badge-primary">{{cat}}</span></p>
+        <hr>
+<!-- 序章 モジュール -->
+<div class="card mb-4">
+<div class="card-body clearfix">
+  <p class="card-text">ウェブの教科図書 このサイトの使い方と学習順を確認できます。もう一度見直したいとき書いている内容を探したいときにみてください。</p>
+</div>
+</div>
+
+<!-- 目次 モジュール -->
+<div class="bg-light p-3 mb-4">
+<h2>目次</h2>
+<ul id="w-indexlistBox">
+    <li v-for="item in items" class="w-indexlistBox-list">
+      <a v-bind:href="item.id" data-scroll >{{text2}}</a>
+    </li>
+</ul>
+</div>
+<!-- / 目次 モジュール -->
+
+
+
+<!-- MK -->
+<div id="s3" class="pagesBox">
+<div class="card mb-5">
+<div class="MK-pages">
+<div id="MK-heading" class="heading">
+<h3 class="card-header">
+HTML  [マークアップ]
+</h3>
+</div>
+<div class="p-3 rounded-top bg-light mx-1">
+<p> インターネットを使ったビジネスの仕組み、著作権についての知識をつけておきましょう。 </p>
+</div>
+<div class="container">
+<!-- w-BOpages -->
+<ul id="w-MKpages" class="list-unstyled row p-1">
+  <li class="page-item col-12 col-md-4 align-items-start justify-content-between py-4 card" v-for="title in titles">
+    <a class="d-block rounded text-dark w-100 h-100 page-link" v-bind:href="title.url" v-bind:title="title.titleen">
+<div class="img-fluid"><img v-bind:src="title.img" v-bind:alt="title.titleen"></div>
+    <h4 class="card-header w-100">{{titlename}}</h4>
+    <div class="card-body"><p><p>{{titledis}}</p></p>
+    </div><!-- / textbox -->
+    </a></li>
+</ul>
+<!-- /w-BOpages modile -->
+</div>
+</div>
+</div><!-- /card -->
+</div><!-- /s3 -->
+
+
+<!-- 本文のセクション モジュール -->
+
+
+
+
+<!-- editable area end ########             -->
+</article>
+<!-- <script src="_js/_common/Vuepagelist.js"></script> -->
+</div>
+<!-- /container-->
+
+<!-- / w-aside2 --->
