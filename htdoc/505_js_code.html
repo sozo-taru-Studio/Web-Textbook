@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="description" content="discription">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">  <title>データ - Javascript - Web TextBook</title>
+  <!-- stylesheet  -->
+  <link rel="stylesheet" href="_css/_common/bootstrap.css">
+  <link rel="stylesheet" href="_css/_common/font-awesome.min.css">
+  <link rel="stylesheet" href="_css/_common/style.css">  <!--  Favicons  -->
+  <link rel="icon" href="favicon.ico">  <!-- common js  -->
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="_js/_common/jquery-3.2.1.min.js"></script>
+  <script src="_js/_common/bootstrap.min.js"></script>
+  <script src="_js/_common/pagescroll.jQuery.js"></script></head>
+<body class="Javascript">
+<div id="w-wrapper" class="w-wrapper">
+<!-- header -->
+<header id="w-pageHeader" class="navbar navbar-dark navbar-expand-lg fixed-top w-pageHeader" data-scroll-header="true">
+<div class="container">
+<a class="navbar-brand" href="index.html">logo</a><span class="navbar-brand">Web Textbook</span>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#w-nav" aria-controls="w-nav" aria-expanded="false" aria-label="ナビゲーション切替">
+<span class="navbar-toggler-icon"></span>
+</button>
+<nav id="w-nav" class="collapse navbar-collapse">
+<ul class="navbar-nav mr-auto pl-3">
+<li class="nav-item"><a href="20_browser_cord.html" class="nav-link disabled">HTML</a></li>
+<li class="nav-item"><a href="#" class="nav-link disabled">CSS</a></li>
+<li class="nav-item"><a href="#" class="nav-link">javasceipt</a></li>
+</ul>
+</nav>
+<!-- /w-nav-->
+</div>
+<!-- /container--></header>
+<!-- /w-pageHeader-->
+<div class="d-lg-flex pt-5" id="main-wrap">
+<main id="w-main" class="w-main col-lg-8 order-1">
+   <div class="container mb-5">
+<article id="w-article">
+<!-- editable area ########             -->
+        <h1>データ - Javascript</h1>
+        <p><span>category:</span> <span class="badge badge-primary">Javascript</span></p>
+        <hr>
+<!-- 序章 モジュール -->
+<div class="card mb-4">
+<div class="card-body clearfix">
+<div class="float-lg-right col-lg-5 mb-2"><img src="_images/_JS/statistic-1606951_640.png" alt="DATA？" class="img-fluid"></div>
+<p class="card-text">変数に代入されるデータの形式について知りましょう。</p>
+
+</div>
+</div>
+<!-- 目次 モジュール -->
+<div class="bg-light p-3 mb-4">
+<h2>目次</h2>
+<ul id="w-indexlistBox">
+    <li v-for="item in items" class="w-indexlistBox-list">
+      <a v-bind:href="item.id" data-scroll >{{item.text}}</a>
+    </li>
+</ul>
+</div>
+<!-- / 目次 モジュール -->
+
+<!-- 本文のセクション モジュール -->
+<div id="s1" class="mt-n6 pt-6 mb-6 clearfix">
+
+<h2>データ構造とデータ型</h2>
+<p><a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Statements/var" target="_blank" rel="noopener">データ構造とデータ型</a></p>
+<p>変数に格納する値つまりデータには種類があります。細かくは下記のようにわかれていますがそのデータの型の特徴を知っておかないとプログラムが正確に宇が来ません。</p>
+<p>取り扱うデータ型は2種</p>
+<h3>データ型</h3>
+<blockquote>
+<ul>
+<li><b>プリミティブ型</b>
+<ul>
+<li>真偽値 (Boolean)。 true または false.</li>
+<li>null。「null値」を意味する特殊なキーワードです。JavaScriptは大文字・小文字を区別するため、null は Null や NULL などとは異なります。</li>
+<li>undefined。値が未定義のトップレベルプロパティ。</li>
+<li>数値 (Number)。 42 や 3.14159 など。</li>
+<li>文字列 (String)。 "Howdy" など。</li>
+<li>シンボル (Symbol)（ECMAScript 6 の新機能）。 インスタンスが固有で不変となるデータ型。</li></ul>
+</li>
+<li> <b>オブジェクト (Object)</b></li>
+</ul>
+</blockquote>
+<h4>解説</h4>
+<p>大きくわけてプリミティブ型は変数名に対し<b>単数</b>の値しかはいりません。
+<br>オブジェクト型は変数名に対して様々なデータを<b>複数</b>規則的に格納できます。</p>
+<ul>
+<li>真偽値: ブーリアン ブール値 「白黒はっきりつける」 trueは真 falseは偽　</li>
+<li>null: インドのゼロの概念 「無」 です。0は0というデータ値がある。データなしという意味。<q>ラテン語で「無」を意味する nullus[1]に由来する[4]。nilもラテン語のnihil の短縮形に由来する<cite title="https://ja.wikipedia.org/wiki/Null" target="_blank" rel="noopener">Wikipedia</cite></q></li>
+<li>数値: 計算する用の数値データ javascriptでは浮動小数点と整数。</li>
+<li>undifind:「さがせませんでした」　「みつかりませんでした。」意味は未定義の値です。　宣言された変数に値が代入されていないときにでます。</li>
+<li>String 文字列: 文字(テキストデータ)として表現するデータ　引用符クオート　ダブルクオートで挟んでデータとして定義する。</li>
+<li>シンボル (Symbol):  --> 使い方をわたくし知りません。策定中らしいです。</li>
+<li>オブジェクト (Object):  プリミティブ型データは構造的には一つの識別子に対して一つのデータですがオブジェクト型は一つの識別子が棚別れしてそれぞれの棚に何かしらのデータが入っているとかんがえてください。</li></ul>
+<p>詳しくは:<a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Data_structures" target="_blank" rel="noopener">データ構造 - JavaScript | MDN</a></p>
+<p><a href="https://developer.mozilla.org/ja/docs/Glossary/Primitive" target="_blank" rel="noopener">プリミティブ</a><br><a href="https://developer.mozilla.org/ja/docs/Glossary/Object" target="_blank" rel="noopener">
+オブジェクト</a></p>
+</div>
+<div id="s2" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>変数は上書きされます。</h2>
+<p>変数は上書きされます。</p>
+<figure>
+<figcaption>javascript 記入例</figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+<code>var x = 12;
+x = 6;
+console.log("xの値は："x);//6
+</code></pre>
+</figure>
+</div>
+
+<div id="s3" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>jacascriptの変数は動的変数で<br>代入するデータ型を選びません。</h2>
+<p>多くのプログラムは処理を確実に早くするために厳格に変数に入れるデータ型を記述する設計になっています。javascriptは<em>変数名さえ正しければどんなタイミングで代入</em>してもエラーはでません。代入時にエラーがでないですが、処理時のデータの扱いでエラーがでてしまったり、もしくは結果が期待通りでない状態で処理されることがあります。</p>
+<p>javascriptは書き方によっては同じ名前の変数をどんどん上書きして変数を使いまわすことができます。その代わりコードを読むときにデータの流れがわかりにくくなるデメリットもあります。</p>
+<div class="story">
+<p> 例えばjavascriptの変数を「丈夫でなんでも入る箱」だとイメージしてみてください。　
+ データは水を扱います。箱（変数）に水が入っています。なんでも扱えるjavascriptの箱(変数)にはいった水はこぼれません。（エラーなし）　水を汲みだすとき瓶をもってきます。これは箱に水が入っているとあらかじめ分かっているからで瓶をもってこれましたが。ある人は本がはいっているとおもって本棚を用意してしまいしました。
+本棚は濡れて水はこぼれてしまいます。（エラー状態）</p>
+<p>JAVAなどの厳密なデータ型を宣言する変数を宣言するプログラムは上記のたとえでは水しか容器にいれれません。
+  水を扱うのであればこぼれない樽を用意します。本をあつかうのであれば本棚を用意します。最初から水を本棚に収納しようとするとエラーになります。</p>
+  <p>プログラムによってどのタイミングでエラーをだすかの違いですがjavascriptは変数の扱いが曖昧なぶんデータにあった処理を書かないといけない難しさがあります。</p>
+</div>
+
+<h3>変数の中身を見る</h3>
+<p>「typeof 演算子」（タイプオブえんざんし）は変数のデータ型を返してくれます。</p>
+<p><dfn>「返す」</dfn>とは処理した内容を出力する。<b>戻り値</b>などとも呼ばれます。<em>処理の結果を渡してくれる</em>という意味です。</p>
+<p>「typeof」のあとにスペースを入れて変数を調べたい変数を書きます。そのままでは結果がわからないので。
+<br>変数で受け取ってconsole.logで表示してみましょう。</p>
+<figure>
+<figcaption>javascript 記入例</figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+<code>var x = 12;
+x += 6;
+console.log("xの値は：" + x); //+6 が出力
+var dataType = typeof x;
+console.log(dataType); //String;　出力
+</code></pre>
+</figure>
+<p>変数yに変数xのデータ型を代入してコンソールログで出力しています。</p>
+</div>
+<div id="s4" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>文字列の連結と数値型との関係</h2>
+<p>数値型は小数点が入り1未満を表現できるfloat型（浮動小数点）と整数型があります。</p>
+<p>数値と数値はそのまま数字を演算(計算)します。しかし文字列と数値の加算は文字列の連結になります。</p>
+<p>プラス演算子は文字列を連結することができます。phpのドット「.」に似ています。</p>
+<figure>
+<figcaption>javascript 記入例</figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+<code>var x = 12;
+var y = "6";
+var z = x + y;
+console.log("zの値は：" + z);  //126 が出力
+</code></pre>
+</figure>
+<p>加算演算子プラス「+」は文字列（String）と文字列（String）を連結します。</p>
+<p>数値と文字列は数値を文字列に変換して連結します。</p>
+<hr>
+<h3>文字列を整数化する。parseInt(文字列)</h3>
+<figure>
+<figcaption>javascript 記入例</figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+<code>var x = 12;
+var y = "6";
+y = parseInt(y);
+var z = x + y;
+console.log("zの値は：" + z);  //18 が出力
+</code></pre>
+</figure>
+<p>parseInt()関数[プレスイントかんすう]を使うことで文字列を整数値に変換し数値として計算ができる。</p>
+<p>※ブラウザにユーザーが入力した数字は文字列データ（String）になる。
+  <br>数値計算するときは数値に変換する処理が必要です。</p>
+</div>
+<div class="alert-info p-4">
+<h3 >まとめ</h3>
+<p>変数の宣言と変数に格納するデータについてを話しました。<br>
+変数とコンソールだけではまだ何も大したことはできませんが大事な基礎技術となります。<br>
+まずは変数宣言からデータ内容の確認方法を習得してください。</p>
+</p>
+<ol>
+<li>変数の宣言文は<code>var</code></li>
+  <li>変数は変わるデータでメモ用紙</li>
+  <li>変数命名には気をつかう</li>
+  <li>イコール「=」は代入 </li>
+  <li>右から左に代入</li>
+  <li>データには種類がある。プリミティブ型とオブジェクト型</li>
+  <li>typeof演算でデータの型がわかる。</li>
+  <li>変数に代入するデータ型は気にしない</li>
+  <li>文字型データはプラス「+」で連結できる。</li>
+</ol>
+</div>
+
+
+<!-- editable area end ########             -->
+</article>
+</div>
+<!-- /container-->
+
+<!-- / w-aside2 --->
+
+<aside class="print-none" id="w-aside2">
+<div class="row text-white no-gutters justify-content-center">
+<nav aria-label="Page navigation">
+<ul class="pagination justify-content-center">
+<li class="page-item">
+<a class="page-link" href="504_js_code.html" tabindex="-1" aria-disabled="false">Previous</a>
+</li>
+<li class="page-item">
+<a class="page-link " aria-disabled="false"  href="506_js_code.html">Next</a>
+</li>
+</ul>
+</nav>
+</div>
+<div class="container p-3"></div>
+</aside>
+</main>
+<aside class="w-aside col-lg-2 print-none order-0" id="w-aside1">
+<div class="w-aside-inner container">
+<div class="accordion" id="accordionAside">
+<div class="w-subnav">
+<div id="headingOne">
+<h3 class="sticky-top">
+  <button class="btn btn-link  collapsed" type="button" data-toggle="collapse" data-target="#w-BOlist-collapse" aria-expanded="false" aria-controls="collapseOne" >
+PC Operation</button>
+</h3>
+</div>
+<div id="w-BOlist-collapse" class="collapse" aria-labelledby="headingOne" data-parent="#accordionAside">
+<!-- BOlist modile -->
+<ul id="w-BOlist" class="list-unstyled w-BOlist">
+        <li class="" v-for="title in titles"><a v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+        </ul>
+        <!-- /BOlist modile -->
+</div>
+</div>
+<div class="w-subnav">
+<div id="heading2">
+<h3 class="sticky-top">
+  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#w-OLlist-collapse" aria-expanded="false" aria-controls="collapseTwo">web Outline</button>
+</h3>
+</div>
+<div id="w-OLlist-collapse" class="collapse" aria-labelledby="heading2" data-parent="#accordionAside">
+<!-- OLlist modile -->
+<ul id="w-OLlist" class="list-unstyled">
+  <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+</ul>
+<!-- /OLlist modile -->
+</div>
+</div>
+<div class="w-subnav">
+<div id="heading3">
+<h3 class="sticky-top">
+  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#w-MKlist-collapse" aria-expanded="false" aria-controls="collapseThree">HTML</button>
+      </h3>
+</div>
+<div id="w-MKlist-collapse" class="collapse" aria-labelledby="heading3" data-parent="#accordionAside">
+<!-- OLlist modile -->
+<ul id="w-MKlist" class="list-unstyled">
+  <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}}</a></li>
+</ul>
+<!-- /OLlist modile -->
+</div>
+</div>
+
+<div class="w-subnav">
+<div id="heading4">
+<h3 class="sticky-top">
+<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#w-EDlist-collapse" aria-expanded="false" aria-controls="collapse4">Text Editor
+</button>
+</h3>
+</div>
+<div id="w-EDlist-collapse" class="collapse" aria-labelledby="heading4" data-parent="#accordionAside">
+<!-- EDlist modile -->
+<ul id="w-EDlist" class="list-unstyled">
+<li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}}</a></li>
+</ul>
+<!-- /EDlist modile -->
+</div>
+</div>
+<div class="w-subnav">
+<div id="heading5">
+<h3 class="sticky-top">
+<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#w-CSSlist-collapse" aria-expanded="false" aria-controls="collapse5">CSS
+</button>
+</h3>
+</div>
+<div id="w-CSSlist-collapse" class="collapse" aria-labelledby="heading4" data-parent="#accordionAside">
+<!-- EDlist modile -->
+<ul id="w-CSSlist" class="list-unstyled">
+  <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+</ul>
+<!-- /csslist modile -->
+</div>
+</div>
+
+<div class="w-subnav">
+<div id="heading6">
+<h3 class="sticky-top">
+<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#w-JSlist-collapse" aria-expanded="false" aria-controls="collapse6">javascript
+</button>
+</h3>
+</div>
+<div id="w-JSlist-collapse" class="collapse" aria-labelledby="heading4" data-parent="#accordionAside">
+<!-- EDlist modile -->
+<ul id="w-JSlist" class="list-unstyled">
+  <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+</ul>
+<!-- /jslist modile -->
+</div>
+</div>
+
+  </div><!-- /accordionAside -->
+</div>
+<script src="_js/_common/VueBOnavlist.js"></script>
+</aside>
+<aside class="w-aside w-indexlistbox col-lg-2 order-2" id="w-aside3">
+<div class="indexlist-inner container">
+<div><h3>page navigation</h3></div>
+<ol class="list-unstyled list-group" id="w-indexlists">
+  <li class="index-list" v-for="item in items">
+    <a v-bind:href="item.id" class="indexlist-link" data-scroll >{{item.text}}</a>
+  </li>
+</ol>
+</div>
+</aside>
+</div><!-- /main-wrap -->
+<!-- footer -->
+<footer id="w-pageFooter">
+<div class="container d-flex">
+  <p class="site-copy">
+<small>&copy; shounosuke tarutani</small>
+</p><!-- /site-copy -->
+</div>
+<!-- /container-->
+</footer>
+<!--w-pageFooter--><script src="_js/_common/Vuepagelist.js"></script>
+<script src="_js/_common/prism.js"></script>
+</div>
+<!--w-wrapper-->
+</body>
+</html>

@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="description" content="discription">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">  <title>入力フォームのvalue&#x3D;&quot;値&quot;をとる - Javascript - Web TextBook</title>
+  <!-- stylesheet  -->
+  <link rel="stylesheet" href="_css/_common/bootstrap.css">
+  <link rel="stylesheet" href="_css/_common/font-awesome.min.css">
+  <link rel="stylesheet" href="_css/_common/style.css">  <!--  Favicons  -->
+  <link rel="icon" href="favicon.ico">  <!-- common js  -->
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="_js/_common/jquery-3.2.1.min.js"></script>
+  <script src="_js/_common/bootstrap.min.js"></script>
+  <script src="_js/_common/pagescroll.jQuery.js"></script></head>
+<body class="Javascript">
+<div id="w-wrapper" class="w-wrapper">
+<!-- header -->
+<header id="w-pageHeader" class="navbar navbar-dark navbar-expand-lg fixed-top w-pageHeader" data-scroll-header="true">
+<div class="container">
+<a class="navbar-brand" href="index.html">logo</a><span class="navbar-brand">Web Textbook</span>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#w-nav" aria-controls="w-nav" aria-expanded="false" aria-label="ナビゲーション切替">
+<span class="navbar-toggler-icon"></span>
+</button>
+<nav id="w-nav" class="collapse navbar-collapse">
+<ul class="navbar-nav mr-auto pl-3">
+<li class="nav-item"><a href="20_browser_cord.html" class="nav-link disabled">HTML</a></li>
+<li class="nav-item"><a href="#" class="nav-link disabled">CSS</a></li>
+<li class="nav-item"><a href="#" class="nav-link">javasceipt</a></li>
+</ul>
+</nav>
+<!-- /w-nav-->
+</div>
+<!-- /container--></header>
+<!-- /w-pageHeader-->
+<div class="d-lg-flex pt-5" id="main-wrap">
+<main id="w-main" class="w-main col-lg-8 order-1">
+   <div class="container mb-5">
+<article id="w-article">
+<!-- editable area ########             -->
+        <h1>入力フォームのvalue&#x3D;&quot;値&quot;をとる - Javascript</h1>
+        <p><span>category:</span> <span class="badge badge-primary">Javascript</span></p>
+        <hr>
+<!-- 序章 モジュール -->
+<div class="card mb-4">
+<div class="card-body clearfix">
+<div class="float-lg-right col-lg-5 mb-2"><img src="_images/_JS/african-woman_640.jpg" alt="正しい入力 " class="img-fluid"></div>
+<p>入力フォームに入力される文字や記号が正しい形式で入力されているかを監視しユーザーに正しい形式の入力を即す機能を実装します。</p>
+
+</div>
+</div>
+<!-- 目次 モジュール -->
+
+<div class="bg-light p-3 mb-4">
+<h2>目次</h2>
+<ul id="w-indexlistBox">
+    <li v-for="item in items" class="w-indexlistBox-list">
+      <a v-bind:href="item.id" data-scroll >{{item.text}}</a>
+    </li>
+</ul>
+</div>
+<!-- / 目次 モジュール -->
+
+<!-- 本文のセクション モジュール -->
+<div id="s1" class="mt-n6 pt-6 mb-6 clearfix">
+
+<h2>入力フォームのvalue="値"を取得しバリデーションする。</h2>
+  <div class="memo">
+    <p><a href="http://api.jquery.com/val/" target="_blank" rel="noopener">.val() | jQuery API Documentation</a></p>
+      <p><a href="https://www.tam-tam.co.jp/tipsnote/javascript/post3828.html" target="_blank" rel="noopener"> jQueryでフォーム入力をチェックする</a></p>
+      <p>	<a href="http://qiita.com/ka215/items/795a179041c705bef03b" target="_blank" rel="noopener"> HTML5におけるinput要素のpattern、type属性のおさらい - Qiita</a></p>
+  <p>入力アイテムにユーザーが入れた値を判断してみましょう。</p>
+      <div id="formBox" style="border:3px solid #898989;padding:1em;margin:1em 0">
+        <form action="#" name="form1" id="form1" method="post">
+          <p><lable for="textInput">メールアドレス</lable>:
+          <input type="email" maxlength="255" required pattern="^[a-zA-Z]{1}[0-9a-zA-Z]+[\w\.-]+@[\w\.-]+\.\w{2,}$" class="textInput" id="textInput">
+            <br><span class="note">英数半角で入力してください。</span></p>
+          <p class="buttonBox" style="text-align: center;"><button type="submit" class="sbm">送信</button></p>
+        </form>
+      </div><!--formBox-->
+<div id="pre">
+ <h3 id="s1">準備</h3>
+  <figure>
+  <figcaption>HTML 記入例</figcaption>
+  <pre class="line-numbers language-markup" data-src="prism.js">
+<code>
+&lt;div id=&quot;formBox&quot; style=&quot;border:3px solid #898989;padding:1em;margin:1em 0&quot;&gt;
+    &lt;form action=&quot;#&quot; name=&quot;form1&quot; id=&quot;form1&quot; method=&quot;post&quot;&gt;
+        &lt;p&gt;&lt;lable for=&quot;textInput&quot;&gt;メールアドレス&lt;/lable&gt;:
+        &lt;input type=&quot;email&quot; maxlength=&quot;255&quot; required pattern=&quot;^[a-zA-Z]{1}[0-9a-zA-Z]+[\w\.-]+@[\w\.-]+\.\w{2,}$&quot; class=&quot;textInput&quot; id=&quot;textInput&quot;&gt;
+        &lt;br&gt;&lt;span class=&quot;note&quot;&gt;英数半角で入力してください。&lt;/span&gt;&lt;/p&gt;
+      &lt;p class=&quot;buttonBox&quot; style=&quot;text-align: center;&quot;&gt;&lt;button type=&quot;submit&quot; class=&quot;sbm&quot;&gt;送信&lt;/button&gt;&lt;/p&gt;
+    &lt;/form&gt;
+&lt;/div&gt;&lt;!--formBox--&gt;
+</code></pre>
+</figure>
+
+</div>
+</div>
+</div>
+
+
+<div  class="mt-n6 pt-6 mb-6 clearfix" id="s2">
+<h2>javascriptでvalueの値を取る</h2>
+<p>javascriptを記述 要素の中身が入っているかコンソールで確認</p>
+  <p>.sbm送信ボタンを押すとテキストフィールドの中身を変数にいれてコンソールログに出力。</p>
+<div id="pre">
+  <figure>
+  <figcaption>javascript 記入例</figcaption>
+  <pre class="line-numbers language-javascript" data-src="prism.js">
+    <code>
+ $(function(){
+ $(".sbm").on("click",function(){
+  var emailValue = $("#textInput").val();
+    console.log("値は"+emailValue);
+    console.log("データ型" + typeof emailValue);
+    void(0);//本来のサブミットを無効化
+  });//on-end
+});//jq-end
+</code></pre>
+</figure>
+</div>
+<div id="pre">
+
+
+<div class="demo">
+<h3>入力後に値が正しいか返答する</h3>
+<p>簡単な入力バリデーションを入れます。ユーザーがどのような書き間違いが多いか？どのようにアシストすると書きやすいのか？調査して設計します。</p><p>今回は緩く一般的なメールアドレスのバリデーションを試してみます。</p>
+<p>メールアドレスは様々な表記があり一般的に「＠」が必要となっていますが、工業規格などの標準化がされておらず実質自由でメールサーバー側の取り決めにより決まっています。</p><p>正規表現のパターンを使って英数＠英数.英数のパターンマッチを使って判別します。</p>
+
+<h4 id="s3">blue()イベント</h4>
+<blockquote>
+  <p><a href="http://api.jquery.com/on/" target="_blank">.on() | jQuery API Documentation</a></p>
+</blockquote>
+<p>blueイベントは入力アイテムに入力されたあと入力カーソルが離れたときに処理を開始するイベント関数</p>
+<p>jQueryのマウスイベントはonメソッドが推奨されています。ここではONメソッドで記述します。</p>
+<figure>
+<figcaption>blue() 記入例</figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+  <code>
+$("input#textInput").on("blur",function(){
+  if($(this).val() == ""){
+  //実行内容
+      $('++span',this).html("入力されていません");
+   }else if(!$(this).val().match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/)) {
+   $('++span',this).html("正しいemailアドレスを入力してください");
+} else {
+      $(this).nextAll("span.note").html("メールアドレスがはいりました");
+    }
+});
+</code></pre>
+</figure>
+<p>これが完成コードです。</p>
+  </div>
+  <div>
+  <h4>バリデートの考え方。</h4>
+  <p>どのような入力が正しいのか？正しくないのか書き出しておく。
+  今回はメールアドレスを聞くのでデータ型は文字列</p>
+  <dl>
+<dt>入力不可
+</dt><dd>
+ <ul><li>空 :""</li>
+  <li>全角の文字: "日本語"</li>
+    <li>想定以上に長い文字列255文字以上(今回はブラウザの機能maxlength属性で排除) 時間の都合今回はスクリプトは書かない</li>
+    <li>@がない文字列</li>
+    <li>その他メールアドレスで使えない文字</li>
+    <li>ets</li>
+</ul></dd></dl>
+    <p>フロントエンドで入力値のバリデーションがしっかりやられていたとしても、バックエンドに値が渡った時点でまたしっかりバリデーションするのは基本だ（クロスサイトスクリプティング攻撃にはHTML＋ブラウザでのバリデートなんてほぼ無力）。</p>
+
+  <h4>step1 入力要素がまずは空かどうか調べる</h4>
+  <figure>
+<figcaption> 入力要素の 空判定 記入例</figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+  <code>
+  if($("input#textInput").val() == ""){
+   consle.log("要素は空です");//要素は空です
+    }
+</code></pre>
+</figure>
+<p>文字列が空の場合 trueを返す [ $("input#textInput").val() == "") ]</p>
+
+</div>
+<div>
+<h4>step2 入力要素がまずは空かどうか調べる</h4>
+  <figure>
+<figcaption> イベント関数「on()」イベントキーワード「blur」で入力後判定する記入例</figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+  <code>
+$("input#textInput").on("blur",function(){
+  if($(this).val() == ""){
+    consle.log("要素は空です");//要素は空です
+  }
+});
+</code></pre>
+</figure>
+<p>ターゲットの要素を指定しイベント関数blur() で要素フォーカスが外れたかどうかを監視して処理を実行。
+<br>ここではblur()に渡された処理が先ほどの空要素判定処理です。</p>
+<blockquote>
+  <p></p>
+  <p><a href="https://qiita.com/smzk/items/5eed5a90c4b32ca8b23a" target="_blank" rel="noopener">jQueryのclickとbindとliveとdelegateとonの違い</a></p>
+</blockquote>
+  <h5>jQueryのchange()</h5>
+  <p><a href="http://www.flatflag.nir87.com/change-1761" target="_blank" rel="noopener">jQueryのchange()で値が変更されたら発動</a></p>
+  </div>
+  <div>
+<h4>step3 入力要素が空でない処理</h4>
+  <figure>
+<figcaption>条件分岐で入力後判定する。入ってる場合記入例</figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+  <code>
+$("input#textInput").blur(function(){
+  if($(this).val() == ""){
+    consle.log("要素は空です");//要素は空の時
+  }else{
+   consle.log("要素は"+ $(this).val());//要素入力された時
+  }
+});
+</code></pre>
+</figure>
+<p>if else ステートメントを 使って値がある時の処理をしましょう。</p>
+  </div>
+    <div>
+<h4>step4 メッセージを出す処理を書く</h4>
+  <figure>
+<figcaption> 入力情報が正しいであろうメッセージ 記入例</figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+  <code>
+$("input#textInput").on("blur" , function(){
+  if($(this).val() == ""){
+    //consle.log("要素は空です");//要素は空です
+    $('++span',this).html("入力されていません");
+  }else{
+    $(this).nextAll("span.note").html("メールアドレスがはいりました");
+  }
+});
+</code></pre>
+</figure>
+<p>$('++span',this)は 入力された要素 this の隣(br)の隣のspan要素を指定しています。</p>
+<p>this [$("input#textInput").blur()]をどのセレクタからとるかによって要素を選べないときがあるのでhtmlコードの構造を要素の取りやすい構造でマークアップしましょう。
+  今回は何とかなりましたが汎用性が欠けます。br要素が抜ければこのコードはつかえなくなっています。<abber title="「てへぺろ」">thpr</abber></p>
+  <p>「.html("入力されていません")」はjqueryのinnerHTMLメソッドと同じでhtml要素を引数にわたされたHTMLを入力してくれる。 jqueryを使っているときはこちらを使いましょう。</p>
+  <h5>2種類のセレクタの書き方</h5>
+  <figure>
+<figcaption> ++span,thisを訳すと</figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+  <code>
+ //$("input#textInput + br + span") と $('++span',this)はほぼ同じ
+$("input#textInput").on("blur",function(){
+  $("input#textInput + br + span").html("入力されていません");
+});</code></pre>
+</figure>
+<figure>
+<figcaption> jquery で隣接要素をとる 記入例</figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+  <code>
+//jquery で隣接要素をとるほうが汎用性がある。
+$("input#textInput").on("blur",function(){
+  $(this).nextAll("span.note").html("入力されていません");
+});
+</code></pre>
+</figure>
+  <figure>
+<figcaption> CSS 隣接セレクター 記入例</figcaption>
+<pre class="line-numbers language-css" data-src="prism.js">
+ <code>
+/* E + F   [Eの隣のF要素]*/
+input + br + span{
+ color:green;
+}
+</code></pre>
+</figure>
+<p>
+状況に応じてセレクタをかけるようにすると可能性があがる。</p>
+  </div>
+<div>
+<h4>step5 Emailを入力しているかどうか？</h4>
+  <figure>
+<figcaption> イベント関数「blur()」で入力後判定する 記入例</figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+  <code>
+$("input#textInput").on("blur",function(){
+  if($(this).val() == ""){
+           $('++span',this).html("入力されていません");
+  }else if(!$(this).val().match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/)) {
+           $('++span',this).html("正しいemailアドレスを入力してください");
+   } else {
+           $(this).nextAll("span.note").html("メールアドレスがはいりました");
+  }
+});
+</code></pre>
+</figure>
+<p>emailアドレスは残念ながら決まった基準がないが正規表現をつかって決まった文字やパターンをある程度判別することはできる。RFC5322の仕様という基準があるがそれはユーザーが持っているメール会社しだいなのでメジャーなものしかコードを通さない。
+つまり実際使えることができているメールアドレスも通さない場合がある。<br>
+今回は@が文字列の途中であるか？全角で入力されていないか？という判定をしています。</p>
+  <ul><li><a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Regular_Expressions"  target="_blank" rel="noopener">正規表現</a></li>
+  <li><a href="http://js.studio-kingdom.com/javascript/string/match" target="_blank" rel="noopener">.match() | JavaScript 日本語リファレンス | js STUDIO</a></li>
+  <li><a href="https://www.tam-tam.co.jp/tipsnote/javascript/post3828.html"  target="_blank" rel="noopener">jQueryでフォーム入力をチェックする</a></li></ul>
+  <p>.match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/)<br>
+で真偽値をとり 偽のときは間違っているとおしえてくれている</p>
+  <p>完璧ではないがユーザーにある程度の入力のアシストにはなるとおもわれる。</p>
+  <p>正規表現文字のパターンを合致するかを調べるコードで各プログラムで入力方法は違う。<br>
+かなり難易度が高いがなれてきてからでいいのでプログラマーの先輩やコードを自分でかいてみたりして使えるようになると仕事の幅がひろがります。</p>
+  </div>
+
+<script type="text/javascript">
+$(function(){
+ $(".sbm").on("click",function(){
+  var emailValue = $("#textInput").val();
+    console.log("値は"+emailValue);
+    console.log("データ型" + typeof emailValue);
+    void(0);//本来のサブミットを無効化
+  });
+
+$("input#textInput").on("blur",function(){
+    var nextElm = $('++.note',this);//隣の隣のクラスnote
+  if($(this).val() == ""){
+  //実行内容
+  //console.log(nextElm);
+  if(nextElm.hasClass("--success").length){
+    nextElm.removeClass("--success");
+  }
+    nextElm.addClass("--failure").text("入力されていません");
+  }else if(!$(this).val().match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/)) {
+     if(nextElm.hasClass("--success")){
+        nextElm.removeClass("--success");
+      }
+      nextElm.addClass("--failure").text("正しいemailアドレスを入力してください");
+    } else {
+     if(nextElm.hasClass("--failure")){
+        nextElm.removeClass("--failure");
+      }
+      nextElm.addClass("--success").text("メールアドレスがはいりました");
+    }
+
+});
+});//jq-end
+
+elementList = document.querySelectorAll('.photoImage img');
+console.log(elementList);
+-->
+</script>
+<style>
+.note{
+  font-size: .725em;
+  color:#999;
+  padding:.1em .6em .2em;
+}
+.--failure{
+  color: #fff;
+  border-radius: 3px;
+  border:3px double #e75;
+  background-color:#e75;
+  background-origin: padding-box;
+}
+.--success{
+  color: #fff;
+  border-radius: 3px;
+  border:3px double #5c5;;
+  background-color:#5c5;
+  background-origin: padding-box;
+}
+</style>
+
+
+
+<!-- editable area end ########             -->
+</article>
+</div>
+<!-- /container-->
+
+<!-- / w-aside2 --->
+
+<aside class="print-none" id="w-aside2">
+<div class="row text-white no-gutters justify-content-center">
+<nav aria-label="Page navigation">
+<ul class="pagination justify-content-center">
+<li class="page-item">
+<a class="page-link" href="513_js_code.html" tabindex="-1" aria-disabled="false">Previous</a>
+</li>
+<li class="page-item">
+<a class="page-link " aria-disabled="false"  href="515_js_code.html">Next</a>
+</li>
+</ul>
+</nav>
+</div>
+<div class="container p-3"></div>
+</aside>
+</main>
+<aside class="w-aside col-lg-2 print-none order-0" id="w-aside1">
+<div class="w-aside-inner container">
+<div class="accordion" id="accordionAside">
+<div class="w-subnav">
+<div id="headingOne">
+<h3 class="sticky-top">
+  <button class="btn btn-link  collapsed" type="button" data-toggle="collapse" data-target="#w-BOlist-collapse" aria-expanded="false" aria-controls="collapseOne" >
+PC Operation</button>
+</h3>
+</div>
+<div id="w-BOlist-collapse" class="collapse" aria-labelledby="headingOne" data-parent="#accordionAside">
+<!-- BOlist modile -->
+<ul id="w-BOlist" class="list-unstyled w-BOlist">
+        <li class="" v-for="title in titles"><a v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+        </ul>
+        <!-- /BOlist modile -->
+</div>
+</div>
+<div class="w-subnav">
+<div id="heading2">
+<h3 class="sticky-top">
+  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#w-OLlist-collapse" aria-expanded="false" aria-controls="collapseTwo">web Outline</button>
+</h3>
+</div>
+<div id="w-OLlist-collapse" class="collapse" aria-labelledby="heading2" data-parent="#accordionAside">
+<!-- OLlist modile -->
+<ul id="w-OLlist" class="list-unstyled">
+  <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+</ul>
+<!-- /OLlist modile -->
+</div>
+</div>
+<div class="w-subnav">
+<div id="heading3">
+<h3 class="sticky-top">
+  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#w-MKlist-collapse" aria-expanded="false" aria-controls="collapseThree">HTML</button>
+      </h3>
+</div>
+<div id="w-MKlist-collapse" class="collapse" aria-labelledby="heading3" data-parent="#accordionAside">
+<!-- OLlist modile -->
+<ul id="w-MKlist" class="list-unstyled">
+  <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}}</a></li>
+</ul>
+<!-- /OLlist modile -->
+</div>
+</div>
+
+<div class="w-subnav">
+<div id="heading4">
+<h3 class="sticky-top">
+<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#w-EDlist-collapse" aria-expanded="false" aria-controls="collapse4">Text Editor
+</button>
+</h3>
+</div>
+<div id="w-EDlist-collapse" class="collapse" aria-labelledby="heading4" data-parent="#accordionAside">
+<!-- EDlist modile -->
+<ul id="w-EDlist" class="list-unstyled">
+<li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}}</a></li>
+</ul>
+<!-- /EDlist modile -->
+</div>
+</div>
+<div class="w-subnav">
+<div id="heading5">
+<h3 class="sticky-top">
+<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#w-CSSlist-collapse" aria-expanded="false" aria-controls="collapse5">CSS
+</button>
+</h3>
+</div>
+<div id="w-CSSlist-collapse" class="collapse" aria-labelledby="heading4" data-parent="#accordionAside">
+<!-- EDlist modile -->
+<ul id="w-CSSlist" class="list-unstyled">
+  <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+</ul>
+<!-- /csslist modile -->
+</div>
+</div>
+
+<div class="w-subnav">
+<div id="heading6">
+<h3 class="sticky-top">
+<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#w-JSlist-collapse" aria-expanded="false" aria-controls="collapse6">javascript
+</button>
+</h3>
+</div>
+<div id="w-JSlist-collapse" class="collapse" aria-labelledby="heading4" data-parent="#accordionAside">
+<!-- EDlist modile -->
+<ul id="w-JSlist" class="list-unstyled">
+  <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+</ul>
+<!-- /jslist modile -->
+</div>
+</div>
+
+  </div><!-- /accordionAside -->
+</div>
+<script src="_js/_common/VueBOnavlist.js"></script>
+</aside>
+<aside class="w-aside w-indexlistbox col-lg-2 order-2" id="w-aside3">
+<div class="indexlist-inner container">
+<div><h3>page navigation</h3></div>
+<ol class="list-unstyled list-group" id="w-indexlists">
+  <li class="index-list" v-for="item in items">
+    <a v-bind:href="item.id" class="indexlist-link" data-scroll >{{item.text}}</a>
+  </li>
+</ol>
+</div>
+</aside>
+</div><!-- /main-wrap -->
+<!-- footer -->
+<footer id="w-pageFooter">
+<div class="container d-flex">
+  <p class="site-copy">
+<small>&copy; shounosuke tarutani</small>
+</p><!-- /site-copy -->
+</div>
+<!-- /container-->
+</footer>
+<!--w-pageFooter--><script src="_js/_common/Vuepagelist.js"></script>
+<script src="_js/_common/prism.js"></script>
+</div>
+<!--w-wrapper-->
+</body>
+</html>

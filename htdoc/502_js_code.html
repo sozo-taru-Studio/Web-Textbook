@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="description" content="discription">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">  <title>デバックモードでデバッグ - Javascript - Web TextBook</title>
+  <!-- stylesheet  -->
+  <link rel="stylesheet" href="_css/_common/bootstrap.css">
+  <link rel="stylesheet" href="_css/_common/font-awesome.min.css">
+  <link rel="stylesheet" href="_css/_common/style.css">  <!--  Favicons  -->
+  <link rel="icon" href="favicon.ico">  <!-- common js  -->
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="_js/_common/jquery-3.2.1.min.js"></script>
+  <script src="_js/_common/bootstrap.min.js"></script>
+  <script src="_js/_common/pagescroll.jQuery.js"></script></head>
+<body class="Javascript">
+<div id="w-wrapper" class="w-wrapper">
+<!-- header -->
+<header id="w-pageHeader" class="navbar navbar-dark navbar-expand-lg fixed-top w-pageHeader" data-scroll-header="true">
+<div class="container">
+<a class="navbar-brand" href="index.html">logo</a><span class="navbar-brand">Web Textbook</span>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#w-nav" aria-controls="w-nav" aria-expanded="false" aria-label="ナビゲーション切替">
+<span class="navbar-toggler-icon"></span>
+</button>
+<nav id="w-nav" class="collapse navbar-collapse">
+<ul class="navbar-nav mr-auto pl-3">
+<li class="nav-item"><a href="20_browser_cord.html" class="nav-link disabled">HTML</a></li>
+<li class="nav-item"><a href="#" class="nav-link disabled">CSS</a></li>
+<li class="nav-item"><a href="#" class="nav-link">javasceipt</a></li>
+</ul>
+</nav>
+<!-- /w-nav-->
+</div>
+<!-- /container--></header>
+<!-- /w-pageHeader-->
+<div class="d-lg-flex pt-5" id="main-wrap">
+<main id="w-main" class="w-main col-lg-8 order-1">
+   <div class="container mb-5">
+<article id="w-article">
+<!-- editable area ########             -->
+        <h1>デバックモードでデバッグ - Javascript</h1>
+        <p><span>category:</span> <span class="badge badge-primary">Javascript</span></p>
+        <hr>
+<!-- 序章 モジュール -->
+<div class="card mb-4">
+<div class="card-body clearfix">
+<div class="float-lg-right col-lg-5 mb-2"><img src="_images/_JS/chremconsole.PNG" alt="flexlayput " class="img-fluid"></div>
+<p class="card-text">ブラウザのデバックモードの起動のしかたや見方を身につけましょう。</p>
+</div>
+</div>
+<!-- 目次 モジュール -->
+<div class="bg-light p-3 mb-4">
+<h2>目次</h2>
+<ul id="w-indexlistBox">
+    <li v-for="item in items" class="w-indexlistBox-list">
+      <a v-bind:href="item.id" data-scroll >{{item.text}}</a>
+    </li>
+</ul>
+</div>
+<!-- / 目次 モジュール -->
+
+<!-- 本文のセクション モジュール -->
+<div id="s1" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>window.alertwindow.alertでアラートウィンドウを起動させましょう。</h2>
+<p>多くのjavaSvcript教材ではこのアラート機能をつかってプログラミングの実行確認をします。
+  最初に知っておくべき便利なことばです。</p>
+<a href="https://developer.mozilla.org/ja/docs/Web/API/Window/alert" target="_blank" rel="noopener">window.alert - Web API インターフェイス | MDN</a>
+ <p>alert()「アラート関数」でデータjavascriptの入力を確認してみました。</p>
+<p>alert()はそもそもユーザーとのコミュニケーションのために作られたシンプルな関数です。
+メッセージとともにこのまま実行していいか<em>警告</em>することを目的につくられました。OKボタンを押さないとブラウザの<strong>処理が一旦停止</strong>します。最初での稼働の実験には最適ですが本来の意味での使いかたではありません。</p>
+   <p> これいちいち窓が出て面倒臭いですよね。<br>そこで「検証」機能のコンソールを使います。</p>
+  </div>
+<h4>検証ってなに？</h4>
+ <p>検証機能は各社のブラウザに製作者用にプログラムやソースコードが想定通り機能しているかを確認するための機能です。</p>
+   <p>fierFoxでは「要素の調査」<br>Edgeでは「デバックモード」<br>googleChremeでは「検証」と名前がつけられています。</p>
+<p>このサイトではこの機能を検証と呼びます。</p>
+<p>検証にはJavaScriptのエラーログやデータの状態を確認できる「コンソール」モードをつかいます。<p>
+<div>
+
+<div id="s2" class="mt-n6 pt-6 mb-6 clearfix">
+<h3 >コンソール (console) の場所</h3>
+<dl class="stepCounter step"><dt class="stepIncr step__header"><i class="fa fa-mouse-pointer" aria-hidden="true"></i>検証をひらく方法</dt>
+    <dd><em class="method">ブラウザのウィンドウでマウスカーソルを乗せて右クリックし　コンテキストメニューを出して「検証」を選ぶ</em>
+<dt  class="stepIncr step__header"><i class="fa fa-mouse-pointer" aria-hidden="true"></i> コンソールモードにする。</dt>
+<dd><em class="method">タブの「console」をクリックするとコンソールウィンドウに変わる。</em></dd>
+</dl>
+<ul class="list--none">
+<li class="videoBox">
+  <figure>
+  <figcaption>googleChremeでの検証の出し方。<small class="notice__txt">無音です</small></figcaption>
+  <video controls width="100%">
+  <source src="_mv\GoogleChrome_2017_09_05.mp4" type="video/mp4">
+    あなたが使っているブラウザとPCのOSではこの動画は<em class="notice__txt">みれません。</em>残念ながら動画をみるには友達に最新のPCを借りてくるか。電気屋さんに最新のPCと安全で高速なインターネット環境をととのえてからごらんください。
+    見れなくてもそんなに損した気分にはなりません ご安心ください。動画をみるには友達に最新のPCを借りてくるか。電気屋さんに最新のPCと安全で高速なインターネット環境をととのえてから</p>
+  </video>
+</figure>
+</li>
+<li class="videoBox">
+  <figure>
+  <figcaption>FireFoxでの検証の出し方。<small class="notice__txt">無音です</small></figcaption>
+  <video controls width="100%">
+  <source src="_mv\FirefoxSPad_use2017.mp4" type="video/mp4">
+  <p>あなたが使っているブラウザとPCのOSではこの動画は<em class="notice__txt">みれません。</em>残念ながら動画をみるには友達に最新のPCを借りてくるか。電気屋さんに最新のPCと安全で高速なインターネット環境をととのえてからごらんください。
+見れなくてもそんなに損した気分にはなりません.ご安心ください。</p>
+  </video>
+</figure>
+</li>
+</ul>
+
+<figure>
+<figcaption>HTML 記入例</figcaption>
+<pre class="line-numbers language-markup" data-src="prism.js">
+<code>&lt;script&gt;
+console.log(&quot;Hellow Console!&quot;);
+&lt;/script&gt;</code></pre>
+</figure>
+<p>入力したら該当するHtmlファイルをもう一度更新してコンソールを確認してみましょう。</p>
+<figure><img src="_images/_JS/chremconsole.PNG" alt="コンソールログ設定" width="100%"></figure>
+<ul>
+  <li> 「Console」タブをクリックすると上記のような画面にかわります。</li>
+  <li> 「Default levels」 セレクター はサイトの情報の表示の有無をチェックボックス方式で制御できます。</li>
+  <li>文字が小さいときは　検証タブを選択中に<kbd>Ctrl/command</kbd> + <kbd>+</kbd>拡大できます。</li>
+</ul>
+</div>
+
+
+<div class="p-4 alert-info">
+<h3>まとめ</h3>
+<p>コンソールログはjavascriptの挙動を確認できるツールです。なんかうまくいかない場合はコンソールログ</p>
+</div>
+
+
+
+
+
+
+
+<!-- editable area end ########             -->
+</article>
+</div>
+<!-- /container-->
+
+<!-- / w-aside2 --->
+
+<aside class="print-none" id="w-aside2">
+<div class="row text-white no-gutters justify-content-center">
+<nav aria-label="Page navigation">
+<ul class="pagination justify-content-center">
+<li class="page-item">
+<a class="page-link" href="501_js_code.html" tabindex="-1" aria-disabled="false">Previous</a>
+</li>
+<li class="page-item">
+<a class="page-link " aria-disabled="false"  href="503_js_code.html">Next</a>
+</li>
+</ul>
+</nav>
+</div>
+<div class="container p-3"></div>
+</aside>
+</main>
+<aside class="w-aside col-lg-2 print-none order-0" id="w-aside1">
+<div class="w-aside-inner container">
+<div class="accordion" id="accordionAside">
+<div class="w-subnav">
+<div id="headingOne">
+<h3 class="sticky-top">
+  <button class="btn btn-link  collapsed" type="button" data-toggle="collapse" data-target="#w-BOlist-collapse" aria-expanded="false" aria-controls="collapseOne" >
+PC Operation</button>
+</h3>
+</div>
+<div id="w-BOlist-collapse" class="collapse" aria-labelledby="headingOne" data-parent="#accordionAside">
+<!-- BOlist modile -->
+<ul id="w-BOlist" class="list-unstyled w-BOlist">
+        <li class="" v-for="title in titles"><a v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+        </ul>
+        <!-- /BOlist modile -->
+</div>
+</div>
+<div class="w-subnav">
+<div id="heading2">
+<h3 class="sticky-top">
+  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#w-OLlist-collapse" aria-expanded="false" aria-controls="collapseTwo">web Outline</button>
+</h3>
+</div>
+<div id="w-OLlist-collapse" class="collapse" aria-labelledby="heading2" data-parent="#accordionAside">
+<!-- OLlist modile -->
+<ul id="w-OLlist" class="list-unstyled">
+  <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+</ul>
+<!-- /OLlist modile -->
+</div>
+</div>
+<div class="w-subnav">
+<div id="heading3">
+<h3 class="sticky-top">
+  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#w-MKlist-collapse" aria-expanded="false" aria-controls="collapseThree">HTML</button>
+      </h3>
+</div>
+<div id="w-MKlist-collapse" class="collapse" aria-labelledby="heading3" data-parent="#accordionAside">
+<!-- OLlist modile -->
+<ul id="w-MKlist" class="list-unstyled">
+  <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}}</a></li>
+</ul>
+<!-- /OLlist modile -->
+</div>
+</div>
+
+<div class="w-subnav">
+<div id="heading4">
+<h3 class="sticky-top">
+<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#w-EDlist-collapse" aria-expanded="false" aria-controls="collapse4">Text Editor
+</button>
+</h3>
+</div>
+<div id="w-EDlist-collapse" class="collapse" aria-labelledby="heading4" data-parent="#accordionAside">
+<!-- EDlist modile -->
+<ul id="w-EDlist" class="list-unstyled">
+<li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}}</a></li>
+</ul>
+<!-- /EDlist modile -->
+</div>
+</div>
+<div class="w-subnav">
+<div id="heading5">
+<h3 class="sticky-top">
+<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#w-CSSlist-collapse" aria-expanded="false" aria-controls="collapse5">CSS
+</button>
+</h3>
+</div>
+<div id="w-CSSlist-collapse" class="collapse" aria-labelledby="heading4" data-parent="#accordionAside">
+<!-- EDlist modile -->
+<ul id="w-CSSlist" class="list-unstyled">
+  <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+</ul>
+<!-- /csslist modile -->
+</div>
+</div>
+
+<div class="w-subnav">
+<div id="heading6">
+<h3 class="sticky-top">
+<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#w-JSlist-collapse" aria-expanded="false" aria-controls="collapse6">javascript
+</button>
+</h3>
+</div>
+<div id="w-JSlist-collapse" class="collapse" aria-labelledby="heading4" data-parent="#accordionAside">
+<!-- EDlist modile -->
+<ul id="w-JSlist" class="list-unstyled">
+  <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+</ul>
+<!-- /jslist modile -->
+</div>
+</div>
+
+  </div><!-- /accordionAside -->
+</div>
+<script src="_js/_common/VueBOnavlist.js"></script>
+</aside>
+<aside class="w-aside w-indexlistbox col-lg-2 order-2" id="w-aside3">
+<div class="indexlist-inner container">
+<div><h3>page navigation</h3></div>
+<ol class="list-unstyled list-group" id="w-indexlists">
+  <li class="index-list" v-for="item in items">
+    <a v-bind:href="item.id" class="indexlist-link" data-scroll >{{item.text}}</a>
+  </li>
+</ol>
+</div>
+</aside>
+</div><!-- /main-wrap -->
+<!-- footer -->
+<footer id="w-pageFooter">
+<div class="container d-flex">
+  <p class="site-copy">
+<small>&copy; shounosuke tarutani</small>
+</p><!-- /site-copy -->
+</div>
+<!-- /container-->
+</footer>
+<!--w-pageFooter--><script src="_js/_common/Vuepagelist.js"></script>
+<script src="_js/_common/prism.js"></script>
+</div>
+<!--w-wrapper-->
+</body>
+</html>

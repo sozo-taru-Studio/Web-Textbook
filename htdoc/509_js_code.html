@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="description" content="discription">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">  <title>反復処理 - Javascript - Web TextBook</title>
+  <!-- stylesheet  -->
+  <link rel="stylesheet" href="_css/_common/bootstrap.css">
+  <link rel="stylesheet" href="_css/_common/font-awesome.min.css">
+  <link rel="stylesheet" href="_css/_common/style.css">  <!--  Favicons  -->
+  <link rel="icon" href="favicon.ico">  <!-- common js  -->
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="_js/_common/jquery-3.2.1.min.js"></script>
+  <script src="_js/_common/bootstrap.min.js"></script>
+  <script src="_js/_common/pagescroll.jQuery.js"></script></head>
+<body class="Javascript">
+<div id="w-wrapper" class="w-wrapper">
+<!-- header -->
+<header id="w-pageHeader" class="navbar navbar-dark navbar-expand-lg fixed-top w-pageHeader" data-scroll-header="true">
+<div class="container">
+<a class="navbar-brand" href="index.html">logo</a><span class="navbar-brand">Web Textbook</span>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#w-nav" aria-controls="w-nav" aria-expanded="false" aria-label="ナビゲーション切替">
+<span class="navbar-toggler-icon"></span>
+</button>
+<nav id="w-nav" class="collapse navbar-collapse">
+<ul class="navbar-nav mr-auto pl-3">
+<li class="nav-item"><a href="20_browser_cord.html" class="nav-link disabled">HTML</a></li>
+<li class="nav-item"><a href="#" class="nav-link disabled">CSS</a></li>
+<li class="nav-item"><a href="#" class="nav-link">javasceipt</a></li>
+</ul>
+</nav>
+<!-- /w-nav-->
+</div>
+<!-- /container--></header>
+<!-- /w-pageHeader-->
+<div class="d-lg-flex pt-5" id="main-wrap">
+<main id="w-main" class="w-main col-lg-8 order-1">
+   <div class="container mb-5">
+<article id="w-article">
+<!-- editable area ########             -->
+        <h1>反復処理 - Javascript</h1>
+        <p><span>category:</span> <span class="badge badge-primary">Javascript</span></p>
+        <hr>
+<!-- 序章 モジュール -->
+<div class="card mb-4">
+<div class="card-body clearfix">
+<div class="float-lg-right col-lg-5 mb-2"><img src="_images/_JS/lithuania_640.jpg" alt="繰り返し" class="img-fluid"></div>
+<p>DOMを操作するプログラムなどを動かす場合必要になる処理です。先にHTML要素を取得できるプログラムを習得できてからおすすめです。</p>
+<p>処理をするなかでも何か条件を達成するまで処理を続ける処理構文を反復処理やループと呼びます。</p>
+<ul>
+<li>for 文</li>
+<li>do...while 文</li>
+<li>while 文</li>
+<li>label 文</li>
+<li>break 文</li>
+<li>continue 文</li>
+<li>for...in 文</li>
+<li>for...of 文</li>
+</ul>
+<p>javascriptで使える繰り返し文は上記です。複雑な繰り返し文whileからcontinue文が便利ですがコードを打ちなれたかプログラマー向きです。まずは for文を間違えず書けるようになりましょう。</p>
+</div>
+</div>
+<!-- 目次 モジュール -->
+
+<div class="bg-light p-3 mb-4">
+<h2>目次</h2>
+<ul id="w-indexlistBox">
+    <li v-for="item in items" class="w-indexlistBox-list">
+      <a v-bind:href="item.id" data-scroll >{{item.text}}</a>
+    </li>
+</ul>
+</div>
+<!-- / 目次 モジュール -->
+
+<!-- 本文のセクション モジュール -->
+<div id="s1" class="mt-n6 pt-6 mb-6 clearfix">
+
+<h2 id="s0">for文</h2>
+<p>反復できる処理はいくつかあります。<br><b>for文</b>をまずマスターしましょう</p>
+<p>for文の良いところはケアレスミスで無限ループに陥りにくいことです。</p>
+<p>書き方をおぼえてしまえば簡単です。また繰り返し処理はプログラミングの（自動化）の第一歩です是非マスターしましょう。</p>
+<blockquote>
+<p><a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Loops_and_iteration " target="_blank" rel="noopener">ループと反復処理 - JavaScript | MDN</a></p>
+
+
+<p>ループは繰り返し何かを実行するための簡便な方法を提供します。本章では JavaScript で利用可能な反復処理を行う数々の文を紹介します</p>
+<p>誰かに話しかけようと、ある方向に X 歩進み、別の方向に Y 進むといった場面を、コンピュータ化されたゲームととらえた上で、ループについて考えてみましょう。例えば、「西に 5 歩進む」という概念はループとして、下記のように表現できます :</p>
+</blockquote>
+<div class="card mb-4">
+<h3 class="card-header"> for 文の記述 </h3>
+<div class="card-body">
+<figure>
+<figcaption>javascript 記入例</figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+<code>
+var step;
+for (step = 0; step &lt; 5; step++) {
+  // 値が 0 から 4 まで計 5 回実行される
+  console.log('1 歩西に歩く');
+}
+</code></pre></figure>
+<figure>
+<figcaption>javascript 記入例</figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js"><code>
+for ([initialExpression]; [condition]; [incrementExpression]){
+  statement
+}
+</code></pre></figure>
+<ol class="stepCounter">
+<li class="stepIncr">もしあれば、初期化式 <code>initialExpression</code> が実行されます。この式は通常、1 個またはそれ以上のループカウンタを初期化しますが、この構文ではいかなるレベルの複雑な式を入れることが可能です。初期化式で変数を宣言することもできます。</li>
+<li class="stepIncr">条件式 condition が評価されます。<code>condition</code> の値が true の場合、ループ文が実行されます。<code>condition</code> の値が false の場合、for ループは終了します。condition 式がすべて省略されている場合、条件式は真であると仮定されます。</li>
+<li class="stepIncr">文 <code>statement</code> が実行されます。複数の文を実行するには、それらの文をグループ化するためにブロック文 ({ ... }) を使用します。</li>
+<li class="stepIncr">もしあれば、更新式 <code>incrementExpression</code> が実行され、ステップ 2 に制御が戻ります。</li>
+</ol>
+<figure>
+<figcaption>式の説明</figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+<code>
+for([STEP1] 初期式; [STEP2] 評価;[STEP4] 初期値に変化)｛
+  // [STEP3] 処理
+｝
+</code></pre></figure>
+<p>for文は後述のArrayオブジェクト（配列変数）の解析や分離処理に必要です。</p>
+
+<hr>
+<figure>
+<figcaption>javascriptとhtmlの記入例</figcaption>
+<pre class="line-numbers language-markup" data-src="prism.js">
+<code>
+&lt;form name=&quot;selectForm&quot;&gt;
+  &lt;p&gt;
+    &lt;label for=&quot;musicTypes&quot;&gt;Choose some music types, then click the button below:&lt;/label&gt;
+    &lt;select id=&quot;musicTypes&quot; name=&quot;musicTypes&quot; multiple=&quot;multiple&quot;&gt;
+      &lt;option selected=&quot;selected&quot;&gt;R&amp;B&lt;/option&gt;
+      &lt;option&gt;Jazz&lt;/option&gt;
+      &lt;option&gt;Blues&lt;/option&gt;
+      &lt;option&gt;New Age&lt;/option&gt;
+      &lt;option&gt;Classical&lt;/option&gt;
+      &lt;option&gt;Opera&lt;/option&gt;
+    &lt;/select&gt;
+  &lt;/p&gt;
+  &lt;p&gt;&lt;input id=&quot;btn&quot; type=&quot;button&quot; value=&quot;How many are selected?&quot; /&gt;&lt;/p&gt;
+&lt;/form&gt;
+
+&lt;script&gt;
+function howMany(selectObject) {
+  var numberSelected = 0;
+  for (var i = 0; i &lt; selectObject.options.length; i++) {
+    if (selectObject.options[i].selected) {
+      numberSelected++;
+    }
+  }
+  return numberSelected;
+}
+// セレクトタグで選んだ項目の数をアラートで表示してくれるプログラムです。
+var btn = document.getElementById(&quot;btn&quot;);
+btn.addEventListener(&quot;click&quot;, function(){
+  alert(&#039;Number of options selected: &#039; + howMany(document.selectForm.musicTypes))
+});
+&lt;/script&gt;
+</code></pre></figure>
+</div>
+</div>
+
+<div id="s2" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>length プロパティ</h2>
+<p>オブジェクト内(配列オブジェクト)の<b>要素数</b>の値を返すまたは文字列データの文字数を返す。</p>
+<blockquote><ul>
+  <li><a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Array/length" target="_blank" rel="noopener">Array.length</a></li>
+  <li><a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/length" target="_blank"  rel="noopener">String.length</a></li>
+</ul>
+</blockquote>
+<figure>
+<figcaption>javascript 記入例</figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+<code>
+Arrey.length;
+</code></pre></figure>
+
+<h3 id="-documen-https-developer-mozilla-org-ja-docs-web-api-document-"><a href="https://developer.mozilla.org/ja/docs/Web/API/document" target="_blank"  rel="noopener">documenオブジェクト</a></h3>
+
+<p>html要素内のname=&quot;selectForm&quot; name=&quot;musicTypes&quot;要素を引数として選択</p>
+<figure>
+<figcaption>javascript document 記入例</figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+<code>
+document.selectForm.musicTypes
+</code></pre></figure>
+<h3 id="document-getelementbyid-id_name-">document.getElementById(&#39;id_name&#39;);</h3>
+<p>&#39;id_name&#39;と同じ値のID属性をもつ要素を選択する。</p>
+<p><a href="https://developer.mozilla.org/ja/docs/Web/API/Document/getElementById" target="_blank"  rel="noopener">document.getElementById</a></p>
+<blockquote>
+<p>もし与えられた ID を持つ要素がなければ、この関数は null を返します。DOM 実装はその属性が ID 型であると言う情報を持たなければならないことに注意してください。&quot;id&quot; という名前の属性は、文書の DTD でそのように定義されない限り ID 型ではありません。id 属性は XHTML、XUL、その他の場合で一般的に ID 型 として定義されています。どの属性が ID 型であるかそうでないかわからない実装は、null を返すことが期待されます。</p>
+</blockquote>
+<figure>
+<figcaption>javascript idで要素を取得 記入例</figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+<code>document.getElementById("btn");
+</code></pre></figure>
+
+</div>
+
+<div id="s3" class="mt-n6 pt-6 mb-6 clearfix">
+
+
+<h2>for in</h2>
+
+
+<blockquote>
+for...in 文はオブジェクトにあるすべての列挙可能なプロパティに対し指定された変数を通して反復処理を行います。それぞれの異なるプロパティに、JavaScript は指定された文を実行します。for...in 文は下記のようになります :</blockquote>
+<p>(変数A in オブジェクトB)の部分は 変数AにオブジェクトBのプロパティを代入して。値を処理する.</p>
+<figure>
+<figcaption>for in 記入例</figcaption><pre class="line-numbers language-javascript" data-src="prism.js">
+<code>
+for (variable in object) {
+  statements
+}</code></pre></figure>
+
+<figure>
+<figcaption>とあるオブジェクトからプロパティと値を列挙する関数 記入例</figcaption><pre class="line-numbers language-javascript" data-src="prism.js">
+<code>
+function dump_props(obj, obj_name) {
+  var result = "";
+  for (var i in obj) {
+    result += obj_name + "." + i + " = " + obj[i] + "&lt;br&gt;";
+  }
+  result += "&lt;hr&gt;";
+  return result;
+}
+var obj = {};
+obj.a = "0";
+obj.fn = "apple";
+</code></pre></figure>
+<p><code>dump</code>データ全体を別の場所にまとめて書き出す。</p>
+</div>
+
+
+
+
+
+
+
+<!-- editable area end ########             -->
+</article>
+</div>
+<!-- /container-->
+
+<!-- / w-aside2 --->
+
+<aside class="print-none" id="w-aside2">
+<div class="row text-white no-gutters justify-content-center">
+<nav aria-label="Page navigation">
+<ul class="pagination justify-content-center">
+<li class="page-item">
+<a class="page-link" href="508_js_code.html" tabindex="-1" aria-disabled="false">Previous</a>
+</li>
+<li class="page-item">
+<a class="page-link " aria-disabled="false"  href="510_js_code.html">Next</a>
+</li>
+</ul>
+</nav>
+</div>
+<div class="container p-3"></div>
+</aside>
+</main>
+<aside class="w-aside col-lg-2 print-none order-0" id="w-aside1">
+<div class="w-aside-inner container">
+<div class="accordion" id="accordionAside">
+<div class="w-subnav">
+<div id="headingOne">
+<h3 class="sticky-top">
+  <button class="btn btn-link  collapsed" type="button" data-toggle="collapse" data-target="#w-BOlist-collapse" aria-expanded="false" aria-controls="collapseOne" >
+PC Operation</button>
+</h3>
+</div>
+<div id="w-BOlist-collapse" class="collapse" aria-labelledby="headingOne" data-parent="#accordionAside">
+<!-- BOlist modile -->
+<ul id="w-BOlist" class="list-unstyled w-BOlist">
+        <li class="" v-for="title in titles"><a v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+        </ul>
+        <!-- /BOlist modile -->
+</div>
+</div>
+<div class="w-subnav">
+<div id="heading2">
+<h3 class="sticky-top">
+  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#w-OLlist-collapse" aria-expanded="false" aria-controls="collapseTwo">web Outline</button>
+</h3>
+</div>
+<div id="w-OLlist-collapse" class="collapse" aria-labelledby="heading2" data-parent="#accordionAside">
+<!-- OLlist modile -->
+<ul id="w-OLlist" class="list-unstyled">
+  <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+</ul>
+<!-- /OLlist modile -->
+</div>
+</div>
+<div class="w-subnav">
+<div id="heading3">
+<h3 class="sticky-top">
+  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#w-MKlist-collapse" aria-expanded="false" aria-controls="collapseThree">HTML</button>
+      </h3>
+</div>
+<div id="w-MKlist-collapse" class="collapse" aria-labelledby="heading3" data-parent="#accordionAside">
+<!-- OLlist modile -->
+<ul id="w-MKlist" class="list-unstyled">
+  <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}}</a></li>
+</ul>
+<!-- /OLlist modile -->
+</div>
+</div>
+
+<div class="w-subnav">
+<div id="heading4">
+<h3 class="sticky-top">
+<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#w-EDlist-collapse" aria-expanded="false" aria-controls="collapse4">Text Editor
+</button>
+</h3>
+</div>
+<div id="w-EDlist-collapse" class="collapse" aria-labelledby="heading4" data-parent="#accordionAside">
+<!-- EDlist modile -->
+<ul id="w-EDlist" class="list-unstyled">
+<li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}}</a></li>
+</ul>
+<!-- /EDlist modile -->
+</div>
+</div>
+<div class="w-subnav">
+<div id="heading5">
+<h3 class="sticky-top">
+<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#w-CSSlist-collapse" aria-expanded="false" aria-controls="collapse5">CSS
+</button>
+</h3>
+</div>
+<div id="w-CSSlist-collapse" class="collapse" aria-labelledby="heading4" data-parent="#accordionAside">
+<!-- EDlist modile -->
+<ul id="w-CSSlist" class="list-unstyled">
+  <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+</ul>
+<!-- /csslist modile -->
+</div>
+</div>
+
+<div class="w-subnav">
+<div id="heading6">
+<h3 class="sticky-top">
+<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#w-JSlist-collapse" aria-expanded="false" aria-controls="collapse6">javascript
+</button>
+</h3>
+</div>
+<div id="w-JSlist-collapse" class="collapse" aria-labelledby="heading4" data-parent="#accordionAside">
+<!-- EDlist modile -->
+<ul id="w-JSlist" class="list-unstyled">
+  <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+</ul>
+<!-- /jslist modile -->
+</div>
+</div>
+
+  </div><!-- /accordionAside -->
+</div>
+<script src="_js/_common/VueBOnavlist.js"></script>
+</aside>
+<aside class="w-aside w-indexlistbox col-lg-2 order-2" id="w-aside3">
+<div class="indexlist-inner container">
+<div><h3>page navigation</h3></div>
+<ol class="list-unstyled list-group" id="w-indexlists">
+  <li class="index-list" v-for="item in items">
+    <a v-bind:href="item.id" class="indexlist-link" data-scroll >{{item.text}}</a>
+  </li>
+</ol>
+</div>
+</aside>
+</div><!-- /main-wrap -->
+<!-- footer -->
+<footer id="w-pageFooter">
+<div class="container d-flex">
+  <p class="site-copy">
+<small>&copy; shounosuke tarutani</small>
+</p><!-- /site-copy -->
+</div>
+<!-- /container-->
+</footer>
+<!--w-pageFooter--><script src="_js/_common/Vuepagelist.js"></script>
+<script src="_js/_common/prism.js"></script>
+</div>
+<!--w-wrapper-->
+</body>
+</html>

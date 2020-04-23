@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="description" content="discription">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">  <title>関数 - Javascript - Web TextBook</title>
+  <!-- stylesheet  -->
+  <link rel="stylesheet" href="_css/_common/bootstrap.css">
+  <link rel="stylesheet" href="_css/_common/font-awesome.min.css">
+  <link rel="stylesheet" href="_css/_common/style.css">  <!--  Favicons  -->
+  <link rel="icon" href="favicon.ico">  <!-- common js  -->
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="_js/_common/jquery-3.2.1.min.js"></script>
+  <script src="_js/_common/bootstrap.min.js"></script>
+  <script src="_js/_common/pagescroll.jQuery.js"></script></head>
+<body class="Javascript">
+<div id="w-wrapper" class="w-wrapper">
+<!-- header -->
+<header id="w-pageHeader" class="navbar navbar-dark navbar-expand-lg fixed-top w-pageHeader" data-scroll-header="true">
+<div class="container">
+<a class="navbar-brand" href="index.html">logo</a><span class="navbar-brand">Web Textbook</span>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#w-nav" aria-controls="w-nav" aria-expanded="false" aria-label="ナビゲーション切替">
+<span class="navbar-toggler-icon"></span>
+</button>
+<nav id="w-nav" class="collapse navbar-collapse">
+<ul class="navbar-nav mr-auto pl-3">
+<li class="nav-item"><a href="20_browser_cord.html" class="nav-link disabled">HTML</a></li>
+<li class="nav-item"><a href="#" class="nav-link disabled">CSS</a></li>
+<li class="nav-item"><a href="#" class="nav-link">javasceipt</a></li>
+</ul>
+</nav>
+<!-- /w-nav-->
+</div>
+<!-- /container--></header>
+<!-- /w-pageHeader-->
+<div class="d-lg-flex pt-5" id="main-wrap">
+<main id="w-main" class="w-main col-lg-8 order-1">
+   <div class="container mb-5">
+<article id="w-article">
+<!-- editable area ########             -->
+        <h1>関数 - Javascript</h1>
+        <p><span>category:</span> <span class="badge badge-primary">Javascript</span></p>
+        <hr>
+<!-- 序章 モジュール -->
+<div class="card mb-4">
+<div class="card-body clearfix">
+<div class="float-lg-right col-lg-5 mb-2"><img src="_images/_JS/spices-2419055_640.jpg" alt="関数" class="img-fluid"></div>
+<p>変数宣言や　条件処理ををまとめ まとめた処理に名前をつけて使いまわす。<br>
+このように　同じプログラムを何度も書かなくてすむのが関数です。関数をうまく定義して必要なところで呼び出すのは、大きなプログラムを作るのに大切な技術です。
+</p>
+</noframes>
+</div>
+</div>
+<!-- 目次 モジュール -->
+
+<div class="bg-light p-3 mb-4">
+<h2>目次</h2>
+<ul id="w-indexlistBox">
+    <li v-for="item in items" class="w-indexlistBox-list">
+      <a v-bind:href="item.id" data-scroll >{{item.text}}</a>
+    </li>
+</ul>
+</div>
+<!-- / 目次 モジュール -->
+
+<!-- 本文のセクション モジュール -->
+<div id="s1" class="mt-n6 pt-6 mb-6 clearfix">
+
+<h2 id="s0">関数を定義する</h2>
+<blockquote>
+  <p><a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Functions">関数 - JavaScript | MDN</a>
+  </p>
+
+<p>関数はJavaScriptの基本的な構成要素のひとつです。また関数は、JavaScript の手続き ― つまり、タスクや値計算を実行する文の集まりです。関数を使うには、呼び出したいスコープ内のどこかでそれを定義する必要があります。</p>
+</blockquote>
+<h3>関数の目的</h3>
+<p>プログラムは簡単な処理しかできません。<br>
+そこで必要な機能を得る為に複雑な処理をあらかじめ<b>まとめ</b>て書いておきます。まとめた処理である関数を呼び出して実行します。<br>
+関数は同じ処理を何度も書いたりしなくて済みます。関数を使うことでプログラミングのメンテナンスの軽減やプログラミングの記述量を減らすことができます。</p>
+<h4>関数を例えると</h4>
+<p>関数とは人間の行動で例えると習慣や文化です。寝るや起きる食べるなどは生き物に備わった処理です。
+毎朝7時に会社に出社する機能は自分の中に組み立てられた処理の蓄積のもとに達成できる習慣になるわけです。<br>
+皆さんも会社や学校に至るまでにやっている処理や習慣はいくつあるでしょうか？例えば歯を磨く、朝食を食べる、お弁当作る、などなど。やらなければいけないことが頭のなかですぐにリストアップして思い出せるはずです。
+プログラムも簡単な処理をまとめておいてすぐに実行できる機能があります。この機能を関数と読んでいます。
+</p>
+</div>
+
+<div id="s2" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>関数の宣言</h2>
+<blockquote>
+<p>関数の定義（関数の宣言や関数定義文 (function statement) とも呼ばれます）は「function」 キーワードとそれに続く以下の内容で構成されます。</p>
+</blockquote>
+<div class="card mb-4 p-4">
+<h4>宣言の仕方</h4>
+<ol>
+<li>関数の名前。: functionの後に<em>半角スペースで区切り</em>命名する。<code>function functionName</code></li>
+<li>関数への引数のリスト。: 丸括弧でくくり、コンマで区切ります。<code>(arg0,arg1)</code></li>
+<li>関数を定義するJavaScriptの文。波括弧 {} でくくります。<code>{//まとめる処理};</code></li>
+</ol>
+</div>
+<h3 id="s1">構文 - 関数宣言(function statement)</h3>
+<figure>
+<figcaption>javascript 関数ざっくりとした説明</figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+<code>function 関数名(引数) {
+  //処理
+}
+</code></pre></figure>
+<h4>構文の注意</h4>
+<p><code>function</code> <b>半角スペース</b> 関数名 の順番で宣言してください。半角スペースがなければ定義として認識されません。</p>
+
+<h4>例文</h4>
+<p>例えば、次のコードは <code>square</code> という名前の簡単な関数を定義します</p>
+<p>機能は数値を累乗する<br>
+引数の<code>number</code>を二乗した値を返す。<br>
+<code>return</code>の役割は左に半角スペースを記述した後関数から<b>返す(出す)</b>処理後の変数を指定します。
+</p>
+<p><small>必ずしも<code>return</code>が必要ではありません。処理の目的によって使い分けてください。</small></p>
+<figure>
+<figcaption>/関数の定義 記入例</figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+<code>
+//関数の定義
+function square(number) {
+  return number * number;
+}
+var result = square(2);//関数squareの呼び出し。
+console.log(result);//4
+</code></pre></figure>
+<figure>
+  <figcaption>javascript 関数のおさらい</figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+<code>//定義
+function 関数名(仮引数1,仮引数2) {
+  //処理
+}
+//呼び出し
+関数名(引数1,引数2);
+</code></pre></figure>
+</div>
+
+<div id="s2" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>関数を呼び出す</h2>
+
+<blockquote>
+<p>関数を定義しても、その関数が実行されるわけではありません。関数の定義とは、ただ単に関数に名前をつけ、その関数が呼び出されたときに何をするかを指定することです。関数の呼び出しは、実際に指定したパラメータを用いて指定された動作を実行するということです。例えば、関数 square を定義した場合、次のようにしてそれを呼び出すことができます:</p>
+</blockquote>
+<figure>
+<figcaption>javascript 記入例</figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+<code>
+ square(5);// 25が出力
+//console.log(square(5));
+</code></pre></figure>
+</div>
+
+<div id="s3" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>関数式</h2>
+<blockquote>
+<p>ここまでの関数宣言はすべて構文的な文でしたが、関数は関数式によって作成することもできます。このような関数は無名 (anonymous) にできます。名前をつけなくてもよいのです。例えば、関数 square は次のように定義できます</p>
+</blockquote>
+<figure>
+<figcaption>javascript 無名関数式記入例</figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+<code>
+var square = function(number) {
+   return number * number
+ }
+ var x = square(4); // x の値は 16 となる
+ console.log(x);
+ </code></pre></figure>
+
+ <figure>
+<p>下記と上記は同じ意味になります。</p>
+ <figcaption>javascript 名前あり記入例</figcaption>
+ <pre class="line-numbers language-javascript" data-src="prism.js">
+ <code>
+ var square = function square(number) {
+    return number * number
+  }
+  var x = square(4); // x の値は 16 となる
+  console.log(x);
+// 実はwindow.square(4);でも実行できます。
+  var wd = window.square(7); // x の値は 49 となる
+    console.log(wd);
+  </code></pre></figure>
+<p>関数のデータ型はobjectです。objectの設計やobjectの定義する処理や構文を覚えることでなぜこのような設計なのかがぼんやりわかってきます。今はわからなくてもいいですので、なんとなくおんなじとおもっておいてください。</p>
+
+
+<h4>関数式の注意</h4>
+ <p>関数式の注意関数式だと呼び出しは定義のあとでしなければならない。<br>
+宣言式はトップレベルで表記されていれば呼び出しは先に書かれていても実行されます。</p>
+<h5>処理される</h5>
+<figure>
+<figcaption>javascript 記入例 </figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+<code>
+console.log(square(5));
+
+function square(number) {
+  return number * number;
+} </code></pre></figure>
+<p><b>関数宣言</b>は同じファイル上に関数名があれば探して呼び出してくれる。</p>
+<h5>処理されない。</h5>
+<figure>
+<figcaption>間違った 記入例 </figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+<code>
+console.log(square(5));
+var square = function (n) {
+  return n * n;
+}
+</code></pre></figure>
+<figure>
+<figcaption>エラーメッセージ 記入例 </figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+<code>
+  /*
+  Exception: ReferenceError: square is not defined
+  @Scratchpad/1:11:2
+  */
+</code></pre></figure>
+<p>構文エラーです。squareが探しだせませんでした。</p>
+<p>関数文は処理の変数への代入なので変数を宣言する前の行で呼び出しても変数の値は<code>undifind</code>である。</p>
+</div>
+
+<div id="s4" class="mt-n6 pt-6 mb-6 clearfix">
+  <h2>即時関数</h2>
+  <p>即時関数の目的はトップレベルで記述する処理を関数化することで変数スコープを限定し、変数の汚染を防ぐ。</p>
+  <p>言い換えれば、極力グローバル変数を減らしメモリーを解放したり上書きを回避するテクニック。<br>様々なリソースを扱う場合知っておくと便利な関数です。</p>
+  <figure>
+  <figcaption>即時実行関数 記入例 </figcaption>
+  <pre class="line-numbers language-javascript" data-src="prism.js">
+<code>// その1
+(function () {
+    //処理
+}());
+
+//その2
+(function () {
+    //処理
+})();
+</code></pre></figure>
+<p>2つの書き方がありますがその1の方がjsLintのデバック回避になるそうです。小かっこの位置が違います。</p>
+<figure>
+<figcaption>即時実行関数 引数を持った場合 記入例 </figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+<code>
+(function (param1, param2) {
+    //処理
+}('hoge', 'fuga'));
+</code></pre></figure>
+<p>後ろの小かっこに数値をセットすることで関数内の引数にわたされます。</p>
+<p>hogeは<code>param1</code>に渡されます。fugaは<code>param2</code>に渡されます。</p>
+<figure>
+<figcaption>引数を持った場合 記入例 </figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+<code>var result = (function (param1, param2) {
+    return param1 + param2;
+}(1, 2));
+
+console.log(result); //3が出力される。
+</code></pre></figure>
+<p>このようにグローバル変数に簡単な処理を出力することもできます。</p>
+
+<blockquote>
+  <p><a href="https://qiita.com/katsukii/items/cfe9fd968ba0db603b1e" target="_blank">JavaScriptで即時関数を使う理由 - Quitta</a></p>
+    <p><a href="http://analogic.jp/immediate-function/" target="_blank"> 即時関数のメリットと主な用途</a></p>
+  <ol><li>即時関数は本質的には通常の名前付き関数と同じ。つまり「即時関数を使わなければ実現できない処理」といったものはあり得ない</li>
+<li>即時関数は、<em>現在のスコープを汚染せずに新たなスコープを作成するための唯一の手段</em></li>
+<li>即時関数の主な用途は、再利用されない一連の処理を新たなスコープで包み、プログラムをスコープ上のサンドボックス内で実行すること</li></ol>
+</blockquote>
+<hr>
+<div class="story">
+  <h5>関数をつかうおおまかな作業は</h5>
+<p>関数をまず最初に<strong>「関数を定義」</strong>するプログラミング。<br>そして<strong>「関数を呼び出す」</strong>2つの作業が必要です。</p>
+<p>なれないうちは関数を書く前にトップレベルで処理を書き動くか確認する。＝＞関数化する。＝＞呼び出す。＝＞（拡張）仮引数をつかってみる。関数の定義に慣れることから始めましょう。</p>
+</div>
+</div>
+
+<div id="s3" class="mt-n6 pt-6 mb-6 clearfix">
+ <h2>引数 - (<span>argument</span>)</h2>
+<p>argumentは議論や議論のテーマという意味です。</p>
+<p>プログラミングでの引数（ひきすう）は関数の（）カッコ内にわたされます。<br>引数はキーワードとして関数の中で処理される値です。</p>
+<p>関数定義時小かっこでわたされるキーワードを仮引数とよびます。仮引数を複数て設定したい場合は「,」カンマで区切ります。</p>
+<p>引数と変数は似てますが違います。javascriptでは引数には var などの宣言文は必要ありません。むしろ構文エラーをはきます。</p>
+<p>関数内の暗黙的変数との区別は仮変数のキーワードです。</p>
+<p>引数は関数のなかの回路のような情報の流れ道です。
+<br>引数を設定することでで柔軟な関数の設計ができます。</p>
+  <p>先ほどの「朝7時に出社する」習慣の比喩で例えるなら引数は朝7時の部分です。<br>「朝8時」と引数で渡すことで、関数の処理は朝8時の処理をします。引数に渡した条件で処理を変化させて処理に柔軟性をもたせることもできます。</p>
+  <p>関数の引数がない場合undifinedが返されます。</p>
+  <p><a href="https://asciidwango.github.io/js-primer/basic/function-declaration/" target="_blank">関数と宣言 - JavaScriptの入門書 #jsprimer</a></p>
+  <figure>
+  <figcaption>引数をつかった関数の定義 記入例</figcaption>
+  <pre class="line-numbers language-javascript" data-src="prism.js">
+  <code>
+  //関数の定義
+  function prapra(args) {
+
+    return args * args;
+
+  }
+  var result = prapra(2);//関数prapra呼び出し実行
+  console.log(result);//4
+  </code></pre></figure>
+<p>関数処理にわたされる仮引数<code>args</code>を二乗します。</p>
+<figure>
+  <img src="_img/args.png" alt="仮変数argsのデータ遷移">
+</figure>
+  <figure>
+  <figcaption>引数をつかわない関数の定義 記入例</figcaption>
+  <pre class="line-numbers language-javascript" data-src="prism.js">
+  <code>
+  //関数の定義
+var num = 2;
+function numNum() {
+
+    return num * num;
+
+}
+var result = numNum();//関数numNum呼び出し実行
+console.log(result);//4
+  </code></pre>
+</figure>
+<figure>
+  <figcaption>引数をつかわない関数の定義 よろしくない 破たんするパターン 記入例</figcaption>
+  <pre class="line-numbers language-javascript" data-src="prism.js">
+  <code>//破たんするパターン
+    var result = numNum();
+    var num = 2;
+      function numNum() {
+        return num * num;
+      }
+    console.log(result);//NaN
+  </code></pre>
+</figure>
+<p>変数numにしか対応しない。つかいまわしづらい。コードの書き換えで期待値が変化してしまう。</p>
+<p>一見同じにみえるが関数は呼び出しと変数numが宣言代入された場所の処理順をまちがえただけで返り値の内容がかわってしまう。</p>
+
+
+<h4>引数の使用例</h4>
+<p>とある商品の商品名と値段を組み合わせて表示する関数です。<br>例文では商品名サイズ値段そして出力する要素をそれぞれ引数として持っています。</p>
+<ul>
+  <li>第一引数「item」商品名が入ることを想定しています。</li>
+  <li>第二引数「size」は商品の大きさや量を想定しています。</li>
+  <li>第三引数「price」は値段を想定しています。</li>
+  <li>第四引数「elm」は表示する場所を指定します。</li>
+</ul>
+<p><i class="fa fa-asterisk" aria-hidden="true"></i>このスクリプトはHTMLファイルと関連しています。HTMLファイル上にターゲット要素を記述してから試してください。</p>
+<figure>
+<figcaption>javascript coffeeMaker 記入例 </figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+<code>
+//変数の設定
+var coffeeBeens = "ブルーマウンテン";
+var coffeeSize = "トール";
+var coffeePrice = "640";
+var tergetElm = document.getElementById('priceText');
+//関数の定義 第一引数、
+
+function itemPricePrint(item, size, price, elm){
+var txt = '<b>' + item + '</b>' + 'の' + size + 'サイズ' + 'は<strong>' + price + '</strong>円です';
+elm.innerHTML = txt;
+}
+// 関数の実行
+itemPricePrint(coffeeBeens ,coffeeSize, coffeePrice , tergetElm);
+</code></pre></figure>
+<figure>
+<figcaption>HTML coffeeMaker 記入例 </figcaption>
+<pre class="line-numbers language-markup" data-src="prism.js">
+<code>
+&lt;span id="priceText"&gt;&lt;/span&gt;
+</code></pre></figure>
+<div class="sample mb-6">
+<details>
+  <summary>
+    <span>スクリプトの結果</span>
+  </summary>
+  <span id="priceText"></span>
+  <script>
+  var coffeeBeens = "ブルーマウンテン";
+  var coffeeSize = "トール";
+  var coffeePrice = "640";
+  var tergetElm = document.getElementById('priceText');
+  //関数の定義 第一引数、
+
+  function itemPricePrint(item, size, price, elm){
+  var txt = '<b>' + item + '</b>' + 'の' + size + 'サイズ' + 'は<strong>' + price + '</strong>円です';
+  elm.innerHTML = txt;
+  }
+  // 関数の実行
+  itemPricePrint(coffeeBeens ,coffeeSize, coffeePrice , tergetElm);
+  </script>
+</details>
+</div>
+
+<div class="alert-info p-4">
+  <h3>まとめ</h3>
+  <ol>
+    <li>関数は単純な処理を<b>まとめ</b>新しい機能を作るためにある。</li>
+    <li>関数を使うと同じ処理を何度も書かなくてすむ</li>
+    <li>関数は「function」から始まる</li>
+    <li>javascriotには関数宣言と関数式がある</li>
+    <li>引数は関数がデータを処理するときのデータの入口</li>
+  </ol>
+</div>
+
+</div>
+
+
+<!-- editable area end ########             -->
+</article>
+</div>
+<!-- /container-->
+
+<!-- / w-aside2 --->
+
+<aside class="print-none" id="w-aside2">
+<div class="row text-white no-gutters justify-content-center">
+<nav aria-label="Page navigation">
+<ul class="pagination justify-content-center">
+<li class="page-item">
+<a class="page-link" href="507_js_code.html" tabindex="-1" aria-disabled="false">Previous</a>
+</li>
+<li class="page-item">
+<a class="page-link " aria-disabled="false"  href="509_js_code.html">Next</a>
+</li>
+</ul>
+</nav>
+</div>
+<div class="container p-3"></div>
+</aside>
+</main>
+<aside class="w-aside col-lg-2 print-none order-0" id="w-aside1">
+<div class="w-aside-inner container">
+<div class="accordion" id="accordionAside">
+<div class="w-subnav">
+<div id="headingOne">
+<h3 class="sticky-top">
+  <button class="btn btn-link  collapsed" type="button" data-toggle="collapse" data-target="#w-BOlist-collapse" aria-expanded="false" aria-controls="collapseOne" >
+PC Operation</button>
+</h3>
+</div>
+<div id="w-BOlist-collapse" class="collapse" aria-labelledby="headingOne" data-parent="#accordionAside">
+<!-- BOlist modile -->
+<ul id="w-BOlist" class="list-unstyled w-BOlist">
+        <li class="" v-for="title in titles"><a v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+        </ul>
+        <!-- /BOlist modile -->
+</div>
+</div>
+<div class="w-subnav">
+<div id="heading2">
+<h3 class="sticky-top">
+  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#w-OLlist-collapse" aria-expanded="false" aria-controls="collapseTwo">web Outline</button>
+</h3>
+</div>
+<div id="w-OLlist-collapse" class="collapse" aria-labelledby="heading2" data-parent="#accordionAside">
+<!-- OLlist modile -->
+<ul id="w-OLlist" class="list-unstyled">
+  <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+</ul>
+<!-- /OLlist modile -->
+</div>
+</div>
+<div class="w-subnav">
+<div id="heading3">
+<h3 class="sticky-top">
+  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#w-MKlist-collapse" aria-expanded="false" aria-controls="collapseThree">HTML</button>
+      </h3>
+</div>
+<div id="w-MKlist-collapse" class="collapse" aria-labelledby="heading3" data-parent="#accordionAside">
+<!-- OLlist modile -->
+<ul id="w-MKlist" class="list-unstyled">
+  <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}}</a></li>
+</ul>
+<!-- /OLlist modile -->
+</div>
+</div>
+
+<div class="w-subnav">
+<div id="heading4">
+<h3 class="sticky-top">
+<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#w-EDlist-collapse" aria-expanded="false" aria-controls="collapse4">Text Editor
+</button>
+</h3>
+</div>
+<div id="w-EDlist-collapse" class="collapse" aria-labelledby="heading4" data-parent="#accordionAside">
+<!-- EDlist modile -->
+<ul id="w-EDlist" class="list-unstyled">
+<li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}}</a></li>
+</ul>
+<!-- /EDlist modile -->
+</div>
+</div>
+<div class="w-subnav">
+<div id="heading5">
+<h3 class="sticky-top">
+<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#w-CSSlist-collapse" aria-expanded="false" aria-controls="collapse5">CSS
+</button>
+</h3>
+</div>
+<div id="w-CSSlist-collapse" class="collapse" aria-labelledby="heading4" data-parent="#accordionAside">
+<!-- EDlist modile -->
+<ul id="w-CSSlist" class="list-unstyled">
+  <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+</ul>
+<!-- /csslist modile -->
+</div>
+</div>
+
+<div class="w-subnav">
+<div id="heading6">
+<h3 class="sticky-top">
+<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#w-JSlist-collapse" aria-expanded="false" aria-controls="collapse6">javascript
+</button>
+</h3>
+</div>
+<div id="w-JSlist-collapse" class="collapse" aria-labelledby="heading4" data-parent="#accordionAside">
+<!-- EDlist modile -->
+<ul id="w-JSlist" class="list-unstyled">
+  <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+</ul>
+<!-- /jslist modile -->
+</div>
+</div>
+
+  </div><!-- /accordionAside -->
+</div>
+<script src="_js/_common/VueBOnavlist.js"></script>
+</aside>
+<aside class="w-aside w-indexlistbox col-lg-2 order-2" id="w-aside3">
+<div class="indexlist-inner container">
+<div><h3>page navigation</h3></div>
+<ol class="list-unstyled list-group" id="w-indexlists">
+  <li class="index-list" v-for="item in items">
+    <a v-bind:href="item.id" class="indexlist-link" data-scroll >{{item.text}}</a>
+  </li>
+</ol>
+</div>
+</aside>
+</div><!-- /main-wrap -->
+<!-- footer -->
+<footer id="w-pageFooter">
+<div class="container d-flex">
+  <p class="site-copy">
+<small>&copy; shounosuke tarutani</small>
+</p><!-- /site-copy -->
+</div>
+<!-- /container-->
+</footer>
+<!--w-pageFooter--><script src="_js/_common/Vuepagelist.js"></script>
+<script src="_js/_common/prism.js"></script>
+</div>
+<!--w-wrapper-->
+</body>
+</html>

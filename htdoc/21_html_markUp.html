@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="description" content="discription">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">  <title>HTMLファイルのファイル名の付け方 - HTML - Web TextBook</title>
+  <!-- stylesheet  -->
+  <link rel="stylesheet" href="_css/_common/bootstrap.css">
+  <link rel="stylesheet" href="_css/_common/font-awesome.min.css">
+  <link rel="stylesheet" href="_css/_common/style.css">  <!--  Favicons  -->
+  <link rel="icon" href="favicon.ico">  <!-- common js  -->
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="_js/_common/jquery-3.2.1.min.js"></script>
+  <script src="_js/_common/bootstrap.min.js"></script>
+  <script src="_js/_common/pagescroll.jQuery.js"></script></head>
+<body class="HTML">
+<div id="w-wrapper" class="w-wrapper">
+<!-- header -->
+<header id="w-pageHeader" class="navbar navbar-dark navbar-expand-lg fixed-top w-pageHeader" data-scroll-header="true">
+<div class="container">
+<a class="navbar-brand" href="index.html">logo</a><span class="navbar-brand">Web Textbook</span>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#w-nav" aria-controls="w-nav" aria-expanded="false" aria-label="ナビゲーション切替">
+<span class="navbar-toggler-icon"></span>
+</button>
+<nav id="w-nav" class="collapse navbar-collapse">
+<ul class="navbar-nav mr-auto pl-3">
+<li class="nav-item"><a href="20_browser_cord.html" class="nav-link disabled">HTML</a></li>
+<li class="nav-item"><a href="#" class="nav-link disabled">CSS</a></li>
+<li class="nav-item"><a href="#" class="nav-link">javasceipt</a></li>
+</ul>
+</nav>
+<!-- /w-nav-->
+</div>
+<!-- /container--></header>
+<!-- /w-pageHeader-->
+<div class="d-lg-flex pt-5" id="main-wrap">
+<main id="w-main" class="w-main col-lg-8 order-1">
+   <div class="container mb-5">
+<article id="w-article">
+<!-- editable area ########             -->
+        <h1>HTMLファイルのファイル名の付け方 - HTML</h1>
+        <p><span>category:</span> <span class="badge badge-primary">HTML</span></p>
+        <hr>
+<!-- 序章 モジュール -->
+<div class="card mb-4">
+<div class="card-body">
+<p  class="card-text">
+  ここではHTMLファイルの名前の付け方のルールについて解説します。
+  <br>HTMLファイルの名前のつけかたにはルールがあります。</p>
+<div class="alert alert-info">
+    <ul>
+    <li><strong>英数半角</strong>でつけること</li>
+    <li>記号は「-」「_」しかつかえない。</li>
+    <li>拡張子は「.html」「.htm」であること</li>
+    <li>できればファイル名は内容が類推しやすいこと。</li>
+    <li>「index.html」はフォルダのトップファイルになる。</li>
+    </ul>
+</div>
+</div>
+</div>
+
+
+
+<!-- 目次 モジュール -->
+<div class="bg-light p-3 mb-4">
+<h2>目次</h2>
+<ul id="w-indexlistBox">
+    <li v-for="item in items" class="w-indexlistBox-list">
+      <a v-bind:href="item.id" data-scroll >{{item.text}}</a>
+    </li>
+</ul>
+</div>
+<!-- / 目次 モジュール -->
+<!-- 本文のセクション モジュール -->
+    <div id="s1" class="mt-n6 pt-6 mb-6 clearfix">
+        <h2>HTMLファイルのファイル名の付け方。</h2>
+    <ul>
+      <li>Unix系OSで扱うので半角英数は必須</li>
+      <li>使える記号は「-」ハイフン「_」アンダーバーのみ。</li>
+      <li>拡張子をつける</li>
+    </ul>
+      <p>以上を守っていただければＯＫです。</p>
+</div>
+
+<div id="s2" class="mt-n6 pt-6 mb-6 clearfix">
+        <h2>Unix系OSで扱うので半角は必須</h2>
+        <p>世界共通のルールなので日本語でのファイルのアップロードした場合サーバーが転送できない可能性があります。<br>これが日本語をデコードするプログラムがインターネットのサーバー間で備わっていないためです。<br>全角の文字のファイル名はすべからくダメと考えてください。</p>
+            <p>webプロジェクトは英語でファイル管理す<strong>習慣</strong>を身に付けましょう。</p>
+</div>
+<div id="s3" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>拡張子をつける。(.html)</h2>
+    <p>OSでは拡張子が省略されている場合があります。表示するようにしておきましょう。</p>
+    <blockquote  class="blockquote">
+    <p><a href="https://pc-karuma.net/windows-10-show-explorer-file-name-extension/" target="_blank" rel="noopener">Windows10 - ファイルの拡張子を表示/非表示にする</a></p>
+    </blockquote>
+    <blockquote  class="blockquote">
+    <p><a href="https://pc-karuma.net/mac-finder-show-file-extensions/" target="_blank" rel="noopener">Mac - ファイルの拡張子を表示/非表示にする</a></p>
+    </blockquote>
+    <p>ファイル名の構成はファイル名」+「どっと」+「拡張子」</p>
+    <div class="card mb-3">
+        <div class="card-body">
+    <h3 class="h5">ファイル名の例</h3>
+    <p>index.html
+    (インデックス　エイチ、テー、エム、エル)と読む。</p>
+    </div>
+    </div>
+    <h4>HTMLの拡張子</h4>
+    <p>HTMLファイルの拡張子は「.html」「.htm」の2種類です。
+    プロジェクトでは.htmlで統一します。
+    <br>「xx.html」「xx.htm」の同じ名前のファイル名で拡張子は違う場合、ユニーク扱いされ別ファイル扱いになります。</p>
+    <p>ちなみにほかのファイルは</p>
+    <div class="card">
+    <div class="card-body">
+    <h6>スタイルシートの拡張子</h6>
+    <p>「.css」</p>
+    <h6>javascriptの拡張子</h6>
+    <p>「.js」</p>
+  </div>
+</div>
+    <p>拡張子はOSがこのファイルはどのアプリケーションで開いたらいいか？とか中身は文字列とか判別をするための大切なファイル識別の判断材料であります。</p>
+    <h4>よく使うwebリソースファイル</h4>
+    <div class="table-responsive">
+    <table class="table table-bordered table-striped">
+    <thead>
+    <tr>
+    <th style="text-align:left">拡張子</th>
+    <th>ファイルの種類</th>
+    <th>ファイル形式</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td style="text-align:left">.html</td>
+    <td>htmlファイル</td>
+    <td>text/html</td>
+    </tr>
+    <tr>
+    <td style="text-align:left">.css</td>
+    <td>スタイルシートファイル</td>
+    <td>test/css</td>
+    </tr>
+    <tr>
+    <td style="text-align:left">.js</td>
+    <td>ジャバスクリプトファイル</td>
+    <td>text/javascript</td>
+    </tr>
+    <tr>
+    <td style="text-align:left">.png,.PNG</td>
+    <td>ピングファイル</td>
+    <td>image/png</td>
+    </tr>
+    <tr>
+    <td style="text-align:left">.jpg,.jpeg</td>
+    <td>ジェーペグファイル</td>
+    <td>image/jpeg</td>
+    </tr>
+    <tr>
+    <td style="text-align:left">.gif</td>
+    <td>ジフファイル</td>
+    <td>image/gif</td>
+    </tr>
+    <tr>
+    <td style="text-align:left">.svg</td>
+    <td>エスブイジーファイル</td>
+    <td>xml/svg</td>
+    </tr>
+    </tbody>
+    </table>
+    <p>...etc</p>
+
+</div>
+<blockquote class="blockquote">
+<p><a href="https://www.innovation.co.jp/urumo/jpg_png/" target="_blank"  rel="noopener">JPG？PNG？一体何が違う？最適な拡張子選びのコツ</a></p>
+</blockquote>
+</div>
+<div id="s4" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>使える記号は「-」ハイフン「_」アンダーバーのみ。</h2>
+<p>OSやサーバーアプリケーションが扱う記号がおおいため。記号として使える文字は少ない。
+半角の「-」「_」をうまく使おう。</p>
+<h3>OKの例</h3>
+<ul>
+<li><code>sample.html</code></li>
+<li><code>sample_2019.html</code></li>
+<li><code>2020-tokyo.html</code></li>
+</ul>
+<h3>これはユニークになります</h3>
+<ul>
+<li><code>sample.html</code></li>
+<li><code>Sample.html</code></li>
+<li><code>SAMPLE.html</code></li>
+</ul>
+<p><strong>大文字小文字を判別します。</strong></p>
+<h3>NO！GOODの例</h3>
+<h4>ローカルファイルでは稼働します。しかし　いけません。</h4>
+<ul>
+<li><code>サンプル.html</code>(全角がダメ)</li>
+<li><code>사례.html</code>(全角がダメ)</li>
+<li><code>ｓａｍｐｌｅ.html</code>(全角がダメ)</li>
+</ul>
+<h4>ローカルファイルでも動かない可能性あり。</h4>
+<p>（ばかばかしいからためしてないけど）</p>
+<ul>
+<li><code>2020/tokyo.html</code>(/がダメ)</li>
+<li><code>2025&amp;osaka.html</code>(&amp;がダメ)</li>
+<li><code>2025@osaka.html</code>(@がダメ)</li>
+</ul>
+<p>実際サーバー側やOS側 プログラム側で使えるようになったりつかえなかったりで、その場その場での対応が必要です。</p>
+<p>例えば <code>jquery.min.js</code>
+osは最後のピリオドと文字列を.jsを拡張子と認識するようになっているみたいです。</p>
+<hr>
+<h3>EIGOの名前</h3>
+<p>最初は慣れないですがファイル名を辞書を引いて<strong>英語(欧米系)</strong>でつけましょう。
+webの知識は一次ソースが英語の場合が多いので仕方ありません。</p>
+<ul>
+<li>場所 : location</li>
+<li>問い合わせ : inquery</li>
+<li>商品 : items</li>
+<li>経路 : access</li>
+</ul>
+<blockquote class="blockquote">
+    <p><a href="https://html-coding.co.jp/knowhow/tips/naming-rule/" target="_blank"  rel="noopener">新人コーダーに知っておいて欲しい命名規則の考え方[画像・ID・class名]</a></p>
+</blockquote>
+</div>
+
+<div id="s5" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>「index」ってつけるとトップぺージになるの？</h2>
+<p>サーバーの設定で・・・・
+index（目録）はとくに指定がなければフォルダをリクエストされた場合 index.（任意の拡張子）優先されて表示されます。
+これはセキュリティ的にフォルダの中身をリストアップされないようにサーバー会社が配慮して設定しています。
+詳しい設定はサーバー会社の設定画面を読んでください。</p>
+<h3>ですのでトップページは必ず 「index.」になります。</h3>
+<h5>サーバーの公開フォルダー</h5>
+<p>index.htmlが公開フォルダーの直下にあった場合。</p>
+<ul>
+<li>http:// example.com</li>
+<li>http:// example.com/</li>
+<li>http:// example.com/index.html</li>
+</ul>
+<p>クライアントリクエストが上記のURLをたたいてもindex.htmlが表示される。</p>
+<h5>注意）</h5>
+<p>フォルダの最初に表示されるファイルがindex.htmlですのでフォルダ構成が多いwebサイトはフォルダ毎にいindex.htmlファイルを作ることになります。</p>
+<h5>ポイント</h5>
+<ul>
+<li>Unix系OSで扱うので半角英数は必須（英語名でつける）</li>
+<li>使える記号は「-」ハイフン「_」アンダーバーのみ。</li>
+<li>拡張子をつける</li>
+<li>最初に表示するファイル名は「index.html」</li>
+</ul>
+
+      </div>
+
+<!-- editable area end ########             -->
+</article>
+</div>
+<!-- /container-->
+
+<!-- / w-aside2 --->
+
+<aside class="print-none" id="w-aside2">
+<div class="row text-white no-gutters justify-content-center">
+<nav aria-label="Page navigation">
+<ul class="pagination justify-content-center">
+<li class="page-item">
+<a class="page-link" href="20_html_markUp.html" tabindex="-1" aria-disabled="false">Previous</a>
+</li>
+<li class="page-item">
+<a class="page-link " aria-disabled="false"  href="22_html_markUp.html">Next</a>
+</li>
+</ul>
+</nav>
+</div>
+<div class="container p-3"></div>
+</aside>
+</main>
+<aside class="w-aside col-lg-2 print-none order-0" id="w-aside1">
+<div class="w-aside-inner container">
+<div class="accordion" id="accordionAside">
+<div class="w-subnav">
+<div id="headingOne">
+<h3 class="sticky-top">
+  <button class="btn btn-link  collapsed" type="button" data-toggle="collapse" data-target="#w-BOlist-collapse" aria-expanded="false" aria-controls="collapseOne" >
+PC Operation</button>
+</h3>
+</div>
+<div id="w-BOlist-collapse" class="collapse" aria-labelledby="headingOne" data-parent="#accordionAside">
+<!-- BOlist modile -->
+<ul id="w-BOlist" class="list-unstyled w-BOlist">
+        <li class="" v-for="title in titles"><a v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+        </ul>
+        <!-- /BOlist modile -->
+</div>
+</div>
+<div class="w-subnav">
+<div id="heading2">
+<h3 class="sticky-top">
+  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#w-OLlist-collapse" aria-expanded="false" aria-controls="collapseTwo">web Outline</button>
+</h3>
+</div>
+<div id="w-OLlist-collapse" class="collapse" aria-labelledby="heading2" data-parent="#accordionAside">
+<!-- OLlist modile -->
+<ul id="w-OLlist" class="list-unstyled">
+  <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+</ul>
+<!-- /OLlist modile -->
+</div>
+</div>
+<div class="w-subnav">
+<div id="heading3">
+<h3 class="sticky-top">
+  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#w-MKlist-collapse" aria-expanded="false" aria-controls="collapseThree">HTML</button>
+      </h3>
+</div>
+<div id="w-MKlist-collapse" class="collapse" aria-labelledby="heading3" data-parent="#accordionAside">
+<!-- OLlist modile -->
+<ul id="w-MKlist" class="list-unstyled">
+  <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}}</a></li>
+</ul>
+<!-- /OLlist modile -->
+</div>
+</div>
+
+<div class="w-subnav">
+<div id="heading4">
+<h3 class="sticky-top">
+<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#w-EDlist-collapse" aria-expanded="false" aria-controls="collapse4">Text Editor
+</button>
+</h3>
+</div>
+<div id="w-EDlist-collapse" class="collapse" aria-labelledby="heading4" data-parent="#accordionAside">
+<!-- EDlist modile -->
+<ul id="w-EDlist" class="list-unstyled">
+<li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}}</a></li>
+</ul>
+<!-- /EDlist modile -->
+</div>
+</div>
+<div class="w-subnav">
+<div id="heading5">
+<h3 class="sticky-top">
+<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#w-CSSlist-collapse" aria-expanded="false" aria-controls="collapse5">CSS
+</button>
+</h3>
+</div>
+<div id="w-CSSlist-collapse" class="collapse" aria-labelledby="heading4" data-parent="#accordionAside">
+<!-- EDlist modile -->
+<ul id="w-CSSlist" class="list-unstyled">
+  <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+</ul>
+<!-- /csslist modile -->
+</div>
+</div>
+
+<div class="w-subnav">
+<div id="heading6">
+<h3 class="sticky-top">
+<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#w-JSlist-collapse" aria-expanded="false" aria-controls="collapse6">javascript
+</button>
+</h3>
+</div>
+<div id="w-JSlist-collapse" class="collapse" aria-labelledby="heading4" data-parent="#accordionAside">
+<!-- EDlist modile -->
+<ul id="w-JSlist" class="list-unstyled">
+  <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+</ul>
+<!-- /jslist modile -->
+</div>
+</div>
+
+  </div><!-- /accordionAside -->
+</div>
+<script src="_js/_common/VueBOnavlist.js"></script>
+</aside>
+<aside class="w-aside w-indexlistbox col-lg-2 order-2" id="w-aside3">
+<div class="indexlist-inner container">
+<div><h3>page navigation</h3></div>
+<ol class="list-unstyled list-group" id="w-indexlists">
+  <li class="index-list" v-for="item in items">
+    <a v-bind:href="item.id" class="indexlist-link" data-scroll >{{item.text}}</a>
+  </li>
+</ol>
+</div>
+</aside>
+</div><!-- /main-wrap -->
+<!-- footer -->
+<footer id="w-pageFooter">
+<div class="container d-flex">
+  <p class="site-copy">
+<small>&copy; shounosuke tarutani</small>
+</p><!-- /site-copy -->
+</div>
+<!-- /container-->
+</footer>
+<!--w-pageFooter--><script src="_js/_common/Vuepagelist.js"></script>
+<script src="_js/_common/prism.js"></script>
+</div>
+<!--w-wrapper-->
+</body>
+</html>

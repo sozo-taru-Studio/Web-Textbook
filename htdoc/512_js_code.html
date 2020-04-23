@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="description" content="discription">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">  <title>jQueryとHTMLへの読み込み - Javascript - Web TextBook</title>
+  <!-- stylesheet  -->
+  <link rel="stylesheet" href="_css/_common/bootstrap.css">
+  <link rel="stylesheet" href="_css/_common/font-awesome.min.css">
+  <link rel="stylesheet" href="_css/_common/style.css">  <!--  Favicons  -->
+  <link rel="icon" href="favicon.ico">  <!-- common js  -->
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="_js/_common/jquery-3.2.1.min.js"></script>
+  <script src="_js/_common/bootstrap.min.js"></script>
+  <script src="_js/_common/pagescroll.jQuery.js"></script></head>
+<body class="Javascript">
+<div id="w-wrapper" class="w-wrapper">
+<!-- header -->
+<header id="w-pageHeader" class="navbar navbar-dark navbar-expand-lg fixed-top w-pageHeader" data-scroll-header="true">
+<div class="container">
+<a class="navbar-brand" href="index.html">logo</a><span class="navbar-brand">Web Textbook</span>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#w-nav" aria-controls="w-nav" aria-expanded="false" aria-label="ナビゲーション切替">
+<span class="navbar-toggler-icon"></span>
+</button>
+<nav id="w-nav" class="collapse navbar-collapse">
+<ul class="navbar-nav mr-auto pl-3">
+<li class="nav-item"><a href="20_browser_cord.html" class="nav-link disabled">HTML</a></li>
+<li class="nav-item"><a href="#" class="nav-link disabled">CSS</a></li>
+<li class="nav-item"><a href="#" class="nav-link">javasceipt</a></li>
+</ul>
+</nav>
+<!-- /w-nav-->
+</div>
+<!-- /container--></header>
+<!-- /w-pageHeader-->
+<div class="d-lg-flex pt-5" id="main-wrap">
+<main id="w-main" class="w-main col-lg-8 order-1">
+   <div class="container mb-5">
+<article id="w-article">
+<!-- editable area ########             -->
+        <h1>jQueryとHTMLへの読み込み - Javascript</h1>
+        <p><span>category:</span> <span class="badge badge-primary">Javascript</span></p>
+        <hr>
+<!-- 序章 モジュール -->
+<div class="card mb-4">
+<div class="card-body clearfix">
+<div class="float-lg-right col-lg-5 mb-2"><img src="_images/_JS/technology-1283624_640.jpg" alt="jQuery " class="img-fluid"></div>
+
+<p>jQuery javascriptライブラリー - JQueryを実装する準備</p>
+<p>jQueryをHTMLファイルに実装する方法</p>
+</div>
+</div>
+<!-- 目次 モジュール -->
+
+<div class="bg-light p-3 mb-4">
+<h2>目次</h2>
+<ul id="w-indexlistBox">
+    <li v-for="item in items" class="w-indexlistBox-list">
+      <a v-bind:href="item.id" data-scroll >{{item.text}}</a>
+    </li>
+</ul>
+</div>
+<!-- / 目次 モジュール -->
+
+<!-- 本文のセクション モジュール -->
+<div id="s1" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>jQueryをなぜつかうのですかねぇ</h2>
+<ul>
+  <li>生のjavascriptではコストが高いDOM操作と取得が簡単にできる</li>
+  <li>ブラウザの差異を埋めれる ブラウザのバージョンでスクリプトを書き換えるコストが少ない。</li>
+  <li>Ajax非同期通信の機能拡張</li>
+  <li>豊富なプラグインと解説資料</li>
+</ul>
+<blockquote>
+  <p><a href="http://www.buildinsider.net/web/popularjslib/2016" target="_blank">人気上昇中のJavaScriptライブラリを調べてみた<br> http://www.buildinsider.net/web/popularjslib/2016</a></p>
+</blockquote>
+
+</div>
+
+<div id="s2" class="mt-n6 pt-6 mb-6 clearfix">
+
+<h2>jQuaeryの準備 コアファイルの読み込み</h2>
+
+<h3>フォルダから読みこむ例</h3>
+<p>JQueryはコアファイル（jQueryオブジェクト）をブラウザにあらかじめ読み込ませ。製作者がほしい機能をjavascriptファイルで呼び出す仕組みになっています。まずはHTMLのhead要素内でjQueryコアファイルを読み込みましょう。</p>
+<p>コアファイルを読み込ませた後、具体的な処理をするプログラムが書かれたファイルをHTMLファイルに読み込みます。</p>
+<p>HTMLファイルにはjQueryコアファイルとjQuery実行ファイルの2枚がよみこまれることとなります。</P>
+<div id="pre">
+  <figure>
+  <figcaption>ジェイクエリーコアファイル「jquery-1.10.2.js」HTMLの読み込みの記入例</figcaption>
+  <pre class="line-numbers language-markup" data-src="prism.js">
+    <code>&lt;script type="text/javascript" src="jquery-1.10.2.js"&gt;&lt;/script&gt;</code></pre>
+</figure>
+</div>
+<div id="pre1">
+<h3>外部サーバー(CDN)からジェイクエリーコアファイル「jquery-1.10.2.js」HTMLの読み込みの記入例</h3>
+<p>CDNとはコンテンツデリバリイーネットワークの略で大手のサーバー会社が無料で主要なリソースを公開しています。<br>webサイトに必要なリソースのURLをリクエストすることでブラウザにリソースファイルを読み込むことができます。</p>
+<figure>
+<figcaption>外部サーバー(CDN)からジェイクエリーコアファイル「jquery-1.10.2.js」HTMLの読み込み HTML 記入例</figcaption>
+<pre class="line-numbers language-markup" data-src="prism.js"><code>&lt;script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js" &gt;&lt;/script&gt;</code></pre>
+</figure>
+</div>
+<div>
+  <p>jQueryライブラリーを読み込んだら今度はjavascriptの時と同じようにプログラムを記述しますが<br>
+  jQueryは下記のような特殊な関数を記述します。jQuery()関数の引数にコードをわたしてjQueryオブジェクトメソッドをつかいます。</p>
+  <p>jQueryの便利なメソッドをつかうには最初に下記のようにファイルを書きましょう。</p>
+  <p>jQueryのライブラリーの読み込みは間ならずjqueryの記述より先によみこむようにHTMLファイルでリンクしましょう。</p>
+  <ol>
+    <li>jQueryコアファイル(先に読む)</li>
+    <li>jQueryを実行するjavascriptファイル（後に読む）</li>
+  </ol>
+  <figure>
+  <figcaption>JQueryコアファイルの読み込み。 記入例</figcaption>
+<pre class="line-numbers language-markup" data-src="prism.js"><code>
+&lt;!-- 1  コアファイル --&gt;
+&lt;script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js" &gt;&lt;/script&gt;
+&lt;!-- 2 実行ファイル --&gt;
+&lt;script type="text/javascript" src="DIR/YOUE-Original-MAME-jQUERY.js" &gt;&lt;/script&gt;
+</code></pre>
+</figure>
+</div>
+</div>
+
+<div id="s3" class="mt-n6 pt-6 mb-6 clearfix">
+  <h2>jQueryの処理をするファイルを作る。</h2>
+  <p>コアファイルを読み込んだら次はjQueryを扱って具体的な処理をプログラミングするファイルを作ります。</p>
+  <p>jQueryライブラリーをつかって処理をかいていきます。
+  jQueryとしてあつかわれるように書き方がjavascriptのプログラムと少しルールがちがいますが。
+  覚えていきましょう。 この記述はjQueryで書かれたプログラムの共通の記述になります。</p>
+  <figure>
+  <figcaption>JQueryの記述のでだし。 記入例 例1 (javascriptファイル)</figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js"><code>
+$(document).ready(function(){
+ // ここに処理を記述します
+});</code></pre>
+</figure>
+<p><code>$(document).ready(function(){});</code>の解説</p>
+<p><code>$(document)</code>はdocumentオブジェクトを$オブジェクトに読み込んでいます。</p>
+<p><code>.ready(function(){});</code>は$オブジェクトのメソッドでdocumentオブジェクトを読み込んだら引数に渡した処理を実行する処理です。<br>$オブジェクトとはjQueryオブジェクトです。<code>jQuery</code>と記述する手間を省くため予め変数<code>$</code>に代入されています。</p>
+<p>「表示の準備が終わったらこのスクリプト実行してね。」と書かれています。jQueryを読み込んでいる時点ではbody要素は読み込まれてないのでbody要素を読み込んだら実行する命令です。</p>
+
+<h3 id="s2">例2 例1の省略型 (javascriptファイル)</h3>
+<p>いろんな記述例でこの書きかたが一般的な買い方です。バージョンが3になってからは正式に下記の$メソッドの引数に処理を渡す書き方をすすめられています。</p>
+<figure>
+<figcaption>JQueryの記述記入例</figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+<code>
+//step 1↓-------------- $()関数を呼び出す
+$();
+
+//step 2 ↓-------------- $()の引数に関数を宣言
+$(function(){});
+
+//step 3 ---------------- $()の引数に関数の処理を入力
+$(function(){
+  // ここに処理を記述します
+});
+</code></pre>
+</figure>
+<p>この書き方は簡易の書き方で公式が推奨するjQueryの呼び出しかたです。</p>
+</div>
+
+
+<div id="s4" class="mt-n6 pt-6 mb-6 clearfix">
+ <h2>全体ではこんな感じです（html）</h2>
+<figure>
+<figcaption>HTML 記入例</figcaption>
+<pre class="line-numbers language-markup" data-src="prism.js"><code>
+&lt;html&gt;
+&lt;head&gt;
+  &lt;script type="text/javascript" src="jqueryがあるフォルダまでのパスjquery.js"&gt;&lt;/script&gt;
+  &lt;script type="text/javascript"&gt;
+    $(function(){
+    // ここに処理を記述します
+    });
+   &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;a href="http://jquery.com/"&gt;jQuery&lt;/a&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code>
+</pre></figure>
+<h4>$の衝突(コンフリクト)</h4>
+<p><code>$</code>は便利な変数でphpでも予約文字でつかわれjQuery以外のライブラリーでもグローバル変数として定義されています。もしそのサイトに＄変数が定義された別のjavascriptのファイルが読み込まれていた場合、<em>$を上書きされjQueryが動かないまたはscript自体が動かない場合があります。</em></p>
+<p>基本の記述は2017年でもこちらのようですが、サイトの事情でそうもいかない場合などは下記のような方法や本サイトなどにも＄のコンフリクトを起こさない方法があります。<br>
+今回はコンフリクトを起こす危険のない環境での動作練習となります。</p>
+<blockquote>
+  <p><a href="http://qiita.com/mijabi/items/c68d27bc2ea5642675af" target="_blank" rel="noopener">（良くないけど）ページに複数のjQueryを読み込む</a></p>
+</blockquote>
+<p>もちろん外部ファイル化していいです。いやむしろ<strong>外部ファイル化</strong>しましょう。</p>
+</div>
+
+
+<div id="s5" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>jQuery実装の応用</h2>
+<p><strong>jQueryオブジェクトは変数$に代入さている」</strong></p>
+  <p>Jqueryコアを読み取ったHTMLファイルでコンソールで確認してみてください。</p>
+  <figure>
+  <figcaption>変数$と変数jQueryの確認</figcaption>
+  <pre class="line-numbers language-javascript" data-src="prism.js"><code>console.log($==jQuery);//true</code></pre>
+  </figure>
+  <p><code>console.log($==jQuery);</code>は変数＄と変数jQueryが等しいか確認しています。</p>
+<figure>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+<code>$(document).ready(function(){});
+//上の書き方としたの書き方同じ意味
+jQuery(document).ready(function(){});
+</code></pre>
+</figure>
+<p>つまりこの書き方は4通りの書き方ができます。</p>
+<figure>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+<code>//この4つの書き方はすべて処理は同じです。
+$(document).ready(function(){/*処理を記述*/});
+jQuery(document).ready(function(){/*処理を記述*/});
+jQuery(function(){/*処理を記述*/});
+$(function(){/*処理を記述*/});
+</code></pre>
+</figure>
+</div>
+
+<div id="s6" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>jQuery実装の応用 その2 即時実行関数の応用</h2>
+<p>即時実行関数の応用で変数「$」の上書きを防止します。</p>
+  <p><pre><code>$(function(){/*処理を記述*/});</code></pre>の$を関数化して$をカプセル化(保護)します。</p>
+
+<div>
+<h4>即時実行関数の構文例</h4>
+<figure>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+<code>(function(){
+  /*即時処理*/
+})();</code> </pre></figure>
+<p>即時処理関数の中で定義された変数はグローバル変数と隔離されます。</p>
+<figure>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+<code>(function($){
+  /*即時処理*/
+})(jQuery);
+</code></pre></figure>
+<p>引数＄にjQuery変数(jQueryオブジェクト)をセットしてjQueryを呼び出しています。</p>
+<blockquote>
+<p><a href="https://qiita.com/katsukii/items/cfe9fd968ba0db603b1e" target="_blank" rel="noopener">JavaScriptで即時関数を使う理由</a></p>
+</blockquote>
+<figure>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+<code>(function($){
+  /*ここでは$はjQueryオブジェクトとして使えます。*/
+  $(function(){/*処理を記述*/});
+})(jQuery);
+</code></pre>
+</figure>
+</div>
+<noscript>Javascriptが無効なため、表示されない内容があります。Onにする方法は<a href="http://www.enable-javascript.com/ja/" target="_blank" rel="noopener">ここ</a>をクリックしてね。</noscript>
+</div>
+
+
+
+
+
+
+
+<!-- editable area end ########             -->
+</article>
+</div>
+<!-- /container-->
+
+<!-- / w-aside2 --->
+
+<aside class="print-none" id="w-aside2">
+<div class="row text-white no-gutters justify-content-center">
+<nav aria-label="Page navigation">
+<ul class="pagination justify-content-center">
+<li class="page-item">
+<a class="page-link" href="510_js_code.html" tabindex="-1" aria-disabled="false">Previous</a>
+</li>
+<li class="page-item">
+<a class="page-link " aria-disabled="false"  href="512_js_code.html">Next</a>
+</li>
+</ul>
+</nav>
+</div>
+<div class="container p-3"></div>
+</aside>
+</main>
+<aside class="w-aside col-lg-2 print-none order-0" id="w-aside1">
+<div class="w-aside-inner container">
+<div class="accordion" id="accordionAside">
+<div class="w-subnav">
+<div id="headingOne">
+<h3 class="sticky-top">
+  <button class="btn btn-link  collapsed" type="button" data-toggle="collapse" data-target="#w-BOlist-collapse" aria-expanded="false" aria-controls="collapseOne" >
+PC Operation</button>
+</h3>
+</div>
+<div id="w-BOlist-collapse" class="collapse" aria-labelledby="headingOne" data-parent="#accordionAside">
+<!-- BOlist modile -->
+<ul id="w-BOlist" class="list-unstyled w-BOlist">
+        <li class="" v-for="title in titles"><a v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+        </ul>
+        <!-- /BOlist modile -->
+</div>
+</div>
+<div class="w-subnav">
+<div id="heading2">
+<h3 class="sticky-top">
+  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#w-OLlist-collapse" aria-expanded="false" aria-controls="collapseTwo">web Outline</button>
+</h3>
+</div>
+<div id="w-OLlist-collapse" class="collapse" aria-labelledby="heading2" data-parent="#accordionAside">
+<!-- OLlist modile -->
+<ul id="w-OLlist" class="list-unstyled">
+  <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+</ul>
+<!-- /OLlist modile -->
+</div>
+</div>
+<div class="w-subnav">
+<div id="heading3">
+<h3 class="sticky-top">
+  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#w-MKlist-collapse" aria-expanded="false" aria-controls="collapseThree">HTML</button>
+      </h3>
+</div>
+<div id="w-MKlist-collapse" class="collapse" aria-labelledby="heading3" data-parent="#accordionAside">
+<!-- OLlist modile -->
+<ul id="w-MKlist" class="list-unstyled">
+  <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}}</a></li>
+</ul>
+<!-- /OLlist modile -->
+</div>
+</div>
+
+<div class="w-subnav">
+<div id="heading4">
+<h3 class="sticky-top">
+<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#w-EDlist-collapse" aria-expanded="false" aria-controls="collapse4">Text Editor
+</button>
+</h3>
+</div>
+<div id="w-EDlist-collapse" class="collapse" aria-labelledby="heading4" data-parent="#accordionAside">
+<!-- EDlist modile -->
+<ul id="w-EDlist" class="list-unstyled">
+<li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}}</a></li>
+</ul>
+<!-- /EDlist modile -->
+</div>
+</div>
+<div class="w-subnav">
+<div id="heading5">
+<h3 class="sticky-top">
+<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#w-CSSlist-collapse" aria-expanded="false" aria-controls="collapse5">CSS
+</button>
+</h3>
+</div>
+<div id="w-CSSlist-collapse" class="collapse" aria-labelledby="heading4" data-parent="#accordionAside">
+<!-- EDlist modile -->
+<ul id="w-CSSlist" class="list-unstyled">
+  <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+</ul>
+<!-- /csslist modile -->
+</div>
+</div>
+
+<div class="w-subnav">
+<div id="heading6">
+<h3 class="sticky-top">
+<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#w-JSlist-collapse" aria-expanded="false" aria-controls="collapse6">javascript
+</button>
+</h3>
+</div>
+<div id="w-JSlist-collapse" class="collapse" aria-labelledby="heading4" data-parent="#accordionAside">
+<!-- EDlist modile -->
+<ul id="w-JSlist" class="list-unstyled">
+  <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+</ul>
+<!-- /jslist modile -->
+</div>
+</div>
+
+  </div><!-- /accordionAside -->
+</div>
+<script src="_js/_common/VueBOnavlist.js"></script>
+</aside>
+<aside class="w-aside w-indexlistbox col-lg-2 order-2" id="w-aside3">
+<div class="indexlist-inner container">
+<div><h3>page navigation</h3></div>
+<ol class="list-unstyled list-group" id="w-indexlists">
+  <li class="index-list" v-for="item in items">
+    <a v-bind:href="item.id" class="indexlist-link" data-scroll >{{item.text}}</a>
+  </li>
+</ol>
+</div>
+</aside>
+</div><!-- /main-wrap -->
+<!-- footer -->
+<footer id="w-pageFooter">
+<div class="container d-flex">
+  <p class="site-copy">
+<small>&copy; shounosuke tarutani</small>
+</p><!-- /site-copy -->
+</div>
+<!-- /container-->
+</footer>
+<!--w-pageFooter--><script src="_js/_common/Vuepagelist.js"></script>
+<script src="_js/_common/prism.js"></script>
+</div>
+<!--w-wrapper-->
+</body>
+</html>

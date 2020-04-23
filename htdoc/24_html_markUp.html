@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="description" content="discription">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">  <title>W3C（ダブリュ３シー）について - HTML - Web TextBook</title>
+  <!-- stylesheet  -->
+  <link rel="stylesheet" href="_css/_common/bootstrap.css">
+  <link rel="stylesheet" href="_css/_common/font-awesome.min.css">
+  <link rel="stylesheet" href="_css/_common/style.css">  <!--  Favicons  -->
+  <link rel="icon" href="favicon.ico">  <!-- common js  -->
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="_js/_common/jquery-3.2.1.min.js"></script>
+  <script src="_js/_common/bootstrap.min.js"></script>
+  <script src="_js/_common/pagescroll.jQuery.js"></script></head>
+<body class="HTML">
+<div id="w-wrapper" class="w-wrapper">
+<!-- header -->
+<header id="w-pageHeader" class="navbar navbar-dark navbar-expand-lg fixed-top w-pageHeader" data-scroll-header="true">
+<div class="container">
+<a class="navbar-brand" href="index.html">logo</a><span class="navbar-brand">Web Textbook</span>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#w-nav" aria-controls="w-nav" aria-expanded="false" aria-label="ナビゲーション切替">
+<span class="navbar-toggler-icon"></span>
+</button>
+<nav id="w-nav" class="collapse navbar-collapse">
+<ul class="navbar-nav mr-auto pl-3">
+<li class="nav-item"><a href="20_browser_cord.html" class="nav-link disabled">HTML</a></li>
+<li class="nav-item"><a href="#" class="nav-link disabled">CSS</a></li>
+<li class="nav-item"><a href="#" class="nav-link">javasceipt</a></li>
+</ul>
+</nav>
+<!-- /w-nav-->
+</div>
+<!-- /container--></header>
+<!-- /w-pageHeader-->
+<div class="d-lg-flex pt-5" id="main-wrap">
+<main id="w-main" class="w-main col-lg-8 order-1">
+   <div class="container mb-5">
+<article id="w-article">
+<!-- editable area ########             -->
+        <h1>W3C（ダブリュ３シー）について - HTML</h1>
+        <p><span>category:</span> <span class="badge badge-primary">HTML</span></p>
+        <hr>
+
+<!-- 序章 モジュール -->
+<div class="card mb-4">
+<div class="card-body">
+<p  class="card-text"><a href="https://www.w3.org/"  target="_blank" rel="noopener">World Wide Web Consortium (W3C)</a></p>
+<p><a href="https://www.w3.org/Consortium/Translation/Japanese" target="_blank" rel="noopener">W3Cの仕様書等の文書の日本語訳集</a></p>
+<p>ワールドワイドウェブソローシアムは
+インターネットとそのリソースの規格や標準化を勧告する団体です。デベロッパーにとって身近な部分では
+HTMLで使われる要素の役割やCSSのプロパティやバリューを草案から設計そして勧告したりする組織です。インターネットで情報がみれるのもこの団体のおかげです。</p>
+</div>
+</div>
+
+
+
+<!-- 目次 モジュール -->
+<div class="bg-light p-3 mb-4">
+<h2>目次</h2>
+<ul id="w-indexlistBox">
+    <li v-for="item in items" class="w-indexlistBox-list">
+      <a v-bind:href="item.id" data-scroll >{{item.text}}</a>
+    </li>
+</ul>
+</div>
+<!-- / 目次 モジュール -->
+<div id="s1" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>W3Cミッション の役割</h2>
+<p><a href="https://www.w3.org/Consortium/mission">W3Cミッション</a></p>
+
+<p>各社が開発するインターネットブラウザ機能拡充、互換性や解釈の誤解をうまないようにしています。
+そのためユーザーやインターネット開発業者の不利益が防げるやくわりがあります。</p>
+<p>W3Cはすべてひとにインターネットにアクセスできるよう活動しています。
+アクセシビリティを重要視し、より多くの人で様々なデバイスでインターネットで情報がやり取りできるように活動しています</p>
+
+<div class="card">
+<div class="card-header">
+  <h3>w3c,ブラウザメーカー,デベロッパーの役割</h3>
+</div>
+<div class="card-body">
+<p><span class="badge badge-primary">W3C</span>はHTMLCSSの機能、記述方法などを設計標準化する。</p>
+<p><span class="badge badge-primary">ブラウザメーカー</span>はW3Cの勧告に沿った機能をブラウザに実装する。（努力をしている）</p>
+<p><span class="badge badge-primary">制作者</span>はW3Cの勧告あったにコーディングをしユーザーにwebsiteを公開する。</p>
+</div>
+</div>
+</div>
+
+<div id="s2" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>HTMLやCSSの仕様を正確に知るには</h2>
+<p>HTML&amp;CSSのリファレンスや仕様を確認する場合ここで確認するのが正確です。
+    またブラウザメーカ-のリファレンスなどもみなW3Cの勧告をもとに辞書などを作成しています。
+    講師に教わることの元はここにのっているとおもってください。</p>
+    <ul>
+    <li>HTMLやCSSはW3Cが決めている。</li>
+    <li>W3Cは世界のすべてのひとにインターネットで情報を享受できるように活動しています。</li>
+    </ul>
+    <p>英語を機械翻訳しても難解なので有志の方々が翻訳をされております。でもまだ専門用語が多くてわからないのは専門用語を理解するぐらいまでしらべてください。専門家になるためのハードルとおもってください。</p>
+    <h3 id="mdn">MDN</h3>
+    <h4>ブラウザメーカーのリファレンス</h4>
+    <ul><li>
+    <a href="https://developer.mozilla.org/ja/" target="_blank" rel="noopener">開発者による開発者のためのリソース。</a></li>
+    <li><a href="https://developer.mozilla.org/ja/docs/Learn" target="_blank" rel="noopener">Web 開発を学ぶ</a></li>
+    </ul>
+    <p>実際に疑問を解決したい時は
+    google検索からリンクされた各々の要素や使用例をみると作業が早いです。</p>
+    <p>検索キーワード例[HTML][a ][ mdn] など
+    </p>
+    </div>
+    <div id="s3" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>HTMLのルール違反を探す</h2>
+<p>頑張ってかいても間違いはでます。違反を探し出すwebサービス</p>
+    <h3>W3Cバリデーター</h3>
+  <p><a href="https://validator.w3.org/" target="_blank" rel="noopener"> Markup Validation Service</a></p>
+  <p>HTMLの文書の間違いを発見してくれるサービスただし英語で返答がくるので慣れが必要です。</p>
+  <p>タブで入力方法を選んで。送信するとバリデーションの結果をもらえます。</p>
+<h4>一定の品質を保つことが大切</h4>
+<p>このバリデーションはあくまで目安です。なかにはエラーや警告があっても仕方がない技術的な事象もあります。エラーがなくても見た目が変ということもあります。<br>
+  あくまでW3Cが決めたことを機械判定してエラーを検出してくれています。</p>
+<hr>
+</div>
+<div id="s4" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>世界中のwebサイトはW3Cに従順なのか？</h2>
+<div class="card">
+<div class="card-body">
+<p>W3Cは年単位で勧告されたものを含め言っている事が微妙に変わります。
+    特に新しいく実装されたりまだ協議中のタグなどは使い方を含め変更があります。
+    ブラウザ側も後方互換性を考えると廃止予定のタグも表示しなくてはならなかったりと非常に判断がつきづらいです。</p>
+    <p>結局安定してつかわれてきたタグや技術が主流だったりしますし、w3cがやブラウザメーカーが目指してきた理念や理屈なんかを理解しながらマークアップしてもらうとあまり大きな間違いのあるコーディングは避けれるれるのではないでしょうか？</p>
+    <p>ちょっと宗教じみていますが、w3cの理念を理解して意味をおもんばかれる努力をしなければいつまでたっても独りよがりで独善的なマークアップになります。<br>この業界は<strong class="badge badge-info">日々修正日々更新</strong>です。</p>
+</div>
+</div>
+</div>
+
+<!-- editable area end ########             -->
+</article>
+</div>
+<!-- /container-->
+
+<!-- / w-aside2 --->
+
+<aside class="print-none" id="w-aside2">
+<div class="row text-white no-gutters justify-content-center">
+<nav aria-label="Page navigation">
+<ul class="pagination justify-content-center">
+<li class="page-item">
+<a class="page-link" href="23_html_markUp.html" tabindex="-1" aria-disabled="false">Previous</a>
+</li>
+<li class="page-item">
+<a class="page-link " aria-disabled="false"  href="25_html_markUp.html">Next</a>
+</li>
+</ul>
+</nav>
+</div>
+<div class="container p-3"></div>
+</aside>
+</main>
+<aside class="w-aside col-lg-2 print-none order-0" id="w-aside1">
+<div class="w-aside-inner container">
+<div class="accordion" id="accordionAside">
+<div class="w-subnav">
+<div id="headingOne">
+<h3 class="sticky-top">
+  <button class="btn btn-link  collapsed" type="button" data-toggle="collapse" data-target="#w-BOlist-collapse" aria-expanded="false" aria-controls="collapseOne" >
+PC Operation</button>
+</h3>
+</div>
+<div id="w-BOlist-collapse" class="collapse" aria-labelledby="headingOne" data-parent="#accordionAside">
+<!-- BOlist modile -->
+<ul id="w-BOlist" class="list-unstyled w-BOlist">
+        <li class="" v-for="title in titles"><a v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+        </ul>
+        <!-- /BOlist modile -->
+</div>
+</div>
+<div class="w-subnav">
+<div id="heading2">
+<h3 class="sticky-top">
+  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#w-OLlist-collapse" aria-expanded="false" aria-controls="collapseTwo">web Outline</button>
+</h3>
+</div>
+<div id="w-OLlist-collapse" class="collapse" aria-labelledby="heading2" data-parent="#accordionAside">
+<!-- OLlist modile -->
+<ul id="w-OLlist" class="list-unstyled">
+  <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+</ul>
+<!-- /OLlist modile -->
+</div>
+</div>
+<div class="w-subnav">
+<div id="heading3">
+<h3 class="sticky-top">
+  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#w-MKlist-collapse" aria-expanded="false" aria-controls="collapseThree">HTML</button>
+      </h3>
+</div>
+<div id="w-MKlist-collapse" class="collapse" aria-labelledby="heading3" data-parent="#accordionAside">
+<!-- OLlist modile -->
+<ul id="w-MKlist" class="list-unstyled">
+  <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}}</a></li>
+</ul>
+<!-- /OLlist modile -->
+</div>
+</div>
+
+<div class="w-subnav">
+<div id="heading4">
+<h3 class="sticky-top">
+<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#w-EDlist-collapse" aria-expanded="false" aria-controls="collapse4">Text Editor
+</button>
+</h3>
+</div>
+<div id="w-EDlist-collapse" class="collapse" aria-labelledby="heading4" data-parent="#accordionAside">
+<!-- EDlist modile -->
+<ul id="w-EDlist" class="list-unstyled">
+<li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}}</a></li>
+</ul>
+<!-- /EDlist modile -->
+</div>
+</div>
+<div class="w-subnav">
+<div id="heading5">
+<h3 class="sticky-top">
+<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#w-CSSlist-collapse" aria-expanded="false" aria-controls="collapse5">CSS
+</button>
+</h3>
+</div>
+<div id="w-CSSlist-collapse" class="collapse" aria-labelledby="heading4" data-parent="#accordionAside">
+<!-- EDlist modile -->
+<ul id="w-CSSlist" class="list-unstyled">
+  <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+</ul>
+<!-- /csslist modile -->
+</div>
+</div>
+
+<div class="w-subnav">
+<div id="heading6">
+<h3 class="sticky-top">
+<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#w-JSlist-collapse" aria-expanded="false" aria-controls="collapse6">javascript
+</button>
+</h3>
+</div>
+<div id="w-JSlist-collapse" class="collapse" aria-labelledby="heading4" data-parent="#accordionAside">
+<!-- EDlist modile -->
+<ul id="w-JSlist" class="list-unstyled">
+  <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+</ul>
+<!-- /jslist modile -->
+</div>
+</div>
+
+  </div><!-- /accordionAside -->
+</div>
+<script src="_js/_common/VueBOnavlist.js"></script>
+</aside>
+<aside class="w-aside w-indexlistbox col-lg-2 order-2" id="w-aside3">
+<div class="indexlist-inner container">
+<div><h3>page navigation</h3></div>
+<ol class="list-unstyled list-group" id="w-indexlists">
+  <li class="index-list" v-for="item in items">
+    <a v-bind:href="item.id" class="indexlist-link" data-scroll >{{item.text}}</a>
+  </li>
+</ol>
+</div>
+</aside>
+</div><!-- /main-wrap -->
+<!-- footer -->
+<footer id="w-pageFooter">
+<div class="container d-flex">
+  <p class="site-copy">
+<small>&copy; shounosuke tarutani</small>
+</p><!-- /site-copy -->
+</div>
+<!-- /container-->
+</footer>
+<!--w-pageFooter--><script src="_js/_common/Vuepagelist.js"></script>
+<script src="_js/_common/prism.js"></script>
+</div>
+<!--w-wrapper-->
+</body>
+</html>

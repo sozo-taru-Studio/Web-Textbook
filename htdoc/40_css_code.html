@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="description" content="discription">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">  <title>CSSの基礎知識 ファイルの定義 - CSS - Web TextBook</title>
+  <!-- stylesheet  -->
+  <link rel="stylesheet" href="_css/_common/bootstrap.css">
+  <link rel="stylesheet" href="_css/_common/font-awesome.min.css">
+  <link rel="stylesheet" href="_css/_common/style.css">  <!--  Favicons  -->
+  <link rel="icon" href="favicon.ico">  <!-- common js  -->
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="_js/_common/jquery-3.2.1.min.js"></script>
+  <script src="_js/_common/bootstrap.min.js"></script>
+  <script src="_js/_common/pagescroll.jQuery.js"></script></head>
+<body class="CSS">
+<div id="w-wrapper" class="w-wrapper">
+<!-- header -->
+<header id="w-pageHeader" class="navbar navbar-dark navbar-expand-lg fixed-top w-pageHeader" data-scroll-header="true">
+<div class="container">
+<a class="navbar-brand" href="index.html">logo</a><span class="navbar-brand">Web Textbook</span>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#w-nav" aria-controls="w-nav" aria-expanded="false" aria-label="ナビゲーション切替">
+<span class="navbar-toggler-icon"></span>
+</button>
+<nav id="w-nav" class="collapse navbar-collapse">
+<ul class="navbar-nav mr-auto pl-3">
+<li class="nav-item"><a href="20_browser_cord.html" class="nav-link disabled">HTML</a></li>
+<li class="nav-item"><a href="#" class="nav-link disabled">CSS</a></li>
+<li class="nav-item"><a href="#" class="nav-link">javasceipt</a></li>
+</ul>
+</nav>
+<!-- /w-nav-->
+</div>
+<!-- /container--></header>
+<!-- /w-pageHeader-->
+<div class="d-lg-flex pt-5" id="main-wrap">
+<main id="w-main" class="w-main col-lg-8 order-1">
+   <div class="container mb-5">
+<article id="w-article">
+<!-- editable area ########             -->
+        <h1>CSSの基礎知識 ファイルの定義 - CSS</h1>
+        <p><span>category:</span> <span class="badge badge-primary">CSS</span></p>
+        <hr>
+<!-- 序章 モジュール -->
+<div class="card mb-4">
+<div class="card-body clearfix">
+  <p class="card-text">スタイルシートファイルのつくりかたとHTMLファイルへのリンク。<br>HTMLファイル内にスタイルシートが直接書く方法を説明します。</p>
+</div>
+</div>
+<!-- 目次 モジュール -->
+<div class="bg-light p-3 mb-4">
+<h2>目次</h2>
+<ul id="w-indexlistBox">
+    <li v-for="item in items" class="w-indexlistBox-list">
+      <a v-bind:href="item.id" data-scroll >{{item.text}}</a>
+    </li>
+</ul>
+</div>
+<!-- /目次 モジュール -->
+
+<!-- 本文のセクション モジュール -->
+<div id="s1" class="mt-n6 pt-6 mb-6 clearfix">
+  <h2>css はここで調べろ</h2>
+    <h3 id="mdn">MDN</h3>
+    <p><a href="https://developer.mozilla.org/ja/docs/Web/CSS" target="_blank">CSS: カスケーディングスタイルシート</a></p>
+    <h3 id="css%E4%BA%8B%E4%BE%8B%E9%9B%86">CSS事例集</h3>
+    <p><a href="https://developer.mozilla.org/ja/docs/Web/CSS/Layout_cookbook" target="_blank">CSS レイアウト料理帳</a></p>
+    <p>モジーラデベロッパースネットワーク 上記サイトを見ればなにもいらない感じですね。</p>
+<p>いろいろなサイトがリファレンスを提供していますので見に行ってください。</p>
+  </div>
+  <div id="s2" class="mt-n6 pt-6 mb-6 clearfix">
+    <h2>ファイルの作り方。</h2>
+    <h3>ファイル名のルール</h3>
+    <p>ファイル名は英数です。ファイルがどの部分を装飾しているかがある程度わかる名前をつけましょう。
+    例えば モジュール名 commentBox.cssなど。（コメントボックスを装飾しているだろう。）<br>
+    全メージ共通の場合は common.cssなど<br>
+    小さなプロジェクトの場合は<em>style.css</em>が定番です。</p>
+    <strong>拡張子は.css</strong>
+    <h3 class="h5">CMSなどは決まりがある。</h3>
+    <p>wordpressなどCSMはスタイルシートの名前が予め固定されている場合があります。製作時にシステムのリファレンスをよく確認しておきましょう。</p>
+    <h3>ファイルの中身のルール</h3>
+    <p>ファイルをを保存したら。キャラクターコードを指定する。</p>
+    <p>最初の1行目に余白なく<code>@charset &quot;UTF-8&quot;;</code>と入力。
+      CSSでは最後に<code>;</code>セミコロンをいれないとだめです。
+      この行のしたにスタイルシートを書いていきます。
+      このとき@の前になにか半角スペースを含めた文字があった場合うまく機能しない場合があります。</p>
+<div class="card mb-3">
+<h4 class="card-header">コード</h4>
+<div class="card-body">
+<pre class="line-numbers language-css" data-src="prism.js"><code>@charset "UTF-8";</code></pre>
+</div>
+</div>
+  </div>
+<div id="s3" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>ファイルのリンク</h2>
+<h3>保存場所</h3>
+<p>cssフォルダを作りそこに保存することが通例です。</p>
+<h4 class="h5">フォルダ構成例</h4>
+<p><img src="_images/_html/rePath1.PNG" alt="例2相対パス"></p>
+<h5>フォルダ図 A</h5>
+<pre class="hljs"><code>
+  ├ test─site
+    │  index.html
+    ├  css
+       |  style.css
+</code></pre>
+<h3>htmlファイルへリンク</h3>
+<p>htmlファイルへリンクして関連付けします。
+htmlファイルはリンクされたcssファイルを読み込みbody要素内を装飾します。</p>
+<p>外部ファイルのスタイルシートを読み込むときはhead要素内にlink要素で関連付けします。</p>
+<div class="card mb-3">
+    <h4 class="card-header">コード</h4>
+    <div class="card-body">
+<h5>記入の凡例</h5>
+<pre class="line-numbers language-xml" data-src="prism.js"><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;スタイルシートへのパス(URI)&quot;&gt;</code></pre>
+<h4>フォルダ構成例からのコード例</h4>
+<p>フォルダ構成図が「フォルダ図 A」の場合</p>
+<pre class="line-numbers language-xml" data-src="prism.js"><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;css/style.css&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;title&gt; htmlファイルのタイトル &lt;/title&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;css/style.css&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;/body&gt;
+</code></pre>
+
+</div></div>
+<p>リンク要素はヘッド要素に書きましょう。
+昨今のブラウザはヘッド要素を読み込んだ段階で同期的にCSSを読み込みにいきます。早くよみこめたほうが表示も早くなります。</p>
+<p>cssファイルになにかスタイルシート宣言ブロックをコピーしてください。表示が変わればCSSが適応されています。</p>
+<h5>テストコード</h5>
+<pre class="line-numbers language-xml" data-src="prism.js"><code>/*ポジ反転*/
+body{
+color:#fff;
+background-color:#222;
+}
+</code></pre>
+<p>テストコードをコピペしてファイルがよみとれているか確認してください。</p>
+<hr>
+<p><small>ここからむづかしいので後ほど学習でよい。</small></p>
+</div>
+<div>
+<div id="s4" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>CSSファイルを外部化する理由</h2>
+<p>スタイルシートは外部ファイルに保存しhtmlファイルにリンク要素で紐付けして使います。
+この利点は大規模なwebサイトで発揮します。
+もし修正案件があったとき
+htmlファイルごとにスタイルが書かれていると。修正の作業はすべてのhtmlファイルを開いて書き換えなければなりません。しかし1枚のCSSファイルで管理していれば、
+CSSファイルの一部を修正すれば修正箇所があるhtmlファイルに適応できます。</p>
+
+
+<h3>個別のページのユニークな装飾はhtmlファイルに直接書くことでユニークさを保つこともできます。</h3>
+<p>デザインの要素では利用者が覚えやすいデザインであるようにサイトにでてくる同じ意味のパーツやモジュールは同じ見た目で表現します。</p>
+<p>しかし、そのページ独自のコンセプトがあったりデザインルールが逸脱する場合があります、その場合 そのページ専用のcssファイルを起案するし新たにリンクするか、ユニークなスタイル要素やスタイル属性での記述でページを装飾します。</p>
+</div>
+<div id="s5" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>ファイルに直接CSSを書く方法は2つあります。</h2>
+<h3>1,スタイル要素にスタイルシートを書く。</h3>
+<pre class="line-numbers language-css" data-src="prism.js"><code>&lt;style&gt;
+    /*黄色い文字*/
+    body{
+    color:#ff2;
+    background-color:#222;
+    }
+&lt;/style&gt;
+</code></pre>
+<p>スタイル要素はhead要素に書くことが推奨されていますが。同じ詳細度セレクタの場合性質上,上書きされ後書きのほうが適応されます。</p>
+<h3>2,要素にスタイル属性で適応する。</h3>
+<p>属性と属性値でスタイルを直接要素に適応します。インライン入力とも呼びます。一番優先されて表示されますので外部ファイルのスタイルを上書きします。</p>
+<pre class="line-numbers language-xml" data-src="prism.js"><code>&lt;p style=&quot;color:red;&quot;&gt;赤文字&lt;/p&gt;</code></pre>
+<h4>デメリット</h4>
+<p>たくさんのスタイルを要素に適応するとコードが読みにくくなります。常用せず基本はCSSファイルからのリンクでのスタイルコードを書き。特別な仕様や今後書き換える予定がない場合のみ使用するようにするのが一般的なインラインスタイリングのつかいかたです。</p>
+<div class="card">
+<h5 class="card-header">javascriptでのスタイルの適応</h5>
+<div class="card-body">
+<p>のちほど習うjavascriptは要素のスタイルをこの属性で制御します。</p>
+<pre class="line-numbers language-javascript" data-src="prism.js"><code>&lt;p id=&quot;pv&quot; style=&quot;color:red;&quot;&gt;赤文字&lt;/p&gt;
+&lt;script&gt;
+var elem = document.getElementById('pv');
+  elem.style.color = '#0f0';
+&lt;/script&gt;
+</code></pre>
+<h5>プレビュー</h5>
+<div>
+    <p id="pv" style="color:red;">赤文字</p>
+    <script>
+    var elem = document.getElementById('pv');
+      elem.style.color = '#0f0';
+    </script>
+</div>
+</div>
+</div>
+
+
+</div>
+
+<!-- editable area end ########             -->
+</article>
+</div>
+<!-- /container-->
+
+<!-- / w-aside2 --->
+
+<aside class="print-none" id="w-aside2">
+<div class="row text-white no-gutters justify-content-center">
+<nav aria-label="Page navigation">
+<ul class="pagination justify-content-center">
+<li class="page-item">
+<a class="page-link" href="#" tabindex="-1" aria-disabled="false">Previous</a>
+</li>
+<li class="page-item">
+<a class="page-link " aria-disabled="false"  href="401_css_code.html">Next</a>
+</li>
+</ul>
+</nav>
+</div>
+<div class="container p-3"></div>
+</aside>
+</main>
+<aside class="w-aside col-lg-2 print-none order-0" id="w-aside1">
+<div class="w-aside-inner container">
+<div class="accordion" id="accordionAside">
+<div class="w-subnav">
+<div id="headingOne">
+<h3 class="sticky-top">
+  <button class="btn btn-link  collapsed" type="button" data-toggle="collapse" data-target="#w-BOlist-collapse" aria-expanded="false" aria-controls="collapseOne" >
+PC Operation</button>
+</h3>
+</div>
+<div id="w-BOlist-collapse" class="collapse" aria-labelledby="headingOne" data-parent="#accordionAside">
+<!-- BOlist modile -->
+<ul id="w-BOlist" class="list-unstyled w-BOlist">
+        <li class="" v-for="title in titles"><a v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+        </ul>
+        <!-- /BOlist modile -->
+</div>
+</div>
+<div class="w-subnav">
+<div id="heading2">
+<h3 class="sticky-top">
+  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#w-OLlist-collapse" aria-expanded="false" aria-controls="collapseTwo">web Outline</button>
+</h3>
+</div>
+<div id="w-OLlist-collapse" class="collapse" aria-labelledby="heading2" data-parent="#accordionAside">
+<!-- OLlist modile -->
+<ul id="w-OLlist" class="list-unstyled">
+  <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+</ul>
+<!-- /OLlist modile -->
+</div>
+</div>
+<div class="w-subnav">
+<div id="heading3">
+<h3 class="sticky-top">
+  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#w-MKlist-collapse" aria-expanded="false" aria-controls="collapseThree">HTML</button>
+      </h3>
+</div>
+<div id="w-MKlist-collapse" class="collapse" aria-labelledby="heading3" data-parent="#accordionAside">
+<!-- OLlist modile -->
+<ul id="w-MKlist" class="list-unstyled">
+  <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}}</a></li>
+</ul>
+<!-- /OLlist modile -->
+</div>
+</div>
+
+<div class="w-subnav">
+<div id="heading4">
+<h3 class="sticky-top">
+<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#w-EDlist-collapse" aria-expanded="false" aria-controls="collapse4">Text Editor
+</button>
+</h3>
+</div>
+<div id="w-EDlist-collapse" class="collapse" aria-labelledby="heading4" data-parent="#accordionAside">
+<!-- EDlist modile -->
+<ul id="w-EDlist" class="list-unstyled">
+<li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}}</a></li>
+</ul>
+<!-- /EDlist modile -->
+</div>
+</div>
+<div class="w-subnav">
+<div id="heading5">
+<h3 class="sticky-top">
+<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#w-CSSlist-collapse" aria-expanded="false" aria-controls="collapse5">CSS
+</button>
+</h3>
+</div>
+<div id="w-CSSlist-collapse" class="collapse" aria-labelledby="heading4" data-parent="#accordionAside">
+<!-- EDlist modile -->
+<ul id="w-CSSlist" class="list-unstyled">
+  <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+</ul>
+<!-- /csslist modile -->
+</div>
+</div>
+
+<div class="w-subnav">
+<div id="heading6">
+<h3 class="sticky-top">
+<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#w-JSlist-collapse" aria-expanded="false" aria-controls="collapse6">javascript
+</button>
+</h3>
+</div>
+<div id="w-JSlist-collapse" class="collapse" aria-labelledby="heading4" data-parent="#accordionAside">
+<!-- EDlist modile -->
+<ul id="w-JSlist" class="list-unstyled">
+  <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+</ul>
+<!-- /jslist modile -->
+</div>
+</div>
+
+  </div><!-- /accordionAside -->
+</div>
+<script src="_js/_common/VueBOnavlist.js"></script>
+</aside>
+<aside class="w-aside w-indexlistbox col-lg-2 order-2" id="w-aside3">
+<div class="indexlist-inner container">
+<div><h3>page navigation</h3></div>
+<ol class="list-unstyled list-group" id="w-indexlists">
+  <li class="index-list" v-for="item in items">
+    <a v-bind:href="item.id" class="indexlist-link" data-scroll >{{item.text}}</a>
+  </li>
+</ol>
+</div>
+</aside>
+</div><!-- /main-wrap -->
+<!-- footer -->
+<footer id="w-pageFooter">
+<div class="container d-flex">
+  <p class="site-copy">
+<small>&copy; shounosuke tarutani</small>
+</p><!-- /site-copy -->
+</div>
+<!-- /container-->
+</footer>
+<!--w-pageFooter--><script src="_js/_common/Vuepagelist.js"></script>
+<script src="_js/_common/prism.js"></script>
+</div>
+<!--w-wrapper-->
+</body>
+</html>

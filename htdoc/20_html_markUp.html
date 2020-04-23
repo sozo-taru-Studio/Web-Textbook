@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="description" content="discription">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">  <title>ブラウザとHTMLコード - HTML - Web TextBook</title>
+  <!-- stylesheet  -->
+  <link rel="stylesheet" href="_css/_common/bootstrap.css">
+  <link rel="stylesheet" href="_css/_common/font-awesome.min.css">
+  <link rel="stylesheet" href="_css/_common/style.css">  <!--  Favicons  -->
+  <link rel="icon" href="favicon.ico">  <!-- common js  -->
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="_js/_common/jquery-3.2.1.min.js"></script>
+  <script src="_js/_common/bootstrap.min.js"></script>
+  <script src="_js/_common/pagescroll.jQuery.js"></script></head>
+<body class="HTML">
+<div id="w-wrapper" class="w-wrapper">
+<!-- header -->
+<header id="w-pageHeader" class="navbar navbar-dark navbar-expand-lg fixed-top w-pageHeader" data-scroll-header="true">
+<div class="container">
+<a class="navbar-brand" href="index.html">logo</a><span class="navbar-brand">Web Textbook</span>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#w-nav" aria-controls="w-nav" aria-expanded="false" aria-label="ナビゲーション切替">
+<span class="navbar-toggler-icon"></span>
+</button>
+<nav id="w-nav" class="collapse navbar-collapse">
+<ul class="navbar-nav mr-auto pl-3">
+<li class="nav-item"><a href="20_browser_cord.html" class="nav-link disabled">HTML</a></li>
+<li class="nav-item"><a href="#" class="nav-link disabled">CSS</a></li>
+<li class="nav-item"><a href="#" class="nav-link">javasceipt</a></li>
+</ul>
+</nav>
+<!-- /w-nav-->
+</div>
+<!-- /container--></header>
+<!-- /w-pageHeader-->
+<div class="d-lg-flex pt-5" id="main-wrap">
+<main id="w-main" class="w-main col-lg-8 order-1">
+   <div class="container mb-5">
+<article id="w-article">
+<!-- editable area ########             -->
+        <h1>ブラウザとHTMLコード - HTML</h1>
+        <p><span>category:</span> <span class="badge badge-primary">HTML</span></p>
+        <hr>
+<!-- 序章 モジュール -->
+<div class="card mb-4">
+<div class="card-body">
+<p  class="card-text">ブラウザとソースコードの関係を中心のお話し。</p>
+<div class="alert alert-info">
+    <ul>
+    <li>ブラウザとユーザーエージェント・・・・・・
+            ブラウザとはなにか？制作者で知っておきたい使い方。</li>
+    <li>HTMLのソースコードとその確認のしかたを解説します。</li>
+    </ul>
+</div>
+</div>
+</div>
+
+
+
+<!-- 目次 モジュール -->
+<div class="bg-light p-3 mb-4">
+<h2>目次</h2>
+<ul id="w-indexlistBox">
+    <li v-for="item in items" class="w-indexlistBox-list">
+      <a v-bind:href="item.id" data-scroll >{{item.text}}</a>
+    </li>
+</ul>
+</div>
+<!-- / 目次 モジュール -->
+<<!-- 本文のセクション モジュール -->
+    <div id="s1" class="mt-n6 pt-6 mb-6 clearfix">
+
+        <h2>ブラウザとユーザーエージェント</h2>
+        <p>ブラウザとはなにか？制作者で知っておきたい使い方を確認しておきましょう。
+        *<em>ユーザーエージェントと呼ぶ種類のアプリケーションの一つがwebブラウザです。</em></p>
+        <h3>ユーザーエージェント（UA）とは</h3>
+        <blockquote>
+        <p><cite><a href="https://ja.wikipedia.org/wiki/%E3%83%A6%E3%83%BC%E3%82%B6%E3%83%BC%E3%82%A8%E3%83%BC%E3%82%B8%E3%82%A7%E3%83%B3%E3%83%88">ユーザーエージェント </a></cite></p>
+        </blockquote>
+        <blockquote>
+        <p>ウエブブラウザを含めHTTPを用いてWorld Wide Web（インターネット）にアクセスする、ウェブブラウザなどのソフトウェアのこと。</p>
+        </blockquote>
+        <dl>
+        <dt><abbr title="Hypertext Transfer Protocol">HTTP</abbr></dt>
+        <dd>
+        [「Hypertext Transfer Protocol」](https://ja.wikipedia.org/wiki/Hypertext_Transfer_Protocol)
+        <p>ハイパーテキストトランスファープロトコル。</p>
+        <blockquote>
+        <p>（ハイパーテキスト・トランスファー・プロトコル、略称 HTTP）とは、HTMLなどのコンテンツの送受信に用いられる通信プロトコルである。主としてWorld Wide Webにおいて、WebブラウザとWebサーバとの間での転送に用いられる。日本標準仕様書ではハイパテキスト転送プロトコルとも呼ばれる。(以下略)</p>
+        </blockquote>
+        <blockquote>
+        <p>名前の通り、 HTML (HyperText Markup Language) や XML (Extensible Markup Language) によって記述されたハイパーテキストの転送を主な目的としているが、それ以外にも、バイナリ形式の画像、音声を含め、様々なデータを扱うことが可能である。その汎用性からセンサーからの定期的なデータの取得などにも用いられる。</p>
+        </blockquote>
+        <blockquote>
+        <p>トランスポート・プロトコルとして通常TCPを使用する。</p>
+        </blockquote>
+        <blockquote>
+        <p>HTTPはリクエスト-レスポンス型のプロトコルであり、クライアントがサーバにリクエストメッセージを送信する。 基本的な考え方は非常に単純で、「何を」「どうして」欲しいのかを伝える。URLが「何を」、メソッドが「どうして」に当たる。 サーバはこれにレスポンスメッセージを返し、基本的にこの時点で初期状態に戻る。つまり、サーバはクライアントの状態を保存しない。</p>
+        </blockquote>
+        <blockquote>
+        <p>World Wide WebにおけるWebページなどのリソースは、Uniform Resource Identifierによって指定される。HTTP を使用してリソースにアクセスするときは、http: が先頭についた URL を使用する。下にURL の例を挙げる。
+        <br>
+        <code>http://www.example.co.jp/~test/samples/index.html</code></p>
+
+        <p><cite>Hypertext Transfer Protocol - Wikipedia</cite></p>
+        </blockquote>
+        </dd>
+        </dl>
+        <dl>
+        <dt>HTTPユーザーエージェント</dt>
+        <dd>
+            <blockquote>
+        HTTPを用いてリソースの取得等を行うユーザーエージェントをHTTPユーザーエージェントと呼ぶ。
+        HTTPユーザーエージェントには、ウェブブラウザや、リソースを自動的に処理するクローラなどがある。
+    </blockquote>
+    </dd>
+        </dl>
+        <p><strong>一般的なウェブブラウザはHTTPユーザーエージェントになります。</strong></p>
+        <h5>HTTPユーザーエージェントでないUA</h5>
+        <p>主にみなさんがPCでつかうものとして。</p>
+        <ul>
+        <li>FTPクライアントソフト</li>
+        <li>Emailソフト</li>
+        </ul>
+</div>
+<div id="s2" class="mt-n6 pt-6 mb-6 clearfix">
+        <h2>ウェブブラウザ</h2>
+        <p>制作は実際のブラウザを使います。</p>
+        <h3 id="pc">pc</h3>
+        <ul>
+        <li>
+        <p><a href="https://www.google.co.jp/chrome/?brand=CHBD&amp;gclid=CjwKCAjw8qjnBRA-EiwAaNvhwFFWuMfu63Q2H25Jgd_v2oY8PHhA0B9XNZLZvCSZrnYGKCNJFIoJ1RoCoC0QAvD_BwE&amp;gclsrc=aw.ds" target="_blank" rel="noopener" >googleChrome</a><br>
+        対応OS：OSX windows</p>
+        </li>
+        <li>
+        <p><a href="https://www.mozilla.org/ja/firefox/new/" target="_blank" rel="noopener">FireFox</a><br>
+        対応OS：OSX windows</p>
+        </li>
+        <li>
+        <p>OS付属のブラウザ<br>
+        safari:OSX<br>
+        Edge:windews<br>
+        確認作業以外つかいません。</p>
+        </li>
+        </ul>
+        <h3>SP(スマートフォン)タブレットPC</h3>
+        <p>IOS :IOSsafari 機種のバージョンによる。<br>
+        android : android ブラウザー 機種のバージョンメーカ-による。</p>
+        <h5>SP市場重視の場合</h5>
+        <p>入力が正しくできるか表示は正しいかを確認するため機種をかなりそろえなければならないメーカーもある。（作業工数も増える）
+        HP制作などの会社は多くの検証機種を持ち合わせていないので最新のブラウザで無理なく稼働すればOKになる。その分制作費は比較的安い</p>
+        <h4>ブラウザの知っとけ機能</h4>
+        <ul>
+        <li><a href="https://support.google.com/chrome/answer/157179?hl=ja" target="_blank" rel="noopener">Chrome のキーボード ショートカット</a></li>
+        <li><a href="https://support.mozilla.org/ja/kb/keyboard-shortcuts-perform-firefox-tasks-quickly" target="_blank" rel="noopener">Firefox のキーボードショートカット</a></li>
+        </ul>
+        <p>ショートカットキーはwindows基準で記述しています。</p>
+        <p>ctrlキーは windows
+        commandキーはMac OSX</p>
+        <table class="table table-bordered">
+        <thead>
+        <tr>
+        <th style="text-align:left">機能</th>
+        <th>ショートカットキー</th>
+        <th>概要</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+        <td style="text-align:left">ページの読み直し（キャッシュクリアー）</td>
+        <td><kbd>F-5</kbd> , <kbd>ctrl</kbd>+<kbd>r</kbd></td>
+        <td>ページを読み直す</td>
+        </tr>
+        <tr>
+        <td style="text-align:left">ページのデータすべての読み直し（スーパーキャッシュクリアー）</td>
+        <td><kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>r</kbd></td>
+        <td>キャッシュデータも含めすべて読み直す</td>
+        </tr>
+        <tr>
+        <td style="text-align:left">検索</td>
+        <td><kbd>ctrl</kbd>+<kbd>f</kbd></td>
+        <td>ページの中の文字列の検索</td>
+        </tr>
+        <tr>
+        <td style="text-align:left">ページの保存</td>
+        <td><kbd>ctrl</kbd>+<kbd>s</kbd></td>
+        <td>任意のフォルダーにページをコピーする</td>
+        </tr>
+        <tr>
+        <td style="text-align:left">ページの印刷</td>
+        <td><kbd>ctrl</kbd>+<kbd>p</kbd></td>
+        <td>印刷する　印刷プレビューを見る</td>
+        </tr>
+        <tr>
+        <td style="text-align:left">シークレットレットモードでみる</td>
+        <td><kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>n</kbd></td>
+        <td>閲覧履歴を残さないUA情報を送信しない</td>
+        </tr>
+        <tr>
+        <td style="text-align:left">ページソースを見る</td>
+        <td><kbd>ctrl</kbd>+<kbd>u</kbd></td>
+        <td>閲覧中のページのHTMLソースコードをみる</td>
+        </tr>
+        <tr>
+        <td style="text-align:left">ページの検証モード</td>
+        <td><kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>i</kbd></td>
+        <td>閲覧中のページの詳細なDOM情報をみる。</td>
+        </tr>
+        </tbody>
+        </table>
+        <p>*（OSXは「ctrl」は「command」で入力）</p>
+        <h6 id="%E3%83%9D%E3%82%A4%E3%83%B3%E3%83%88">ポイント</h6>
+        <ul>
+        <li>安全につかうために最新のものを使いましょう。</li>
+        <li>コマーシャルを気にしなければOSに付属のものでもOK</li>
+        </ul>
+        <hr>
+</div>
+<div id="s3" class="mt-n6 pt-6 mb-6 clearfix">
+
+        <h2>HTMLのソースコードとその確認のしかた。</h2>
+        <p>これから学習するのはHTMLソースコードの読み書きです。後ほどDOMなどもでてきて少し混乱しますが・・・あくまでサーバーに上げるHTMLコードを読み書きできるようになるのが大切です。</p>
+        <p>HTMLコードをブラウザが読み取ってどのような処理を経てモニターに表示するのかを解説します。</p>
+        <h3>ソースコードを見る。</h3>
+        <ul>
+        <li>
+        <p>webページのソースコードは画面上でマウスを右クリックし。コンテキストメニューから「ソースを表示」や「ソースコードを見る」などで表示されます。</p>
+        </li>
+        <li>
+        <p>ショートカットキー<kbd>ctrl</kbd>+<kbd>U</kbd>でもみれます。</p>
+        </li>
+        </ul>
+        <figure class="mb-4"><figcaption> google Chromeでのソースコード表示 </figcaption>
+          <img class="img-fluid" src="_images/_MK/srccode.PNG" alt="ソースコード">
+        </figure>
+
+        <div class="card mb-3 p-4">
+<div class="row ">
+<div class="col-md-4">
+<img src="_images/_html/braleft.PNG" alt="ブラウザの右上側（chrome）" class="card-img">
+</div>
+<div class="col-md-8">
+<div class="card-body ">
+        <h3>ブラウザの描画の仕組み</h3>
+        <p><br>
+        *「くるくる（仮称）」とは更新するときの押すアドレスバーの横の丸い矢印マークのことです。</p>
+        <ol>
+        <li>ページリクエスト</li>
+        <li>HTMLファイルの受信-&gt;受信したファイルがソースコード</li>
+        <li>受信中のHTMLファイルから順次リソースをリクエスト</li>
+        <li>リソースを元にDOMに変換しはじめる。</li>
+        <li>ウィンドウ領域に表示（描画し始める）（くるくるしてる。）</li>
+        <li>すべてのリソースが揃い描画が終わると（くるくるがとまる。）</li>
+        </ol>
+        </div>
+        </div>
+        </div>
+        <h3>　ブラウザとソースコード</h3>
+        ブラウザはHTMLファイルを取得できないとユーザーに情報を提示できません。
+        </div>
+</div>
+<div id="s4" class="mt-n6 pt-6 mb-6 clearfix">
+        <h2>ソースコードと検証の表示が違うことがある。</h2>
+        <p class="badge badge-info">ここからのお話しはHTMLやCSSを書くようになってからのお話しです。</p>
+        <p>ソースコードと検証で表示される内容は違うのはjavascriptなどプログラムでで表示コードに割り込みが発生しコードとは違う表示になります。<br>
+        マークアップエンジニアはローカルに送信するソースコードを作成するが仕事です</p>
+        <h5>firefoxでソースコード検証</h5>
+        <p>簡単なソースコードのバリデーション検証はW3Cバリデーターを使わずともfirefoxブラウザのソースコードの表示で確認できる。</p>
+        <p>エラーの恐れがあったり非推奨のタグを使っている場合、赤字で表示してくれる。
+        英語でのアシストだがマウスをホバーするとエラーの理由なども教えてくれる。</p>
+        <h4>FireFoxで間違ったソースコードで確認してみましょう。</h4>
+        <p>FireFoxで開いてソースコードを確認していみましょう。</p>
+        <ul>
+        <li>任意のテキストエディターを開き。</li>
+        <li>新規でHTMLファイルを作る。</li>
+        <li>下のコードをコピーしてペーストして適当な名前で保存します。「errer.html」拡張子は「.html」でお願いします。</li>
+        <li>保存場所はすぐに捨てれるデスクトップに保存すればいいでしょう。</li>
+        <li>アイコンを右クリックして-&gt; アプリケーションで保存-&gt; fireFoxで見る</li>
+        <li>firefoxで開いたら。　マウスでブラウザのウィンドウを右クリック ソースコードを見る。</li>
+        </ul>
+<h5>間違ったコード例</h5>
+        <div class="mb-3">
+        <pre class="hljs line-numbers language-xml" data-src="prism.js"><code>&lt;!DOCTYPE html&gt;
+        &lt;html&gt;
+         &lt;head&gt;
+         &lt;meta charset=&quot;UTF-8&quot;&gt;
+         &lt;title&gt;般若心経&lt;/title&gt;
+         &lt;/head&gt;
+         &lt;body&gt;
+         &lt;div&gt;
+          観自在菩薩　行深般若波羅蜜多時　照見五蘊皆空
+
+        度一切苦厄　舎利子　色不異空　空不異色　色即是空　空即是色
+         &lt;/body&gt;
+        &lt;/html&gt;
+
+
+        </code></pre></div>
+<div class="card">
+                <h5 class="card-header">表示結果</h5>
+                <div class="card-body">
+                <p><a href="_res/errer.html"><img src="_images/_html/Errer_html.PNG" class="img-fluid shadow-sm" alt="般若心経"></a></p>
+
+
+<p class="card-text">div要素の終了タグをわざとかかなかった。fierfoxでのエラーメッセージは「body要素がここでおわってるけど終わってない要素があるよ。」とメッセージしてくれている。</p>
+<p>ただしこのようなコードのミスはしょっちゅうあるのでブラウザはコードにミスがある場合も代替案を持っておりそのためユーザーが困らないような情報伝達をするようにプログラミングされている。</p>
+<h5>エラーの表示には癖がある。</h5>
+<p>かならずしも間違った場所ではなくその直後にエラーがでたりする。
+HTMLのルールを理解していくとでエラーの理由なども推測できるようになる。</p>
+</div>
+</div>
+
+</div>
+<div id="s5" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>まとめ</h2>
+<ul>
+<li>ブラウザはユーザーエージェントの一種</li>
+<li>ソースコードがないとブラウザは表示できない。</li>
+<li>ブラウザからソースコードが確認できる。</li>
+</ul>
+</div>
+
+<!-- editable area end ########             -->
+</article>
+</div>
+<!-- /container-->
+
+<!-- / w-aside2 --->
+
+<aside class="print-none" id="w-aside2">
+<div class="row text-white no-gutters justify-content-center">
+<nav aria-label="Page navigation">
+<ul class="pagination justify-content-center">
+<li class="page-item">
+<a class="page-link" href="#" tabindex="-1" aria-disabled="false">Previous</a>
+</li>
+<li class="page-item">
+<a class="page-link " aria-disabled="false"  href="21_html_markUp.html">Next</a>
+</li>
+</ul>
+</nav>
+</div>
+<div class="container p-3"></div>
+</aside>
+</main>
+<aside class="w-aside col-lg-2 print-none order-0" id="w-aside1">
+<div class="w-aside-inner container">
+<div class="accordion" id="accordionAside">
+<div class="w-subnav">
+<div id="headingOne">
+<h3 class="sticky-top">
+  <button class="btn btn-link  collapsed" type="button" data-toggle="collapse" data-target="#w-BOlist-collapse" aria-expanded="false" aria-controls="collapseOne" >
+PC Operation</button>
+</h3>
+</div>
+<div id="w-BOlist-collapse" class="collapse" aria-labelledby="headingOne" data-parent="#accordionAside">
+<!-- BOlist modile -->
+<ul id="w-BOlist" class="list-unstyled w-BOlist">
+        <li class="" v-for="title in titles"><a v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+        </ul>
+        <!-- /BOlist modile -->
+</div>
+</div>
+<div class="w-subnav">
+<div id="heading2">
+<h3 class="sticky-top">
+  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#w-OLlist-collapse" aria-expanded="false" aria-controls="collapseTwo">web Outline</button>
+</h3>
+</div>
+<div id="w-OLlist-collapse" class="collapse" aria-labelledby="heading2" data-parent="#accordionAside">
+<!-- OLlist modile -->
+<ul id="w-OLlist" class="list-unstyled">
+  <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+</ul>
+<!-- /OLlist modile -->
+</div>
+</div>
+<div class="w-subnav">
+<div id="heading3">
+<h3 class="sticky-top">
+  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#w-MKlist-collapse" aria-expanded="false" aria-controls="collapseThree">HTML</button>
+      </h3>
+</div>
+<div id="w-MKlist-collapse" class="collapse" aria-labelledby="heading3" data-parent="#accordionAside">
+<!-- OLlist modile -->
+<ul id="w-MKlist" class="list-unstyled">
+  <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}}</a></li>
+</ul>
+<!-- /OLlist modile -->
+</div>
+</div>
+
+<div class="w-subnav">
+<div id="heading4">
+<h3 class="sticky-top">
+<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#w-EDlist-collapse" aria-expanded="false" aria-controls="collapse4">Text Editor
+</button>
+</h3>
+</div>
+<div id="w-EDlist-collapse" class="collapse" aria-labelledby="heading4" data-parent="#accordionAside">
+<!-- EDlist modile -->
+<ul id="w-EDlist" class="list-unstyled">
+<li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}}</a></li>
+</ul>
+<!-- /EDlist modile -->
+</div>
+</div>
+<div class="w-subnav">
+<div id="heading5">
+<h3 class="sticky-top">
+<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#w-CSSlist-collapse" aria-expanded="false" aria-controls="collapse5">CSS
+</button>
+</h3>
+</div>
+<div id="w-CSSlist-collapse" class="collapse" aria-labelledby="heading4" data-parent="#accordionAside">
+<!-- EDlist modile -->
+<ul id="w-CSSlist" class="list-unstyled">
+  <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+</ul>
+<!-- /csslist modile -->
+</div>
+</div>
+
+<div class="w-subnav">
+<div id="heading6">
+<h3 class="sticky-top">
+<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#w-JSlist-collapse" aria-expanded="false" aria-controls="collapse6">javascript
+</button>
+</h3>
+</div>
+<div id="w-JSlist-collapse" class="collapse" aria-labelledby="heading4" data-parent="#accordionAside">
+<!-- EDlist modile -->
+<ul id="w-JSlist" class="list-unstyled">
+  <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+</ul>
+<!-- /jslist modile -->
+</div>
+</div>
+
+  </div><!-- /accordionAside -->
+</div>
+<script src="_js/_common/VueBOnavlist.js"></script>
+</aside>
+<aside class="w-aside w-indexlistbox col-lg-2 order-2" id="w-aside3">
+<div class="indexlist-inner container">
+<div><h3>page navigation</h3></div>
+<ol class="list-unstyled list-group" id="w-indexlists">
+  <li class="index-list" v-for="item in items">
+    <a v-bind:href="item.id" class="indexlist-link" data-scroll >{{item.text}}</a>
+  </li>
+</ol>
+</div>
+</aside>
+</div><!-- /main-wrap -->
+<!-- footer -->
+<footer id="w-pageFooter">
+<div class="container d-flex">
+  <p class="site-copy">
+<small>&copy; shounosuke tarutani</small>
+</p><!-- /site-copy -->
+</div>
+<!-- /container-->
+</footer>
+<!--w-pageFooter--><script src="_js/_common/Vuepagelist.js"></script>
+<script src="_js/_common/prism.js"></script>
+</div>
+<!--w-wrapper-->
+</body>
+</html>
