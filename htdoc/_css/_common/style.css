@@ -627,16 +627,19 @@ top page
   border-color: #f6d105;
 }
 
+.page .card .page-item.card,
 .toppage .card .page-item.card {
   border-radius: 0px;
   border-style: none;
   background-color: #f8f9fa;
 }
 
+.page .card .page-item.card p,
 .toppage .card .page-item.card p {
   font-size: 14px;
 }
 
+.page .heading .card-header,
 .toppage .heading .card-header {
   margin-bottom: .6rem;
   color: #f8f9fa;
