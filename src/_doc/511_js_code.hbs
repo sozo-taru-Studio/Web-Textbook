@@ -1,0 +1,272 @@
+---
+title: 関数と変数の範囲
+discription: discription
+cat: Javascript
+next-page-url: "512_js_code.html"
+filename: 511_js_code.html
+prev-page-url: "510_js_code.html"
+titlename: "{{title.titlename}}"
+text: "{{item.text}}"
+text2: "{{item.text}}"
+---
+<div class="container mb-5">
+<article id="w-article">
+<!-- editable area ########             -->
+        <h1>{{title}} - {{cat}}</h1>
+        <p><span>category:</span> <span class="badge badge-primary">{{cat}}</span></p>
+        <hr>
+<!-- 序章 モジュール -->
+<div class="card mb-4">
+<div class="card-body clearfix">
+<div class="float-lg-right col-lg-5 mb-2"><img src="_images/_JS/scope_640.jpg" alt="Scope" class="img-fluid"></div>
+<p>スコープ：変数の参照範囲、ローカル変数、グローバル変数、などといいますが。バグのほとんどが変数の予期せぬ上書きからエラーがおこります。不用意な変数の上書きがおこらないようにする基礎知識を得ましょう。</p>
+</div>
+</div>
+<!-- 目次 モジュール -->
+
+<div class="bg-light p-3 mb-4">
+<h2>目次</h2>
+<ul id="w-indexlistBox">
+    <li v-for="item in items" class="w-indexlistBox-list">
+      <a v-bind:href="item.id" data-scroll >{{text2}}</a>
+    </li>
+</ul>
+</div>
+<!-- / 目次 モジュール -->
+
+<!-- 本文のセクション モジュール -->
+<div id="s1" class="mt-n6 pt-6 mb-6 clearfix">
+
+<h2 id="s0">Documentオブジェクト</h2>
+
+<h3 id="s0">グローバル変数とローカル変数のスコープ</h3>
+<p>グローバル（広域）ローカル（一部地域）など区別するためにつかわれることばです。</p><p>
+JavaScriptでは変数はグローバル変数とローカル変数で使い分けています。ちいさなテストプログラムを組む段階ですとあまり気にせず変数を定義しても問題はないですが大きなプログラムになるとスコープを意識したプログラミングをしないと使いまわせなかったりバグで動かないことがあります。</p>
+<section>
+  <h4>スコープ</h4>
+  <p>スコープとは日本語で範囲を意味します。javascriptでは変数にアクセス（参照）できる範囲のことです。</p>
+  <p>javascriptでは関数の中で宣言した変数とトップレベルで宣言した変数でスコープを区別しています。</p>
+  <p>ときにプログラマーは同じ名前の変数を意図せず宣言してしまします。同じ変数を意図せず書いたばかりにデータを上書きされてプログラムがエラーを吐いたり。期待とおりの動作をしない場合があります。これを
+  「汚染」とか「衝突」とか「コンフリクト」とかいいますが参照範囲（スコープ）をコントロールすることで大規模なプログラムやjavascriptライブラリーなどの不具合を避けることができます。</p>
+</section>
+<section>
+  <h4>グローバル変数</h4>
+  <p>関数の<strong>外</strong>で宣言された変数です。関数以外の場所はtopレベルともいわれています。どこからでもアクセス（参照）できます。</p>
+  <p>ブラウザでのグローバル変数は正確にはwindowオブジェクトのプロパティとして定義されます。つまりwindowオブジェクトにわたくしたちはjavascriptをスクリプティングしています。</p>
+    <p><small>windowは省略可能で記述は手間なので省略できるところはしています。</small></p>
+    <figure>
+    <figcaption>グローバル変数の<code>hoge</code>と<code>window.hoge</code>の確認</figcaption>
+    <pre class="line-numbers language-javascript" data-src="prism.js">
+    <code>
+    /*従来の変数宣言*/
+    var hoge = "global";
+    console.log(hoge); //global
+    console.log(window.hoge); //global
+    /*オブジェクトに任意プロパティ(変数)を宣言*/
+    window.fuga ="FUGA?";//変数fugaを宣言し"FUGA?"を代入
+    console.log(fuga);
+    </code></pre>
+    </figure>
+    <p>window.変数名で変数の参照ができることが確認できます。</p>
+<div class="story">
+    <h5>var を宣言しない場合：暗黙的な変数</h5>
+    <p>時折変数宣言<code>var</code>を宣言せずに変数に代入しているプログラムコードをみます。ほとんどのブラウザーは宣言がなくてもグローバル変数としてwindowオブジェクトに格納されるように設計されています。(strict モードでは ReferenceError をスローします。)これを関数内で宣言したばあい、暗黙的な変数のスコープはグローバルです。<br>しかしプログラムのメンテナンスや改良をするとき変数の宣言がないと「この変数hogeはどこから来たの？」と類推できず、読みずらいプログラムになります。変数は<strong>必ず宣言文<code>var</code>を最初に記述するところに書きましょう。</strong></p>
+</div>
+</section>
+</div>
+
+<div id="s2" class="mt-n6 pt-6 mb-6 clearfix">
+  <h2>要素を取得する方法</h2>
+  <h3>ローカル変数</h3>
+  <p>関数内で<code>var</code>宣言された変数をローカル変数と呼びます。</p>
+  <p>変数スコープ(ローカルスコープ)とは関数内で宣言された変数は関数の範囲内でしかアクセスできないことをこう呼びます。</p>
+  <p>関数内で宣言された変数はローカルスコープの特性を持っています。定義された関数の中でしかアクセスせきません。</p>
+  <p>関数内で処理したデータはretuern リテラルで出力したり。関数内でアウトプットする処理をしないとデータはうけとれません。</p>
+  <figure>
+  <figcaption>グローバル変数とローカル変数への代入例</figcaption>
+  <pre class="line-numbers language-javascript" data-src="prism.js">
+  <code>
+var hoge = "global";
+//
+  function showHoge(){
+    var hoge = "local";
+    console.log(hoge); //local
+    return hoge;
+}
+  console.log(showHoge()); //local
+  console.log(hoge); //global
+  </code></pre>
+  </figure>
+<p>同じ<code>var hoge</code>でも関数showHoge()の処理内では違うデータを持ってい別の変数としてあつかわれる。</p>
+<figure>
+<figcaption>関数showHoge記述部分で宣言されたhogeと（水色の領域）トップレベルでのhogeの参照が違う。</figcaption>
+<img src="_images/_JS/topLev-Local-Lev.PNG" alt="グローバルスコープとローカルスコープ">
+</figure>
+
+<section class="mb-4">
+<table class="table mb-4 table-bordered">
+<tr class="table-active">
+  <td></td><th>宣言された場所</th><th scope="col">変数への読み書きの範囲</th>
+</tr>
+  <th scope="row">グローバル変数</th><td>トップレベルで宣言された変数。</td><td><b>グローバルスコープ<br></b>トップレベルと関数内windowオブジェクト </td>
+<tr>
+  <th scope="row">ローカル変数</th><td>関数のなかで定義された変数。</td><td><b>ローカルスコープ<br></b>定義された関数内</td>
+</tr>
+</table>
+</section>
+<section>
+<h3>変数の巻き上げ？</h3>
+<blockquote>
+<p>変数の宣言 (および一般的な宣言) はコードを実行する前に処理されますので、変数はコード内のどこで宣言しても、コードの先頭で宣言したものと等価になります。また、変数を宣言する前に変数を使用することもできます。この動作は変数の宣言が関数やグローバルのコードの先頭に移動したように見えるため、"巻き上げ (hoisting)" と呼ばれます。</p>
+</blockquote>
+<p>javascriptの特徴です。暗黙的に宣言された変数の後ろのコードで同名の変数がvar宣言されていた場合。
+変数宣言が持ち上げられて先頭で宣言したかのように処理されます。</p>
+<figure>
+<figcaption>変数の巻き上げグローバル変数名とローカル変数名が同じとき。代入例</figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+<code>
+  /**
+   * 例 1
+   */
+  console.log(x === undefined); // "true" が記録される
+  var x = 3;
+
+  /**
+   * 例 2
+   */
+  // undefined 値が返される
+  var myvar = "my value";
+
+  (function() {
+    console.log(myvar); // undefined
+    var myvar = "local value";
+  })();
+</code></pre>
+</figure>
+<ul>
+  <li>例1:で5行目で暗黙的に宣言された<code>x</code>は6行目で3を代入された変数xは同じ変数です。</li>
+  <li>例2:では12行目の<code>myvar</code>宣言（グローバル変数）と14行目の即時実行関数内の<code>myvar</code>(ローカル変数)は関数内での巻き上げが起こる為15行目の<code>console.log(myvar);</code>のアクセスは16行目の<code>myvar</code>と解釈される為、値の格納されていないローカル変数と解釈されます。出力は<code>"undifind"</code>です。(変数にデータがまだ格納されておりません。)</li>
+</ul>
+<p>
+このようにローカル変数とグローバル変数が同じ名前の場合データのながれが読みにくくなりますので、変数は先頭で宣言し。ローカル変数とグローバル変数の同名をつかうことや変数宣言varを使わずに新しく変数を定義するのはやめましょう。
+</p>
+<blockquote>
+  <a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Grammar_and_Types" target="_blank" rel="noopener">文法とデータ型 - MDN</a>
+</blockquote>
+</section>
+
+</div>
+
+
+
+
+
+<div id="s3" class="mt-n6 pt-6 mb-6 clearfix">
+ <h2>暗黙のグローバル変数が関数内で宣言されたらどうなるの？</h2>
+<dl>
+  <dt>暗黙のグローバル変数とは</dt><dd>
+  <p>暗黙のグローバル変数とは、var宣言のない変数です。関数内で使われた場合、その変数はグローバル変数として暗黙的に登録されます。</p><p>暗黙のグローバル変数は関数の中で宣言された場合トップレベルから参照できます。</p><p>デバック時「引数」と見間違えたり、宣言文を探したりとvar宣言なしの変数はのちのちのデバックに無駄時間を割かせますので作らない癖をつけましょう。</p>
+
+</dd>
+<p>var無の変数宣言はストリクトモード時はリファレンスエラーを起こします。</p>
+<blockquote>
+<p>暗黙的にグローバルに現れた変数は、関数スコープの外部で参照することができます:</p>
+
+<figure>
+<figcaption>暗黙のグローバル変数とローカル変数</figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+<code>
+  var x = 0;  // x はグローバルで宣言して、値 0 を代入
+
+  console.log(typeof z); // z はまだ存在していないため、undefined になる
+
+  function a() { // a を呼び出すと、
+    var y = 2;   // y を関数 a のローカルで宣言して、値 2 を代入
+
+    console.log(x, y);   // 0 2
+
+    function b() {       // b を呼び出すと、
+      x = 3;  // グローバルの x に 3 を代入して、新たなグローバル変数は生成しない
+      y = 4;  // 外側の y に 4 を代入して、新たなグローバル変数は生成しない
+      z = 5;  // 新たなグローバル変数 z を生成して、値 5 を代入
+    }         // (strict モードでは ReferenceError が発生)
+
+    b();     // b を呼び出すと、グローバル変数として z を生成
+    console.log(x, y, z);  // 3 4 5
+  }
+
+  a();                   // b も呼び出す
+  console.log(x, z);     // 3 5
+  console.log(typeof y); // y は関数 a のローカル変数であるため、undefined になる
+</code></pre>
+</figure>
+</blockquote>
+<p>変数<code>z</code>は関数b内で宣言されているため関数bの処理が行われるとグローバル変数として定義されどこからでもアクセスできる。</p>
+<p>何らかのエラーや処理が期待と違う場合関数内で定義されたグローバル変数が<em>どこかで別のプログラムに書き換えられる恐れ</em>がある。</p>
+</section>
+<p><a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Statements/var" target="_blank" rel="noopener">var - JavaScript | MDN</a></p>
+</div>
+
+<div id="s4" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>ブロック内で宣言する　ローカル変数 「let」</h2>
+<p>「let」は局所参照用の変数宣言として　新しく設定されました。</p>
+<figure>
+<figcaption>for文の{}内でのみ　let i が有効</figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+<code>
+/**
+* 例 1
+*/
+  var Ar = ["TOYOTA","NISSAN","HONDA","MAZUDA"];
+
+for(let i=0; i<9 ; i++){
+    console.log(Ar[i]);
+}
+</code></pre>
+</figure>
+</div>
+
+<div id="s5" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>定数 「const」</h2>
+<p>「const」は定数で上書きされない、最初に宣言されたのちは参照のみの動作しかしない</p>
+<figure>
+<figcaption>const </figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+<code>
+/**
+* 例 1
+*/
+  const Br = ["TOYOTA","NISSAN","HONDA","MAZUDA"];
+
+for(let i=0; i<9 ; i++){
+  Br[i] = Br[i]+"自動車";
+    console.log(Ar[i]);
+}
+
+// 出力されない
+</code></pre>
+</figure>
+</div>
+
+
+<div class="alert-info p-4">
+<h3 >まとめ</h3>
+<ol>
+  <li>関数の中で宣言する変数はローカル変数</li>
+  <li>関数の外で宣言したらグローバル変数</li>
+  <li>少なくとも同じファイルで同じ変数名はつけない</li>
+  <li>変数宣言をする癖をつける</li>
+  <li>暗黙的な変数はグローバル変数</li>
+  <li>var 宣言はプログラムの途中で書いてもいい。</li>
+</ol>
+</div>
+
+
+
+
+<!-- editable area end ########             -->
+</article>
+</div>
+<!-- /container-->
+
+<!-- / w-aside2 --->

@@ -1,0 +1,169 @@
+---
+title: line-height プロパティ
+discription: discription
+cat: CSS
+next-page-url: "46_css_code.html"
+filename: 45_css_code.html
+prev-page-url: "44_css_code.html"
+titlename: "{{title.titlename}}"
+text: "{{item.text}}"
+text2: "{{item.text}}"
+---
+<div class="container mb-5">
+<article id="w-article">
+<!-- editable area ########             -->
+        <h1>{{title}} - {{cat}}</h1>
+        <p><span>category:</span> <span class="badge badge-primary">{{cat}}</span></p>
+        <hr>
+
+<!-- 序章 モジュール -->
+<div class="card mb-4">
+<div class="card-body clearfix">
+<p class="card-text">行間を設定するプロパティです。</p>
+</div>
+</div>
+
+<!-- 目次 モジュール -->
+<div class="bg-light p-3 mb-4">
+<h2>目次</h2>
+<ul id="w-indexlistBox">
+    <li v-for="item in items" class="w-indexlistBox-list">
+      <a v-bind:href="item.id" data-scroll >{{text2}}</a>
+    </li>
+</ul>
+</div>
+<!-- /目次 モジュール -->
+
+<!-- 本文のセクション モジュール -->
+<div id="s1" class="mt-n6 pt-6 mb-6 clearfix">
+
+<h2>line-height</h2>
+<p>CSS の line-height プロパティは、テキストのような行で使われる空間の量を設定します。ブロックレベル要素では、要素に含まれる行ボックスの最小の高さを指定します。非置換インライン要素では、行ボックスの高さの計算に使われる高さを指定します。</p>
+
+<figure>
+<figcaption>行間30pxでフォントサイズ20pxのとき上下に5pxの隙間がでる。</figcaption>
+<p>
+<img src="_images/_html/line-height.png" alt="行間">
+</p>
+</figure>
+<h3>値</h3>
+<blockquote>
+    <ul>
+        <li>
+<h4>normal</h4><p>
+ユーザーエージェントに依存します。デスクトップブラウザー (Firefox を含む) は 要素の font-family によって決まる、おおよそ 1.2 という既定値を使います。。</p></li>
+<li><h4>「number」（単位なし）</h4><p>
+使用値は、この単位のない 「number」 に要素のフォントサイズを掛けたものになります。計算値は、指定された 「number」 と同じです。ほとんどの場合、継承時の予期しない結果を避けるために、これが line-height を設定する好ましい方法です。</p>
+</li>
+<li><h4>length</h4><p>行ボックスの高さの計算に、指定した 「length」 が使われます。emやpx単位を指定しての行間設定になります。</p>
+  <p>行間が指定された親要素が子孫要素の文字サイズにかかわらず単位指定された高さに固定されます。回避するには要素それぞれに行間を指定するか単位なしの行間指定をします。</p>
+</li>
+<li>
+<h4> percentage</h4>
+<p>要素自身のフォントサイズに対する相対値です。計算値はこの 「percentage」 に要素のフォントサイズの計算値を掛けたものです。パーセント値は予期しない結果を生む可能性があります (下記の2つの例を参照してください)。</p>
+</li>
+
+</ul>
+<footer>
+<p>引用：
+<cite><p><a href="https://developer.mozilla.org/ja/docs/Web/CSS/line-height" target="_blank" rel="noopener">line-height</a></p></cite></p>
+</footer>
+</blockquote>
+
+<div class="card">
+<div class="card-header">
+<h3>記述例</h3>
+</div>
+<div class="card-body">
+<h3>line-height の値は単位なしの数値が好ましい</h3>
+<p>
+以下の例は、line-height の値として [length] より [number] のほうが好ましい理由を示しています。 2 つの &lt;div&gt; 要素を使用しています。最初のものは緑色の境界を持っており、単位なしの line-height の値を使用しています。二番目は赤色の境界を持っており、 line-height の値を em で定義して使用しています。
+</p>
+<h4>css</h4>
+<pre class="line-numbers language-css" data-src="prism.js"><code>
+/* */
+.green {
+  line-height: 1.1;
+  border: solid limegreen;
+}
+
+.red {
+  line-height: 1.1em;
+  border: solid red;
+}
+
+h1 {
+  font-size: 30px;
+}
+
+.box {
+  width: 18em;
+  display: inline-block;
+  vertical-align: top;
+  font-size: 15px;
+}
+</code></pre>
+</div>
+<p>1.1の行間を要素の文字サイズにあわせた行間に設定しない仕様</p>
+<h4>HTML</h4>
+<pre class="line-numbers language-xml" data-src="prism.js"><code>
+&lt;div class="box green"&gt;
+ &lt;h1&gt;予期しない結果を避けるために、単位なしの line-height を使いましょう。&lt;/h1&gt;
+  length と percentage で line-height を指定すると、継承動作がうまくいきません。 ...
+&lt;/div&gt;
+
+&lt;div class="box red"&gt;
+ &lt;h1&gt;予期しない結果を避けるために、単位なしの line-height を使いましょう。&lt;/h1&gt;
+  length と percentage で line-height を指定すると、継承動作がうまくいきません。 ...
+&lt;/div&gt;
+
+&lt;!-- 1 つ目の &lt;h1> の line-height はそれ自身のフォントサイズから計算されます   (30px × 1.1) = 33px  --&gt;
+&lt;!-- 2 つ目の &lt;h1> の line-height は red div のフォントサイズから計算されます  (15px × 1.1) = 16.5px  おそらく、望む結果ではないでしょう --&gt;
+</code></pre>
+
+
+<style>.green{
+  line-height: 1.1;
+  border: solid limegreen;
+}
+.red {
+  line-height: 1.1em;
+  border: solid red;
+}
+b.h {
+  font-size: 30px;
+  display: block;
+  font-weight: 400;
+}
+.box {
+  width: 18em;
+  display: inline-block;
+  vertical-align: top;
+  font-size: 15px;
+}</style>
+<h4>プレビュー</h4>
+<div class="box green mb-1">
+ <b class="h">予期しない結果を避けるために、単位なしの line-height を使いましょう。</b>
+  length と percentage で line-height を指定すると、継承動作がうまくいきません。 ...
+</div>
+
+<div class="box red mb-4">
+ <b class="h">予期しない結果を避けるために、単位なしの line-height を使いましょう。</b>
+  length と percentage で line-height を指定すると、継承動作がうまくいきません。 ...
+</div>
+
+<h4>単位を指定しても問題ない場合</h4>
+<p>line-hightに単位付き<length>で高さを指定する場合は改行をしない子孫要素のない要素に指定する場合問題にならないでしょう。</p>
+<h4>単位を指定しない場合</h4>
+<p>line-hightに単位なしで高さを指定する場合はそれぞれ子孫要素の文字を基準に比例して高さがでるのでBody要素などに指定しておくと全ての要素の行間が均一の比率で高さがでます。</p>
+
+
+</div><!--/ .card -->
+</div>
+
+<!-- editable area end ########             -->
+</article>
+</div>
+<!-- /container-->
+
+<!-- / w-aside2 --->

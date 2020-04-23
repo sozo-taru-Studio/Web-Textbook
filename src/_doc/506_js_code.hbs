@@ -1,0 +1,263 @@
+---
+title: 演算子
+discription: discription
+cat: Javascript
+next-page-url: "507_js_code.html"
+filename: 506_js_code.html
+prev-page-url: "505_js_code.html"
+titlename: "{{title.titlename}}"
+text: "{{item.text}}"
+text2: "{{item.text}}"
+---
+<div class="container mb-5">
+<article id="w-article">
+<!-- editable area ########             -->
+        <h1>{{title}} - {{cat}}</h1>
+        <p><span>category:</span> <span class="badge badge-primary">{{cat}}</span></p>
+        <hr>
+<!-- 序章 モジュール -->
+<div class="card mb-4">
+<div class="card-body clearfix">
+<div class="float-lg-right col-lg-5 mb-2"><img src="_images/_JS/operation.jpg" alt="+/*-" class="img-fluid"></div>
+<p class="card-text">演算子とは算数でならう「たしざん」「ひきざん」「わりざん」「かけざん」です。
+このようにデータを処理する記号を演算子とよびます。<br>
+プログラミングにはさまざまの演算子がありますが下記の項目をまず覚えましょう。</p>
+
+</div>
+</div>
+<!-- 目次 モジュール -->
+<div class="bg-light p-3 mb-4">
+<h2>目次</h2>
+<ul id="w-indexlistBox">
+    <li v-for="item in items" class="w-indexlistBox-list">
+      <a v-bind:href="item.id" data-scroll >{{text2}}</a>
+    </li>
+</ul>
+</div>
+<!-- / 目次 モジュール -->
+
+<!-- 本文のセクション モジュール -->
+<div id="s1" class="mt-n6 pt-6 mb-6 clearfix">
+
+<h2>演算 (代入と四則演算)</h2>
+<blockquote>
+  <p>算術演算子は被演算子として数値（リテラルまたは変数）をとり、1 つの数値を返します。標準的な算術演算子は、加算 (+)、減算 (-)、乗算 (\*)、除算 (/) です。これらの演算子は、他のほとんどのプログラミング言語で浮動小数点数を用いた場合と同じように機能します。0 で除算した結果は、NaN になることにも注意してください。</p>
+  <a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Expressions_and_Operators" target="_blank" rel="noopener">式と演算子 - JavaScript | MDN]</a>
+  <p><small>※ NaN値 not a number 数字ではないです。</small></p>
+</blockquote>
+
+<div class="card mb-4">
+<div class="card-body">
+<h3>表記例</h3>
+<h5>代入</h5>
+<p>「＝」イコールは左辺に右辺の処理結果を代入します。</p>
+<p>数学的な同等や答えという意味ではありません。</p>
+<figure>
+<figcaption>javascript 記入例</figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+<code>x = y</code></pre>
+</figure>
+<h4>算数で出てくる四則演算は以下ように書き換えられる。</h4>
+<p>プログラムはデータを定義してあげないといけません。結果を格納する変数と演算しあう2つの変数が必要です。</p>
+<p>変数x,yを定義したあと演算し処理値を変数aに代入しています。</p>
+<figure>
+<figcaption>javascript 記入例</figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+<code>
+  var x = 1 , y = 1;//変数宣言
+  var a = x + y;//演算と代入
+  console.log(a);//2
+</code></pre>
+</figure>
+
+<p>省略して書き直すことができます。上段は代入演算　左の変数値に演算をして代入しなおす。<br>
+//のコメントアウトの式は上段の式の展開した書き方です。式を短くすると上段のような書き方ができます。<b>代入演算子</b></p>
+<p>変数xにyを演算してその結果を変数xに上書きしています。</p>
+</div>
+</div>
+<ul>
+<li class="mb-4">
+<h4>加算代入</h4>
+<figure>
+<figcaption>javascript 記入例</figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+<code>x += y;
+//x = x + y;</code></pre>
+</figure>
+</li>
+<li class="mb-4">
+<h4>減算代入</h4>
+<p>変数xに変数yを減算して変数ｘに代入しなおす。</p>
+<figure>
+<figcaption>javascript 記入例</figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+<code>x -= y;
+//x = x - y;</code></pre>
+</figure>
+</li>
+<li class="mb-4">
+
+<h4>乗算代入</h4>
+<p>変数xに変数yを掛けて変数ｘに代入しなおす。</p>
+<figure>
+<figcaption>javascript 記入例</figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+<code>x *= y;
+//x = x * y;</code></pre>
+</figure>
+</li>
+<li class="mb-4">
+
+<h4>除算代入</h4>
+<p>変数xに変数yをわって変数ｘに代入しなおす。</p>
+<figure>
+<figcaption>javascript 記入例</figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+<code>x /= y;
+//x = x / y;
+</code></pre>
+</figure>
+</li>
+<li class="mb-4">
+<h4>剰余代入</h4>　
+<p>変数Xに変数yをわって余りを変数ｘに代入しなおす。</p>
+<figure>
+<figcaption>javascript 記入例</figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+<code>x %= y;
+//x = x % y;
+</code></pre>
+</figure>
+  </li>
+  </ul>
+<p>数えてみると代入演算子も含めて6つありますね。</p>
+</div>
+
+
+<div id="s2" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>比較演算子</h2>
+<p>比較演算子は左右のデータを比較して真偽値で値を返してくれます。</p>
+<p>後ほど覚える条件分岐式でつかいます。たとえば財布にクーポンが500ポイントあるときは使う。そうでないときは使わない。など条件で処理が異なる場合の比較時に使います。</p>
+<table class="table table-striped">
+<thead>
+<tr class-"table-active">
+<th style="text-align:left">演算子</th>
+<th style="text-align:left">説明</th>
+<th style="text-align:left">true を返す例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">等しい (==)</td>
+<td style="text-align:left">被演算子が等しい場合に true を返します。</td>
+<td style="text-align:left">3 == var1 ,3 == &#39;3&#39; ,&quot;3&quot; == var1</td>
+</tr>
+<tr>
+<td style="text-align:left">等しくない (!=)</td>
+<td style="text-align:left">被演算子が等しくない場合に true を返します。</td>
+<td style="text-align:left">var1 != 4,var2 != &quot;3&quot;</td>
+</tr>
+<tr>
+<td style="text-align:left">厳密に等しい (===)</td>
+<td style="text-align:left">被演算子が等しく、かつ同じ型である場合に true を返します。</td>
+<td style="text-align:left">3 === var1</td>
+</tr>
+<tr>
+<td style="text-align:left">厳密に等しくない (!==)</td>
+<td style="text-align:left">被演算子が等しくなく、かつ/または同じ型でない場合に true を返します。</td>
+<td style="text-align:left">var1 !== &quot;3&quot;,3 !== &#39;3&#39;</td>
+</tr>
+<tr>
+<td style="text-align:left">より大きい (&gt;)</td>
+<td style="text-align:left">左の被演算子が右の被演算子よりも大きい場合に true を返します。</td>
+<td style="text-align:left">var2 &gt; var1,&quot;12&quot; &gt; 2</td>
+</tr>
+<tr>
+<td style="text-align:left">以上 (&gt;=)</td>
+<td style="text-align:left">左の被演算子が右の被演算子以上である場合に true を返します。</td>
+<td style="text-align:left">var2 &gt;= var1,var1 &gt;= 3</td>
+</tr>
+<tr>
+<td style="text-align:left">より小さい (&lt;)</td>
+<td style="text-align:left">左の被演算子が右の被演算子よりも小さい場合に true を返します。</td>
+<td style="text-align:left">var1 &lt; var2,&quot;12&quot; &lt; &quot;2&quot;</td>
+</tr>
+<tr>
+<td style="text-align:left">以下 (&lt;=)</td>
+<td style="text-align:left">左の被演算子が右の被演算子以下である場合に true を返します。</td>
+<td style="text-align:left">var1 &lt;= var2,var2 &lt;= 5</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div id="s3" class="mt-n6 pt-6 mb-6 clearfix">
+ <h2>論理演算子</h2>
+<p>様々な条件で状態を自動で変化させられるのがプログラムの魅力です。比較演算と理論演算をつかって処理の条件分岐を行います。</p>
+<p>「ペーパードライバーで過去5年までに交通違反をおかしたことがある。」などデータがあればなどリアルな条件を組むこともできます。</p>
+<blockquote><p>	論理演算子では、基本的にブール値 (Boolean value)（論理）値を用います。つまりブール値を取ると、ブール値を返します。しかし ＆＆および || 演算子については、実際には指定された被演算子の一方の値を返します。そのため、非ブール値とともに論理演算子が使われた場合、非ブール値を返す可能性があります。次表で論理演算子について説明します。</p></blockquote>
+  <p><a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Expressions_and_Operators#Logical_operators" target="_blank" rel="noopener">Boolean - JavaScript | MDN</a></p>
+
+<h4 id="-and-">論理積 (AND)(&amp;&amp;) </h4>
+<p>expr1が「真」かつexpr2が「真」の場合「真」そうでない場合「偽」を返す。</p>
+<p>条件が2つ以上あり双方とも当てはまる場合<br>
+例）男性且つ独身の場合適応する。</p>
+<figure>
+<figcaption>javascript 記入例</figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+<code>expr1&nbsp;&amp;&amp;&nbsp;expr2</code></pre>	</figure>
+<blockquote>
+<p>expr1 を偽と見ることができる場合は、expr1を返します。そうでない場合はexpr2 を返します。したがってブール値を用いた場合、expr1とexpr2が true であれば &amp;&amp; は true を返し、そうでなければ false を返します。</p>
+</blockquote>
+
+<h4 id="-or-">論理和 (OR)(||) </h4>
+<p>expr1かexpr2どちらかが「真」の場合「真」そうでない場合「偽」</p>
+<p>条件が2つ以上ありどちらかが当てはまる場合<br>
+例）男性か独身の人の場合適応する。</p>
+<figure>
+<figcaption>javascript 記入例</figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+<code>expr1&nbsp;||&nbsp;expr2</code></pre>	</figure>
+<blockquote>
+<p>expr1 を true と見ることができる場合は、expr1 を返します。そうでない場合は expr2 を返します。したがってブール値を用いた場合、どちらかの被演算子が true であれば || は true を返し、両方とも false であれば false を返します。</p>
+</blockquote>
+<h4 id="-not-">論理否定 (NOT)(!)</h4>
+<p>exprではないとき「真」を返す</p>
+<p>実際の母数のなかからレアなものを抽出して処理するとき負のものを選ぶ方が早いときがある。</p>
+<p>例)光回線の契約がほぼ進んでいるマンションのインターネット契約で「光回線ではない部屋」の部屋番を出力する</p>
+<figure>
+<figcaption>javascript 記入例</figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+<code>!expr</code></pre>	</figure>
+<p>単一の被演算子を true と見ることができる場合は、false を返します。そうでない場合は true を返します。</p>
+<figure>
+<figcaption>否定の記入例</figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+<code>
+  !(functionName)//関数の処理が偽を出したときtrueを返す
+  (value != "undefined" )//変数の値が未設定の場合trueを返す
+  (value !== 551) //変数の値が厳密に551でない場合。trueを返す
+</code>
+</pre>
+</figure>
+
+<hr>
+  <p>比較演算子は条件分岐で使いますのでそこでおさらいしましょう。</p>
+</div>
+<div class="p-4 alert-info">
+<h3>まとめ</h3>
+<p>細かく突き詰めるとかなり覚えるのが大変ですが皆さんは株価の予想やロケットの軌道の計算をするために勉強してるわけでもないので中学生レベルの数学の知識があればなんとかなります。</p>
+<ul>
+  <li>算数で使う簡単な算術</li>
+  <li>割り算のあまりが出る余剰演算</li>
+  <li>比較して真偽値をとる比較演算</li>
+  <li>複数の条件を比較して条件分岐につかう理論演算</li>
+</ul>
+</div>
+
+<!-- editable area end ########             -->
+</article>
+</div>
+<!-- /container-->
+
+<!-- / w-aside2 --->

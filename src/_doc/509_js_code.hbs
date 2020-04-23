@@ -1,0 +1,222 @@
+---
+title: 反復処理
+discription: discription
+cat: Javascript
+next-page-url: "510_js_code.html"
+filename: 509_js_code.html
+prev-page-url: "508_js_code.html"
+titlename: "{{title.titlename}}"
+text: "{{item.text}}"
+text2: "{{item.text}}"
+---
+<div class="container mb-5">
+<article id="w-article">
+<!-- editable area ########             -->
+        <h1>{{title}} - {{cat}}</h1>
+        <p><span>category:</span> <span class="badge badge-primary">{{cat}}</span></p>
+        <hr>
+<!-- 序章 モジュール -->
+<div class="card mb-4">
+<div class="card-body clearfix">
+<div class="float-lg-right col-lg-5 mb-2"><img src="_images/_JS/lithuania_640.jpg" alt="繰り返し" class="img-fluid"></div>
+<p>DOMを操作するプログラムなどを動かす場合必要になる処理です。先にHTML要素を取得できるプログラムを習得できてからおすすめです。</p>
+<p>処理をするなかでも何か条件を達成するまで処理を続ける処理構文を反復処理やループと呼びます。</p>
+<ul>
+<li>for 文</li>
+<li>do...while 文</li>
+<li>while 文</li>
+<li>label 文</li>
+<li>break 文</li>
+<li>continue 文</li>
+<li>for...in 文</li>
+<li>for...of 文</li>
+</ul>
+<p>javascriptで使える繰り返し文は上記です。複雑な繰り返し文whileからcontinue文が便利ですがコードを打ちなれたかプログラマー向きです。まずは for文を間違えず書けるようになりましょう。</p>
+</div>
+</div>
+<!-- 目次 モジュール -->
+
+<div class="bg-light p-3 mb-4">
+<h2>目次</h2>
+<ul id="w-indexlistBox">
+    <li v-for="item in items" class="w-indexlistBox-list">
+      <a v-bind:href="item.id" data-scroll >{{text2}}</a>
+    </li>
+</ul>
+</div>
+<!-- / 目次 モジュール -->
+
+<!-- 本文のセクション モジュール -->
+<div id="s1" class="mt-n6 pt-6 mb-6 clearfix">
+
+<h2 id="s0">for文</h2>
+<p>反復できる処理はいくつかあります。<br><b>for文</b>をまずマスターしましょう</p>
+<p>for文の良いところはケアレスミスで無限ループに陥りにくいことです。</p>
+<p>書き方をおぼえてしまえば簡単です。また繰り返し処理はプログラミングの（自動化）の第一歩です是非マスターしましょう。</p>
+<blockquote>
+<p><a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Loops_and_iteration " target="_blank" rel="noopener">ループと反復処理 - JavaScript | MDN</a></p>
+
+
+<p>ループは繰り返し何かを実行するための簡便な方法を提供します。本章では JavaScript で利用可能な反復処理を行う数々の文を紹介します</p>
+<p>誰かに話しかけようと、ある方向に X 歩進み、別の方向に Y 進むといった場面を、コンピュータ化されたゲームととらえた上で、ループについて考えてみましょう。例えば、「西に 5 歩進む」という概念はループとして、下記のように表現できます :</p>
+</blockquote>
+<div class="card mb-4">
+<h3 class="card-header"> for 文の記述 </h3>
+<div class="card-body">
+<figure>
+<figcaption>javascript 記入例</figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+<code>
+var step;
+for (step = 0; step &lt; 5; step++) {
+  // 値が 0 から 4 まで計 5 回実行される
+  console.log('1 歩西に歩く');
+}
+</code></pre></figure>
+<figure>
+<figcaption>javascript 記入例</figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js"><code>
+for ([initialExpression]; [condition]; [incrementExpression]){
+  statement
+}
+</code></pre></figure>
+<ol class="stepCounter">
+<li class="stepIncr">もしあれば、初期化式 <code>initialExpression</code> が実行されます。この式は通常、1 個またはそれ以上のループカウンタを初期化しますが、この構文ではいかなるレベルの複雑な式を入れることが可能です。初期化式で変数を宣言することもできます。</li>
+<li class="stepIncr">条件式 condition が評価されます。<code>condition</code> の値が true の場合、ループ文が実行されます。<code>condition</code> の値が false の場合、for ループは終了します。condition 式がすべて省略されている場合、条件式は真であると仮定されます。</li>
+<li class="stepIncr">文 <code>statement</code> が実行されます。複数の文を実行するには、それらの文をグループ化するためにブロック文 ({ ... }) を使用します。</li>
+<li class="stepIncr">もしあれば、更新式 <code>incrementExpression</code> が実行され、ステップ 2 に制御が戻ります。</li>
+</ol>
+<figure>
+<figcaption>式の説明</figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+<code>
+for([STEP1] 初期式; [STEP2] 評価;[STEP4] 初期値に変化)｛
+  // [STEP3] 処理
+｝
+</code></pre></figure>
+<p>for文は後述のArrayオブジェクト（配列変数）の解析や分離処理に必要です。</p>
+
+<hr>
+<figure>
+<figcaption>javascriptとhtmlの記入例</figcaption>
+<pre class="line-numbers language-markup" data-src="prism.js">
+<code>
+&lt;form name=&quot;selectForm&quot;&gt;
+  &lt;p&gt;
+    &lt;label for=&quot;musicTypes&quot;&gt;Choose some music types, then click the button below:&lt;/label&gt;
+    &lt;select id=&quot;musicTypes&quot; name=&quot;musicTypes&quot; multiple=&quot;multiple&quot;&gt;
+      &lt;option selected=&quot;selected&quot;&gt;R&amp;B&lt;/option&gt;
+      &lt;option&gt;Jazz&lt;/option&gt;
+      &lt;option&gt;Blues&lt;/option&gt;
+      &lt;option&gt;New Age&lt;/option&gt;
+      &lt;option&gt;Classical&lt;/option&gt;
+      &lt;option&gt;Opera&lt;/option&gt;
+    &lt;/select&gt;
+  &lt;/p&gt;
+  &lt;p&gt;&lt;input id=&quot;btn&quot; type=&quot;button&quot; value=&quot;How many are selected?&quot; /&gt;&lt;/p&gt;
+&lt;/form&gt;
+
+&lt;script&gt;
+function howMany(selectObject) {
+  var numberSelected = 0;
+  for (var i = 0; i &lt; selectObject.options.length; i++) {
+    if (selectObject.options[i].selected) {
+      numberSelected++;
+    }
+  }
+  return numberSelected;
+}
+// セレクトタグで選んだ項目の数をアラートで表示してくれるプログラムです。
+var btn = document.getElementById(&quot;btn&quot;);
+btn.addEventListener(&quot;click&quot;, function(){
+  alert(&#039;Number of options selected: &#039; + howMany(document.selectForm.musicTypes))
+});
+&lt;/script&gt;
+</code></pre></figure>
+</div>
+</div>
+
+<div id="s2" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>length プロパティ</h2>
+<p>オブジェクト内(配列オブジェクト)の<b>要素数</b>の値を返すまたは文字列データの文字数を返す。</p>
+<blockquote><ul>
+  <li><a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Array/length" target="_blank" rel="noopener">Array.length</a></li>
+  <li><a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/length" target="_blank"  rel="noopener">String.length</a></li>
+</ul>
+</blockquote>
+<figure>
+<figcaption>javascript 記入例</figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+<code>
+Arrey.length;
+</code></pre></figure>
+
+<h3 id="-documen-https-developer-mozilla-org-ja-docs-web-api-document-"><a href="https://developer.mozilla.org/ja/docs/Web/API/document" target="_blank"  rel="noopener">documenオブジェクト</a></h3>
+
+<p>html要素内のname=&quot;selectForm&quot; name=&quot;musicTypes&quot;要素を引数として選択</p>
+<figure>
+<figcaption>javascript document 記入例</figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+<code>
+document.selectForm.musicTypes
+</code></pre></figure>
+<h3 id="document-getelementbyid-id_name-">document.getElementById(&#39;id_name&#39;);</h3>
+<p>&#39;id_name&#39;と同じ値のID属性をもつ要素を選択する。</p>
+<p><a href="https://developer.mozilla.org/ja/docs/Web/API/Document/getElementById" target="_blank"  rel="noopener">document.getElementById</a></p>
+<blockquote>
+<p>もし与えられた ID を持つ要素がなければ、この関数は null を返します。DOM 実装はその属性が ID 型であると言う情報を持たなければならないことに注意してください。&quot;id&quot; という名前の属性は、文書の DTD でそのように定義されない限り ID 型ではありません。id 属性は XHTML、XUL、その他の場合で一般的に ID 型 として定義されています。どの属性が ID 型であるかそうでないかわからない実装は、null を返すことが期待されます。</p>
+</blockquote>
+<figure>
+<figcaption>javascript idで要素を取得 記入例</figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+<code>document.getElementById("btn");
+</code></pre></figure>
+
+</div>
+
+<div id="s3" class="mt-n6 pt-6 mb-6 clearfix">
+
+
+<h2>for in</h2>
+
+
+<blockquote>
+for...in 文はオブジェクトにあるすべての列挙可能なプロパティに対し指定された変数を通して反復処理を行います。それぞれの異なるプロパティに、JavaScript は指定された文を実行します。for...in 文は下記のようになります :</blockquote>
+<p>(変数A in オブジェクトB)の部分は 変数AにオブジェクトBのプロパティを代入して。値を処理する.</p>
+<figure>
+<figcaption>for in 記入例</figcaption><pre class="line-numbers language-javascript" data-src="prism.js">
+<code>
+for (variable in object) {
+  statements
+}</code></pre></figure>
+
+<figure>
+<figcaption>とあるオブジェクトからプロパティと値を列挙する関数 記入例</figcaption><pre class="line-numbers language-javascript" data-src="prism.js">
+<code>
+function dump_props(obj, obj_name) {
+  var result = "";
+  for (var i in obj) {
+    result += obj_name + "." + i + " = " + obj[i] + "&lt;br&gt;";
+  }
+  result += "&lt;hr&gt;";
+  return result;
+}
+var obj = {};
+obj.a = "0";
+obj.fn = "apple";
+</code></pre></figure>
+<p><code>dump</code>データ全体を別の場所にまとめて書き出す。</p>
+</div>
+
+
+
+
+
+
+
+<!-- editable area end ########             -->
+</article>
+</div>
+<!-- /container-->
+
+<!-- / w-aside2 --->

@@ -1,0 +1,235 @@
+---
+title: 制御フロー(条件文)
+discription: discription
+cat: Javascript
+next-page-url: "508_js_code.html"
+filename: 507_js_code.html
+prev-page-url: "506_js_code.html"
+titlename: "{{title.titlename}}"
+text: "{{item.text}}"
+text2: "{{item.text}}"
+---
+<div class="container mb-5">
+<article id="w-article">
+<!-- editable area ########             -->
+        <h1>{{title}} - {{cat}}</h1>
+        <p><span>category:</span> <span class="badge badge-primary">{{cat}}</span></p>
+        <hr>
+<!-- 序章 モジュール -->
+<div class="card mb-4">
+<div class="card-body clearfix">
+<div class="float-lg-right col-lg-5 mb-2"><img src="_images/_JS/coffee-beans.jpg" alt="白と黒" class="img-fluid"></div>
+<p>
+プログラムはよみこまれれて処理をするのですが条件で処理をしなかったり処理をしたりします。
+またカッコなどをつかって処理の順番を制御したりします。</p>
+</noframes>
+<p><a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Control_flow_and_error_handling">制御フローとエラー処理 - JavaScript | MDN</a></p>
+
+
+</div>
+</div>
+<!-- 目次 モジュール -->
+<div class="bg-light p-3 mb-4">
+<h2>目次</h2>
+<ul id="w-indexlistBox">
+    <li v-for="item in items" class="w-indexlistBox-list">
+      <a v-bind:href="item.id" data-scroll >{{text2}}</a>
+    </li>
+</ul>
+</div>
+<!-- / 目次 モジュール -->
+
+<!-- 本文のセクション モジュール -->
+<div id="s1" class="mt-n6 pt-6 mb-6 clearfix">
+
+<h2 id="s0">ブロック文</h2>
+<blockquote>
+<p>たいていの場合、ブロック文は処理のグループ化に使います。ブロックは、1組の波括弧「{}」で区切られます。
+たいていの場合とは関数の処理内容や分岐後の処理などにつかわれます。</p>
+</blockquote>
+<p>CSSと同じで<em>開始の波カッコ「{」は閉じる波カッコ「}」で閉じられる。</em>ネスト構造(階層構造)を意識してプログラミングしていただくとプログラミングミスが減ります。</p>
+<figure>
+<figcaption>javascript 記入例</figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+<code>
+{
+  statement_1;//処理文1
+  statement_2;//処理文2
+  statement_n;//処理文n
+ }</code></pre></figure>
+
+<blockquote>
+<p>重要 : ECMAScript 2015 より前の JavaScript にはブロックスコープがありません。ブロック内で導入された変数のスコープは、そのブロックがある関数やスクリプトになります。またそれらの変数を設定した影響は、そのブロックを越えて持続します。つまり、ブロック文はスコープを定義しないということです。「独立した」ブロックも正しい構文ですが、CやJavaのブロックで提供されるものとは異なる結果をもたらします。例えば :</p>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+<code>var x = 1;
+{
+  var x = 2;
+}
+console.log(x); // 2 を出力
+</code></pre></blockquote>
+<p>他のプログラミングと違ってブロック文のなかの変数は外の変数と同じ扱いになり書き換えられます。（変数のスコープ）</p>
+
+</div>
+
+
+<div id="s2" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>条件文</h2>
+<blockquote>
+<p>条件文は、指定した条件が true ならば実行される命令の集まりです。JavaScript は if...else と switch の 2 つの条件文をサポートしています</p>
+</blockquote>
+<p>if文は自由度が高いですが構文が複雑になりがちです。<br>またお約束が少なく覚えやすいのが利点です。</p>
+<div class="card mb-4 p-4">
+<h4 id="if-else-">if...else 文</h4>
+<blockquote>
+<p>論理条件が true の場合に、文を実行するには if 文を使用してください。オプションの else 節を使用すると、条件が false の場合にも文を実行することができます。if 文は次のように使用します :</p>
+</blockquote>
+<p>conditionは条件文です。比較演算や理論演算をいれて真偽値をいれます。</p>
+<p>condition文が真の場合処理し偽の場合ブロック内の処理はしません。</p>
+<figure>
+<h3>条件に合ったときだけ処理する文</h3>
+<figcaption>javascript 記入例</figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+<code>
+if (condition) {
+
+  // trueの時だけ処理
+
+}
+</code></pre></figure>
+
+<figcaption>javascript 記入例(trueの処理する。)</figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+<code>
+// trueの処理する。
+
+  var Obj;//変数宣言
+  Obj = {};//object定義
+
+  if (typeof Obj === 'object') { //変数Objの型番が`Object`
+  /*trueのときの処理*/
+   var varType = typeof Obj;
+    console.log(varType);
+  }
+  </code></pre></figure>
+  <figcaption>javascript 記入例(trueの処理をしません。)</figcaption>
+  <pre class="line-numbers language-javascript" data-src="prism.js">
+  <code>
+// trueの処理をしません。
+var obj2;
+if (typeof obj2 === 'object') { //変数obj2の型番が`Object`
+/*trueのときの処理*/
+  var varType = typeof obj2;
+  console.log(varType);
+}
+</code></pre></figure>
+<p>変数obj2が未定義のため処理しません。</p>
+
+
+<h3>条件に合ったとき処理と合わなかったときの処理がある場合</h3>
+<p>condition文が真の場合処理し偽の場合、次のelseの処理をする。</p>
+<figure>
+<figcaption>javascript 記入例</figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+<code>
+if (condition) {
+
+    // trueの時だけ処理
+
+} else {
+
+    // falseの時だけ処理
+
+}
+</code></pre></figure>
+<h3>複数の条件で処理を変える場合の式</h3>
+<p>次のように else if を使用して文を重ねることで、複数の条件を順々にテストすることができます</p>
+<figure>
+<figcaption>javascript 記入例</figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+<code>
+if (condition_1) {
+
+  // condition_1 trueの時だけ処理
+
+} else if (condition_2) {
+
+  //condition_1 falseで condition_2 trueの時だけ処理
+
+} else if (condition_n) {
+
+  //condition_1 と condition_2falseでcondition_ｎ trueの時だけ処理
+
+} else {
+
+  //すべての条件にあてはまらないときの処理
+
+}
+</code></pre></figure>
+
+<h3 id="false-">「false」と評価される値</h3>
+<p>以下の値は<b>false</b>に評価されます。</p>
+<p>条件文内に入れる評価値をしることで条件分岐の幅が増えます。</p>
+<ul>
+<li>false:真偽値の値を返り値にする関数</li>
+<li>undefined:変数内が未定義</li>
+<li>null：DBへのクエリが空</li>
+<li>0：数値型でゼロ</li>
+<li>NaN：数値かどうか確認して数値ではなかった。not a Number</li>
+<li>空の文字列 (&quot;&quot;)</li>
+</ul>
+</div>
+</div>
+
+<div id="s3" class="mt-n6 pt-6 mb-6 clearfix">
+ <h2>if文バリエーション</h2>
+<div class="card p-4 mb-4">
+<h4>ブロック構文なし</h4>
+処理がそれぞれひとつの場合「{}」は省略できる。
+<figure>
+<figcaption>ブラケット無し 記入例</figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+<code>if(x==y) x = x+y ;
+</code></pre></figure>
+</div>
+<div class="card p-4 mb-4">
+<h4>三項演算子</h4>
+<figure>
+<figcaption>三項演算子 記入例</figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+<code>
+/*
+(条件式)? trueの処理 : falseの処理;
+*/
+  var genderType = (genderValue==1)? '男性' : '女性' ;
+</code></pre></figure>
+
+<p>変数 genderValueに数値1が入っていた場合 変数 genderTypeに文字列'男性'を入れる、<br>
+変数 genderValueに数値1以外が入っていた場合 変数 genderType に'女性'を入れる。</p>
+<p>
+  条件式の後ろにクエスチョン「?」その後ろに真のときに行われる処理<br>
+  コロン「:」は偽のときの処理が行われるときのセパレーターです。<br>
+  条件によって変数に格納する値を変えたいときにつかうと便利。
+</p>
+<blockquote>
+  <a href="https://developer.mozilla.org/ja/docs/JavaScript/Reference/Operators/Conditional_Operator">三項演算子</a>
+</blockquote>
+</div>
+</div>
+<div class="alert-info p-4">
+<h3>まとめ</h3>
+<p>まずはIf文を自力でかけるようになろう。文法と覚えること条件文をおもいつくことがプログラミングで大切。</p>
+<ul>
+<li><code>if(条件式){処理}</code>を覚えて使う。</li>
+<li>さまざまな条件式がある。</li>
+<li>if文はelseでそうでないときの処理が作れる。</li>
+<li>if文はelse ifで細かく条件分岐の処理を書くことができる。</li>
+</ul>
+</div>
+
+
+<!-- editable area end ########             -->
+</article>
+</div>
+<!-- /container-->
+
+<!-- / w-aside2 --->

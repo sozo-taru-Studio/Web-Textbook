@@ -1,0 +1,229 @@
+---
+title: javascriptを書く準備
+discription: discription
+cat: Javascript
+next-page-url: "502_js_code.html"
+filename: 501_js_code.html
+prev-page-url: "500_js_code.html"
+titlename: "{{title.titlename}}"
+text: "{{item.text}}"
+text2: "{{item.text}}"
+---
+<div class="container mb-5">
+<article id="w-article">
+<!-- editable area ########             -->
+        <h1>{{title}} - {{cat}}</h1>
+        <p><span>category:</span> <span class="badge badge-primary">{{cat}}</span></p>
+        <hr>
+<!-- 序章 モジュール -->
+<div class="card mb-4">
+<div class="card-body clearfix">
+<div class="float-lg-right col-lg-5 mb-2"><img src="_images/_JS/chain_640.jpg" alt="flexlayput " class="img-fluid"></div>
+<p class="card-text">webブラウザとwebページにjavascriptをリンクして適応させる方法について解説します。</p>
+<p class="clearBoth"><a href="https://developer.mozilla.org/ja/docs/Learn/JavaScript/First_steps/A_first_splash" target="_blank" rel="noopener">JavaScriptへの最初のダイブ | MDN</a></p>
+</div>
+</div>
+<!-- 目次 モジュール -->
+<div class="bg-light p-3 mb-4">
+<h2>目次</h2>
+<ul id="w-indexlistBox">
+    <li v-for="item in items" class="w-indexlistBox-list">
+      <a v-bind:href="item.id" data-scroll >{{text2}}</a>
+    </li>
+</ul>
+</div>
+<!-- / 目次 モジュール -->
+
+<!-- 本文のセクション モジュール -->
+<div id="s1" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>window.alert</h2>
+<p>なぜかどのプログラム打つときの実行確認がハローワールド「hellow world」です。<br>
+<span style="font-size:1.2rem;">中学英語における。「this is a pen.」 みたいなもんです。</span></p>
+<p>ブラウザでのjavascriptを直接記述しての確認の仕方をMDNのjavascriptのチュートリアルを使って試してみましょう。</p>
+<blockquote>
+<div>
+<a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Introduction#Getting_started_with_JavaScript" target="_blank" rel="noopener">ブラウザでjavascripを試してみる</a>
+</div>
+<cite>MDN web docs - JavaScript を始めよう</cite>
+</blockquote>
+<div class="p-4">
+<h3>ブラウザのコンソールを使ってjavascriptの読み書きをする。</h3>
+<p><a href="502_js_code.html"> デバックモードでデバッグ</a>で詳しい操作の仕方を解説しています。</p>
+<p>検証機能の「Console」に直接jacascriptを記述することでプログラムの実行を確認できます。</p>
+<p>各社のwebブラウザは検証機能でCSSやjavascriptをローカル環境で確認できる機能があります。</p>
+<p>コンソール機能でプログラミングはできますが、その場限りの記述になります。HTMLファイルやJavascript ファイルに記述したプログラムコードはファイルを関連付けることで実行できます。</p>
+<div class="row">
+<div class="col-lg-6">
+<div class="card">
+<div><img src="_images/_JS/fierFox.PNG" alt="コンソールの画像" class="bd-placeholder-img card-img-top"></div>
+<div class="card-body">
+<h4 class="h5"><i class="fa fa-firefox" aria-hidden="true"></i> FireFoxの場合</h4>
+<p>ちょっとした学習やテストの場合「firefox」の検証で出来るので手間が少なくて便利の検証で出来るので手間が少なくて便利です。</p>
+<ul>
+<li>「Mac」<kbd>command</kbd> + <kbd>L</kbd> でコンソールに出力できます。</li>
+<li>「Win」<kbd>shift</kbd> + <kbd>Ctrl</kbd> + <kbd>k</kbd></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div class="col-lg-6">
+<div class="card">
+  <div><img src="_images/_JS/chromConsole.PNG" alt="コンソールの画像" class="bd-placeholder-img card-img-top"></div>
+<div class="card-body">
+<h4 class="h5"> <i class="fa fa-chrome" aria-hidden="true"></i> Google Chreomeの場合</h4>
+<ul>
+<li>「win」 <kbd>shift</kbd> + <kbd>Ctrl</kbd> + <kbd>i</kbd> でコンソールタブを選びます。</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<div id="s2" class="mt-n6 pt-6 mb-6 clearfix">
+ <h2>webページにjavascriptを記述して機能させる</h2>
+  <p>ブラウザにあるjavascripエンジンへのアクセス(javascriptへのアクセス)はHTMLファイルから行います。</p>
+  <p>下記の二種類の方法で  javascriptコードをwebページに反映させることができます。</p>
+  <ul>
+    <li>HTMLファイルに<strong>script要素</strong>内で記述する.</li>
+    <li>外部ファイルをscript要素のsrc属性でURLを属性値として指定して読み込みます。</li>
+  </ul>
+<div class="card mb-4">
+<h3 class="card-header">HTMLへの直接記述</h3>
+<div class="card-body">
+<p>script要素はhtmlファイル読み込み時にローカルプログラムを実行するときに記述します。</p>
+<figure>
+<figcaption>HTML 記入例</figcaption>
+<pre class="line-numbers language-markup" data-src="prism.js">
+<code>&lt;script type="text/javascript"&gt;
+&lt;!--
+// Here is javascript world!
+alert("Hellow World");
+--&gt;
+&lt;/script&gt;</code></pre>
+</figure>
+<p>type属性「type="text/javascript"」はHTML5のときは省略できます。<br>
+ただし読み込むスクリプトがjavascriptではない場合は明示的にプログラムを指定してください。</p>
+<h5>プログラムの解説</h5>
+<p>alert()メソッドが実行されると引数に渡されたメッセージ( ()内の文字 )が警告ダイアログとともに出力されます。ユーザーはOKボタンを押さないとブラウザの次の表示に進行できません。</p>
+</div>
+</div>
+
+<div class="card mb-4">
+<h3 class="card-header">HTMLへjavascriptファイルを読み込む</h3>
+<div class="card-body">
+<figure>
+<figcaption>HTML 記入例</figcaption>
+<pre class="line-numbers language-markup" data-src="prism.js">
+<code>&lt;script type="text/javascript" src=" directory/file_Name.js"&gt;&lt;/script&gt;</code></pre>
+</figure>
+<p>src属性を追加し属性値をURI形式で記述してファイルを読み込みます。</p>
+<p>検証でファイルがよみこんだか確認してください。</p>
+<p><strong>終了タグの記述を忘れないようにしましょう。</strong></p>
+
+<h5>javascriptファイルを作ってみましょう。</h5>
+  <p><span class="appName--DW">Dreamweaver</span>では<br>新規javascriptファイルを作るには<em class="
+method">ファイルメニュー　＞　新規ファイル　＞　新規ダイアログボックスから新規ドキュメント＞　javascript</em>を選びます。<em class="method">作成ボタン</em>を押す</p>
+  <p>もしくは<kbd>Ctrl/command + N</kbd></p>
+  <p>ファイル名を付けて所定のフォルダに保存してください</p>
+  <h5>ファイルの命名規則</h5>
+  <p>半角英数1文字以上で記号はハイフン「-」,アンダーバー「 _ 」がつかえます。拡張子は「.js」
+  数か月後の自分のためにプログラムの内容が名前で類推できる名前にしましょう。</p>
+  <p>例）「test.js」 (本番用ではないの<em>だけ</em>はわかる。)<br>
+「alertTest,js」と名前をつけて任意のディレクトリーに保存します。javascriptをサイト内で保存する場合は「js」「script」など類推しやすいディレクトリー名をつけて保存しましょう。
+  </p>
+<p>
+  保存したファイルをエディターで編集します。
+  内容は上記プログラムの下記のスクリプト部分のみをコピーアンドペーストして保存しもう一度ブラウザでよみこんでみましょう。
+</p>
+<figure>
+<figcaption>javascript 記入例</figcaption>
+<pre class="line-numbers language-javascriot" data-src="prism.js"><code>// Here is javascript world!
+alert("Hellow World");
+</code></pre>
+</figure>
+</div>
+</div>
+
+
+<div id="s3" class="mt-n6 pt-6 mb-6 clearfix">
+  <h2>javascriptはHTMLファイルのどこに書くの？</h2>
+  <p>記述できる場所は head要素内 body要素内どちらでも書けます。</p>
+  <blockquote><p>メタデータコンテンツ を受け入れるすべての要素、または フレージングコンテンツ を受け入れるすべての要素</p></blockquote>
+<p>詳しくは:<a href="https://developer.mozilla.org/ja/docs/Web/HTML/Element/Script" target="_blank">script 要素 - HTML | MDN</a></p>
+
+<p>javascriptをHTMLファイルに読み込むタイミングでレンダリングに影響がでます。</p>
+<p>HTMLのソースコードを上から順番に実行していきjavascriptの読み込みがあればそこで実行しおえます。つまり実行のタイミングを間違うと思った結果が返ってこない場合があります。</p>
+<figure>
+<figcaption>HTML 記入例</figcaption>
+<pre class="line-numbers language-markup" data-src="prism.js">
+<code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;ja&quot;&gt;
+&lt;head&gt;
+&lt;title&gt;インタプリタテスト&lt;/title&gt;
+&lt;!-- 1th --&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+&lt;!--
+alert(&quot;Hellow first World&quot;);
+--&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div class=&quot;container&quot;&gt;
+&lt;!-- 2th --&gt;
+&lt;script&gt;
+alert(&quot;Hellow second World&quot;);
+&lt;/script&gt;
+&lt;p&gt;jobs make a lot of jobs.&lt;/p&gt;
+&lt;/div&gt;
+&lt;!-- 3th --&gt;
+&lt;script&gt;
+alert(&quot;Hellow third World&quot;);
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+</figure>
+<p>それぞれのファイルが読み込まれていく順番が確認できます。</p>
+<hr>
+<h3>JavaScriptをHTMLファイルのどの部分に読むのがいいのか？</h3>
+<p><strong>javascriptで書かれた処理が何をするかで実行するタイミングを変えなければなりません。</strong></p>
+<p> HTMLの読み込みはコードの上の行から順番に読み込んでいきます。 読み込まれてscriptタグで外部ファイル読み込みリクエストをします。 javascriptはインタプリタ型のプログラムですので読み込みと実行がほぼ同じタイミングでおこなわれます。</p>
+
+<p>実行の条件のタイミングを考えすにプログラミングをしているとスクリプトが正しいのに思った結果にならないことがあります。 <br>例えばHTML要素をjavascriptで書換えするとき、お目当ての要素が読み込めていないなど、HTMLのコードが正しくてもjavascriptの実行のタイミングが悪いとエラーもなく結果もない状態に陥ることがあります。</p>
+
+<p>このプログラムでは
+アラートが3回でますが　2回目の次にp要素が出現するはずです。(FF IE11のとき) alert();メソッドは ユーザーがOkボタンを押すまでブラウザの動作を停止する役割があります。<br>
+ブラウザのレンダリングエンジンによって挙動は変わるようです。 chromeはBody要素の読み込みが完了しないと動作しませんでした。 <strong>HTMLファイルの記述場所の関係で実行タイミングが変わることを理解しプログラミングしてください。</strong></p>
+
+<div class="card">
+<h5 class="card-header">レンダリングの順番の仕組み</h5>
+<div class="card-body">
+<div class=""><img src="_images/_JS/DOM.jpg" alt="DOM" class="bd-placeholder-img card-img-top"></div>
+<p>HTMLを読み込んだブラウザはHTMLを表現するために関連するリソースをリクエストします。表示するためにDOMと呼ばれるデータを形成します。このDOMをもとにCSSのデータを適応します。<br>その後javascriptを適応します。表示に影響するプログラムはDOMが形成する前に実行されてしまう恐れがあるため読み込ませるタイミングはそのプログラムの目的によって調整しないといけません。</p>
+
+
+
+<div class="alert-info p-4">
+<h3>まとめ</h3>
+<p>スクリプトタグがあって初めてHTMLファイルはスクリプトを処理します。</p>
+<ol>
+  <li>javascriptはスクリプトタグで読み込む</li>
+  <li>スクリプトタグのコンテンツエリアはjavascriptの世界</li>
+  <li>alert()は警告メッセージを出す</li>
+  <li>HTMLのどこにスクリプトを書くかで実行処理のタイミングが違う。</li>
+</ol>
+</div>
+</div>
+</div>
+
+
+
+
+<!-- editable area end ########             -->
+</article>
+</div>
+<!-- /container-->
+
+<!-- / w-aside2 --->

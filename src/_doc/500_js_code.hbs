@@ -1,0 +1,145 @@
+---
+title: HTML CSS javascript 関係性
+discription: discription
+cat: Javascript
+next-page-url: "501_js_code.html"
+filename: 500_js_code.html
+prev-page-url: "#"
+titlename: "{{title.titlename}}"
+text: "{{item.text}}"
+text2: "{{item.text}}"
+---
+<div class="container mb-5">
+<article id="w-article">
+<!-- editable area ########             -->
+        <h1>{{title}} - {{cat}}</h1>
+        <p><span>category:</span> <span class="badge badge-primary">{{cat}}</span></p>
+        <hr>
+<!-- 序章 モジュール -->
+<div class="card mb-4">
+<div class="card-body clearfix">
+<div class="float-lg-right col-lg-5 mb-2"><img src="_images/_JS/programming_640.jpg" alt="flexlayput " class="img-fluid"></div>
+<p class="card-text">javascript役割とそもそもプログラミングってなに？ってひとのために</p>
+</p>
+<p class="clearBoth"><a href="https://developer.mozilla.org/ja/docs/Web/JavaScript" target="_blank" rel="noopener">JavaScript | MDN</a></p>
+</div>
+</div>
+<!-- 目次 モジュール -->
+<div class="bg-light p-3 mb-4">
+<h2>目次</h2>
+<ul id="w-indexlistBox">
+    <li v-for="item in items" class="w-indexlistBox-list">
+      <a v-bind:href="item.id" data-scroll >{{text2}}</a>
+    </li>
+</ul>
+</div>
+<!-- / 目次 モジュール -->
+
+<!-- 本文のセクション モジュール -->
+<div id="s1" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>webページでのjavascriptの役割</h2>
+
+<p>webページをブラウザが表示するとき3つの言語が下記の役割をはたします。</p>
+<ul>
+  <li>HTMの役割は閲覧者に伝える情報の構造化</li>
+  <li>CSSの役割は 閲覧者に伝わりやすく装飾</li>
+  <li>javascriptの役割は webページ<strong>立ち振る舞いの変更</strong></li>
+</ul>
+<p>通常のUA(ブラウザ)の挙動をプログラムで変更して、よりユーザーに便利に働くようにするためにブラウザの処理を変更するために書きます。</p>
+</div>
+
+<div id="s2" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>コンピュータープログラミングの簡単な概要</h2>
+
+  <p><dfn>プログラミング言語</dfn>とはコンピューターに処理をさせるための言語 コンピューターとの手続き</p>
+  <p><dfn>スクリプト(script)</dfn>とは「台本、脚本」という英語の意味で簡易なアプリケーションの操作や設定を書けるプログラム。<br>
+  scriptは手軽で簡単である程度融通が効き学習のハードルの低いと感じさせます。</p>
+</div>
+
+
+<div id="s3" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>javascriptの概要</h2>
+<ul>
+  <li>javascriptは<strong>インタプリタ型</strong> (解読しながら実行する)プログラミング言語</li>
+  <li>javascriptはクライアントサイド（ブラウザ）で実行されます。<br>
+    クライアントサイドjavascriptを開設しています。</li>
+  <li>サーバサイド JavaScrip・・・・Node.jsなど、サーバーサイトプログラムとしてjavascriptが最近（2014年ごろ）ではつかわれはじめています。</li>
+</ul>
+    <p>各ブラウザにはjavascript言語を解読（インタプリタ）して実行をするエンジンがついています。</p>
+    <p><strong>javascript言語はwebページがどうのように立ち振る舞うかを設定するプログラミング言語です。</strong></p>
+  <div class="mb-4 card">
+  <h4 class="card-header">どんなサイトでつかわれていますか？</h4>
+  <div class="card-body">
+  <h5 class="font-weight-bold">会員制サイト（SNSとかネット銀行）</h5>
+    <p>静的(データとして)に読み込まれたwebページ HTMLやCSSだけでは非会員 会員の区別化ができません。<br>確認認証にいちいちサーバーに問い合わせをしないといけません。</p>
+    <p>会員の場合は「会員番号と名前」を表示し、そうでない場合は「ようこそゲストさま」を表示する必要がでてきます。お客様の情報はブラウザ側でしか保持していないので、ブラウザ側で判断するプログラムであるjavascriptが活躍します。</p>
+  <h5 class="font-weight-bold">入力フィールドの妥当性</h5>
+  <p>お名前をユーザーに入力してもらった値（データ）が全角でかかれているかどうか？ <br>半角でかかれているかどうか？<br> 電話番号なら半角で入力されているか数字かどうか？<br>などユーザー送信する操作をする前に判断しユーザーに入力のやり直しの機会をあたえたり補助をすることができます。</p>
+  <p>おもにHTMLやCSSだけで要件を満たさない機能などをwebサイトに付加するためにあります。</p>
+</div>
+</div>
+<blockquote class="blockquote">
+<p>引用: <a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/About_JavaScript" target="_blank" rel="noopener">JavaScript について|JavaScript とは何ですか?</a>
+<br>MDN:(https://developer.mozilla.org/ja/docs/Web/JavaScript/About_JavaScript) </p>
+</blockquote>
+
+<div class="card mb-4">
+    <h4 class="card-header">プログラムの処理の種類</h4>
+    <div class="card-body">
+    <p><dfn>インタプリタ型:</dfn>とは別に処理方式の違うコンパイル型のプログラミングがあります。</p>
+    <p><dfn>コンパイル型：</dfn>プログラム言語をアプリケーションが理解できるように解読する行程が必要なプログラムです。
+    行程は「プログラミング <span class="fa fa-angle-right"></span> コンパイル <span class="fa fa-angle-right "></span> 実行」のプロセスが必要です。アプリケーションの作成など大規模なプログラムに向いています</p>
+
+    <a href="http://imasara-chigai.lance5.net/z458.html" target="_blank">スクリプトとプログラムの違い～スクリプトとプログラムの違いを簡単解説</a>
+  </div>
+  </div>
+</div>
+
+
+
+
+<div id="s4" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>標準化 - javascript もHTMLやCSSとなどと同じく世界標準化されています。</h2>
+  <p>ブラウザによってプログラミングの処理が微妙に違うとプログラマーは困ります。標準化作業をしているチームの名前が「ECMA」というチームです。でそこから ECMAScriptと呼ばれるようになりました。</p>
+    <h3>ECMAScript 仕様</h3>
+    <blockquote>
+    <p>JavaScript は国際的なプログラミング言語を提供できるように Ecma International によって標準化されています (ECMA は、以前は European Computer Manufacturers Association の頭文字をとったものでした)。この標準化された JavaScript のバージョンは ECMAScript と呼ばれ、この標準をサポートするアプリケーションはすべて同じ動作になります。企業は、JavaScript の実装開発にこのオープンな標準言語を利用できます。ECMAScript 標準は、ECMA-262 仕様に文書化されています。JavaScript バージョンと ECMAScript 標準化の各版との違いについて知りたい場合は JavaScript の新機能をご覧ください。<br>
+      <cite><a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Introduction#JavaScript_and_the_ECMAScript_Specification" target="_blank" rel="noopener">MDN</a></cite></p>
+    </blockquote>
+    <h3>ECMAScript 仕様書</h3>
+    <p>javascript実行プログラムの仕様の名前です。ECMAScriptはjavascriptのほかのプログラムにも仕様書としてつかわれています。</p>
+<section>
+<h4>JSLint</h4>
+<p>JSLintはJavasceiptがECMA6の仕様に沿った記述か添削警告してくれるサイトです。<br>しかしくじけますのでむやみにチェックするのはよしましょう。</p>
+<p><a href="http://analogic.jp/jslint/" target="_blank" rel="noopener">JSLintを使おう！（基本解説とオプション一覧）</a></p>
+<p><a href="http://www.jslint.com/" target="_blank" rel="noopener"> JSLint http://www.jslint.com/</a></p>
+</div>
+
+<div id="s5" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>「Javascript」と「Java」の違い</h2>
+<p>詳しく知りたければMDNのリンクをよんでみてください。<br>
+Javaはオラクル社の提供するプログラムでWebアプリケーションの開発によく使われているプログラムです、サーバーサイドで使用するプログラムです。<br>
+javascriptはブラウザ内で動くローカルサイドプログラムで開発された目的として動作する箇所がちがいます。<br>
+ECMAScript仕様になってからは新しい記述も増え、オブジェクト指向、クラスの定義など Javaを書けるプログラマーにとっては身近な文法になってきました。
+javascriptはブラウザで動く唯一のプログラムなのが重要だとおもいます。
+</p>
+</div>
+<div class="card alert-info">
+<div class="card-body">
+<h3>まとめ</h3>
+<p>javascriptはwebサイトにはCSSと同様に欠かせない機能を担っています。</p>
+<ul>
+  <li>javascript手続きがたのブラウザで動くプログラム</li>
+  <li>javascriptでブラウザの機能を向上して便利にしている。</li>
+  <li>ECMAscriptが仕様</li>
+  <li>「Java」じゃない</li>
+</ul>
+</div>
+</div>
+
+<!-- editable area end ########             -->
+</article>
+</div>
+<!-- /container-->
+
+<!-- / w-aside2 --->

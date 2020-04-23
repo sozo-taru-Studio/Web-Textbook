@@ -1,0 +1,108 @@
+---
+title: 書式 ステートメント
+discription: discription
+cat: Javascript
+next-page-url: "504_js_code.html"
+filename: 503_js_code.html
+prev-page-url: "502_js_code.html"
+titlename: "{{title.titlename}}"
+text: "{{item.text}}"
+text2: "{{item.text}}"
+---
+<div class="container mb-5">
+<article id="w-article">
+<!-- editable area ########             -->
+        <h1>{{title}} - {{cat}}</h1>
+        <p><span>category:</span> <span class="badge badge-primary">{{cat}}</span></p>
+        <hr>
+<!-- 序章 モジュール -->
+<div class="card mb-4">
+<div class="card-body clearfix">
+<div class="float-lg-right col-lg-5 mb-2"><img src="_images/_JS/state.jpg" alt=" もじの書き方のルール " class="img-fluid"></div>
+<p class="card-text">javascriptの書き方のルールやコメントアウトのルールを知りましょう。英語でゆうところのグラマーですね。</p>
+</div>
+</div>
+<!-- 目次 モジュール -->
+<div class="bg-light p-3 mb-4">
+<h2>目次</h2>
+<ul id="w-indexlistBox">
+    <li v-for="item in items" class="w-indexlistBox-list">
+      <a v-bind:href="item.id" data-scroll >{{text2}}</a>
+    </li>
+</ul>
+</div>
+<!-- / 目次 モジュール -->
+
+<!-- 本文のセクション モジュール -->
+<div id="s1" class="mt-n6 pt-6 mb-6 clearfix">
+  <h2>書式 ステートメント</h2>
+  <p>ステートメントって文脈とか文法という意味です。ごく初歩的なJavaScriptのプログラミングのルールを確認してください。</p>
+  <ul>
+    <li>文字コードは unicode 日本語はUTF-8N（BOM無し）で書きましょう。</li>
+    <li>大文字小文字を区別します。</li>
+    <li>単語や命令文の間にスペースや改行はいれないようにしましょう。</li>
+    <li>セミコロン「;」を命令文の後ろにいれて処理の終了（文の終了を知らせる）を明記する。</li>
+  </ul>
+  <blockquote><p>JavaScript では、命令は文 (statement) と呼ばれ、セミコロン (;) によって区切られています。スペース、タブ文字、改行文字は「空白文字」と呼ばれます。JavaScript のソーステキストは左から右にスキャンされ、トークン、制御文字、行末、コメントや空白文字といった入力要素に変換されます。また ECMAScript ではキーワードやリテラルが定義されていて、また行の終わりにセミコロンを自動で挿入するルール (ASI) があります。ですが、副作用を防ぐため、常に文の終わりにはセミコロンを入れるのをおすすめします。さらなる情報は、JavaScript の字句文法についての詳細なリファレンスをご覧ください。</p></blockquote>
+<p>詳しくは:<a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Grammar_and_types#Basics" target="_blank" rel="noopener">文法とデータ型 - JavaScript | MDN</a></p>
+
+<figure>
+<figcaption>javascript  NG集 記入例</figcaption>
+<pre class="line-numbers language-markup" data-src="prism.js">
+<code>
+// 1 NG  文末のセミコロンがない でも単体なので動く
+console.log(&quot;Hellow Console!&quot;)
+
+// 2  NG 改行コードを入れない方がいい　可読性がわるい。
+console.l
+og();
+
+// 3 NG 引用符が奇数個 絶対 ここからエラー
+console.log("引用符抜け);
+
+//4.NG ] } ) などカッコの閉じ忘れ, またはカッコが多い。
+console.log(Math.random();
+
+</code>
+</pre>
+</figure>
+<p>htmlやCSSを扱っていた経験がある方はわかるとおもいますがブラケットや引用符の範囲指定失敗など同じようにjavascriptも不具合がでます。</p>
+
+<h5>各プロジェクトのJavaScriptの記述ハウスルール</h5>
+<dl><dt>スタイルガイド</dt>
+<dd>
+<p>
+ソースコードのマナーや命名規則を明記したものやそのもの自体を<strong>スタイルガイド</strong>,<strong>コードルール</strong>と呼んでいます。</p>
+<ul>
+  <li><a href="https://qiita.com/kitsuki00/items/79428876391d0179a2ca" target="_blank" rel="noopener">スタイルガイドや命名規則記事まとめ( JavaScript )</a></li>
+  <li><a href="http://cou929.nu/data/google_javascript_style_guide/" target="_blank" rel="noopener">google javascript code</a></li>
+</ul>
+</dd>
+</div>
+
+<div id="s2" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>コメント コメントアウト</h2>
+<p>「//」連続のスラッシュ2つは1行コメントアウトになります。</p>
+<p>「/*」コメントがあればコメントの終了「*/」までプログラムが無視してくれます。
+<br>デバックや処理のメモ書きなど開発者のメンテナンスのために必要です。活用しましょう。</p>
+<figure>
+<figcaption>javascript 記入例</figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+<code>// 1行コメント
+/*
+複数行コメント
+但しネストはエラーになります。
+*/</code></pre>
+</figure>
+
+<p>一行コメントは改行するとコメント領域から外れスクリプティング領域になります。
+ちょっとしたメモに向いています。
+</p>
+<p>ブロックコメントは複数行をコメントとして扱い処理を無視してくれます。関数を丸ごとコメントアウトして不具合箇所の割り出しに便利です。</p>
+</div>
+<!-- editable area end ########             -->
+</article>
+</div>
+<!-- /container-->
+
+<!-- / w-aside2 --->

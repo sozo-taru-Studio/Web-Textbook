@@ -1,0 +1,363 @@
+---
+title: vertical-align プロパティ
+discription: discription
+cat: CSS
+next-page-url: "48_css_code.html"
+filename: 47_css_code.html
+prev-page-url: "46_css_code.html"
+titlename: "{{title.titlename}}"
+text: "{{item.text}}"
+text2: "{{item.text}}"
+---
+<div class="container mb-5">
+<article id="w-article">
+<!-- editable area ########             -->
+        <h1>{{title}} - {{cat}}</h1>
+        <p><span>category:</span> <span class="badge badge-primary">{{cat}}</span></p>
+        <hr>
+
+<!-- 序章 モジュール -->
+<div class="card mb-4">
+<div class="card-body clearfix">
+<p class="card-text">行の表示位置　垂直方向の位置を変更できるプロパティです。行(inline)内の指定するプロパティと表のセルボックス内の文字の表示位置を制御する2種類の値があります。</p>
+</div>
+</div>
+
+<!-- 目次 モジュール -->
+<div class="bg-light p-3 mb-4">
+<h2>目次</h2>
+<ul id="w-indexlistBox">
+    <li v-for="item in items" class="w-indexlistBox-list">
+      <a v-bind:href="item.id" data-scroll >{{text2}}</a>
+    </li>
+</ul>
+</div>
+<!-- /目次 モジュール -->
+
+<!-- 本文のセクション モジュール -->
+<div id="s1" class="mt-n6 pt-6 mb-6 clearfix">
+
+<h2>vertical-align 行での設定</h2>
+<p>CSS の vertical-align プロパティは、インラインボックスまたは表セルボックスの垂直方向の配置を設定します。</p>
+<p></p>
+
+<h3>値</h3>
+	<style>
+			.v-align-base:before{
+			vertical-align:baseline;
+					font-size:3em;
+		}
+
+		.v-align-sub:before{
+			vertical-align: sub;
+				font-size:3em;
+		}
+
+		.v-align-sup:before{
+			vertical-align:super;
+				font-size:3em;
+		}
+
+		.v-align-tt:before{
+				font-size:3em;
+			vertical-align:text-top;
+		}
+		.v-align-tb:before{
+			vertical-align:text-bottom;
+				font-size:3em;
+		}
+		.v-align-top:before{
+			vertical-align:top;
+			font-size:3em;
+		}
+		.v-align-bottom:before{
+			vertical-align:bottom;
+			font-size:3em;
+		}
+		.v-align-m:before{
+			vertical-align:middle;
+				font-size:3em;
+		}
+		.v-align-20:before{
+			vertical-align:20%;
+				font-size:3em;
+		}
+
+		.v-align-3em:before{
+			vertical-align:3em;
+				font-size:3em;
+		}
+
+
+
+
+		.preview{
+			border:3px solid #eee;
+			padding:1em;
+		}
+
+	.preview figcaption{
+		font-size:0.625rem;
+		}
+	.preview p{
+		line-height: 2;
+		text-decoration:underline var(--primary);
+}
+
+		.preview-table{
+			border:solid 1px var(--primary);
+		}
+		.preview-table th{
+			padding: 1em;
+			border:solid 1px var(--primary);
+		}
+		.preview-table td{
+			border:solid 1px var(--primary);
+		}
+		.preview-table .vt{
+			vertical-align:top;
+		}
+		}
+	.preview-table .vm{
+			vertical-align:middle;
+		}
+	.preview-table .vb{
+			vertical-align:bottom;
+		}
+
+
+	</style>
+
+<blockquote>
+    <ul>
+        <li>
+<h4>baseline</h4><p>ほとんどの要素の規定値</p>
+<p>要素のベースラインを親要素のベースラインに揃えます。 &lt;textarea$gt; のような、一部の 置換要素 のベースラインは HTML 仕様で未定義であり、このため、このキーワードの挙動はブラウザにより異なるかもしれません。</p>
+<figure class="preview">
+<figcaption>プレビュー</figcaption>
+	<p style="">基準になる親テキスト<i class="fa fa-flag v-align-base" aria-hidden="true"></i></p>
+</figure>
+</li>
+<li><h4>sub</h4><p>
+要素のベースラインを親要素の subscript-baseline に揃えます。
+<br>sub要素の規定値になっていることが多いです。
+</p>
+<figure class="preview">
+<figcaption>プレビュー</figcaption>
+	<p>基準になる親テキスト<i class="fa fa-flag v-align-sub" aria-hidden="true"></i>
+	</p><p>H<sub>2</sub>O</p>
+</figure>
+</li>
+<li>
+  <h4>super</h4>
+  <p>要素のベースラインを親要素の superscript-baseline に揃えます。<br>sup要素の規定値のはず</p>
+  <figure class="preview">
+<figcaption>プレビュー</figcaption>
+	<p>基準になる親テキスト<i class="fa fa-flag v-align-sup" aria-hidden="true">
+
+	</i></p><p><br>2<sup>2</sup>=4</p>
+</figure>
+</li>
+<li>
+<h4> text-top</h4>
+<p>要素の上端を親要素のフォントの上端に揃えます。</p>
+<figure class="preview">
+<figcaption>プレビュー</figcaption>
+	<p>基準になる親テキスト<i class="fa fa-flag v-align-tt" aria-hidden="true"></i></p>
+</figure>
+</li>
+<li>
+<h4>text-bottom</h4>
+<p>要素の下端を親要素のフォントの下端に揃えます。</p>
+<figure class="preview">
+<figcaption>プレビュー</figcaption>
+	<p>基準になる親テキスト<i class="fa fa-flag v-align-tb" aria-hidden="true"></i></p>
+</figure>
+</li>
+<li>
+<h4>middle</h4>
+<p>要素の下端を親要素のフォントの下端に揃えます。</p>
+<figure class="preview">
+<figcaption>プレビュー</figcaption>
+	<p>基準になる親テキスト<i class="fa fa-flag v-align-m" aria-hidden="true"></i></p>
+</figure>
+</li>
+<li>
+<h4>length</h4>
+<p>要素の下端を親要素のフォントの下端に揃えます。</p>
+<figure class="preview">
+<figcaption>プレビュー 3em </figcaption>
+	<p>基準になる親テキスト<i class="fa fa-flag v-align-3em" aria-hidden="true"></i></p>
+</figure>
+</li>
+<li>
+<h4>percentage</h4>
+<p>値と似ていますが、line-height プロパティに対するパーセンテージで指定します。負の値を使えます。</p>
+<figure class="preview">
+<figcaption>プレビュー 20%</figcaption>
+	<p>基準になる親テキスト<i class="fa fa-flag v-align-20" aria-hidden="true"></i></p>
+</figure>
+</li>
+</ul>
+	<h4>行との相対値</h4>
+	<p>親要素ではなく、行全体に対しての縦方向の整列方法を表します。</p>
+<ul>
+<li>
+<h4>top</h4>
+<p>素と子孫要素の上端を行全体の上端に揃えます。</p>
+<figure class="preview">
+<figcaption>プレビュー </figcaption>
+	<p>基準になる親テキスト<i class="fa fa-flag v-align-top" aria-hidden="true"></i></p>
+</figure>
+</li>
+
+<li>
+<h4>bottom</h4>
+<p>要素と子孫要素の下端を行全体の下端に揃えます。<br>
+ベースラインを持たない要素では、代わりにマージン境界の下端が使われます</p>
+<figure class="preview">
+<figcaption>プレビュー </figcaption>
+	<p>基準になる親テキスト<i class="fa fa-flag v-align-bottom" aria-hidden="true"></i></p>
+</figure>
+</li>
+</ul>
+<p><small>基準になる親テキストにはtext-decolationプロパティunderlineとlineheightを2にしています。旗<i class="fa fa-flag" aria-hidden="true"></i>の絵文字がvartical-alignの対象文字で3emの大きさで表示しています。</small></p>
+
+</div>
+<div class="mt-n6 pt-6 mb-6 clearfix" id="s2"><h2>vertical-align  表セル内での値</h2>
+<div class="card">
+<div class="card-header">
+<h3>表セル内での値</h3>
+</div>
+<div class="card-body">
+	<p>表の枠（セル）内ではcontentsエリアの描画位置（垂直位置）の指定に使えます。プレビューはそれぞれ「テストテキスト」の描画位置で確認してください。</p>
+<p><small>プレビューはTD要素にのみ設定しています。</small></p>
+<ul>
+<li>
+<h4>baseline (および sub, super, text-top, text-bottom, 「length」, 「percentage」)</h4>
+<p>
+	セルのベースラインを、行内でベースライン揃えにされた他のすべてのセルのベースラインに揃えます。</p>
+	</li>
+<li>
+<h4>top</h4>
+<p>セルの上端のパディング境界を行の上端に揃えます</p>
+<figure class="preview">
+<figcaption>プレビュー</figcaption>
+		<table class="preview-table"><tr><th>top</th><td class="vt">テストテキスト</td></tr></table>
+</figure>
+</li>
+
+<li>
+<h4>middle</h4>
+<p>セルのパディングボックスが行の中央になるようにします。</p>
+<figure class="preview">
+<figcaption>プレビュー</figcaption>
+	<table class="preview-table"><tr><th>middle</th><td class="vm">テストテキスト</td></tr></table>
+</figure>
+</li>
+<li>
+<h4>bottom</h4>
+<p>セルの下端のパディング境界を行の下端に揃えます。</p>
+<figure class="preview">
+<figcaption>プレビュー</figcaption>
+	<table class="preview-table"><tr><th>bottom</th><td class="vb">テストテキスト</td></tr></table>
+</figure>
+</li>
+
+</ul>
+<p><small>プレビューはTD要素にのみ設定しています。</small></p>
+</div>
+</div><!--/ .card -->
+
+<footer>
+<p>引用：
+<cite><p><a href="https://developer.mozilla.org/ja/docs/Web/CSS/text-align" target="_blank" rel="noopener">text-align</a></p></cite></p>
+</footer>
+</blockquote>
+
+<div class="card">
+<div class="card-header">
+<h3>記述例</h3>
+</div>
+<div class="card-body">
+<h3>例</h3>
+<h4>css</h4>
+<pre class="line-numbers language-css" data-src="prism.js"><code>
+/* */
+.green {
+  border: solid limegreen;
+}
+
+.first{
+  font-size:2em;
+  vertical-align:text-bottom;
+}
+
+p {
+font-size: 1rem;
+}
+
+.box {
+  width: 80%;
+  display:block;
+  font-size: 15px;
+}
+
+</code></pre>
+
+
+<h4>HTML</h4>
+<pre class="line-numbers language-xml" data-src="prism.js"><code>
+&lt;div class="box green"&gt;
+ &lt;h1&gt;徒然草&lt;/h1&gt;
+ &lt;p&gt;
+ 「&lt;span class="first"&gt;つ&lt;/span&gt;れづれなるままに、日暮らし、硯にむかひて、心にうつりゆくよしなしごとを、そこはかとなく書きつくれば、あやしうこそものぐるほしけれ。」
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="box green"&gt;
+ &lt;p&gt;
+&lt;span class="first"&gt;I&lt;/span&gt;l y avait encore des Prussiens en France. M. Delalot était un personnage. La légitimité venait de s'affirmer en coupant le poing, puis la tête, à Pleignier, à Carbonneau et à Tolleron. Le prince de Talleyrand, grand chambellan, et l'abbé Louis, ministre désigné des finances, se regardaient en riant du rire de deux augures; tous deux avaient célébré, le 14 juillet 1790, la messe de la Fédération au Champ de Mars; Talleyrand l'avait dite comme évêque, Louis l'avait servie comme diacre.
+&lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+
+
+<style>.green{
+  line-height: 1.1;
+  border: solid limegreen;
+}
+.first{
+  font-size:2em;
+  vertical-align:text-bottom;
+}
+
+.box {
+  width: 80%;
+  display: block;
+  font-size:1rem;
+  padding:1em;
+  margin: 0 0 20px 0;
+}</style>
+<h4>プレビュー</h4>
+<div class="box green">
+ <h4 class="h text-center"> 徒然草</h4>
+ <p class="text-left">
+ 「<span class="first">つ</span>れづれなるままに、日暮らし、硯にむかひて、心にうつりゆくよしなしごとを、そこはかとなく書きつくれば、あやしうこそものぐるほしけれ。」
+ </p>
+</div>
+<h5>ローマ字</h5>
+<div class="box text-justify green">
+<p>
+	<span class="first">I</span>l y avait encore des Prussiens en France. M. Delalot était un personnage. La légitimité venait de s'affirmer en coupant le poing, puis la tête, à Pleignier, à Carbonneau et à Tolleron. Le prince de Talleyrand, grand chambellan, et l'abbé Louis, ministre désigné des finances, se regardaient en riant du rire de deux augures; tous deux avaient célébré, le 14 juillet 1790, la messe de la Fédération au Champ de Mars; Talleyrand l'avait dite comme évêque, Louis l'avait servie comme diacre.
+  </p>
+</div>
+</div>
+</div><!--/ .card -->
+</div>
+
+<!-- editable area end ########             -->
+</article>
+</div>
+<!-- /container-->
+
+<!-- / w-aside2 --->

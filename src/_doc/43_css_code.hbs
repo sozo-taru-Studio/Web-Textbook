@@ -1,0 +1,152 @@
+---
+title: CSS font-size
+discription: discription
+cat: CSS
+next-page-url: "44_css_code.html"
+filename: 43_css_code.html
+prev-page-url: "42_css_code.html"
+titlename: "{{title.titlename}}"
+text: "{{item.text}}"
+text2: "{{item.text}}"
+---
+<div class="container mb-5">
+<article id="w-article">
+<!-- editable area ########             -->
+        <h1>{{title}} - {{cat}}</h1>
+        <p><span>category:</span> <span class="badge badge-primary">{{cat}}</span></p>
+        <hr>
+
+<!-- 序章 モジュール -->
+<div class="card mb-4">
+<div class="card-body clearfix">
+<p class="card-text">文字の大きさを設定するプロパティです。</p>
+</div>
+
+</div>
+
+<!-- 目次 モジュール -->
+<div class="bg-light p-3 mb-4">
+<h2>目次</h2>
+<ul id="w-indexlistBox">
+    <li v-for="item in items" class="w-indexlistBox-list">
+      <a v-bind:href="item.id" data-scroll >{{text2}}</a>
+    </li>
+</ul>
+</div>
+<!-- /目次 モジュール -->
+
+<!-- 本文のセクション モジュール -->
+<div id="s1" class="mt-n6 pt-6 mb-6 clearfix">
+
+<h2>Font-size</h2>
+<p>font-sizeは文字の大きさを指定します。指定されているfont-familyによって同じ指定をしても大きさが異なる場合があります。</p>
+<p>サイズ指定の値は単位が必要です。</p>
+<h3>基準のフォントサイズ</h3>
+<p>
+無指定の場合はブラウザの設定の文字の大きさが標準の文字の大きさになります。ほとんどブラウザの文字の大きさは<strong>16px</strong>が標準で「中」と表記されています。
+</p>
+<p>制作するブラウザは文字の設定を<strong>「中」</strong>にしておく。</p>
+<figure>
+  <figcaption>GoogleChrome メニュー＞設定＞デザイン欄の画像</figcaption><img src="_images/_html/42-burazaConfig.png" alt="Google  Chrome 設定　デザインでの確認" class="w-100" style="border:1px solid #ccc;">
+</figure>
+<p>視覚弱者は文字をよみやすいように大に設定することを想定してデザインすることも大切。</p>
+
+
+<h3>値</h3>
+<blockquote>
+    <ul>
+        <li>
+<h4>xx-small, x-small, small, medium, large, x-large, xx-large
+</h4><p>
+ユーザーの既定のフォントサイズ (つまり medium) を基準とした絶対的なサイズのキーワードです。</p></li>
+<li><h4>larger, smaller</h4><p>
+相対的なサイズのキーワードです。フォントは親要素のフォントサイズから相対的に、上記の絶対的サイズのキーワードで使われている倍率におよそ沿う形で拡大または縮小されます。</p>
+</li>
+<li><h4>長さ</h4><p>正の [length] の値。 (em や ex などの) フォント相対単位のほとんどは、親要素のフォントサイズに対する相対値です。</p><p>よくつかわれる距離の単位</p>
+<h4> css 長さの単位</h4>
+<blockquote>
+  <p><a href="https://developer.mozilla.org/ja/docs/Web/CSS/Length" target="_blank" rel="noopener">length</a></p>
+</blockquote>
+<ul>
+<li><h4>rem</h4>
+<p>ルートイーエム　html要素のフォントサイズを基準に設定する。標準フォントサイズが16pxの場合1remは16pxのフォントサイズをしてすることになります。0.5remは8pxです。</p>
+<p>[求めるフォントサイズ] / [標準フォントサイズ] = [答え]rem　</p>
+
+</li>
+<li><h4>em</h4>
+<p>イーエム　親要素のフォントサイズを基準に設定する。親のフォントサイズはその親を継承しているので。祖先要素でフォントサイズを指定している要素を探すとよい。親フォントサイズが30pxの場合1emは30pxのフォントサイズをしてすることになります。0.5emは15pxです。</p>
+<p>[親フォントサイズ] / [求めるフォントサイズ]= [答え]em　</p>
+</li>
+<li><h4>px</h4>
+<p>直接指定できるため書きやすい指定</p>
+<p>ピクセル　解像度素子数でフォントサイズを指定する。デザインカンプから確認する場合はまずpｘで確認する。</p>
+<p>一部のブラウザは文字拡大や文字縮小に対応しない恐れがあるためpxでの指定は避ける傾向にある。</p>
+</li>
+</ul>
+</li>
+<li><h4>percentage</h4><p>
+正の [<strong>%</strong>] 値で、親要素のフォントサイズからの相対値です。</p>
+</li>
+</ul>
+<footer>
+<p>引用：
+<cite><a href="https://developer.mozilla.org/ja/docs/Web/CSS/font-size" target="_blank" rel="noopener">font-size
+</a></cite></p>
+</footer>
+</blockquote>
+
+<div class="card">
+<div class="card-header">
+<h3>記述例</h3>
+</div>
+<div class="card-body">
+<pre class="line-numbers language-css" data-src="prism.js"><code>
+/* taipo 文字「中」の場合*/
+html{
+    font-size:100%;/*16px 実質書かなくてよい*/
+}
+body{
+    font-size: .875rem;/*14px*/
+}
+
+h1 {
+    font-size: 3rem;/*48px*/
+}
+
+h2 {
+    font-size: 2rem;/* 32px */
+}
+</code></pre>
+</div>
+<p>基準フォントを16px 通常表示するフォントを14pxに設定する。</p>
+<div class="card-body">
+<pre class="line-numbers language-css" data-src="prism.js"><code>
+/* taipo 文字「中」の場合*/
+html{
+    font-size:62.5%;/*10px*/
+}
+body{
+    font-size: 1.4em;/*14px*/
+}
+
+h1 {
+    font-size: 4.8rem;/*48px*/
+}
+
+h2 {
+    font-size: 3.2rem;/* 32px */
+}
+</code></pre>
+</div>
+<p>基準フォントを10px 通常表示するフォントを14pxに設定する。remで設定するとき10pxを基準にするので暗算での指定が楽。</p>
+</div><!--/ .card -->
+</div>
+
+
+
+<!-- editable area end ########             -->
+</article>
+</div>
+<!-- /container-->
+
+<!-- / w-aside2 --->

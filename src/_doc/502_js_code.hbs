@@ -1,0 +1,117 @@
+---
+title: デバックモードでデバッグ
+discription: discription
+cat: Javascript
+next-page-url: "503_js_code.html"
+filename: 502_js_code.html
+prev-page-url: "501_js_code.html"
+titlename: "{{title.titlename}}"
+text: "{{item.text}}"
+text2: "{{item.text}}"
+---
+<div class="container mb-5">
+<article id="w-article">
+<!-- editable area ########             -->
+        <h1>{{title}} - {{cat}}</h1>
+        <p><span>category:</span> <span class="badge badge-primary">{{cat}}</span></p>
+        <hr>
+<!-- 序章 モジュール -->
+<div class="card mb-4">
+<div class="card-body clearfix">
+<div class="float-lg-right col-lg-5 mb-2"><img src="_images/_JS/chremconsole.PNG" alt="flexlayput " class="img-fluid"></div>
+<p class="card-text">ブラウザのデバックモードの起動のしかたや見方を身につけましょう。</p>
+</div>
+</div>
+<!-- 目次 モジュール -->
+<div class="bg-light p-3 mb-4">
+<h2>目次</h2>
+<ul id="w-indexlistBox">
+    <li v-for="item in items" class="w-indexlistBox-list">
+      <a v-bind:href="item.id" data-scroll >{{text2}}</a>
+    </li>
+</ul>
+</div>
+<!-- / 目次 モジュール -->
+
+<!-- 本文のセクション モジュール -->
+<div id="s1" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>window.alertwindow.alertでアラートウィンドウを起動させましょう。</h2>
+<p>多くのjavaSvcript教材ではこのアラート機能をつかってプログラミングの実行確認をします。
+  最初に知っておくべき便利なことばです。</p>
+<a href="https://developer.mozilla.org/ja/docs/Web/API/Window/alert" target="_blank" rel="noopener">window.alert - Web API インターフェイス | MDN</a>
+ <p>alert()「アラート関数」でデータjavascriptの入力を確認してみました。</p>
+<p>alert()はそもそもユーザーとのコミュニケーションのために作られたシンプルな関数です。
+メッセージとともにこのまま実行していいか<em>警告</em>することを目的につくられました。OKボタンを押さないとブラウザの<strong>処理が一旦停止</strong>します。最初での稼働の実験には最適ですが本来の意味での使いかたではありません。</p>
+   <p> これいちいち窓が出て面倒臭いですよね。<br>そこで「検証」機能のコンソールを使います。</p>
+  </div>
+<h4>検証ってなに？</h4>
+ <p>検証機能は各社のブラウザに製作者用にプログラムやソースコードが想定通り機能しているかを確認するための機能です。</p>
+   <p>fierFoxでは「要素の調査」<br>Edgeでは「デバックモード」<br>googleChremeでは「検証」と名前がつけられています。</p>
+<p>このサイトではこの機能を検証と呼びます。</p>
+<p>検証にはJavaScriptのエラーログやデータの状態を確認できる「コンソール」モードをつかいます。<p>
+<div>
+
+<div id="s2" class="mt-n6 pt-6 mb-6 clearfix">
+<h3 >コンソール (console) の場所</h3>
+<dl class="stepCounter step"><dt class="stepIncr step__header"><i class="fa fa-mouse-pointer" aria-hidden="true"></i>検証をひらく方法</dt>
+    <dd><em class="method">ブラウザのウィンドウでマウスカーソルを乗せて右クリックし　コンテキストメニューを出して「検証」を選ぶ</em>
+<dt  class="stepIncr step__header"><i class="fa fa-mouse-pointer" aria-hidden="true"></i> コンソールモードにする。</dt>
+<dd><em class="method">タブの「console」をクリックするとコンソールウィンドウに変わる。</em></dd>
+</dl>
+<ul class="list--none">
+<li class="videoBox">
+  <figure>
+  <figcaption>googleChremeでの検証の出し方。<small class="notice__txt">無音です</small></figcaption>
+  <video controls width="100%">
+  <source src="_mv\GoogleChrome_2017_09_05.mp4" type="video/mp4">
+    あなたが使っているブラウザとPCのOSではこの動画は<em class="notice__txt">みれません。</em>残念ながら動画をみるには友達に最新のPCを借りてくるか。電気屋さんに最新のPCと安全で高速なインターネット環境をととのえてからごらんください。
+    見れなくてもそんなに損した気分にはなりません ご安心ください。動画をみるには友達に最新のPCを借りてくるか。電気屋さんに最新のPCと安全で高速なインターネット環境をととのえてから</p>
+  </video>
+</figure>
+</li>
+<li class="videoBox">
+  <figure>
+  <figcaption>FireFoxでの検証の出し方。<small class="notice__txt">無音です</small></figcaption>
+  <video controls width="100%">
+  <source src="_mv\FirefoxSPad_use2017.mp4" type="video/mp4">
+  <p>あなたが使っているブラウザとPCのOSではこの動画は<em class="notice__txt">みれません。</em>残念ながら動画をみるには友達に最新のPCを借りてくるか。電気屋さんに最新のPCと安全で高速なインターネット環境をととのえてからごらんください。
+見れなくてもそんなに損した気分にはなりません.ご安心ください。</p>
+  </video>
+</figure>
+</li>
+</ul>
+
+<figure>
+<figcaption>HTML 記入例</figcaption>
+<pre class="line-numbers language-markup" data-src="prism.js">
+<code>&lt;script&gt;
+console.log(&quot;Hellow Console!&quot;);
+&lt;/script&gt;</code></pre>
+</figure>
+<p>入力したら該当するHtmlファイルをもう一度更新してコンソールを確認してみましょう。</p>
+<figure><img src="_images/_JS/chremconsole.PNG" alt="コンソールログ設定" width="100%"></figure>
+<ul>
+  <li> 「Console」タブをクリックすると上記のような画面にかわります。</li>
+  <li> 「Default levels」 セレクター はサイトの情報の表示の有無をチェックボックス方式で制御できます。</li>
+  <li>文字が小さいときは　検証タブを選択中に<kbd>Ctrl/command</kbd> + <kbd>+</kbd>拡大できます。</li>
+</ul>
+</div>
+
+
+<div class="p-4 alert-info">
+<h3>まとめ</h3>
+<p>コンソールログはjavascriptの挙動を確認できるツールです。なんかうまくいかない場合はコンソールログ</p>
+</div>
+
+
+
+
+
+
+
+<!-- editable area end ########             -->
+</article>
+</div>
+<!-- /container-->
+
+<!-- / w-aside2 --->

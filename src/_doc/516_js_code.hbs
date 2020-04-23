@@ -1,0 +1,154 @@
+---
+title: jqueryプラグインを作ってみる
+discription: discription
+cat: Javascript
+next-page-url: "517_js_code.html"
+filename: 516_js_code.html
+prev-page-url: "515_js_code.html"
+titlename: "{{title.titlename}}"
+text: "{{item.text}}"
+text2: "{{item.text}}"
+---
+<div class="container mb-5">
+<article id="w-article">
+<!-- editable area ########             -->
+        <h1>{{title}} - {{cat}}</h1>
+        <p><span>category:</span> <span class="badge badge-primary">{{cat}}</span></p>
+        <hr>
+<!-- 序章 モジュール -->
+<div class="card mb-4">
+<div class="card-body clearfix">
+<div class="float-lg-right col-lg-5 mb-2"><img src="_images/_JS/bulb-_640.jpg" alt="flexlayput " class="img-fluid"></div>
+<p>jqueryプラグインを作ってみる。</p>
+
+</div>
+</div>
+<!-- 目次 モジュール -->
+
+<div class="bg-light p-3 mb-4">
+<h2>目次</h2>
+<ul id="w-indexlistBox">
+    <li v-for="item in items" class="w-indexlistBox-list">
+      <a v-bind:href="item.id" data-scroll >{{text2}}</a>
+    </li>
+</ul>
+</div>
+<!-- / 目次 モジュール -->
+
+<!-- 本文のセクション モジュール -->
+<div id="s1" class="mt-n6 pt-6 mb-6 clearfix">
+  <div class="chapter">
+      <h2>jquery プラグイン/作成</h2>
+  <div class="card alert-secondary p-2">
+
+  <detail class="toggleWrap">
+  <summary title="Click">クリック</summary>
+  <div>
+   <ul>
+     <li>サンプル</li>
+     <li>サンプル</li>
+    </ul>
+  </div>
+  </detail><!-- .TG -->
+  </div><!-- / demo-->
+</div>
+  <section>
+  <ul>
+      <li><a href="http://qiita.com/k4zzk/items/11e5dbd53cb93edb8b4d" target="_blank" rel="noopener">jquery プラグイン/作成</a></li>
+      <li><a href="http://qiita.com/Imamotty/items/bc659569239379dded55" target="_blank" rel="noopener">JavaScriptの「&&」「||」について盛大に勘違いをしていた件</a></li>
+      </ul>
+      <p>トグルスライドを使う場面をかんがえて　汎用性があるコードをます考える。範囲指定する親要素とイベントとなるボタンになる要素そしてスライドするようそ今回はこれだけで作れそう。</p><p>いろいろ必要なものがでてくるがそんなのはあとでかんがえよう 単純で骨となるシステム部分だけ考え設計する。</p>
+    <pre class="language-markup"><code>
+  &lt;親要素 motherWrap&gt;
+    &lt;子要素 first-child&gt; イベントを感知する要素[eventAra trigger area] &lt;/子要素 &gt;
+    &lt;子要素 secund-child&gt;伸縮する対象の要素 (slideArea) &lt;/子要素&gt;
+  &lt;/親要素 motherWrap&gt;
+  </code></pre>
+  <p>どんな要素であっても対応できるプラグインが使い勝手がいい</p>
+  <pre class="language-markup"><code>
+  &lt;detail class=&quot;toggleWrap&quot;&gt;
+  &lt;summary&gt;ご注意&lt;/summary&gt;
+  &lt;div&gt;
+   &lt;ul&gt;
+     &lt;li&gt;感謝のこころを持たずに決して拝んではならない。&lt;/li&gt;
+     &lt;li&gt;決してふりむいてはならない。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+  &lt;/detail&gt;&lt;!-- .TG --&gt;
+  </code></pre>
+ <figure>
+<p> 即時実行関数の中でかく。 ほかのプラグインやライブラリーに上書きされないため。などの邪魔をしないため。</p>
+<figcaption>即時実行関数 記入例</figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+<code>
+(function($){
+// 処理 変数のスコープを確定 ようはここでは $()はJQuery()として動く トップレベルから隔離させている
+})(jQuery);//即時実行関数 $をブロックスコープ
+</code></pre></figure>
+ <figure>
+ <figcaption>jQuery プラグインの関数 宣言 記入例</figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+<code>
+(function($){
+//$.fn.プラグイン名 = function(){ }
+
+$.fn.TG = function(){
+// プラグインの処理
+}
+
+})(jQuery);//即時実行関数 $をブロックスコープ
+</code></pre></figure>
+      <p>下記のとおりプラグインの時ラッパーObject「.TG()」を参照するときは＄(this)ではなくthis でよびだす。</p>
+  <figure>
+ <figcaption>関数中身をかく 宣言 記入例</figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+<code>
+(function($){
+
+$.fn.TG = function(){
+var trigger = this.children(':first');
+trigger.css({"cursor":"pointer"});
+trigger.on("click",function(){
+    console.log(trigger);
+    $(this).next().not(":animated").slideToggle(500);
+  });
+}
+
+})(jQuery);//即時実行関数 $をブロックスコープ
+</code></pre></figure>
+<figure>
+読み込んだあとjqueryの呪文のなかにセットする。今回は.toggleWrapというクラスに.TG()を設定した。
+ <figcaption>プラグインを要素にセットしてプラグインを実行  記入例</figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+<code>
+//適応する要素をえらんでメソッドチェーンする。
+$(function(){
+  $(".toggleWrap").TG();
+});//end-jq
+</code></pre></figure>
+</section>
+<script>
+  (function($){
+
+$.fn.TG = function(){
+var trigger = this.children(':first');
+trigger.css({"cursor":"pointer"});
+trigger.on("click",function(){
+    console.log(trigger);
+    $(this).next().not(":animated").slideToggle(500);
+  });
+}
+
+$(".toggleWrap").TG();
+
+})(jQuery);//即時実行関数 $をブロックスコープ
+</script>
+</div>
+
+
+<!-- editable area end ########             -->
+</article>
+</div>
+<!-- /container-->
+
+<!-- / w-aside2 --->

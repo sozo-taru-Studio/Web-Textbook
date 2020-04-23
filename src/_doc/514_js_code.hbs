@@ -1,0 +1,346 @@
+---
+title: 入力フォームのvalue="値"をとる
+discription: discription
+cat: Javascript
+next-page-url: "515_js_code.html"
+filename: 514_js_code.html
+prev-page-url: "513_js_code.html"
+titlename: "{{title.titlename}}"
+text: "{{item.text}}"
+text2: "{{item.text}}"
+---
+<div class="container mb-5">
+<article id="w-article">
+<!-- editable area ########             -->
+        <h1>{{title}} - {{cat}}</h1>
+        <p><span>category:</span> <span class="badge badge-primary">{{cat}}</span></p>
+        <hr>
+<!-- 序章 モジュール -->
+<div class="card mb-4">
+<div class="card-body clearfix">
+<div class="float-lg-right col-lg-5 mb-2"><img src="_images/_JS/african-woman_640.jpg" alt="正しい入力 " class="img-fluid"></div>
+<p>入力フォームに入力される文字や記号が正しい形式で入力されているかを監視しユーザーに正しい形式の入力を即す機能を実装します。</p>
+
+</div>
+</div>
+<!-- 目次 モジュール -->
+
+<div class="bg-light p-3 mb-4">
+<h2>目次</h2>
+<ul id="w-indexlistBox">
+    <li v-for="item in items" class="w-indexlistBox-list">
+      <a v-bind:href="item.id" data-scroll >{{text2}}</a>
+    </li>
+</ul>
+</div>
+<!-- / 目次 モジュール -->
+
+<!-- 本文のセクション モジュール -->
+<div id="s1" class="mt-n6 pt-6 mb-6 clearfix">
+
+<h2>入力フォームのvalue="値"を取得しバリデーションする。</h2>
+  <div class="memo">
+    <p><a href="http://api.jquery.com/val/" target="_blank" rel="noopener">.val() | jQuery API Documentation</a></p>
+      <p><a href="https://www.tam-tam.co.jp/tipsnote/javascript/post3828.html" target="_blank" rel="noopener"> jQueryでフォーム入力をチェックする</a></p>
+      <p>	<a href="http://qiita.com/ka215/items/795a179041c705bef03b" target="_blank" rel="noopener"> HTML5におけるinput要素のpattern、type属性のおさらい - Qiita</a></p>
+  <p>入力アイテムにユーザーが入れた値を判断してみましょう。</p>
+      <div id="formBox" style="border:3px solid #898989;padding:1em;margin:1em 0">
+        <form action="#" name="form1" id="form1" method="post">
+          <p><lable for="textInput">メールアドレス</lable>:
+          <input type="email" maxlength="255" required pattern="^[a-zA-Z]{1}[0-9a-zA-Z]+[\w\.-]+@[\w\.-]+\.\w{2,}$" class="textInput" id="textInput">
+            <br><span class="note">英数半角で入力してください。</span></p>
+          <p class="buttonBox" style="text-align: center;"><button type="submit" class="sbm">送信</button></p>
+        </form>
+      </div><!--formBox-->
+<div id="pre">
+ <h3 id="s1">準備</h3>
+  <figure>
+  <figcaption>HTML 記入例</figcaption>
+  <pre class="line-numbers language-markup" data-src="prism.js">
+<code>
+&lt;div id=&quot;formBox&quot; style=&quot;border:3px solid #898989;padding:1em;margin:1em 0&quot;&gt;
+    &lt;form action=&quot;#&quot; name=&quot;form1&quot; id=&quot;form1&quot; method=&quot;post&quot;&gt;
+        &lt;p&gt;&lt;lable for=&quot;textInput&quot;&gt;メールアドレス&lt;/lable&gt;:
+        &lt;input type=&quot;email&quot; maxlength=&quot;255&quot; required pattern=&quot;^[a-zA-Z]{1}[0-9a-zA-Z]+[\w\.-]+@[\w\.-]+\.\w{2,}$&quot; class=&quot;textInput&quot; id=&quot;textInput&quot;&gt;
+        &lt;br&gt;&lt;span class=&quot;note&quot;&gt;英数半角で入力してください。&lt;/span&gt;&lt;/p&gt;
+      &lt;p class=&quot;buttonBox&quot; style=&quot;text-align: center;&quot;&gt;&lt;button type=&quot;submit&quot; class=&quot;sbm&quot;&gt;送信&lt;/button&gt;&lt;/p&gt;
+    &lt;/form&gt;
+&lt;/div&gt;&lt;!--formBox--&gt;
+</code></pre>
+</figure>
+
+</div>
+</div>
+</div>
+
+
+<div  class="mt-n6 pt-6 mb-6 clearfix" id="s2">
+<h2>javascriptでvalueの値を取る</h2>
+<p>javascriptを記述 要素の中身が入っているかコンソールで確認</p>
+  <p>.sbm送信ボタンを押すとテキストフィールドの中身を変数にいれてコンソールログに出力。</p>
+<div id="pre">
+  <figure>
+  <figcaption>javascript 記入例</figcaption>
+  <pre class="line-numbers language-javascript" data-src="prism.js">
+    <code>
+ $(function(){
+ $(".sbm").on("click",function(){
+  var emailValue = $("#textInput").val();
+    console.log("値は"+emailValue);
+    console.log("データ型" + typeof emailValue);
+    void(0);//本来のサブミットを無効化
+  });//on-end
+});//jq-end
+</code></pre>
+</figure>
+</div>
+<div id="pre">
+
+
+<div class="demo">
+<h3>入力後に値が正しいか返答する</h3>
+<p>簡単な入力バリデーションを入れます。ユーザーがどのような書き間違いが多いか？どのようにアシストすると書きやすいのか？調査して設計します。</p><p>今回は緩く一般的なメールアドレスのバリデーションを試してみます。</p>
+<p>メールアドレスは様々な表記があり一般的に「＠」が必要となっていますが、工業規格などの標準化がされておらず実質自由でメールサーバー側の取り決めにより決まっています。</p><p>正規表現のパターンを使って英数＠英数.英数のパターンマッチを使って判別します。</p>
+
+<h4 id="s3">blue()イベント</h4>
+<blockquote>
+  <p><a href="http://api.jquery.com/on/" target="_blank">.on() | jQuery API Documentation</a></p>
+</blockquote>
+<p>blueイベントは入力アイテムに入力されたあと入力カーソルが離れたときに処理を開始するイベント関数</p>
+<p>jQueryのマウスイベントはonメソッドが推奨されています。ここではONメソッドで記述します。</p>
+<figure>
+<figcaption>blue() 記入例</figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+  <code>
+$("input#textInput").on("blur",function(){
+  if($(this).val() == ""){
+  //実行内容
+      $('++span',this).html("入力されていません");
+   }else if(!$(this).val().match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/)) {
+   $('++span',this).html("正しいemailアドレスを入力してください");
+} else {
+      $(this).nextAll("span.note").html("メールアドレスがはいりました");
+    }
+});
+</code></pre>
+</figure>
+<p>これが完成コードです。</p>
+  </div>
+  <div>
+  <h4>バリデートの考え方。</h4>
+  <p>どのような入力が正しいのか？正しくないのか書き出しておく。
+  今回はメールアドレスを聞くのでデータ型は文字列</p>
+  <dl>
+<dt>入力不可
+</dt><dd>
+ <ul><li>空 :""</li>
+  <li>全角の文字: "日本語"</li>
+    <li>想定以上に長い文字列255文字以上(今回はブラウザの機能maxlength属性で排除) 時間の都合今回はスクリプトは書かない</li>
+    <li>@がない文字列</li>
+    <li>その他メールアドレスで使えない文字</li>
+    <li>ets</li>
+</ul></dd></dl>
+    <p>フロントエンドで入力値のバリデーションがしっかりやられていたとしても、バックエンドに値が渡った時点でまたしっかりバリデーションするのは基本だ（クロスサイトスクリプティング攻撃にはHTML＋ブラウザでのバリデートなんてほぼ無力）。</p>
+
+  <h4>step1 入力要素がまずは空かどうか調べる</h4>
+  <figure>
+<figcaption> 入力要素の 空判定 記入例</figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+  <code>
+  if($("input#textInput").val() == ""){
+   consle.log("要素は空です");//要素は空です
+    }
+</code></pre>
+</figure>
+<p>文字列が空の場合 trueを返す [ $("input#textInput").val() == "") ]</p>
+
+</div>
+<div>
+<h4>step2 入力要素がまずは空かどうか調べる</h4>
+  <figure>
+<figcaption> イベント関数「on()」イベントキーワード「blur」で入力後判定する記入例</figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+  <code>
+$("input#textInput").on("blur",function(){
+  if($(this).val() == ""){
+    consle.log("要素は空です");//要素は空です
+  }
+});
+</code></pre>
+</figure>
+<p>ターゲットの要素を指定しイベント関数blur() で要素フォーカスが外れたかどうかを監視して処理を実行。
+<br>ここではblur()に渡された処理が先ほどの空要素判定処理です。</p>
+<blockquote>
+  <p></p>
+  <p><a href="https://qiita.com/smzk/items/5eed5a90c4b32ca8b23a" target="_blank" rel="noopener">jQueryのclickとbindとliveとdelegateとonの違い</a></p>
+</blockquote>
+  <h5>jQueryのchange()</h5>
+  <p><a href="http://www.flatflag.nir87.com/change-1761" target="_blank" rel="noopener">jQueryのchange()で値が変更されたら発動</a></p>
+  </div>
+  <div>
+<h4>step3 入力要素が空でない処理</h4>
+  <figure>
+<figcaption>条件分岐で入力後判定する。入ってる場合記入例</figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+  <code>
+$("input#textInput").blur(function(){
+  if($(this).val() == ""){
+    consle.log("要素は空です");//要素は空の時
+  }else{
+   consle.log("要素は"+ $(this).val());//要素入力された時
+  }
+});
+</code></pre>
+</figure>
+<p>if else ステートメントを 使って値がある時の処理をしましょう。</p>
+  </div>
+    <div>
+<h4>step4 メッセージを出す処理を書く</h4>
+  <figure>
+<figcaption> 入力情報が正しいであろうメッセージ 記入例</figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+  <code>
+$("input#textInput").on("blur" , function(){
+  if($(this).val() == ""){
+    //consle.log("要素は空です");//要素は空です
+    $('++span',this).html("入力されていません");
+  }else{
+    $(this).nextAll("span.note").html("メールアドレスがはいりました");
+  }
+});
+</code></pre>
+</figure>
+<p>$('++span',this)は 入力された要素 this の隣(br)の隣のspan要素を指定しています。</p>
+<p>this [$("input#textInput").blur()]をどのセレクタからとるかによって要素を選べないときがあるのでhtmlコードの構造を要素の取りやすい構造でマークアップしましょう。
+  今回は何とかなりましたが汎用性が欠けます。br要素が抜ければこのコードはつかえなくなっています。<abber title="「てへぺろ」">thpr</abber></p>
+  <p>「.html("入力されていません")」はjqueryのinnerHTMLメソッドと同じでhtml要素を引数にわたされたHTMLを入力してくれる。 jqueryを使っているときはこちらを使いましょう。</p>
+  <h5>2種類のセレクタの書き方</h5>
+  <figure>
+<figcaption> ++span,thisを訳すと</figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+  <code>
+ //$("input#textInput + br + span") と $('++span',this)はほぼ同じ
+$("input#textInput").on("blur",function(){
+  $("input#textInput + br + span").html("入力されていません");
+});</code></pre>
+</figure>
+<figure>
+<figcaption> jquery で隣接要素をとる 記入例</figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+  <code>
+//jquery で隣接要素をとるほうが汎用性がある。
+$("input#textInput").on("blur",function(){
+  $(this).nextAll("span.note").html("入力されていません");
+});
+</code></pre>
+</figure>
+  <figure>
+<figcaption> CSS 隣接セレクター 記入例</figcaption>
+<pre class="line-numbers language-css" data-src="prism.js">
+ <code>
+/* E + F   [Eの隣のF要素]*/
+input + br + span{
+ color:green;
+}
+</code></pre>
+</figure>
+<p>
+状況に応じてセレクタをかけるようにすると可能性があがる。</p>
+  </div>
+<div>
+<h4>step5 Emailを入力しているかどうか？</h4>
+  <figure>
+<figcaption> イベント関数「blur()」で入力後判定する 記入例</figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+  <code>
+$("input#textInput").on("blur",function(){
+  if($(this).val() == ""){
+           $('++span',this).html("入力されていません");
+  }else if(!$(this).val().match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/)) {
+           $('++span',this).html("正しいemailアドレスを入力してください");
+   } else {
+           $(this).nextAll("span.note").html("メールアドレスがはいりました");
+  }
+});
+</code></pre>
+</figure>
+<p>emailアドレスは残念ながら決まった基準がないが正規表現をつかって決まった文字やパターンをある程度判別することはできる。RFC5322の仕様という基準があるがそれはユーザーが持っているメール会社しだいなのでメジャーなものしかコードを通さない。
+つまり実際使えることができているメールアドレスも通さない場合がある。<br>
+今回は@が文字列の途中であるか？全角で入力されていないか？という判定をしています。</p>
+  <ul><li><a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Regular_Expressions"  target="_blank" rel="noopener">正規表現</a></li>
+  <li><a href="http://js.studio-kingdom.com/javascript/string/match" target="_blank" rel="noopener">.match() | JavaScript 日本語リファレンス | js STUDIO</a></li>
+  <li><a href="https://www.tam-tam.co.jp/tipsnote/javascript/post3828.html"  target="_blank" rel="noopener">jQueryでフォーム入力をチェックする</a></li></ul>
+  <p>.match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/)<br>
+で真偽値をとり 偽のときは間違っているとおしえてくれている</p>
+  <p>完璧ではないがユーザーにある程度の入力のアシストにはなるとおもわれる。</p>
+  <p>正規表現文字のパターンを合致するかを調べるコードで各プログラムで入力方法は違う。<br>
+かなり難易度が高いがなれてきてからでいいのでプログラマーの先輩やコードを自分でかいてみたりして使えるようになると仕事の幅がひろがります。</p>
+  </div>
+
+<script type="text/javascript">
+$(function(){
+ $(".sbm").on("click",function(){
+  var emailValue = $("#textInput").val();
+    console.log("値は"+emailValue);
+    console.log("データ型" + typeof emailValue);
+    void(0);//本来のサブミットを無効化
+  });
+
+$("input#textInput").on("blur",function(){
+    var nextElm = $('++.note',this);//隣の隣のクラスnote
+  if($(this).val() == ""){
+  //実行内容
+  //console.log(nextElm);
+  if(nextElm.hasClass("--success").length){
+    nextElm.removeClass("--success");
+  }
+    nextElm.addClass("--failure").text("入力されていません");
+  }else if(!$(this).val().match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/)) {
+     if(nextElm.hasClass("--success")){
+        nextElm.removeClass("--success");
+      }
+      nextElm.addClass("--failure").text("正しいemailアドレスを入力してください");
+    } else {
+     if(nextElm.hasClass("--failure")){
+        nextElm.removeClass("--failure");
+      }
+      nextElm.addClass("--success").text("メールアドレスがはいりました");
+    }
+
+});
+});//jq-end
+
+elementList = document.querySelectorAll('.photoImage img');
+console.log(elementList);
+-->
+</script>
+<style>
+.note{
+  font-size: .725em;
+  color:#999;
+  padding:.1em .6em .2em;
+}
+.--failure{
+  color: #fff;
+  border-radius: 3px;
+  border:3px double #e75;
+  background-color:#e75;
+  background-origin: padding-box;
+}
+.--success{
+  color: #fff;
+  border-radius: 3px;
+  border:3px double #5c5;;
+  background-color:#5c5;
+  background-origin: padding-box;
+}
+</style>
+
+
+
+<!-- editable area end ########             -->
+</article>
+</div>
+<!-- /container-->
+
+<!-- / w-aside2 --->

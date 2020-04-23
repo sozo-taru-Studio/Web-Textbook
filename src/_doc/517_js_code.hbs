@@ -1,0 +1,184 @@
+---
+title: jqueryプラグインを作ってみる 拡張編 session Extend
+discription: discription
+cat: Javascript
+next-page-url: "#"
+filename: 517_js_code.html
+prev-page-url: "516_js_code.html"
+titlename: "{{title.titlename}}"
+text: "{{item.text}}"
+text2: "{{item.text}}"
+---
+<div class="container mb-5">
+<article id="w-article">
+<!-- editable area ########             -->
+        <h1>{{title}} - {{cat}}</h1>
+        <p><span>category:</span> <span class="badge badge-primary">{{cat}}</span></p>
+        <hr>
+<!-- 序章 モジュール -->
+<div class="card mb-4">
+<div class="card-body clearfix">
+<div class="float-lg-right col-lg-5 mb-2"><img src="_images/_JS/cable-541068_640.jpg" alt="伸び縮み" class="img-fluid"></div>
+<p>オプションを持つプラグインつくってみましょう</p>
+
+</div>
+</div>
+<!-- 目次 モジュール -->
+
+<div class="bg-light p-3 mb-4">
+<h2>目次</h2>
+<ul id="w-indexlistBox">
+    <li v-for="item in items" class="w-indexlistBox-list">
+      <a v-bind:href="item.id" data-scroll >{{text2}}</a>
+    </li>
+</ul>
+</div>
+<!-- / 目次 モジュール -->
+
+<!-- 本文のセクション モジュール -->
+<div id="s1" class="mt-n6 pt-6 mb-6 clearfix">
+  <div class="chapter">
+      <h2>jqueryプラグインを作ってみる 拡張編</h2>
+  <div class="card alert-secondary p-2">
+
+  <detail class="toggleWrap">
+  <summary title="Click">ご注意</summary>
+  <div>
+   <ul>
+     <li>サンプル</li>
+     <li>サンプル</li>
+    </ul>
+  </div>
+  </detail><!-- .TG -->
+  </div><!-- / demo-->
+</div>
+   <ul>
+			<li><a href="http://qiita.com/k4zzk/items/11e5dbd53cb93edb8b4d" target="_blank">jquery プラグイン/作成</a></li>
+			</ul>
+			<p>プラグインにオプションを追加してカスタマイズ性を上げる</p>
+			<p>プラグイン関数の引数にオブジェクト形式のデータを入力することでプラグインをカスタマイズしていきましょう。</p>
+			<p>例えば <a href="http://api.jquery.com/slidetoggle/#slideToggle-duration-easing-complete" target="_blank">slideToggle()関数</a>の場合は第一引数にスピード、第二引数にイージング、第三引数にアニメーションの終了時に呼び出される関数をせっとすることができます。</p>
+			まずはそこに製作者(デベロッパー)が好きな値をいれれるようにプログラムを改造してみましょう。
+			カスタマイズできるキーと値をオプションとよんでします。<br>
+			HTMLは前回と同じ要素の組み合わせをつかっていきます。
+<h4>HTML要素の記入</h4>
+	<pre class="language-markup"><code>
+  &lt;親要素 motherWrap&gt;
+    &lt;子要素 first-child&gt; イベントを感知する要素[eventAra trigger area] &lt;/子要素 &gt;
+    &lt;子要素 secund-child&gt;伸縮する対象の要素 (slideArea) &lt;/子要素&gt;
+  &lt;/親要素 motherWrap&gt;
+  </code></pre>
+<h4>　Demo の HTML要素の記入</h4>
+  <pre class="language-markup"><code>
+  &lt;detail class=&quot;toggleWrap&quot;&gt;
+  &lt;summary&gt;ご注意&lt;/summary&gt;
+  &lt;div&gt;
+   &lt;ul&gt;
+     &lt;li&gt;感謝のこころを持たずに決して拝んではならない。&lt;/li&gt;
+     &lt;li&gt;決してふりむいてはならない。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+  &lt;/detail&gt;&lt;!-- .TG --&gt;
+  </code></pre>
+ <figure>
+	<h3>extend()関数の設定</h3>
+<p>initialize（初期化）を省略して オブジェクトinitを定義する。 つまりデフォルド　（標準）の設定を定義する。</p>
+<figcaption>オプションの設定記入例</figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+<code>
+(function($){
+$.fn.TGoption =function(option){
+		var init = $.extend({
+			//ここに初期オプションを入力していく。
+		},option);
+		//処理
+}
+})(jQuery);//即時実行関数 $をブロックスコープ
+</code></pre></figure>
+<h4>オプションを設定する</h4>
+
+<a href="https://api.jquery.com/jquery.extend/" target="_blank">エクステンド関数　JQuery.extend(); https://api.jquery.com/jquery.extend/</a>
+extend()の第一引数は初期値 第二引数は初期値と比較し初期値と違う場合は初期値を書き換える。
+プラグイン関数　TGoption()　は引数(option)を入れると　init変数内のデータと照合して変更をする。
+参考：<a href="http://qiita.com/k4zzk/items/11e5dbd53cb93edb8b4d#デフォルトとオプション" target="_blank">jquery プラグイン/作成　#デフォルトとオプション</a>
+<figure>
+ <figcaption>jQuery プラグインの関数 宣言 記入例</figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+<code>
+	//　ブロックスコープは省略
+$.fn.TGoption = function(option){
+		var init = $.extend({
+			'speed':500 //type int  animation speed
+		},option);
+		//処理
+}
+</code></pre></figure>
+<h4>プラグインの処理にオプションを適応させる</h4>			<p>アニメーションのスピードの初期値を設定した。これをslideToggle関数に渡す。</p>
+  <figure>
+ <figcaption>オプションを設定した 記入例</figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+<code>
+(function($){
+
+$.fn.TGoption = function(option){
+	var init = $.extend({
+		'speed':500 //type int and String  animation speed
+	},option);
+
+var trigger = this.children(':first');
+trigger.css({"cursor":"pointer"});
+trigger.on("click",function(){
+    console.log(trigger);
+    $(this).next().not(":animated").slideToggle(init.speed);
+  });
+}
+
+})(jQuery);//即時実行関数 $をブロックスコープ
+</code></pre></figure>
+
+<p>init.speedには500が代入されている、そのままslideToggle()関数の第一引数に渡しておく。</p>
+<h4>要素に適応させて確認確認する。</h4>
+<p>.TGoption();に引数としてキーワードと値を対応した形式で代入する。<br>
+今回は　{speed:2000} と代入　アニメーションの間隔が長くなるはず。</p>
+<p>引数を代入しないとそのまま500が代入され　アニメーションが0.5秒になる。</p>
+<figure>
+ <figcaption>プラグインを要素にセットしてプラグインを実行  記入例</figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+<code>
+//適応する要素をえらんでメソッドチェーンする。
+$(function(){
+  $(".toggleWrap").TGoption({speed:2000});
+});//end-jq
+</code></pre></figure>
+さまざまな値を代入できるよに拡張をしてみてください。
+</section>
+
+</div>
+<script>
+(function($){
+
+$.fn.TGoption = function(option){
+	var init = $.extend({
+		'speed':500 //type int and String  animation speed
+	},option);
+
+var trigger = this.children(':first');
+trigger.css({"cursor":"pointer"});
+trigger.on("click",function(){
+    console.log(trigger);
+    $(this).next().not(":animated").slideToggle(init.speed);
+  });
+}
+
+$(function(){
+  $(".toggleWrap").TGoption({speed:2000});
+});
+
+})(jQuery);//即時実行関数 $をブロックスコープ
+</script>
+<!-- editable area end ########             -->
+</article>
+</div>
+<!-- /container-->
+
+<!-- / w-aside2 --->

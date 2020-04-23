@@ -1,0 +1,274 @@
+---
+title: jQuery javascriptライブラリー - 動作確認
+discription: discription
+cat: Javascript
+next-page-url: "514_js_code.html"
+filename: 513_js_code.html
+prev-page-url: "512_js_code.html"
+titlename: "{{title.titlename}}"
+text: "{{item.text}}"
+text2: "{{item.text}}"
+---
+<div class="container mb-5">
+<article id="w-article">
+<!-- editable area ########             -->
+        <h1>{{title}} - {{cat}}</h1>
+        <p><span>category:</span> <span class="badge badge-primary">{{cat}}</span></p>
+        <hr>
+<!-- 序章 モジュール -->
+<div class="card mb-4">
+<div class="card-body clearfix">
+<div class="float-lg-right col-lg-5 mb-2"><img src="_images/_JS/matrix_640.jpg" alt="flexlayput " class="img-fluid"></div>
+<p>実際にjQueryを使ったファイルを使ってみる。</p>
+
+</div>
+</div>
+<!-- 目次 モジュール -->
+
+<div class="bg-light p-3 mb-4">
+<h2>目次</h2>
+<ul id="w-indexlistBox">
+    <li v-for="item in items" class="w-indexlistBox-list">
+      <a v-bind:href="item.id" data-scroll >{{text2}}</a>
+    </li>
+</ul>
+</div>
+<!-- / 目次 モジュール -->
+
+<!-- 本文のセクション モジュール -->
+<div id="s1" class="mt-n6 pt-6 mb-6 clearfix">
+
+<h2>Jqueryを入れてみよう</h2>
+
+<div>
+  <p>Jqueryは他のJavascriptファイルとコンフリクトを起こさないように他のscriptファイルの後ろに読み取ること<br />このファイルのように「prism.js」のようなJqueryと関係ないファイルはJqueryの前に記述する。<br />
+  jqueryのコアファイルは自分が記述するjQueryファイルの前に記述すること</p>
+  <p>Js実装中さっきまで動いていたJsが動かなくなった理由の一つにjsの記述の順番からくる衝突やDomの検出失敗がある。</p>
+  <!--/.memo--></div>
+
+<div class="card p-4 mb-4">
+<h3 id="s1">準備</h3>
+<p>HTMLのhead要素内での読み込み</p><br />
+<h4>フォルダから読みこむ例</h4>
+<div id="pre">
+  <figure>
+  <figcaption>HTML 記入例</figcaption>
+  <pre class="line-numbers language-markup" data-src="prism.js">
+    <code>/*jqueryのコアを読み取ってから*/
+      &lt;script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"&gt;&lt;/script&gt;
+      /*jqueryの記述を始める*/
+      &lt;script type="text/javascript"&gt;&lt;!--
+      $(document).ready(function(){
+      $("a.alert").click(function(){
+        alert("Hellow World");
+        })
+      });//jq-end
+      --&gt;&lt;/script&gt;
+</code></pre>
+</figure>
+</div>
+
+<!--↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓-->
+<!--#####						練習領域ここから			##########-->
+<!--↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓-->
+
+<div class="demo">
+<h4>アラートの例</h4>
+<p><a class="alert" href="#">押してね</a></p>
+<!--/.demo--></div>
+</div>
+
+<div class="card p-4 mb-4">
+  <h3> jQueryのバージョンを確認する。 </h3>
+  <p>jQueryのバージョンを確認することでバージョン間違いや上書きされていたりそもそも読み込んでいないかを確認する。</p>
+  <figure>
+  <figcaption>HTML 記入例</figcaption>
+  <pre class="line-numbers language-markup" data-src="prism.js">
+    <code>/*jqueryのコアを読み取ってから*/
+      &lt;script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"&gt;&lt;/script&gt;
+      /*jqueryの記述を始める*/
+      &lt;script type="text/javascript"&gt;&lt;!--
+      console.log($.fn.jquery);
+      });//jq-end
+      --&gt;&lt;/script&gt;
+</code></pre>
+</figure>
+</div>
+
+
+<div id="s3" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>マウスオーバーで画像変更</h2>
+<h4>HTMLを用意する。</h4>
+<p>class属性とimg 要素で　ターゲットを取得する。　ここでは　img要素<br>
+jqueryでは要素をcssのセレクターの記述でほぼ同じ記述でアクセスすることが出来る。</p>
+<figure>
+<figcaption>HTML 記入例</figcaption>
+<pre class="line-numbers language-markup" data-src="prism.js">
+<code>&lt;p class=&quot;photoImage&quot;&gt;&lt;img src=&quot;images/0.jpg&quot; width=&quot;558&quot; alt=&quot;bike&quot; /&gt;&lt;/p&gt;
+</code></pre>
+</figure>
+<h4>STEP1</h4>
+<figure>
+<figcaption>jquery 記入例　準備</figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js"><code>$(function(){
+
+});
+</code></pre>
+</figure>
+
+<h4>STEP2</h4>
+<p>HTML要素をjqeury関数にいれて要素を取得する。</p>
+<figure>
+<figcaption>jquery 記入例　準備</figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js"><code>$(function(){
+$('.photoImage img')//要素を指定
+// console.log($('.photoImage img'));
+});
+</code></pre>
+</figure>
+
+<h4>STEP3</h4>
+<p>要素を属性を書き換える</p>
+<p><a href="http://api.jquery.com/attr/" target="_blank" rel="noopener">.attr() | jQuery API Documentation</a></p>
+<p><a href="http://js.studio-kingdom.com/jquery/attributes/attr" target="_blank" rel="noopener">.attr() jQuery 1.9 日本語リファレンス | js STUDIO </a></p>
+<p><a href="http://semooh.jp/jquery/api/attributes/attr/key%2Cvalue/" target="_blank" rel="noopener">jQuery日本語リファレンス　attr(key,value)</a></p>
+
+<figure>
+<figcaption>jquery 記入例　準備</figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js"><code>
+$(function(){
+$('.photoImage img').attr({src:"images/1.jpg",alt:"やっぱバイク",title:"そうバイク"});
+});
+</code></pre>
+</figure>
+
+<h4>STEP4</h4>
+<p>イベントのタイミングで属性値を変更してみる</p>
+<p><a href="http://api.jquery.com/mouseover/" target="_blank" rel="noopener">.mouseover() | jQuery API Documentation</a></p>
+<p><a href="http://api.jquery.com/mouseout/" target="_blank" rel="noopener">.mouseout() | jQuery API Documentation</a></p>
+
+<p><a href="http://js.studio-kingdom.com/jquery/events/mouseover" target="_blank" rel="noopener">.mouseover jQuery 1.9 日本語リファレンス | js STUDIO </a></p>
+<p><a href="http://semooh.jp/jquery/api/events/mouseover/fn/" target="_blank" rel="noopener">jQuery日本語リファレンス　.mouseover(fn)</a></p>
+
+<figure>
+<figcaption>jquery 記入例　準備</figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js"><code>
+$(function(){
+  $('.photoImage img').mouseover(function(){
+    $('.photoImage img').attr({src:"images/1.jpg",alt:"やっぱバイク",title:"そうバイク"});
+  });
+});
+</code></pre>
+</figure>
+
+<h4>STEP5</h4>
+<p>イベントのタイミングで属性値をマウスアウトもしてみる</p>
+<p>くわしいことは参考サイトを検索してみてください。</P>
+<p>javascriptはドットでつないで処理をどんどん実行していける。　これをメソッドチェーンといいます。</p>
+<figure>
+<figcaption>jquery 記入例　準備</figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js"><code>
+$(function(){
+  $('.photoImage img').mouseover(function(){
+    $('.photoImage img').attr({src:"images/1.jpg",alt:"やっぱバイク",title:"そうバイク"});
+  }).mouseout(function(){
+    $('.photoImage img').attr({src:"images/0.jpg",alt:"バイク",title:"バイク"});
+  });
+});
+</code></pre>
+</figure>
+
+<h4>STEP6</h4>
+<p>thisキーワードで複数の同じクラスの値の要素でも取れるようにします。</p>
+<p>ここでの this は　$('.photoImage img') ですが　マウスイベントが起こった要素をさします。つまり$('.photoImage img')でマウスカーソルが乗っているときですね。
+つまり　HTML文書内にある$('.photoImage img')はすべてこのイベントが発生します。</P>
+<p>複数の要素にイベントをセット（バインドとか処理を結びつける）するとき$(this)をつかいます</p>
+<figure>
+<figcaption>jquery 記入例　準備</figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js"><code>
+$(function(){
+  $('.photoImage img').mouseover(function(){
+    $(this).attr({src:"images/1.jpg",alt:"やっぱバイク",title:"そうバイク"});
+  }).mouseout(function(){
+    $(this).attr({src:"images/0.jpg",alt:"バイク",title:"バイク"});
+  });
+});
+</code></pre>
+</figure>
+<p>これで完成です。</p>
+<p class="photoImage"><img src="_images/_JS/0.jpg" width="558" alt="bike" /></p>
+<!--/.demo--></div>
+
+
+
+
+<div class="demo">
+<h2>JQUERY :td th にロールオーバーで背景色変更</h2>
+<table width="99%" border="0" cellspacing="0" cellpadding="0" id="bikeTable">
+  <tr>
+    <th scope="col">Bike Name</th>
+    <th scope="col">Photo</th>
+  </tr>
+  <tr>
+    <th scope="row">BROUGH SUPERIOR PENDINE</th>
+    <td><img src="_images/_JS/0.jpg" alt="BROUGH SUPERIOR PENDINE" width="60" /></td>
+  </tr>
+  <tr>
+    <th scope="row">フレディクーパートリトン</th>
+    <td><img src="_images/_JS/1.jpg" alt="BROUGH SUPERIOR PENDINE" width="60" /></td>
+  </tr>
+  <tr>
+    <th scope="row">ジェフデッカーヴィンセントブラックライトニング</th>
+    <td><img src="_images/_JS/2.jpg" alt="BROUGH SUPERIOR PENDINE" width="60" /></td>
+  </tr>
+  <tr>
+    <th scope="row">リバーサイドレーサー</th>
+    <td><img src="_images/_JS/3.jpg" alt="BROUGH SUPERIOR PENDINE" width="60" /></td>
+    </tr>
+  </table>
+</div>
+  <!--/.demo-->
+<!--↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑-->
+<!--#####						練習領域ここまで			##########-->
+</div>
+
+<script type="text/javascript"><!--
+$(document).ready(function(){
+$("a.alert").click(function(){
+  alert("Hellow World");
+  })
+
+$(".photoImage img").mouseover(function(){
+$(this).attr({src:"_images/_JS/1.jpg",alt:"やっぱバイク",title:"そうバイク"});
+}).mouseout(function(){
+  $(this).attr({src:"_images/_JS/0.jpg",alt:"バイク",title:"バイク"});
+});
+
+$("#bikeTable td,#bikeTable th").mouseover(function() {
+  $(this).css({backgroundColor:"#FFC",cursor:"pointer"});//.css({backgroundColor:"#FFC";})
+}).mouseout(function(){
+  $(this).css({backgroundColor:"#FFF",cursor:"default"});
+});
+
+
+var elm = $('.photoImage img');
+console.log(elm);
+//console.log($('.photoImage img'));
+var vType = typeof elm;
+console.log(vType);
+//console.log(elm);
+});//jq-end
+
+elementList = document.querySelectorAll('.photoImage img');
+console.log(elementList);
+--></script>
+
+
+
+
+<!-- editable area end ########             -->
+</article>
+</div>
+<!-- /container-->
+
+<!-- / w-aside2 --->

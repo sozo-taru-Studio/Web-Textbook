@@ -1,0 +1,152 @@
+---
+title: CSSの基礎知識
+discription: discription
+cat: CSS
+next-page-url: "42_css_code.html"
+filename: 401_css_code.html
+prev-page-url: "40_css_code.html"
+titlename: "{{title.titlename}}"
+text: "{{item.text}}"
+text2: "{{item.text}}"
+---
+<div class="container mb-5">
+<article id="w-article">
+<!-- editable area ########             -->
+        <h1>{{title}} - {{cat}}</h1>
+        <p><span>category:</span> <span class="badge badge-primary">{{cat}}</span></p>
+        <hr>
+
+<!-- 序章 モジュール -->
+<div class="card mb-4">
+<div class="card-body clearfix">
+  <p class="card-text">ブラウザで表示される文章の見た目を制御するのがスタイルシートです。</p>
+  <ul>
+  <li>CSSはHTMLのスタイルを設定するために開発されました。</li>
+  <li>
+  W3Cが仕様の設計勧告をしています。
+  </li>
+  <li>各社ブラウザはユーザーのためにW3Cの勧告にそってプログラミングされています。
+  但し、バージョンの違いなどでそのすべが正しく、同じに動くわけではない。ブラウザ独自で開発された機能もある。</li>
+  <li>CSSにはバージョンがあります。HTMLと違いW3Cで規定された機能はバージョンが上がっても使えます。</li>
+  <li>
+  <p>CSSのバージョンが上がることは機能が追加されることで表現が増えます。廃止されたり、意味が変わったりということは後方互換の為めったにない。</p>
+  </li>
+  <li>
+  <p>見た目やレイアウトの設定だけでなく。印刷　点字　音声（読み上げ）などもCSSも実装されています。</p>
+  </li>
+  </ul>
+  <p>現在最初に覚えるのは　CSS2.1と一部CSS3を学習すればサイトの制作に困らない。</p>
+</div>
+</div>
+
+<!-- 目次 モジュール -->
+<div class="bg-light p-3 mb-4">
+<h2>目次</h2>
+<ul id="w-indexlistBox">
+    <li v-for="item in items" class="w-indexlistBox-list">
+      <a v-bind:href="item.id" data-scroll >{{text2}}</a>
+    </li>
+</ul>
+</div>
+<!-- /目次 モジュール -->
+<!-- 本文のセクション モジュール -->
+<div id="s1" class="mt-n6 pt-6 mb-6 clearfix">
+  <h2>スタイルシートがブラウザをどのように彩るの？</h2>
+<p>HTMLのソースコードを読み取ると。スタイルシートのリクエストがないか確認し。<br>HTMLの要素に沿ってDOMを生成します。</p>
+<p>DOMプロパティのスタイルプロパティに設定するスタイルシートの宣言があればそのスタイルシートにあてはめます。
+スタイルシートの指定がなかったときブラウザ独自のスタイルシートを適応します。</p>
+
+      <dl>
+          <dt>DOM</dt>
+          <dd>
+            <blockquote>
+              <p>Document Object Model (DOM) は、— ウェブページを表す HTML のように — 文書の構造をメモリ内に表現することで、ウェブページとスクリプトやプログラミング言語を接続するものです。</p>（中略）
+
+              DOM のモデルは文書を論理的なツリーで表現します。ツリーのそれぞれの枝はノードで終わっており、それぞれのノードがオブジェクトを含んでいます。 DOM のメソッドでプログラム的にツリーにアクセスでき、文書構造やスタイルやコンテンツを変更することができます。ノードにはイベントハンドラーを割り当てることができます。イベントが発生すると、イベントハンドラーが実行されます。
+              <footer ><cite><a href="https://developer.mozilla.org/ja/docs/Web/API/Document_Object_Model" target="_blank" rel="noopener">ドキュメントオブジェクトモデル (DOM)</a>
+              </cite>
+              </footer>    </blockquote>
+            </dd>
+          </dl>
+    <h3 id="mdn">MDN</h3>
+    <p><a href="https://developer.mozilla.org/ja/docs/Web/CSS" target="_blank">CSS: カスケーディングスタイルシート</a></p>
+  </div>
+  <div id="s2" class="mt-n6 pt-6 mb-6 clearfix">
+    <h2>cssのコメント</h2>
+    <pre class="line-numbers language-css" data-src="prism.js"><code>/*
+ここはコメントとして無視します。
+*/
+    </code></pre>
+<p>cssのコメントはネスト出来ません。</p>
+<p><code>/*  */</code>のコメントアウトの一種類のみです。</p>
+</div>
+<div id="s3" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>CSSの構文</h2>
+<p><a href="https://developer.mozilla.org/ja/docs/Learn/CSS/Introduction_to_CSS/Syntax" target="_blank" rel="noopener">CSSの構文</a></p>
+<h3>ルールセット</h3>
+<p>ルールセットがCSSの書式の単位となっています。
+    ルールセットは一つのセレクターと1の宣言ブロックで成り立っています。
+    宣言ブロックは一組の{}「波かっこ」と1つ以上の宣言文とで構成されています。</p>
+    <p>宣言文は　プロパティと値「:」「;」で構成されています。
+    プロパティと値とのセパレーターに「：」コロンが必要です。
+    宣言文の終了に「；」セミコロンが必要です。</p>
+
+<pre class="line-numbers language-css" data-src="prism.js"><code>
+/*コンプレス書き*　データが少なくて済む/
+
+セレクタ｛プロパティ：バリュー;｝
+
+/*エクステンデッド書き 読みやすい*/
+セレクタ｛
+  プロパティ：バリュー;
+  プロパティ：バリュー;
+｝
+</code></pre>
+
+<h3>3つの部位</h3>
+<p>ルールセットと呼ばれる書式を正しく記述しないと
+ブラウザは無効なCSSとみなしその後の記述をすべて無視します。</p>
+<h4>セレクタ</h4>
+<p>HTMLの要素を指定する。<br>
+どの要素にデザインを指定するかを命令する。</p>
+<h4>プロパティ</h4>
+<p>選んだ要素のなにを<br>
+要素には表示する文字色や高さや幅などのプロパティと呼ばれる個性を設定する属性が設定されています。</p>
+<h4>バリュー(値)</h4>
+<p>バリューは日本語では値として教わります。値はプロパティに設定する値です。
+例えば文字色（color）に値(red)を設定することにより文字の色が赤くかわります。</p>
+<p>HTMLの要素を選びそのプロパティの値を変更する。<br>
+  p要素（セレクタ）の文字色（プロパティ）を灰色（gray）にする。
+</p>
+
+<h4>無効なCSS例</h4>
+<ol>
+<li>無効なセレクター</li>
+<li>無効なプロパティーの記述</li>
+<li>セミコロンの位置</li>
+<li>ブロックの閉じ忘れ。</li>
+<li>未定義の数詞
+　e.t.c</li>
+</ol>
+
+
+<div class="card mb-3">
+<h4 class="card-header"> コード</h4>
+<div class="card-body">
+<pre class="line-numbers language-css" data-src="prism.js"><code>
+p{
+  color:gray;
+}
+</code></pre>
+</div>
+</div>
+</div>
+<div id="s4" class="mt-n6 pt-6 mb-6 clearfix">
+</div>
+
+<!-- editable area end ########             -->
+</article>
+</div>
+<!-- /container-->
+
+<!-- / w-aside2 --->

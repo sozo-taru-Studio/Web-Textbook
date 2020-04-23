@@ -1,0 +1,217 @@
+---
+title: CSS position プロパティ
+discription: discription
+cat: CSS
+next-page-url: "402_css_code.html"
+filename: 41_css_code.html
+prev-page-url: "402_css_code.html"
+titlename: "{{title.titlename}}"
+text: "{{item.text}}"
+text2: "{{item.text}}"
+---
+<div class="container mb-5">
+<article id="w-article">
+<!-- editable area ########             -->
+        <h1>{{title}} - {{cat}}</h1>
+        <p><span>category:</span> <span class="badge badge-primary">{{cat}}</span></p>
+        <hr>
+<!-- 序章 モジュール -->
+<div class="card mb-4">
+<div class="card-body clearfix">
+<p class="card-text">positionプロパティはオフセットプロパティと組み合わせて要素の重なりやずれを表現できるプロパティです。ナビゲーションの固定配置やバッジやバルーンモジュールを要素に重重ねて目立たせたりするのに利用されます。</p>
+</div>
+</div>
+
+<!-- 目次 モジュール -->
+<div class="bg-light p-3 mb-4">
+<h2>目次</h2>
+<ul id="w-indexlistBox">
+    <li v-for="item in items" class="w-indexlistBox-list">
+      <a v-bind:href="item.id" data-scroll >{{text2}}</a>
+    </li>
+</ul>
+</div>
+<!-- /目次 モジュール -->
+
+<!-- 本文のセクション モジュール -->
+<div id="s1" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>positon プロパティ</h2>
+<p>ポジションプロパティは要素の重なりを（層）を作り出し視覚的効果を生み出すプロパティです。値は、通常のstatic, fix ,relative ,absolute, stickyの4種類があります。
+</p>
+<h3>値</h3>
+<blockquote>
+    <ul>
+        <li><ruby><strong>位置指定要素</strong><rp> (</rp><rt>positioned element</rt><rp>) </rp></ruby>とは、 <code>position</code> の<a href="/ja/docs/Web/CSS/computed_value">計算値</a>が <code>relative</code>, <code>absolute</code>, <code>fixed</code>, <code>sticky</code> のいずれかである要素です。 (言い換えれば、 <code>static</code> 以外の全てです。)</li>
+        <li><ruby><strong>相対位置指定要素</strong><rp> (</rp><rt>relatively positioned element</rt><rp>) </rp></ruby>とは、 <code>position</code> の<a href="/ja/docs/Web/CSS/computed_value">計算値</a>が <code>relative</code> である要素です。 <a href="/ja/docs/Web/CSS/top" title="CSS の top プロパティは、位置指定要素 (positioned elements) の垂直位置の決定に関与します。位置指定されていない要素には効果はありません。"><code>top</code></a> 及び <a href="/ja/docs/Web/CSS/bottom" title="CSS の bottom プロパティは、位置指定要素 (positioned elements) の垂直位置の決定に関与します。位置指定されていない要素には効果はありません。"><code>bottom</code></a> プロパティは、通常の位置からの垂直方向のオフセットを指定します。 <a href="/ja/docs/Web/CSS/left" title="CSS の left プロパティは、位置指定要素 (positioned elements) の水平位置の決定に関与します。位置指定されていない要素には効果はありません。"><code>left</code></a> 及び <a href="/ja/docs/Web/CSS/right" title="CSS の right プロパティは、位置指定要素 (positioned elements) の水平位置の決定に関与します。位置指定されていない要素には効果はありません。"><code>right</code></a> プロパティは、水平方向のオフセットを指定します。</li>
+        <li><ruby><strong>絶対位置指定要素</strong><rp> (</rp><rt>absolutely positioned element</rt><rp>) </rp></ruby>とは、 <code>position</code> の<a href="/ja/docs/Web/CSS/computed_value">計算値</a>が <code>absolute</code> 又は <code>fixed</code> である要素です。 <a href="/ja/docs/Web/CSS/top" title="CSS の top プロパティは、位置指定要素 (positioned elements) の垂直位置の決定に関与します。位置指定されていない要素には効果はありません。"><code>top</code></a>, <a href="/ja/docs/Web/CSS/right" title="CSS の right プロパティは、位置指定要素 (positioned elements) の水平位置の決定に関与します。位置指定されていない要素には効果はありません。"><code>right</code></a>, <a href="/ja/docs/Web/CSS/bottom" title="CSS の bottom プロパティは、位置指定要素 (positioned elements) の垂直位置の決定に関与します。位置指定されていない要素には効果はありません。"><code>bottom</code></a>, <a href="/ja/docs/Web/CSS/left" title="CSS の left プロパティは、位置指定要素 (positioned elements) の水平位置の決定に関与します。位置指定されていない要素には効果はありません。"><code>left</code></a> の各プロパティは、この要素の<a class="new" href="/ja/docs/Web/CSS/All_About_The_Containing_Block" rel="nofollow">包含ブロック</a>の辺からのオフセットを指定します。 (包含ブロックは配置される要素の祖先です。) 要素にマージンがある場合は、オフセットにマージンが追加されます。</li>
+        <li><ruby><strong>粘着位置指定要素</strong><rp> (</rp><rt>stickily positioned element</rt><rp>) </rp></ruby>とは、 <code>position</code> の<a href="/ja/docs/Web/CSS/computed_value">計算値</a>が <code>sticky</code> である要素です。これは<a class="new" href="/ja/docs/Web/CSS/All_About_The_Containing_Block" rel="nofollow">包含ブロック</a>がフロールート (又はその中でスクロールするコンテナー) 内の指定されたしきい値 (例えば <a href="/ja/docs/Web/CSS/top" title="CSS の top プロパティは、位置指定要素 (positioned elements) の垂直位置の決定に関与します。位置指定されていない要素には効果はありません。"><code>top</code></a> に設定された auto 以外の値など) を達するまでは相対的な配置として扱われ、<a class="new" href="/ja/docs/Web/CSS/All_About_The_Containing_Block" rel="nofollow">包含ブロック</a>の反対の端が来るまでその位置に「粘着」するものとして扱われます。</li>
+       </ul>
+<footer>
+<cite><a href="https://developer.mozilla.org/ja/docs/Web/CSS/position#Types_of_positioning" target="_blank" rel="noopener">position
+</a></cite></footer>
+</blockquote>
+
+
+
+
+<div id="s2" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>オフセット プロパティ</h2>
+<p>オフセットプロパティはpositionプロパティの値「fix ,relative ,absolute, sticky」のときの要素の辺 topプロパティなら上辺 bottomプロパティ下辺 leftプロパティは左辺 rightプロパティは右辺から　どれだけズレて表示させるかを設定するプロパティです。</p>
+
+<p>
+初期値はauto です。明確にオフセットの記述がないと要素はstaticのときと同じｘY軸にレンダリングされます。
+</p>
+
+<div class="card">
+<div class="card-header">
+<h3>垂直のオフセット top bottom プロパティ</h3>
+</div>
+<div class="card-body">
+<blockquote class="blockquote">
+<ul>
+  <li><a href="https://developer.mozilla.org/ja/docs/Web/CSS/top" target="_blank" rel="noopener">top</a></li>
+  <li><a href="https://developer.mozilla.org/ja/docs/Web/CSS/bottom" target="_blank" rel="noopener">bottom</a></li>
+</ul>
+<p>top と bottom の両方が指定されており、かつ height が未指定か auto か 100% の場合、 top と bottom の距離が尊重されます。それ以外の場合、 height が何らかの形で制約されていた場合、 top プロパティが優先されて bottom プロパティは無視されます。</p>
+<cite><a href="https://developer.mozilla.org/ja/docs/Web/CSS/bottom" target="_blank" rel="noopener">bottom | MDN</a> </cite>
+</blockquote>
+
+<h4>値</h4>
+<p>初期値は0、値は数値系の値が入ります。単位によって変わります。　正の数値が基準となる要素の中心へオフセットされマイナスの場合は基準の場所より外に表示されます。</p>
+
+<p><strong>
+高さが制限されているとき。topプロパティ優先　bottomプロパティは無視
+</strong></p>
+</div>
+</div><!--/ .card -->
+<div class="card mb-6">
+    <div class="card-header">
+        <h3>水平のオフセット left right プロパティ</h3>
+    </div>
+<div class="card-body">
+    <blockquote class="blockquote">
+    <ul>
+      <li><a href="https://developer.mozilla.org/ja/docs/Web/CSS/left" target="_blank" rel="noopener">left</a></li>
+      <li><a href="https://developer.mozilla.org/ja/docs/Web/CSS/right" target="_blank" rel="noopener">right</a></li>
+    </ul>
+    <p>left と right の両方が定義された場合、要素の位置は過剰指定になります。内包ブロックが左書きの場合 (つまり、 right の計算値が -left に設定されていた場合)、 left の値が優先されます。内包ブロックが右書きの場合 (つまり、 left の計算値が -right に設定されていた場合)、 right の値が優先されます。</p>
+    <cite><a href="https://developer.mozilla.org/ja/docs/Web/CSS/right" target="_blank" rel="noopener">right | MDN</a> </cite>
+    </blockquote>
+
+    <h4>値</h4>
+    <p>初期値は0、値は数値系の値が入ります。単位によって変わります。　正の数値が基準となる要素の中心へオフセットされマイナスの場合は基準の場所より外に表示されます。</p>
+
+  <p><strong>leftとrightが両方書かれていた場合、日本語のブラウザの場合 leftプロパティ優先　rightプロパティは無視される。</strong></p>
+  </div>
+</div><!--/ .card -->
+
+<h3>ファイルを作ってそれぞれの確認してみる</h3>
+<h4>相対配置</h4>
+<h5>HTML</h5>
+<pre class="line-numbers language-xml" data-src="prism.js"><code>
+&lt;div class="base-box"&gt; 親要素
+  &lt;div class="relative-box"&gt; 子要素 &lt;/div&gt;
+  &lt;div class="static-box"&gt; 子要素 &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h5>css 相対配置</h5>
+<pre class="line-numbers language-css" data-src="prism.js"><code>
+/* ファンデーション*/
+  div{
+    box-sizing: border-box;
+  }
+    .base-box {
+    border:1px solid #303030;
+    width: 300px;
+    height: 300px;
+  }
+  .base-box>div:nth-child(1){
+    width: 50%;
+    height: 50%;
+    background-color: rgba(1, 58, 93,0.1);
+}
+    .base-box>div:nth-child(2){
+      width: 50%;
+      height: 50%;
+      background-color: rgba(127, 58, 93,0.1);
+}
+/*変更箇所 相対配置*/
+.relative-box{
+  position:relative;
+  top:30px;
+  left:30px;
+}
+</code></pre>
+<p>相対配置は元にあった位置を基準に移動し。移動する前の領域を残す。</p>
+<p><a href="../Training/position/position.html">プレビューはこちら</a></p>
+
+
+<h4>絶対配置</h4>
+<h5>HTML</h5>
+<pre class="line-numbers language-xml" data-src="prism.js"><code>
+&lt;div class="base-box"&gt; 親要素
+  &lt;div class="absolute-box"&gt; 子要素 &lt;/div&gt;
+  &lt;div class="static-box"&gt; 子要素 &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h5>css 絶対配置</h5>
+<pre class="line-numbers language-css" data-src="prism.js"><code>
+/* 位置の基準要素を設定*/
+.base-box {
+  position:relative;
+  }
+/*変更箇所 絶対配置*/
+.absolute-box{
+  position:absolute;
+  top:30px;
+  left:30px;
+}
+</code></pre>
+
+<p><a href="../Training/position/position.html">プレビューはこちら</a></p>
+
+<h4>位置</h4>
+<ul>
+  <li>絶対配置を指定した要素を内包する包含ブロックにposition:static以外のポジションプロパティがある場合は直近のその要素を基準にオフセットする。</li>
+  <li>絶対配置を指定した要素を内包する包含ブロックにposition:static以外のポジションプロパティがない場合はBody要素を基準にオフセットする。</li>
+  <li>オフセットがなければ、元あった場所は続く要素に専有されその上に表示される。</li>
+</ul>
+</div>
+
+
+
+<div id="s3" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>z-index</h2>
+<p>z-indexプロパティはスタック文脈内の重なり順を変更するプロパティです。
+値は小さいほど下に表示され大きいほど上に表示されます。</p>
+<h3>値</h3>
+<p>初期値　「auto」</p>
+<ul>
+ <li>auto 記述があとの要素のほうが上に重なる</li>
+ <li>整数値　integer　数値は大きいほうがより上に重なる。</li>
+ <li>マイナスは優先順位が下がる。　-1は下の層に回り込む。</li>
+</ul>
+</div>
+
+
+
+<div class="p-3 border border-dark position-relative" style="height:200px;">
+  <p>z-index　記述なし</p>
+  <div class="w-50  h-50 text-center border border-dark position-absolute" style="background-color: rgba(175,175,165,1);">左 </div>
+  <div class="h-50 w-50 text-center border border-dark position-absolute" style="background-color: rgba(240,175,165,.5); left:30px; top:30px;">右</div>
+</div>
+
+<div class="p-3 border border-dark position-relative" style="height:200px;">
+  <p>z-index z-index:2;とz-index:2</p>
+  <div class="w-50  h-50 text-center border border-dark position-absolute" style="background-color: rgba(175,175,165,1);z-index: 2;">左 z-index:2</div>
+  <div class="h-50 w-50 text-center border border-dark position-absolute" style="background-color: rgba(240,175,165,.5); left:30px;top:30px;z-index: 1;">右 z-index:1;</div>
+</div>
+<hr>
+</div>
+
+<!-- editable area end ########             -->
+</article>
+</div>
+<!-- /container-->
+
+<!-- / w-aside2 --->

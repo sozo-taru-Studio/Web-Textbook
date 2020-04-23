@@ -1,0 +1,177 @@
+---
+title: CSSの基礎知識 ファイルの定義
+discription: discription
+cat: CSS
+next-page-url: "401_css_code.html"
+filename: 40_css_code.html
+prev-page-url: "#"
+titlename: "{{title.titlename}}"
+text: "{{item.text}}"
+text2: "{{item.text}}"
+---
+<div class="container mb-5">
+<article id="w-article">
+<!-- editable area ########             -->
+        <h1>{{title}} - {{cat}}</h1>
+        <p><span>category:</span> <span class="badge badge-primary">{{cat}}</span></p>
+        <hr>
+<!-- 序章 モジュール -->
+<div class="card mb-4">
+<div class="card-body clearfix">
+  <p class="card-text">スタイルシートファイルのつくりかたとHTMLファイルへのリンク。<br>HTMLファイル内にスタイルシートが直接書く方法を説明します。</p>
+</div>
+</div>
+<!-- 目次 モジュール -->
+<div class="bg-light p-3 mb-4">
+<h2>目次</h2>
+<ul id="w-indexlistBox">
+    <li v-for="item in items" class="w-indexlistBox-list">
+      <a v-bind:href="item.id" data-scroll >{{text2}}</a>
+    </li>
+</ul>
+</div>
+<!-- /目次 モジュール -->
+
+<!-- 本文のセクション モジュール -->
+<div id="s1" class="mt-n6 pt-6 mb-6 clearfix">
+  <h2>css はここで調べろ</h2>
+    <h3 id="mdn">MDN</h3>
+    <p><a href="https://developer.mozilla.org/ja/docs/Web/CSS" target="_blank">CSS: カスケーディングスタイルシート</a></p>
+    <h3 id="css%E4%BA%8B%E4%BE%8B%E9%9B%86">CSS事例集</h3>
+    <p><a href="https://developer.mozilla.org/ja/docs/Web/CSS/Layout_cookbook" target="_blank">CSS レイアウト料理帳</a></p>
+    <p>モジーラデベロッパースネットワーク 上記サイトを見ればなにもいらない感じですね。</p>
+<p>いろいろなサイトがリファレンスを提供していますので見に行ってください。</p>
+  </div>
+  <div id="s2" class="mt-n6 pt-6 mb-6 clearfix">
+    <h2>ファイルの作り方。</h2>
+    <h3>ファイル名のルール</h3>
+    <p>ファイル名は英数です。ファイルがどの部分を装飾しているかがある程度わかる名前をつけましょう。
+    例えば モジュール名 commentBox.cssなど。（コメントボックスを装飾しているだろう。）<br>
+    全メージ共通の場合は common.cssなど<br>
+    小さなプロジェクトの場合は<em>style.css</em>が定番です。</p>
+    <strong>拡張子は.css</strong>
+    <h3 class="h5">CMSなどは決まりがある。</h3>
+    <p>wordpressなどCSMはスタイルシートの名前が予め固定されている場合があります。製作時にシステムのリファレンスをよく確認しておきましょう。</p>
+    <h3>ファイルの中身のルール</h3>
+    <p>ファイルをを保存したら。キャラクターコードを指定する。</p>
+    <p>最初の1行目に余白なく<code>@charset &quot;UTF-8&quot;;</code>と入力。
+      CSSでは最後に<code>;</code>セミコロンをいれないとだめです。
+      この行のしたにスタイルシートを書いていきます。
+      このとき@の前になにか半角スペースを含めた文字があった場合うまく機能しない場合があります。</p>
+<div class="card mb-3">
+<h4 class="card-header">コード</h4>
+<div class="card-body">
+<pre class="line-numbers language-css" data-src="prism.js"><code>@charset "UTF-8";</code></pre>
+</div>
+</div>
+  </div>
+<div id="s3" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>ファイルのリンク</h2>
+<h3>保存場所</h3>
+<p>cssフォルダを作りそこに保存することが通例です。</p>
+<h4 class="h5">フォルダ構成例</h4>
+<p><img src="_images/_html/rePath1.PNG" alt="例2相対パス"></p>
+<h5>フォルダ図 A</h5>
+<pre class="hljs"><code>
+  ├ test─site
+    │  index.html
+    ├  css
+       |  style.css
+</code></pre>
+<h3>htmlファイルへリンク</h3>
+<p>htmlファイルへリンクして関連付けします。
+htmlファイルはリンクされたcssファイルを読み込みbody要素内を装飾します。</p>
+<p>外部ファイルのスタイルシートを読み込むときはhead要素内にlink要素で関連付けします。</p>
+<div class="card mb-3">
+    <h4 class="card-header">コード</h4>
+    <div class="card-body">
+<h5>記入の凡例</h5>
+<pre class="line-numbers language-xml" data-src="prism.js"><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;スタイルシートへのパス(URI)&quot;&gt;</code></pre>
+<h4>フォルダ構成例からのコード例</h4>
+<p>フォルダ構成図が「フォルダ図 A」の場合</p>
+<pre class="line-numbers language-xml" data-src="prism.js"><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;css/style.css&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;title&gt; htmlファイルのタイトル &lt;/title&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;css/style.css&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;/body&gt;
+</code></pre>
+
+</div></div>
+<p>リンク要素はヘッド要素に書きましょう。
+昨今のブラウザはヘッド要素を読み込んだ段階で同期的にCSSを読み込みにいきます。早くよみこめたほうが表示も早くなります。</p>
+<p>cssファイルになにかスタイルシート宣言ブロックをコピーしてください。表示が変わればCSSが適応されています。</p>
+<h5>テストコード</h5>
+<pre class="line-numbers language-xml" data-src="prism.js"><code>/*ポジ反転*/
+body{
+color:#fff;
+background-color:#222;
+}
+</code></pre>
+<p>テストコードをコピペしてファイルがよみとれているか確認してください。</p>
+<hr>
+<p><small>ここからむづかしいので後ほど学習でよい。</small></p>
+</div>
+<div>
+<div id="s4" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>CSSファイルを外部化する理由</h2>
+<p>スタイルシートは外部ファイルに保存しhtmlファイルにリンク要素で紐付けして使います。
+この利点は大規模なwebサイトで発揮します。
+もし修正案件があったとき
+htmlファイルごとにスタイルが書かれていると。修正の作業はすべてのhtmlファイルを開いて書き換えなければなりません。しかし1枚のCSSファイルで管理していれば、
+CSSファイルの一部を修正すれば修正箇所があるhtmlファイルに適応できます。</p>
+
+
+<h3>個別のページのユニークな装飾はhtmlファイルに直接書くことでユニークさを保つこともできます。</h3>
+<p>デザインの要素では利用者が覚えやすいデザインであるようにサイトにでてくる同じ意味のパーツやモジュールは同じ見た目で表現します。</p>
+<p>しかし、そのページ独自のコンセプトがあったりデザインルールが逸脱する場合があります、その場合 そのページ専用のcssファイルを起案するし新たにリンクするか、ユニークなスタイル要素やスタイル属性での記述でページを装飾します。</p>
+</div>
+<div id="s5" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>ファイルに直接CSSを書く方法は2つあります。</h2>
+<h3>1,スタイル要素にスタイルシートを書く。</h3>
+<pre class="line-numbers language-css" data-src="prism.js"><code>&lt;style&gt;
+    /*黄色い文字*/
+    body{
+    color:#ff2;
+    background-color:#222;
+    }
+&lt;/style&gt;
+</code></pre>
+<p>スタイル要素はhead要素に書くことが推奨されていますが。同じ詳細度セレクタの場合性質上,上書きされ後書きのほうが適応されます。</p>
+<h3>2,要素にスタイル属性で適応する。</h3>
+<p>属性と属性値でスタイルを直接要素に適応します。インライン入力とも呼びます。一番優先されて表示されますので外部ファイルのスタイルを上書きします。</p>
+<pre class="line-numbers language-xml" data-src="prism.js"><code>&lt;p style=&quot;color:red;&quot;&gt;赤文字&lt;/p&gt;</code></pre>
+<h4>デメリット</h4>
+<p>たくさんのスタイルを要素に適応するとコードが読みにくくなります。常用せず基本はCSSファイルからのリンクでのスタイルコードを書き。特別な仕様や今後書き換える予定がない場合のみ使用するようにするのが一般的なインラインスタイリングのつかいかたです。</p>
+<div class="card">
+<h5 class="card-header">javascriptでのスタイルの適応</h5>
+<div class="card-body">
+<p>のちほど習うjavascriptは要素のスタイルをこの属性で制御します。</p>
+<pre class="line-numbers language-javascript" data-src="prism.js"><code>&lt;p id=&quot;pv&quot; style=&quot;color:red;&quot;&gt;赤文字&lt;/p&gt;
+&lt;script&gt;
+var elem = document.getElementById('pv');
+  elem.style.color = '#0f0';
+&lt;/script&gt;
+</code></pre>
+<h5>プレビュー</h5>
+<div>
+    <p id="pv" style="color:red;">赤文字</p>
+    <script>
+    var elem = document.getElementById('pv');
+      elem.style.color = '#0f0';
+    </script>
+</div>
+</div>
+</div>
+
+
+</div>
+
+<!-- editable area end ########             -->
+</article>
+</div>
+<!-- /container-->
+
+<!-- / w-aside2 --->

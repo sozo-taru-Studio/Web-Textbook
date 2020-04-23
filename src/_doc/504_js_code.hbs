@@ -1,0 +1,239 @@
+---
+title: 変数
+discription: discription
+cat: Javascript
+next-page-url: "505_js_code.html"
+filename: 504_js_code.html
+prev-page-url: "503_js_code.html"
+titlename: "{{title.titlename}}"
+text: "{{item.text}}"
+text2: "{{item.text}}"
+---
+<div class="container mb-5">
+<article id="w-article">
+<!-- editable area ########             -->
+        <h1>{{title}} - {{cat}}</h1>
+        <p><span>category:</span> <span class="badge badge-primary">{{cat}}</span></p>
+        <hr>
+<!-- 序章 モジュール -->
+<div class="card mb-4">
+<div class="card-body clearfix">
+<div class="float-lg-right col-lg-5 mb-2"><img src="_images/_JS/memo-640.jpg" alt="flexlayput " class="img-fluid"></div>
+<p class="card-text">javascriptの変数の書き方のルールや仕組みを知りましょう</p>
+<p>変数の宣言、まずは変数の宣言方法と使い方を覚えましょう。<br>データを変数に書いてデータを変数から呼び出すス処理をプログラミングするのが主な仕事になります。ここからは読むだけでなくscriptをエディターで記述しブラウザで確認しながら進めましょう。</p>
+</div>
+</div>
+<!-- 目次 モジュール -->
+<div class="bg-light p-3 mb-4">
+<h2>目次</h2>
+<ul id="w-indexlistBox">
+    <li v-for="item in items" class="w-indexlistBox-list">
+      <a v-bind:href="item.id" data-scroll >{{text2}}</a>
+    </li>
+</ul>
+</div>
+<!-- / 目次 モジュール -->
+
+<!-- 本文のセクション モジュール -->
+<div id="s1" class="mt-n6 pt-6 mb-6 clearfix">
+  <h2>変数 (var)</h2>
+<p>プログラムにおいて一時的に情報(データ)を記録しておくこと。</p>
+<div class="story">
+<p>	おかあさんにお使いを頼まれました。</p>
+<p> 母「　リンゴ5個　みかん　一袋　（あまいの）
+　ブロッコリー　ひと房 サッポロ一番　味噌味
+牛乳500ml　それから～」</p>
+<p>私「ちょっとまって　覚えられへん」</p>
+<p>母「ほな　メモっときー」</p>
+<p>私「さいしょからメモに書いてわたせよ」</p>
+<p>母「わたしかて忙しいねんで」</p>
+<p style="text-align:right;">：ありし日の我が家</p>
+</div>
+
+<p>プログラミングもメモ用紙のように一時的にデータを記録することができます。<br>このメモを<strong>変数(variable)</strong>と呼んでいます。<br>変化するので変数とも訳されます。メモ用紙にはいろいろなことが記述できます。<br>
+プログラムは変数というメモ用紙を使って一時的に記憶します。メモ用紙と鉛筆と消しゴムで構成されているように書き換えが消去ができます。
+</p>
+<a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Statements/var" target="_blank" rel="noopener">var - JavaScript | MDN</a>
+</div>
+
+<div id="s2" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>var - 宣言文の書き方</h2>
+
+<p>javascript の単独変数宣言</p>
+<p>計算のために一時的にメモっておく変数には何のメモかわかるように名前が必要です。この名前を<b>変数名</b>といいます。
+変数名で使える文字は後に記載します。</p>
+<p>宣言文「var」を書き半角スペースのあとに変数名を書きセミコロンで処理を終了します。</p>
+<figure>
+<figcaption>javascript 記入例</figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+<code>// be_light 変数を宣言しました。
+var be_light;</code></pre>
+</figure>
+<p>変数を宣言しました。この状態では変数には何も代入されていません。</p>
+</div>
+
+<div id="s3" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>変数宣言のバリエーション</h2>
+<div class="card">
+<h4 class="card-header">変数の宣言と代入を同時記述</h4>
+<div class="card-body">
+<p>よく使われる変数の宣言と代入を同時にします。あらかじめ入るデータが決まっている場合はこう書きましょう。</p>
+<figure>
+<figcaption>javascript の変数への代入例</figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+<code>//省略できる 上の宣言は下のようにまとめて宣言します。
+var x = 10;</code></pre>
+</figure>
+</div>
+</div>
+<hr>
+<div class="card">
+<h4 class="card-header">変数のグループ宣言</h4>
+<div class="card-body">
+<p>変数をあらかじめ<em>まとめて宣言</em>しておきたいときにこのような記述をします。<br>
+右式と左式をカンマ「,」で区切ります。</p>
+<figure>
+<figcaption>javascript の変数まとめて宣言</figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+<code>var x = 1 , y = 2 , a = "答え"；
+var b,c,d;
+</code></pre>
+</figure>
+</div>
+</div>
+</div>
+<div class="mt-n6 pt-6 mb-6 clearfix" id="s4">
+<h2>変数名で使える文字</h2>
+<blockquote><p>アプリケーションで値を表す名前として、変数を使用します。変数の名前は識別子とも呼ばれ、一定のルールに従わなくてはなりません。JavaScript の識別子は必ず「文字」、「アンダースコア (_）」、あるいは「ドル記号 ($)」 から始まらなくてはなりません。続く文字には数字 (0-9) も使用できます。JavaScript は<em>大文字・小文字</em>を区別するため、使用できる文字には "A" から "Z" （大文字）に加えて "a" から "z" （小文字）も含まれます。
+<p><a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Reserved_Words" targat="_blank" rel="noopener">予約語</a></p>
+</p></blockquote>
+<ul>
+<li>var 半角スぺースのあと $(ダラー), _(アンダーバー), 半角英語で変数の名前を書き宣言が終わったらセミコロンを書く。</li>
+<li>「$」は後ほど教える<b>jquery</b>で使うので混同する恐れがあるのでつかいません。</li>
+<li><b>全角文字つかわない</b>ようにしてください。</li>
+<li>変数の命名はコーディングルールに依存しますが。まず英語でどんな情報が入っているか<em>推測できる名前</em>をいれましょう。</li>
+<li><b>予約語</b>を使うとエラーになるので使わないようにしましょう。</li></ul>
+<h5>変数で使える名前使えない名前</h5>
+<figure>
+<figcaption>javascript の変数への代入例</figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+<code>
+  /* NG  許されない
+  Console output message >> Uncaught SyntaxError: Unexpected token ●●●●●●
+【日本語訳】文章エラーで実行できませんでした。予期しない しるし　●●●●●●が原因
+  ---------------------------------------------------------------------*/
+
+  var 123_variable;// 数値から始まる
+  var 日本語の変数; //2バイト文字
+  var var; //予約語を使っている。プログラムにはある程度決まった言葉が何らかの処理をする命令として決まっています。
+  var +puls;//演算子が入っている。
+  var [nogood];//ブラケットが入っている。
+
+  /* OK 許される -----------------------------*/
+  var $var; //使えるけどややこしいからだめ。
+  var good; //数字が途中ではいってもいい
+  var _goods;// 記号「_」アンダーバーは唯一使える記号。
+</code>
+</pre>
+</figure>
+
+<h3>変数の命名規則やガイド</h3>
+<p>複雑な変数の名前を形容詞も含めてどのように命名するのかのルール</p>
+<div class="table-responsive">
+<table class="table table-bordered">
+<tr class="table-active">
+<th scope="col">意味</th>
+<th scope="col">キャメルケース</th>
+<th scope="col">パスカルケース</th>
+<th scope="col">アンダースコア</th>
+</tr>
+<tr>
+<th>「豚」</th>
+<td>pigs</td>
+<td>Pigs</td>
+<td>_pigs</td>
+</tr>
+<tr>
+<th>ピンクの豚</th>
+<td>pinkPigs</td>
+<td>PinkPigs</td>
+<td>pink_pigs</td>
+</tr>
+<tr>
+<th>豚の苗字</th>
+<td>pigsFamilyName</td>
+<td>PigsFamilyName</td>
+<td>pigs_family_name</td>
+</tr>
+</table>
+</div>
+<blockquote>
+<h6>参考サイト</h6>
+<ul>
+<li><a href="http://snowdream.github.io/javascript-style-guide/javascript-style-guide/jp/index.html" target="_blank" rel="noopener">snowdream.　JavaScript Style Guide　Airbnb JavaScript Style Guide</a>
+<li><a href="http://snowdream.github.io/javascript-style-guide/javascript-style-guide/jp/naming-conventions.html" target="_blank" rel="noopener">snowdream.　命名規則 </a>
+</ul></blockquote>
+<p> 変数の使う場所や状態でキャメルケースかパスカルケースでかき分けるというのがよく見る命名規則の考え方のようです.
+<br>読み慣れる書きなれることで身につけましょう。</p>
+</div>
+
+<div id="s5" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>変数にデータを入れる</h2>
+<p>変数にデータを入れることを<strong>代入</strong>といいます。</p>
+<p><em>「左側」の代入される変数次に「=」イコールを記述する、代入するデータ(値)を「右側」に書く。</em>「=」の前後には半角スペースがはいってもなくてもよい<br>varと識別子の間は半角スペースを必ず入れます。</p>
+<p><strong>宣言が終わったらセミコロンを忘れずに記述しましょう。</strong></p>
+<figure>
+<figcaption>javascript の変数への代入例</figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+<code>be_light = "sun light";</code></pre>
+</figure>
+<p>変数「be_light」に文字列「sun light」を代入しました。これで変数be_lightに文字列が記憶されます。
+javascriptのメモリはwindowが保持されているあいだは情報を保っています。</p>
+<h5>変数の上書き</h5>
+<p>変数は上書きできます。上書きされた変数の内容はなくなります。</p>
+<figure>
+<figcaption>javascript の変数への代入例</figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+<code>var god = "伊邪那岐命";
+god = "Christus";
+</code></pre>
+</figure>
+<p>変数 godの保持したデータは文字列Christusです。</p>
+
+<h5>プログラムを書き初めのときは、慣れないと同じ変数名を宣言して混乱します。</h5>
+<p>variable 文は変数を宣言し、任意でそれをある値に初期化します。
+ですので同じ名前の変数名を2回宣言することは混乱を招きデバックに手間をかけます。</p>
+<figure>
+<figcaption>javascript の変数への代入例</figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+<code>
+// Bad case
+var x;
+/*
+数行後
+        */
+var x = 10;
+</code></pre>
+</figure>
+<p>最初の var x はなに？どう違うの？ 誤解を与えます。
+  その値の処理が済んだら上書きして使い回しましょう。<br>
+  もしデータの意味が違う場合や上書きされてほしくなければ別名の変数名を宣言しましょう。</p>
+<p>同じファイルに同じ名前の変数を宣言するのはメモリーの無駄使いです。</p>
+<figure>
+<figcaption>javascript の変数への代入例</figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+<code>//good case
+var x; //宣言
+x = 10;//代入
+</code>
+</pre>
+</figure>
+
+<hr>
+</div>
+<!-- editable area end ########             -->
+</article>
+</div>
+<!-- /container-->
+
+<!-- / w-aside2 --->

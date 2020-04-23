@@ -1,0 +1,86 @@
+---
+title: HTML CSSのデバッグ
+discription: discription
+cat: CSS
+next-page-url: "403_css_code.html"
+filename: 402_css_code.html
+prev-page-url: "41_css_code.html"
+titlename: "{{title.titlename}}"
+text: "{{item.text}}"
+text2: "{{item.text}}"
+---
+<div class="container mb-5">
+<article id="w-article">
+<!-- editable area ########             -->
+        <h1>{{title}} - {{cat}}</h1>
+        <p><span>category:</span> <span class="badge badge-primary">{{cat}}</span></p>
+        <hr>
+
+<!-- 序章 モジュール -->
+<div class="card mb-4">
+<div class="card-body clearfix">
+  <p class="card-text">flex boxはFlexible Box Layout Moduleのことで従来のレイアウトより柔軟にレイアウトが組める、displayプロパティのです。</p>
+    <p>新規でサイトを組む場合flex で組んだほうがよういでしょう。floatでレイアウトを組むよりもより簡単で、習得すれは多くのレイアウトをこのFlexレイアウトで組むことができるようになるでしょう。</p>
+</div>
+</div>
+
+
+
+<!-- 目次 モジュール -->
+<div class="bg-light p-3 mb-4">
+<h2>目次</h2>
+<ul id="w-indexlistBox">
+    <li v-for="item in items" class="w-indexlistBox-list">
+      <a v-bind:href="item.id" data-scroll >{{text2}}</a>
+    </li>
+</ul>
+</div>
+<!-- /目次 モジュール -->
+<!-- 本文のセクション モジュール -->
+<div id="s1" class="mt-n6 pt-6 mb-6 clearfix">
+  <h2>googele chrome</h2>
+<p>下記のサイトがわかりやすいかったので紹介します。</p>
+  <p><a href="https://saruwakakun.com/html-css/basic/chrome-dev-tool" target="_blank" rel="noopener">初心者向け！Chromeの検証機能（デベロッパーツール）の使い方</a></p>
+<div class="card mb-4">
+<h3 class="card-header">起動の仕方</h3>
+<div class="card-body">
+<h4>方法1</h4>
+<p>ウィンドウ上でマウス右クリック＞コンテキストメニュー展開＞検証</p>
+<h4>方法2</h4>
+<p>[windows] <kbd>F-12</kbd> </p>
+<p>[mac]<kbd>shift</kbd> + <kbd>command</kbd> + <kbd>i</kbd></p>
+<p>同じ操作をすると閉じます</p>
+</div>
+</div>
+<div id="s2" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>Element「エレメント」タブ</h2>
+<p>Element（要素）タブ（1）のはDOMの構成上の要素の構造を確認できます。</p>
+<p>要素の内容は△で格納されています。△をクリックすることで展開して内容子孫要素を確認できます。</p>
+<p>要素をホバーするとウィンドウで該当の要素が青く色づけされて何処にレイアウトされているかわかります。</p>
+<p>
+左上の□のマーク（2）をクリックしてウィンドウでの要素選択モードをONにするとElement（要素）タブではなくウィンドウを選んで要素を確認できます。</p>
+
+<div>
+<img src="_images/_html/SS_kensho.png" alt="検証のスクリーンショット" class="img-fluid">
+<ul>
+  <li>1 Element「エレメント」タブ</li>
+  <li>2 window上の要素を選ぶ</li>
+  <li>3 styleタブ</li>
+</ul>
+
+</div>
+</div>
+
+<div id="s3" class="mt-n6 pt-6 mb-6 clearfix">
+    <h2>styleタブ</h2>
+<p>styleタブ （3）は Elementタブにくっついている、スタイルを確認するための窓です。
+  上から順番にCSSが該当要素に適応されているのがわかります。スクロールの最後にボックスモデルの画像があります。ここで要素の余白、幅、高さが確認できます。
+  </p>
+</div>
+
+<!-- editable area end ########             -->
+</article>
+</div>
+<!-- /container-->
+
+<!-- / w-aside2 --->

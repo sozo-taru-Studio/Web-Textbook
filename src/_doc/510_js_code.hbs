@@ -1,0 +1,274 @@
+---
+title: documentインターフェイス
+discription: discription
+cat: Javascript
+next-page-url: "511_js_code.html"
+filename: 510_js_code.html
+prev-page-url: "509_js_code.html"
+titlename: "{{title.titlename}}"
+text: "{{item.text}}"
+text2: "{{item.text}}"
+---
+<div class="container mb-5">
+<article id="w-article">
+<!-- editable area ########             -->
+        <h1>{{title}} - {{cat}}</h1>
+        <p><span>category:</span> <span class="badge badge-primary">{{cat}}</span></p>
+        <hr>
+<!-- 序章 モジュール -->
+<div class="card mb-4">
+<div class="card-body clearfix">
+<div class="float-lg-right col-lg-5 mb-2"><img src="_images/_JS/doc_640.jpg" alt="flexlayput " class="img-fluid"></div>
+<p>ウェブページの要素を取ってきたり書き換えたりする。</p>
+</div>
+</div>
+<!-- 目次 モジュール -->
+
+<div class="bg-light p-3 mb-4">
+<h2>目次</h2>
+<ul id="w-indexlistBox">
+    <li v-for="item in items" class="w-indexlistBox-list">
+      <a v-bind:href="item.id" data-scroll >{{text2}}</a>
+    </li>
+</ul>
+</div>
+<!-- / 目次 モジュール -->
+
+<!-- 本文のセクション モジュール -->
+<div id="s1" class="mt-n6 pt-6 mb-6 clearfix">
+
+<h2 id="s0">Documentオブジェクト</h2>
+
+<h4>オブジェクトの基礎知識</h4>
+<p>
+オブジェクトとはデータ型でプリミティブ型と対なすデータの型です。データの塊で複数の情報や処理をもっています。自分でもプログラムをすればオリジナルのオブジェクト型のデータは作れますがjavascriptはブラウザにすでに規定（設計）されたオブジェクト型のデータをいくつも持っています。すでに内蔵されたオブジェクトをビルドインオブジェクトと呼びます。Documentオブジェクトは下記の引用のようにwebページの表示内容をJavaScriptで操作できるようにしたオブジェクトです。</p>
+<p>windowオブジェクトの下部にDocumentオブジェクトがあります。オブジェクトにはプロパティとメソッドと呼ばれる部位があります。</p>
+
+<h4>プロパティとは。オブジェクトの情報保管庫</h4>
+<p>プロパティはオブジェクト内に保存されたデータを格納できる変数みたいなものです。変数の役割だが変数と区別するためプロパティという。役割は情報の保管。「オブジェクト名.プロパティ名」で「.」ドットでつなげてアクセスできる。</p>
+<figure>
+<figcaption>location.hrefプロパティの例</figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+<code>
+/*location.hrefプロパティ*/
+var nowURL = window.location.href;
+console.log(nowURL); //consoleオブジェクトのlogメソッドに変数hogeをセットしている。
+</code></pre>
+</figure>
+<p>この例では現在開いているウェブサイトのURLを取得できる。<br><code>window.location.href;</code>ウィンドウオブジェクトのロケーションオブジェクトのレフプロパティにアクセスしています。
+<br>オブジェクトは住所表記のように<em>規定された名前を「.」区切りでつなげていくことでデータにアクセスできる。</em></p>
+<blockqupte><p><a href="https://developer.mozilla.org/ja/docs/Web/API/Window/location"  target="_blank" rel="noopener">window.location - MDN</a>
+</p></blockqupte>
+<h4>メソッドとは。オブジェクトの関数</h4>
+<p>オブジェクト内で定義された関数、定義された処理をおこなう。オブジェクトにある処理なので単独グローバルには関数。役割は処理、<br>「オブジェクト名.メソッド名()」「.」ドットでつなげてで処理ができる。</p>
+<figure>
+<figcaption>console.log()メソッドの例</figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+<code>
+/*メソッドの例*/
+var hoge = "global";
+console.log(hoge); //consoleオブジェクトのlogメソッドに変数hogeをセットしている。
+hoge ="global??"
+window.console.log(hoge);
+</code></pre>
+</figure>
+<p>関数の呼び出しと同じでキーワードの後ろに「()」小さいカッコをつけるとメソッドの呼び出して処理をしてくれる。</p>
+<blockquote>
+<p>Document インターフェイスはブラウザーに読み込まれたウェブページを表し、DOM ツリー であるウェブページのコンテンツへのエントリーポイントとして働きます。DOM ツリーは &lt;body&gt; や &lt;table&gt; など、多数の要素を持ちます。これはページの URL を取得したりドキュメントで新たな要素を作成するなど、ドキュメント全体に関わる機能を提供します。
+Document インターフェイスは、あらゆる種類のドキュメントに対して共通のプロパティやメソッドを提供します。また、ドキュメントの種類 (例: HTML、XML、SVG など) に応じて、より大規模な API を使用できます。コンテンツタイプ text/html で提供される HTML ドキュメントでは、HTMLDocument インターフェイスも実装します。一方 XML や SVG ドキュメントでは、XMLDocument インターフェイスを実装します。</p>
+</blockquote>
+  <h3>要素を取得する方法</h3>
+  <p></p>
+  <p>結論からいうと要素を取得にはかなり熟練が必要です。ですから要素を操作するに特化したJQueryが重宝されます。
+  下記のサイトは最近になってバニラのjavascriptでもちゃんと書けば要素の取得が楽になってきました。<br>jQueryライブラリ-に関しては別の機会で勉強しましょう。</p>
+<blockquote><p>
+  <ul>
+    <li><a href="https://qiita.com/shshimamo/items/ba3a57a81d9780030969" target="_blank" rel="noopener">生JSとjQueryの基本操作比較 - Quiita</a></li>
+    <li><a href="http://youmightnotneedjquery.com/" target="_blank" rel="noopener">You might not need jQuery</a></li>
+  </ul>
+  </p></blockquote>
+</div>
+
+
+<div id="s2" class="mt-n6 pt-6 mb-6 clearfix">
+ <h2>IDからとる。getElementByIdメソッド</h2>
+  <p>getElementByIdメソッドは引数にHTML上のid属性を文字列型で渡すことで該当要素をElementオブジェクトで渡してくれます。<br>無ければnull値が返ってきます。</p>
+  <p>id属性を持った要素はユニークなのでレスポンスが早いです。</p>
+<blockquote><p>指定された ID を持つ要素を返します。</p>
+<ul>
+  <li><a href="https://developer.mozilla.org/ja/docs/Web/API/Document/getElementById"  target="_blank" rel="noopener">document.getElementById - MDN</a></li>
+  <li><a href="https://developer.mozilla.org/ja/docs/Web/API/Element"  target="_blank" rel="noopener">Element - MDN</a></li>
+</ul>
+</blockquote>
+    <figure>
+    <figcaption>getElementByIdの使い方例</figcaption>
+    <pre class="line-numbers language-javascript" data-src="prism.js">
+    <code>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="ja"&gt;
+&lt;head&gt;
+&lt;title&gt;getElementById example&lt;/title&gt;
+
+  &lt;script&gt;
+  function changeColor(newColor) {
+  var elem = document.getElementById("para1");//Elementオブジェクトを取得
+    elem.style.color = newColor;//スタイルの文字色を引数newColorにする。
+  }
+  &lt;/script&gt;
+  &lt;/head&gt;
+
+  &lt;body&gt;
+    &lt;p id="para1"&gt;Some text here&lt;/p&gt;
+    &lt;button onclick="changeColor('blue');"&gt;blue&lt;/button&gt;
+    &lt;button onclick="changeColor('red');"&gt;red&lt;/button&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+    </figure>
+    <p>このソースはボタン要素を押すとonclick属性にセットされたchangeColor()関数が実行処理されid <code>para1</code>の文字色が変わる。</p>
+
+
+</div>
+
+<div id="s3" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>classからとる。getElementsByClassName('className')メソッド</h2>
+  <p>取得要素がクラスの場合、HTML内では複数の要素を取得する可能性がある。ですので返してくれるオブジェクトがElementオブジェクトとは違います。まずは中身を確認しましょう。</p>
+  <figure>
+  <figcaption>getElementsByClassName('story')</figcaption>
+  <pre class="line-numbers language-javascript" data-src="prism.js">
+  <code>
+  var elm = document.getElementsByClassName('story');
+  console.dir(elm);
+  </code>
+  </pre>
+  </figure>
+  <div class="story">
+  <p><code> class = "story"</code>が入った要素</p>
+  </div>
+  <p><code>console.dir(elm);</code>はオブジェクトの中身を確認できるようにコンソールに表示します。データ型objectは単数（プリミティブ型）のデータと違い中に複数のプロパティに分かれてデータが入っています。</p>
+  <h5><code>.getElementsByClassName()</code>メソッドが返すデータ</h5>
+  <p><code>.getElementsByClassName()</code>メソッドはHTMLCollectionオブジェクトを返します。</p>
+  <blockquote>
+  <p><code>HTMLCollection</code>オブジェクトは要素群(document内の順序)の一般的な集合<b>(配列)</b>を表現したインターフェイスで，リストから選択するためのメソッドとプロパティを提供します．</p>
+  <p><a href="https://developer.mozilla.org/ja/docs/Web/API/HTMLCollection" target="_blank" rel="noopener">HTMLCollection - MDN</a></p>
+  </blockquote>
+<ul>
+  <li>プロパティ：<code>HTMLCollection.length</code>：いくつの要素はあったか返す</li>
+  <li>メソッド：<code>HTMLCollection.item(index)</code> ：リスト内の指定されたindex(先頭はゼロ)位置にある特定のノードを返します．例えば一番最初の要素がほしければ[0]を渡してください。</li>
+</ul>
+<figure>
+<figcaption>getElementsByClassName('story')2</figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+<code>
+  var elm = document.getElementsByClassName('story');
+for(var i=0; i &lt; elm.length; i++){
+    var childNode = elm.item(i);//HTMLCollectionオブジェクトからnodeオブジェクト化
+    console.log(childNode);
+    var firstChildElm = childNode.firstChild;//最初の子要素を所得内容は「改行コードと半角スペース」
+    console.log(firstChildElm);
+    console.log(firstChildElm.nodeType);//TEXT_NODE 3
+    console.log(firstChildElm.TEXT_NODE == firstChildElm.nodeType);
+    var text = childNode.textContent;//テキストを取得
+    console.log(text);
+}
+</code>
+</pre>
+</figure>
+<p>クラスや要素名からjavascriptでアプローチすると様々なオブジェクトを経由してアクセスしないといけないので、オブジェクトの知識量がたくさん必要です。</p>
+</div>
+
+<div id="s4" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>document.formsから取得する。</h2>
+<p>ユーザーが入力したデータをjavascriptで受け取るオブジェクトを学びます。</p>
+<p>formはname属性値から取得することができ入力アイテムを比較的簡単に要素を探すことができます。</p>
+<blockquote>
+<p>forms は現在の文書のフォーム要素のリストを返します。</p>
+<p><a href="https://developer.mozilla.org/ja/docs/Web/API/Document/forms" target="_blank" rel="noopener">
+document.forms - MDN</a></p>
+</blockquote>
+<p>forms は現在の文書のフォーム要素のリストを返します。</p>
+<figure>
+<figcaption></figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+<code>
+//form要素取得
+  var elm = document.forms[0];
+  console.log(elm);
+  elm = document.forms.testForm;
+  console.log(elm);
+  //radio チェックの入った要素を取得できる。　何も入ってないとundifindを返す。
+  var radioValue= elm._radio.value;
+  console.log( radioValue );
+  //text 空の場合「""」空のテキストがはいります。
+  var txtValue = elm.txt.value;
+  console.log("テキスト:" + txtValue );
+  if(txtValue){
+    console.log("テキスト:" + txtValue );
+  } else{
+    var errerMes = "未入力です。";
+    console.log("テキスト:" + errerMes );
+  }
+</code></pre>
+</figure>
+<div class="sample" style="background-color:#f0f0f0;padding:1.6em;">
+  <form name="testForm" action="#" >
+  <div>
+    <fieldset>
+      <legend>radio</legend>
+      <label><input name='_radio' type='radio' value='ほげ' checked="checked" />hoge</label>
+      <label><input name='_radio' type='radio' value='ふご' />fugo</label>
+      <label><input name='_radio' type='radio' value='ふが' />fuga</label>
+    </fieldset>
+    <fieldset>
+      <legend>text</legend>
+      <label>文字を入力 :<input name='txt' type='text' /></label>
+    </fieldset>
+    <fieldset>
+      <legend>checkBox</legend>
+      <label><input name='checkBox0' type='checkbox' value='ほげ' checked="checked" />hoge</label>
+      <label><input name='checkBox1' type='checkbox' value='ふご' />fugo</label>
+    </fieldset>
+    </div>
+  </form>
+</div>
+
+<p>チェックボックスの取得</p>
+<figure>
+<figcaption></figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+<code>
+var elm = document.forms.testForm;
+var isChecked = elm.checkBox0.checked
+if(isChecked){
+  console.log(elm.checkBox0.value);
+}
+</code></pre>
+</figure>
+<p>フォームアイテムはvalueプロパティを変数に渡して処理します。チェッボックスはjavascriptだけではすべてのvalueを一括して取得するのは少し大変です。<br>JQueryを使った取得をするほうが早そうです。ここでは解説しません。</p>
+<blockquote>
+  <a href="http://phiary.me/js-form-value-accessor/" target="_blank" rel="noopener">ピュアな JavaScript でフォーム(form)系要素の値を取得, 設定する方法一覧</a>
+</blockquote>
+</div>
+
+<div class="alert-info p-4">
+<h3 >まとめ</h3>
+<ol>
+  <li>オブジェクトはデータ型で複数のデータの塊</li>
+  <li>プロパティはオブジェクトの中にある変数</li>
+  <li>メソッドはオブジェクトの中にある関数</li>
+  <li>documentオブジェクトは要素をオブジェクトで返してくれる。</li>
+  <li>document.getElementByIdメソッドidで要素を取得すると動作が早い</li>
+  <li>document.メソッドは返すオブジェクトが違うので慣れが必要</li>
+  <li>formsはname属性値でアクセスできる。</li>
+</ol>
+</div>
+
+
+
+
+<!-- editable area end ########             -->
+</article>
+</div>
+<!-- /container-->
+
+<!-- / w-aside2 --->

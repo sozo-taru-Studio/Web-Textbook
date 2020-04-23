@@ -1,0 +1,564 @@
+---
+title: Object オブジェクト型データ
+discription: discription
+cat: Javascript
+next-page-url: "516_js_code.html"
+filename: 515_js_code.html
+prev-page-url: "514_js_code.html"
+titlename: "{{title.titlename}}"
+text: "{{item.text}}"
+text2: "{{item.text}}"
+---
+<div class="container mb-5">
+<article id="w-article">
+<!-- editable area ########             -->
+        <h1>{{title}} - {{cat}}</h1>
+        <p><span>category:</span> <span class="badge badge-primary">{{cat}}</span></p>
+        <hr>
+<!-- 序章 モジュール -->
+<div class="card mb-4">
+<div class="card-body clearfix">
+<div class="float-lg-right col-lg-5 mb-2"><img src="_images/_JS/plexiglas_640.jpg" alt="flexlayput " class="img-fluid"></div>
+<p>複数の情報が入っている変数 Object 型変数です。object変数の理解を深めればほかのプログラムやデータの構想なども理解しやすくなるんじゃにでしょうか？</p>
+<div>
+  <h3 class="h4">データ型のおさらい</h3>
+  <div>
+   <ul>
+     <li>プリミティブ型 データは変数1個 に データ1個を記憶できる。</li>
+     <li>オブジェクト型 データは変数1個 に 多数のデータを記憶できる。</li>
+    </ul>
+  </div>
+</div><!-- .TG -->
+</div>
+</div>
+<!-- 目次 モジュール -->
+
+<div class="bg-light p-3 mb-4">
+<h2>目次</h2>
+<ul id="w-indexlistBox">
+    <li v-for="item in items" class="w-indexlistBox-list">
+      <a v-bind:href="item.id" data-scroll >{{text2}}</a>
+    </li>
+</ul>
+</div>
+<!-- / 目次 モジュール -->
+
+<!-- 本文のセクション モジュール -->
+<div id="s1" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>オブジェクトとは プロパティとは</h2>
+     <p>Object は現実世界のものになぞらえることができまます。 イメージしてください。 オブジェクトはプロパティと型を持つ独立した存在です。 オブジェクトをコップ（カップ）とかんがえてください。 色 形 重さ 素材 容量など性質を持っています。コップの色や形重などオブジェクトを特徴づける要素がプロパティとなります。<br>javascriptもオブジェクトプロパティを持つことができ。プロパティによってそのオブジェクトの特徴を定義することができます。</p>
+      <blockquote><p>JavaScript のオブジェクトは、自身に関連付けられたプロパティを持ちます。オブジェクトのプロパティは、オブジェクトに関連付けられている変数と捉える事ができます。オブジェクトに属するものという点を除けば、オブジェクトのプロパティは基本的に通常の JavaScript 変数と同じようなものです。オブジェクトのプロパティは、オブジェクトの特性を定義します。以下の様に、オブジェクト名とそのプロパティを単純にドット演算子で繋いで記述する事でオブジェクトのプロパティへアクセスできます。</p></blockquote>
+      <dl>
+      <dt>※ドット演算子</dt>
+      <dd><dfn>メソッドチェーン</dfn> 関数をドット[.]でつないで処理を記述するステートメント（表記法）。<dfn>メソッド</dfn>はオブジェクトデータ型に組み込まれた関数のこと
+        <figure>
+        <figcaption>メソッドチェーン</figcaption>
+        <pre class="line-numbers language-javascript" data-src="prism.js"><code>objectName.propertyName</code></pre></figure>
+      </dd>
+      </dl>
+</div>
+
+
+<div class="mt-n6 pt-6 mb-6 clearfix" id="s2">
+     <h2>オブジェクトの表記ルールと代入</h2>
+      <p>すべての JavaScript の変数と同じく、オブジェクト名（通常の変数にもなります）とプロパティ名では、大文字と小文字は厳密に区別されます。プロパティに値を代入することでプロパティを定義する事ができます。
+      <br>「オブジェクト名」ドット「プロパティ名」</p>
+<ul class="counter">
+<li>
+  <h4><span>代入例</span> ドット演算子での代入</h4>
+  <ol>
+    <li><p>変数にnewステートメントでObject()を代入しインスタンスを作る</p></li>
+    <li>任意のプロパティを宣言し代入する。任意のプロパティ名は varなどの宣言の必要がありません。</li>
+  </ol>
+  <figure>
+  <figcaption>//例 コップobjectの重量と容量</figcaption>
+  <pre class="line-numbers language-javascript" data-src="prism.js">
+  <code>var cup = new Object();
+  cup.weight = '65mg';
+  cup.max_capacity ='100cc';
+  </code></pre>
+  </figure>
+  <h5>コンソール (console) の場所 に出力</h5>
+  <figure>
+  <pre class="language-markup line-numbers" data-src="prism.js">
+  <code>&lt;script&gt;
+  console.log(&#039;コップの重さ&#039; + cup.weight + &#039;コップの容量&#039; + cup.max_capacity);
+  &lt;/script&gt;
+  </code></pre>
+  </figure>
+  <p>1行目:変数を宣言後その変数にnew ステートメントでobject()を入力<br>
+  2行目:オブジェクト <code>cup</code>に<code>weight</code>プロパティを宣言後そのプロパティに<code>'65mg'</code>を入力<br>
+  3行目:オブジェクト <code>cup</code>に<code>max_capacity</code>プロパティを宣言後そのプロパティに<code>'100cc'</code>を入力
+  </p>
+  <blockquote>
+  <dl class="toggleWrap"><dt role="button">object</dt>
+    <dd class="is_hidden" aria-expanded="true">
+      <p>Object コンストラクタはオブジェクトラッパーを 1 つ生成します</p>
+      <p>Object コンストラクタは与えられた値のオブジェクトラッパーを生成します。値が null や undefined の場合、空のオブジェクトを生成して返します。それ以外の場合、与えられた値に対応する型のオブジェクトを返します。値が元々オブジェクトだった場合には、その値自体を返します。</p>
+      <p>コンストラクタではないコンテキストで呼び出されたときは、Object は、new Object() と同じように振舞います。</p>
+      <p>出典：
+  <cite><a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object - JavaScript | MDN</a></cite></p>
+    </dd>
+  </dl></blockquote>
+  <div class="card p-4">
+  <h5>解説</h5>
+  <p>「Object コンストラクタはオブジェクトラッパーを 1 つ生成します」 は コンストラクタ（建築屋）はObuject型データのひな型をとりつだします。</p>
+  <p>	「Object コンストラクタは与えられた値のオブジェクトラッパーを生成します。値がnullやundefinedの場合、空のオブジェクトを生成して返します。それ以外の場合、与えられた値に対応する型のオブジェクトを返します。値が元々オブジェクトだった場合には、その値自体を返します。」
+  空のオブジェクトとは<code>{}</code>です。ユーザーが自由に代入していくために空でつくります。<br>
+  引数でデータをあたえた場合はそのままオブジェクトの内容として引き継ぎます。</p>
+  <p>「コンストラクタではないコンテキスト(前後関係、文脈、脈絡、コンテキスト、状況、環境)で呼び出されたときは、Object は、new Object() と同じように振舞います。」＝ 暗に宣言を省略した書き方をしたとき new Object()が代入されるよ。という意味。</p>
+  </div>
+</li>
+<li>
+ <div>
+  <h3>代入例 ブラケット表記法でのプロパティの代入</h3>
+  <dl><dt>ブラケットとは</dt>
+  <dd>
+  これ &quot; <b>[ ]</b> &quot;です。半角の大かっこです。
+  </dd></dl>
+  <p>JavaScript オブジェクトのプロパティは、ブラケット表記法でもアクセスや設定ができます。オブジェクトは連想配列と呼ばれることがあります。</p><p>それは個々のプロパティが、アクセスのために使われる文字列値と関連づけられているからです。<br>例えば、<code>cup</code>オブジェクトのプロパティに次のようにアクセスできます</p>
+  <figure>
+  <figcaption>//例 <code>cup</code>Objectにブラケットで代入</figcaption>
+  <pre class="line-numbers language-javascript" data-src="prism.js">
+  <code>
+  var cup = new Object({"capacity":200});
+  cup["ブランド"] = "有田焼";
+  cup["color"] = "white";
+  console.dir(cup);
+  </code></pre></figure>
+  <figure>
+  <figcaption>コップobject に値を呼び出す</figcaption>
+  <pre class="line-numbers language-javascript" data-src="prism.js">
+  <code>console.log('ブランド' + cup.ブランド);//非推奨です
+  console.log('ブランド' + cup['ブランド']); //'有田焼'</code></pre></figure>
+  <p>オブジェクトプロパティの名前には正しいJavaScript文字列か文字列に変換できるあらゆるものを使えます。しかしながら、JavaScript 識別子として正しくないプロパティ名（例えば空白やダッシュを含んでいたり、数字で始まったりするプロパティ名）には、ブラケット（角括弧）表記法でのみアクセスできます。</p>
+  <p><strong> この表記法はプロパティ名を動的に決める場合（プロパティ名が実行時に決まる場合）に便利です。</strong></p>
+  <p><small><strong>日本語でのプロパティ表記</strong>はOSやブラウザの文字コード 可読性からも<strong>推奨いたしません。</strong></small></p>
+  <h5>動的にプロパティをセット</h5>
+  <figure>
+  <figcaption>動的にプロパティをセット 記入例</figcaption>
+  <pre class="line-numbers language-javascript" data-src="prism.js">
+  <code>
+    var myObj = new Object(), //オブジェトをよびだし
+        str = "myString",// 文字列
+        rand = Math.random(),//数値
+        obj = new Object();// 新しいオブジェトをセット
+
+    myObj.type              = "Dot syntax";
+    myObj["date created"]   = "String with space";
+    myObj[str]              = "String value";
+    myObj[rand]             = "Random Number";
+    myObj[obj]              = "Object";
+    myObj[""]               = "Even an empty string";
+
+    console.dir(myObj);
+  </code></pre></figure>
+  <p>myObjにはプロパティが設定されていない。プリミティブ型の変数でプロパティ名を指定し代入する。
+  変数 str,rand,objはそれぞれ何らかの処理がされたあとに渡されたデータがプロパティ名に代入される。</p>
+  <p>ポイントはプロパティ名（キー）が処理中に決まる場合などはブラケット表記を使う。</p>
+  <h4>変数内の文字列値を使ってプロパティにアクセスすることもできます</h4>
+  <p>連想配列形式での代入。Arreyオブジェクトのようにindex[数値]で変数を管理するのではなくキーワード（プロパティ）を元に値を入れていくのがオブジェクトの特徴。<br><b>プロパティ</b>のことを<b>キー</b>または<b>キーワード</b>と呼ぶこともあります。</p>
+  <figure>
+  <figcaption> キーワードを動的に渡していく簡単な方法 記入例</figcaption>
+  <pre class="line-numbers language-javascript" data-src="prism.js">
+  <code>var propertyName = "Contained";//内容
+  cup[propertyName] = "liquid";//液体
+  propertyName = "owner";//所持者
+  cup[propertyName] = "Mr.Hampty";//所持者名</code></pre>
+  </figure>
+  <p>変数にプロパティ名を渡し値を新しく生成したプロパティに代入している。</p>
+  <div>
+  <h4>ブラケット（角括弧 [] ）表記法の注意点</h4>
+  <p>ブラケット内で引用符がない場合が<strong>変数としてあつかわれる。</strong>よって事前に代入しておかないと構文エラーとなる。</p>
+  <figure>
+  <figcaption></figcaption><pre class="line-numbers language-javascript" data-src="prism.js">
+  <code>cup['color'] = "moccasin";//errer
+  //var color = "keyColor";// ここの表記がないとerrerになる
+  cup[color] = "ghostwhite";//[color]プロパティは値がまだないことになっている。
+  console.log("コップのキーカラーは"+cup.keyColor);</code></pre>
+  </figure>
+  <p><small>上記の場合 var color になにかデータを代入しないとエラーになります。</small></p>
+  </div>
+
+  </div>
+</li>
+</ul>
+</div>
+
+<div class="mt-n6 pt-6 mb-6 clearfix" id="s3">
+<h2>新しいコンストラクタ関数を定義する。</h2>
+  <div>
+<p>次の 2 つの手順でオブジェクトを作ることができます </p>
+<ol>
+  <li>step1:コンストラクタ関数を記述してオブジェクトの型を定義します。この時、通常の変数と見分ける為慣習的に、1 文字目は大文字とします。「パスカル表記」</li>
+  <li>step2:<code>new</code> を使ってオブジェクトのインスタンスを作ります。</li>
+</ol>
+<p>コンストラクター関数は オブジェクトの型紙やひな形作るとかんがえてください。プロトタイプ(量産前の製品)と呼ばれていることもあります。</p>
+<p>ビルドインオブジェクトのArrayオブジェクトやDateオブジェクトの様にあらかじめ設計したコンストラクタ関数のインスタンス化（実体化）をして実行します。</p>
+<figure>
+  <figcaption>コンストラクタ関数の記述例</figcaption>
+  <pre class="line-numbers language-javascript" data-src="prism.js">
+  <code>
+    function Task(type,client,taskmeta) {
+    this.type = type;// 依頼のタイプ
+    this.client = client;//クライアントのデータ 名前
+    this.taskmeta = taskmeta;//仕事のメタなデータ受付番号
+  }</code></pre></figure>
+    <p>Taskオブジェクトのデータを渡すプロパティはtype, client, taskmeta,です。 task関数は以上の3つのオブジェクト型の変数を定義しています。</p>
+    <p>コンストラクタ関数・・・なんかかっこいい言い方していますがただの関数(処理)です。<code>this</code>ステートメントで関数自身を指定しているのがポイントです。</p>
+    <p> この例では TasK関数であり。Taskオブジェクトです。他の言語と違い 一見すると只の関数なのか？コンストラクタ関数？なのか中身を読まないと理解できないのがjavascriptの特徴でもあります。（コンストラクタが明確ではない。）</p>
+    <p>Taskオブジェクトは処理であり実態がありません。引数で渡されたtype, client, taskmeta,プロパティがセットされて初めて。参照できるデータとして使えまます。セットする作業をオブジェクトのインスタンス化（実体化といいます。） </p>
+<figure>
+  <figcaption>インスタンスの記述例</figcaption>
+  <pre class="line-numbers language-javascript" data-src="prism.js">
+  <code>var myTask = new Task("maigo", "mother cat", 2000);</code></pre>
+</figure>
+  <p>Task関数に仕事のデータをセットして 変数myTaskに代入 つまりここで初めてオブジェクトTaskが生成される。（実体化） myTaskオブジェクトはTaskオブジェクトのインスタンスといわれる。 この作業をインスタンス化という。</p>
+  <p>関数宣言処理が呼び出さないと実行されないと同様にコンストラクタはインスタンス化しないとデータとして機能しない。</p>
+<h5>ネストされたオブジェクトの作り方</h5>
+  <p>コンストラクタの子要素に別のコンストラクタで定義したインスタンスを引数にわたしてネストできる。</p>
+  <figure>
+  <figcaption>ネストされたオブジェクトの例</figcaption>
+  <pre class="line-numbers language-javascript" data-src="prism.js">
+  <code>/* コンストラクション */
+    var myTask = new Task("maigo", "mother cat", 2000);
+/*新しいコンストラクタ*/
+    function TaskDetail(id,cost,fee){
+    this.id = id;//int
+    this.cost = cost;//int
+    this.fee = fee;//int
+  }
+/*インスタンス化*/
+  var myTaskDetail = new TaskDetail(1,35600,40000);
+/*親オブジェクトの引数に渡す。*/
+  var secundTask = new Task("maigo", "mother cat",myTaskDetail);
+/*データの参照*/
+  console.log(secundTask.taskmeta.fee);//40000</code></pre>
+</figure>
+<p>TecundTaskオブジェクトのtaskmetaプロパティにtaskDetail オブジェクトのインスタンスsecundTaskを代入</p>
+</div>
+<figure>
+<figcaption>参照 記述例</figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+<code>secundTask.taskmeta.fee//40000</code></pre></figure>
+<p>プロパティfeeの値を知りたければ上記にように オブジェクトをドット演算子でつないプロパティを指定して呼び出す。</p>
+
+</li>
+</ul>
+
+
+<h3>コンストラクタ関数の再設定</h3>
+<p>すでに定義されたオブジェクトはいつでもプロパティを追加できる。状況を表すstatusプロパティをsecundTaskオブジェクトに追加してみましょう</p>
+<figure>
+<figcaption>オブジェクトに新しいプロパティの追加 記述例</figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+<code>//新しいプロパティの追加
+secundTask.status = 'progress';// 'yet','progress','Setteled','Pending';
+//参照
+console.log(secundTask.type + 'の進行状況' + secundTask.status);//出力： maigoの進行状況progress</code></pre></figure>
+  <p>ですが最初に定義した。myTaskにはプロパティ statusプロパティはございません。</p>
+  <figure>
+  <figcaption>別のインスタンスでstatusプロパティを確認する。記述例</figcaption>
+  <pre class="line-numbers language-javascript" data-src="prism.js">
+  <code>//参照
+  console.log(myTask.type + 'の進行状況' + myTask.status);// 出力：maigoの進行状況undefined</code></pre></figure>
+  <p>同じ型のすべてのオブジェクトに新しいプロパティを追加するには、car オブジェクト型の定義にそのプロパティを追加する必要があります.</p>
+  <h4>Object.create メソッドの利用</h4>
+  <blockquote>
+<p>オブジェクトは <code>Object.create()</code> メソッドを使っても作れます。コンストラクター関数の定義なしに、作りたいオブジェクトのプロトタイプを選べるため、このメソッドは大変便利です。</p></blockquote>
+<figure>
+<figcaption>Object.create 記述例</figcaption>
+  <pre class="line-numbers language-javascript" data-src="prism.js">
+  <code>// Member のプロパティとメソッドをカプセル化
+var Member = {
+  type: "Yaruo", // プロパティのデフォルト値、「やる夫」
+  displayType : function(){  // Member のタイプを表示するメソッド
+    console.log(this.type);
+  }
+}
+
+// member1 という新しい Member タイプ(インスタンス)を作成
+var member1 = Object.create(Member);
+member1.displayType(); // 出力 : Yaruo
+
+// dekiryo という新しい Menber タイプ(インスタンス)を作成
+var dekiryo = Object.create(Member);
+dekiryo.type = "Dekiruo";
+dekiryo.displayType(); // 出力 : Dekiruo</code></pre></figure>
+<p><small>上記のコードをみても コンストラクタ関数を使ったときとどう便利なのかよくわからない。</small><br>
+思い付きで作ったり、ソースコード上でコンストラクション関数で定義されていないオブジェクトを流用したインスタンスオブジェクトをつくることができるのが Object.create()の便利なところですね</p>
+<p>cupオブジェクトやmyHondaオブジェクトで実体化したオブジェクトで作りかえてみる。</p>
+<figure>
+<figcaption>Object.create 記述例</figcaption>
+  <pre class="line-numbers language-javascript" data-src="prism.js">
+  <code>
+// civic という新しい myHonda タイプ(インスタンス)を作成
+
+//myHonda
+var myHonda = {
+  color: "red",
+  wheels: 4,
+  engine: {
+           cylinders: 4,
+           size: 2.2
+  }
+}
+
+var civic = Object.create(myHonda);
+civic.color;
+console.log(civic.color); // 出力 : red
+</code></pre></figure>
+<p>この書き方だとただ単に名前が変わっただけだけです。</p>
+<blockquote>
+<p>JavaScript のすべてのオブジェクトは、少なくとも1つの他のオブジェクトを継承しています。継承元になるオブジェクトは prototype として知られ、継承されたプロパティはコンストラクタの prototype オブジェクトにあります。詳細は「継承とプロトタイプチェーン」の章をご覧ください。</p>
+</blockquote>
+<blockquote>
+<h5>オブジェクトプロパティのインデックス付け</h5>
+<p>オブジェクトのプロパティは、プロパティ名か順序付けられたインデックスで参照することができます。名前によってプロパティを初期定義した場合、<strong>常に名前を使って参照する必要があり、インデックスによってプロパティを初期定義した場合、常にインデックスを使って参照する必要があります。</strong></p>
+
+<p>この制限は、オブジェクトとプロパティをコンストラクタ関数を使って作るとき（上で Car オブジェクト型に対してしたように）や、個々のプロパティを明示的に定義した場合（例えば myCar.color = "red"）に適用されます。初めにオブジェクトプロパティをインデックスで定義した場合、たとえば myCar[5] = "25 mpg" のようにした場合には、その後はそのプロパティを myCar[5] のようにしないと参照できません。</p>
+
+<p>このルールの例外になるのは 、例えば forms 配列のような HTML から反映されたオブジェクトです。いつでも、この配列にあるオブジェクトはインデックス（文書中に現れる位置基準）と名前（名前が定義されていれば）のどちらからも参照できます。例えば、文書内の2つ目のタグが NAME 属性として "myForm" という値を持つとき、フォームは document.forms[1]、document.forms["myForm"] 、document.myForm のいずれかで参照できます。</p>
+</blockquote>
+<figure>
+<figcaption>プロパティの参照 記述例</figcaption>
+  <pre class="line-numbers language-javascript" data-src="prism.js">
+<code>
+  var Member = {
+    type: "Yaruo", // プロパティのデフォルト値、「やる夫」
+    displayType : function(){  // Member のタイプを表示するメソッド
+      console.log(this.type);
+    }
+  }
+var member1 = Object.create(Member);
+
+member1.type = 'Yranaio';
+console.log( member1[0]);//undifnd
+var day = {[0]:'sun',[1]:'mon'};
+console.log(day[0]);
+console.log(day.0);//Exception: SyntaxError: missing ) after argument list
+</code></pre></figure>
+<p>アクセスができるできないを確認<code>console.log(day.0)</code>はできない。</p>
+</div>
+
+<div  id="s4" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>objectの型に対してプロパティを定義するObject.prototype</h2>
+<div>
+<blockqupte>
+  <p>定義済みのオブジェクト型に対して、prototype プロパティを使ってプロパティを追加できます。このプロパティは 1 つのインスタンスオブジェクトだけではなく、指定された型のすべてのオブジェクトで共有されます。次のコードは color プロパティをすべてのTasKオブジェクトに追加し、オブジェクト Task の staffsプロパティに値を代入します。</p>
+</blockqupte>
+<figure>
+<figcaption>単独でのプロパティの追加 記述例</figcaption>
+  <pre class="line-numbers language-javascript" data-src="prism.js">
+<code>
+secundTask.staffs = "Yaruo";
+console.log(myTask.staffs); //undefind</code></pre></figure>
+
+<p>プロパティ staffs を secundTaskに追加し、"Yaruo"という値をそこに代入します。しかしながら、これは他のどのオブジェクトにも影響しません。同じ型のすべてのオブジェクトに新しいプロパティを追加するには、Taskオブジェクト型の定義にそのプロパティを追加する必要があります.</p>
+<figure>
+<figcaption>prototypeプロパティの参照 記述例</figcaption>
+  <pre class="line-numbers language-javascript" data-src="prism.js">
+<code>
+  Task.prototype.staffs = null;
+  secundTask.staffs = "Yaruo";
+  console.log(secundTask.staffs);//Yaruo
+  console.log(myTask.staffs);// null</code></pre></figure>
+<p>Taskオブジェクトで定義されたインスタンスオブジェクト（secundTask,myTask）両方に.staffs がセットされた。<code> task.<b>prototype</b>.staffs</code> で元になるtaskオブジェクトに.staffsが追加ついかされたことによって。 参照しているmyTaskオブジェクトにも.staffsが追加された。</p>
+<p>コンストラクタTaskにプロパティstaffsをprototypeプロパティを使って再定義する。</p>
+<a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Function/prototype" target="_blank">
+Function.prototype</a></p>
+<p>prototypeプロパティは参照元のコンストラクタ型関数に新しいプロパティを作ります。参照しているインスタンスオブジェクトは参照元の変更により書き換えられます。</p>
+</div>
+</div>
+
+
+<div  id="s5" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>メソッドの定義</h2>
+<blockquote>
+<p>メソッドはオブジェクトに関連付けられた関数です。簡単に言えば、オブジェクトのプロパティのうち関数であるものがメソッドです。メソッドは通常の関数と同じ方法で定義されますが、オブジェクトのプロパティに代入される点が異なります。</p>
+<p><a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Functions_and_function_scope/Method_definitions">メソッド定義 </a></p>
+</blockquote>
+<figure>
+<figcaption>2種類のメソッド定義 記述例</figcaption>
+  <pre class="line-numbers language-javascript" data-src="prism.js">
+<code>
+// 1プロパティへ処理の代入
+objectName.methodname = function_name;
+// 2メソッドの定義
+var myObj = {
+  myMethod: function(params) {
+    // 処理を行う
+  }
+};
+
+</code></pre></figure>
+<figure>
+<figcaption>メソッドの呼び出し 記述例</figcaption>
+  <pre class="line-numbers language-javascript" data-src="prism.js">
+<code>objectName.methodname();
+myObj.myMethod(params);</code></pre></figure>
+
+<ol>
+<li>プロパティへ処理の代入　はあらかじめ関数を書いておきオブジェクトのプロパティにセットする。<blockquote>
+<p>ここで objectName は既存のオブジェクトを、methodname はメソッド名にしたい名前を、function_name は関数の名前を指しています。</p></blockquote></li>
+<li> オブジェクトの宣言とメソッドの処理を記述するよくある書き方</li>
+</ol>
+<figure>
+<h5>prototypeプロパティを使ってメソッドを追加</h5>
+<figcaption>prototypeプロパティを使ってメソッドを追加</figcaption>
+  <pre class="line-numbers language-javascript" data-src="prism.js">
+<code>
+Task.prototype.d= function displayTask() {
+    var result = "案件" + this.type+ " " + this.client + " " + this.staffs;
+    console.log(result);
+}
+secundTask.d();
+myTask.d();
+</code></pre></figure>
+<p>参照元であるオブジェクトtask.prototype.でdプロパティを宣言し関数displayTask()を再設定する</p>
+<p>this を使ってメソッドが属するオブジェクトを参照していることに注意してください。</p>
+<h5>コンストラクション関数定義の時メソッドを記述</h5>
+<figure>
+<figcaption>コンストラクション関数定義</figcaption>
+  <pre class="line-numbers language-javascript" data-src="prism.js">
+<code>function display(){
+  var r = "クライアントのID:"+this.id+" 姓:"+this.familyName+" 名:"+this.firstName;
+    console.log(r);
+}
+function CliantData(id,firstName,familyName,email) {
+  this.id = id;
+  this.firstName = firstName;
+  this.familyName = familyName;
+  this.email = email;
+  this.displayClientData = display;// display関数をdisplayClientDataメソッドに代入
+}
+var Yarumi = new CliantData(0,'Yarumi','Itano',null);
+Yarumi.displayClientData();
+</code></pre></figure>
+<p><code>CliantData</code>コンストラクタオブジェクトは<code>display</code>関数を<code>displayClientData</code>プロパティに渡している。<br>関数オブジェクトを引数で渡すときは()はつけない。<br>
+<code>CliantData.displayClientData()</code>メソッドとして呼び出すことができる。</p>
+<p>注意してほしいのは プロパティにセットするときは<strong>変数名<span>（名前だけ）</span></strong>でセットしている。</p>
+<figure>
+<figcaption>間違ったコンストラクション関数メソッド定義の代入</figcaption>
+<pre class="line-numbers language-javascript noGood" data-src="prism.js">
+<code>//NG
+this.displayClientData = display();// errer</code></pre>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+<code>// OK
+this.displayClientData=display;</code></pre></figure>
+<p>コンストラクタ関数にメソッドとなる関数を代入する場合は後ろにつける()ははずして代入する。</p>
+<p>処理した出力結果を<code>this.displayClientData</code>プロパティに渡す場合は上の書き方で間違いないのですが
+<strong>今回はデータを渡す（その場で処理）のではなく</strong>関数をメソッドとしてセットするとして呼び出された場合に実行されるため
+カッコを抜いて変数データとして定義しておく。</p>
+</div>
+
+<div id="s6" class="mt-n6 pt-6 mb-6 clearfix">
+
+<h2>プロパティの削除</h2>
+<div>
+<p>継承されたものでないプロパティは <code>delete</code> 演算子を使って削除できます。次のコードに示すようにプロパティを削除できます </p>
+<figure>
+<figcaption><code>delete</code> 演算子でプロパティの削除</figcaption>
+  <pre class="line-numbers language-javascript" data-src="prism.js">
+<code>// 2 つのプロパティ a と b を持つ新しいオブジェクト myobj を作成。
+var myobj = new Object;
+myobj.a = 5;
+myobj.b = 12;
+
+// プロパティ a を削除すると、myobj には b プロパティだけが残る。
+delete myobj.a;
+console.log(myobj.a);
+</code></pre></figure>
+<div>
+<details>
+<summary>memo</summary>
+<p>delete 演算子はまた、var キーワードを使わずに定義されたグローバル変数の削除にも使えます</p>
+<figure>
+<figcaption>deleteでグローバル変数の削除</figcaption>
+  <pre class="line-numbers language-javascript" data-src="prism.js">
+<code>g = 17;
+delete g;</code></pre></figure>
+</details>
+</div></div>
+
+</div>
+
+<div id="s7" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>オブジェクトの比較</h2>
+<div>
+<blockquote>
+  <p>JavaScript では、オブジェクトのデータは参照型になっています。2 つの異なるオブジェクトはたとえ同じプロパティを持っていたとしても、等値とは見なされません。自身と同じオブジェクトへの参照が比較された時のみ真となります。</p>
+  <figure>
+  <figcaption>2 つの変数、そして同じプロパティを持つ 2 つの異なるオブジェクト</figcaption>
+    <pre class="line-numbers language-javascript" data-src="prism.js">
+  <code>
+  // 2 つの変数、そして同じプロパティを持つ 2 つの異なるオブジェクト
+  var fruit = {name: "apple"};
+  var fruitbear = {name: "apple"};
+
+  fruit == fruitbear // false が返される
+  fruit === fruitbear // false が返される
+  </code></pre></figure>
+<figure>
+<figcaption>2 つの変数、オブジェクトは 1 つ</figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+<code>
+//2 つの変数、オブジェクトは 1 つ
+var fruit = {name: "apple"};
+var fruitbear = fruit;  // assign fruit object reference to fruitbear に fruit オブジェクトへの参照を代入
+
+// fruit と fruitbear は同じオブジェクトと示される
+fruit == fruitbear // true が返される
+fruit === fruitbear // true が返される  </code></pre></figure>
+</blockquote>
+</div>
+</div>
+
+<div id="s8" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>オブジェクト内の列挙</h2>
+<div>
+<blockquote>
+<p>for...in でブラケット表記法を使い、オブジェクトの列挙可能なプロパティすべてを巡回することができます。動作説明用の次の関数は、オブジェクトとオブジェクト名を引数として取り、すべてのプロパティを表示します :</p>
+<figure>
+<figcaption>オブジェクト内の列挙 記述例</figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+<code>function showProps(obj, objName) {
+  var result = "";
+  for (var i in obj) {
+    if (obj.hasOwnProperty(i)) {
+        result += objName + "." + i + " = " + obj[i] + "\n";
+    }
+  }
+  return result;
+}
+var r = showProps(cup,'cup');
+// document.write(r); Html上でみるならこれを書く
+console.log(r);</code></pre></figure>
+</blockquote>
+<p>showProps（）関数は一層目のプロパティと値を出力してくれる。<br><small>myTaskオブジェクトのプロパティtaskmetaに入ったtaskDetailオブジェクトのプロパティは出力しない。</small></p>
+<figure>
+<figcaption>オブジェクト内の列挙 記述例</figcaption>
+<pre class="line-numbers language-javascript" data-src="prism.js">
+<code>for (var keyName in obj){
+   //keyName各プロパティ毎に処理することを記述
+}</code></pre></figure>
+
+<div class="card p-4 mb-4">
+<h5>オブジェクトのプロパティを調べるメソッド</h5>
+<ul>
+<li><p><a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Statements/for...in" target="_blank" rel="noopener">for...in ループ</a><br>このメソッドは、オブジェクトとオブジェクトのプロトタイプチェーンにある列挙可能なプロパティをすべて横断します</p>
+</li>
+<li><p><a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Object/keys" target="_blank" rel="noopener">Object.keys(o)</a><br>このメソッドは、そのオブジェクト独自の（プロトタイプチェーンを除く）、すべての列挙可能なプロパティ名（&quot;keys&quot;）を、配列で返します</p>
+</li>
+<li><a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyNames" target="_blank" rel="noopener">Object.getOwnPropertyNames(o)</a><br>このメソッドは、そのオブジェクト独自のすべてのプロパティ名（列挙可能かどうかに関わらず）を <strong>配列</strong> で返します</li>
+</ul>
+</div>
+</div>
+</div>
+
+<!-- editable area end ########             -->
+</article>
+</div>
+<!-- /container-->
+
+<!-- / w-aside2 --->

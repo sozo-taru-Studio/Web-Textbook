@@ -1,0 +1,255 @@
+---
+title: CSS 詳細度
+discription: discription
+cat: CSS
+next-page-url: "41_css_code.html"
+filename: 48_css_code.html
+prev-page-url: "47_css_code.html"
+titlename: "{{title.titlename}}"
+text: "{{item.text}}"
+text2: "{{item.text}}"
+---
+<div class="container mb-5">
+<article id="w-article">
+<!-- editable area ########             -->
+        <h1>{{title}} - {{cat}}</h1>
+        <p><span>category:</span> <span class="badge badge-primary">{{cat}}</span></p>
+        <hr>
+
+<!-- 序章 モジュール -->
+<div class="card mb-4">
+<div class="card-body clearfix">
+<p class="card-text">
+サイトの編集をしているとき自分で書いたCSSが間違ってないのに反映されないことはありませんか？CSSのセレクタの書き方が問題で反映されていないのかもしれません。<br>
+CSSの詳細度はセレクタを細かく書けば書くほど上書きされ適応されます。うまく詳細度をコントロールして修正しやすいCSSを書けるようになりましょう。
+</p>
+</div>
+
+</div>
+
+<!-- 目次 モジュール -->
+<div class="bg-light p-3 mb-4">
+<h2>目次</h2>
+<ul id="w-indexlistBox">
+    <li v-for="item in items" class="w-indexlistBox-list">
+      <a v-bind:href="item.id" data-scroll >{{text2}}</a>
+    </li>
+</ul>
+</div>
+<!-- /目次 モジュール -->
+<!-- 本文のセクション モジュール -->
+<div id="s1" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>CSSの上書き</h2>
+	<p>同じセレクタの場合は上書きされる。</p>
+<h4>css</h4>
+<div class="card">
+<div class="card-body">
+<pre class="line-numbers language-css" data-src="prism.js"><code>
+/* 後で書かれたら*/
+p {
+  font-size:16px;
+}
+
+p {
+  font-size:14px;
+}
+</code></pre>
+	<p>p要素の文字の大きさはあとで書かれた14pxで表示される。</p>
+	</div>
+</div>
+</div>
+<div id="s2" class="mt-n6 pt-6 mb-6 clearfix">
+
+<h2>詳細度Specificity</h2>
+<blockquote>
+<p>詳細度は、どの CSS プロパティが要素に最も関係があるか、すなわち適用されるかをブラウザーが決定する手段です。詳細度は様々な組み合わせの CSS セレクターで構成される一致規則に基づいています。</p>
+	<p><a href="https://developer.mozilla.org/ja/docs/Web/CSS/Specificity" target="_blank" rel="noopener">詳細度</a></p>
+</blockquote>
+<h3>詳細度計算表セレクター例</h3>
+
+
+<table class="table-sm table mb-6">
+<thead class="table-dark">
+    <tr>
+      <th scope="col">セレクタ</th>
+      <th scope="col">セレクタ名</th>
+      <th scope="col">レベル A</th>
+      <th scope="col">レベル B</th>
+      <th scope="col">レベル C</th>
+      <th scope="col">レベル D</th>
+    </tr>
+	</thead>
+  <tbody>
+    <tr>
+      <th scope="row">＊</th>
+      <th scope="row">全称セレクタ</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th scope="row">div</th>
+      <td>タイプセレクタ（要素セレクタ）</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th scope="row">li a</th>
+      <td>子孫セレクタ</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th scope="row">.class</th>
+      <td>クラスセレクター</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th scope="row">[lang="jp"]</th>
+      <td>属性系セレクター</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th scope="row">:hover</th>
+      <td>疑似クラス系</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th scope="row">input[type="text"]</th>
+      <td>タイプセレクターと属性系セレクター</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th scope="row">a:hover</th>
+      <td>タイプセレクターと疑似クラス</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th scope="row">#id</th>
+      <td>id要素</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th scope="row">#id a</th>
+      <td>id要素とタイプセレクター</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th scope="row">style=&quot; color:red;&quot;</th>
+      <td>スタイル属性</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+	<p>この表は下に行くほど強いセレクターになる。</p>
+	<p class="mb-6">レベルは実際に使われている名称ではなく仮の単位です。A＞B＞C＞Dの順に強く、このヒエラルキーは覆せない。</p>
+
+<h4>セレクターを書くときの注意</h4>
+<p>セレクターは詳細に書きすぎるとメンテナンス性が失われる。</p>
+<p>サイト運営の過程で多くのページをデザイン更新していくうちにセレクターが詳細になりすぎないようにあらかじめ決めておいたデザインを使いまわすと工数が減る。</p>
+	<p>理由がない限り、idセレクターなどは使わず。クラスセレクターとタイプセレクターの2つぐらいでセレクターの詳細度をとどめたい。</p>
+	</div>
+	<div id="s3" class="mt-n6 pt-6 mb-6 clearfix">
+		<div>
+			<h2>!important　ルール</h2>
+			<p>詳細度を無視して スタイルを上書きする値の書き方です。</p>
+			<p>通常書き換えしてほしくないスタイルの部分などにつかいますが、メンテナンス性が下がるので使わないことをお勧めします。</p>
+		<div class="card">
+<div class="card-header">
+<h3>記述例</h3>
+</div>
+<div class="card-body">
+<h3>例</h3>
+<h4>css</h4>
+<pre class="line-numbers language-css" data-src="prism.js"><code>
+/* !importantがある場合あとがきでも上書きできない。*/
+.green {
+  border: solid limegreen !important;
+}
+
+.green{
+  border: solid #ff6600;
+}
+
+</code></pre>
+
+
+<h4>HTML</h4>
+<pre class="line-numbers language-xml" data-src="prism.js"><code>
+&lt;div class="box green"&gt;
+ &lt;h1&gt;徒然草&lt;/h1&gt;
+ &lt;p&gt;
+ 「&lt;span class="first"&gt;つ&lt;/span&gt;れづれなるままに、日暮らし、硯にむかひて、心にうつりゆくよしなしごとを、そこはかとなく書きつくれば、あやしうこそものぐるほしけれ。」
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="box green"&gt;
+ &lt;p&gt;
+&lt;span class="first"&gt;I&lt;/span&gt;l y avait encore des Prussiens en France. M. Delalot était un personnage. La légitimité venait de s'affirmer en coupant le poing, puis la tête, à Pleignier, à Carbonneau et à Tolleron. Le prince de Talleyrand, grand chambellan, et l'abbé Louis, ministre désigné des finances, se regardaient en riant du rire de deux augures; tous deux avaient célébré, le 14 juillet 1790, la messe de la Fédération au Champ de Mars; Talleyrand l'avait dite comme évêque, Louis l'avait servie comme diacre.
+&lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+
+<style>.green{
+  line-height: 1.1;
+  border: solid limegreen !important;
+}
+
+	.green{
+  border: solid #ff6600;
+}
+
+.box {
+  width: 80%;
+  display: block;
+  font-size:1rem;
+  padding:1em;
+  margin: 0 0 20px 0;
+}</style>
+<h4>プレビュー</h4>
+<div class="box green">
+ <h4 class="h text-center"> 徒然草</h4>
+ <p class="text-left">
+ 「<span class="first">つ</span>れづれなるままに、日暮らし、硯にむかひて、心にうつりゆくよしなしごとを、そこはかとなく書きつくれば、あやしうこそものぐるほしけれ。」
+ </p>
+</div>
+</div>
+
+</div><!--/ .card -->
+</div>
+</div>
+
+<!-- editable area end ########             -->
+</article>
+</div>
+<!-- /container-->
+
+<!-- / w-aside2 --->
