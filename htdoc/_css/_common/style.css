@@ -403,7 +403,14 @@ script[type='text/plain'].language-markup {
   position: relative;
 }
 
-.w-main, .w-aside {
+.w-main {
+  padding-top: 56px;
+  background-color: #f2f0f5;
+  box-shadow: 0 0 3px rgba(0, 0, 20, 0.03);
+  border-radius: 0 0 3px 3px;
+}
+
+.w-aside {
   padding-top: 56px;
   background-color: #fbfbfb;
 }
@@ -483,6 +490,8 @@ script[type='text/plain'].language-markup {
 [id="w-article"] h2 {
   color: #012840;
   border-bottom: 3px solid #0383d2;
+  margin-bottom: 1.6rem;
+  padding: .5rem 0;
 }
 
 [id="w-article"] h3 {
@@ -490,7 +499,7 @@ script[type='text/plain'].language-markup {
 }
 
 [id="w-pageFooter"] {
-  background: url(../../_images/footerbg.png) repeat-x center bottom;
+  background: url(../../_images/footerbg.png) repeat-x center bottom #fbfbfb;
   height: 270px;
   display: flex;
 }
