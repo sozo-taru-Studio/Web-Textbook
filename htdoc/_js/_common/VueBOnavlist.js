@@ -62,21 +62,21 @@ var BOpages = new Vue(BO);
                 { titlename:'メディア研究',
                     titleen:"Whats Media!",
                     url:"10_outline_media.html",
-                     dis:"ファイルの役割フォルダの役割を知りましょう",
+                     dis:"メディアってあれだろ　そう　あれ・・・",
                     img: "_images/_OL/media_640.jpg"
                 },
                 {
                     titlename:'メディアの特徴を理解し分類してみる',
                     titleen:"Media type",
                     url:"11_outline_media.html",
-                     dis:"ファイルの役割フォルダの役割を知りましょう",
+                     dis:"媒体の種類はさまざまさて分類してみる",
                     img: "_images/_OL/media_2_640.jpg"
                 },
                 {
                     titlename:'webの役割',
                     titleen:"web rol",
                     url:"12_outline_media.html",
-                     dis:"ファイルの役割フォルダの役割を知りましょう",
+                     dis:"webの役割ん-　なにそれ？",
                     img: "_images/_OL/webIcon_640.jpg"
                 },
                 {
@@ -90,35 +90,35 @@ var BOpages = new Vue(BO);
                     titlename:'著作権',
                     titleen:"Copyright",
                     url:"14_outline_media.html",
-                     dis:"ファイルの役割フォルダの役割を知りましょう",
+                     dis:"お　おれがそれさきに　いったんだからな！",
                     img: "_images/_OL/flag_640.jpg"
                 },
                 {
                     titlename:'商取引',
                     titleen:"Commerce",
                     url:"15_outline_media.html",
-                     dis:"ファイルの役割フォルダの役割を知りましょう",
+                     dis:"サービスとお金の交換会",
                     img: "_images/_OL/deal_640.jpg"
                 },
                 {
                     titlename:'webマーケティング',
                     titleen:"web marketing",
                     url:"16_outline_media.html",
-                    dis:"ファイルの役割フォルダの役割を知りましょう",
+                    dis:"マーケティングって言葉、わかったふりして使っている勢です。",
                     img: "_images/_OL/paper_640.jpg"
                 },
                 {
                     titlename:'webページ制作の工程',
                     titleen:"Production process",
                     url:"17_outline_media.html",
-                    dis:"ファイルの役割フォルダの役割を知りましょう",
+                    dis:"滝ツボ方式 アジャイル方式",
                     img: "_images/_OL/falls_640.jpg"
                 },
                 {
                     titlename:'肩書や役職',
                     titleen:"staff",
                     url:"18_outline_media.html",
-                    dis:"ファイルの役割フォルダの役割を知りましょう",
+                    dis:"肩書でなにができるかわかるのかはわからない。",
                     img: "_images/_OL/programming_640.jpg"
                 }
             ]
