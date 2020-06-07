@@ -1,0 +1,186 @@
+---
+title: サーバーの知識
+discription: サーバークライアント型のネットワークについて
+cat: web総合概論
+next-page-url: "19_outline_media.html"
+filename: 193_outline_media.html
+prev-page-url: "192_outline_media.html"
+titlename: "{{title.titlename}}"
+text: "{{item.text}}"
+text2: "{{item.text}}"
+---
+<div class="container mb-5">
+<article id="w-article">
+<!-- editable area ########             -->
+        <h1>{{title}} - {{cat}}</h1>
+        <p><span>category:</span> <span class="badge badge-primary">{{cat}}</span></p>
+        <hr>
+<!-- 序章 モジュール -->
+<div class=" mb-4 alert alert-info">
+<div class="card-body">
+ <p>コンピューターネットワークにおけるサーバークライアント型ネットワークについて</p>
+<p class="card-text">コンピューターとコンピューターをつなぎデータの送信と受信の機能を付加し通信できるようにした状態これをコンピューター通信といいます。
+</p>
+<p>コンピューター通信におけるコンピューターネットワーク（ネット）の種類と推せえておくべき用語を確認しましょう。</p>
+</div>
+</div>
+
+
+
+<!-- 目次 モジュール -->
+<div class="bg-light p-3 mb-4">
+<h2>目次</h2>
+<ul id="w-indexlistBox">
+    <li v-for="item in items" class="w-indexlistBox-list">
+      <a v-bind:href="item.id" data-scroll >{{text2}}</a>
+    </li>
+</ul>
+</div>
+<!-- / 目次 モジュール -->
+<!-- 本文のセクション モジュール -->
+<div id="s1" class="mt-n6 pt-6 mb-6">
+<div id="s1" class="mt-n6 pt-6 mb-6">
+<h2> コンピューター通信 </h2>
+<h3> ネットワークの規模 </h3>
+<p>LAN ・・・ ローカルネットワーク ＜ - ＞ WAN ・・・ ワイドエリアネットウェアーク</p>
+<p> イントラネット ・・・ 企業や団体など分散した組織のなかだけで使うコンピューターネットワーク<br> インターネットを使っている場合が亜多いが他者が流入できない。</p>
+<h3>インターネット</h3>
+<p> ネットワーク同士がつながった大きなネットワークで地球規模で通信できます。</p>
+</div>
+
+<div id="s2" class="mt-n6 pt-6 mb-6">
+<h2>ネットワークの種類</h2>
+<div class="card mb-6">
+<div class="card-body">
+<h3>ピア トゥ ピア</h3>
+<p> 各々のPCがデータのやり取りを同時に実行して全てのPCがノードとして平等に機能します。<br>
+一般的に社内や家庭でルーター経由でフォルダーを共有することができます、<br>
+管理することが簡単ですがノードが増えることによる負荷の管理が放置状態のことが多くタスクが一か所に集中するとネットワークが機能しない場合があります。</p>
+</div>
+</div>
+<div class="card mb-6"><div class="card-body">
+<h3>サーバー クライアント型ネットワーク</h3>
+<p>情報を保管しリクエストに応じて情報を送信する。コピーする許可を上げる役割をもているPCをサーバー</p>
+<p>クライアントはサーバー側に データー閲覧を依頼する(ブラウザーやUA)</p>
+</ul>
+</div>
+</div>
+</div>
+
+
+<div id="s2" class="mt-n6 pt-6 mb-6">
+<h2>PIC/IP</h2>
+<blockquote>
+<p><a href="http://www.hct.ecl.ntt.co.jp/floorguide/tech_j.html" target="_blank" rel="noopner">[インターネットの技術 | フロアガイド | NTT技術史料館]</a></p>
+<p><a href="https://www.expressvpn.com/jp/what-is-my-ip" target="_blank" rel="noopner">[私のIPアドレスロケーションは？]</a></p>
+<p><a href="https://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%8D%E3%83%83%E3%83%88%E3%83%BB%E3%83%97%E3%83%AD%E3%83%88%E3%82%B3%E3%83%AB%E3%83%BB%E3%82%B9%E3%82%A4%E3%83%BC%E3%83%88" target="_blank" rel="noopner">[インターネット・プロトコル・スイート]</a></p>
+</blockquote>
+<div>
+<h4>インフラには標準化が必要。</h4>
+<p>
+標準化 : 機能や用途　仕様の統一化 一般化 （不足過剰をなくすこと）規格化
+<br>
+日本の電気のコンセントは交流で100Vの電圧です。<br>
+道路交通法では左側通行。<br>
+歩行者と車両にわかれ車道には車両が通行し、歩道には歩行者が通行します。
+</p>
+</div>
+<div class="card mb-6">
+<div class="card-body">
+<h3>IPアドレス</h3>
+
+<blockguote>
+  <p><a href="https://yu8mada.com/2018/07/14/how-to-find-my-private-ip-address-in-macos/" target="_blank" rel="noopner">[macOS で自分のプライベート IP アドレスを見つける方法]</a></p>
+</blockguote>
+
+<h4>vIp4</h4>
+<p>従来のインターネットの端末場所を判別する番号</P>
+
+<p>例) IPv4 : 172. 16.  5.151</p>
+<p>0 - 255 までの時間がある４つの数字の羅列で識別します。</p>
+<h4>vIp6</h4>
+<p>インターネット枯渇問題とネットワーク機器の多様化<br>
+IPv6 : fe80::1031:f572:3eb0:f67e</p>
+<h4>ローカルIP/グローバルIP</h4>
+<p>IPアドレスが足らないので各々のネットワーク会社<br>
+おもにプロバイダーは利用者にはローカルIPでやり取りする。</p>
+<h4>サブネットマスク</h4>
+<p>ローカルIP アドレスの範囲 ローカルで接続できる端末（ノード）の数がわかる</p>
+</div>
+<div class="card mb-6">
+<div class="card-body">
+<h3>インターネット（接続会社）</h3>
+<p>インターネットプロバイダー（Internet Service Provider）</p>
+<p>インターネットに接続するサービス。（固有のIPアドレスを所有しておりたんまつに接続する権利を与えるサービス。）<br>
+ ここまではグローバルIPで識別されています。</p>
+
+<p> ローカルIPはIPアドレスの枯渇問題を解決するために 局所で使われるノードには局所で使う番号を与えて端末識別をおこなっています。</p>
+
+
+<ol>
+<li> ルーター機器はルーティング（道案内）をするための機器です。</li>
+<li>「ゲートウェイルーター」</li>
+<li>「ハブ（スイッチングハブ）」端末に情報を分配する</li>
+<li>「ネットワークカードとPC」ネットワークに接続を確認したり情報を送受信する。</li>
+</ol>
+</div>
+</div>
+
+</div>
+
+<div class="card mb-6">
+<div class="card-body">
+<h3>ドメイン</h3>
+<p>IPアドレスは機器の番号でありますが　webページやサイトのオーナーは同じ端末に共存することはあります。IPアドレスという数字での表記は人にとって使いづらい。</p>
+<p>現在では運営会社の明確化やブランドイメージの固定化を目的に取得する意味合いの方が強い</p>
+<p><a href="https://xn--u8j7eobcu7j2kyg7f.jp/special/registrar/index.html" target="_blank" rel="noopner">ドメインはだれが決めているの</a></p>
+<p>ドメインの取得は管理料を払い続ければ抑えることができる。<br>
+逆に管理料が払えなければ失効する。</p>
+<h3>サブドメイン</h3>
+<p>独自ドメインがない場合　レンタルサーバーのドメインの直下に個別の名前がをいれて運用する。</p>
+<h3> ドメイン取得会社 </h3>
+<ul>
+  <li> <a href="https://www.onamae.com/" target="_blank" rel="noopner">お名前.com </a></li>
+  <li> <a href="https://muumuu-domain.com/" target="_blank" rel="noopner">ムームードメイン </a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="s3" class="mt-n6 pt-6 mb-6">
+<h2>サーバーの役割</h2>
+<div class="card mb-6">
+<div class="card-body">
+<h3>WebサイトとWebサーバー</h3>
+<p>OS：Unix/Linax OS が多い 一部windowsサーバー
+ネットワークサーバーようの筐体であることがおおい。<br>
+インターネットサーバープログラム ：  Apache</p>
+
+<h3>データベースサーバー</h3>
+<p>データの保管庫</p>
+
+<h3>ドメインネームサーバー</h3>
+<p>ドメイン名とサーバーを記録してユーザーが閲覧したいページを提供する交通整理をするサーバー　ここにドメイン名が登録されていないとクライアントにページが送信されない。
+レンタルサーバーが取り扱っているWebページにドメイン名を登録することでWebページを送信してくれる。<small>（レンタルサーバーを引っ越しするときに必要な知識）</small></p>
+
+<h3>FTPサーバー</h3>
+<p>FTP機能（ファイルトランスファープロトコル）
+製作者がファイルをサーバーにアップロードしたり消したりするときに便利なソフトです。おもにwebサイト製作者に必要です。</p>
+
+<h3>SSHサーバー</h3>
+<p>FTP転送をセキュア（暗号化）する。<br>
+<a href="https://www.kagoya.jp/howto/rentalserver/ssh/" target="_blank" rel="noopner">[SSH]</a>
+</p>
+
+<h3>サーバーを借りる</h3>
+<p>自宅にサーバー用のPCと回線を引いて自宅から世界に情報を提供することもできますが・（リアルプライベートサーバー）</p>
+<p> ほとんどの場合はレンタルサーバーサービスにスペースを借りてサーバーに付属する上記の機能を利用してwebページを配信するのがローコストな手法です。 </p>
+<h4>VPS (バーチャルプライぺートサーバー)</h4>
+<p>ハード面を利用しソフトは全て自己責任で設定するサーバー</p>
+</div>
+</div>
+</div>
+<!-- editable area end ########             -->
+</article>
+</div>
+<!-- /container-->
+<!-- / w-aside2 --->

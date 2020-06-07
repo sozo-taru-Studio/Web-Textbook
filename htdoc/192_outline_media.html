@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="description" content="discription">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">  <title>個人情報について - web総合概論 - Web TextBook</title>
+  <!-- stylesheet  -->
+  <link rel="stylesheet" href="_css/_common/bootstrap.css">
+  <link rel="stylesheet" href="_css/_common/font-awesome.min.css">
+  <link rel="stylesheet" href="_css/_common/style.css">  <!--  Favicons  -->
+  <link rel="icon" href="favicon.ico">  <!-- common js  -->
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="_js/_common/jquery-3.2.1.min.js"></script>
+  <script src="_js/_common/bootstrap.min.js"></script>
+  <script src="_js/_common/pagescroll.jQuery.js"></script></head>
+<body class="web総合概論">
+<div id="w-wrapper" class="w-wrapper">
+<!-- header -->
+<header id="w-pageHeader" class="navbar navbar-dark navbar-expand-lg fixed-top w-pageHeader" data-scroll-header="true">
+<div class="container">
+<a class="navbar-brand" href="index.html">logo</a><span class="navbar-brand">Web Textbook</span>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#w-nav" aria-controls="w-nav" aria-expanded="false" aria-label="ナビゲーション切替">
+<span class="navbar-toggler-icon"></span>
+</button>
+<nav id="w-nav" class="collapse navbar-collapse">
+<ul class="navbar-nav mr-auto pl-3">
+<li class="nav-item"><a href="mk.html" class="nav-link">HTML</a></li>
+<li class="nav-item"><a href="style.html" class="nav-link">CSS</a></li>
+<li class="nav-item"><a href="js.html" class="nav-link">javasceipt</a></li>
+</ul>
+</nav>
+<!-- /w-nav-->
+</div>
+<!-- /container--></header>
+<!-- /w-pageHeader-->
+<div class="d-lg-flex pt-5" id="main-wrap">
+<main id="w-main" class="w-main col-lg-8 order-1">
+   <div class="container mb-5">
+<article id="w-article">
+<!-- editable area ########             -->
+        <h1>個人情報について - web総合概論</h1>
+        <p><span>category:</span> <span class="badge badge-primary">web総合概論</span></p>
+        <hr>
+<!-- 序章 モジュール -->
+<div class=" mb-4 alert alert-info">
+<div class="card-body">
+ <p>個人情報</p>
+<p class="card-text">生きている人間を特定できる情報で組み合わせることで個人が判明する情報</p>
+<p>  </p>
+</div>
+</div>
+
+<!-- 目次 モジュール -->
+<div class="bg-light p-3 mb-4">
+<h2>目次</h2>
+<ul id="w-indexlistBox">
+    <li v-for="item in items" class="w-indexlistBox-list">
+      <a v-bind:href="item.id" data-scroll >{{item.text}}</a>
+    </li>
+</ul>
+</div>
+<!-- / 目次 モジュール -->
+<!-- 本文のセクション モジュール -->
+<div id="s1" class="mt-n6 pt-6 mb-6">
+<h2>個人情報の保護に関する法律 出典</h2>
+
+<p>個人情報についてのwebでの検索結果</p>
+
+<blockquote style="font-size:14px;">
+<p>
+<a href="https://elaws.e-gov.go.jp/search/elawsSearch/elaws_search/lsg0500/detail?lawId=415AC0000000057">個人情報の保護に関する法律 - e-Gov法令検索 </a>
+</p>
+<p>
+<a href="https://ja.wikipedia.org/wiki/%E5%80%8B%E4%BA%BA%E6%83%85%E5%A0%B1%E3%81%AE%E4%BF%9D%E8%AD%B7%E3%81%AB%E9%96%A2%E3%81%99%E3%82%8B%E6%B3%95%E5%BE%8B">個人情報の保護に関する法律 - Wikipedia </a>
+</p>
+</blockquote>
+<h3>ポイント</h3>
+<blockquote style="font-size:14px;">
+<p><strong>個人情報保護法および同施行令によって、取扱件数に関係なく[1]個人情報を個人情報データベース等として所持し事業に用いている事業者は個人情報取扱事業者とされ、個人情報取扱事業者が主務大臣への報告やそれに伴う改善措置に従わない等の適切な対処を行わなかった場合は、事業者に対して刑事罰が科される。</strong></p>
+</blockquote>
+</div>
+<div id="s2" class="mt-n6 pt-6 mb-6">
+<h2>基本理念</h2>
+<blockquote style="font-size:14px;">
+  <p>高度情報通信社会の進展に伴い個人情報の利用が著しく拡大していることにかんがみ、個人情報の適正な取扱いに関し、基本理念及び政府による基本方針の作成その他の個人情報の保護に関する施策の基本となる事項を定め、国及び地方公共団体の責務等を明らかにするとともに、個人情報を取り扱う事業者の遵守すべき義務等を定めることにより、個人情報の有用性に配慮しつつ、個人の権利利益を保護することを目的とする（第1条）。 個人情報は、個人の人格尊重の理念の下に慎重に取り扱われるべきことに鑑み、その適正な取扱いが図られなければならない（第3条）。</p>
+<ul>
+  <li>「プライバシーの権利」については、本法では明文で規定していない。</li>
+  <li>本法は、個人情報をあまねく網羅して規制を掛けるという趣旨の法律ではない。</li>
+</ul>
+</blockquote>
+</div>
+<div id="s3" class="mt-n6 pt-6 mb-6">
+<h2>個人情報</h2>
+<div class="card mb-4">
+  <div class="card-body">
+<blockquote class="mb-0">「個人情報」とは、生存する個人に関する情報であって、当該情報に含まれる氏名、生年月日その他の記述等により特定の個人を識別することができるもの（他の情報と容易に照合することができ、それにより特定の個人を識別することができることとなるものを含む。）をいう。</blockquote>
+</div>
+</div>
+</div>
+<div id="s4" class="mt-n6 pt-6 mb-6">
+<h2>個人情報取扱事業者の義務等</h2>
+<div class="card mb-4">
+  <div class="card-body">
+<blockquote  style="font-size:14px;">
+
+<table class="table">
+<caption>
+</caption>
+<tbody><tr>
+<th>OECD8原則
+</th>
+<th>個人情報保護法（条文要約）
+</th></tr>
+<tr>
+<td><b>収集制限の原則</b>
+</td>
+<td>第十七条 偽りその他不正の手段により個人情報を取得してはならない。
+</td></tr>
+<tr>
+<td><b>データ内容の原則</b>
+</td>
+<td>第十九条　　個人データを正確かつ最新の内容に保たねばならない。
+</td></tr>
+<tr>
+<td><b>目的明確化の原則</b>
+<p><b>利用制限の原則</b>
+</p>
+</td>
+<td>第十五条　　利用目的をできる限り特定しなければならない。
+<p>第十六条　　利用目的の達成に必要な範囲を超えて個人情報を取り扱ってはならない。
+</p><p>第二十三条　あらかじめ本人の同意を得ないで個人データを第三者に提供してはならない。
+</p>
+</td></tr>
+<tr>
+<td><b>安全保護措置の原則</b>
+</td>
+<td>第二十条　個人データの安全管理のために必要かつ適切な措置を講じなければならない。
+<p>第二十一条・第二十二条　個人データの安全管理が図られるよう従業者・委託先に対する必要かつ適切な監督を行わなければならない。
+</p>
+</td></tr>
+<tr>
+<td><b>公開の原則</b>
+<p><b>個人参加の原則</b>
+</p>
+</td>
+<td>第十八条　　個人情報を取得した場合は速やかに、その利用目的を、本人に通知し、又は公表しなければならない。
+<p>第二十七条　利用目的等を本人の知り得る状態に置かなければならない。
+</p><p>第二十八条　本人が識別される保有個人データの開示を請求することができる。
+</p><p>第二十九条　本人は保有個人データの内容の訂正、追加又は削除を請求することができる。
+</p><p>第三十条　本人は当該保有個人データの利用の停止又は消去を請求することができる。
+</p>
+</td></tr>
+<tr>
+<td><b>責任の原則</b>
+</td>
+<td>第三十五条　個人情報の取扱いに関する苦情の適切かつ迅速な処理に努めなければならない。
+</td></tr></tbody></table>
+</blockquote>
+</div>
+</div>
+</div>
+<div id="s5" class="mt-n6 pt-6 mb-6">
+<h2>第三者提供の制限</h2>
+<div class="card mb-4">
+  <div class="card-body">
+<blockquote>
+
+<p>個人情報取扱事業者は、以下の場合を除いては、あらかじめ本人の同意を得なければ、個人データを第三者に提供してはならない（第23条）。</p>
+<ul>
+<li>法令に基づく場合。（例：国勢調査などの統計調査等）</li>
+<li>人の生命、身体又は財産の保護のために必要がある場合であって、本人の同意を得ることが困難であるとき。（例：事故の際の安否情報など）</li>
+<li>公衆衛生の向上または児童の健全な育成の推進のために特に必要がある場合であって、本人の同意を得ることが困難であるとき。（例：児童虐待情報など）</li>
+<li>国の機関若しくは地方公共団体又はその委託を受けた者が法令の定める事務を遂行することに対して協力する必要があって、本人の同意を得ることにより当該事務の遂行に支障を及ぼすおそれがあるとき。（例：犯罪捜査の協力など）</li>
+</ul>
+<p>ただし、必ずしも本人の同意を得なくとも、以下の場合は第三者への提供ができるものと規定されている。</p>
+
+<p>第三者に提供される個人データについて、本人の求めに応じて当該本人が識別される個人データの第三者への提供を停止することとしている場合であって、次の4点についてあらかじめ本人に通知し、又は本人が容易に知り得る状態に置いているときは、前項の規定にかかわらず、当該個人データを第三者に提供することができる（第23条第2項）。</p>
+<ul>
+<li>第三者への提供を利用目的とすること</li>
+<li>第三者に提供される個人データの項目</li>
+<li>第三者への提供の手段又は方法</li>
+</ul>
+<p>
+本人の求めに応じて当該本人が識別される個人データの第三者への提供を停止すること
+また、個人情報取扱事業者と実質的に同一とみなしうる事業者が共同で利用する場合、または共同利用もしくは業務委託として一定の要件を満たした場合は、第三者とみなされない規定がある。すなわち、これらの場合は、本人の同意を得る必要がない[6]。
+</p>
+</blockquote>
+</div>
+</div>
+<p>個人情報を取得するようなサイトの場合この一文がだいたいはいっており、
+同意しなければ契約にいたらない場合があります。</p>
+</div>
+<div id="s6" class="mt-n6 pt-6 mb-6">
+<h2>開示 利用停止 罰則</h2>
+<div class="card mb-4">
+<div class="card-body">
+<blockquote>
+<h3> 事項の公表等 </h3>
+<p>個人情報取扱事業者は、本人から、当該本人が識別される保有個人データの利用目的の通知を求められたときは、本人に対し、遅滞なく、これを通知しなければならない（第24条2項）。この場合は、手数料を徴収できる（第30条）。</p>
+
+<h3>開示請求</h3>
+<p>個人情報取扱事業者は、本人から保有個人データの開示を求められたときは、以下のいずれかに該当する時を除いては、遅滞なく開示しなければならない。ただし、6か月以内で消去することが予定されている情報（第2条5項、個人情報保護法施行令第4条）や情報の存否を明らかにすることによって公益等が害される情報は除かれる（第25条）。この場合は、手数料を徴収することができる（第30条）。</p>
+<ul>
+<li>本人又は第三者の生命、身体、財産その他の権利利益を害するおそれがある場合</li>
+<li>当該個人情報保護取扱事業者の業務の適正な実施に著しい支障を及ぼすおそれがある場合</li>
+<li>他の法令に違反することとなる場合</li>
+<li>医療機関等に訴訟外で、医療の診療録等を開示や、信用情報の個人情報開示請求する例が考えられる。</li>
+</ul>
+<h3>訂正請求</h3>
+<p>個人情報取扱事業者は、本人から、保有個人データの内容が事実でないという理由によって当該個人データの内容の訂正、追加又は削除を求められた場合は、利用目的の達成に必要な範囲内において、遅滞なく必要な調査を行い、その結果に基づき、保有個人データ等の訂正を行わなければならない（第26条）。</p>
+
+<h3>利用停止請求</h3>
+<p>個人情報取扱事業者は、本人から、個人情報の目的外の利用を行っていること、個人情報を不正に取得したことを理由として、保有個人情報データの利用停止または消去を求められた場合であって、その求めに理由があると認められるときは、違反を是正する限度で、利用停止等を行わなければならない。ただし、利用停止等に多額の費用を要する場合その他の利用停止等を行うことが困難な場合であって、本人の権利利益を保護するため必要なこれに代わるべき措置をとるときは、この限りでない（第27条1項）。
+</p>
+
+<h3>主務大臣による報告徴収等</h3>
+<p>主務大臣は、個人情報取扱事業者の義務の規定の施行に必要な限度において、個人情報取扱事業者に関し、個人情報の取扱いについて報告を求め（第32条）、助言することができる（第33条）。
+</p>
+<p>
+主務大臣は、個人情報取扱事業者が本法の規定（ただし開示請求等は除く）に違反していて個人の権利利益を保護するために措置をとる必要があると認めるときは、勧告することができる（第34条）。
+</p>
+<p>主務大臣は、個人情報取扱事業者が正当な理由なく勧告に従わないときにはその勧告に係る措置をとるべきことを命ずることができ（第34条2項）、それに従わないときは、当該違反行為の中止その他違反を是正するために必要な措置をとるべきことを命ずることができる（第34条3項）。
+</p>
+<p>命令に違反すると6か月以下の懲役または30万円以下の罰金に処せられることがある（56条）。
+</P>
+
+</blockquote>
+
+</div>
+</div>
+<p> 本人であると確認をとり、開示請求には手数料がかかるし、不正な使用をしていることを示さなければならない。</p>
+</div>
+<div id="s7" class="mt-n6 pt-6 mb-6">
+  <h2>適用除外</h2>
+<div class="card mb-4">
+<div class="card-body">
+<blockquote><p>
+個人情報取扱事業者が、マスコミ・著述業関係、大学等、宗教団体や政治団体であり、それぞれ、報道・著述、学術研究、宗教活動、政治活動の目的で個人情報を利用する場合は、個人情報取扱事業者の義務の適用を受けない（第50条1項）。これは、主務大臣の報告徴収等を通じて表現の自由等を制約するおそれがあるという強い反対論に基づいて設けられた規定である。これらの者については、個人情報保護のために必要な措置を自ら講じ、内容を公表する努力義務が課せられる（第50条3項）。<br>
+さらに主務大臣は、一般の個人情報取扱事業者がマスコミ・著述業関係、大学等、宗教団体や政治団体に対して、上述の目的に利用するために個人情報を提供する場合には、報告徴収や命令等の権限を行使しないものとしている（個人情報保護法そのものの適用除外を意味するものではない）。</p>
+<p>
+なお、これらの職にある者が、正当な理由がない場合に、業務上の取扱いによって知り得た秘密を漏らしたときは、刑法134条2項の秘密漏示罪が成立することがある。個人情報取扱事業者の義務の除外と刑法上の責任の免除とは別である点に留意する必要がある。</P>
+</blockquote>
+</div>
+</div>
+</div>
+<div id="s7" class="mt-n6 pt-6 mb-6">
+  <h2>プライバシーマーク</h2>
+  <p>プライバシー　個人情報保護法に遵守した企業活動ができているかを審査し準拠しているばあいに与えられる民間の制度</p>
+  <p>
+    <a href="https://privacymark.jp/" target="_blank" rel="noopener">プライバシーマーク制度について</a></p>
+</div>
+<!-- editable area end ########             -->
+</article>
+</div>
+<!-- /container-->
+
+<!-- / w-aside2 --->
+
+<aside class="print-none" id="w-aside2">
+<div class="row text-white no-gutters justify-content-center">
+<nav aria-label="Page navigation">
+<ul class="pagination justify-content-center">
+<li class="page-item">
+<a class="page-link" href="191_outline_media.html" tabindex="-1" aria-disabled="false">Previous</a>
+</li>
+<li class="page-item">
+<a class="page-link " aria-disabled="false"  href="194_outline_media.html">Next</a>
+</li>
+</ul>
+</nav>
+</div>
+<div class="container p-3"></div>
+</aside>
+</main>
+<aside class="w-aside col-lg-2 print-none order-0" id="w-aside1">
+<div class="w-aside-inner container">
+<div class="accordion" id="accordionAside">
+<div class="w-subnav">
+<div id="headingOne">
+<h3 class="sticky-top">
+  <button class="btn btn-link  collapsed" type="button" data-toggle="collapse" data-target="#w-BOlist-collapse" aria-expanded="false" aria-controls="collapseOne" >
+PC Operation</button>
+</h3>
+</div>
+<div id="w-BOlist-collapse" class="collapse" aria-labelledby="headingOne" data-parent="#accordionAside">
+<!-- BOlist modile -->
+<ul id="w-BOlist" class="list-unstyled w-BOlist">
+        <li class="" v-for="title in titles"><a v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+        </ul>
+        <!-- /BOlist modile -->
+</div>
+</div>
+<div class="w-subnav">
+<div id="heading2">
+<h3 class="sticky-top">
+  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#w-OLlist-collapse" aria-expanded="false" aria-controls="collapseTwo">web Outline</button>
+</h3>
+</div>
+<div id="w-OLlist-collapse" class="collapse" aria-labelledby="heading2" data-parent="#accordionAside">
+<!-- OLlist modile -->
+<ul id="w-OLlist" class="list-unstyled">
+  <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+</ul>
+<!-- /OLlist modile -->
+</div>
+</div>
+<div class="w-subnav">
+<div id="heading3">
+<h3 class="sticky-top">
+  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#w-MKlist-collapse" aria-expanded="false" aria-controls="collapseThree">HTML</button>
+      </h3>
+</div>
+<div id="w-MKlist-collapse" class="collapse" aria-labelledby="heading3" data-parent="#accordionAside">
+<!-- OLlist modile -->
+<ul id="w-MKlist" class="list-unstyled">
+  <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}}</a></li>
+</ul>
+<!-- /OLlist modile -->
+</div>
+</div>
+
+<div class="w-subnav">
+<div id="heading4">
+<h3 class="sticky-top">
+<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#w-EDlist-collapse" aria-expanded="false" aria-controls="collapse4">Text Editor
+</button>
+</h3>
+</div>
+<div id="w-EDlist-collapse" class="collapse" aria-labelledby="heading4" data-parent="#accordionAside">
+<!-- EDlist modile -->
+<ul id="w-EDlist" class="list-unstyled">
+<li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}}</a></li>
+</ul>
+<!-- /EDlist modile -->
+</div>
+</div>
+<div class="w-subnav">
+<div id="heading5">
+<h3 class="sticky-top">
+<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#w-CSSlist-collapse" aria-expanded="false" aria-controls="collapse5">CSS
+</button>
+</h3>
+</div>
+<div id="w-CSSlist-collapse" class="collapse" aria-labelledby="heading4" data-parent="#accordionAside">
+<!-- EDlist modile -->
+<ul id="w-CSSlist" class="list-unstyled">
+  <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+</ul>
+<!-- /csslist modile -->
+</div>
+</div>
+
+<div class="w-subnav">
+<div id="heading6">
+<h3 class="sticky-top">
+<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#w-JSlist-collapse" aria-expanded="false" aria-controls="collapse6">javascript
+</button>
+</h3>
+</div>
+<div id="w-JSlist-collapse" class="collapse" aria-labelledby="heading4" data-parent="#accordionAside">
+<!-- EDlist modile -->
+<ul id="w-JSlist" class="list-unstyled">
+  <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+</ul>
+<!-- /jslist modile -->
+</div>
+</div>
+
+  </div><!-- /accordionAside -->
+</div>
+<script src="_js/_common/VueBOnavlist.js"></script>
+</aside>
+<aside class="w-aside w-indexlistbox col-lg-2 order-2" id="w-aside3">
+<div class="indexlist-inner container">
+<div><h3>page navigation</h3></div>
+<ol class="list-unstyled list-group" id="w-indexlists">
+  <li class="index-list" v-for="item in items">
+    <a v-bind:href="item.id" class="indexlist-link" data-scroll >{{item.text}}</a>
+  </li>
+</ol>
+</div>
+</aside>
+</div><!-- /main-wrap -->
+<!-- footer -->
+<footer id="w-pageFooter">
+<div class="container d-flex">
+  <p class="site-copy">
+<small>&copy; shounosuke tarutani</small>
+</p><!-- /site-copy -->
+</div>
+<!-- /container-->
+</footer>
+<!--w-pageFooter--><script src="_js/_common/Vuepagelist.js"></script>
+<script src="_js/_common/prism.js"></script>
+</div>
+<!--w-wrapper-->
+</body>
+</html>

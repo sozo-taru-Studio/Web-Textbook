@@ -1,0 +1,108 @@
+---
+title: UI/UXについて
+discription: サイト全体のデザインを考えるキーワードUI/UXについて
+cat: web総合概論
+next-page-url: "193_outline_media.html"
+filename: 195_outline_media.html
+prev-page-url: "19_outline_media.html"
+titlename: "{{title.titlename}}"
+text: "{{item.text}}"
+text2: "{{item.text}}"
+---
+<div class="container mb-5">
+<article id="w-article">
+<!-- editable area ########             -->
+        <h1>{{title}} - {{cat}}</h1>
+        <p><span>category:</span> <span class="badge badge-primary">{{cat}}</span></p>
+        <hr>
+<!-- 序章 モジュール -->
+<div class=" mb-4 alert alert-info">
+<div class="card-body">
+<p class="card-text">webサイトの使命を達成するために</p>
+<p>さまざまな視覚デバイスで提供されなければならないwebサイト</p>
+<p>印刷業界から派生したデザイン手法ではスクリーンデバイスに応用が背景が聞かなくなった背景があります。</p>
+</div>
+</div>
+
+<!-- 目次 モジュール -->
+<div class="bg-light p-3 mb-4">
+<h2>目次</h2>
+<ul id="w-indexlistBox">
+    <li v-for="item in items" class="w-indexlistBox-list">
+      <a v-bind:href="item.id" data-scroll >{{text2}}</a>
+    </li>
+</ul>
+</div>
+<!-- / 目次 モジュール -->
+<!-- 本文のセクション モジュール -->
+<div id="s1" class="mt-n6 pt-6 mb-6">
+<h2> UI </h2>
+<div class="card"><div class="card-body">
+<h3> UI ユーザー インターフェイス </h3>
+<p><a href="https://ja.wikipedia.org/wiki/%E3%83%A6%E3%83%BC%E3%82%B6%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%95%E3%82%A7%E3%83%BC%E3%82%B9" target="_blank" rel="noopener">ユーザインタフェース</a></p>
+<p> 道具と人が関わる箇所 場所。操作するところ Wikipediaでは道具ではなくて機械に範囲を絞っている。</p>
+<p>扉でゆうところのドアノブ</p>
+</div>
+</div>
+</div>
+
+
+<div id="s2" class="mt-n6 pt-6 mb-6">
+<h2>UX</h2>
+<div class="card mb-6">
+<div class="card-body">
+<h3>ユーザーエキスペリメンス</h3>
+<p> <a href="https://ja.wikipedia.org/wiki/%E3%83%A6%E3%83%BC%E3%82%B6%E3%83%BC%E3%82%A8%E3%82%AF%E3%82%B9%E3%83%9A%E3%83%AA%E3%82%A8%E3%83%B3%E3%82%B9" target="_blank" rel="noopener">ユーザーエクスペリエンス</a></a><br>
+人工物（製品、システム、サービスなど）の利用を通じてユーザーが得る経験である。しばしば「UX」と略される[1]。「ユーザー経験」「ユーザー体験」などと訳される。
+</p>
+<p>消費者の体験のこと<br>
+UI/UXを想定してサービスをデザインする方式や手法です。</p>
+</div>
+</div>
+</div>
+
+
+<div id="s3" class="mt-n6 pt-6 mb-6">
+<h2>UI/UXとは</h2>
+<div class="card mb-6">
+<div class="card-body">
+<p>ユーザーが求める操作や機能を期待とおりに提供し、滞りなく達成することが実現できることです。途中に離脱したり、別の方法でためしたりしないようにすることが大切です。ある程度webリテラシーがあって初めてのサービスでも登録や退会などが所定のステップで実行できればストレスのないデザインと思います。</p>
+<p>必ずしも100人のターゲットユーザーが100人達成しなければならないわけどはないです。</p>
+<p>ネットリテラシーやPCリテラシーなどの高さでやはり満足度（不満）はかわるとおもいます。</p>
+<h3>OS のでデザインシステム</h3>
+ <p>OSそれぞれにインタラクティブデザインやマテリアルデザイン（スクロールバーや汎用ボタン）がさだめられています。</p>
+</div>
+</div>
+</div>
+<div id="s3" class="mt-n6 pt-6 mb-6">
+<h2>ユーザービリティ</h2>
+<div class="card mb-6">
+<div class="card-body">
+  <p>具体的に絞ったターゲットユーザー（ペルソナモデル）にとってつかいやすくきにいるかどうかがユーザビリティだそうです。</p>
+<ul>
+  <li><a href="Webユーザビリティとは？3つの間違いポイント・落とし穴にご用心" target="_blank" rel="noopener">Webユーザビリティとは？3つの間違いポイント・落とし穴にご用心</a></li>
+  <li><a href="(https://murashun.jp/blog/20181018-01.html" target="_blank" rel="noopener">ユーザビリティとは</a></li>
+</ul>
+<blockquote>
+<ul>
+  <li class="mb-4"><h4>学習しやすさ：</h4>
+  システムは、ユーザがそれを使ってすぐ作業を始められるよう、簡単に学習できるようにしなければならない。</li>
+    <li class="mb-4"><h4>効率性：</h4>
+  システムは、一度ユーザがそれについて学習すれば、後は高い生産性を上げられるよう、効率的な使用を可能にすべきである。</li>
+  <li class="mb-4"><h4>記憶しやすさ：</h4>
+  システムは、不定期利用のユーザがしばらく使わなくても、再び使うときに覚え直さないで使えるよう、覚えやすくしなければならない。</li>
+  <li class="mb-4"><h4>エラー発生率：</h4>
+  システムはエラー発生率を低くし、ユーザがシステム使用中にエラーを起こしにくく、もしエラーが発生しても簡単に回復できるようにしなければならない。また、致命的なエラーが起こってはいけない。</li>
+  <li class="mb-4"><h4>主観的満足度：</h4>
+  システムは、ユーザが個人的に満足できるよう、また好きになるよう楽しく利用できるようにしなければならない。</li>
+</ul>
+</blockquote>
+</div>
+</div>
+</div>
+
+<!-- editable area end ########             -->
+</article>
+</div>
+<!-- /container-->
+<!-- / w-aside2 --->

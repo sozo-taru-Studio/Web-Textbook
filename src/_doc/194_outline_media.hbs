@@ -1,0 +1,118 @@
+---
+title: SEOの基本
+discription: discription
+cat: web総合概論
+next-page-url: "193_outline_media.html"
+filename: 194_outline_media.html
+prev-page-url: "192_outline_media.html"
+titlename: "{{title.titlename}}"
+text: "{{item.text}}"
+text2: "{{item.text}}"
+---
+<div class="container mb-5">
+<article id="w-article">
+<!-- editable area ########             -->
+        <h1>{{title}} - {{cat}}</h1>
+        <p><span>category:</span> <span class="badge badge-primary">{{cat}}</span></p>
+        <hr>
+<!-- 序章 モジュール -->
+<div class=" mb-4 alert alert-info">
+<div class="card-body">
+ <p>SEO</p>
+<p class="card-text">サーチエンジンオプティマゼーション。（Search Engine Optimization）<br>
+検索エンジン最適化の略 検索エンジンとはインターネットのツール（webサービス）でユーザーが知りたい情報を掲載しているであろうwebページをお勧めしてくれるサービスです。
+</p>
+<p>Google社の検索エンジンが他者を追随を許さず、まずはずれのない案内をしていただいている感じです。ストライクゾーンに入れてくるのがうまく。
+  経験上 ボール球を頬てくるときはこちらの要求がおかしい場合が多い。</p>
+</div>
+</div>
+
+<!-- 目次 モジュール -->
+<div class="bg-light p-3 mb-4">
+<h2>目次</h2>
+<ul id="w-indexlistBox">
+    <li v-for="item in items" class="w-indexlistBox-list">
+      <a v-bind:href="item.id" data-scroll >{{text2}}</a>
+    </li>
+</ul>
+</div>
+<!-- / 目次 モジュール -->
+<!-- 本文のセクション モジュール -->
+<div id="s1" class="mt-n6 pt-6 mb-6">
+<h2>検索エンジン最適化することの目的</h2>
+<h3> 検索結果ページで上位に表示させることに価値がある </h3>
+<p>検索者にとって検索結果の最初の方に目にするお勧めページはクリックしてみてくれやすいですよね。
+  <br>同じサービスを比較している場合最初に見たページが閲覧者にはその後のページ情報比較の基準になることはないですか？
+  <br>で結局最初に訪れたページのサービスを採用してりしませんか？</p>
+  <p>そうゆう観点から同じようなサービスをWebで告知するとき表示結果の並び順に一喜一憂したりお金を書けて順位を上げる価値があるわけです。</p>
+<h3>同じようなサービスを提供するライバルと差を付けたいばあい</h3>
+<p>SEOにコストをかけることに多少を発揮するかもしれません。でもそもそもサービス自体を見直した方がいいんじょないですか？
+</p>
+<p>SEOの効果をはっきするでしょうけども、そもそもサービスを告知しサービスを知ってもらうルートが様々でSEOだけでばっちりなんて言えません。</p>
+<p></p>
+<h3> キーワード </h3>
+<p>キーワードは検索時に入力するときに必要なワードで、どのようなキーワードを入力されたときにそのページが表示されればいいのかを予め考慮しておかないといけません。ターゲットキーワードが必要です。</p>
+</div>
+
+<div id="s2" class="mt-n6 pt-6 mb-6">
+
+<h2>コンテンツ オブ キング</h2>
+<div class="card mb-6">
+<div class="card-body">
+<h3>Google検索エンジンの立場として</h3>
+<p>googleの立場から考えるとユーザーに信頼されまたgoogleをつかってもらうために下手なページを紹介するわけにはいきません、望まないページを紹介するとポンコツ判定をユーザーにうけてしまします。そうすれば広告収入をえられなくなりgoogleの資産を維持することができなくなります。</p>
+</div>
+</div>
+<div class="card mb-6"><div class="card-body">
+<h3>上位に評価される要素</h3>
+<ul>
+  <li>googleが推奨する技術的な項目をなるべくクリアする</li>
+  <li> 閲覧者が求めている情報を正しく提供してサイトつくる。価値あるコンテンツを提供しているサイトをつくる。
+     <blockquote>
+<h4>Googleが最重要視する3つの評価基準（E-A-T）</h4>
+<ul>
+  <li>Expertise（専門性）
+  <li>Authoritativeness（権威性）
+  <li>Trustworthiness（信頼性）
+</ul>
+    </blockquote>
+  </li>
+
+</ul>
+</div>
+</div>
+
+<div class="card mb-6"><div class="card-body">
+<h3>googleが案内する検索エンジン最適化（SEO）スターター ガイド</h3>
+
+<blockquote style="font-size:14px;">
+<p>
+<a href="https://support.google.com/webmasters/answer/7451184?hl=ja" target="_blank" rel="noopener">
+検索エンジン最適化（SEO）スターター ガイド </a>
+</p>
+</blockquote>
+</div>
+</div>
+<div class="card mb-6"><div class="card-body">
+
+<h3>従来のポイント</h3>
+<p>初心者でできる技術的な制作ポイントは3点から4点です。</p>
+<ul>
+  <li>ドメインを取得する。（SEOよりマーケティングに強いブランドの力）</li>
+  <li>タイトルタグをそのページにあった文書にする</li>
+  <li>meta discriptionをページにあった説明文を書く</li>
+  <li>情報構造とページ構成を人と検索エンジンにわかりやすいようにする。</li>
+</ul>
+<p>SEOに関してはオーガニックな手法をまず実践しておくだけでいいのではないでしょうか？</p>
+<p>コンテンツの性質によってトラフィックの稼ぎかたがちがうので手法はさまざまです。</p>
+</div>
+</div>
+
+
+</div>
+<!-- editable area end ########             -->
+</article>
+</div>
+<!-- /container-->
+
+<!-- / w-aside2 --->
