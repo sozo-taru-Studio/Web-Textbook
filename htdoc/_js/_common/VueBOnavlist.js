@@ -120,6 +120,49 @@ var BOpages = new Vue(BO);
                     url:"18_outline_media.html",
                     dis:"肩書でなにができるかわかるのかはわからない。",
                     img: "_images/_OL/programming_640.jpg"
+                },
+
+                {
+                    titlename:'情報リテラシー',
+                    titleen:"staff",
+                    url:"191_outline_media.html",
+                    dis:"情報リテラシーについてリテラシーが低いんです。",
+                    img: "_images/_OL/open-book_640.jpg"
+                },
+                {
+                    titlename:'個人情報保護について',
+                    titleen:"personal information",
+                    url:"192_outline_media.html",
+                    dis:"おれのなにをしってるっていうんだよー",
+                    img: "_images/_OL/paint_640.jpg"
+                },
+                {
+                    titlename:'SEOの基本',
+                    titleen:"Search Engine Optimization",
+                    url:"194_outline_media.html",
+                    dis:"検索エンジン最適化の基本",
+                    img: "_images/_OL/seo_640.jpg"
+                },
+                {
+                    titlename:'コピーライティングについて',
+                    titleen:"staff",
+                    url:"193_outline_media.html",
+                    dis:"おまえを就職させてやる リカレントスクール",
+                    img: "_images/_OL/yogurt_640.jpg"
+                },
+                {
+                    titlename:'サーバーの知識',
+                    titleen:"server",
+                    url:"19_outline_media.html",
+                    dis:"脂ののったサーバー",
+                    img: "_images/_OL/cyberspace_640.jpg"
+                },
+                {
+                    titlename:'UI/UXの考え方',
+                    titleen:"UIUX",
+                    url:"195_outline_media.html",
+                    dis:"ユーザーインターフェイスとユーザーエクスペリエンス",
+                    img: "_images/_OL/ux-640.jpg"
                 }
             ]
    }
