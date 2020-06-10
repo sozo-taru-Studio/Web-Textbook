@@ -55,7 +55,7 @@ text2: "{{item.text}}"
 <div class="card mb-6">
 <div class="card-body">
 <h3>ピア トゥ ピア</h3>
-<div class="w-lg-75" ><img src="_images/_OL/computer_p2p.png" alt="ピア トゥ ピア"></div>
+<div class=" text-center" ><img src="_images/_OL/computer_p2p.png" alt="ピア トゥ ピア" class="w-75"></div>
 <p> 各々のPCがデータのやり取りを同時に実行して全てのPCがノードとして平等に機能します。<br>
 一般的に社内や家庭でルーター経由でフォルダーを共有することができます、<br>
 管理することが簡単ですがノードが増えることによる負荷を管理できないことが多くタスクが一か所に集中するとネットワークが機能しない場合があります。</p>
@@ -64,7 +64,7 @@ text2: "{{item.text}}"
 <div class="card mb-6"><div class="card-body">
 <h3>サーバー クライアント型ネットワーク</h3>
 
-<div><img src="_images/_OL/computer_server_based.png" alt="ピア トゥ ピア"></div>
+<div class="text-center"><img src="_images/_OL/computer_server_based.png" alt="サーバークライアント型ネットワーク" class="w-75"></div>
 <p>情報を保管しリクエストに応じて情報を送信する。情報閲覧専用の役割をもっているPCをサーバー（コンピューター）とよび</p>
 <p>クライアント側はサーバー側に データー閲覧を依頼する(ブラウザーやUA)ローカルサイドのPCやスマートフォン端末のことをいいます。</p>
 </ul>
@@ -76,21 +76,27 @@ text2: "{{item.text}}"
 <div id="s2" class="mt-n6 pt-6 mb-6">
 <h2>TCP/IP</h2>
 <p>インターネットの情報（データ）のやりとりの標準化について説明します。</p>
+<dl>
+  <dt>TCP</dt>
+  <dd>Transmission Control Protocol</dd>
+  <dt>IP</dt>
+  <dd>Internet Protocol </dd>
+</dl>
 <blockquote>
 <p><a href="http://www.hct.ecl.ntt.co.jp/floorguide/tech_j.html" target="_blank" rel="noopner">[インターネットの技術 | フロアガイド | NTT技術史料館]</a></p>
 
-<p>ロケーションのユニーク化することによって情報のやりとりをする端末をまちがえなく送信することができます。　電話番号のような番号で端末のロケーションを判別しています。ロケーションの判別を<strong>IPアドレス</strong>といいます。</p>
+<p>ロケーションをユニーク化することで端末を間違えなく送信することができます。電話番号のような番号で端末のロケーションを判別しています。ロケーションの判別を<strong>IPアドレス</strong>と呼びます。</p>
 <p><a href="https://www.expressvpn.com/jp/what-is-my-ip" target="_blank" rel="noopner">[私のIPアドレスロケーションは？]</a></p>
 <p><a href="https://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%8D%E3%83%83%E3%83%88%E3%83%BB%E3%83%97%E3%83%AD%E3%83%88%E3%82%B3%E3%83%AB%E3%83%BB%E3%82%B9%E3%82%A4%E3%83%BC%E3%83%88" target="_blank" rel="noopner">[インターネット・プロトコル・スイート]</a></p>
 </blockquote>
 <div>
 <h4>インフラには標準化が必要。</h4>
 <p>
-標準化 : 機能や用途　仕様の統一化 一般化 （不足過剰をなくすこと）規格化
+標準化 : 機能や用途 仕様の統一化 一般化 （不足過剰をなくすこと）規格化
 <br>
-日本の電気のコンセントは交流で100Vの電圧です。<br>
+「日本の電気のコンセントは交流で100Vの電圧です。<br>
 道路交通法では左側通行。<br>
-歩行者と車両にわかれ車道には車両が通行し、歩道には歩行者が通行します。
+歩行者と車両にわかれ車道には車両が通行し、歩道には歩行者が通行します。」<br>などのようにインターネットで情報をやり取りするときの規格があります。
 </p>
 </div>
 <div class="card mb-6">
@@ -140,6 +146,10 @@ IPv6 : fe80::1031:f572:3eb0:f67e</p>
 <h3>ドメイン</h3>
 <p>IPアドレスは機器の番号でありますが　webページやサイトのオーナーは同じ端末に共存することはあります。IPアドレスという数字での表記は人にとって使いづらい。</p>
 <p>現在では運営会社の明確化やブランドイメージの固定化を目的に取得する意味合いの方が強い</p>
+<div>
+<h4>googleのドメイン</h4>
+<p><pre>https://google.com</pre></p>
+</div>
 <p><a href="https://xn--u8j7eobcu7j2kyg7f.jp/special/registrar/index.html" target="_blank" rel="noopner">ドメインはだれが決めているの</a></p>
 <p>ドメインの取得は管理料を払い続ければ抑えることができる。<br>
 逆に管理料が払えなければ失効する。</p>
