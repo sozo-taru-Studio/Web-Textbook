@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="description" content="webアプリケーション制作での技術俯瞰図解説">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">  <title>webアプり開発における技術範囲と言語/用語 - web総合概論 - Web TextBook</title>
+  <!-- stylesheet  -->
+  <link rel="stylesheet" href="_css/_common/bootstrap.css">
+  <link rel="stylesheet" href="_css/_common/font-awesome.min.css">
+  <link rel="stylesheet" href="_css/_common/style.css">  <!--  Favicons  -->
+  <link rel="icon" href="favicon.ico">  <!-- common js  -->
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="_js/_common/jquery-3.2.1.min.js"></script>
+  <script src="_js/_common/bootstrap.min.js"></script>
+  <script src="_js/_common/pagescroll.jQuery.js"></script></head>
+<body class="web総合概論">
+<div id="w-wrapper" class="w-wrapper">
+<!-- header -->
+<header id="w-pageHeader" class="navbar navbar-dark navbar-expand-lg fixed-top w-pageHeader" data-scroll-header="true">
+<div class="container">
+<a class="navbar-brand" href="index.html">logo</a><span class="navbar-brand">Web Textbook</span>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#w-nav" aria-controls="w-nav" aria-expanded="false" aria-label="ナビゲーション切替">
+<span class="navbar-toggler-icon"></span>
+</button>
+<nav id="w-nav" class="collapse navbar-collapse">
+<ul class="navbar-nav mr-auto pl-3">
+<li class="nav-item"><a href="mk.html" class="nav-link">HTML</a></li>
+<li class="nav-item"><a href="style.html" class="nav-link">CSS</a></li>
+<li class="nav-item"><a href="js.html" class="nav-link">javasceipt</a></li>
+</ul>
+</nav>
+<!-- /w-nav-->
+</div>
+<!-- /container--></header>
+<!-- /w-pageHeader-->
+<div class="d-lg-flex pt-5" id="main-wrap">
+<main id="w-main" class="w-main col-lg-8 order-1">
+   <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p" rel="stylesheet">
+<div class="container mb-5">
+<article id="w-article">
+<!-- editable area ########             -->
+        <h1>webアプり開発における技術範囲と言語/用語 - web総合概論</h1>
+        <p><span>category:</span> <span class="badge badge-primary">web総合概論</span></p>
+        <hr>
+<!-- 序章 モジュール -->
+<div class=" mb-4 alert alert-info">
+<div class="card-body">
+<p class="card-text">web開発系企業で必要とされる技術用語を2020年度時点での俯瞰図として大まかに解説します。</p>
+いろいろな言語や分野分けするための専門用語の解説になります、エンジニアにしてもプログラマーにしてもどんな技術があればいいのか？ どんなところまでの知見やプログラミングを要求されるのかの指標になればとおもいます。</p>
+<p>参考資料は <cite><a href="https://www.youtube.com/watch?v=qIRtN61gMfQ" target="_blank" rel="nopoener">Web/IT用語27選！超カンタンに解説してみた【クラウドとは？サーバーとは？データベースとは？】</a></cite>です。〇パクリと言って過言ではないです。</p>
+</div>
+</div>
+
+<!-- 目次 モジュール -->
+<div class="bg-light p-3 mb-4">
+<h2>目次</h2>
+<ul id="w-indexlistBox">
+    <li v-for="item in items" class="w-indexlistBox-list">
+      <a v-bind:href="item.id" data-scroll >{{item.text}}</a>
+    </li>
+</ul>
+</div>
+<!-- / 目次 モジュール -->
+<!-- 本文のセクション モジュール -->
+<div id="s1" class="mt-n6 pt-6 mb-6">
+<h2> webアプリケーション開発とは </h2>
+<div class="card"><div class="card-body">
+<p> webサイトやページの作成範囲にとどまらず。webを介したサービス全般です。 </p>
+<h3>例）</h3>
+<ul>
+<li>転売サービス (メルカリ)</li>
+<li>配車サービス (Uber)</li>
+<li>デザインソフト全般の販売とバージョン管理 （adobe cc）</li>
+<li>動画 配信 登録 アーカイブ （youtube）</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+<div id="s2" class="mt-n6 pt-6 mb-6">
+<h2>webアプリケーション開発における技術範囲と言語</h2>
+<div class="card mb-6">
+<div class="card-body">
+<h3></h3>
+<div class="d-flex">
+  <style>
+    .hardTable,.softTable{
+      font-size:14px;
+      font-family: "M PLUS 1p";
+    }
+    .hardTable{
+     color:var(--white);
+     background-color:var(--dark);
+    }
+  .hardTable td,
+  .softTable th{
+       border-top-width:0;
+  }
+    .softTable .softkaind td{
+   width:14.28%;
+
+    }
+    .softTable .softkaind td[colspan="2"]{
+   width:28.52%;
+    }
+  .softTable .softkaind td[colspan="3"]{
+   width:42.85%;
+    }
+.hardTable ul,.softTable ul{
+  list-style: none;
+  font-size: 12px;
+  padding-left: 1em;
+}
+.hardTable h4,.softTable h4{
+  font-size: 12px;
+}
+
+.fe{
+    background-color:rgba(255,200,200,0.2);
+  }
+.ine{
+    background-color:rgba(200,255,200,0.2);
+  }
+.be{
+    background-color:rgba(200,255,255,0.2);
+  }
+  </style>
+<table class="softTable table table-bordered">
+<thead>
+  <tr>
+<th colspan="6" scope="col" class="text-center"><span class=""> <i class="fa fa-window-maximize" aria-hidden="true"></i> ソフトウェア</span></th>
+<th scope="col" class="hardTable"><span> <i class="fa fa-cogs" aria-hidden="true"></i>  ハードウェア</span></th>
+  </tr>
+</thead>
+<tbody>
+<tr  class="softkaind">
+  <td colspan="2"  class="text-center"> アプリケーション（上）</td>
+  <td colspan="3"  class="text-center"> ミドルウェア(中)</td>
+  <td  class="text-center"> <abbr title="オペレーションシステム">OS</abbr>(土台)</td>
+<td  class="hardTable"></td>
+</tr>
+<tr>
+  <td class="fe">クライアントサイド</td>
+  <td class="be">サーバーサイド</td>
+  <td class="be"> Webサーバー</td>
+  <td class="be"> APサーバー</td>
+  <td class="be"> DBサーバー </td>
+  <td>
+    <ul>
+      <li> Windows </li>
+      <li> mac OSX </li>
+      <li> Linux </li>
+    </ul>
+  </td>
+  <td class="hardTable">
+    <ul  class="list-unstyled">
+      <li> <i class="fa fa-desktop" aria-hidden="true"></i> PC </li>
+      <li> <i class="fa fa-server" aria-hidden="true"></i> サーバー </li>
+      <li> <i class="fa fa-sitemap" aria-hidden="true"></i> ネットワーク </li>
+    </ul>
+  </td>
+</tr>
+<tr>
+  <td class="fe">
+    <h4>PC ブラウザ</h4>
+    <ul>
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>javascript</li>
+    </ul>
+    <h4>モバイル</h4>
+    <ul>
+      <li><i class="fa fa-apple" aria-hidden="true"></i> iphone - Swift</li>
+      <li><i class="fa fa-android" aria-hidden="true"></i> android - Kotlin</li>
+    </ul>
+  </td>
+  <td class="be">
+    <h4>言語</h4>
+    <ul>
+      <li>php</li>
+      <li>java</li>
+      <li>Python</li>
+      <li>Ruby</li>
+      <li>....e.t.c</li>
+    </ul>
+
+  </td>
+  <td class="be">
+    ソフト
+    <ul>
+      <li>nginx</li>
+      <li>Apache</li>
+      <li>....e.t.c</li>
+    </ul>
+  </td>
+  <td class="be">
+    ソフト
+    <ul>
+      <li>Unicorn</li>
+      <li>tomcat</li>
+      <li>....e.t.c</li>
+    </ul>
+  </td>
+  <td class="be">
+    言語
+    <ul>
+      <li>mySQL</li>
+      <li>MariaDB</li>
+      <li>Oracle Database</li>
+      <li>....e.t.c</li>
+    </ul>
+  </td>
+  <td>
+  </td>
+  <td>
+  </td>
+</tr>
+<td class="fe">フロントエンドエンジニア</td>
+<td colspan="6"></td>
+<tr>
+<td></td>
+<td colspan="4" class="be">バックエンドエンジニア</td>
+<td colspan="2"></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td class="ine" colspan="5">インフラエンジニア</td>
+</tr>
+<tr>
+<td colspan="7">SaaS (クラウド)</td>
+</tr>
+<tr>
+<td colspan="2"></td>
+<td colspan="4">PaaS (クラウド)</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="6"></td>
+<td>IaaS(クラウド)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+<div id="s3" class="mt-n6 pt-6 mb-6">
+<h2>クラウド</h2>
+<div class="card mb-6">
+<div class="card-body">
+<p>インターネット経由で扱うアプリケーションのこと。</p>
+<dl>
+<dt>SaaS [Software as a Service] </dt>
+<dd>
+<p>私たちが使うクラウドサービスはSaaS型で機能がそろっており目的を達成できるようにできています。</p>
+<p>ハードウェアから全ての機能を構築するような案件はもうないに等しいでしょう。ほとんどのwebサービスは何らかの外部の高機能なソフトを使って作成されています。</P>
+</p>
+</dd>
+</dl>
+
+<dl>
+<dt>PaaS [Platform as a Service] </dt>
+<dd>
+<p>PaaSは ミドルウェアの部分を借りてオリジナルアプリケーションをつくる顧客のためのサービスです。</p>
+<p>AWS ,GCP,GAE, Azure はIaaS型とPaaSの合体したサービスです。</p>
+<p>クラウドの良いところは　情報伝達量（アクセス）の急減や規模によってカスタマイズが自由にできるところです。そしてハードのメンテやバックアップなどサービスにもよりますがリスクヘッジに対応しやすいところでしょう。
+</p>
+</dd>
+</dl>
+<dl>
+<dt>IaaS [Infrastructure as a Service] </dt>
+<dd>
+<p>IaaSはハードウェアの部分だけレンタルし ミドルウェア アプリケーションはオリジナルで作成するという顧客のためのサービスです。</P>
+</dd>
+</dl>
+
+</div>
+</div>
+</div>
+
+<div id="s3" class="mt-n6 pt-6 mb-6">
+<h2>レンタルサーバー</h2>
+<div class="card mb-6">
+<div class="card-body">
+<p>比較的低価格で機能を限定したwebサーバーです</p>
+<p>大量のアクセスをさばけませんが少ないアクセスのwebサービスなら大丈夫でしょう。</p>
+<p>一般的な企業のサービスサイトや広報サイトなら十分です。十分な機能があるか？勉強したいプログラミング言語が実装できるか確認して借りましょう。</p>
+</div>
+</div>
+</div>
+
+<!-- editable area end ########             -->
+</article>
+</div>
+<!-- /container-->
+<!-- / w-aside2 --->
+
+<aside class="print-none" id="w-aside2">
+<div class="row text-white no-gutters justify-content-center">
+<nav aria-label="Page navigation">
+<ul class="pagination justify-content-center">
+<li class="page-item">
+<a class="page-link" href="19_outline_media.html" tabindex="-1" aria-disabled="false">Previous</a>
+</li>
+<li class="page-item">
+<a class="page-link " aria-disabled="false"  href="195_outline_media.html">Next</a>
+</li>
+</ul>
+</nav>
+</div>
+<div class="container p-3"></div>
+</aside>
+</main>
+<aside class="w-aside col-lg-2 print-none order-0" id="w-aside1">
+<div class="w-aside-inner container">
+<div class="accordion" id="accordionAside">
+<div class="w-subnav">
+<div id="headingOne">
+<h3 class="sticky-top">
+  <button class="btn btn-link  collapsed" type="button" data-toggle="collapse" data-target="#w-BOlist-collapse" aria-expanded="false" aria-controls="collapseOne" >
+PC Operation</button>
+</h3>
+</div>
+<div id="w-BOlist-collapse" class="collapse" aria-labelledby="headingOne" data-parent="#accordionAside">
+<!-- BOlist modile -->
+<ul id="w-BOlist" class="list-unstyled w-BOlist">
+        <li class="" v-for="title in titles"><a v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+        </ul>
+        <!-- /BOlist modile -->
+</div>
+</div>
+<div class="w-subnav">
+<div id="heading2">
+<h3 class="sticky-top">
+  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#w-OLlist-collapse" aria-expanded="false" aria-controls="collapseTwo">web Outline</button>
+</h3>
+</div>
+<div id="w-OLlist-collapse" class="collapse" aria-labelledby="heading2" data-parent="#accordionAside">
+<!-- OLlist modile -->
+<ul id="w-OLlist" class="list-unstyled">
+  <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+</ul>
+<!-- /OLlist modile -->
+</div>
+</div>
+<div class="w-subnav">
+<div id="heading3">
+<h3 class="sticky-top">
+  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#w-MKlist-collapse" aria-expanded="false" aria-controls="collapseThree">HTML</button>
+      </h3>
+</div>
+<div id="w-MKlist-collapse" class="collapse" aria-labelledby="heading3" data-parent="#accordionAside">
+<!-- OLlist modile -->
+<ul id="w-MKlist" class="list-unstyled">
+  <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}}</a></li>
+</ul>
+<!-- /OLlist modile -->
+</div>
+</div>
+
+<div class="w-subnav">
+<div id="heading4">
+<h3 class="sticky-top">
+<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#w-EDlist-collapse" aria-expanded="false" aria-controls="collapse4">Text Editor
+</button>
+</h3>
+</div>
+<div id="w-EDlist-collapse" class="collapse" aria-labelledby="heading4" data-parent="#accordionAside">
+<!-- EDlist modile -->
+<ul id="w-EDlist" class="list-unstyled">
+<li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}}</a></li>
+</ul>
+<!-- /EDlist modile -->
+</div>
+</div>
+<div class="w-subnav">
+<div id="heading5">
+<h3 class="sticky-top">
+<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#w-CSSlist-collapse" aria-expanded="false" aria-controls="collapse5">CSS
+</button>
+</h3>
+</div>
+<div id="w-CSSlist-collapse" class="collapse" aria-labelledby="heading4" data-parent="#accordionAside">
+<!-- EDlist modile -->
+<ul id="w-CSSlist" class="list-unstyled">
+  <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+</ul>
+<!-- /csslist modile -->
+</div>
+</div>
+
+<div class="w-subnav">
+<div id="heading6">
+<h3 class="sticky-top">
+<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#w-JSlist-collapse" aria-expanded="false" aria-controls="collapse6">javascript
+</button>
+</h3>
+</div>
+<div id="w-JSlist-collapse" class="collapse" aria-labelledby="heading4" data-parent="#accordionAside">
+<!-- EDlist modile -->
+<ul id="w-JSlist" class="list-unstyled">
+  <li class="" v-for="title in titles"><a class="" v-bind:href="title.url" v-bind:title="title.titleen">{{title.titlename}} </a></li>
+</ul>
+<!-- /jslist modile -->
+</div>
+</div>
+
+  </div><!-- /accordionAside -->
+</div>
+<script src="_js/_common/VueBOnavlist.js"></script>
+</aside>
+<aside class="w-aside w-indexlistbox col-lg-2 order-2" id="w-aside3">
+<div class="indexlist-inner container">
+<div><h3>page navigation</h3></div>
+<ol class="list-unstyled list-group" id="w-indexlists">
+  <li class="index-list" v-for="item in items">
+    <a v-bind:href="item.id" class="indexlist-link" data-scroll >{{item.text}}</a>
+  </li>
+</ol>
+</div>
+</aside>
+</div><!-- /main-wrap -->
+<!-- footer -->
+<footer id="w-pageFooter">
+<div class="container d-flex">
+  <p class="site-copy">
+<small>&copy; shounosuke tarutani</small>
+</p><!-- /site-copy -->
+</div>
+<!-- /container-->
+</footer>
+<!--w-pageFooter--><script src="_js/_common/Vuepagelist.js"></script>
+<script src="_js/_common/prism.js"></script>
+</div>
+<!--w-wrapper-->
+</body>
+</html>
