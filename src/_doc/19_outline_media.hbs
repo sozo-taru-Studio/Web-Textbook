@@ -75,6 +75,8 @@ text2: "{{item.text}}"
 
 <div id="s2" class="mt-n6 pt-6 mb-6">
 <h2>TCP/IP</h2>
+<div class="card">
+<div class="card-body">
 <p>インターネットの情報（データ）のやりとりの標準化について説明します。</p>
 <dl>
   <dt>TCP</dt>
@@ -99,6 +101,9 @@ text2: "{{item.text}}"
 歩行者と車両にわかれ車道には車両が通行し、歩道には歩行者が通行します。」<br>などのようにインターネットで情報をやり取りするときの規格があります。
 </p>
 </div>
+
+</div>
+</div>
 <div class="card mb-6">
 <div class="card-body">
 <h3>IPアドレス</h3>
@@ -109,11 +114,24 @@ text2: "{{item.text}}"
 
 <h4>IPv4</h4>
 <p>従来のインターネットの端末場所を判別する番号</P>
-<p>例) IPv4 : 172. 16.  5.151</p>
-<p>0 - 255 までの時間がある４つの数字の羅列で識別します。</p>
+<p>例) IPv4 : 172 16 5 151</p>
+<p>0 - 255 まで４つの数字の羅列で識別します。</p>
+<p>基本的なインターネット上のやり取りでこのIPv4形式がつかわれる。</p>
+<p>番号で地域などやネットワーク接続会社などがわかる。</p>
+<div>
+<h5>IPアドレスからプロバイダーを調べることができます。</h5>
+<p>
+  <a href="http://www.ipsearch.jp/ip/25.html#.X4RGDWjN0uW" rel="noopener" target="_blank">IPアドレスからプロバイダーを検索
+  </a>
+</div>
 <h4>IPv6</h4>
 <p>インターネット枯渇問題とネットワーク機器の多様化<br>
-IPv6 : fe80::1031:f572:3eb0:f67e</p>
+IPv4ではインターネット接続機器の増加に追いつかず番号の枯渇問題が過去ありました。<br>
+多くの機器をインターネットでつなぐためIPv6が規格されました。ユニークな番号は<span>340*10<sup>36</sup></sup>(340澗)個あります。</p>
+<p>例として</p>
+<pre>
+IPv6 : fe80::1031:f572:3eb0:f67e
+</pre>
 <h4>ローカルIP/グローバルIP</h4>
 <p>IPアドレスが足らないので各々のネットワーク会社<br>
 おもにプロバイダーは利用者にはローカルIPでやり取りする。</p>
@@ -126,15 +144,41 @@ IPv6 : fe80::1031:f572:3eb0:f67e</p>
 <p>インターネットプロバイダー（Internet Service Provider）</p>
 <p>インターネットに接続するサービス。（固有のIPアドレスを所有しておりたんまつに接続する権利を与えるサービス。）<br>
  ここまではグローバルIPで識別されています。</p>
-
 <p> ローカルIPはIPアドレスの枯渇問題を解決するために 局所で使われるノードには局所で使うローカル番号を与えて端末識別をおこなっています。</p>
-
-
-<ol>
-<li> ルーター機器はルーティング（道案内）をするための機器です。</li>
-<li>「ゲートウェイルーター」</li>
-<li>「ハブ（スイッチングハブ）」端末に情報を分配する</li>
-<li>「ネットワークカードとPC」ネットワークに接続を確認したり情報を送受信する。</li>
+<p> ルーター機器はルーティング（道案内）をするための機器です。</p>
+<div class="text-center mb-3">
+  <img src="_images/_OL/ipaddress.png" alt="LANの図" class="img-fluid">
+</div>
+<ol class="d-flex list-unstyled" style="font-size:12px;">
+<li class="col-3 text-center">
+  <figure>
+  <i class="fa fa-globe" aria-hidden="true" style="font-size:24px;"></i>
+  <figcaption>プロバイダー</figcaption>
+  </figure>
+  インターネットに接続します。
+  </li>
+<li class="col-3 text-center">
+  <figure>
+  <i class="fa fa-road" aria-hidden="true" style="font-size:24px;"></i>
+  <figcaption>「ゲートウェイルーター」</figcaption>
+  </figure>
+  自宅とインターネットをつなぐ機器「門」の役割をします。ルーターは複数のインターネット機器に番号を振りローカルネットワークを形成してくれます。
+インターネット接続会社や回線会社から契約すると配られます。Wi-Fiがついていることがあります。
+</li>
+</li>
+<li class="col-3 text-center">
+  <figure>
+  <i class="fa fa-sitemap" aria-hidden="true" style="font-size:24px;"></i>
+  <figcaption>「ハブ（スイッチングハブ）」</figcaption>
+  </figure>
+   PCやスマフォの端末に情報を分配する、LANを構築するなら必要です、スイッチング機能があるルーターは端末を狙って情報を送受信します。
+ </li>
+  <li class="col-3 text-center">
+  <figure>
+  <i class="fa fa-desktop" aria-hidden="true" style="font-size:24px;"></i>
+  <figcaption>「ネットワークカードとPCなど」</figcaption>
+  </figure>ネットワークに接続を確認したり情報を送受信する機器で端末には標準でついている。（オンボード）<br>例えば無線ランを拾えないかったり、特殊な回線やデータ送受信量を強化したいときは
+  別でデバイスを買うこともある</li>
 </ol>
 </div>
 </div>

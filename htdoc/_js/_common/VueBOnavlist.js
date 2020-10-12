@@ -163,6 +163,13 @@ var BOpages = new Vue(BO);
                     url:"195_outline_media.html",
                     dis:"ユーザーインターフェイスとユーザーエクスペリエンス",
                     img: "_images/_OL/ux-640.jpg"
+                },
+                {
+                    titlename:'webアプり開発における技術範囲と言語/用語',
+                    titleen:"web word",
+                    url:"196_outline_media.html",
+                    dis:"webアプリケーション制作での技術俯瞰図解説",
+                    img: "_images/_OL/ux-640.jpg"
                 }
             ]
    }
