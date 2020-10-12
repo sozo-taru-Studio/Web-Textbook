@@ -1,0 +1,273 @@
+---
+title: webアプり開発における技術範囲と言語/用語
+discription: webアプリケーション制作での技術俯瞰図解説
+cat: web総合概論
+next-page-url: "195_outline_media.html"
+filename: 196_outline_media.html
+prev-page-url: "19_outline_media.html"
+titlename: "{{title.titlename}}"
+text: "{{item.text}}"
+text2: "{{item.text}}"
+---
+<link href="https://fonts.googleapis.com/css?family=M+PLUS+1p" rel="stylesheet">
+<div class="container mb-5">
+<article id="w-article">
+<!-- editable area ########             -->
+        <h1>{{title}} - {{cat}}</h1>
+        <p><span>category:</span> <span class="badge badge-primary">{{cat}}</span></p>
+        <hr>
+<!-- 序章 モジュール -->
+<div class=" mb-4 alert alert-info">
+<div class="card-body">
+<p class="card-text">web開発系企業で必要とされる技術用語を2020年度時点での俯瞰図として大まかに解説します。</p>
+いろいろな言語や分野分けするための専門用語の解説になります、エンジニアにしてもプログラマーにしてもどんな技術があればいいのか？ どんなところまでの知見やプログラミングを要求されるのかの指標になればとおもいます。</p>
+<p>参考資料は <cite><a href="https://www.youtube.com/watch?v=qIRtN61gMfQ" target="_blank" rel="nopoener">Web/IT用語27選！超カンタンに解説してみた【クラウドとは？サーバーとは？データベースとは？】</a></cite>です。〇パクリと言って過言ではないです。</p>
+</div>
+</div>
+
+<!-- 目次 モジュール -->
+<div class="bg-light p-3 mb-4">
+<h2>目次</h2>
+<ul id="w-indexlistBox">
+    <li v-for="item in items" class="w-indexlistBox-list">
+      <a v-bind:href="item.id" data-scroll >{{text2}}</a>
+    </li>
+</ul>
+</div>
+<!-- / 目次 モジュール -->
+<!-- 本文のセクション モジュール -->
+<div id="s1" class="mt-n6 pt-6 mb-6">
+<h2> webアプリケーション開発とは </h2>
+<div class="card"><div class="card-body">
+<p> webサイトやページの作成範囲にとどまらず。webを介したサービス全般です。 </p>
+<h3>例）</h3>
+<ul>
+<li>転売サービス (メルカリ)</li>
+<li>配車サービス (Uber)</li>
+<li>デザインソフト全般の販売とバージョン管理 （adobe cc）</li>
+<li>動画 配信 登録 アーカイブ （youtube）</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+<div id="s2" class="mt-n6 pt-6 mb-6">
+<h2>webアプリケーション開発における技術範囲と言語</h2>
+<div class="card mb-6">
+<div class="card-body">
+<h3></h3>
+<div class="d-flex">
+  <style>
+    .hardTable,.softTable{
+      font-size:14px;
+      font-family: "M PLUS 1p";
+    }
+    .hardTable{
+     color:var(--white);
+     background-color:var(--dark);
+    }
+  .hardTable td,
+  .softTable th{
+       border-top-width:0;
+  }
+    .softTable .softkaind td{
+   width:14.28%;
+
+    }
+    .softTable .softkaind td[colspan="2"]{
+   width:28.52%;
+    }
+  .softTable .softkaind td[colspan="3"]{
+   width:42.85%;
+    }
+.hardTable ul,.softTable ul{
+  list-style: none;
+  font-size: 12px;
+  padding-left: 1em;
+}
+.hardTable h4,.softTable h4{
+  font-size: 12px;
+}
+
+.fe{
+    background-color:rgba(255,200,200,0.2);
+  }
+.ine{
+    background-color:rgba(200,255,200,0.2);
+  }
+.be{
+    background-color:rgba(200,255,255,0.2);
+  }
+  </style>
+<table class="softTable table table-bordered">
+<thead>
+  <tr>
+<th colspan="6" scope="col" class="text-center"><span class=""> <i class="fa fa-window-maximize" aria-hidden="true"></i> ソフトウェア</span></th>
+<th scope="col" class="hardTable"><span> <i class="fa fa-cogs" aria-hidden="true"></i>  ハードウェア</span></th>
+  </tr>
+</thead>
+<tbody>
+<tr  class="softkaind">
+  <td colspan="2"  class="text-center"> アプリケーション（上）</td>
+  <td colspan="3"  class="text-center"> ミドルウェア(中)</td>
+  <td  class="text-center"> <abbr title="オペレーションシステム">OS</abbr>(土台)</td>
+<td  class="hardTable"></td>
+</tr>
+<tr>
+  <td class="fe">クライアントサイド</td>
+  <td class="be">サーバーサイド</td>
+  <td class="be"> Webサーバー</td>
+  <td class="be"> APサーバー</td>
+  <td class="be"> DBサーバー </td>
+  <td>
+    <ul>
+      <li> Windows </li>
+      <li> mac OSX </li>
+      <li> Linux </li>
+    </ul>
+  </td>
+  <td class="hardTable">
+    <ul  class="list-unstyled">
+      <li> <i class="fa fa-desktop" aria-hidden="true"></i> PC </li>
+      <li> <i class="fa fa-server" aria-hidden="true"></i> サーバー </li>
+      <li> <i class="fa fa-sitemap" aria-hidden="true"></i> ネットワーク </li>
+    </ul>
+  </td>
+</tr>
+<tr>
+  <td class="fe">
+    <h4>PC ブラウザ</h4>
+    <ul>
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>javascript</li>
+    </ul>
+    <h4>モバイル</h4>
+    <ul>
+      <li><i class="fa fa-apple" aria-hidden="true"></i> iphone - Swift</li>
+      <li><i class="fa fa-android" aria-hidden="true"></i> android - Kotlin</li>
+    </ul>
+  </td>
+  <td class="be">
+    <h4>言語</h4>
+    <ul>
+      <li>php</li>
+      <li>java</li>
+      <li>Python</li>
+      <li>Ruby</li>
+      <li>....e.t.c</li>
+    </ul>
+
+  </td>
+  <td class="be">
+    ソフト
+    <ul>
+      <li>nginx</li>
+      <li>Apache</li>
+      <li>....e.t.c</li>
+    </ul>
+  </td>
+  <td class="be">
+    ソフト
+    <ul>
+      <li>Unicorn</li>
+      <li>tomcat</li>
+      <li>....e.t.c</li>
+    </ul>
+  </td>
+  <td class="be">
+    言語
+    <ul>
+      <li>mySQL</li>
+      <li>MariaDB</li>
+      <li>Oracle Database</li>
+      <li>....e.t.c</li>
+    </ul>
+  </td>
+  <td>
+  </td>
+  <td>
+  </td>
+</tr>
+<td class="fe">フロントエンドエンジニア</td>
+<td colspan="6"></td>
+<tr>
+<td></td>
+<td colspan="4" class="be">バックエンドエンジニア</td>
+<td colspan="2"></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td class="ine" colspan="5">インフラエンジニア</td>
+</tr>
+<tr>
+<td colspan="7">SaaS (クラウド)</td>
+</tr>
+<tr>
+<td colspan="2"></td>
+<td colspan="4">PaaS (クラウド)</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="6"></td>
+<td>IaaS(クラウド)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+<div id="s3" class="mt-n6 pt-6 mb-6">
+<h2>クラウド</h2>
+<div class="card mb-6">
+<div class="card-body">
+<p>インターネット経由で扱うアプリケーションのこと。</p>
+<dl>
+<dt>SaaS [Software as a Service] </dt>
+<dd>
+<p>私たちが使うクラウドサービスはSaaS型で機能がそろっており目的を達成できるようにできています。</p>
+<p>ハードウェアから全ての機能を構築するような案件はもうないに等しいでしょう。ほとんどのwebサービスは何らかの外部の高機能なソフトを使って作成されています。</P>
+</p>
+</dd>
+</dl>
+
+<dl>
+<dt>PaaS [Platform as a Service] </dt>
+<dd>
+<p>PaaSは ミドルウェアの部分を借りてオリジナルアプリケーションをつくる顧客のためのサービスです。</p>
+<p>AWS ,GCP,GAE, Azure はIaaS型とPaaSの合体したサービスです。</p>
+<p>クラウドの良いところは　情報伝達量（アクセス）の急減や規模によってカスタマイズが自由にできるところです。そしてハードのメンテやバックアップなどサービスにもよりますがリスクヘッジに対応しやすいところでしょう。
+</p>
+</dd>
+</dl>
+<dl>
+<dt>IaaS [Infrastructure as a Service] </dt>
+<dd>
+<p>IaaSはハードウェアの部分だけレンタルし ミドルウェア アプリケーションはオリジナルで作成するという顧客のためのサービスです。</P>
+</dd>
+</dl>
+
+</div>
+</div>
+</div>
+
+<div id="s3" class="mt-n6 pt-6 mb-6">
+<h2>レンタルサーバー</h2>
+<div class="card mb-6">
+<div class="card-body">
+<p>比較的低価格で機能を限定したwebサーバーです</p>
+<p>大量のアクセスをさばけませんが少ないアクセスのwebサービスなら大丈夫でしょう。</p>
+<p>一般的な企業のサービスサイトや広報サイトなら十分です。十分な機能があるか？勉強したいプログラミング言語が実装できるか確認して借りましょう。</p>
+</div>
+</div>
+</div>
+
+<!-- editable area end ########             -->
+</article>
+</div>
+<!-- /container-->
+<!-- / w-aside2 --->
