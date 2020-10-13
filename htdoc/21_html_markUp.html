@@ -231,7 +231,7 @@ webの知識は一次ソースが英語の場合が多いので仕方ありま�
 index（目録）はとくに指定がなければフォルダをリクエストされた場合 index.（任意の拡張子）優先されて表示されます。
 これはセキュリティ的にフォルダの中身をリストアップされないようにサーバー会社が配慮して設定しています。
 詳しい設定はサーバー会社の設定画面を読んでください。</p>
-<h3>ですのでトップページは必ず 「index.」になります。</h3>
+<h3>トップページは必ず 「index.」になります。</h3>
 <h5>サーバーの公開フォルダー</h5>
 <p>index.htmlが公開フォルダーの直下にあった場合。</p>
 <ul>
@@ -240,16 +240,41 @@ index（目録）はとくに指定がなければフォルダをリクエスト
 <li>http:// example.com/index.html</li>
 </ul>
 <p>クライアントリクエストが上記のURLをたたいてもindex.htmlが表示される。</p>
-<h5>注意）</h5>
+<h5><span class="badge badge-warning ">注意</span></h5>
 <p>フォルダの最初に表示されるファイルがindex.htmlですのでフォルダ構成が多いwebサイトはフォルダ毎にいindex.htmlファイルを作ることになります。</p>
+<p>編集中どのフォルダのindexファイルを判別しづらくなりますので注意が必要です。</p>
+<figure>
+<div class="p-3 bg-white">
+<figcaption> webサイトのフォルダ構成図 </figcaption>
+<pre>
+root
+  ├─  cat.html
+  ├─  wolf.html
+  ├─  index.html // rootフォルダのindexファイル
+  ├─dog
+  │  ├─  pug.html
+  │  ├─  index.html //dog フォルダindexファイル
+  |
+  ├─cat
+  |  ├─ index.html //cat フォルダindexファイル
+  |
+  └─images
+       ├─  cat-640.jpg
+       ├─  pug-640.jpg
+       ├─  wolf-640.jpg
+</pre>
+</div>
+</figure>
+<hr>
+<div class="p-3 alert-success border border-success">
 <h5>ポイント</h5>
 <ul>
 <li>Unix系OSで扱うので半角英数は必須（英語名でつける）</li>
 <li>使える記号は「-」ハイフン「_」アンダーバーのみ。</li>
 <li>拡張子をつける</li>
-<li>最初に表示するファイル名は「index.html」</li>
+<li>最初に表示するファイル名は「index」</li>
 </ul>
-
+</div>
       </div>
 
 <!-- editable area end ########             -->
