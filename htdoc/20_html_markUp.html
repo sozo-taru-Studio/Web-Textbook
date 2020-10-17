@@ -141,18 +141,42 @@
         </li>
         <li>
         <p>OS付属のブラウザ<br>
-        safari:OSX<br>
-        Edge:windews<br>
-        確認作業以外つかいません。</p>
+        <ul>
+        <li>safari:OSX</li>
+        <li>Edge:windews</li>
+        </ul>
+        <p>
+        <small>訓練では確認作業以外OSバンドルのブラウザは基本つかいません。制作するプロジェクトによって適応ブラウザを決定し各ブラウザの表示確認やデバッグのための工数をとます。</small></p>
         </li>
         </ul>
         <h3>SP(スマートフォン)タブレットPC</h3>
         <p>IOS :IOSsafari 機種のバージョンによる。<br>
         android : android ブラウザー 機種のバージョンメーカ-による。</p>
-        <h5>SP市場重視の場合</h5>
+</div>
+<div id="s3" class="mt-n6 pt-6 mb-6 clearfix">
+        <h2>制作においてはブラウザのバージョンと範囲を決める。</h2>
         <p>入力が正しくできるか表示は正しいかを確認するため機種をかなりそろえなければならないメーカーもある。（作業工数も増える）
         HP制作などの会社は多くの検証機種を持ち合わせていないので最新のブラウザで無理なく稼働すればOKになる。その分制作費は比較的安い</p>
-        <h4>ブラウザの知っとけ機能</h4>
+        <p>クライアントの使っているブラウザ環境を確認する。　クライアントの確認環境が数世代前で開発側で確認とれない。ということもあります。
+        <br>妥当なブラウザでの確認環境を双方すりあわせれるようにしましょう。</p>
+<div class="card mb-6">
+        <h5 class="card-header">余談</h5>
+        <div class="card-body">
+        <h6>興味における5つのレベル イノベーター理論</h6>
+        <p>商品やサービスについての反応について早い順に5つ分類している。</p>
+        <ul>
+<li>イノベーター（Innovators）：革新者 例え法外な値段だとしても体験しようとする先駆者(盲目なファン？) 直観を頼りにし一番乗りしたい人</li>
+<li>アーリーアダプター（Early Adopters）：初期採用層 イノベーターの反応をみつつもよければ乗っかる人</li>
+<li>アーリーマジョリティ（Early Majority）：前期追随層 アーリーアダプターの好評を聞きつけ使ってみる人</li>
+<li>レイトマジョリティ（Late Majority）：後期追随層 シェアの多さから多数の乗っかる人</li>
+<li>ラガード（Laggards）：遅滞層 基本変化は嫌いで昔のままでいいが。市場に昔のものがなくなったので仕方なく購入するひと</li>
+        </ul>
+        </div>
+</div>
+</div>
+
+<div id="s4" class="mt-n6 pt-6 mb-6 clearfix">
+        <h2>ブラウザの知っとけ機能</h2>
         <ul>
         <li><a href="https://support.google.com/chrome/answer/157179?hl=ja" target="_blank" rel="noopener">Chrome のキーボード ショートカット</a></li>
         <li><a href="https://support.mozilla.org/ja/kb/keyboard-shortcuts-perform-firefox-tasks-quickly" target="_blank" rel="noopener">Firefox のキーボードショートカット</a></li>
@@ -215,13 +239,13 @@
         <h6 id="%E3%83%9D%E3%82%A4%E3%83%B3%E3%83%88">ポイント</h6>
         <ul>
         <li>安全につかうために最新のものを使いましょう。</li>
-        <li>コマーシャルを気にしなければOSに付属のものでもOK</li>
+        <li>広告を気にしなければOSに付属のものでもOK</li>
         </ul>
         <hr>
 </div>
-<div id="s3" class="mt-n6 pt-6 mb-6 clearfix">
+<div id="s5" class="mt-n6 pt-6 mb-6 clearfix">
 
-        <h2>HTMLのソースコードとその確認のしかた。</h2>
+        <h2>ブラウザとHTMLとソースコードとその確認のしかた。</h2>
         <p>これから学習するのはHTMLソースコードの読み書きです。後ほどDOMなどもでてきて少し混乱しますが・・・あくまでサーバーに上げるHTMLコードを読み書きできるようになるのが大切です。</p>
         <p>HTMLコードをブラウザが読み取ってどのような処理を経てモニターに表示するのかを解説します。</p>
         <h3>ソースコードを見る。</h3>
@@ -244,46 +268,58 @@
 </div>
 <div class="col-md-8">
 <div class="card-body ">
-        <h3>ブラウザの描画の仕組み</h3>
-        <p><br>
-        *「くるくる（仮称）」とは更新するときの押すアドレスバーの横の丸い矢印マークのことです。</p>
-        <ol>
-        <li>ページリクエスト</li>
-        <li>HTMLファイルの受信-&gt;受信したファイルがソースコード</li>
-        <li>受信中のHTMLファイルから順次リソースをリクエスト</li>
-        <li>リソースを元にDOMに変換しはじめる。</li>
-        <li>ウィンドウ領域に表示（描画し始める）（くるくるしてる。）</li>
-        <li>すべてのリソースが揃い描画が終わると（くるくるがとまる。）</li>
-        </ol>
-        </div>
-        </div>
-        </div>
-        <h3>　ブラウザとソースコード</h3>
-        ブラウザはHTMLファイルを取得できないとユーザーに情報を提示できません。
-        </div>
+<h3>ブラウザの描画の仕組み</h3>
+<p><br>
+*「くるくる（仮称）」とは更新するときの押すアドレスバーの横の丸い矢印マークのことです。</p>
+<ol>
+<li>ページリクエスト</li>
+<li>HTMLファイルの受信-&gt;受信したファイルがソースコード</li>
+<li>受信中のHTMLファイルから順次リソースをリクエスト</li>
+<li>リソースを元にDOM(document object model)に変換しはじめる。</li>
+<li>ウィンドウ領域に表示（描画し始める）（くるくるしてる。）</li>
+<li>すべてのリソースが揃い描画が終わると（くるくるがとまる。）</li>
+</ol>
 </div>
-<div id="s4" class="mt-n6 pt-6 mb-6 clearfix">
-        <h2>ソースコードと検証の表示が違うことがある。</h2>
-        <p class="badge badge-info">ここからのお話しはHTMLやCSSを書くようになってからのお話しです。</p>
-        <p>ソースコードと検証で表示される内容は違うのはjavascriptなどプログラムでで表示コードに割り込みが発生しコードとは違う表示になります。<br>
-        マークアップエンジニアはローカルに送信するソースコードを作成するが仕事です</p>
-        <h5>firefoxでソースコード検証</h5>
-        <p>簡単なソースコードのバリデーション検証はW3Cバリデーターを使わずともfirefoxブラウザのソースコードの表示で確認できる。</p>
-        <p>エラーの恐れがあったり非推奨のタグを使っている場合、赤字で表示してくれる。
-        英語でのアシストだがマウスをホバーするとエラーの理由なども教えてくれる。</p>
-        <h4>FireFoxで間違ったソースコードで確認してみましょう。</h4>
-        <p>FireFoxで開いてソースコードを確認していみましょう。</p>
-        <ul>
-        <li>任意のテキストエディターを開き。</li>
-        <li>新規でHTMLファイルを作る。</li>
-        <li>下のコードをコピーしてペーストして適当な名前で保存します。「errer.html」拡張子は「.html」でお願いします。</li>
-        <li>保存場所はすぐに捨てれるデスクトップに保存すればいいでしょう。</li>
-        <li>アイコンを右クリックして-&gt; アプリケーションで保存-&gt; fireFoxで見る</li>
-        <li>firefoxで開いたら。　マウスでブラウザのウィンドウを右クリック ソースコードを見る。</li>
-        </ul>
+</div>
+</div>
+<h3>ブラウザとソースコード</h3>
+<p>ブラウザはHTMLファイルを取得できないとユーザーに情報を提示できません。</p>
+<p>HTMLファイルに表示する文章や見た目を制御するCSSファイルをリクエストする命令を記述したりしてHTMLファイルの記述をもとにブラウザが内容を画面に表示します。</p>
+<div class="card-body">
+<h3 class="card-header"></h3>
+<img src="_images/_OL/webttage.png" alt="ブラウザとソースコード">
+<ul>
+<li> HTMLファイル - webサイトを表示するため根幹になるファイル マークアップ言語</li>
+<li> cssファイル - webサイトを装飾、レイアウトするための言語 スタイルシート</li>
+<li> javascriptファイル - webサイトの機能の拡張するプログラム言語</li>
+
+</ul>
+</div>
+</div>
+</div>
+<hr>
+<div id="s6" class="mt-n6 pt-6 mb-6 clearfix">
+<h2>ソースコードと検証の表示が違うことがある。</h2>
+<p class="badge badge-info">ここからのお話しはHTMLやCSSを書くようになってからのお話しです。</p>
+<p>ソースコードと検証で表示される内容は違うのはjavascriptなどプログラムでで表示コードに割り込みが発生しコードとは違う表示になります。<br>
+マークアップエンジニアはローカルに送信するソースコードを作成するが仕事です</p>
+<h5>firefoxでソースコード検証</h5>
+<p>簡単なソースコードのバリデーション検証はW3Cバリデーターを使わずともfirefoxブラウザのソースコードの表示で確認できる。</p>
+<p>エラーの恐れがあったり非推奨のタグを使っている場合、赤字で表示してくれる。
+英語でのアシストだがマウスをホバーするとエラーの理由なども教えてくれる。</p>
+<h4>FireFoxで間違ったソースコードで確認してみましょう。</h4>
+<p>FireFoxで開いてソースコードを確認していみましょう。</p>
+<ul>
+<li>任意のテキストエディターを開き。</li>
+<li>新規でHTMLファイルを作る。</li>
+<li>下のコードをコピーしてペーストして適当な名前で保存します。「errer.html」拡張子は「.html」でお願いします。</li>
+<li>保存場所はすぐに捨てれるデスクトップに保存すればいいでしょう。</li>
+<li>アイコンを右クリックして-&gt; アプリケーションで保存-&gt; fireFoxで見る</li>
+<li>firefoxで開いたら。　マウスでブラウザのウィンドウを右クリック ソースコードを見る。</li>
+</ul>
 <h5>間違ったコード例</h5>
-        <div class="mb-3">
-        <pre class="hljs line-numbers language-xml" data-src="prism.js"><code>&lt;!DOCTYPE html&gt;
+<div class="mb-3">
+<pre class="hljs line-numbers language-xml" data-src="prism.js"><code>&lt;!DOCTYPE html&gt;
         &lt;html&gt;
          &lt;head&gt;
          &lt;meta charset=&quot;UTF-8&quot;&gt;
@@ -296,15 +332,11 @@
         度一切苦厄　舎利子　色不異空　空不異色　色即是空　空即是色
          &lt;/body&gt;
         &lt;/html&gt;
-
-
-        </code></pre></div>
+</code></pre></div>
 <div class="card">
-                <h5 class="card-header">表示結果</h5>
-                <div class="card-body">
-                <p><a href="_res/errer.html"><img src="_images/_html/Errer_html.PNG" class="img-fluid shadow-sm" alt="般若心経"></a></p>
-
-
+<h5 class="card-header">表示結果</h5>
+<div class="card-body">
+<p><a href="_res/errer.html"><img src="_images/_html/Errer_html.PNG" class="img-fluid shadow-sm" alt="般若心経"></a></p>
 <p class="card-text">div要素の終了タグをわざとかかなかった。fierfoxでのエラーメッセージは「body要素がここでおわってるけど終わってない要素があるよ。」とメッセージしてくれている。</p>
 <p>ただしこのようなコードのミスはしょっちゅうあるのでブラウザはコードにミスがある場合も代替案を持っておりそのためユーザーが困らないような情報伝達をするようにプログラミングされている。</p>
 <h5>エラーの表示には癖がある。</h5>
@@ -314,7 +346,7 @@ HTMLのルールを理解していくとでエラーの理由なども推測で�
 </div>
 
 </div>
-<div id="s5" class="mt-n6 pt-6 mb-6 clearfix">
+<div id="s7" class="mt-n6 pt-6 mb-6 clearfix">
 <h2>まとめ</h2>
 <ul>
 <li>ブラウザはユーザーエージェントの一種</li>
