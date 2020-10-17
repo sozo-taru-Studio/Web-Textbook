@@ -169,7 +169,7 @@ var BOpages = new Vue(BO);
                     titleen:"web word",
                     url:"196_outline_media.html",
                     dis:"webアプリケーション制作での技術俯瞰図解説",
-                    img: "_images/_OL/ux-640.jpg"
+                    img: "_images/_OL/business_640.jpg"
                 }
             ]
    }
