@@ -65,7 +65,7 @@ text2: "{{item.text}}"
     }
     .hardTable{
      color:var(--white);
-     background-color:var(--dark);
+     background-color:var(--gray);
     }
   .hardTable td,
   .softTable th{
@@ -91,16 +91,16 @@ text2: "{{item.text}}"
 }
 
 .fe{
-    background-color:rgba(255,200,200,0.2);
+    background-color:rgba(255,200,200,0.4);
   }
 .ine{
-    background-color:rgba(200,255,200,0.2);
+    background-color:rgba(200,255,200,0.4);
   }
 .be{
-    background-color:rgba(200,255,255,0.2);
+    background-color:rgba(200,255,255,0.4);
   }
   </style>
-<table class="softTable table table-bordered">
+<table class="softTable table table-bordered bg-light">
 <thead>
   <tr>
 <th colspan="6" scope="col" class="text-center"><span class=""> <i class="fa fa-window-maximize" aria-hidden="true"></i> ソフトウェア</span></th>
@@ -203,16 +203,16 @@ text2: "{{item.text}}"
 <td class="ine" colspan="5">インフラエンジニア</td>
 </tr>
 <tr>
-<td colspan="7">SaaS (クラウド)</td>
+<td colspan="7" class="bg-success">SaaS (クラウド)</td>
 </tr>
 <tr>
 <td colspan="2"></td>
-<td colspan="4">PaaS (クラウド)</td>
+<td colspan="4"  class="bg-info">PaaS (クラウド)</td>
 <td></td>
 </tr>
 <tr>
 <td colspan="6"></td>
-<td>IaaS(クラウド)</td>
+<td class="bg-white">IaaS(クラウド)</td>
 </tr>
 </tbody>
 </table>
