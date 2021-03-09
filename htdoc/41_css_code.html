@@ -67,7 +67,54 @@
 <h2>positon プロパティ</h2>
 <p>ポジションプロパティは要素の重なりを（層）を作り出し視覚的効果を生み出すプロパティです。値は、通常のstatic, fix ,relative ,absolute, stickyの4種類があります。
 </p>
-<h3>値</h3>
+<h3>デフォルト(初期)の<code>position</code>プロパティーは<code>static</code>です。</h3>
+<p>要素の重なりとはスタック（重なる）文脈とよばれます。HTML要素で私の知る限りデフォルトでの<code>position</code>プロパティーが<code>static</code>以外の要素は知りません。おおよそ<code>position</code>プロパティーを編集しなければ値は<code>static</code>です。</p>
+
+<div class="card">
+<div class="card-header">
+<h3>ポジションプロパティ</h3>
+</div>
+<div class="card-body clearfix">
+<div class="float-left col-6 mr-3"><img src="_images/_ST/positon.jpg" alt="position "></div>
+<div>
+<h4> 値 </h4>
+<p><a href="https://developer.mozilla.org/ja/docs/Web/CSS/position" target="_blank">詳しくMDN Web Docsの開発者向けのウェブ技術 - CSS: カスケーディングスタイルシート- position</a>をご覧ください。</p>
+<ul>
+  <li>
+  <h5><code>static</code></h5>
+  <p>初期値の値で重なりを形成しません。</p>
+  </li>
+  <li>
+  <h5><code>relative</code></h5>
+  <p>後述する<code>absolute</code>の基準位置になります</p>
+  <p>通常の位置を基準にオフセットプロパティで要素をずらして表示します。重なりの値がありますが、元の領域は保持されます。</p>
+  <p>オフセットプロパティの初期値は<code>static</code>と同じ位置になりますので見た目は<code>static</code>と同じです。</p>
+  </li>
+  <li>
+  <h5><code>absolute</code></h5>
+  <p>デザインでよくみる例として画像の斜め上に数字をだしたり。飛び石のように写真が配列されていたりなど不規則なレイアウトにつかわれます。グリット状のレイアウトでは実現できない場合に使います。以下はMDNの解説です。</p>
+  <p>要素は文書の通常のフローから除外され、ページレイアウト内に要素のための空間が作成されません。直近の配置されている祖先があれば、それに対して相対配置されます。そうでなければ、初期の包含ブロックに対して相対配置されます。最終的な位置は top, right, bottom, left の値によって決定されます。</p>
+<p>この値では、 z-index の値が auto ではない場合、新しい重ね合わせコンテキストを作成します。絶対位置指定ボックスのマージンは、他の要素のマージンと相殺されません</p>
+<details>
+<summary>包含ブロック</summary>
+<p>対象の要素のを含む要素の事 親要素以上の祖先のこと</p>
+</details>
+  </li>
+  <li>
+  <h5><code>fixed</code></h5>
+  <p>固定配置です。ビューポートに固定されてオフセット配置されるときに使います。よくみられるのはページをスクロールしても追従して表示されるメニューやモーダルウィンドウの表示位置です。スクロールしても必ず画面上に表示されています。</p>
+  </li>
+  <li>
+  <h5><code>stickily</code></h5>
+  <p>スクロールする要素のなかで固着表示される配置を粘着位置指定要素といいます。以下はMDNの解説です。</p>
+  <p>要素は文書の通常のフローに従って配置され、直近のスクロールする祖先および包含ブロック (直近のブロックレベル祖先、表関連要素を含む) に対して top, right, bottom, left の値に基づいて相対配置されます。オフセットは他の要素の配置には影響を与えません。</p>
+<p>この値は、常に新しい重ね合わせコンテキストを生成します。なお粘着要素は、直近の祖先がスクロールしない場合でも、「スクロールの仕組み」を持つ直近の祖先 (overflow が hidden, scroll, auto, overlay として作成されたもの) に「粘着」します。これによって「粘着」のふるまいを効果的に抑止します</p>
+  </li>
+</ul>
+</div>
+</div><!-- card-body -->
+</div>
+<h3>各値の引用解説</h3>
 <blockquote>
     <ul>
         <li><ruby><strong>位置指定要素</strong><rp> (</rp><rt>positioned element</rt><rp>) </rp></ruby>とは、 <code>position</code> の<a href="/ja/docs/Web/CSS/computed_value">計算値</a>が <code>relative</code>, <code>absolute</code>, <code>fixed</code>, <code>sticky</code> のいずれかである要素です。 (言い換えれば、 <code>static</code> 以外の全てです。)</li>
@@ -81,20 +128,17 @@
 </blockquote>
 
 
-
+</div><!-- s1 -->
 
 <div id="s2" class="mt-n6 pt-6 mb-6 clearfix">
 <h2>オフセット プロパティ</h2>
-<p>オフセットプロパティはpositionプロパティの値「fix ,relative ,absolute, sticky」のときの要素の辺 topプロパティなら上辺 bottomプロパティ下辺 leftプロパティは左辺 rightプロパティは右辺から　どれだけズレて表示させるかを設定するプロパティです。</p>
+<p><code>static</code>の値以外に設定された場合の移動距離を指定するための値を指示するプロパティです。<br>
+オフセットプロパティはpositionプロパティの値「fix ,relative ,absolute, sticky」のときの要素の辺 topプロパティなら上辺 bottomプロパティ下辺 leftプロパティは左辺 rightプロパティは右辺から　どれだけズレて表示させるかを設定するプロパティです。</p>
 
-<p>
-初期値はauto です。明確にオフセットの記述がないと要素はstaticのときと同じｘY軸にレンダリングされます。
-</p>
+<p>初期値はauto です。明確にオフセットの記述がないと要素はstaticのときと同じｘY軸にレンダリング(表示)されます。</p>
 
 <div class="card">
-<div class="card-header">
-<h3>垂直のオフセット top bottom プロパティ</h3>
-</div>
+<div class="card-header"><h3>垂直のオフセット top bottom プロパティ</h3></div>
 <div class="card-body">
 <blockquote class="blockquote">
 <ul>
@@ -135,7 +179,9 @@
 </div><!--/ .card -->
 
 <h3>ファイルを作ってそれぞれの確認してみる</h3>
-<h4>相対配置</h4>
+<div class="card mb-6">
+    <div class="card-header"><h4>相対配置</h4></div>
+<div class="card-body">
 <h5>HTML</h5>
 <pre class="line-numbers language-xml" data-src="prism.js"><code>
 &lt;div class="base-box"&gt; 親要素
@@ -173,9 +219,11 @@
 </code></pre>
 <p>相対配置は元にあった位置を基準に移動し。移動する前の領域を残す。</p>
 <p><a href="../Training/position/position.html">プレビューはこちら</a></p>
-
-
-<h4>絶対配置</h4>
+</div>
+</div>
+<div class="card mb-6">
+    <div class="card-header"><h4>絶対配置</h4></div>
+<div class="card-body">
 <h5>HTML</h5>
 <pre class="line-numbers language-xml" data-src="prism.js"><code>
 &lt;div class="base-box"&gt; 親要素
@@ -206,21 +254,20 @@
   <li>オフセットがなければ、元あった場所は続く要素に専有されその上に表示される。</li>
 </ul>
 </div>
-
-
+</div>
+</div>
 
 <div id="s3" class="mt-n6 pt-6 mb-6 clearfix">
 <h2>z-index</h2>
-<p>z-indexプロパティはスタック文脈内の重なり順を変更するプロパティです。
+<p>z-indexプロパティはスタック文脈内の<strong>重なり順を変更する</strong>プロパティです。
 値は小さいほど下に表示され大きいほど上に表示されます。</p>
 <h3>値</h3>
-<p>初期値　「auto」</p>
+<p>初期値「auto」</p>
 <ul>
  <li>auto 記述があとの要素のほうが上に重なる</li>
  <li>整数値　integer　数値は大きいほうがより上に重なる。</li>
  <li>マイナスは優先順位が下がる。　-1は下の層に回り込む。</li>
 </ul>
-</div>
 
 
 
