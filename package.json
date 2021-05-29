@@ -27,7 +27,7 @@
     "gulp-plumber": "^1.2.1",
     "gulp-sass": "^4.0.2",
     "gulp-webserver": "^0.9.1",
-    "handlebars": "^4.7.3",
+    "handlebars": "^4.7.7",
     "path": "^0.12.7",
     "require-dir": "^1.2.0"
   },
