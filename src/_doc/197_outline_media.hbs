@@ -1,0 +1,133 @@
+---
+title: webデザイナーとかIT企業とかざっくり説明するよ
+discription: web制作でのやくわり分担や仕事の内容をざっくりと説明するよ
+cat: web総合概論
+next-page-url: "#"
+filename: 197_outline_media.html
+prev-page-url: "196_outline_media.html"
+titlename: "{{title.titlename}}"
+text: "{{item.text}}"
+text2: "{{item.text}}"
+---
+<link href="https://fonts.googleapis.com/css?family=M+PLUS+1p" rel="stylesheet">
+<div class="container mb-5">
+<article id="w-article">
+<!-- editable area ########             -->
+        <h1>{{title}} - {{cat}}</h1>
+        <p><span>category:</span> <span class="badge badge-primary">{{cat}}</span></p>
+        <hr>
+<!-- 序章 モジュール -->
+<div class=" mb-4 alert alert-info">
+<h2>情報技術系企業</h2>
+<div class="card-body">
+
+<p class="card-text">
+「IT」ということばこれから就職するにあたってITという言葉はざっくりしすぎているとおもいませんか？<br>
+ITで何を扱っている会社なのか 例えばリクルートなら就職斡旋や結婚、美容院などのの支援をするシステムを運営しています。
+就職活動では具体的にどんな業務に携わることに興味があるのか深く関わってきたのかをプレゼンできるようにしましょう。</p>
+</div>
+</div>
+
+<!-- 目次 モジュール -->
+<div class="bg-light p-3 mb-4">
+<h2>目次</h2>
+<ul id="w-indexlistBox">
+    <li v-for="item in items" class="w-indexlistBox-list">
+      <a v-bind:href="item.id" data-scroll >{{text2}}</a>
+    </li>
+</ul>
+</div>
+<!-- / 目次 モジュール -->
+<!-- 本文のセクション モジュール -->
+<div id="s1" class="mt-n6 pt-6 mb-6">
+<h2> Webデザイナー </h2>
+<div class="card"><div class="card-body">
+<p>webサイトを作るという意味でwebデザイナーというのはおおよそあたっていますがこのwebデザイナーという言葉もざっくりとしています。webサイトを作る人は多くの担当者がいます。もちろん全てを兼任して作ることが一般的で大規模になればなるほど人数は増えていきます。 お店やコーポレイトサイトなど小規模な場合は一人で全てできるような人がおおいです。</p>
+</div>
+</div>
+</div>
+
+
+<div id="s2" class="mt-n6 pt-6 mb-6">
+<h2>webデレクター</h2>
+<div class="card mb-6">
+<div class="card-body">
+<p>ウェブサイトを作りた人の要望をまとめチームに役割分担をしサイトを完成に導く人<br>
+コストの管理がメインです。</p>
+</div>
+</div>
+</div>
+
+
+<div id="s3" class="mt-n6 pt-6 mb-6">
+<h2>ライター</h2>
+<div class="card mb-6">
+<div class="card-body">
+<p>webサイトに必要な記事や文言　キャッチコピーや文章をウェブサイトを作る人に代わって書いたりする人</p>
+</div>
+</div>
+</div>
+
+<div id="s4" class="mt-n6 pt-6 mb-6">
+<h2> 写真家</h2>
+<div class="card">
+<div class="card-body">
+<P>ビジュアルデレクションにあった写真を提供してくれる技術力のある写真家 最近は動画の撮影知識あると重宝される</P>
+</div>
+<!-- /card-body -->
+</div>
+</div>
+
+<div id="s5" class="mt-n6 pt-6 mb-6">
+<h2> アートデレクター webデザイナー</h2>
+<div class="card">
+<div class="card-body">
+<p>狭義な意味でのwebデザイナー</p>
+<P>視覚的なwebサイトについサイトの構成を決定する人
+ただサイトの見た目を構成するだけでなく技術的にできることを理解する。<br>
+要望された機能を実装し、使用者がまよいなく目的を達成できる設計がをする。</P>
+</div>
+<!-- /card-body -->
+</div>
+</div>
+
+<div id="s5" class="mt-n6 pt-6 mb-6">
+<h2> フロントエンジニア</h2>
+<div class="card">
+<div class="card-body">
+<p>実際に人が使用するページをブラウザやアプリケーションに実装する。</p>
+<h3>主に必要な技術の知識</h3>
+<ul>
+ <li>HTML</li>
+ <li>CSS</li>
+ <li>javascript</li>
+ </ul>
+<p> ここに簡単のサーバーの知識　サイトをサーバーにアップロードしたりドメインを取得して紐つけしたりできる知識</p>
+
+</div>
+<!-- /card-body -->
+</div>
+</div>
+
+<div id="s5" class="mt-n6 pt-6 mb-6">
+<h2> バックエンドエンジニア/ミドルウェア</h2>
+<div class="card">
+<div class="card-body">
+<p>サーバーなどのインフラ系の技術とwebサーバープログラムの知識がある人、おもにアクセス数に対応したサーバーの構築
+サーバーで実装しなければならない機能を構築する。</p>
+<h3>買い物系のサイトの場合</h3>
+<ul>
+<li>会員の管理系</li>
+<li>信用情報と決済サービスとの連携</li>
+<li>ロジスティックや在庫の管理など</li>
+</ul>
+</div>
+<!-- /card-body -->
+</div>
+</div>
+
+<!-- editable area end ########             -->
+</article>
+</div>
+<!-- /container-->
+<!-- / w-aside2 --->
