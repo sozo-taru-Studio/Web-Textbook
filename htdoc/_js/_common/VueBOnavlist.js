@@ -170,7 +170,7 @@ var BOpages = new Vue(BO);
                     url:"196_outline_media.html",
                     dis:"webアプリケーション制作での技術俯瞰図解説",
                     img: "_images/_OL/business_640.jpg"
-                }
+                },
                  {
                     titlename:'webデザイナーとかIT企業とかざっくり説明するよ',
                     titleen:"IT Webデザイナー",
