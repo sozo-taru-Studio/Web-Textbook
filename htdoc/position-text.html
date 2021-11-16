@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>position</title>
+  <style>
+/* ファンデーション*/
+div{
+  box-sizing: border-box;
+ }
+.base-box {
+  border:1px solid #303030;
+  width: 300px;
+  height: 300px;
+}
+.base-box>div:nth-child(1){
+  width: 50%;
+  height: 50%;
+  background-color: rgba(1, 58, 93,0.1);
+}
+.base-box>div:nth-child(2){
+  width: 50%;
+  height: 50%;
+  background-color: rgba(127, 58, 93,0.1);
+}
+
+/*変更箇所 相対配置*/
+.relative-box{
+  position:relative;
+  top:30px;
+  left:30px;
+}
+
+/*変更箇所 絶対配置*/
+.base-box{
+  position: relative;
+}
+.absolute-box{
+  position:absolute;
+  top:30px;
+  left:30px;
+}
+
+  </style>
+</head>
+<body>
+  <h1>相対ポジション</h1>
+    <div class="base-box">
+        <div class="relative-box"> 第1子要素 </div>
+        <div class="static-box"> 第2子要素 </div>
+    </div>
+<p><a href="../../site/41_css_code.html">戻る</a></p>
+<p>相対配置は元にあった位置を基準に移動し。移動する前の領域を残す。</p>
+
+<h1>絶対ポジション</h1>
+<div class="base-box">
+    <div class="absolute-box"> 第1子要素 </div>
+    <div class="static-box"> 第2子要素 </div>
+</div>
+<p><a href="41_css_code.html">戻る</a></p>
+<h2>位置</h2>
+<ul>
+  <li>絶対配置を指定した要素を内包する包含ブロックにposition:static以外のポジションプロパティがある場合は直近のその要素を基準にオフセットする。</li>
+  <li>絶対配置を指定した要素を内包する包含ブロックにposition:static以外のポジションプロパティがない場合はBody要素を基準にオフセットする。</li>
+  <li>オフセットがなければ、元あった場所は続く要素に専有されその上に表示される。</li>
+</ul>
+</body>
+</html>
