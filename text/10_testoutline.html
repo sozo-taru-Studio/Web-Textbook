@@ -392,19 +392,36 @@ margin: 0;
 box-sizing: border-box;
 flex-basis: 50%;
 padding:1em;
-border:1px solid #ccc;
+/* border:1px solid #ccc; */
 list-style: none;
 }
 
 h2{
 padding-right: 1.6em;
 }
+
+
+@media print{
+/* A4サイズ縦 */
+@page {
+  size: A4;
+}
+.pages {
+  break-before: page;
+}
+.d-flex>li{
+  padding: .5rem 1rem;
+ }
+}
+
 </style>
 
 </head>
 <body>
+<!-- 1 ---->
+<div class="page">
 <h1> Web基本知識 インターネットビジネス概論 小テスト</h1>
-<div style="font-size: large;margin-bottom:1.6em;">回答者名 : <br>点数:</div>
+<div style="font-size: 14px;margin-bottom:1em;">回答者名 : <br>点数:</div>
 <ul class="d-flex">
 <li>
 <h2>1.主にインターネットでつかわれるコンピューターネットワークの形式は？</h2>
@@ -417,7 +434,7 @@ padding-right: 1.6em;
 <p>回答:     </p>
 </li>
 <li>
-<h2>2.　 IPv4 で正しい数値群はどれでしょか？</h2>
+<h2>2. IPv4 で正しい数値群はどれでしょか？</h2>
 <ol>
 <li>255 21 0 18</li>
 <li>302 21 0 18</li>
@@ -460,6 +477,63 @@ padding-right: 1.6em;
 <p>回答:     </p>
 </li>
 </ul>
+</div><!-- /page 1 -->
+<!-- page 2 -->
+<div class="page">
+<ul  class="d-flex">
+<li>
+<h2>6.個人情報とはなにを定義するものですか</h2>
+<ol>
+<li>人の行動や居場所の情報</li>
+<li>生きている人間を特定できる情報で組み合わせることで個人が判明する情報</li>
+<li>写真など人物が特定できる画像情報</li>
+<li>IPアドレスなどインターネットのロケーション情報</li>
+</ol>
+<p>回答:     </p>
+</li>
+<li>
+<h2>7.AIDMA モデル（アイドマモデル）に該当しないものはなんですか</h2>
+<ol>
+<li>Attention（注意）</li>
+<li>Interest（関心）</li>
+<li>Action（構想）</li>
+<li>infomation(情報)</li>
+</ol>
+<p>回答:     </p>
+</li>
+<li>
+<h2>8.著作権に侵害の恐れがある行為はどれでしょうか？</h2>
+<ol>
+<li>写真を模写（トレース）し絵の勉強をする。</li>
+<li>写真をコラージュして友達にチャット（Line）で見せる</li>
+<li>写真を模写（トレース）しイラストを販売する。</li>
+<li>自分の撮った写真をトレースし絵にして販売する</li>
+</ol>
+<p>回答:     </p>
+</li>
+<li>
+<h2>9.DNSドメインネームサーバーのインターネット上での役割は</h2>
+<ol>
+<li>IPアドレスとドメインの名前解決をする役割</li>
+<li>IPアドレスを別のIPアドレスに換えてルーティングを容易にする役割</li>
+<li>データ集約して保存しデータの読み書きを容易にする役割</li>
+<li>クライアントからのリクエストに応答しクライアントが必要な情報を送信する役割</li>
+</ol>
+<p>回答:     </p>
+</li>
+<li>
+<h2>10.リテラシーとは</h2>
+<ol>
+<li>識字 : 文字（書記言語）を読み書きし、理解できること、またその能力</li>
+<li>倫理 : 人間生活の秩序つまり人倫の中で踏み行うべき規範の筋道（の立て方）</li>
+<li>情報 : ある物事の事情についての知らせ。</li>
+<li>習俗 : ある時代・社会のならわし。習慣や風俗</li>
+</ol>
+<p>回答:     </p>
+</li>
+</ul>
+
+</div><!-- /page 2 -->
 
 
 </body>
