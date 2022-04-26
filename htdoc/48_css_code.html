@@ -49,9 +49,14 @@
 <div class="card mb-4">
 <div class="card-body clearfix">
 <p class="card-text">
-サイトの編集をしているとき自分で書いたCSSが間違ってないのに反映されないことはありませんか？CSSのセレクタの書き方が問題で反映されていないのかもしれません。<br>
+サイトの編集をしているとき自分で書いたCSSが間違ってないのに反映されないことはありませんか？CSSのセレクタの書き方が問題で反映されていないのかもしれません。<br>CSSセレクターの詳細度を理解することですでに完成されたwebページの見た目の修正ができたり。修正しやすく見やすいCSSコードを記述できるようになります。<br>
 CSSの詳細度はセレクタを細かく書けば書くほど上書きされ適応されます。うまく詳細度をコントロールして修正しやすいCSSを書けるようになりましょう。
 </p>
+<h2 style="font-size:1.6rem;">CSSのセレクタの書き方のポイント</h2>
+<ul>
+<li> クラスセレクタを中心に記述をこころがける</li>
+<li>詳細に書きすぎない、クラスセレクタを中心に親子セレクタ　子孫セレクタを使う</li>
+</ul>
 </div>
 
 </div>
@@ -70,6 +75,7 @@ CSSの詳細度はセレクタを細かく書けば書くほど上書きされ�
 <div id="s1" class="mt-n6 pt-6 mb-6 clearfix">
 <h2>CSSの上書き</h2>
 	<p>同じセレクタの場合は上書きされる。</p>
+  <p>ブラウザは最後に読まれたCSSセレクタを適応する設計されている</p>
 <h4>css</h4>
 <div class="card">
 <div class="card-body">
@@ -91,7 +97,7 @@ p {
 
 <h2>詳細度Specificity</h2>
 <blockquote>
-<p>詳細度は、どの CSS プロパティが要素に最も関係があるか、すなわち適用されるかをブラウザーが決定する手段です。詳細度は様々な組み合わせの CSS セレクターで構成される一致規則に基づいています。</p>
+<p>詳細度は、どの CSS プロパティが要素に最も関係があるか、すなわち適用されるかをブラウザーが決定する手段です。詳細度は様々な組み合わせの CSS セレクターで構成される一致規則に基づいています。 つまり要素を指定する書き方をより細かく書くことによって適応するプロパティの優先順位をコントロールできるように設計されています。</p>
 	<p><a href="https://developer.mozilla.org/ja/docs/Web/CSS/Specificity" target="_blank" rel="noopener">詳細度</a></p>
 </blockquote>
 <h3>詳細度計算表セレクター例</h3>
@@ -201,17 +207,30 @@ p {
 </table>
 	<p>この表は下に行くほど強いセレクターになる。</p>
 	<p class="mb-6">レベルは実際に使われている名称ではなく仮の単位です。A＞B＞C＞Dの順に強く、このヒエラルキーは覆せない。</p>
-
-<h4>セレクターを書くときの注意</h4>
-<p>セレクターは詳細に書きすぎるとメンテナンス性が失われる。</p>
+<div class="card">
+<h4 class="card-header">セレクターを書くときの注意</h4>
+<div class="card-body">
+<h5 class="text-bold">セレクターは詳細に書きすぎるとメンテナンス性が失われる。</h5>
 <p>サイト運営の過程で多くのページをデザイン更新していくうちにセレクターが詳細になりすぎないようにあらかじめ決めておいたデザインを使いまわすと工数が減る。</p>
 	<p>理由がない限り、idセレクターなどは使わず。クラスセレクターとタイプセレクターの2つぐらいでセレクターの詳細度をとどめたい。</p>
-	</div>
+  <p>つまり詳細度レベルAのStyle属性　id属性値を使ったレベルBのCSSセレクタ記述は修正しやすさからかんがえると使わないほうがよい。</p>
+<h5>プロダクトの種類によって詳細度を考える</h5>
+<h6>個人レベルのwebページ</h6>
+<p>全て作業するのが個人の場合は詳細度をきにしなくてもよいが、修正するときに工数が増えるだろう。しかし過去の自分と今の自分は別人だとこころえよう</p>
+<h6>複数人で制作し納品する</h6>
+<p>チームで決めたルールに従い修正しやすいセレクターを書こう。命名規則も類推しやすい名前を付ける習慣をこころがける。複数人での共同作業の場合各人がソースを確認し修正するために<strong>クラスを中心に親子セレクタ子孫セレクタを中心に書くことが基本</strong>だろう。</p>
+<h6>フレームワークなどのwebアプリ制作のアシストをするプログラム作成にたずさわったら</h6>
+<p>クラスを中心に親子セレクタ子孫セレクタを中心に書くことが基本たが、違う側面がでてくる。</p>
+<p>レベルＡレベルＢをよくつかう。なんなら!importantもよくつかう制作がフレームワーク系 bootstrapとかショッピングカート系サービスやFQAwebアプリサービスなどです。</p>
+<p>理由は制作において利用者のことを考えることは大切なのだがフレームワーク系（bootstrap）の作業は厄介で利用者もCSSの知識があり目的に応じて改変してつかってもらうことを主眼につくっていく。その作業のなかでこちらが作ったＣＳＳを魔改造されるとデザインが崩れるなど仕様通りに機能しなくなるのを防ぐためにあえて詳細過ぎるなCSSを記述してあることがある。</p>
+</div>
+</div>
+</div>
 	<div id="s3" class="mt-n6 pt-6 mb-6 clearfix">
 		<div>
-			<h2>!important　ルール</h2>
+			<h2>!importantルール</h2>
 			<p>詳細度を無視して スタイルを上書きする値の書き方です。</p>
-			<p>通常書き換えしてほしくないスタイルの部分などにつかいますが、メンテナンス性が下がるので使わないことをお勧めします。</p>
+			<p>通常書き換えしてほしくないスタイルの部分などにつかいますが、メンテナンス性が下がるので特に理由がない場合使わないことをお勧めします。</p>
 		<div class="card">
 <div class="card-header">
 <h3>記述例</h3>
@@ -222,11 +241,11 @@ p {
 <pre class="line-numbers language-css" data-src="prism.js"><code>
 /* !importantがある場合あとがきでも上書きできない。*/
 .green {
-  border: solid limegreen !important;
+  border: solid limegreen 1px !important;
 }
 
 .green{
-  border: solid #ff6600;
+  border: solid red 1px;
 }
 
 </code></pre>
@@ -249,11 +268,11 @@ p {
 
 <style>.green{
   line-height: 1.1;
-  border: solid limegreen !important;
+  border: solid limegreen 1px !important;
 }
 
 	.green{
-  border: solid #ff6600;
+  border: solid red 1px;
 }
 
 .box {
@@ -269,6 +288,11 @@ p {
  <p class="text-left">
  「<span class="first">つ</span>れづれなるままに、日暮らし、硯にむかひて、心にうつりゆくよしなしごとを、そこはかとなく書きつくれば、あやしうこそものぐるほしけれ。」
  </p>
+</div>
+<div class="box green">
+ <p>
+<span class="first">I</span>l y avait encore des Prussiens en France. M. Delalot était un personnage. La légitimité venait de s'affirmer en coupant le poing, puis la tête, à Pleignier, à Carbonneau et à Tolleron. Le prince de Talleyrand, grand chambellan, et l'abbé Louis, ministre désigné des finances, se regardaient en riant du rire de deux augures; tous deux avaient célébré, le 14 juillet 1790, la messe de la Fédération au Champ de Mars; Talleyrand l'avait dite comme évêque, Louis l'avait servie comme diacre.
+</p>
 </div>
 </div>
 
