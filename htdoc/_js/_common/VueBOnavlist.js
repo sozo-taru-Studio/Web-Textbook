@@ -433,6 +433,13 @@ var EDpages = new Vue(ED);
                     dis:"flexプロパティでレイアウトをします。子要素に各々にプロパティを設定してレイアウトを調整する方法",
                     img:"_images/_ST/flex2.jpg"
 
+                },{
+                    titlename:'CSS セレクター',
+                    titleen:"Selectors",
+                    url:"405_css_code.html",
+                    dis:"最初に知っておきたい選択子",
+                    img:"_images/_ST/flex2.jpg"
+
                 }
             ]
    }
