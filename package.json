@@ -18,7 +18,7 @@
   "homepage": "https://github.com/sozo-taru-Studio/Web-Textbook#readme",
   "devDependencies": {
     "assemble": "^0.24.3",
-    "browser-sync": "^2.26.7",
+    "browser-sync": "^2.29.3",
     "gulp": "^4.0.2",
     "gulp-compile-handlebars": "^0.6.1",
     "gulp-handlebars": "^5.0.2",
